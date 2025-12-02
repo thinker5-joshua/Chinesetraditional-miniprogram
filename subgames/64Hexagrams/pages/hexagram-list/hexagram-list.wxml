@@ -1,0 +1,60 @@
+<view class="container">
+  <view class="header">
+    <text class="title">易经六十四卦学习</text>
+    <text class="subtitle">按组浏览学习，掌握易经智慧</text>
+  </view>
+
+  <!-- 分组方式选择 -->
+  <view class="mode-selector">
+    <text class="mode-label">分组方式：</text>
+    <view class="mode-buttons">
+      <button 
+        class="mode-button {{groupMode === 'sequence' ? 'active' : ''}}" 
+        bindtap="switchToSequence"
+      >顺序</button>
+      <button 
+        class="mode-button {{groupMode === 'palace' ? 'active' : ''}}" 
+        bindtap="switchToPalace"
+      >八宫</button>
+    </view>
+  </view>
+
+  <!-- 当前组信息 -->
+  <view class="group-info">
+    <text class="group-title">{{currentGroupTitle}}</text>
+    <text class="group-subtitle">{{currentGroupSubtitle}}</text>
+  </view>
+
+  <!-- 卦象列表 -->
+  <view class="hexagram-grid">
+    <view 
+      wx:for="{{currentHexagrams}}" 
+      wx:key="id"
+      class="hexagram-item"
+      bindtap="goToHexagramDetail"
+      data-hexagram="{{item}}"
+    >
+      <view class="hexagram-symbol">{{item.symbol}}</view>
+      <view class="hexagram-name">{{item.name}}</view>
+      <view class="hexagram-pinyin">{{item.pinyin}}</view>
+    </view>
+  </view>
+
+  <!-- 翻页控制 -->
+  <view class="pagination">
+    <button 
+      class="pagination-button {{currentPage === 0 ? 'disabled' : ''}}" 
+      bindtap="previousGroup"
+    >上一组</button>
+    <text class="page-indicator">{{currentPage + 1}}/{{totalGroups}}</text>
+    <button 
+      class="pagination-button {{currentPage === totalGroups - 1 ? 'disabled' : ''}}" 
+      bindtap="nextGroup"
+    >下一组</button>
+  </view>
+
+  <!-- 返回按钮 -->
+  <view class="back-container">
+    <button class="back-button" bindtap="goBack">返回64卦配对</button>
+  </view>
+</view>

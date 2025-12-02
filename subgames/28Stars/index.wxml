@@ -1,0 +1,108 @@
+<!-- 二十八星宿探秘 - 宇宙神秘简约风格 -->
+<view class="cosmos-container">
+  <!-- 背景星空 -->
+  <view class="starry-bg"></view>
+  
+  <!-- 标题区域 -->
+  <view class="cosmos-header">
+    <text class="cosmos-title">二十八星宿探秘</text>
+    <text class="cosmos-subtitle">在中国古代天文学中，二十八宿是天空中的重要星群。每一方位有七宿，由四大神兽守护。</text>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons-top">
+    <button class="cosmos-btn primary" bindtap="viewConstellation">看星象</button>
+    <button class="cosmos-btn secondary" bindtap="startMatchGame">去识星</button>
+  </view>
+
+  <!-- 方位选择 -->
+  <view class="direction-selector">
+    <view class="direction-tabs">
+      <view 
+        wx:for="{{directionTabs}}" 
+        wx:key="key"
+        class="direction-item {{currentDirection === item.key ? 'active' : ''}} {{item.key}}"
+        bindtap="switchDirection" 
+        data-direction="{{item.key}}">
+        <view class="direction-char">{{item.char}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 当前方位信息 -->
+  <view class="current-direction">
+    <view class="direction-info">
+      <text class="direction-emoji">{{beastEmoji[currentDirectionIcon]}}</text>
+      <text class="direction-title">{{currentDirectionName}}</text>
+    </view>
+  </view>
+
+  <!-- 星宿列表 -->
+  <view class="stars-container">
+    <scroll-view class="stars-scroll" scroll-y="true">
+      <view class="stars-grid">
+        <view 
+          wx:for="{{currentDirectionStars}}" 
+          wx:key="id"
+          class="star-card {{selectedStar === item.id ? 'selected' : ''}}"
+          bindtap="selectStar" 
+          bindlongpress="showStarDetail"
+          data-star="{{item}}">
+          <view class="star-symbol">{{item.symbol}}</view>
+          <view class="star-info">
+            <text class="star-name">{{item.name}}</text>
+            <text class="star-pinyin">{{item.pinyin}}</text>
+            <text class="star-animal">{{item.animal}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 星宿详情模态框 -->
+  <view class="star-modal {{showStarDetail ? 'show' : ''}}" bindtap="hideStarDetail">
+    <view class="modal-content" catchtap="">
+      <view class="modal-header">
+        <view class="modal-symbol">{{selectedStarInfo.symbol}}</view>
+        <text class="modal-name">{{selectedStarInfo.name}}</text>
+        <text class="modal-pinyin">{{selectedStarInfo.pinyin}}</text>
+      </view>
+      
+      <view class="modal-body">
+        <view class="modal-section">
+          <text class="section-title">象征动物</text>
+          <text class="section-content animal-name">{{selectedStarInfo.animal}}</text>
+        </view>
+        
+        <view class="modal-section">
+          <text class="section-title">星宿含义</text>
+          <text class="section-content">{{selectedStarInfo.meaning}}</text>
+        </view>
+        
+        <view class="modal-section">
+          <text class="section-title">相关成语</text>
+          <view class="idioms-list">
+            <text 
+              wx:for="{{selectedStarInfo.idioms}}" 
+              wx:key="*this"
+              wx:for-index="index"
+              wx:for-item="idiom"
+              class="idiom-item">{{idiom}}</text>
+          </view>
+        </view>
+        
+        <view class="modal-section">
+          <text class="section-title">星宿描述</text>
+          <text class="section-content">{{selectedStarInfo.description}}</text>
+        </view>
+        
+        <view class="modal-section">
+          <text class="section-title">方位位置</text>
+          <text class="section-content">第 {{selectedStarInfo.positionIndex}} 宿</text>
+        </view>
+      </view>
+      
+      <button class="modal-close" bindtap="hideStarDetail">关闭</button>
+    </view>
+  </view>
+</view>

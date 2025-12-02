@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{hexagram.name}}</text>
+    <text class="subtitle">{{hexagram.pinyin}}</text>
+  </view>
+
+  <view class="hexagram-display">
+    <view class="hexagram-symbol">{{hexagram.symbol}}</view>
+    <text class="hexagram-number">第{{hexagram.id + 1}}卦</text>
+  </view>
+
+  <view class="content-section">
+    <text class="section-title">卦辞</text>
+    <text class="hexagram-text">{{hexagram.hexagramText}}</text>
+  </view>
+
+  <view class="content-section">
+    <text class="section-title">爻辞</text>
+    <view wx:for="{{hexagram.yaoTexts}}" wx:key="*this" wx:for-index="index" class="yao-item">
+      <text class="yao-number">{{index + 1}}爻：</text>
+      <text class="yao-text">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 返回按钮 -->
+  <view class="button-group">
+    <button class="action-button" bindtap="goBackToList">返回</button>
+  </view>
+</view>

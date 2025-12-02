@@ -1,0 +1,179 @@
+<!-- 星空背景 -->
+<view id="stars" wx:if="{{showStars}}"></view>
+
+<!-- 游戏容器 -->
+<view id="game-container">
+  <!-- 标题区域 -->
+<view class="game-header">
+  <view class="title-glow-container">
+    <text class="game-title">七十二幻境诗意旅行</text>
+  </view>
+  <view class="game-subtitle">穿越诗词<br/>探索中国最美的72处胜地</view>
+</view>
+
+  <!-- 主要游戏区域 -->
+<view id="game-main">
+  <!-- 仙界地图选择界面 -->
+<view id="compass-view" class="game-view {{currentView === 'compass' ? 'active' : ''}}">
+  <!-- 仙界地图容器 -->
+<view class="immortal-map-container" style="position: relative; display: block; opacity: 1; visibility: visible;">
+<view class="immortal-map" style="position: relative; display: block; opacity: 1; visibility: visible;">
+  <!-- 洞天体容器 -->
+<view id="caves-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; visibility: visible; z-index: 1000;">
+  <!-- 洞天体 -->
+  <view wx:for="{{displayedCaves}}" wx:key="id" 
+    class="cave-item" 
+    style="left: {{item.x}}%; top: {{item.y}}%; background-color: {{item.color}}; animation-delay: {{item.animationDelay}}; z-index: {{item.zIndex}};"
+    bindtap="selectCave" 
+    data-cave-id="{{item.id}}">
+    {{item.name}}
+  </view>
+</view>
+
+
+
+<!-- 仙界任意门 -->
+<button id="start-map" class="btn-primary fairy-door" style="position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%); z-index: 1001;" bindtap="startMapClick">仙界任意门</button>
+</view>
+</view>
+</view>
+
+  <!-- 诗词挑战界面 -->
+<view id="poetry-challenge-view" class="game-view {{currentView === 'poetry-challenge' ? 'active' : ''}}">
+<view class="challenge-container">
+  <!-- 洞天提示 -->
+<view class="cave-prompt">
+  <text>{{cavePromptText}}</text>
+</view>
+
+<view class="poem-content-container">
+<view id="poem-question" class="poem-display">
+  <text class="poem-title">{{currentPoem.title}}</text>
+  <view class="poet-info">
+    <text>{{currentPoem.author}}</text>
+  </view>
+  <view class="poem-content">
+    <text>{{poemDisplayContent}}</text>
+  </view>
+</view>
+
+<view class="challenge-section">
+  <view class="word-challenge">
+    <text class="challenge-hint">请选择缺失的字</text>
+    <view id="answer-options" class="options-container-horizontal">
+      <button wx:for="{{answerOptions}}" wx:key="id" 
+        class="option-btn-horizontal"
+        bindtap="selectAnswer" 
+        data-index="{{index}}">
+        {{item.char}}
+      </button>
+    </view>
+  </view>
+</view>
+</view>
+</view>
+</view>
+
+  <!-- 罗盘视图已整合到compass-view中 -->
+
+  <!-- 洞天展示界面 -->
+<view id="cave-view" class="game-view {{currentView === 'cave' ? 'active' : ''}}">
+<view class="cave-container">
+  <!-- 洞天信息区域 -->
+<view class="cave-info-container">
+  <!-- 标题区域 -->
+  <view class="cave-title-section">
+    <view class="cave-name-wrapper">
+      <text class="cave-name">{{currentCave.name}}</text>
+      <text class="cave-location">{{currentCave.location}}</text>
+    </view>
+  </view>
+
+  <!-- 主要内容区域 - 单列布局 -->
+  <view class="cave-content-single">
+    <!-- 第一部分：洞天简介 -->
+    <view class="cave-section modern-section">
+      <view class="section-header">
+        <text class="section-title">🏛️ 洞天简介</text>
+      </view>
+      <text class="cave-description">{{currentCave.description}}</text>
+    </view>
+
+    <!-- 第二部分：相关诗词 -->
+    <view class="cave-section modern-section poem-section">
+      <view class="section-header">
+        <text class="section-title">📜 相关诗词</text>
+      </view>
+      
+      <!-- 诗词标题信息 -->
+      <view class="poem-title-area">
+        <text class="poem-title">{{currentCavePoem.title}}</text>
+        <text class="poem-author">—— {{currentCavePoem.author}}</text>
+      </view>
+
+      <!-- 诗词正文 - 传统分行排版 -->
+      <view class="poem-content-traditional">
+        <block wx:for="{{poemLines}}" wx:key="index">
+          <text class="poem-line">{{item}}</text>
+        </block>
+      </view>
+
+      <!-- 诗词说明和操作 -->
+      <view class="poem-actions">
+        <text class="poem-explanation">{{currentCavePoem.connection_reason}}</text>
+        <button class="poem-nav-btn" bindtap="nextPoem">下一首 ➤</button>
+      </view>
+    </view>
+
+    <!-- 第三部分：洞天地图 -->
+    <view class="cave-section modern-section">
+      <view class="section-header">
+        <text class="section-title">🗺️ 洞天地图</text>
+      </view>
+      <view class="cave-map-wrapper">
+        <map class="cave-map" 
+          longitude="{{currentCave.longitude || 116.4074}}" 
+          latitude="{{currentCave.latitude || 39.9042}}"
+          scale="8"
+          markers="{{mapMarkers}}"
+          bindmarkertap="onMarkerTap">
+        </map>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部操作区 -->
+  <view class="cave-actions">
+    <button class="action-btn primary" bindtap="nextDreamland">
+      <text class="action-icon">🌟</text>
+      <text>探索下一幻境</text>
+    </button>
+  </view>
+</view>
+</view>
+</view>
+</view>
+</view>
+
+<!-- 游戏页脚 -->
+<view class="game-footer">
+  <text>© 2023 七十二幻境诗意旅行 | 基于中国传统诗词文化与旅游胜地</text>
+</view>
+
+<!-- 成功提示弹窗 -->
+<view id="success-modal" class="modal {{showSuccessModal ? 'show' : ''}}">
+<view class="modal-content">
+  <text class="modal-title">恭喜！</text>
+  <text class="modal-message">您已成功通过诗词挑战，可以进入洞天欣赏美景了。</text>
+  <button id="enter-cave" class="btn-primary" bindtap="enterCave">进入洞天</button>
+</view>
+</view>
+
+<!-- 错误提示弹窗 -->
+<view id="error-modal" class="modal {{showErrorModal ? 'show' : ''}}">
+<view class="modal-content">
+  <text class="modal-title">答题有误</text>
+  <text class="modal-message">请再仔细思考一下，或者点击提示按钮获取帮助。</text>
+  <button id="close-error" class="btn-primary" bindtap="closeErrorModal">继续答题</button>
+</view>
+</view>

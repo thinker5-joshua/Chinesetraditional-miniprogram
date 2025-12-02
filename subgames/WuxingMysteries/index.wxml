@@ -1,0 +1,8 @@
+<view class="loading-container">
+  <view class="loading-content">
+    <view class="loading-spinner">
+      <view class="spinner"></view>
+    </view>
+    <text class="loading-text">正在进入五行奥秘...</text>
+  </view>
+</view>

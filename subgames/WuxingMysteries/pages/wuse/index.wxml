@@ -1,0 +1,64 @@
+<view class="wuxing-container">
+  <!-- 顶部标题区域 -->
+  <header class="wuxing-header">
+    <view class="header-content">
+      <view class="nav-button" bindtap="goBack">
+        <text class="nav-icon">‹</text>
+        <text class="nav-text">返回</text>
+      </view>
+      <text class="main-title">五色五行</text>
+      <view class="placeholder"></view>
+    </view>
+  </header>
+
+  <!-- 主内容展示区域 -->
+  <view class="content-container">
+    <!-- 五色关联图 -->
+    <view class="chart-container">
+      <view class="chart-header">
+        <text class="chart-title">五色五行图</text>
+        <text class="chart-subtitle">色彩与五行的对应关系</text>
+      </view>
+      
+      <view class="diagram-wrapper">
+        <canvas 
+          class="wuxing-canvas" 
+          canvas-id="wuseCanvas"
+          bindtouchstart="onCanvasTouchStart"
+          bindtouchmove="onCanvasTouchMove"
+          bindtouchend="onCanvasTouchEnd"
+        ></canvas>
+      </view>
+
+      <!-- 五色详情卡片 -->
+      <view class="wuse-cards">
+        <view 
+          wx:for="{{['green','red','yellow','white','black']}}" 
+          wx:key="*this"
+          wx:for-item="key"
+          class="color-card {{selectedColor === key ? 'active' : ''}}"
+          bindtap="selectColor"
+          data-color="{{key}}"
+        >
+          <view class="color-preview" style="background-color: {{wuseInfo[key].color}};"></view>
+          <view class="card-content">
+            <text class="color-name">{{wuseInfo[key].name}}</text>
+            <text class="wuxing-name">属{{wuxingData[wuseInfo[key].wuxing].name}}</text>
+            <text class="description">{{wuseInfo[key].description}}</text>
+            <view class="related-info">
+              <text class="info-item">情志：{{wuseInfo[key].emotion}}</text>
+              <text class="info-item">脏腑：{{wuseInfo[key].organ}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部说明区域 -->
+  <view class="footer-container">
+    <view class="footer-content">
+      <text class="footer-text">{{currentDescription}}</text>
+    </view>
+  </view>
+</view>

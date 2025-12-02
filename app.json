@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/game/game",
+    "pages/about/about",
+    "subgames/64Hexagrams/pages/hexagram-list/hexagram-list",
+    "subgames/64Hexagrams/pages/hexagram-detail/hexagram-detail",
+    "subgames/future/index",
+    "subgames/64Hexagrams/index",
+    "subgames/28Stars/index",
+    "subgames/28Stars/pages/constellation-map/constellation-map",
+    "subgames/28Stars/pages/star-matching/star-matching",
+    "subgames/72DreamlandPoetryTravel/index",
+    "subgames/family/index",
+    "subgames/VegetableRootSayings/index",
+    "subgames/WuxingMysteries/index",
+    "subgames/WuxingMysteries/pages/main/index",
+    "subgames/WuxingMysteries/pages/wuxing/index",
+    "subgames/WuxingMysteries/pages/wufang/index",
+    "subgames/WuxingMysteries/pages/wuse/index",
+    "subgames/WuxingMysteries/pages/wuzang/index",
+    "subgames/WuxingMysteries/pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#8B4513",
+    "navigationBarTitleText": "文益互动",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#8B4513",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "益游阁"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序地图功能展示"
+    }
+  },
+  "requiredBackgroundModes": ["location"],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+} 

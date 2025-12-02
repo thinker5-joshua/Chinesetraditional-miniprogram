@@ -1,0 +1,65 @@
+<view class="wuxing-container">
+  <!-- 顶部标题区域 -->
+  <header class="wuxing-header">
+    <view class="header-content">
+      <view class="nav-button" bindtap="goBack">
+        <text class="nav-icon">‹</text>
+        <text class="nav-text">返回</text>
+      </view>
+      <text class="main-title">五方五行</text>
+      <view class="placeholder"></view>
+    </view>
+  </header>
+
+  <!-- 主内容展示区域 -->
+  <view class="content-container">
+    <!-- 五方关联图 -->
+    <view class="chart-container">
+      <view class="chart-header">
+        <text class="chart-title">五方五行图</text>
+        <text class="chart-subtitle">方位与五行的对应关系</text>
+      </view>
+      
+      <view class="diagram-wrapper">
+        <canvas 
+          class="wuxing-canvas" 
+          canvas-id="wufangCanvas"
+          bindtouchstart="onCanvasTouchStart"
+          bindtouchmove="onCanvasTouchMove"
+          bindtouchend="onCanvasTouchEnd"
+        ></canvas>
+      </view>
+
+      <!-- 五方详情卡片 -->
+      <view class="wufang-cards">
+        <view 
+          wx:for="{{['east','south','center','west','north']}}" 
+          wx:key="*this"
+          wx:for-item="key"
+          class="direction-card {{selectedDirection === key ? 'active' : ''}}"
+          bindtap="selectDirection"
+          data-direction="{{key}}"
+        >
+          <view class="card-header" style="background-color: {{wuxingData[wufangInfo[key].wuxing].color}};">
+            <text class="direction-name">{{wufangInfo[key].name}}</text>
+            <text class="wuxing-name">{{wuxingData[wufangInfo[key].wuxing].name}}</text>
+          </view>
+          <view class="card-content">
+            <text class="description">{{wufangInfo[key].description}}</text>
+            <view class="detail-info">
+              <text class="info-item">时间：{{wufangInfo[key].time}}</text>
+              <text class="info-item">生肖：{{wufangInfo[key].animal}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部说明区域 -->
+  <view class="footer-container">
+    <view class="footer-content">
+      <text class="footer-text">{{currentDescription}}</text>
+    </view>
+  </view>
+</view>

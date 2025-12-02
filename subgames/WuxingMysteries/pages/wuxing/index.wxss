@@ -1,0 +1,274 @@
+/* 五行页面样式 - 继承主样式 */
+@import "../../index.wxss";
+
+/* 页面特定样式 */
+.wuxing-header {
+  background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(20,20,20,0.7) 100%);
+  padding: 40rpx 30rpx 30rpx;
+  border-bottom: 2rpx solid rgba(255, 215, 0, 0.3);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700rpx;
+  margin: 0 auto;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 15rpx 20rpx;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1rpx solid rgba(255, 215, 0, 0.3);
+  border-radius: 25rpx;
+  color: #FFD700;
+  font-size: 24rpx;
+  transition: all 0.3s ease;
+}
+
+.nav-button:active {
+  background: rgba(255, 215, 0, 0.2);
+  transform: scale(0.98);
+}
+
+.nav-icon {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.nav-text {
+  font-size: 24rpx;
+}
+
+.placeholder {
+  width: 100rpx;
+}
+
+.main-title {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #FFD700;
+  letter-spacing: 6rpx;
+  text-shadow: 0 0 20rpx rgba(255, 215, 0, 0.5);
+  font-family: 'KaiTi', '楷体', serif;
+}
+
+.content-container {
+  flex: 1;
+  padding: 30rpx 10rpx;
+  max-width: 750rpx;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 图表容器 */
+.chart-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(255, 215, 0, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(5rpx);
+  margin-bottom: 30rpx;
+}
+
+.chart-header {
+  padding: 40rpx 30rpx 30rpx;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255, 215, 0, 0.1) 0%, transparent 100%);
+  border-bottom: 1rpx solid rgba(255, 215, 0, 0.1);
+}
+
+.chart-title {
+  font-size: 42rpx;
+  font-weight: 600;
+  color: #FFD700;
+  margin-bottom: 12rpx;
+  display: block;
+  font-family: 'KaiTi', '楷体', serif;
+  letter-spacing: 4rpx;
+}
+
+.chart-subtitle {
+  font-size: 24rpx;
+  color: #d4d4d4;
+  opacity: 0.8;
+  display: block;
+}
+
+/* 图表包装器 */
+.diagram-wrapper {
+  padding: 30rpx 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wuxing-canvas {
+  width: 650rpx;
+  height: 650rpx;
+  border-radius: 20rpx;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1rpx solid rgba(255, 215, 0, 0.1);
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.5);
+}
+
+/* 图例说明 */
+.legend-container {
+  display: flex;
+  justify-content: center;
+  gap: 40rpx;
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15rpx;
+  border: 1rpx solid rgba(255, 215, 0, 0.1);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.legend-line {
+  width: 40rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+}
+
+.sheng-line {
+  background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+  box-shadow: 0 0 10rpx rgba(76, 175, 80, 0.5);
+}
+
+.ke-line {
+  background: linear-gradient(90deg, transparent, #F44336, transparent);
+  box-shadow: 0 0 10rpx rgba(244, 67, 54, 0.5);
+}
+
+.legend-text {
+  font-size: 24rpx;
+  color: #d4d4d4;
+  font-weight: 500;
+}
+
+/* 五行卡片 */
+.wuxing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  padding: 30rpx;
+  justify-content: center;
+}
+
+.wuxing-card {
+  width: 160rpx;
+  padding: 30rpx 20rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  border-radius: 15rpx;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.wuxing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.wuxing-card.active {
+  transform: translateY(-5rpx) scale(1.05);
+  border-color: #FFD700;
+  box-shadow: 0 15rpx 40rpx rgba(255, 215, 0, 0.3);
+}
+
+.wuxing-card.active::before {
+  opacity: 1;
+}
+
+.card-symbol {
+  font-size: 48rpx;
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.card-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #f4f4f4;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.card-pinyin {
+  font-size: 22rpx;
+  color: #d4d4d4;
+  opacity: 0.8;
+  display: block;
+}
+
+.card-color-bar {
+  height: 4rpx;
+  margin-top: 15rpx;
+  border-radius: 2rpx;
+  transition: all 0.3s ease;
+}
+
+.wuxing-card.active .card-color-bar {
+  height: 6rpx;
+  box-shadow: 0 0 15rpx currentColor;
+}
+
+/* 底部说明区域 */
+.footer-container {
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1rpx solid rgba(255, 215, 0, 0.2);
+  backdrop-filter: blur(10rpx);
+  padding: 30rpx 20rpx;
+}
+
+.footer-content {
+  max-width: 700rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 24rpx;
+  color: #d4d4d4;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* 响应式设计 */
+@media (max-width: 750rpx) {
+  .wuxing-canvas {
+    width: 550rpx;
+    height: 550rpx;
+  }
+  
+  .wuxing-cards {
+    gap: 15rpx;
+  }
+  
+  .wuxing-card {
+    width: 140rpx;
+    padding: 25rpx 15rpx;
+  }
+  
+  .main-title {
+    font-size: 42rpx;
+  }
+}

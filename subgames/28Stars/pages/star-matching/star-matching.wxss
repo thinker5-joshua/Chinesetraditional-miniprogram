@@ -1,0 +1,417 @@
+/* 星宿配对游戏样式 */
+
+.matching-container {
+  min-height: 100vh;
+  padding: 20rpx;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a0833 25%, #0f172a 50%, #1a0d33 75%, #0a0515 100%);
+}
+
+/* 标题区域 */
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(100, 255, 218, 0.3);
+}
+
+.page-title {
+  font-size: 54rpx;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 20rpx rgba(255, 215, 0, 0.5);
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  padding: 18rpx 30rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1rpx solid rgba(100, 255, 218, 0.4);
+  border-radius: 20rpx;
+  color: #64ffda;
+  font-size: 28rpx;
+  transition: all 0.3s ease;
+}
+
+.back-btn:active {
+  background: rgba(100, 255, 218, 0.3);
+  transform: scale(0.95);
+}
+
+.back-icon {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+/* 游戏主体 */
+.game-area {
+  display: flex;
+  gap: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+/* 左侧星宿列表 */
+.stars-section {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 25rpx;
+  border: 1rpx solid rgba(100, 255, 218, 0.2);
+}
+
+.section-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #64ffda;
+  margin-bottom: 25rpx;
+  text-align: center;
+  display: block;
+}
+
+.stars-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+.star-row {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  border-radius: 15rpx;
+  padding: 12rpx;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20rpx;
+  height: 75rpx;
+}
+
+/* 星宿状态样式 */
+.star-row.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  transform: scale(1.05);
+  box-shadow: 0 8rpx 25rpx rgba(102, 126, 234, 0.4);
+  border-width: 3rpx;
+}
+
+.star-row.matched {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* 根据匹配的方位设置不同颜色 */
+.star-row.matched[data-direction="east"] {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.4) 0%, rgba(46, 204, 113, 0.2) 100%);
+  border-color: rgba(46, 204, 113, 0.6);
+}
+
+.star-row.matched[data-direction="south"] {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.4) 0%, rgba(231, 76, 60, 0.2) 100%);
+  border-color: rgba(231, 76, 60, 0.6);
+}
+
+.star-row.matched[data-direction="west"] {
+  background: linear-gradient(135deg, rgba(243, 156, 18, 0.4) 0%, rgba(243, 156, 18, 0.2) 100%);
+  border-color: rgba(243, 156, 18, 0.6);
+}
+
+.star-row.matched[data-direction="north"] {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.4) 0%, rgba(52, 152, 219, 0.2) 100%);
+  border-color: rgba(52, 152, 219, 0.6);
+}
+
+.star-row.error {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.3) 0%, rgba(231, 76, 60, 0.1) 100%);
+  border-color: rgba(231, 76, 60, 0.5);
+}
+
+.star-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  border-radius: 15rpx;
+  padding: 20rpx 15rpx;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.star-row.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  transform: scale(1.05);
+  box-shadow: 0 8rpx 25rpx rgba(102, 126, 234, 0.4);
+  border-width: 3rpx;
+}
+
+.star-symbol {
+  font-size: 44rpx;
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.star-pinyin {
+  font-size: 28rpx;
+  color: #ffffff;
+  font-weight: bold;
+  flex: 1;
+}
+
+/* 右侧四圣兽 */
+.beasts-section {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 25rpx;
+  border: 1rpx solid rgba(100, 255, 218, 0.2);
+}
+
+.beasts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+.beast-row {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  border-radius: 15rpx;
+  padding: 12rpx;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  height: 75rpx;
+}
+
+.beast-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  border-radius: 15rpx;
+  padding: 25rpx 15rpx;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.beast-row.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  transform: scale(1.05);
+  box-shadow: 0 8rpx 25rpx rgba(102, 126, 234, 0.4);
+  border-width: 3rpx;
+}
+
+.beast-icon {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  color: white;
+  flex-shrink: 0;
+}
+
+.beast-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 配对状态 */
+.matching-status {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 25rpx;
+  margin-bottom: 30rpx;
+  border: 1rpx solid rgba(100, 255, 218, 0.2);
+}
+
+.status-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #64ffda;
+  margin-bottom: 20rpx;
+  text-align: center;
+  display: block;
+}
+
+.matched-pairs {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+.matched-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20rpx;
+  padding: 15rpx 25rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid;
+  animation: fadeInScale 0.5s ease;
+}
+
+.matched-item.current {
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.2) 0%, rgba(100, 255, 218, 0.1) 100%);
+  border-color: rgba(100, 255, 218, 0.4);
+}
+
+.matched-item.success {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.2) 0%, rgba(46, 204, 113, 0.1) 100%);
+  border-color: rgba(46, 204, 113, 0.4);
+}
+
+.matched-item.error {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(231, 76, 60, 0.1) 100%);
+  border-color: rgba(231, 76, 60, 0.4);
+  animation: shake 0.5s ease;
+}
+
+.matched-item.error .pair-beast,
+.matched-item.error .pair-star {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.matched-item.error .pair-arrow {
+  font-size: 30rpx;
+  color: #e74c3c;
+  animation: pulse 2s infinite;
+}
+
+.error-message {
+  font-size: 26rpx;
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 10rpx;
+  display: block;
+}
+
+/* 已配对成功列表 */
+.matched-success-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 25rpx;
+  border: 1rpx solid rgba(46, 204, 113, 0.3);
+  margin-top: 20rpx;
+}
+
+.matched-success-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.matched-success-item {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.2) 0%, rgba(46, 204, 113, 0.1) 100%);
+  border: 1rpx solid rgba(46, 204, 113, 0.4);
+  border-radius: 12rpx;
+  padding: 15rpx 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15rpx;
+  animation: fadeInScale 0.3s ease;
+}
+
+.matched-beast {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.matched-arrow {
+  font-size: 34rpx;
+  color: #ffd700;
+}
+
+.matched-star {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #64ffda;
+}
+
+.matched-item.current .pair-beast,
+.matched-item.current .pair-star {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #64ffda;
+}
+
+.matched-item.success .pair-beast,
+.matched-item.success .pair-star {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.matched-item.current .pair-arrow {
+  font-size: 30rpx;
+  color: #64ffda;
+  animation: pulse 2s infinite;
+}
+
+.matched-item.success .pair-arrow {
+  font-size: 30rpx;
+  color: #2ecc71;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+
+
+
+
+/* 动画效果 */
+@keyframes fadeInScale {
+  from { 
+    opacity: 0; 
+    transform: scale(0.8); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+
+
+
+
+/* 响应式设计 */
+@media screen and (max-width: 750rpx) {
+  .game-area {
+    flex-direction: column;
+    gap: 20rpx;
+  }
+  
+  .stars-grid, .beasts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .rhymes-scroll {
+    max-height: 150rpx;
+  }
+}

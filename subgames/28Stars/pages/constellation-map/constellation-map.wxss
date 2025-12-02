@@ -1,0 +1,423 @@
+/* 星象图页面样式 */
+
+.constellation-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0515 0%, #1a0f2a 50%, #0a0515 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 标题区域 */
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(100, 255, 218, 0.3);
+  margin: 20rpx;
+  position: relative;
+  z-index: 10;
+}
+
+.page-title {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #64ffda;
+  text-shadow: 0 0 20rpx rgba(100, 255, 218, 0.6);
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 14rpx 25rpx;
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.3), rgba(0, 255, 255, 0.2));
+  border: 2rpx solid #64ffda;
+  border-radius: 20rpx;
+  color: #64ffda;
+  font-size: 24rpx;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4rpx 15rpx rgba(100, 255, 218, 0.3);
+  margin-left: auto;
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.4), rgba(0, 255, 255, 0.3));
+  box-shadow: 0 6rpx 20rpx rgba(100, 255, 218, 0.5);
+  transform: scale(1.05);
+}
+
+/* 星象图画布 - 核心容器 */
+.constellation-canvas {
+  position: relative;
+  margin: 20rpx;
+  background: radial-gradient(circle at center, rgba(16, 23, 42, 0.8) 0%, rgba(10, 10, 42, 0.9) 100%);
+  border-radius: 30rpx;
+  overflow: hidden;
+  border: 2rpx solid rgba(100, 255, 218, 0.2);
+  min-height: 600rpx;
+  width: calc(100% - 40rpx);
+  height: calc(100vh - 200rpx);
+}
+
+/* 背景星空 */
+.starry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2rpx 2rpx at 20% 20%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2rpx 2rpx at 80% 30%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2rpx 2rpx at 30% 70%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(2rpx 2rpx at 70% 60%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(2rpx 2rpx at 40% 80%, rgba(255, 255, 255, 0.8), transparent);
+  background-size: 300rpx 300rpx, 400rpx 400rpx, 250rpx 250rpx, 350rpx 350rpx, 300rpx 300rpx;
+  animation: twinkle 8s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+
+
+/* 星宿层 */
+.stars-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+}
+
+.constellation-star {
+  position: absolute !important;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  z-index: 30;
+}
+
+.star-core {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 10;
+}
+
+/* 闪烁状态的星宿 */
+.star-core.flashing {
+  animation: starFlash 1s ease-in-out infinite;
+}
+
+@keyframes starFlash {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1) saturate(1);
+    box-shadow: 0 0 20rpx rgba(255, 255, 255, 0.3);
+  }
+  25% {
+    transform: scale(1.15);
+    filter: brightness(1.3) saturate(1.2);
+    box-shadow: 0 0 30rpx rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    transform: scale(1.3);
+    filter: brightness(1.8) saturate(1.5);
+    box-shadow: 0 0 60rpx currentColor, 0 0 100rpx rgba(255, 255, 255, 0.8), 0 0 150rpx rgba(255, 255, 255, 0.4);
+  }
+  75% {
+    transform: scale(1.15);
+    filter: brightness(1.3) saturate(1.2);
+    box-shadow: 0 0 30rpx rgba(255, 255, 255, 0.6);
+  }
+}
+
+.star-symbol {
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.star-name {
+  font-size: 20rpx;
+  color: #ffffff;
+  margin-top: 6rpx;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 8rpx rgba(255, 255, 255, 0.4);
+}
+
+.star-name-large {
+  font-size: 42rpx;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  /* 使用黑色边框提高可读性 */
+  text-shadow: 
+    -1rpx -1rpx 0 #000000,
+    1rpx -1rpx 0 #000000,
+    -1rpx 1rpx 0 #000000,
+    1rpx 1rpx 0 #000000,
+    0 0 6rpx rgba(255, 255, 255, 0.7);
+}
+
+.star-animal {
+  font-size: 18rpx;
+  color: #f39c12;
+  margin-top: 3rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 东方青龙星宿样式 */
+.east-star .star-core {
+  background: linear-gradient(135deg, #00ff88, #00cc66);
+  box-shadow: 0 0 30rpx rgba(0, 255, 136, 0.8), 0 0 60rpx rgba(0, 255, 136, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 0.8);
+}
+
+.east-star:hover .star-core {
+  background: linear-gradient(135deg, #00ff99, #00aa77);
+  box-shadow: 0 0 40rpx rgba(0, 255, 153, 0.9), 0 0 80rpx rgba(0, 255, 153, 0.5);
+  transform: scale(1.1);
+}
+
+/* 南方朱雀星宿样式 */
+.south-star .star-core {
+  background: linear-gradient(135deg, #ff6666, #cc3333);
+  box-shadow: 0 0 30rpx rgba(255, 102, 102, 0.8), 0 0 60rpx rgba(255, 102, 102, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 0.8);
+}
+
+.south-star:hover .star-core {
+  background: linear-gradient(135deg, #ff7777, #dd4444);
+  box-shadow: 0 0 40rpx rgba(255, 119, 119, 0.9), 0 0 80rpx rgba(255, 119, 119, 0.5);
+  transform: scale(1.1);
+}
+
+/* 西方白虎星宿样式 */
+.west-star .star-core {
+  background: linear-gradient(135deg, #ffcc66, #cc9933);
+  box-shadow: 0 0 30rpx rgba(255, 204, 102, 0.8), 0 0 60rpx rgba(255, 204, 102, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 0.8);
+}
+
+.west-star:hover .star-core {
+  background: linear-gradient(135deg, #ffdd77, #ddaa44);
+  box-shadow: 0 0 40rpx rgba(255, 221, 119, 0.9), 0 0 80rpx rgba(255, 221, 119, 0.5);
+  transform: scale(1.1);
+}
+
+/* 北方玄武星宿样式 */
+.north-star .star-core {
+  background: linear-gradient(135deg, #6699ff, #3366cc);
+  box-shadow: 0 0 30rpx rgba(102, 153, 255, 0.8), 0 0 60rpx rgba(102, 153, 255, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 0.8);
+}
+
+.north-star:hover .star-core {
+  background: linear-gradient(135deg, #77aaff, #4477dd);
+  box-shadow: 0 0 40rpx rgba(119, 170, 255, 0.9), 0 0 80rpx rgba(119, 170, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* 星宿说明 */
+.star-details {
+  position: absolute;
+  bottom: 120rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  border: 1rpx solid rgba(100, 255, 218, 0.5);
+  border-radius: 20rpx;
+  padding: 20rpx;
+  width: 80%;
+  max-width: 600rpx;
+  z-index: 100;
+  backdrop-filter: blur(10rpx);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 15rpx;
+  margin-bottom: 15rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 1rpx solid rgba(100, 255, 218, 0.3);
+}
+
+.detail-symbol {
+  width: 80rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #64ffda, #00ffff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #0a0515;
+}
+
+.detail-name {
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #64ffda;
+}
+
+.detail-pinyin {
+  font-size: 28rpx;
+  color: #f39c12;
+  font-style: italic;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.detail-animal {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.detail-meaning {
+  font-size: 26rpx;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* 左右切换箭头 */
+.navigation-arrows {
+  position: absolute;
+  bottom: 60rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 60rpx;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.arrow-btn {
+  width: 50rpx;
+  height: 50rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1rpx solid rgba(100, 255, 218, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  pointer-events: auto;
+  backdrop-filter: blur(5rpx);
+}
+
+.arrow-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1rpx solid rgba(100, 255, 218, 0.5);
+  transform: scale(1.1);
+}
+
+.arrow-btn:active {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1rpx solid rgba(100, 255, 218, 0.6);
+  transform: scale(0.95);
+}
+
+.arrow-btn::after {
+  border: none;
+}
+
+.arrow-icon {
+  display: block;
+  font-size: 48rpx;
+  filter: drop-shadow(0 0 8rpx rgba(100, 255, 218, 0.8));
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 750rpx) {
+  .constellation-star {
+    width: 80rpx;
+    height: 80rpx;
+  }
+  
+  .star-core {
+    width: 50rpx;
+    height: 50rpx;
+    font-size: 20rpx;
+  }
+  
+  .star-name {
+    font-size: 16rpx;
+  }
+  
+  .star-animal {
+    font-size: 12rpx;
+  }
+}
+
+@media screen and (max-width: 500rpx) {
+  .direction-info {
+    flex-direction: column;
+    gap: 15rpx;
+    padding: 15rpx;
+  }
+  
+  .direction-char {
+    font-size: 40rpx;
+    width: 60rpx;
+    height: 60rpx;
+  }
+  
+  .direction-name {
+    font-size: 24rpx;
+  }
+  
+  .constellation-star {
+    width: 60rpx;
+    height: 60rpx;
+  }
+  
+  .star-core {
+    width: 40rpx;
+    height: 40rpx;
+    font-size: 16rpx;
+  }
+  
+  .star-name {
+    font-size: 14rpx;
+  }
+  
+  .star-animal {
+    font-size: 10rpx;
+  }
+}

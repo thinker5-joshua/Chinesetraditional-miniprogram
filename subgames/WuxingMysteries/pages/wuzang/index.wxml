@@ -1,0 +1,66 @@
+<view class="wuxing-container">
+  <!-- 顶部标题区域 -->
+  <header class="wuxing-header">
+    <view class="header-content">
+      <view class="nav-button" bindtap="goBack">
+        <text class="nav-icon">‹</text>
+        <text class="nav-text">返回</text>
+      </view>
+      <text class="main-title">五脏五行</text>
+      <view class="placeholder"></view>
+    </view>
+  </header>
+
+  <!-- 主内容展示区域 -->
+  <view class="content-container">
+    <!-- 五脏关联图 -->
+    <view class="chart-container">
+      <view class="chart-header">
+        <text class="chart-title">五脏五行图</text>
+        <text class="chart-subtitle">脏腑与五行的对应关系</text>
+      </view>
+      
+      <view class="diagram-wrapper">
+        <canvas 
+          class="wuxing-canvas" 
+          canvas-id="wuzangCanvas"
+          bindtouchstart="onCanvasTouchStart"
+          bindtouchmove="onCanvasTouchMove"
+          bindtouchend="onCanvasTouchEnd"
+        ></canvas>
+      </view>
+
+      <!-- 五脏详情卡片 -->
+      <view class="wuzang-cards">
+        <view 
+          wx:for="{{['liver','heart','spleen','lung','kidney']}}" 
+          wx:key="*this"
+          wx:for-item="key"
+          class="organ-card {{selectedOrgan === key ? 'active' : ''}}"
+          bindtap="selectOrgan"
+          data-organ="{{key}}"
+        >
+          <view class="card-header" style="background-color: {{wuxingData[wuzangInfo[key].wuxing].color}};">
+            <text class="organ-name">{{wuzangInfo[key].name}}</text>
+            <text class="wuxing-name">属{{wuxingData[wuzangInfo[key].wuxing].name}}</text>
+          </view>
+          <view class="card-content">
+            <text class="description">{{wuzangInfo[key].description}}</text>
+            <view class="detail-info">
+              <text class="info-item">功能：{{wuzangInfo[key].function}}</text>
+              <text class="info-item">情志：{{wuzangInfo[key].emotion}}</text>
+              <text class="info-item">症状：{{wuzangInfo[key].symptom}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部说明区域 -->
+  <view class="footer-container">
+    <view class="footer-content">
+      <text class="footer-text">{{currentDescription}}</text>
+    </view>
+  </view>
+</view>

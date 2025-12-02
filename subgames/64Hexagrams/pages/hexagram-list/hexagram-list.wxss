@@ -1,0 +1,344 @@
+/* 基础样式 */
+page {
+  font-family: "SimSun", "STSong", "Noto Serif SC", serif;
+  background: linear-gradient(135deg, #f5f1e9 0%, #e8dfd2 50%, #f5f1e9 100%);
+  color: #3a2c1e;
+  line-height: 1.6;
+  position: relative;
+}
+
+page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(205, 133, 63, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(218, 165, 32, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, rgba(211, 199, 167, 0.4), rgba(205, 133, 63, 0.3));
+  border: 3px solid #b8a57e;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 28px;
+  color: #8b4513;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  display: block;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #6d4c41;
+  letter-spacing: 1px;
+  display: block;
+  line-height: 1.5;
+}
+
+/* 分组方式选择 */
+.mode-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  border: 1px solid #b8a57e;
+  box-shadow: 0 2px 6px rgba(139, 69, 19, 0.1);
+}
+
+.mode-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #8b4513;
+}
+
+.mode-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.mode-button {
+  background-color: #f5f5f5;
+  color: #6d4c41;
+  border: 1px solid #b8a57e;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "SimSun", "STSong", serif;
+  white-space: nowrap;
+}
+
+.mode-button.active {
+  background-color: #8b4513;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(139, 69, 19, 0.3);
+}
+
+.mode-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(139, 69, 19, 0.25);
+}
+
+/* 组信息 */
+.group-info {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: rgba(211, 199, 167, 0.2);
+  border-radius: 10px;
+  border: 2px solid rgba(184, 165, 126, 0.3);
+}
+
+.group-title {
+  font-size: 20px;
+  color: #8b4513;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.group-subtitle {
+  font-size: 14px;
+  color: #6d4c41;
+  display: block;
+  font-style: italic;
+}
+
+/* 卦象网格 */
+.hexagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  border: 3px solid #b8a57e;
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.hexagram-item {
+  background: linear-gradient(145deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
+  border: 2px solid #b8a57e;
+  border-radius: 12px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hexagram-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(218, 165, 32, 0.05) 0%, transparent 70%);
+  transition: all 0.6s ease;
+}
+
+.hexagram-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+  border-color: #8b4513;
+}
+
+.hexagram-item:hover::before {
+  background: radial-gradient(circle, rgba(139, 69, 19, 0.1) 0%, transparent 70%);
+}
+
+.hexagram-symbol {
+  font-size: 55px;
+  margin: 0 0 8px 0;
+  font-family: "SimSun", monospace;
+  line-height: 1;
+  letter-spacing: 1px;
+  display: block;
+  color: #2c3e50;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+
+.hexagram-name {
+  font-size: 17px;
+  font-weight: bold;
+  color: #8b4513;
+  margin: 4px 0 2px 0;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+.hexagram-pinyin {
+  font-size: 13px;
+  color: #6d4c41;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: block;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* 翻页控制 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  border: 2px solid #b8a57e;
+}
+
+.pagination-button {
+  background-color: #8b4513;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "SimSun", "STSong", serif;
+}
+
+.pagination-button.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pagination-button:not(.disabled):hover {
+  background-color: #cd853f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.page-indicator {
+  font-size: 16px;
+  font-weight: bold;
+  color: #8b4513;
+  padding: 10px 15px;
+  background-color: rgba(211, 199, 167, 0.2);
+  border-radius: 6px;
+}
+
+/* 返回按钮 */
+.back-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.back-button {
+  background-color: #8b4513;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "SimSun", "STSong", serif;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.back-button:hover {
+  background-color: #cd853f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .hexagram-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+    padding: 8px;
+  }
+  
+  .hexagram-item {
+    padding: 12px 8px;
+  }
+  
+  .hexagram-symbol {
+    font-size: 42px;
+  }
+  
+  .hexagram-name {
+    font-size: 15px;
+  }
+  
+  .hexagram-pinyin {
+    font-size: 11px;
+  }
+  
+  .mode-selector {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .mode-label {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hexagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 6px;
+  }
+  
+  .hexagram-item {
+    padding: 10px 6px;
+  }
+  
+  .hexagram-symbol {
+    font-size: 38px;
+  }
+  
+  .hexagram-name {
+    font-size: 14px;
+  }
+  
+  .hexagram-pinyin {
+    font-size: 10px;
+  }
+}

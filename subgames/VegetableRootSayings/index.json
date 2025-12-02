@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "菜根谭",
+  "navigationBarBackgroundColor": "#8b4513",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f5f5f0",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "navigationStyle": "default"
+}

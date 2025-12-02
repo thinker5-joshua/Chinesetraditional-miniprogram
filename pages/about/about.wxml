@@ -1,0 +1,124 @@
+<view class="about-container">
+  <!-- 页面头部 -->
+  <view class="about-header">
+    <view class="header-content">
+      <text class="main-title">文益互动</text>
+      <text class="sub-title">传统文化益智互动群落</text>
+    </view>
+  </view>
+
+  <!-- 关于我们部分 -->
+  <view class="content-section">
+    <view class="section-title">
+      <text class="title-icon">📖</text>
+      <text class="title-text">关于我们</text>
+    </view>
+    <view class="content-card">
+      <text class="content-text">本平台致力于通过问答互动体验的方式传承和弘扬中国传统文化，让用户在轻松愉快的氛围中学习和体验中华传统智慧。</text>
+      <text class="content-text">我们将持续开发更多融合传统文化元素的益智互动体验板块，敬请关注！</text>
+    </view>
+  </view>
+
+  <!-- 特色功能 -->
+  <view class="content-section">
+    <view class="section-title">
+      <text class="title-icon">✨</text>
+      <text class="title-text">特色功能</text>
+    </view>
+    <view class="feature-grid">
+      <view class="feature-item">
+        <view class="feature-icon">🎯</view>
+        <text class="feature-title">益智互动</text>
+        <text class="feature-desc">寓教于乐的学习方式</text>
+      </view>
+      <view class="feature-item">
+        <view class="feature-icon">📚</view>
+        <text class="feature-title">文化传承</text>
+        <text class="feature-desc">深度挖掘传统文化</text>
+      </view>
+      <view class="feature-item">
+        <view class="feature-icon">🎮</view>
+        <text class="feature-title">互动体验</text>
+        <text class="feature-desc">轻松愉快的互动</text>
+      </view>
+      <view class="feature-item">
+        <view class="feature-icon">🏆</view>
+        <text class="feature-title">成就系统</text>
+        <text class="feature-desc">记录学习成长历程</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 游戏列表 -->
+  <view class="content-section">
+    <view class="section-title">
+      <text class="title-icon">🎪</text>
+      <text class="title-text">精品体验</text>
+    </view>
+    <view class="game-list">
+      <view class="game-item">
+        <view class="game-icon yijing-icon">易</view>
+        <view class="game-info">
+          <text class="game-name">易经六十四卦学习</text>
+          <text class="game-desc">通过配对体验学习易经六十四卦，了解中国传统哲学思想</text>
+        </view>
+      </view>
+      <view class="game-item">
+        <view class="game-icon chengyu-icon">语</view>
+        <view class="game-info">
+          <text class="game-name">成语消除</text>
+          <text class="game-desc">选择两个字块组合成四字成语，提升语言表达能力</text>
+        </view>
+      </view>
+      <view class="game-item">
+        <view class="game-icon star-icon">星</view>
+        <view class="game-info">
+          <text class="game-name">二十八星宿探秘</text>
+          <text class="game-desc">探索中国古代天文学中的二十八宿，了解四大神兽守护的星空奥秘</text>
+        </view>
+      </view>
+      <view class="game-item">
+        <view class="game-icon poetry-icon">诗</view>
+        <view class="game-info">
+          <text class="game-name">七十二洞天诗意旅行</text>
+          <text class="game-desc">穿越诗词，探索中国最美的72处胜地，感受传统文化的魅力</text>
+        </view>
+      </view>
+      <view class="game-item">
+        <view class="game-icon wuxing-icon">五</view>
+        <view class="game-info">
+          <text class="game-name">五行奥秘</text>
+          <text class="game-desc">探索中国传统哲学中五行的生克关系，了解五行与万物的对应规律</text>
+        </view>
+      </view>
+      <view class="game-item">
+        <view class="game-icon root-icon">根</view>
+        <view class="game-info">
+          <text class="game-name">菜根潭摘录</text>
+          <text class="game-desc">品味《菜根谭》智慧箴言，学习明代洪应明的处世哲学</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 联系我们 -->
+  <view class="content-section">
+    <view class="section-title">
+      <text class="title-icon">📧</text>
+      <text class="title-text">联系我们</text>
+    </view>
+    <view class="content-card">
+      <text class="content-text">感谢您使用文益互动！如有任何建议或问题，欢迎与我们联系。</text>
+      <view class="contact-info">
+        <text class="contact-item">📧 邮箱：thinker5@126.com</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 版本信息 -->
+  <view class="footer">
+    <text class="footer-text">© 2025 文益互动 - 传统文化益智互动群落</text>
+    <text class="footer-text">传承中华文化，寓教于乐</text>
+    <text class="version-text">版本 v1.0.0</text>
+  </view>
+</view>

@@ -1,0 +1,643 @@
+/* 家族谱系探索页面样式 */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 头部控制区 */
+.header-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.game-title {
+  color: white;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-bottom: 20rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+}
+
+.control-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20rpx;
+}
+
+/* 视角切换 */
+.perspective-switch {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25rpx;
+  padding: 8rpx;
+}
+
+.switch-label {
+  color: white;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.switch-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 12rpx 24rpx;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.switch-btn.active {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  transform: scale(1.05);
+}
+
+.switch-btn::after {
+  border: none;
+}
+
+/* 缩放控制 */
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 15rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25rpx;
+  padding: 8rpx 15rpx;
+}
+
+.zoom-btn {
+  width: 50rpx;
+  height: 50rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 25rpx;
+  color: white;
+  font-size: 24rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.zoom-btn:active {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0.95);
+}
+
+.zoom-btn.reset-btn {
+  width: auto;
+  padding: 0 20rpx;
+  font-size: 20rpx;
+}
+
+.zoom-btn::after {
+  border: none;
+}
+
+.zoom-level {
+  color: white;
+  font-size: 24rpx;
+  font-weight: bold;
+  min-width: 80rpx;
+  text-align: center;
+}
+
+/* 家族树画布容器 */
+.tree-canvas-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.tree-scroll {
+  width: 100%;
+  height: 100%;
+}
+
+.tree-canvas {
+  position: relative;
+  transform-origin: center center;
+  transition: transform 0.1s ease-out;
+}
+
+/* 连接线层 */
+.connections-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.connection {
+  position: absolute;
+  background: #ddd;
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.connection.spouse {
+  background: #ff6b6b;
+  height: 3rpx;
+}
+
+.connection.parent {
+  background: #4ecdc4;
+  height: 2rpx;
+}
+
+/* 家族成员 */
+.family-members {
+  position: relative;
+  z-index: 2;
+}
+
+.family-node {
+  position: absolute;
+  width: 200rpx;
+  background: white;
+  border-radius: 15rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.1);
+  padding: 15rpx;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3rpx solid transparent;
+}
+
+.family-node:hover {
+  transform: translateY(-5rpx);
+  box-shadow: 0 8rpx 25rpx rgba(0, 0, 0, 0.15);
+}
+
+.family-node.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+  transform: scale(1.05);
+}
+
+.family-node.male {
+  border-left: 8rpx solid #4ecdc4;
+}
+
+.family-node.female {
+  border-left: 8rpx solid #ff6b6b;
+}
+
+.family-node.husband-side {
+  opacity: 0.7;
+}
+
+/* 节点头像 */
+.node-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+}
+
+.node-avatar.male {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a3aa 100%);
+}
+
+.node-avatar.female {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.avatar-text {
+  font-size: 24rpx;
+}
+
+/* 节点信息 */
+.node-info {
+  text-align: center;
+}
+
+.node-name {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5rpx;
+}
+
+.node-relation {
+  font-size: 22rpx;
+  color: #666;
+  display: block;
+}
+
+/* 配偶指示器 */
+.spouse-indicator {
+  position: absolute;
+  top: 50%;
+  right: -30rpx;
+  width: 20rpx;
+  height: 2rpx;
+  background: #ff6b6b;
+  transform: translateY(-50%);
+}
+
+.spouse-indicator::after {
+  content: '';
+  position: absolute;
+  right: -5rpx;
+  top: -4rpx;
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid #ff6b6b;
+  border-top: 5rpx solid transparent;
+  border-bottom: 5rpx solid transparent;
+}
+
+/* 关系详情弹窗 */
+.relation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.relation-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5rpx);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin: 40rpx;
+  max-width: 600rpx;
+  width: calc(100% - 80rpx);
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.relation-modal.show .modal-content {
+  transform: scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.modal-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.close-btn {
+  width: 60rpx;
+  height: 60rpx;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  font-size: 32rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-btn:active {
+  background: #e0e0e0;
+  transform: scale(0.95);
+}
+
+.close-btn::after {
+  border: none;
+}
+
+/* 选中成员显示 */
+.selected-members {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30rpx;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background: #f8f9fa;
+  border-radius: 15rpx;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.member-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.1);
+}
+
+.member-avatar.male {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a3aa 100%);
+}
+
+.member-avatar.female {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.member-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  max-width: 120rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.relation-arrow {
+  font-size: 48rpx;
+  color: #667eea;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* 关系详情 */
+.relation-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.relation-item {
+  padding: 15rpx;
+  background: #f8f9fa;
+  border-radius: 10rpx;
+  border-left: 4rpx solid #667eea;
+}
+
+.relation-label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.relation-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.relation-value.highlight {
+  color: #667eea;
+  font-size: 36rpx;
+}
+
+/* 弹窗操作按钮 */
+.modal-actions {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 30rpx;
+  padding-top: 20rpx;
+  border-top: 2rpx solid #f0f0f0;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 20rpx;
+  border: none;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.action-btn.primary:active {
+  transform: scale(0.98);
+}
+
+.action-btn.secondary {
+  background: #f5f5f5;
+  color: #666;
+  border: 2rpx solid #e0e0e0;
+}
+
+.action-btn.secondary:active {
+  background: #e8e8e8;
+}
+
+.action-btn::after {
+  border: none;
+}
+
+/* 帮助面板 */
+.help-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.help-panel.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.help-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.help-content {
+  position: relative;
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin: 40rpx;
+  max-width: 500rpx;
+  width: calc(100% - 80rpx);
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.help-panel.show .help-content {
+  transform: scale(1);
+}
+
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.help-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.help-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+.help-item {
+  display: flex;
+  align-items: center;
+  gap: 15rpx;
+  padding: 15rpx;
+  background: #f8f9fa;
+  border-radius: 10rpx;
+}
+
+.help-icon {
+  font-size: 32rpx;
+  min-width: 40rpx;
+  text-align: center;
+}
+
+.help-text {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* 帮助按钮 */
+.help-btn {
+  position: fixed;
+  bottom: 30rpx;
+  right: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 36rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 20rpx rgba(102, 126, 234, 0.4);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.help-btn:active {
+  transform: scale(0.95);
+}
+
+.help-btn::after {
+  border: none;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 750rpx) {
+  .control-panel {
+    flex-direction: column;
+    gap: 15rpx;
+  }
+  
+  .family-node {
+    width: 160rpx;
+    padding: 12rpx;
+  }
+  
+  .node-name {
+    font-size: 24rpx;
+  }
+  
+  .node-relation {
+    font-size: 20rpx;
+  }
+  
+  .selected-members {
+    flex-direction: column;
+    gap: 20rpx;
+  }
+  
+  .relation-arrow {
+    transform: rotate(90deg);
+  }
+}

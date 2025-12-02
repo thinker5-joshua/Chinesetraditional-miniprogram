@@ -1,0 +1,92 @@
+<view class="matching-container">
+  <!-- 标题 -->
+  <view class="header-section">
+    <text class="page-title">星宿配对</text>
+    <button class="back-btn" bindtap="goBack">
+      <text class="back-icon">←</text>
+      <text>返回</text>
+    </button>
+  </view>
+
+  <!-- 游戏主体 -->
+  <view class="game-area">
+    <!-- 星宿 -->
+    <view class="stars-section">
+      <text class="section-title">星宿</text>
+      <view class="stars-grid">
+        <view 
+          wx:for="{{displayStars}}" 
+          wx:key="id"
+          wx:for-index="index"
+          wx:for-item="item"
+          class="star-row {{item.status}}"
+          bindtap="selectStar" 
+          data-star="{{item}}"
+          data-direction="{{item.matchedDirection}}">
+          <view class="star-symbol">{{item.symbol}}</view>
+          <text class="star-pinyin">{{item.pinyin}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 右侧四圣兽 -->
+    <view class="beasts-section">
+      <text class="section-title">四圣兽</text>
+      <view class="beasts-grid">
+        <view 
+          wx:for="{{fourBeasts}}" 
+          wx:key="key"
+          wx:for-index="index"
+          wx:for-item="item"
+          class="beast-row {{selectedBeast && selectedBeast.key === item.key ? 'selected' : ''}}"
+          bindtap="selectBeast" 
+          data-beast="{{item}}">
+          <view class="beast-icon" style="background-color: {{item.color}};">
+            {{item.icon}}
+          </view>
+          <text class="beast-name">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 配对状态 -->
+  <view class="matching-status">
+    <text class="status-title">配对状态</text>
+    <!-- 配对成功时显示配对的一对 -->
+    <view class="matched-pairs" wx:if="{{currentMatch && currentMatch.success}}">
+      <view class="matched-item success">
+        <text class="pair-beast">{{currentMatch.beast.icon}} {{currentMatch.beast.name}}</text>
+        <text class="pair-arrow">⇄</text>
+        <text class="pair-star">{{currentMatch.star.symbol}}</text>
+      </view>
+    </view>
+    
+    <!-- 配对不成功时用不同颜色显示配错的一对 -->
+    <view class="matched-pairs" wx:if="{{currentMatch && !currentMatch.success}}">
+      <view class="matched-item error">
+        <text class="pair-beast">{{currentMatch.beast.icon}} {{currentMatch.beast.name}}</text>
+        <text class="pair-arrow">⇄</text>
+        <text class="pair-star">{{currentMatch.star.symbol}}</text>
+      </view>
+      <text class="error-message">配对未成功</text>
+    </view>
+  </view>
+
+  <!-- 已配对成功列表 -->
+  <view class="matched-success-section">
+    <text class="status-title">已配对</text>
+    <view class="matched-success-list">
+      <view 
+        wx:for="{{matchedPairs}}" 
+        wx:key="id"
+        wx:for-index="index"
+        wx:for-item="item"
+        class="matched-success-item">
+        <text class="matched-star">{{item.star.name}}</text>
+        <text class="matched-arrow">→</text>
+        <text class="matched-beast">{{item.beast.icon}} {{item.beast.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

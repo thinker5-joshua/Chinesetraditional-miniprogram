@@ -1,0 +1,52 @@
+<view class="constellation-container">
+  <!-- 标题区域 -->
+  <view class="header-section">
+    <text class="page-title">{{directionName}}</text>
+    <button class="back-btn" bindtap="goBack">← 返回</button>
+  </view>
+
+  <!-- 星象图容器 -->
+  <view class="constellation-canvas">
+    <!-- 背景星空 -->
+    <view class="starry-background"></view>
+    
+    <!-- 星宿层 -->
+    <view class="stars-layer">
+      <block wx:for="{{currentStars}}" wx:key="id">
+        <view 
+          class="constellation-star {{direction}}-star"
+          style="{{item.style}}"
+          bindtap="selectStar" data-star="{{item}}">
+          <view class="star-core {{item.isFlashing ? 'flashing' : ''}}">
+            <text class="star-name-large">{{item.name}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+
+  </view>
+
+  <!-- 星宿说明 -->
+  <view class="star-details" wx:if="{{selectedStar}}">
+    <view class="detail-header">
+      <text class="detail-symbol">{{selectedStar.symbol}}</text>
+      <text class="detail-name">{{selectedStar.name}}</text>
+      <text class="detail-pinyin">{{selectedStar.pinyin}}</text>
+    </view>
+    <view class="detail-content">
+      <text class="detail-animal">{{selectedStar.animal}}</text>
+      <text class="detail-meaning">{{selectedStar.meaning}}</text>
+    </view>
+  </view>
+
+  <!-- 左右切换箭头 -->
+  <view class="navigation-arrows">
+    <button class="arrow-btn left-arrow" bindtap="switchDirection" data-direction="prev">
+      <text class="arrow-icon">⬅️</text>
+    </button>
+    <button class="arrow-btn right-arrow" bindtap="switchDirection" data-direction="next">
+      <text class="arrow-icon">➡️</text>
+    </button>
+  </view>
+</view>

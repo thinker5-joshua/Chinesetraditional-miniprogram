@@ -1,0 +1,150 @@
+<view class="container">
+  <!-- 游戏标题和控制区 -->
+  <view class="header-section">
+    <text class="game-title">家族谱系探索</text>
+    <view class="control-panel">
+      <view class="perspective-switch">
+        <text class="switch-label">我是：</text>
+        <button class="switch-btn {{perspective === 'husband' ? 'active' : ''}}" 
+                bindtap="switchPerspective" data-perspective="husband">夫</button>
+        <button class="switch-btn {{perspective === 'wife' ? 'active' : ''}}" 
+                bindtap="switchPerspective" data-perspective="wife">妻</button>
+      </view>
+      <view class="zoom-controls">
+        <button class="zoom-btn" bindtap="zoomIn">+</button>
+        <text class="zoom-level">{{Math.round(scale * 100)}}%</text>
+        <button class="zoom-btn" bindtap="zoomOut">-</button>
+        <button class="zoom-btn reset-btn" bindtap="resetView">重置</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 家族树画布 -->
+  <view class="tree-canvas-container">
+    <scroll-view class="tree-scroll" 
+                scroll-x="{{true}}" 
+                scroll-y="{{true}}"
+                enable-flex="{{true}}"
+                style="width: 100%; height: 100%;">
+      <view class="tree-canvas" 
+            style="width: {{canvasWidth}}px; height: {{canvasHeight}}px; transform: scale({{scale}}) translate({{translateX}}px, {{translateY}}px);"
+            bindtouchstart="onCanvasTouchStart"
+            bindtouchmove="onCanvasTouchMove"
+            bindtouchend="onCanvasTouchEnd">
+        
+        <!-- 连接线 -->
+        <view class="connections-layer">
+          <view wx:for="{{connections}}" wx:key="id" 
+                class="connection {{item.type}}"
+                style="left: {{item.x1}}px; top: {{item.y1}}px; width: {{item.width}}px; height: {{item.height}}px; transform: rotate({{item.angle}}deg);"></view>
+        </view>
+        
+        <!-- 家族成员节点 -->
+        <view class="family-members">
+          <view wx:for="{{familyMembers}}" wx:key="id" 
+                class="family-node {{item.gender}} {{item.selected ? 'selected' : ''}} {{perspective === 'wife' && item.isFromHusbandSide ? 'husband-side' : ''}}"
+                style="left: {{item.x}}px; top: {{item.y}}px;"
+                bindtap="selectMember" data-member-id="{{item.id}}">
+            
+            <view class="node-avatar {{item.gender}}">
+              <text class="avatar-text">{{item.gender === 'male' ? '👨' : '👩'}}</text>
+            </view>
+            
+            <view class="node-info">
+              <text class="node-name">{{item.displayName || item.name}}</text>
+              <text class="node-relation">{{item.relationFromPerspective}}</text>
+            </view>
+            
+            <!-- 配偶连接指示器 -->
+            <view wx:if="{{item.spouseId}}" class="spouse-indicator"></view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 关系详情弹窗 -->
+  <view class="relation-modal {{showRelationModal ? 'show' : ''}}" wx:if="{{showRelationModal}}">
+    <view class="modal-overlay" bindtap="closeRelationModal"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">关系分析</text>
+        <button class="close-btn" bindtap="closeRelationModal">×</button>
+      </view>
+      
+      <view class="relation-result">
+        <view class="selected-members">
+          <view class="member-card">
+            <view class="member-avatar {{selectedMembers[0].gender}}">
+              <text>{{selectedMembers[0].gender === 'male' ? '👨' : '👩'}}</text>
+            </view>
+            <text class="member-name">{{selectedMembers[0].displayName || selectedMembers[0].name}}</text>
+          </view>
+          
+          <view class="relation-arrow">⇄</view>
+          
+          <view class="member-card">
+            <view class="member-avatar {{selectedMembers[1].gender}}">
+              <text>{{selectedMembers[1].gender === 'male' ? '👨' : '👩'}}</text>
+            </view>
+            <text class="member-name">{{selectedMembers[1].displayName || selectedMembers[1].name}}</text>
+          </view>
+        </view>
+        
+        <view class="relation-details">
+          <view class="relation-item">
+            <text class="relation-label">关系类型：</text>
+            <text class="relation-value">{{relationResult.relationship}}</text>
+          </view>
+          
+          <view class="relation-item">
+            <text class="relation-label">{{selectedMembers[1].displayName || selectedMembers[1].name}} 应该称呼 {{selectedMembers[0].displayName || selectedMembers[0].name}} 为：</text>
+            <text class="relation-value highlight">{{relationResult.person2ToPerson1}}</text>
+          </view>
+          
+          <view class="relation-item">
+            <text class="relation-label">{{selectedMembers[0].displayName || selectedMembers[0].name}} 应该称呼 {{selectedMembers[1].displayName || selectedMembers[1].name}} 为：</text>
+            <text class="relation-value highlight">{{relationResult.person1ToPerson2}}</text>
+          </view>
+        </view>
+      </view>
+      
+      <view class="modal-actions">
+        <button class="action-btn secondary" bindtap="closeRelationModal">关闭</button>
+        <button class="action-btn primary" bindtap="clearSelection">重新选择</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 使用说明 -->
+  <view class="help-panel {{showHelp ? 'show' : ''}}" wx:if="{{showHelp}}">
+    <view class="help-overlay" bindtap="toggleHelp"></view>
+    <view class="help-content">
+      <view class="help-header">
+        <text class="help-title">使用说明</text>
+        <button class="close-btn" bindtap="toggleHelp">×</button>
+      </view>
+      <view class="help-items">
+        <view class="help-item">
+          <text class="help-icon">👆</text>
+          <text class="help-text">点击两个家族成员查看关系</text>
+        </view>
+        <view class="help-item">
+          <text class="help-icon">🔍</text>
+          <text class="help-text">支持缩放和拖拽查看</text>
+        </view>
+        <view class="help-item">
+          <text class="help-icon">👫</text>
+          <text class="help-text">切换"夫/妻"视角查看不同称呼</text>
+        </view>
+        <view class="help-item">
+          <text class="help-icon">🔗</text>
+          <text class="help-text">线条表示夫妻和亲子关系</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 帮助按钮 -->
+  <button class="help-btn" bindtap="toggleHelp">?</button>
+</view>

@@ -1,0 +1,56 @@
+<view class="game-container">
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <text class="nav-back" bindtap="goBack">← 返回</text>
+    <text class="nav-title">{{gameName}}</text>
+    <text class="nav-placeholder"></text>
+  </view>
+
+  <!-- 游戏内容区 -->
+  <view class="game-content" wx:if="{{gameId === 'stars'}}">
+    <view class="stars-game">
+      <text class="game-title">二十八星宿探索</text>
+      <text class="game-intro">探索古代天文学中的二十八星宿系统，了解每个星宿的名称、方位和象征意义。</text>
+      <view class="stars-grid">
+        <view class="star-item" wx:for="{{starsList}}" wx:key="id">
+          <text class="star-name">{{item.name}}</text>
+          <text class="star-desc">{{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="game-content" wx:elif="{{gameId === 'hexagrams'}}">
+    <view class="hexagrams-game">
+      <text class="game-title">六十四卦学习</text>
+      <text class="game-intro">学习易经六十四卦的智慧与哲理，探索天地人三才之道。</text>
+      <view class="hexagram-container">
+        <image class="hexagram-icon" src="/images/hexagram.png" mode="aspectFit"></image>
+        <text class="hexagram-name">{{currentHexagram.name}}</text>
+        <text class="hexagram-desc">{{currentHexagram.desc}}</text>
+        <button class="next-btn" bindtap="nextHexagram">下一个卦象</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="game-content" wx:elif="{{gameId === 'dreamland'}}">
+    <view class="dreamland-game">
+      <text class="game-title">七十二梦境诗游记</text>
+      <text class="game-intro">在古典诗词中探寻梦境之美，感受诗意的浪漫情怀。</text>
+      <view class="poem-container">
+        <text class="poem-title">{{currentPoem.title}}</text>
+        <text class="poem-content">{{currentPoem.content}}</text>
+        <text class="poem-author">{{currentPoem.author}}</text>
+        <button class="next-btn" bindtap="nextPoem">下一首</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="game-content" wx:else>
+    <view class="placeholder-game">
+      <text class="placeholder-title">{{gameName}}</text>
+      <text class="placeholder-text">该游戏正在开发中，敬请期待！</text>
+      <image class="placeholder-image" src="/images/developing.png" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>

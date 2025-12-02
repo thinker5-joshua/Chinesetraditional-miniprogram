@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="about-header">
+    <text class="main-title">传统文化益智互动群落</text>
+    <text class="sub-title">探索千年智慧，传承文化精髓</text>
+  </view>
+  
+  <view class="games-container">
+    <view class="game-card" wx:for="{{games}}" wx:key="id" bindtap="navigateToGame" data-game="{{item.id}}">
+      <view class="game-icon {{item.cssClass}}">
+        <text class="icon-text">{{item.iconText}}</text>
+      </view>
+      <text class="game-title clickable">{{item.title}}</text>
+      <text class="game-desc">{{item.description}}</text>
+    </view>
+  </view>
+  
+  </view>

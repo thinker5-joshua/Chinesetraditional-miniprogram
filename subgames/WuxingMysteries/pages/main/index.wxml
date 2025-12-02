@@ -1,0 +1,304 @@
+<view class="wuxing-container">
+  <!-- Tab标签区域 -->
+  <view class="tab-container">
+    <view class="tab-list">
+      <view 
+        class="tab-item {{currentTab === item.id ? 'active' : ''}}"
+        wx:for="{{activeTabs}}" 
+        wx:key="id"
+        bindtap="onTabChange"
+        data-tab="{{item.id}}"
+      >
+        <text class="tab-title">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 图表和知识的统一滚动容器 -->
+  <scroll-view class="scrollable-content" scroll-y="true">
+    <!-- 图表显示容器 -->
+    <view class="chart-display-container">
+      <!-- 五行图表 -->
+      <view wx:if="{{currentTab === 'wuxing'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuxingCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五行元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuxingElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuxing"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五方图表 -->
+      <view wx:elif="{{currentTab === 'wufang'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wufangCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五方元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wufangElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wufang"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五色图表 -->
+      <view wx:elif="{{currentTab === 'wuse'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuseCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五色元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuseElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuse"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五脏图表 -->
+      <view wx:elif="{{currentTab === 'wuzang'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuzangCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五脏元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuzangElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuzang"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五味图表 -->
+      <view wx:elif="{{currentTab === 'wuwei'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuweiCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五味元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuweiElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuwei"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 开发中提示 -->
+      <view wx:else class="coming-soon-mystical">
+        <view class="mystical-symbol">📊</view>
+        <text class="coming-soon-text">功能开发中</text>
+        <text class="coming-soon-subtitle">敬请期待</text>
+      </view>
+    </view>
+
+    <!-- 知识介绍区域 -->
+    <view class="knowledge-container">
+      <view class="knowledge-section">
+        <!-- 五行知识 -->
+        <view wx:if="{{currentTab === 'wuxing'}}" class="knowledge-content">
+          <view class="knowledge-title">五行学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">基本概念</view>
+            <view class="knowledge-paragraph">五行学说是中国古代哲学的重要理论体系，将宇宙万物归纳为金、木、水、火、土五种基本元素的运行和变化关系。这一理论不仅揭示了自然界的变化规律，也深刻影响着中医、建筑、历法等多个领域的发展。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">相生相克规律</view>
+            <view class="knowledge-paragraph">五行相生体现了事物间的促进与滋养关系：木能生火，火能生土，土能生金，金能生水，水能生木，形成生生不息的循环。同时，五行相克维持着系统的平衡：木克土，土克水，水克火，火克金，金克木，防止任何一方的过度发展。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">时间与空间对应</view>
+            <view class="knowledge-paragraph">五行与时间维度紧密相关：春季属木，夏季属火，长夏属土，秋季属金，冬季属水。在空间上，东方属木，南方属火，中央属土，西方属金，北方属水，形成了时空统一的整体宇宙观。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">人体与五行</view>
+            <view class="knowledge-paragraph">在中医理论中，人体五脏与五行相对应：肝属木，心属火，脾属土，肺属金，肾属水。这种对应关系不仅体现在生理功能上，也指导着疾病的诊断和治疗，体现了"天人合一"的医学理念。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代应用价值</view>
+            <view class="knowledge-paragraph">五行理论在现代仍然具有重要的指导意义。在养生保健方面，通过调节饮食、起居、运动来顺应五行变化；在心理健康方面，运用五行平衡理论调节情绪；在环境设计中，结合五行原理创造和谐的居住环境。</view>
+          </view>
+        </view>
+
+        <!-- 五方知识 -->
+        <view wx:elif="{{currentTab === 'wufang'}}" class="knowledge-content">
+          <view class="knowledge-title">五方学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论基础</view>
+            <view class="knowledge-paragraph">五方学说是中国古代空间哲学的重要组成部分，将空间划分为东、西、南、北、中五个基本方位。这种划分不仅是对物理空间的简单认知，更是对宇宙秩序和时空关系的深刻理解，体现了中国人对空间维度的系统思考。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行对应关系</view>
+            <view class="knowledge-paragraph">五方与五行形成了完美的对应体系：东方属木，代表着生机与活力；南方属火，象征着光明与温暖；西方属金，体现了收敛与肃杀；北方属水，寓意着收藏与沉淀；中央属土，代表着稳定与承载，构成了完整的空间能量场。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">气候与环境特征</view>
+            <view class="knowledge-paragraph">每个方位都具有独特的气候特征和环境属性：东方春风温和，利于万物生长；南方夏季炎热，充满生机；西方秋季凉爽，有收获之意；北方冬季寒冷，适合休养生息；中央四季分明，最为中和适中，这种差异化的环境特征影响着人们的生活方式。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">建筑与城市规划</view>
+            <view class="knowledge-paragraph">在建筑实践中，五方理论指导着建筑朝向的选择和空间布局。传统建筑讲究坐北朝南，既符合采光通风需求，又符合南火北水的五行规律。城市规划中也运用五方理论，形成中轴对称、四通八达的城市格局，体现了秩序与和谐。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">文化与象征意义</view>
+            <view class="knowledge-paragraph">五方在文化层面具有深刻的象征意义，东方被视为生命之源，南方代表文明繁荣，西方寓意成熟收获，北方象征智慧沉淀，中央体现权威核心。这种文化认知深深影响着中国人的价值观念和行为方式，成为中华文化的重要组成部分。</view>
+          </view>
+        </view>
+
+        <!-- 五色知识 -->
+        <view wx:elif="{{currentTab === 'wuse'}}" class="knowledge-content">
+          <view class="knowledge-title">五色学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论起源</view>
+            <view class="knowledge-paragraph">五色学说是中国古代色彩理论的核心，将青、赤、黄、白、黑五种基本色彩与五行理论相结合，形成了完整的色彩哲学体系。这一理论不仅是关于色彩的认知，更是对宇宙万物本质规律的深刻洞察，体现了中国人对色彩与物质世界关系的独特理解。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行色彩对应</view>
+            <view class="knowledge-paragraph">五色与五行形成了严密的对应关系：青色属木，代表生机与成长；赤色属火，象征热情与活力；黄色属土，寓意稳定与厚重；白色属金，体现纯净与收敛；黑色属水，代表深沉与神秘。这种对应关系揭示了色彩背后的能量属性和情感内涵。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">中医诊断应用</view>
+            <view class="knowledge-paragraph">在中医诊断中，五色理论具有重要指导意义。通过观察面色变化，可以判断脏腑健康状况：面色青紫多与肝气郁结相关，面色赤红多为心火旺盛，面色萎黄常提示脾虚湿盛，面色苍白多为肺气不足，面色黧黑往往与肾虚有关，体现了"望而知之"的诊断智慧。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">食疗养生原理</view>
+            <view class="knowledge-paragraph">五色理论指导着中医食疗养生实践，强调"五色入五脏"的饮食原则。青色食物如青菜、绿豆入肝，有疏肝理气之效；赤色食物如红枣、枸杞入心，能养血安神；黄色食物如小米、南瓜入脾，可健脾和胃；白色食物如百合、银耳入肺，能润肺止咳；黑色食物如黑豆、黑芝麻入肾，可滋补肾精。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代心理应用</view>
+            <view class="knowledge-paragraph">现代色彩心理学研究发现，五色理论与情感调节具有科学依据。青色环境有助于缓解压力，赤色氛围能够激发热情，黄色空间能提升专注度，白色环境有净化心灵作用，黑色环境则有助于深度思考。这些发现为五色学说的现代应用提供了科学支撑，使其在环境设计、心理治疗等领域发挥重要作用。</view>
+          </view>
+        </view>
+
+        <!-- 五脏知识 -->
+        <view wx:elif="{{currentTab === 'wuzang'}}" class="knowledge-content">
+          <view class="knowledge-title">五脏学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论基础</view>
+            <view class="knowledge-paragraph">五脏学说是中医理论的核心组成部分，将人体的心、肝、脾、肺、肾五大脏器与五行理论相结合，形成了独特的生理病理体系。这一理论超越了单纯的解剖学概念，从功能角度阐释了人体各系统的相互关系和整体运作规律，体现了中医"天人合一"的整体医学观念。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行属性与功能</view>
+            <view class="knowledge-paragraph">五脏与五行具有严格的对应关系。肝属木，主疏泄泄调达，调节情志和气血运行；心属火，主血脉和神明，统管血液循环和精神活动；脾属土，主运化和统血，负责消化吸收和血液固摄；肺属金，主气司呼吸，调节水液代谢和防御外邪；肾属水，主藏精和生长发育，维持生命活动的根本。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">相互协调机制</view>
+            <view class="knowledge-paragraph">五脏之间通过相生相克关系维持着动态平衡。肝木生心火，脾土生肺金，肺金生肾水，肾水生肝木，形成了功能上的促进关系。同时，肝木克脾土，心火克肺金，脾土克肾水，肺金克肝木，肾水克心火，这种制约关系防止了任何脏器功能的过度亢进，确保了机体的稳定状态。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">病理联系与诊断</view>
+            <view class="knowledge-paragraph">在病理状态下，五脏的病变会相互影响。肝气郁结可影响脾胃功能，称为"肝木克土"；心火旺盛可能灼伤肺津，出现"心火克肺"；脾虚湿盛可能影响肾脏，形成"土不制水"。中医通过望闻问切四诊合参，分析五脏的阴阳气血变化，制定相应的治疗方案，体现了辨证论治的精髓。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">养生保健应用</view>
+            <view class="knowledge-paragraph">五脏理论指导着中医养生保健实践。春季养肝，宜舒畅情志，早睡早起；夏季养心，应保持心态平和，避免过劳；长夏养脾，需饮食有节，忌生冷油腻；秋季养肺，当收敛神气，防燥润肺；冬季养肾，要保暖固精，节制房事。这种顺应自然规律的养生方式，有助于维护五脏健康，达到强身健体的目的。</view>
+          </view>
+        </view>
+
+        <!-- 五味知识 -->
+        <view wx:elif="{{currentTab === 'wuwei'}}" class="knowledge-content">
+          <view class="knowledge-title">五味学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论体系</view>
+            <view class="knowledge-paragraph">五味学说是中医食疗理论的重要组成部分，将酸、苦、甘、辛、咸五种基本味道与五行理论和五脏功能相结合，形成了独特的味觉医学体系。这一理论不仅揭示了味道与人体生理的内在联系，也为饮食调养提供了科学的理论指导，体现了"药食同源"的养生理念。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五味属性与功效</view>
+            <view class="knowledge-paragraph">五味各有其特定的药理作用和治疗功效。酸味入肝，有收敛固涩之效，能收涩止泻、固表止汗，适用于汗多、泄泻等症状；苦味入心，具清热燥湿之功，可清热泻火、燥湿坚阴，常用于热证、湿证；甘味入脾，能补益和中、缓急止痛，有益气补血、调和药性之效；辛味入肺，有发散行气作用，可发散风寒、行气活血；咸味入肾，具软坚散结、泻下通便之效。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">季节性饮食调养</view>
+            <view class="knowledge-paragraph">五味理论指导着季节性饮食调养。春季宜多食辛味以助肝气升发，如葱姜等；夏季可适量食苦味以清心火，如苦瓜、莲子；长夏应多食甘味以健脾益气，如红枣、山药；秋季宜食酸味以收敛肺气，如山楂、乌梅；冬季可适当食咸味以补肾固精，如海带、黑豆。这种顺应四季的饮食方式有助于维护机体健康。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">疾病防治应用</view>
+            <view class="knowledge-paragraph">在临床实践中，五味理论指导着疾病的治疗和预防。对于肝气郁结的患者，可选用酸味药物如白芍、乌梅以柔肝止痛；心火旺盛者，宜用苦味药物如黄连、栀子以清热泻火；脾胃虚弱者，当用甘味药物如人参、甘草以健脾益气；肺气不宣者，可用辛味药物如麻黄、桂枝以宣肺散寒；肾精不足者，可适当配伍咸味药物如肉苁蓉、海马以补肾填精。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代科学验证</view>
+            <view class="knowledge-paragraph">现代营养学研究为五味理论提供了科学支撑。酸味食物富含有机酸，有助消化和抗菌；苦味食物含生物碱，具有调节生理功能的作用；甘味食物多为碳水化合物，提供能量和营养；辛味食物含挥发性成分，有促进血液循环和新陈代谢的作用；咸味食物提供必需的矿物质，维持体液平衡。这些科学发现印证了五味理论的合理性和实用价值。</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  </view>

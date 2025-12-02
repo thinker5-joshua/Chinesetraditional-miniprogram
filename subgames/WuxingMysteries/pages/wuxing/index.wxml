@@ -1,0 +1,71 @@
+<view class="wuxing-container">
+  <!-- 顶部标题区域 -->
+  <header class="wuxing-header">
+    <view class="header-content">
+      <view class="nav-button" bindtap="goBack">
+        <text class="nav-icon">‹</text>
+        <text class="nav-text">返回</text>
+      </view>
+      <text class="main-title">五行生克</text>
+      <view class="placeholder"></view>
+    </view>
+  </header>
+
+  <!-- 主内容展示区域 -->
+  <view class="content-container">
+    <!-- 五行生克图 -->
+    <view class="chart-container">
+      <view class="chart-header">
+        <text class="chart-title">五行生克图</text>
+        <text class="chart-subtitle">揭示万物相生相克的循环规律</text>
+      </view>
+      
+      <view class="diagram-wrapper">
+        <canvas 
+          class="wuxing-canvas" 
+          canvas-id="wuxingCanvas"
+          bindtouchstart="onCanvasTouchStart"
+          bindtouchmove="onCanvasTouchMove"
+          bindtouchend="onCanvasTouchEnd"
+        ></canvas>
+        
+        <!-- 图例说明 -->
+        <view class="legend-container">
+          <view class="legend-item">
+            <view class="legend-line sheng-line"></view>
+            <text class="legend-text">相生</text>
+          </view>
+          <view class="legend-item">
+            <view class="legend-line ke-line"></view>
+            <text class="legend-text">相克</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 五行详情卡片 -->
+      <view class="wuxing-cards">
+        <view 
+          wx:for="{{['wood','fire','earth','metal','water']}}" 
+          wx:key="*this"
+          wx:for-item="key"
+          wx:for-index="index"
+          class="wuxing-card {{selectedWuxing === key ? 'active' : ''}}"
+          bindtap="selectWuxing"
+          data-wuxing="{{key}}"
+        >
+          <view class="card-symbol">{{wuxingInfo[key].symbol}}</view>
+          <text class="card-name">{{wuxingInfo[key].name}}</text>
+          <text class="card-pinyin">{{wuxingInfo[key].pinyin}}</text>
+          <view class="card-color-bar" style="background-color: {{wuxingInfo[key].color}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部说明区域 -->
+  <view class="footer-container">
+    <view class="footer-content">
+      <text class="footer-text">{{currentDescription}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,709 @@
+/* 全局样式重置 */
+page {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #0a0a2a;
+  color: #e6e6e6;
+  font-family: 'Microsoft YaHei', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* 星空背景效果 */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+/* 游戏容器 */
+#game-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20rpx;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* 标题区域 */
+.game-header {
+  text-align: center;
+  padding: 40rpx 30rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+}
+
+.title-glow-container {
+  position: relative;
+  display: inline-block;
+}
+
+.game-title {
+  font-size: 60rpx;
+  color: #64ffda;
+  margin-bottom: 20rpx;
+  text-shadow: 0 0 40rpx rgba(100, 255, 218, 0.5), 0 0 80rpx rgba(100, 255, 218, 0.3);
+  position: relative;
+  letter-spacing: 6rpx;
+}
+
+.game-subtitle {
+  font-size: 26rpx;
+  color: #c5c6c7;
+  letter-spacing: 2rpx;
+  opacity: 0.9;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 15rpx;
+}
+
+/* 主要内容区域 */
+#game-main {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 视图显示控制 */
+.game-view {
+  display: none;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.game-view.active {
+  display: block;
+}
+
+/* 仙界地图容器 */
+.immortal-map-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 60vh;
+  background: radial-gradient(circle, rgba(10, 15, 47, 0.8) 0%, rgba(10, 10, 42, 0.9) 100%);
+  border-radius: 40rpx;
+  overflow: hidden;
+  border: 2rpx solid rgba(100, 255, 218, 0.2);
+  box-shadow: 0 16rpx 64rpx rgba(100, 255, 218, 0.1);
+  box-sizing: border-box;
+}
+
+/* 仙界地图 */
+.immortal-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%2364ffda;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%230a0a2a;stop-opacity:0.3"/></radialGradient></defs><rect width="800" height="600" fill="url(%23grad1)"/><circle cx="400" cy="300" r="200" fill="none" stroke="%2364ffda" stroke-width="1" opacity="0.3"/><circle cx="400" cy="300" r="150" fill="none" stroke="%2364ffda" stroke-width="0.5" opacity="0.2"/><circle cx="400" cy="300" r="100" fill="none" stroke="%2364ffda" stroke-width="0.5" opacity="0.1"/></svg>') no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 洞天体容器 */
+#caves-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  visibility: visible;
+  z-index: 1000;
+}
+
+/* 洞天体样式 */
+.cave-item {
+  position: absolute;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: white;
+  border: 4rpx solid white;
+  cursor: default;
+  transition: all 0.3s ease;
+  animation: caveFloat 3s ease-in-out infinite;
+  box-shadow: 0 0 15rpx currentColor, 0 0 20rpx rgba(255, 255, 255, 0.2);
+  /* 确保文本换行显示 */
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 10rpx;
+  line-height: 1.2;
+  /* 提升文字清晰度 */
+  text-shadow: 
+    0 0 2rpx rgba(0, 0, 0, 0.8),
+    0 0 4rpx rgba(0, 0, 0, 0.5),
+    1rpx 1rpx 0 rgba(255, 255, 255, 0.3);
+  /* 减少模糊效果 */
+  backdrop-filter: none;
+}
+
+@keyframes caveFloat {
+  0%, 100% { transform: translateY(0rpx) scale(1); }
+  50% { transform: translateY(-15rpx) scale(1.05); }
+}
+
+@keyframes cavePulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.cave-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 80rpx currentColor, 0 0 120rpx rgba(255, 255, 255, 0.8);
+}
+
+/* 仙界任意门按钮 */
+.fairy-door {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 30rpx 60rpx;
+  border-radius: 60rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  box-shadow: 0 12rpx 30rpx rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+.fairy-door:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+.fairy-door.selected {
+  background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.fairy-door.rotating {
+  animation: rotate360 1s ease-in-out;
+}
+
+@keyframes rotate360 {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* 按钮通用样式 */
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 24rpx 48rpx;
+  border-radius: 50rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 10rpx rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  color: white;
+  border: none;
+  padding: 20rpx 40rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:active {
+  transform: translateY(2rpx);
+}
+
+.centered-btn {
+  margin: 0 auto;
+  display: block;
+}
+
+/* 诗词挑战界面 */
+.challenge-container {
+  padding: 40rpx;
+}
+
+.cave-prompt {
+  text-align: center;
+  font-size: 32rpx;
+  color: #64ffda;
+  margin-bottom: 40rpx;
+  font-weight: bold;
+}
+
+.poem-content-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  backdrop-filter: blur(10rpx);
+}
+
+.poem-display {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.poem-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.poet-info {
+  font-size: 28rpx;
+  color: #b0b0b0;
+  margin-bottom: 30rpx;
+  display: block;
+}
+
+.poem-content {
+  line-height: 2;
+  font-size: 32rpx;
+  color: #e6e6e6;
+}
+
+/* 隐藏字标识 */
+.poem-content .hidden-char {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd700, #ff6b6b);
+  color: white;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  font-weight: bold;
+  margin: 0 4rpx;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 15rpx rgba(255, 215, 0, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 15rpx rgba(255, 215, 0, 0.5);
+  }
+  50% { 
+    transform: scale(1.1); 
+    box-shadow: 0 0 25rpx rgba(255, 215, 0, 0.8);
+  }
+}
+
+/* 挑战区域 */
+.challenge-section {
+  text-align: center;
+}
+
+.word-challenge {
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  border: 2rpx solid rgba(102, 126, 234, 0.3);
+}
+
+.options-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  margin-top: 30rpx;
+}
+
+.option-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2rpx solid #667eea;
+  color: #e6e6e6;
+  padding: 20rpx 30rpx;
+  border-radius: 15rpx;
+  font-size: 32rpx;
+  min-width: 80rpx;
+  transition: all 0.3s ease;
+}
+
+.option-btn:active {
+  transform: scale(0.95);
+  background: #667eea;
+  color: white;
+}
+
+/* 横向选项布局 */
+.options-container-horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 30rpx;
+  margin-top: 30rpx;
+  flex-wrap: nowrap;
+}
+
+.option-btn-horizontal {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 3rpx solid #64ffda;
+  color: white;
+  padding: 25rpx 40rpx;
+  border-radius: 20rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  min-width: 100rpx;
+  transition: all 0.3s ease;
+  box-shadow: 0 8rpx 25rpx rgba(102, 126, 234, 0.3);
+}
+
+.option-btn-horizontal:active {
+  transform: scale(0.95);
+  background: linear-gradient(135deg, #64ffda 0%, #4ecdc4 100%);
+  box-shadow: 0 4rpx 15rpx rgba(100, 255, 218, 0.4);
+}
+
+.challenge-hint {
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+  color: #ffd700;
+  margin-bottom: 30rpx;
+  font-weight: bold;
+  text-shadow: 0 0 10rpx rgba(255, 215, 0, 0.3);
+}
+
+/* 洞天展示界面 */
+.cave-container {
+  padding: 20rpx;
+  max-width: 100%;
+}
+
+.cave-info-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 标题区域 */
+.cave-title-section {
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding: 30rpx;
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(100, 255, 218, 0.3);
+}
+
+.cave-name-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cave-name {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #64ffda;
+  margin-bottom: 15rpx;
+  text-shadow: 0 0 20rpx rgba(100, 255, 218, 0.5);
+}
+
+.cave-location {
+  font-size: 28rpx;
+  color: #a0a0a0;
+  opacity: 0.8;
+}
+
+/* 主要内容布局 - 单列垂直排列 */
+.cave-content-single {
+  display: flex;
+  flex-direction: column;
+  gap: 25rpx;
+  margin-bottom: 30rpx;
+}
+
+/* 地图区域调整 */
+.cave-map-wrapper {
+  height: 400rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.3);
+  border: 2rpx solid rgba(100, 255, 218, 0.2);
+}
+
+.cave-map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 诗词区域调整 */
+.poem-section {
+  min-height: auto; /* 根据内容自动调整高度 */
+}
+
+.poem-content-traditional {
+  margin: 20rpx 0; /* 减少上下边距 */
+}
+
+/* 现代化区块样式 */
+.modern-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border-radius: 25rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  border: 1rpx solid rgba(100, 255, 218, 0.2);
+  backdrop-filter: blur(10rpx);
+}
+
+.section-header {
+  margin-bottom: 25rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 2rpx solid rgba(100, 255, 218, 0.3);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #64ffda;
+  letter-spacing: 2rpx;
+}
+
+/* 洞天简介 */
+.cave-description {
+  font-size: 28rpx;
+  line-height: 1.8;
+  color: #e6e6e6;
+  text-align: justify;
+}
+
+
+
+.cave-map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 诗词区域 */
+.poem-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.poem-title-area {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.poem-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 15rpx;
+  text-shadow: 0 0 15rpx rgba(255, 215, 0, 0.3);
+}
+
+.poem-author {
+  font-size: 28rpx;
+  color: #a0a0a0;
+  display: block;
+  font-style: italic;
+}
+
+/* 传统诗词分行排版 */
+.poem-content-traditional {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30rpx 0;
+}
+
+.poem-line {
+  font-size: 34rpx;
+  line-height: 2.2;
+  color: #e6e6e6;
+  text-align: center;
+  margin: 8rpx 0;
+  font-family: 'KaiTi', '楷体', serif;
+  letter-spacing: 4rpx;
+}
+
+/* 诗词操作区 */
+.poem-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.poem-explanation {
+  font-size: 24rpx;
+  color: #a0a0a0;
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+}
+
+.poem-nav-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 20rpx 40rpx;
+  border-radius: 25rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 25rpx rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.poem-nav-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4rpx 15rpx rgba(102, 126, 234, 0.4);
+}
+
+/* 底部操作区 */
+.cave-actions {
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15rpx;
+  padding: 25rpx 50rpx;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #64ffda 0%, #4ecdc4 100%);
+  color: #1a1a3e;
+  box-shadow: 0 10rpx 30rpx rgba(100, 255, 218, 0.3);
+}
+
+.action-btn.primary:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 5rpx 15rpx rgba(100, 255, 218, 0.4);
+}
+
+.action-icon {
+  font-size: 32rpx;
+}
+
+/* 模态框 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #1a1a3e 0%, #2d3748 100%);
+  border-radius: 20rpx;
+  padding: 60rpx;
+  max-width: 600rpx;
+  width: 80%;
+  text-align: center;
+  border: 2rpx solid rgba(102, 126, 234, 0.3);
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.5);
+}
+
+.modal-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 30rpx;
+  display: block;
+}
+
+.modal-message {
+  font-size: 30rpx;
+  color: #e6e6e6;
+  margin-bottom: 40rpx;
+  line-height: 1.6;
+  display: block;
+}
+
+/* 游戏页脚 */
+.game-footer {
+  text-align: center;
+  padding: 40rpx;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 80rpx;
+}
+
+/* 星星效果 */
+@keyframes starPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768rpx) {
+  .game-title {
+    font-size: 48rpx;
+  }
+  
+  .poem-title {
+    font-size: 36rpx;
+  }
+  
+  .cave-map-container {
+    height: 400rpx;
+  }
+  
+  .poem-header-info {
+    flex-direction: column;
+  }
+  
+  .poem-sidebar {
+    margin-left: 0;
+    margin-top: 20rpx;
+    text-align: left;
+  }
+}

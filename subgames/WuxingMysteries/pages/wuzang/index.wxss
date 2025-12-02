@@ -1,0 +1,31 @@
+/* 五脏页面样式 - 继承主样式 */
+@import "../../index.wxss";
+
+/* 五脏卡片 */
+.wuzang-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  padding: 30rpx;
+}
+
+.organ-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  border-radius: 15rpx;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.organ-card.active {
+  transform: translateX(10rpx);
+  border-color: #FFD700;
+  box-shadow: -5rpx 15rpx 30rpx rgba(255, 215, 0, 0.2);
+}
+
+.organ-name {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 10rpx rgba(0, 0, 0, 0.5);
+}

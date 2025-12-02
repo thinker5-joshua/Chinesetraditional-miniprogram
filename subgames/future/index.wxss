@@ -1,0 +1,732 @@
+/* 成语消除游戏样式 - 宇宙星空风格 */
+
+/* 全局样式 - 神秘宇宙风格 - 覆盖全局设置 */
+page, body, html {
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  /* 强制暗色主题，防止跟随系统设置 */
+  color-scheme: dark !important;
+  -webkit-color-scheme: dark !important;
+  /* 多重背景设置确保兼容性 - 覆盖全局 app.wxss */
+  background-color: #0a0515 !important;
+  background: #0a0515 !important;
+  background: 
+    radial-gradient(ellipse at top, #1a0033 0%, #0d001a 40%) !important,
+    radial-gradient(ellipse at bottom, #001a4d 0%, #000511 40%) !important,
+    linear-gradient(135deg, #0a0e27 0%, #1a0833 25%, #0f0820 50%, #1a0d33 75%, #0a0515 100%) !important;
+  color: #ffffff !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  overflow-x: hidden;
+  position: relative;
+  /* 确保在小程序中生效 */
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  /* 覆盖全局变量 */
+  --background: #0a0515 !important;
+  --text-color: #ffffff !important;
+}
+
+/* 专门针对小程序 page 选择器 */
+page {
+  /* 小程序专用 - 强制覆盖全局设置 */
+  background-color: #0a0515 !important;
+  background: #0a0515 !important;
+  background: 
+    radial-gradient(ellipse at top, #1a0033 0%, #0d001a 40%) !important,
+    radial-gradient(ellipse at bottom, #001a4d 0%, #000511 40%) !important,
+    linear-gradient(135deg, #0a0e27 0%, #1a0833 25%, #0f0820 50%, #1a0d33 75%, #0a0515 100%) !important;
+  color: #ffffff !important;
+  /* 覆盖全局样式 */
+  background-image: 
+    radial-gradient(ellipse at top, #1a0033 0%, #0d001a 40%) !important,
+    radial-gradient(ellipse at bottom, #001a4d 0%, #000511 40%) !important,
+    linear-gradient(135deg, #0a0e27 0%, #1a0833 25%, #0f0820 50%, #1a0d33 75%, #0a0515 100%) !important;
+}
+
+/* 强制背景层 - 确保暗色背景 */
+page::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0515;
+  z-index: -2;
+}
+
+/* 星空背景动画 */
+page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent);
+  background-size: 200px 200px, 150px 150px, 100px 100px, 250px 250px;
+  animation: starFloat 120s linear infinite;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+@keyframes starFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* 确保容器背景为暗色 */
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+/* 游戏头部 */
+.game-header {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.game-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #667eea;
+  text-shadow: 0 0 20rpx rgba(102, 126, 234, 0.8);
+  display: block;
+  margin-bottom: 15rpx;
+}
+
+.game-description {
+  font-size: 28rpx;
+  color: #b8c5d6;
+  line-height: 1.6;
+  margin: 0 30rpx;
+}
+
+/* 游戏信息区 - 宇宙风格 */
+.game-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+  margin-bottom: 30rpx;
+  padding: 25rpx;
+  background: 
+    linear-gradient(135deg, rgba(75, 0, 130, 0.2) 0%, rgba(138, 43, 226, 0.1) 100%),
+    radial-gradient(circle at 30% 30%, rgba(255, 0, 255, 0.1), transparent);
+  border-radius: 20rpx;
+  backdrop-filter: blur(20rpx);
+  border: 1rpx solid;
+  border-image: linear-gradient(45deg, #8a2be2, #00ffff, #ff1493, #8a2be2) 1;
+  box-shadow: 
+    0 0 30rpx rgba(138, 43, 226, 0.3),
+    inset 0 0 20rpx rgba(255, 0, 255, 0.05);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.level-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.level-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 15rpx rgba(255, 215, 0, 0.6);
+}
+
+.level-number {
+  font-size: 28rpx;
+  color: #b8c5d6;
+  background: rgba(102, 126, 234, 0.2);
+  padding: 8rpx 16rpx;
+  border-radius: 12rpx;
+}
+
+.progress-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15rpx;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}
+
+.progress-label {
+  font-size: 26rpx;
+  color: #ffffff;
+}
+
+.progress-bar-wrapper {
+  width: 100%;
+  height: 8rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4rpx;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 4rpx;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 28rpx;
+  color: #667eea;
+  font-weight: bold;
+  min-width: 40rpx;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stars-container {
+  display: flex;
+  gap: 10rpx;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 进度区域布局调整 */
+.progress-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}
+
+/* 成功配对提示 */
+.completed-idiom {
+  position: absolute;
+  bottom: -10rpx;
+  right: 10rpx;
+  left: 10rpx;
+  opacity: 0;
+  transform: translateY(10rpx);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.completed-idiom.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: idiomFlash 3s ease-in-out;
+}
+
+.completed-idiom-text {
+  font-size: 20rpx;
+  color: #00ff7f;
+  font-weight: bold;
+  text-shadow: 0 0 15rpx rgba(0, 255, 127, 0.8);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(0, 255, 127, 0.4);
+  backdrop-filter: blur(10rpx);
+}
+
+/* 成功成语闪烁动画 */
+@keyframes idiomFlash {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+.star {
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.star.active {
+  color: #ffd700;
+  text-shadow: 0 0 10rpx rgba(255, 215, 0, 0.8);
+}
+
+/* 游戏板 - 宇宙风格 */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: 
+    radial-gradient(ellipse at center, rgba(138, 43, 226, 0.1) 0%, transparent 70%),
+    radial-gradient(circle at 30% 70%, rgba(0, 255, 255, 0.1), transparent 50%),
+    linear-gradient(135deg, rgba(75, 0, 130, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(138, 43, 226, 0.3);
+  backdrop-filter: blur(15rpx);
+  position: relative;
+}
+
+.game-board::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+  animation: rotate 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.word-block {
+  background: 
+    linear-gradient(135deg, rgba(138, 43, 226, 0.3) 0%, rgba(75, 0, 130, 0.2) 50%, rgba(138, 43, 226, 0.3) 100%),
+    radial-gradient(circle at 30% 30%, rgba(255, 0, 255, 0.2), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(0, 255, 255, 0.2), transparent 50%);
+  border: 2rpx solid;
+  border-image: linear-gradient(45deg, #8a2be2, #00ffff, #ff1493, #8a2be2) 1;
+  border-radius: 15rpx;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15rpx);
+  position: relative;
+  overflow: hidden;
+  min-height: 90rpx;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 0 20rpx rgba(138, 43, 226, 0.4),
+    inset 0 0 20rpx rgba(255, 0, 255, 0.1);
+}
+
+.word-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30rpx 20rpx;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.word-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(102, 126, 234, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.word-block.selected::before {
+  opacity: 1;
+  background: radial-gradient(circle at center, rgba(255, 0, 255, 0.6), rgba(0, 255, 255, 0.4), transparent);
+}
+
+.word-block.selected {
+  background: 
+    linear-gradient(135deg, rgba(255, 0, 255, 0.5) 0%, rgba(0, 255, 255, 0.4) 50%, rgba(255, 20, 147, 0.5) 100%),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.3), transparent);
+  border-image: linear-gradient(45deg, #ff00ff, #00ffff, #ff1493, #ff00ff) 1;
+  transform: translateY(-8rpx) scale(1.05);
+  box-shadow: 
+    0 0 30rpx rgba(255, 0, 255, 0.8),
+    0 15rpx 30rpx rgba(0, 255, 255, 0.6),
+    inset 0 0 25rpx rgba(255, 255, 255, 0.2);
+}
+
+.word-block.matched {
+  background: 
+    linear-gradient(135deg, rgba(0, 255, 127, 0.4) 0%, rgba(50, 205, 50, 0.3) 50%, rgba(0, 255, 127, 0.4) 100%),
+    radial-gradient(circle at center, rgba(255, 215, 0, 0.3), transparent);
+  border-image: linear-gradient(45deg, #00ff7f, #32cd32, #ffd700, #00ff7f) 1;
+  opacity: 0.9;
+  pointer-events: none;
+  transform: scale(0.95);
+  box-shadow: 
+    0 0 25rpx rgba(0, 255, 127, 0.6),
+    inset 0 0 20rpx rgba(255, 215, 0, 0.2);
+}
+
+.word-text {
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 3rpx 6rpx rgba(0, 0, 0, 0.4);
+  letter-spacing: 2rpx;
+}
+
+/* 选中文字显示区 - 宇宙风格 */
+.selected-words {
+  text-align: center;
+  margin-bottom: 30rpx;
+  padding: 15rpx;
+  background: 
+    linear-gradient(135deg, rgba(75, 0, 130, 0.2) 0%, rgba(138, 43, 226, 0.1) 100%),
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.1), transparent);
+  border-radius: 15rpx;
+  backdrop-filter: blur(15rpx);
+  border: 1rpx solid rgba(138, 43, 226, 0.3);
+  box-shadow: 0 0 20rpx rgba(138, 43, 226, 0.2);
+}
+
+.selected-content {
+  font-size: 28rpx;
+  color: #ff1493;
+  font-weight: bold;
+  text-shadow: 0 0 15rpx rgba(255, 20, 147, 0.8);
+  letter-spacing: 2rpx;
+}
+
+/* 庆祝动画 */
+.celebration-particles {
+  position: absolute;
+  top: -60rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20rpx;
+  animation: celebrate 2s ease-in-out infinite;
+}
+
+.particle {
+  font-size: 40rpx;
+  animation: float 3s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { animation-delay: 0s; }
+.particle:nth-child(2) { animation-delay: 0.3s; }
+.particle:nth-child(3) { animation-delay: 0.6s; }
+.particle:nth-child(4) { animation-delay: 0.9s; }
+.particle:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes celebrate {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20rpx) rotate(10deg); }
+}
+
+/* 模态框 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: 
+    radial-gradient(ellipse at center, rgba(138, 43, 226, 0.3) 0%, rgba(75, 0, 130, 0.2) 50%, rgba(0, 0, 0, 0.8) 100%),
+    linear-gradient(135deg, rgba(26, 42, 64, 0.9) 0%, rgba(44, 62, 80, 0.9) 100%);
+  border-radius: 25rpx;
+  padding: 50rpx;
+  margin: 40rpx;
+  max-width: 650rpx;
+  width: 90%;
+  text-align: center;
+  box-shadow: 
+    0 25rpx 50rpx rgba(0, 0, 0, 0.8),
+    0 0 50rpx rgba(138, 43, 226, 0.4),
+    inset 0 0 30rpx rgba(255, 0, 255, 0.1);
+  border: 2rpx solid;
+  border-image: linear-gradient(45deg, #8a2be2, #00ffff, #ff1493, #8a2be2) 1;
+  position: relative;
+  overflow: visible;
+}
+
+.modal-content.celebration-complete {
+  animation: celebrationPulse 2s ease-in-out infinite;
+  border-color: #ffd700;
+  box-shadow: 0 25rpx 50rpx rgba(255, 215, 0, 0.3);
+}
+
+@keyframes celebrationPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.modal-header {
+  margin-bottom: 40rpx;
+  position: relative;
+}
+
+.modal-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 
+    0 0 20rpx rgba(0, 255, 255, 0.8),
+    0 0 40rpx rgba(255, 0, 255, 0.6);
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { 
+    text-shadow: 
+      0 0 20rpx rgba(0, 255, 255, 0.8),
+      0 0 40rpx rgba(255, 0, 255, 0.6);
+  }
+  100% { 
+    text-shadow: 
+      0 0 30rpx rgba(0, 255, 255, 1),
+      0 0 50rpx rgba(255, 0, 255, 0.8),
+      0 0 60rpx rgba(255, 20, 147, 0.6);
+  }
+}
+
+.modal-body {
+  margin-bottom: 30rpx;
+}
+
+.success-message {
+  font-size: 32rpx;
+  color: #ffffff;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.final-stats {
+  margin: 20rpx 0;
+}
+
+.stats-text {
+  font-size: 28rpx;
+  color: #b8c5d6;
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.final-stars {
+  font-size: 30rpx;
+  color: #ffffff;
+  display: block;
+}
+
+.stars-display {
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 0 0 10rpx rgba(255, 215, 0, 0.8);
+}
+
+.play-again-text {
+  font-size: 26rpx;
+  color: #b8c5d6;
+  margin-top: 20rpx;
+  display: block;
+}
+
+.modal-footer {
+  margin-top: 20rpx;
+  display: flex;
+  gap: 15rpx;
+  justify-content: center;
+}
+
+.play-again-btn, .next-level-btn, .restart-btn, .complete-btn {
+  color: #ffffff;
+  border: none;
+  border-radius: 15rpx;
+  padding: 25rpx 40rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 220rpx;
+  margin: 0 10rpx;
+}
+
+.play-again-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 12rpx 25rpx rgba(102, 126, 234, 0.4);
+}
+
+.next-level-btn {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  box-shadow: 0 12rpx 25rpx rgba(76, 175, 80, 0.4);
+}
+
+.restart-btn {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  box-shadow: 0 12rpx 25rpx rgba(255, 152, 0, 0.4);
+}
+
+.complete-btn {
+  background: linear-gradient(135deg, #ffd700 0%, #ffb300 100%);
+  box-shadow: 0 12rpx 25rpx rgba(255, 215, 0, 0.4);
+  color: #333;
+}
+
+
+
+/* 响应式设计 - 确保小屏一屏显示 */
+@media screen and (max-height: 800rpx) {
+  .container {
+    padding: 15rpx;
+  }
+  
+  .game-title {
+    font-size: 42rpx;
+    margin-bottom: 10rpx;
+  }
+  
+  .game-description {
+    font-size: 24rpx;
+    margin: 0 20rpx 15rpx;
+  }
+  
+  .game-info {
+    margin-bottom: 20rpx;
+    padding: 20rpx;
+  }
+  
+  .level-text {
+    font-size: 32rpx;
+  }
+  
+  .level-number {
+    font-size: 26rpx;
+    padding: 6rpx 12rpx;
+  }
+  
+  .word-block {
+    min-height: 100rpx;
+  }
+  
+  .word-text {
+    font-size: 36rpx;
+  }
+}
+
+@media screen and (max-width: 300rpx) {
+  .game-board {
+    grid-template-columns: 1fr;
+    gap: 15rpx;
+    padding: 15rpx;
+  }
+  
+  .word-block {
+    min-height: 80rpx;
+  }
+  
+  .word-text {
+    font-size: 32rpx;
+  }
+  
+  .modal-content {
+    padding: 30rpx;
+    margin: 30rpx;
+  }
+  
+  .modal-title {
+    font-size: 40rpx;
+  }
+}
+
+/* 确保内容始终在一屏内 */
+.container {
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.game-header {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.game-info {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.game-board {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  min-height: 300rpx;
+  box-sizing: border-box;
+}
+
+.selected-words {
+  flex-shrink: 0;
+  margin-bottom: 20rpx;
+}
