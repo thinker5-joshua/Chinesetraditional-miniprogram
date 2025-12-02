@@ -48,7 +48,6 @@ Page({
   },
   onLoad() {
     // 移除云函数调用，成语消除游戏不需要用户认证
-    console.log('游戏主页加载完成');
   },
   
   navigateToGame(e) {

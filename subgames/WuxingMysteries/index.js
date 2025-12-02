@@ -22,13 +22,13 @@ Page({
         success: () => {
 
         },
-        fail: (err) => {
-          console.error('页面跳转失败:', err);
+        fail: () => {
+
           // 尝试使用navigateTo作为备选方案
           wx.navigateTo({
             url: '/subgames/WuxingMysteries/pages/main/index',
-            fail: (err2) => {
-              console.error('备选跳转也失败:', err2);
+            fail: () => {
+
               wx.showToast({
                 title: '页面加载失败',
                 icon: 'none',
@@ -39,7 +39,7 @@ Page({
         }
       });
     } catch (err) {
-      console.error('跳转过程中发生异常:', err);
+
       wx.showToast({
         title: '页面加载异常',
         icon: 'none', 

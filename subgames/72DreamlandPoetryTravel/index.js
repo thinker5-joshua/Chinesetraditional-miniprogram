@@ -28,20 +28,20 @@ Page({
   },
 
   onLoad() {
-    console.log('页面开始加载...');
+
     this.loadGameData();
     this.setupEventListeners();
-    console.log('页面加载完成，当前视图:', this.data.currentView);
+
   },
 
   onShow() {
     // 页面显示时确保地图容器可见
-    console.log('页面显示，当前洞天体数量:', this.data.displayedCaves.length);
+
     this.ensureContainersVisible();
     
     // 如果没有洞天体显示，重新初始化
     if (this.data.displayedCaves.length === 0) {
-      console.log('洞天体未显示，重新初始化...');
+
       setTimeout(() => {
         this.initializeImmortalMap();
       }, 200);

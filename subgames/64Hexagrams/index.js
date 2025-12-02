@@ -49,7 +49,7 @@ Page({
             selectedDisplay: "未选择"
         });
         
-        console.log('本次游戏的卦象:', currentHexagrams.map(h => `${h.name}(${h.symbol})`));
+
     },
 
     // 选择卡片
@@ -183,7 +183,7 @@ Page({
             
             // 立即更新进度条（在弹详情之前）
             const progressWidth = (newSuccessCount / 3) * 100;
-            console.log(`进度更新: ${newSuccessCount}/3 = ${progressWidth}%`); // 调试信息
+
             
             this.setData({
                 successCount: newSuccessCount,

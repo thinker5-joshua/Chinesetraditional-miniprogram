@@ -10,9 +10,7 @@ Page({
         const hexagramId = parseInt(options.hexagramId);
         const hexagram = hexagramsData.find(h => h.id === hexagramId);
         
-        console.log('hexagramId:', hexagramId);
-        console.log('hexagram:', hexagram);
-        console.log('hexagramsData length:', hexagramsData.length);
+
         
         if (hexagram) {
             this.setData({

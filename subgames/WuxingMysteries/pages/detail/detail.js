@@ -16,7 +16,7 @@ Page({
     
     // 参数验证
     if (!decodedElement || !decodedTabType) {
-      console.error('页面参数缺失:', { decodedElement, decodedTabType });
+
       wx.showToast({
         title: '页面参数错误',
         icon: 'none',
@@ -63,7 +63,7 @@ Page({
             elementData.element = elementName;
 
           } else {
-            console.warn('未找到匹配的五行元素:', elementName);
+
           }
           break;
           
@@ -141,7 +141,7 @@ Page({
       
       // 确保至少有基本数据
       if (!elementData.element) {
-        console.error('元素数据不完整:', elementData);
+
         // 设置默认数据避免页面空白
         elementData = {
           element: elementName,
@@ -163,7 +163,7 @@ Page({
       }
       
     } catch (error) {
-      console.error('获取详情数据失败:', error);
+
       // 设置错误状态
       this.setData({
         elementInfo: {
@@ -255,7 +255,7 @@ Page({
     if (pages.length > 1) {
       wx.navigateBack({
         fail: (error) => {
-          console.error('返回失败:', error);
+
           // 如果返回失败，尝试跳转到主页面
           wx.reLaunch({
             url: '/subgames/WuxingMysteries/pages/main/index'
@@ -281,7 +281,7 @@ Page({
     
     // 验证参数
     if (!element || !this.data.tabType) {
-      console.error('缺少必要参数:', { element, tabType: this.data.tabType });
+
       return;
     }
     
@@ -290,7 +290,7 @@ Page({
     wx.navigateTo({
       url: targetUrl,
       fail: (error) => {
-        console.error('导航失败:', error);
+
         wx.showToast({
           title: '页面跳转失败',
           icon: 'none',

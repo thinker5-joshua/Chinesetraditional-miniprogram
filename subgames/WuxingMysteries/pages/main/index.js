@@ -90,7 +90,7 @@ Page({
         this.drawCurrentTabCanvas();
       });
     } catch (err) {
-      console.error('数据文件加载失败:', err);
+
       wx.showToast({
         title: '数据加载失败',
         icon: 'none',
@@ -150,7 +150,7 @@ Page({
         ctx.clearRect(0, 0, 350, 350); // 清除整个画布区域
         ctx.draw(true); // 使用true参数立即绘制，确保清除操作生效
       } catch (error) {
-        console.warn(`清除Canvas ${canvasId} 失败:`, error);
+
       }
     });
   },
@@ -192,7 +192,7 @@ Page({
     
     // 验证参数有效性
     if (!element || !tab) {
-      console.error('缺少必要参数:', { element, tab });
+
       wx.showToast({
         title: '参数错误',
         icon: 'none',
@@ -213,7 +213,7 @@ Page({
 
       },
       fail: (error) => {
-        console.error('导航失败:', error);
+
         wx.showToast({
           title: '页面跳转失败',
           icon: 'none',

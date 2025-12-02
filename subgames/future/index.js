@@ -7,9 +7,9 @@ try {
     const data = require('./idioms-data.js');
     COMMON_IDIOMS = data.COMMON_IDIOMS;
     ADVANCED_IDIOMS = data.ADVANCED_IDIOMS;
-    console.log('成语数据加载成功 - 常用:', COMMON_IDIOMS.length, '个，高深:', ADVANCED_IDIOMS.length, '个');
+
 } catch (error) {
-    console.error('成语数据加载失败，使用默认数据:', error);
+
     // 使用默认成语数据
     COMMON_IDIOMS = ['一举两得', '三心二意', '四面八方', '五光十色', '六神无主'];
     ADVANCED_IDIOMS = ['曲高和寡', '阳春白雪', '下里巴人', '对牛弹琴', '高山流水'];
@@ -39,20 +39,14 @@ Page({
     },
 
     onLoad() {
-        console.log('页面加载，当前关卡:', this.data.currentLevel);
+
         this.initGame();
     },
 
     // 初始化游戏
     initGame() {
-        console.log('开始初始化游戏，当前关卡:', this.data.currentLevel);
-        
         const levelConfig = this.getLevelConfig(this.data.currentLevel);
-        console.log('关卡配置:', levelConfig);
-        
         const selectedIdioms = this.generateLevelIdioms(levelConfig);
-        console.log('选中的成语:', selectedIdioms);
-        console.log('成语数量检查 - 常用可用:', COMMON_IDIOMS.length, '个，高深可用:', ADVANCED_IDIOMS.length, '个');
         
         const wordBlocks = [];
 
@@ -168,7 +162,7 @@ Page({
 
     // 生成随机常用成语
     generateRandomCommonIdioms(count) {
-        console.log('生成常用成语，需要数量:', count, '可用数量:', COMMON_IDIOMS.length);
+
         
         const selectedIdioms = {};
         const result = [];
@@ -185,13 +179,13 @@ Page({
             }
         }
         
-        console.log('常用成语生成完成，实际数量:', result.length, '尝试次数:', attempts);
+
         return result;
     },
 
     // 生成随机高深成语
     generateRandomAdvancedIdioms(count) {
-        console.log('生成高深成语，需要数量:', count, '可用数量:', ADVANCED_IDIOMS.length);
+
         
         const selectedIdioms = {};
         const result = [];
@@ -208,7 +202,7 @@ Page({
             }
         }
         
-        console.log('高深成语生成完成，实际数量:', result.length, '尝试次数:', attempts);
+
         return result;
     },
 
@@ -415,14 +409,14 @@ Page({
             audio.src = '/subgames/future/sounds/success.wav';
             audio.volume = 0.6;
             audio.onPlay(() => {
-                console.log('成功音效播放');
+
             });
             audio.onError((res) => {
-                console.log('成功音效播放失败:', res.errMsg);
+
             });
             audio.play();
         } catch (error) {
-            console.log('音效播放失败:', error);
+
         }
     },
 
@@ -434,14 +428,14 @@ Page({
             audio.src = '/subgames/future/sounds/failure.wav';
             audio.volume = 0.7;
             audio.onPlay(() => {
-                console.log('失败音效播放');
+
             });
             audio.onError((res) => {
-                console.log('失败音效播放失败:', res.errMsg);
+
             });
             audio.play();
         } catch (error) {
-            console.log('音效播放失败:', error);
+
         }
     }
 });
