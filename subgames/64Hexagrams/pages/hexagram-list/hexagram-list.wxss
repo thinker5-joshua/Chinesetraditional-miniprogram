@@ -62,38 +62,40 @@ page::before {
 /* 分组方式选择 */
 .mode-selector {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 15px;
   padding: 8px 12px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
   border: 1px solid #b8a57e;
   box-shadow: 0 2px 6px rgba(139, 69, 19, 0.1);
-}
-
-.mode-label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #8b4513;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mode-buttons {
   display: flex;
   gap: 8px;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .mode-button {
   background-color: #f5f5f5;
   color: #6d4c41;
   border: 1px solid #b8a57e;
-  padding: 6px 14px;
+  padding: 6px 12px;
   font-size: 13px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: "SimSun", "STSong", serif;
   white-space: nowrap;
+  flex: 1;
+  text-align: center;
+  min-width: 0;
 }
 
 .mode-button.active {
@@ -284,6 +286,205 @@ page::before {
   box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
 }
 
+/* 添加分组模式的上方分隔线 */
+.mode-selector .mode-buttons:nth-child(2) {
+  border-top: 1px solid rgba(184, 165, 126, 0.3);
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+/* 随机翻阅样式 */
+.random-view {
+  margin-top: 20px;
+}
+
+/* 随机卦象卡片 */
+.random-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 3px solid #b8a57e;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.random-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(139, 69, 19, 0.25);
+  border-color: #8b4513;
+}
+
+.random-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(218, 165, 32, 0.03) 0%, transparent 70%);
+  transition: all 0.6s ease;
+}
+
+/* 卦象序号 */
+.hexagram-sequence {
+  font-size: 14px;
+  color: #8b4513;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  text-align: right;
+}
+
+/* 大型卦象 */
+.hexagram-symbol-large {
+  font-size: 110px;
+  margin: 15px 0;
+  font-family: "SimSun", monospace;
+  line-height: 1;
+  letter-spacing: 1px;
+  display: block;
+  color: #2c3e50;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+
+/* 卦名和拼音行 */
+.hexagram-name-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* 大型卦名 */
+.hexagram-name-large {
+  font-size: 28px;
+  font-weight: bold;
+  color: #8b4513;
+  margin: 0;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+/* 大型拼音 */
+.hexagram-pinyin-large {
+  font-size: 18px;
+  color: #6d4c41;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: inline-block;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* 额外信息 */
+.hexagram-extra-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* 别名 */
+.hexagram-alias {
+  font-size: 16px;
+  color: #8b4513;
+  margin: 0;
+  display: inline-block;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+/* 上下卦 */
+.hexagram-trigrams {
+  font-size: 15px;
+  color: #6d4c41;
+  margin: 0;
+  display: inline-block;
+  font-style: normal;
+  opacity: 0.8;
+}
+
+/* 卦辞部分 */
+.hexagram-text-section {
+  background-color: rgba(211, 199, 167, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: left;
+}
+
+/* 章节标题 */
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #8b4513;
+  margin-bottom: 8px;
+  display: block;
+  text-align: center;
+}
+
+/* 卦辞文本 */
+.hexagram-text {
+  font-size: 16px;
+  color: #3a2c1e;
+  line-height: 1.6;
+  display: block;
+  text-align: center;
+}
+
+/* 随机翻页控制 */
+.random-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  border: 2px solid #b8a57e;
+}
+
+/* 随机翻页按钮 */
+.random-page-button {
+  background-color: #8b4513;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "SimSun", "STSong", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.random-page-button:hover {
+  background-color: #cd853f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+/* 页箭头 */
+.page-arrow {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .hexagram-grid {
@@ -309,13 +510,43 @@ page::before {
   }
   
   .mode-selector {
-    flex-direction: column;
+    padding: 6px 10px;
+  }
+  
+  .mode-buttons {
+    gap: 6px;
+  }
+  
+  .mode-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  /* 随机翻阅响应式 */
+  .random-card {
+    padding: 20px;
+  }
+  
+  .hexagram-symbol-large {
+    font-size: 85px;
+  }
+  
+  .hexagram-name-large {
+    font-size: 24px;
+  }
+  
+  .hexagram-pinyin-large {
+    font-size: 16px;
+  }
+  
+  .random-pagination {
+    flex-direction: row;
     gap: 10px;
   }
   
-  .mode-label {
-    margin-right: 0;
-    margin-bottom: 5px;
+  .random-page-button {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 
@@ -340,5 +571,42 @@ page::before {
   
   .hexagram-pinyin {
     font-size: 10px;
+  }
+  
+  /* 随机翻阅响应式 */
+  .random-card {
+    padding: 15px;
+  }
+  
+  .hexagram-symbol-large {
+    font-size: 75px;
+  }
+  
+  .hexagram-name-large {
+    font-size: 22px;
+  }
+  
+  .hexagram-pinyin-large {
+    font-size: 15px;
+  }
+  
+  .random-pagination {
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .random-page-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+  
+  .page-arrow {
+    font-size: 16px;
+  }
+  
+  .random-switch-button {
+    padding: 10px 25px;
+    font-size: 15px;
   }
 }

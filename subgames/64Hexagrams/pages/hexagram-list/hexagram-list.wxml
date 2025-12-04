@@ -1,13 +1,24 @@
 <view class="container">
   <view class="header">
     <text class="title">易经六十四卦学习</text>
-    <text class="subtitle">按组浏览学习，掌握易经智慧</text>
+    <text class="subtitle">按组浏览或随机翻阅，掌握易经智慧</text>
   </view>
 
-  <!-- 分组方式选择 -->
+  <!-- 查看模式选择 -->
   <view class="mode-selector">
-    <text class="mode-label">分组方式：</text>
     <view class="mode-buttons">
+      <button 
+        class="mode-button {{viewMode === 'random' ? 'active' : ''}}" 
+        bindtap="switchToRandom"
+      >随机翻阅</button>
+      <button 
+        class="mode-button {{viewMode === 'group' ? 'active' : ''}}" 
+        bindtap="switchToGroup"
+      >分组查看</button>
+    </view>
+    
+    <!-- 分组方式选择（仅在分组查看模式下显示） -->
+    <view class="mode-buttons" wx:if="{{viewMode === 'group'}}">
       <button 
         class="mode-button {{groupMode === 'sequence' ? 'active' : ''}}" 
         bindtap="switchToSequence"
@@ -19,38 +30,90 @@
     </view>
   </view>
 
-  <!-- 当前组信息 -->
-  <view class="group-info">
-    <text class="group-title">{{currentGroupTitle}}</text>
-    <text class="group-subtitle">{{currentGroupSubtitle}}</text>
-  </view>
+  <!-- 分组查看模式内容 -->
+  <view wx:if="{{viewMode === 'group'}}">
+    <!-- 当前组信息 -->
+    <view class="group-info">
+      <text class="group-title">{{currentGroupTitle}}</text>
+      <text class="group-subtitle">{{currentGroupSubtitle}}</text>
+    </view>
 
-  <!-- 卦象列表 -->
-  <view class="hexagram-grid">
-    <view 
-      wx:for="{{currentHexagrams}}" 
-      wx:key="id"
-      class="hexagram-item"
-      bindtap="goToHexagramDetail"
-      data-hexagram="{{item}}"
-    >
-      <view class="hexagram-symbol">{{item.symbol}}</view>
-      <view class="hexagram-name">{{item.name}}</view>
-      <view class="hexagram-pinyin">{{item.pinyin}}</view>
+    <!-- 卦象列表 -->
+    <view class="hexagram-grid">
+      <view 
+        wx:for="{{currentHexagrams}}" 
+        wx:key="id"
+        class="hexagram-item"
+        bindtap="goToHexagramDetail"
+        data-hexagram="{{item}}"
+      >
+        <view class="hexagram-symbol">{{item.symbol}}</view>
+        <view class="hexagram-name">{{item.name}}</view>
+        <view class="hexagram-pinyin">{{item.pinyin}}</view>
+      </view>
+    </view>
+
+    <!-- 翻页控制 -->
+    <view class="pagination">
+      <button 
+        class="pagination-button {{currentPage === 0 ? 'disabled' : ''}}" 
+        bindtap="previousGroup"
+      >上一组</button>
+      <text class="page-indicator">{{currentPage + 1}}/{{totalGroups}}</text>
+      <button 
+        class="pagination-button {{currentPage === totalGroups - 1 ? 'disabled' : ''}}" 
+        bindtap="nextGroup"
+      >下一组</button>
     </view>
   </view>
 
-  <!-- 翻页控制 -->
-  <view class="pagination">
-    <button 
-      class="pagination-button {{currentPage === 0 ? 'disabled' : ''}}" 
-      bindtap="previousGroup"
-    >上一组</button>
-    <text class="page-indicator">{{currentPage + 1}}/{{totalGroups}}</text>
-    <button 
-      class="pagination-button {{currentPage === totalGroups - 1 ? 'disabled' : ''}}" 
-      bindtap="nextGroup"
-    >下一组</button>
+  <!-- 随机翻阅模式内容 -->
+  <view wx:if="{{viewMode === 'random'}}" class="random-view">
+    <!-- 随机卦象卡片 -->
+      <view 
+        class="random-card" 
+        bindtap="goToHexagramDetail" 
+        data-hexagram="{{currentRandomHexagram}}"
+        bindtouchstart="onTouchStart"
+        bindtouchmove="onTouchMove"
+        bindtouchend="onTouchEnd"
+      >
+      <!-- 卦象序号 -->
+      <view class="hexagram-sequence">第{{currentRandomHexagram.id}}卦</view>
+      
+      <!-- 卦象 -->
+      <view class="hexagram-symbol-large">{{currentRandomHexagram.symbol}}</view>
+      
+      <!-- 卦名和拼音 -->
+      <view class="hexagram-name-row">
+        <view class="hexagram-name-large">{{currentRandomHexagram.name}}</view>
+        <view class="hexagram-pinyin-large">{{currentRandomHexagram.pinyin}}</view>
+      </view>
+      
+      <!-- 别名和上下卦 -->
+      <view class="hexagram-extra-info">
+        <view class="hexagram-alias">{{currentRandomHexagram.alias}}</view>
+        <view class="hexagram-trigrams">上{{currentRandomHexagram.upperTrigram}}下{{currentRandomHexagram.lowerTrigram}}</view>
+      </view>
+      
+      <!-- 卦辞 -->
+      <view class="hexagram-text-section">
+        <text class="section-title">卦辞</text>
+        <text class="hexagram-text">{{currentRandomHexagram.hexagramText}}</text>
+      </view>
+    </view>
+    
+    <!-- 随机翻阅翻页控制 -->
+    <view class="random-pagination">
+      <button class="random-page-button" bindtap="previousRandomHexagram">
+        <text class="page-arrow">←</text>
+        <text>上一个</text>
+      </button>
+      <button class="random-page-button" bindtap="nextRandomHexagram">
+        <text>下一个</text>
+        <text class="page-arrow">→</text>
+      </button>
+    </view>
   </view>
 
   <!-- 返回按钮 -->

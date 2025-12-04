@@ -3,6 +3,10 @@ const hexagramsData = require('../../hexagrams-data.js').hexagramsData;
 
 Page({
     data: {
+        // 查看模式：'random' 随机翻阅, 'group' 分组查看
+        viewMode: 'random',
+        
+        // 分组相关
         groupMode: 'sequence', // 'sequence' 顺序, 'palace' 八宫
         currentPage: 0,
         totalGroups: 8,
@@ -10,12 +14,29 @@ Page({
         currentGroupTitle: '',
         currentGroupSubtitle: '',
         sequenceGroups: [],
-        palaceGroups: []
+        palaceGroups: [],
+        
+        // 随机翻阅相关
+        currentRandomIndex: 0,
+        currentRandomHexagram: null,
+        // 用于随机翻阅的卦象顺序数组
+        randomHexagramOrder: [],
+        
+        // 触摸事件相关
+        startX: 0,
+        startY: 0,
+        moveX: 0,
+        moveY: 0
     },
 
     onLoad() {
         this.initializeGroups();
-        this.updateCurrentGroup();
+        if (this.data.viewMode === 'random') {
+            this.initializeRandomHexagrams();
+            this.switchToFirstRandomHexagram();
+        } else {
+            this.updateCurrentGroup();
+        }
     },
 
     // 初始化分组
@@ -35,42 +56,42 @@ Page({
             {
                 title: '乾宫',
                 subtitle: '乾为天父，统领八卦',
-                hexagrams: [0, 43, 32, 11, 19, 22, 34, 13] // 乾(1)、姤(44)、遁(33)、否(12)、观(20)、剥(23)、晋(35)、大有(14)
+                hexagrams: [1, 44, 33, 12, 20, 23, 35, 14] // 乾(1)、姤(44)、遁(33)、否(12)、观(20)、剥(23)、晋(35)、大有(14)
             },
             {
                 title: '坎宫',
                 subtitle: '坎为水母，润泽万物',
-                hexagrams: [28, 59, 2, 62, 48, 54, 35, 6] // 坎(29)、节(60)、屯(3)、既济(63)、革(49)、丰(55)、明夷(36)、师(7)
+                hexagrams: [29, 60, 3, 63, 49, 55, 36, 7] // 坎(29)、节(60)、屯(3)、既济(63)、革(49)、丰(55)、明夷(36)、师(7)
             },
             {
                 title: '艮宫',
                 subtitle: '艮为山止，稳重如山',
-                hexagrams: [51, 21, 25, 40, 37, 9, 60, 52] // 艮(52)、贲(22)、大畜(26)、损(41)、睽(38)、履(10)、中孚(61)、渐(53)
+                hexagrams: [52, 22, 26, 41, 38, 10, 61, 53] // 艮(52)、贲(22)、大畜(26)、损(41)、睽(38)、履(10)、中孚(61)、渐(53)
             },
             {
                 title: '震宫',
                 subtitle: '震为雷动，奋发图强',
-                hexagrams: [50, 15, 39, 31, 45, 47, 27, 16] // 震(51)、豫(16)、解(40)、恒(32)、升(46)、井(48)、大过(28)、随(17)
+                hexagrams: [51, 16, 40, 32, 46, 48, 28, 17] // 震(51)、豫(16)、解(40)、恒(32)、升(46)、井(48)、大过(28)、随(17)
             },
             {
                 title: '巽宫',
                 subtitle: '巽为风行，无孔不入',
-                hexagrams: [56, 8, 36, 41, 24, 20, 26, 17] // 巽(57)、小畜(9)、家人(37)、益(42)、无妄(25)、噬嗑(21)、颐(27)、蛊(18)
+                hexagrams: [57, 9, 37, 42, 25, 21, 27, 18] // 巽(57)、小畜(9)、家人(37)、益(42)、无妄(25)、噬嗑(21)、颐(27)、蛊(18)
             },
             {
                 title: '离宫',
                 subtitle: '离为火明，照亮前程',
-                hexagrams: [29, 55, 49, 63, 3, 58, 5, 12] // 离(30)、旅(56)、鼎(50)、未济(64)、蒙(4)、涣(59)、讼(6)、同人(13)
+                hexagrams: [30, 56, 50, 64, 4, 59, 6, 13] // 离(30)、旅(56)、鼎(50)、未济(64)、蒙(4)、涣(59)、讼(6)、同人(13)
             },
             {
                 title: '坤宫',
                 subtitle: '坤为地母，厚德载物',
-                hexagrams: [1, 23, 18, 10, 33, 42, 4, 7] // 坤(2)、复(24)、临(19)、泰(11)、大壮(34)、夬(43)、需(5)、比(8)
+                hexagrams: [2, 24, 19, 11, 34, 43, 5, 8] // 坤(2)、复(24)、临(19)、泰(11)、大壮(34)、夬(43)、需(5)、比(8)
             },
             {
                 title: '兑宫',
                 subtitle: '兑为泽悦，和气生财',
-                hexagrams: [57, 46, 44, 30, 38, 14, 61, 53] // 兑(58)、困(47)、萃(45)、咸(31)、蹇(39)、谦(15)、小过(62)、归妹(54)
+                hexagrams: [58, 47, 45, 31, 39, 15, 62, 54] // 兑(58)、困(47)、萃(45)、咸(31)、蹇(39)、谦(15)、小过(62)、归妹(54)
             }
         ];
 
@@ -78,8 +99,22 @@ Page({
             sequenceGroups: sequenceGroups,
             palaceGroups: palaceGroups.map(group => ({
                 ...group,
-                hexagrams: group.hexagrams.map(index => hexagramsData[index])
+                hexagrams: group.hexagrams.map(id => hexagramsData.find(h => h.id === id))
             }))
+        });
+    },
+
+    // 初始化随机卦象顺序
+    initializeRandomHexagrams() {
+        // 创建一个随机顺序的索引数组
+        const order = Array.from({ length: hexagramsData.length }, (_, i) => i);
+        // 打乱顺序
+        for (let i = order.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [order[i], order[j]] = [order[j], order[i]];
+        }
+        this.setData({
+            randomHexagramOrder: order
         });
     },
 
@@ -103,6 +138,25 @@ Page({
             currentGroupTitle: groupTitle,
             currentGroupSubtitle: groupSubtitle,
             totalGroups: groups.length
+        });
+    },
+
+    // 切换到随机翻阅模式
+    switchToRandom() {
+        this.setData({
+            viewMode: 'random'
+        }, () => {
+            this.initializeRandomHexagrams();
+            this.switchToFirstRandomHexagram();
+        });
+    },
+
+    // 切换到分组查看模式
+    switchToGroup() {
+        this.setData({
+            viewMode: 'group'
+        }, () => {
+            this.updateCurrentGroup();
         });
     },
 
@@ -148,12 +202,84 @@ Page({
         }
     },
 
+    // 切换到第一个随机卦象
+    switchToFirstRandomHexagram() {
+        const { randomHexagramOrder } = this.data;
+        const firstIndex = randomHexagramOrder[0];
+        this.setData({
+            currentRandomIndex: 0,
+            currentRandomHexagram: hexagramsData[firstIndex]
+        });
+    },
+
+    // 上一个卦象（按乱序序列）
+    previousRandomHexagram() {
+        let { currentRandomIndex, randomHexagramOrder } = this.data;
+        currentRandomIndex = (currentRandomIndex - 1 + randomHexagramOrder.length) % randomHexagramOrder.length;
+        const hexagramIndex = randomHexagramOrder[currentRandomIndex];
+        this.setData({
+            currentRandomIndex: currentRandomIndex,
+            currentRandomHexagram: hexagramsData[hexagramIndex]
+        });
+    },
+
+    // 下一个卦象（按乱序序列）
+    nextRandomHexagram() {
+        let { currentRandomIndex, randomHexagramOrder } = this.data;
+        currentRandomIndex = (currentRandomIndex + 1) % randomHexagramOrder.length;
+        const hexagramIndex = randomHexagramOrder[currentRandomIndex];
+        this.setData({
+            currentRandomIndex: currentRandomIndex,
+            currentRandomHexagram: hexagramsData[hexagramIndex]
+        });
+    },
+
     // 进入卦详情页
     goToHexagramDetail(e) {
-        const hexagram = e.currentTarget.dataset.hexagram;
+        let hexagram;
+        if (e.currentTarget) {
+            // 从事件中获取
+            hexagram = e.currentTarget.dataset.hexagram;
+        } else {
+            // 直接传入的卦象对象
+            hexagram = e;
+        }
         wx.navigateTo({
             url: `/subgames/64Hexagrams/pages/hexagram-detail/hexagram-detail?hexagramId=${hexagram.id}`
         });
+    },
+
+    // 触摸开始事件
+    onTouchStart(e) {
+        this.setData({
+            startX: e.touches[0].clientX,
+            startY: e.touches[0].clientY
+        });
+    },
+
+    // 触摸移动事件
+    onTouchMove(e) {
+        this.setData({
+            moveX: e.touches[0].clientX,
+            moveY: e.touches[0].clientY
+        });
+    },
+
+    // 触摸结束事件
+    onTouchEnd() {
+        const { startX, moveX } = this.data;
+        const deltaX = moveX - startX;
+        
+        // 设定滑动阈值，大于50px才触发翻页
+        if (Math.abs(deltaX) > 50) {
+            if (deltaX > 0) {
+                // 向右滑动，显示上一个卦象
+                this.previousRandomHexagram();
+            } else {
+                // 向左滑动，显示下一个卦象
+                this.nextRandomHexagram();
+            }
+        }
     },
 
     // 返回64卦配对

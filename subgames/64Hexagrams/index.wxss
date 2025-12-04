@@ -31,32 +31,86 @@ page::before {
 /* 头部 */
 .header {
   text-align: center;
-  margin-bottom: 15px;
-  padding: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
   background: linear-gradient(135deg, rgba(211, 199, 167, 0.4), rgba(205, 133, 63, 0.3));
   border: 3px solid #b8a57e;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.2);
+  box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
   position: relative;
   z-index: 1;
 }
 
 .title {
-  font-size: 28px;
+  font-size: 24px;
   color: #8b4513;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   font-weight: bold;
   display: block;
   letter-spacing: 2px;
+  line-height: 1.2;
 }
 
 .subtitle {
-  font-size: 15px;
-  color: #6d4c41;
-  letter-spacing: 1px;
+  font-size: 14px;
+  color: #8b4513;
+  letter-spacing: 1.5px;
   display: block;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+/* 说明容器（包含说明文字和去学卦按钮） */
+.instruction-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background-color: rgba(211, 199, 167, 0.3);
+  border: 2px solid rgba(184, 165, 126, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+  position: relative;
+  z-index: 1;
+  flex-wrap: nowrap;
+}
+
+/* 说明文字 */
+.instruction-content {
+  font-size: 15px;
+  color: #8b4513;
   line-height: 1.5;
+  flex: 1;
+  text-align: left;
+  letter-spacing: 0.5px;
+  min-width: 0;
+  order: 1;
+}
+
+/* 行内去学卦按钮 */
+.inline-learn-button {
+  background-color: #8b4513;
+  color: #fff;
+  border: 2px solid #b8a57e;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "SimSun", "STSong", serif;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+  order: 2;
+  min-width: 70px;
+  max-width: 90px;
 }
 
 /* 游戏容器 */
@@ -71,15 +125,7 @@ page::before {
   z-index: 1;
 }
 
-.game-container::before {
-  content: '☯';
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 24px;
-  color: rgba(139, 69, 19, 0.2);
-  opacity: 0.6;
-}
+
 
 /* 分数板 */
 .score-board {
@@ -87,89 +133,46 @@ page::before {
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
-  padding: 10px;
+  padding: 8px 15px;
   background-color: rgba(211, 199, 167, 0.2);
   border-radius: 12px;
   border: 2px solid rgba(184, 165, 126, 0.3);
 }
 
-.progress {
-  flex: 1;
-  max-width: 400px;
+.progress-stars {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.progress span {
+.progress-label {
   font-size: 14px;
   font-weight: bold;
-  color: #ff9800;
-  display: block;
-  margin-bottom: 5px;
-  transition: color 0.5s ease;
+  color: #8b4513;
 }
 
-.progress-bar {
-  width: 100%;
-  height: 20px;
-  background-color: #f5f5f5;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid #ddd;
-  position: relative;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: #8b4513;
-  transition: width 0.5s ease;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-/* 三段式进度条 */
-.progress-bar::before {
-  content: '';
-  position: absolute;
-  left: 33.33%;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background-color: #ddd;
-}
-
-.progress-bar::after {
-  content: '';
-  position: absolute;
-  left: 66.66%;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background-color: #ddd;
-}
-
-.progress-dots {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
+.stars-container {
   display: flex;
-  justify-content: space-between;
-  padding: 0 2px;
-  pointer-events: none;
+  gap: 8px;
 }
 
-.progress-dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #ddd;
+.star {
+  font-size: 24px;
+  color: #ddd;
   transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.progress-dot.active {
-  background-color: #8b4513;
-  transform: scale(1);
+.star.active {
+  color: #ffd700;
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.4);
+  transform: scale(1.1);
+}
+
+.progress-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #8b4513;
 }
 
 /* 游戏板容器 */
@@ -177,24 +180,37 @@ page::before {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 50px;
+  gap: 120px;
   margin-bottom: 15px;
-  padding: 15px;
+  padding: 20px;
   width: 100%;
-  min-height: 260px;
+  min-height: 280px;
   /* 强制保持左右分列布局 */
   flex-direction: row;
+  box-sizing: border-box;
 }
 
-/* 卦象列和卦名列 */
-.hexagram-column, .name-column {
+/* 卦象列 */
+.hexagram-column {
   flex: 0 0 auto;
-  width: 160px;
+  width: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  min-width: 140px;
+  min-width: 120px;
+}
+
+/* 卦名列 */
+.name-column {
+  flex: 0 0 auto;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-width: 180px;
+  max-width: 220px;
 }
 
 /* 卦象方块 */
@@ -203,7 +219,7 @@ page::before {
   border: 2px solid #b8a57e;
   border-radius: 12px;
   padding: 12px;
-  width: 100px;
+  width: 100%;
   height: 100px;
   text-align: center;
   cursor: pointer;
@@ -269,23 +285,57 @@ page::before {
   font-weight: bold;
 }
 
+.hexagram-name-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
 .hexagram-name {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: #8b4513;
-  margin: 4px 0 1px 0;
-  display: block;
+  margin: 0;
+  display: inline-block;
   letter-spacing: 0.5px;
 }
 
 .hexagram-pinyin {
-  font-size: 12px;
+  font-size: 15px;
   color: #6d4c41;
   font-family: Arial, sans-serif;
   margin: 0;
-  display: block;
+  display: inline-block;
   font-style: italic;
   opacity: 0.8;
+}
+
+.hexagram-extra-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hexagram-alias {
+  font-size: 14px;
+  color: #8b4513;
+  margin: 0;
+  display: inline-block;
+  letter-spacing: 0.3px;
+  font-weight: bold;
+}
+
+.hexagram-trigrams {
+  font-size: 12px;
+  color: #6d4c41;
+  margin: 0;
+  display: inline-block;
+  font-style: normal;
+  opacity: 0.9;
 }
 
 /* 选择信息 */
@@ -298,27 +348,8 @@ page::before {
   border-radius: 6px;
 }
 
-/* 去学卦按钮 */
-.learn-hexagram-container {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 0;
-}
-
-.learn-hexagram-button {
-  background-color: #8b4513;
-  color: #fff;
-  border: none;
-  padding: 8px 20px;
-  font-size: 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "SimSun", "STSong", serif;
-  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.2);
-}
-
-.learn-hexagram-button:hover {
+/* 行内去学卦按钮悬停效果 */
+.inline-learn-button:hover {
   background-color: #cd853f;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
@@ -467,123 +498,46 @@ page::before {
   transform: scale(1.05);
 }
 
-/* 详情模态框 */
-.detail-modal {
-  max-width: 95%;
-}
 
-.modal-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #b8a57e;
-}
-
-.modal-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 2px solid #b8a57e;
-}
-
-.close-button {
-  background-color: #8b4513;
-  border: none;
-  font-size: 18px;
-  padding: 12px 30px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #fff;
-  transition: all 0.3s ease;
-  font-family: "SimSun", "STSong", serif;
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
-}
-
-.close-button:hover {
-  background-color: #b8a57e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
-}
-
-.hexagram-detail-content {
-  text-align: left;
-  line-height: 1.6;
-}
-
-.hexagram-detail-content .hexagram-symbol {
-  text-align: center;
-  margin: 15px 0 8px 0;
-  font-size: 48px;
-  display: block;
-}
-
-.hexagram-pinyin-detail {
-  text-align: center;
-  margin: 0 0 12px 0;
-  font-size: 18px;
-  color: #6d4c41;
-  font-family: Arial, sans-serif;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 2px;
-  display: block;
-}
-
-.hexagram-text {
-  font-size: 16px;
-  color: #555;
-  font-style: italic;
-  line-height: 1.4;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.yao-title {
-  color: #8b4513;
-  margin: 15px 0 8px 0;
-  font-size: 18px;
-  font-weight: bold;
-  display: block;
-}
-
-.yao-info {
-  margin-top: 12px;
-  padding: 10px;
-  background-color: rgba(211, 199, 167, 0.1);
-  border-radius: 6px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  line-height: 1.5;
-}
 
 /* 响应式设计 */
 @media (max-width: 1200px) {
   .game-board-container {
-    gap: 25px;
+    gap: 60px;
   }
   
-  .hexagram-column, .name-column {
-    max-width: 160px;
+  .hexagram-column {
+    width: 130px;
+    min-width: 110px;
+  }
+  
+  .name-column {
+    width: 200px;
+    min-width: 170px;
+    max-width: 210px;
   }
 }
 
 @media (max-width: 900px) {
   .game-board-container {
-    gap: 20px;
-    padding: 12px;
-    min-height: 240px;
+    gap: 50px;
+    padding: 15px;
+    min-height: 260px;
   }
   
-  .hexagram-column, .name-column {
-    max-width: 140px;
+  .hexagram-column {
+    width: 120px;
+    min-width: 100px;
+  }
+  
+  .name-column {
+    width: 190px;
+    min-width: 160px;
+    max-width: 200px;
   }
   
   .hexagram-block {
-    width: 90px;
+    width: 100%;
     height: 90px;
     padding: 10px;
   }
@@ -596,21 +550,27 @@ page::before {
 @media (max-width: 768px) {
   .game-board-container {
     flex-direction: row;
-    gap: 15px;
-    padding: 12px;
-    justify-content: space-around;
-    min-height: 220px;
+    gap: 40px;
+    padding: 15px;
+    justify-content: center;
+    min-height: 240px;
   }
   
-  .hexagram-column, .name-column {
-    max-width: 120px;
-    flex: 1;
+  .hexagram-column {
+    width: 110px;
+    min-width: 90px;
+  }
+  
+  .name-column {
+    width: 170px;
+    min-width: 140px;
+    max-width: 180px;
   }
   
   .hexagram-block {
-    width: 85px;
-    height: 85px;
-    padding: 8px;
+    width: 100%;
+    height: 90px;
+    padding: 10px;
   }
   
   .hexagram-symbol {
@@ -618,10 +578,18 @@ page::before {
   }
   
   .hexagram-name {
-    font-size: 15px;
+    font-size: 18px;
   }
   
   .hexagram-pinyin {
+    font-size: 14px;
+  }
+  
+  .hexagram-alias {
+    font-size: 12px;
+  }
+  
+  .hexagram-trigrams {
     font-size: 11px;
   }
   
@@ -633,64 +601,110 @@ page::before {
 @media (max-width: 600px) {
   .game-board-container {
     flex-direction: row;
-    gap: 12px;
-    padding: 10px;
+    gap: 30px;
+    padding: 12px;
     justify-content: center;
     flex-wrap: nowrap;
     overflow-x: auto;
-    min-height: 200px;
+    min-height: 220px;
   }
   
-  .hexagram-column, .name-column {
-    max-width: 45%;
-    width: 45%;
+  .hexagram-column {
+    width: 38%;
+    min-width: 100px;
     flex: none;
-    min-width: 120px;
+  }
+  
+  .name-column {
+    width: 55%;
+    min-width: 130px;
+    max-width: 150px;
+    flex: none;
   }
   
   .hexagram-block {
     width: 100%;
-    max-width: 90px;
-    height: 80px;
-    padding: 6px;
+    height: 85px;
+    padding: 8px;
     margin: 0 auto;
   }
   
   .hexagram-symbol {
-    font-size: 46px;
+    font-size: 48px;
   }
   
   .hexagram-name {
-    font-size: 14px;
+    font-size: 17px;
   }
   
   .hexagram-pinyin {
-    font-size: 10px;
+    font-size: 13px;
+  }
+  
+  .hexagram-alias {
+    font-size: 12px;
+  }
+  
+  .hexagram-trigrams {
+    font-size: 11px;
+  }
+  
+  .inline-learn-button {
+    font-size: 14px;
+    padding: 5px 10px;
+    min-width: 65px;
+    max-width: 85px;
   }
 }
 
 @media (max-width: 480px) {
   .game-board-container {
-    gap: 10px;
-    padding: 8px;
-    min-height: 180px;
+    gap: 25px;
+    padding: 10px;
+    min-height: 200px;
+  }
+  
+  .hexagram-column {
+    width: 38%;
+    min-width: 90px;
+  }
+  
+  .name-column {
+    width: 55%;
+    min-width: 120px;
+    max-width: 140px;
   }
   
   .hexagram-block {
-    max-width: 80px;
-    height: 70px;
-    padding: 5px;
+    width: 100%;
+    height: 75px;
+    padding: 6px;
   }
   
   .hexagram-symbol {
-    font-size: 42px;
+    font-size: 44px;
   }
   
   .hexagram-name {
-    font-size: 13px;
+    font-size: 16px;
   }
   
   .hexagram-pinyin {
-    font-size: 9px;
+    font-size: 12px;
+  }
+  
+  .hexagram-alias {
+    font-size: 11px;
+  }
+  
+  .hexagram-trigrams {
+    font-size: 10px;
+  }
+  
+  .inline-learn-button {
+    font-size: 13px;
+    padding: 4px 8px;
+    min-width: 60px;
+    max-width: 80px;
   }
 }

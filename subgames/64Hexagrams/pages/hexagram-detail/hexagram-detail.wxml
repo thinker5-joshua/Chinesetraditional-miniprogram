@@ -1,29 +1,119 @@
-<view class="container">
-  <view class="header">
-    <text class="title">{{hexagram.name}}</text>
-    <text class="subtitle">{{hexagram.pinyin}}</text>
-  </view>
-
-  <view class="hexagram-display">
-    <view class="hexagram-symbol">{{hexagram.symbol}}</view>
-    <text class="hexagram-number">第{{hexagram.id + 1}}卦</text>
-  </view>
-
-  <view class="content-section">
-    <text class="section-title">卦辞</text>
-    <text class="hexagram-text">{{hexagram.hexagramText}}</text>
-  </view>
-
-  <view class="content-section">
-    <text class="section-title">爻辞</text>
-    <view wx:for="{{hexagram.yaoTexts}}" wx:key="*this" wx:for-index="index" class="yao-item">
-      <text class="yao-number">{{index + 1}}爻：</text>
-      <text class="yao-text">{{item}}</text>
+<view class="page-container">
+  <!-- 头部容器 -->
+  <view class="header-section">
+    <view class="header-content">
+      <!-- 左侧卦象框 -->
+      <view class="symbol-container">
+        <view class="hexagram-symbol-large">{{hexagram.symbol}}</view>
+      </view>
+      
+      <!-- 右侧信息框 -->
+      <view class="info-container">
+        <!-- 卦名和拼音在一行 -->
+        <view class="title-row">
+          <text class="main-title">{{hexagram.name}}</text>
+          <text class="subtitle">{{hexagram.pinyin}}</text>
+        </view>
+        
+        <!-- 别名和上下卦在一行 -->
+        <view class="meta-row">
+          <text class="alias">{{hexagram.alias}}</text>
+          <text class="trigrams">上{{hexagram.upperTrigram}}下{{hexagram.lowerTrigram}}</text>
+        </view>
+      </view>
     </view>
   </view>
-
-  <!-- 返回按钮 -->
-  <view class="button-group">
-    <button class="action-button" bindtap="goBackToList">返回</button>
+  
+  <!-- 内容区容器 -->
+  <view class="content-section">
+    <scroll-view class="scrollable-content" scroll-y="true">
+    <!-- 象曰 -->
+    <view class="content-card">
+      <view class="card-header">
+        <text class="card-title">象曰</text>
+        <view class="decorative-line"></view>
+      </view>
+      <text class="card-content">{{hexagram.xiangYue}}</text>
+    </view>
+    
+    <!-- 卦辞 -->
+    <view class="content-card">
+      <view class="card-header">
+        <text class="card-title">卦辞</text>
+        <view class="decorative-line"></view>
+      </view>
+      <text class="card-content">{{hexagram.hexagramText}}</text>
+    </view>
+    
+    <!-- 爻辞 -->
+    <view class="content-card">
+      <view class="card-header">
+        <text class="card-title">爻辞</text>
+        <view class="decorative-line"></view>
+      </view>
+      <view class="yao-list">
+        <view wx:for="{{hexagram.yaoTexts}}" wx:key="*this" wx:for-index="index" class="yao-item">
+          <text class="yao-number">{{index + 1}}. </text>
+          <text class="yao-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 特性 -->
+    <view class="content-card">
+      <view class="card-header">
+        <text class="card-title">特性</text>
+        <view class="decorative-line"></view>
+      </view>
+      <text class="card-content">{{hexagram.characteristics}}</text>
+    </view>
+    
+    <!-- 详细说明 -->
+    <view class="content-card">
+      <view class="card-header">
+        <text class="card-title">详细说明</text>
+        <view class="decorative-line"></view>
+      </view>
+      <text class="card-content">{{hexagram.description}}</text>
+    </view>
+    
+    <!-- 相关卦 -->
+    <view class="content-card related-card">
+      <view class="card-header">
+        <text class="card-title">相关卦象</text>
+        <view class="decorative-line"></view>
+      </view>
+      <view class="related-horizontal">
+        <view class="related-item" bindtap="goToHexagramDetail" data-hexagram-id="{{relatedHexagrams.mutual.id}}">
+          <view class="related-symbol-small">{{relatedHexagrams.mutual.symbol}}</view>
+          <view class="related-info">
+            <text class="related-type">互卦</text>
+            <text class="related-name">{{relatedHexagrams.mutual.name}}</text>
+          </view>
+        </view>
+        
+        <view class="related-item" bindtap="goToHexagramDetail" data-hexagram-id="{{relatedHexagrams.comprehensive.id}}">
+          <view class="related-symbol-small">{{relatedHexagrams.comprehensive.symbol}}</view>
+          <view class="related-info">
+            <text class="related-type">综卦</text>
+            <text class="related-name">{{relatedHexagrams.comprehensive.name}}</text>
+          </view>
+        </view>
+        
+        <view class="related-item" bindtap="goToHexagramDetail" data-hexagram-id="{{relatedHexagrams.opposite.id}}">
+          <view class="related-symbol-small">{{relatedHexagrams.opposite.symbol}}</view>
+          <view class="related-info">
+            <text class="related-type">错卦</text>
+            <text class="related-name">{{relatedHexagrams.opposite.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  </view>
+  
+  <!-- 固定返回按钮 -->
+  <view class="fixed-back-button">
+    <button class="back-button" bindtap="goBackToList">返回</button>
   </view>
 </view>

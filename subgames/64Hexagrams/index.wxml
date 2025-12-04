@@ -1,21 +1,25 @@
 <view class="container">
   <view class="header">
-    <text class="title">易经六十四卦配对</text>
-    <text class="subtitle">通过配对练习学习易经六十四卦，了解中国传统哲学思想</text>
+    <text class="title">易经六十四卦学习</text>
+    <text class="subtitle">易经六十四卦记忆学习，了解中国传统哲学思想</text>
+  </view>
+  
+  <!-- 说明文字和去学卦按钮合并在一个框中 -->
+  <view class="instruction-container">
+    <text class="instruction-content">您可以尝试配对卦象、卦名，也可以先去学卦</text>
+    <button class="inline-learn-button" bindtap="goToLearnHexagrams">去学卦</button>
   </view>
   
   <view class="game-container">
     <view class="score-board">
-      <view class="progress">
-        <text>配对进度: <text class="progress-text">{{progressText}}</text></text>
-        <view class="progress-bar">
-          <view class="progress-fill" style="width: {{progressWidth}}%;"></view>
-          <view class="progress-dots">
-            <view class="progress-dot {{successCount >= 1 ? 'active' : ''}}"></view>
-            <view class="progress-dot {{successCount >= 2 ? 'active' : ''}}"></view>
-            <view class="progress-dot {{successCount >= 3 ? 'active' : ''}}"></view>
-          </view>
+      <view class="progress-stars">
+        <text class="progress-label">配对进度</text>
+        <view class="stars-container">
+          <view class="star {{successCount >= 1 ? 'active' : ''}}">★</view>
+          <view class="star {{successCount >= 2 ? 'active' : ''}}">★</view>
+          <view class="star {{successCount >= 3 ? 'active' : ''}}">★</view>
         </view>
+        <text class="progress-text">{{progressText}}</text>
       </view>
     </view>
     
@@ -46,8 +50,14 @@
           data-side="right"
           style="{{item.matched ? 'border-color: ' + item.matchColor + '; background-color: ' + item.matchColor + '20;' : ''}}"
         >
-          <view class="hexagram-name">{{item.name}}</view>
-          <view class="hexagram-pinyin">{{item.pinyin}}</view>
+          <view class="hexagram-name-row">
+            <view class="hexagram-name">{{item.name}}</view>
+            <view class="hexagram-pinyin">{{item.pinyin}}</view>
+          </view>
+          <view class="hexagram-extra-info">
+            <view class="hexagram-alias">{{item.alias}}</view>
+            <view class="hexagram-trigrams">(上{{item.upperTrigram}}下{{item.lowerTrigram}})</view>
+          </view>
         </view>
       </view>
     </view>
@@ -56,11 +66,7 @@
       <text>已选择: <text class="selected-display">{{selectedDisplay}}</text></text>
     </view>
   </view>
-  
-  <!-- 去学卦按钮 -->
-  <view class="learn-hexagram-container">
-    <button class="learn-hexagram-button" bindtap="goToLearnHexagrams">去学卦</button>
-  </view>
+
 </view>
 
 <!-- 成功模态框 -->
@@ -86,24 +92,3 @@
   </view>
 </view>
 
-<!-- 卦象详情模态框 -->
-<view class="modal" wx:if="{{showDetailModal}}">
-  <view class="modal-content detail-modal">
-    <view class="modal-header">
-      <text class="detail-title">{{selectedHexagram.name}}</text>
-    </view>
-    <view class="hexagram-detail-content">
-      <view class="hexagram-symbol">{{selectedHexagram.symbol}}</view>
-      <view class="hexagram-pinyin-detail">{{selectedHexagram.pinyin}}</view>
-      <text class="hexagram-text">{{selectedHexagram.hexagramText}}</text>
-      
-      <text class="yao-title">爻辞：</text>
-      <view wx:for="{{selectedHexagram.yaoTexts}}" wx:key="*this" class="yao-info">
-        <text>{{item}}</text>
-      </view>
-    </view>
-    <view class="modal-footer">
-      <button class="close-button" bindtap="closeDetail">返回</button>
-    </view>
-  </view>
-</view>

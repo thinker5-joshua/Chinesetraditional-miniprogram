@@ -1667,8 +1667,3 @@ const hexagramsData = [
         "oppositeHexagram": 63
     }
 ];
-
-// 导出数据供其他页面使用
-module.exports = {
-  hexagramsData
-};

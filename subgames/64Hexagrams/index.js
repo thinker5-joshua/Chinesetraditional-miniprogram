@@ -12,8 +12,6 @@ Page({
         successCount: 0,
         selectedDisplay: "未选择",
         showSuccessModal: false,
-        showDetailModal: false,
-        selectedHexagram: null,
         currentHexagrams: [],
         remainingHexagrams: [],
         matchedPairs: [] // 存储已匹配的卦对，用于颜色区分
@@ -234,7 +232,7 @@ Page({
         }
     },
 
-    // 显示卦象详情
+    // 显示卦象详情 - 跳转到详情页
     showHexagramDetail(e) {
         let hexagram;
         if (e.currentTarget) {
@@ -245,19 +243,10 @@ Page({
             hexagram = e;
         }
         
-        this.setData({
-            selectedHexagram: hexagram,
-            showDetailModal: true
+        // 跳转到详情页
+        wx.navigateTo({
+            url: `/subgames/64Hexagrams/pages/hexagram-detail/hexagram-detail?hexagramId=${hexagram.id}`
         });
-    },
-
-    // 关闭详情
-    closeDetail() {
-        this.setData({
-            showDetailModal: false
-        });
-        
-        // 不再需要重新打乱右侧卦名，因为卡片不会消除
     },
 
     // 去学卦
