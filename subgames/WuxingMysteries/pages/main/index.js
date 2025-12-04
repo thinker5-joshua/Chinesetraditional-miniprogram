@@ -1071,16 +1071,14 @@ Page({
   onShareAppMessage() {
     return {
       title: '五行奥秘 - 探索中国传统哲学的宇宙观',
-      path: '/subgames/WuxingMysteries/pages/main/index',
-      imageUrl: '' // 可以添加分享图片
+      path: '/subgames/WuxingMysteries/pages/main/index'
     };
   },
 
   onShareTimeline() {
     return {
       title: '五行奥秘 - 探索中国传统哲学',
-      query: '',
-      imageUrl: '' // 可以添加分享图片
+      query: ''
     };
   },
 

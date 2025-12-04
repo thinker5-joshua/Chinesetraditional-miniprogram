@@ -10,7 +10,7 @@ Page({
     return {
       title: '文益互动 - 传统文化益智互动群落',
       path: '/pages/index/index',
-      imageUrl: ''
+      imageUrl: '/images/wyhd-share-default.png'
     };
   },
   
@@ -18,7 +18,7 @@ Page({
     return {
       title: '文益互动 - 传统文化益智互动群落',
       query: '',
-      imageUrl: ''
+      imageUrl: '/images/wyhd-share-default.png'
     };
   }
 });

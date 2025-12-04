@@ -156,5 +156,21 @@ Page({
     });
   },
 
+  // 分享给朋友
+  onShareAppMessage() {
+    const { currentDirection, currentDirectionName } = this.data;
+    return {
+      title: `${currentDirectionName} - 二十八星宿探秘`,
+      path: `/subgames/28Stars/index?direction=${currentDirection}`
+    };
+  },
 
+  // 分享到朋友圈
+  onShareTimeline() {
+    const { currentDirection, currentDirectionName } = this.data;
+    return {
+      title: `${currentDirectionName} - 二十八星宿探秘`,
+      query: `direction=${currentDirection}`
+    };
+  }
 });

@@ -335,5 +335,23 @@ Page({
     this.setData({
       showHelp: !this.data.showHelp
     });
+  },
+
+  // 分享给朋友
+  onShareAppMessage() {
+    return {
+      title: '家族谱系探索',
+      path: '/subgames/family/index',
+      imageUrl: '/images/wyhd-share-default.png'
+    };
+  },
+
+  // 分享到朋友圈
+  onShareTimeline() {
+    return {
+      title: '家族谱系探索',
+      query: '',
+      imageUrl: '/images/wyhd-share-default.png'
+    };
   }
 });

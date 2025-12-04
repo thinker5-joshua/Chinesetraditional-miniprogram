@@ -853,9 +853,18 @@ Page({
    */
   onShareAppMessage() {
     return {
-      title: '七十二洞天诗意旅行',
-      path: '/subgames/72DreamlandPoetryTravel/index',
-      imageUrl: '/images/share-poetry.jpg'
+      title: '七十二洞天诗意游',
+      path: '/subgames/72DreamlandPoetryTravel/index'
+    };
+  },
+
+  /**
+   * 分享到朋友圈
+   */
+  onShareTimeline() {
+    return {
+      title: '七十二洞天诗意游',
+      query: ''
     };
   }
 });

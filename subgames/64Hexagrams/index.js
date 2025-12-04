@@ -262,5 +262,23 @@ Page({
             showSuccessModal: false
         });
         this.initGame();
+    },
+
+    // 分享给朋友
+    onShareAppMessage() {
+        return {
+            title: '易经六十四卦学习',
+            path: '/subgames/64Hexagrams/index',
+            imageUrl: '/images/wyhd-share-default.png'
+        };
+    },
+
+    // 分享到朋友圈
+    onShareTimeline() {
+        return {
+            title: '易经六十四卦学习',
+            query: '',
+            imageUrl: '/images/wyhd-share-default.png'
+        };
     }
 });

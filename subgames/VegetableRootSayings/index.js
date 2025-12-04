@@ -171,15 +171,14 @@ Page({
     const quote = this.data.currentQuote;
     if (!quote) {
       return {
-        title: '菜根谭 - 中国传统处世智慧',
-        path: '/miniprogram/subgames/VegetableRootSayings/index'
+        title: '菜根谭智慧',
+        path: '/subgames/VegetableRootSayings/index'
       };
     }
     
     return {
-      title: `菜根谭：${quote.quote.substring(0, 20)}${quote.quote.length > 20 ? '...' : ''}`,
-      path: '/miniprogram/subgames/VegetableRootSayings/index',
-      imageUrl: '' // 可以添加分享图片
+      title: `菜根谭智慧：${quote.quote.substring(0, 20)}${quote.quote.length > 20 ? '...' : ''}`,
+      path: '/subgames/VegetableRootSayings/index'
     };
   },
 
@@ -187,10 +186,17 @@ Page({
    * 微信分享到朋友圈
    */
   onShareTimeline() {
+    const quote = this.data.currentQuote;
+    if (!quote) {
+      return {
+        title: '菜根谭智慧',
+        query: ''
+      };
+    }
+    
     return {
-      title: '菜根谭 - 品味中国传统处世智慧',
-      query: '',
-      imageUrl: '' // 可以添加分享图片
+      title: `菜根谭智慧：${quote.quote.substring(0, 20)}${quote.quote.length > 20 ? '...' : ''}`,
+      query: ''
     };
   }
 });

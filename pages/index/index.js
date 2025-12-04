@@ -39,7 +39,7 @@ Page({
       },
       {
         id: 'VegetableRootSayings',
-        title: '菜根潭摘录',
+        title: '菜根谭摘录',
         description: '品味《菜根谭》智慧箴言，学习明代洪应明的处世哲学',
         iconText: '根',
         cssClass: 'root-icon'
@@ -55,5 +55,27 @@ Page({
     wx.navigateTo({
       url: `/subgames/${gameId}/index`
     })
+  },
+
+  /**
+   * 用户点击右上角分享给朋友
+   */
+  onShareAppMessage(options) {
+    return {
+      title: '探索中国传统文化的魅力',
+      path: '/pages/index/index',
+      imageUrl: '/images/wyhd-share-default.png'
+    };
+  },
+
+  /**
+   * 用户点击右上角分享到朋友圈
+   */
+  onShareTimeline() {
+    return {
+      title: '探索中国传统文化的魅力',
+      query: '',
+      imageUrl: '/images/wyhd-share-default.png'
+    };
   }
 })

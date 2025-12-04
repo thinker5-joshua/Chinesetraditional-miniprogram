@@ -85,5 +85,25 @@ Page({
     // 返回列表
     goBackToList() {
         wx.navigateBack();
+    },
+
+    /**
+     * 用户点击右上角分享给朋友
+     */
+    onShareAppMessage(options) {
+        return {
+            title: `${this.data.hexagram.name} - 易经六十四卦学习`,
+            path: `/subgames/64Hexagrams/pages/hexagram-detail/hexagram-detail?hexagramId=${this.data.hexagram.id}`
+        };
+    },
+
+    /**
+     * 用户点击右上角分享到朋友圈
+     */
+    onShareTimeline() {
+        return {
+            title: `${this.data.hexagram.name} - 易经六十四卦学习`,
+            query: `hexagramId=${this.data.hexagram.id}`
+        };
     }
 });

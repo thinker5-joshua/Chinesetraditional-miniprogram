@@ -3,7 +3,7 @@ const hexagramsData = require('../../hexagrams-data.js').hexagramsData;
 
 Page({
     data: {
-        // 查看模式：'random' 随机翻阅, 'group' 分组查看
+        // 查看模式：'random' 随机翻阅, 'group' 分组查看, 'sixYaoChange' 六爻变
         viewMode: 'random',
         
         // 分组相关
@@ -22,19 +22,50 @@ Page({
         // 用于随机翻阅的卦象顺序数组
         randomHexagramOrder: [],
         
-        // 触摸事件相关
-        startX: 0,
-        startY: 0,
-        moveX: 0,
-        moveY: 0
+        // 六爻变相关
+        currentSixYaoIndex: 0, // 当前六爻变模式下的卦象索引
+        currentSixYaoHexagram: null, // 当前显示的卦象
+        sixYaoStates: [0, 0, 0, 0, 0, 0], // 六爻阴阳状态数组（0:阴，1:阳，从下往上）
+        sixYaoButtons: [], // 六爻按钮配置数组
+        // 六爻配置信息
+        sixYaoConfig: [
+            { yinText: '初六', yangText: '初九', index: 0 },
+            { yinText: '六二', yangText: '九二', index: 1 },
+            { yinText: '六三', yangText: '九三', index: 2 },
+            { yinText: '六四', yangText: '九四', index: 3 },
+            { yinText: '六五', yangText: '九五', index: 4 },
+            { yinText: '上六', yangText: '上九', index: 5 }
+        ]
     },
+    
+    // 触摸事件相关的临时变量（不放入data中，避免异步更新问题）
+    touchStartX: 0,
+    touchStartY: 0,
+    touchMoveX: 0,
+    touchMoveY: 0,
 
     onLoad() {
         this.initializeGroups();
-        if (this.data.viewMode === 'random') {
-            this.initializeRandomHexagrams();
-            this.switchToFirstRandomHexagram();
-        } else {
+        this.initializeRandomHexagrams();
+        
+        // 初始化随机翻阅的第一个卦象
+        const firstRandomHexagramIndex = this.data.randomHexagramOrder[this.data.currentRandomIndex];
+        const firstRandomHexagram = hexagramsData[firstRandomHexagramIndex];
+        
+        // 初始化六爻变的第一个卦象
+        const firstSixYaoHexagramIndex = this.data.randomHexagramOrder[this.data.currentSixYaoIndex];
+        const firstSixYaoHexagram = hexagramsData[firstSixYaoHexagramIndex];
+        const yaoStates = this.extractYaoStatesFromSymbol(firstSixYaoHexagram.symbol);
+        
+        this.setData({
+            currentRandomHexagram: firstRandomHexagram,
+            currentSixYaoHexagram: firstSixYaoHexagram,
+            sixYaoStates: yaoStates,
+            sixYaoButtons: this.generateSixYaoButtons(yaoStates)
+        });
+        
+        // 如果初始模式是分组查看，更新当前分组
+        if (this.data.viewMode === 'group') {
             this.updateCurrentGroup();
         }
     },
@@ -143,11 +174,32 @@ Page({
 
     // 切换到随机翻阅模式
     switchToRandom() {
-        this.setData({
-            viewMode: 'random'
-        }, () => {
+        let currentIndex;
+        
+        // 根据当前模式获取当前卦象索引
+        if (this.data.viewMode === 'sixYaoChange') {
+            // 从六爻变模式切换过来，使用六爻变的索引
+            currentIndex = this.data.currentSixYaoIndex;
+        } else {
+            // 从其他模式切换过来，使用随机模式的索引
+            currentIndex = this.data.currentRandomIndex;
+        }
+        
+        // 仅在随机顺序数组为空时初始化
+        if (this.data.randomHexagramOrder.length === 0) {
             this.initializeRandomHexagrams();
-            this.switchToFirstRandomHexagram();
+        }
+        
+        // 获取当前卦象
+        const hexagramIndex = this.data.randomHexagramOrder[currentIndex];
+        const hexagram = hexagramsData[hexagramIndex];
+        
+        this.setData({
+            viewMode: 'random',
+            currentRandomIndex: currentIndex,
+            currentRandomHexagram: hexagram,
+            // 同步更新六爻变的当前索引
+            currentSixYaoIndex: currentIndex
         });
     },
 
@@ -217,20 +269,28 @@ Page({
         let { currentRandomIndex, randomHexagramOrder } = this.data;
         currentRandomIndex = (currentRandomIndex - 1 + randomHexagramOrder.length) % randomHexagramOrder.length;
         const hexagramIndex = randomHexagramOrder[currentRandomIndex];
+        const hexagram = hexagramsData[hexagramIndex];
+        
         this.setData({
             currentRandomIndex: currentRandomIndex,
-            currentRandomHexagram: hexagramsData[hexagramIndex]
+            currentRandomHexagram: hexagram,
+            // 同步更新六爻变的当前索引
+            currentSixYaoIndex: currentRandomIndex
         });
     },
-
+    
     // 下一个卦象（按乱序序列）
     nextRandomHexagram() {
         let { currentRandomIndex, randomHexagramOrder } = this.data;
         currentRandomIndex = (currentRandomIndex + 1) % randomHexagramOrder.length;
         const hexagramIndex = randomHexagramOrder[currentRandomIndex];
+        const hexagram = hexagramsData[hexagramIndex];
+        
         this.setData({
             currentRandomIndex: currentRandomIndex,
-            currentRandomHexagram: hexagramsData[hexagramIndex]
+            currentRandomHexagram: hexagram,
+            // 同步更新六爻变的当前索引
+            currentSixYaoIndex: currentRandomIndex
         });
     },
 
@@ -251,39 +311,223 @@ Page({
 
     // 触摸开始事件
     onTouchStart(e) {
-        this.setData({
-            startX: e.touches[0].clientX,
-            startY: e.touches[0].clientY
-        });
+        // 使用临时变量存储触摸开始位置
+        this.touchStartX = e.touches[0].clientX;
+        this.touchStartY = e.touches[0].clientY;
     },
 
     // 触摸移动事件
     onTouchMove(e) {
-        this.setData({
-            moveX: e.touches[0].clientX,
-            moveY: e.touches[0].clientY
-        });
+        // 使用临时变量存储触摸移动位置
+        this.touchMoveX = e.touches[0].clientX;
+        this.touchMoveY = e.touches[0].clientY;
     },
 
     // 触摸结束事件
     onTouchEnd() {
-        const { startX, moveX } = this.data;
-        const deltaX = moveX - startX;
+        // 使用临时变量计算触摸距离
+        const deltaX = this.touchMoveX - this.touchStartX;
+        const deltaY = this.touchMoveY - this.touchStartY;
+        const { viewMode } = this.data;
         
-        // 设定滑动阈值，大于50px才触发翻页
-        if (Math.abs(deltaX) > 50) {
-            if (deltaX > 0) {
-                // 向右滑动，显示上一个卦象
-                this.previousRandomHexagram();
-            } else {
-                // 向左滑动，显示下一个卦象
-                this.nextRandomHexagram();
+        // 增加滑动检测的阈值，只有明显的滑动动作才会触发翻页
+        // 水平移动距离需要大于100px，且水平移动距离大于垂直移动距离的2倍
+        // 这样可以确保只有真正的滑动才会触发翻页，避免点击时的轻微移动被误识别
+        if (Math.abs(deltaX) > 100 && Math.abs(deltaX) > Math.abs(deltaY) * 2) {
+            if (viewMode === 'sixYaoChange') {
+                // 六爻变模式
+                if (deltaX > 0) {
+                    // 向右滑动，显示上一个卦象
+                    this.previousSixYaoHexagram();
+                } else {
+                    // 向左滑动，显示下一个卦象
+                    this.nextSixYaoHexagram();
+                }
+            } else if (viewMode === 'random') {
+                // 随机翻阅模式
+                if (deltaX > 0) {
+                    // 向右滑动，显示上一个卦象
+                    this.previousRandomHexagram();
+                } else {
+                    // 向左滑动，显示下一个卦象
+                    this.nextRandomHexagram();
+                }
             }
         }
+        
+        // 重置触摸事件相关的临时变量，避免影响下一次触摸事件
+        this.touchStartX = 0;
+        this.touchStartY = 0;
+        this.touchMoveX = 0;
+        this.touchMoveY = 0;
+    },
+
+    // 生成六爻按钮配置
+    generateSixYaoButtons(yaoStates) {
+        return this.data.sixYaoConfig.map((config, index) => {
+            const isYang = yaoStates[index] === 1;
+            return {
+                index: index,
+                text: isYang ? config.yangText : config.yinText,
+                symbol: isYang ? '⚊' : '⚋'
+            };
+        });
+    },
+
+    // 从卦象符号提取六爻状态
+    extractYaoStatesFromSymbol(symbol) {
+        // 预生成卦象符号到六爻状态的映射
+        if (!this.yaoStatesMap) {
+            this.yaoStatesMap = {};
+            
+            // 定义八卦的三爻状态（从下往上）
+            const trigramStates = {
+                '乾': [1, 1, 1],
+                '坤': [0, 0, 0],
+                '震': [1, 0, 0],
+                '巽': [0, 1, 1],
+                '坎': [0, 1, 0],
+                '离': [1, 0, 1],
+                '艮': [0, 0, 1],
+                '兑': [1, 1, 0]
+            };
+            
+            // 生成每个卦象的六爻状态
+            // 六爻状态从下往上排列，索引0是最下面一爻
+            const hexagramYaoStates = hexagramsData.map(hexagram => {
+                const lowerTrigram = trigramStates[hexagram.lowerTrigram]; // 下卦
+                const upperTrigram = trigramStates[hexagram.upperTrigram]; // 上卦
+                return [...lowerTrigram, ...upperTrigram]; // 合并下卦和上卦，下卦在前（索引0-2），上卦在后（索引3-5）
+            });
+            
+            // 生成映射表
+            for (let i = 0; i < hexagramsData.length; i++) {
+                const hexagram = hexagramsData[i];
+                this.yaoStatesMap[hexagram.symbol] = hexagramYaoStates[i];
+            }
+        }
+        
+        // 返回对应的六爻状态，默认返回全阴
+        return this.yaoStatesMap[symbol] || [0, 0, 0, 0, 0, 0];
+    },
+
+    // 根据六爻状态找到对应的卦象
+    findHexagramByYaoStates(yaoStates) {
+        // 遍历hexagramsData，找到匹配的卦象
+        return hexagramsData.find(hexagram => {
+            const states = this.extractYaoStatesFromSymbol(hexagram.symbol);
+            return states.toString() === yaoStates.toString();
+        });
+    },
+
+    // 切换到六爻变模式
+    switchToSixYaoChange() {
+        let currentIndex;
+        
+        // 根据当前模式获取当前卦象索引
+        if (this.data.viewMode === 'random') {
+            // 从随机模式切换过来，使用随机模式的索引
+            currentIndex = this.data.currentRandomIndex;
+        } else {
+            // 从其他模式切换过来，使用六爻变的当前索引
+            currentIndex = this.data.currentSixYaoIndex;
+        }
+        
+        // 如果randomHexagramOrder为空，先初始化
+        if (this.data.randomHexagramOrder.length === 0) {
+            this.initializeRandomHexagrams();
+        }
+        
+        // 使用已有的随机顺序数组
+        const hexagramIndex = this.data.randomHexagramOrder[currentIndex];
+        const hexagram = hexagramsData[hexagramIndex];
+        const yaoStates = this.extractYaoStatesFromSymbol(hexagram.symbol);
+        
+        this.setData({
+            viewMode: 'sixYaoChange',
+            currentSixYaoIndex: currentIndex,
+            currentSixYaoHexagram: hexagram,
+            sixYaoStates: yaoStates,
+            sixYaoButtons: this.generateSixYaoButtons(yaoStates),
+            // 同步更新随机模式的当前索引
+            currentRandomIndex: currentIndex
+        });
+    },
+    
+    // 上一个卦象（六爻变模式）
+    previousSixYaoHexagram() {
+        let { currentSixYaoIndex, randomHexagramOrder } = this.data;
+        currentSixYaoIndex = (currentSixYaoIndex - 1 + randomHexagramOrder.length) % randomHexagramOrder.length;
+        const hexagramIndex = randomHexagramOrder[currentSixYaoIndex];
+        const hexagram = hexagramsData[hexagramIndex];
+        const yaoStates = this.extractYaoStatesFromSymbol(hexagram.symbol);
+        
+        this.setData({
+            currentSixYaoIndex: currentSixYaoIndex,
+            currentSixYaoHexagram: hexagram,
+            sixYaoStates: yaoStates,
+            sixYaoButtons: this.generateSixYaoButtons(yaoStates),
+            // 同步更新随机模式的当前索引
+            currentRandomIndex: currentSixYaoIndex
+        });
+    },
+    
+    // 下一个卦象（六爻变模式）
+    nextSixYaoHexagram() {
+        let { currentSixYaoIndex, randomHexagramOrder } = this.data;
+        currentSixYaoIndex = (currentSixYaoIndex + 1) % randomHexagramOrder.length;
+        const hexagramIndex = randomHexagramOrder[currentSixYaoIndex];
+        const hexagram = hexagramsData[hexagramIndex];
+        const yaoStates = this.extractYaoStatesFromSymbol(hexagram.symbol);
+        
+        this.setData({
+            currentSixYaoIndex: currentSixYaoIndex,
+            currentSixYaoHexagram: hexagram,
+            sixYaoStates: yaoStates,
+            sixYaoButtons: this.generateSixYaoButtons(yaoStates),
+            // 同步更新随机模式的当前索引
+            currentRandomIndex: currentSixYaoIndex
+        });
+    },
+
+    // 六爻按钮点击事件
+    onYaoButtonTap(e) {
+        const index = e.currentTarget.dataset.index;
+        const newYaoStates = [...this.data.sixYaoStates];
+        newYaoStates[index] = newYaoStates[index] === 0 ? 1 : 0; // 切换阴阳状态
+        
+        // 根据新的六爻状态找到对应的卦象
+        const hexagram = this.findHexagramByYaoStates(newYaoStates);
+        
+        this.setData({
+            sixYaoStates: newYaoStates,
+            currentSixYaoHexagram: hexagram,
+            sixYaoButtons: this.generateSixYaoButtons(newYaoStates)
+        });
     },
 
     // 返回64卦配对
     goBack() {
         wx.navigateBack();
+    },
+
+    /**
+     * 用户点击右上角分享给朋友
+     */
+    onShareAppMessage(options) {
+        return {
+            title: '易经六十四卦学习 - 探索中国传统哲学智慧',
+            path: '/subgames/64Hexagrams/pages/hexagram-list/hexagram-list'
+        };
+    },
+
+    /**
+     * 用户点击右上角分享到朋友圈
+     */
+    onShareTimeline() {
+        return {
+            title: '易经六十四卦学习 - 探索中国传统哲学智慧',
+            query: ''
+        };
     }
 });

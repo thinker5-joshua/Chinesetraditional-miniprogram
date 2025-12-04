@@ -437,5 +437,23 @@ Page({
         } catch (error) {
 
         }
+    },
+
+    // 分享给朋友
+    onShareAppMessage() {
+        const { currentLevel, levelName, completedCount, totalCount } = this.data;
+        return {
+            title: `成语消除 - ${levelName} 第${currentLevel}关 (${completedCount}/${totalCount})`,
+            path: '/subgames/future/index'
+        };
+    },
+
+    // 分享到朋友圈
+    onShareTimeline() {
+        const { currentLevel, levelName, completedCount, totalCount } = this.data;
+        return {
+            title: `成语消除 - ${levelName} 第${currentLevel}关 (${completedCount}/${totalCount})`,
+            query: ''
+        };
     }
 });

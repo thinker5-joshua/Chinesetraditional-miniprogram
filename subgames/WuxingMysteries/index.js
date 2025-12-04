@@ -55,7 +55,7 @@ Page({
     return {
       title: '五行奥秘 - 探索中国传统哲学',
       path: '/subgames/WuxingMysteries/index',
-      imageUrl: '' // 可以添加分享图片
+      imageUrl: '/images/wyhd-share-default.png'
     };
   }
 });

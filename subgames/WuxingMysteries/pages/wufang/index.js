@@ -258,7 +258,7 @@ Page({
     return {
       title: '五方五行 - 探索中国传统哲学',
       path: '/miniprogram/subgames/WuxingMysteries/pages/wufang/index',
-      imageUrl: '' // 可以添加分享图片
+      imageUrl: '/images/wyhd-share-default.png'
     };
   }
 });

@@ -291,5 +291,25 @@ Page({
    */
   goBack() {
     wx.navigateBack();
+  },
+
+  /**
+   * 用户点击右上角分享给朋友
+   */
+  onShareAppMessage(options) {
+    return {
+      title: '星宿配对互动',
+      path: '/subgames/28Stars/pages/star-matching/star-matching'
+    };
+  },
+
+  /**
+   * 用户点击右上角分享到朋友圈
+   */
+  onShareTimeline() {
+    return {
+      title: '星宿配对互动',
+      query: ''
+    };
   }
 });

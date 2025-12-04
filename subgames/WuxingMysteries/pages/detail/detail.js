@@ -298,5 +298,23 @@ Page({
         });
       }
     });
+  },
+
+  // 分享给朋友
+  onShareAppMessage() {
+    const { elementInfo, tabType } = this.data;
+    return {
+      title: `${elementInfo.title || elementInfo.element} - 五行奥秘`,
+      path: `/subgames/WuxingMysteries/pages/detail/detail?element=${encodeURIComponent(elementInfo.element)}&tabType=${encodeURIComponent(tabType)}`
+    };
+  },
+
+  // 分享到朋友圈
+  onShareTimeline() {
+    const { elementInfo, tabType } = this.data;
+    return {
+      title: `${elementInfo.title || elementInfo.element} - 五行奥秘`,
+      query: `element=${encodeURIComponent(elementInfo.element)}&tabType=${encodeURIComponent(tabType)}`
+    };
   }
 });

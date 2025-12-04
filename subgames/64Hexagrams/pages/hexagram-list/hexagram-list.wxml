@@ -10,11 +10,15 @@
       <button 
         class="mode-button {{viewMode === 'random' ? 'active' : ''}}" 
         bindtap="switchToRandom"
-      >随机翻阅</button>
+      >随机翻</button>
+      <button 
+        class="mode-button {{viewMode === 'sixYaoChange' ? 'active' : ''}}" 
+        bindtap="switchToSixYaoChange"
+      >六爻变</button>
       <button 
         class="mode-button {{viewMode === 'group' ? 'active' : ''}}" 
         bindtap="switchToGroup"
-      >分组查看</button>
+      >分组看</button>
     </view>
     
     <!-- 分组方式选择（仅在分组查看模式下显示） -->
@@ -113,6 +117,57 @@
         <text>下一个</text>
         <text class="page-arrow">→</text>
       </button>
+    </view>
+  </view>
+  
+  <!-- 六爻变模式内容 -->
+  <view wx:if="{{viewMode === 'sixYaoChange'}}" class="six-yao-view">
+    <!-- 随机卦象卡片 -->
+    <view 
+      class="random-card" 
+      bindtap="goToHexagramDetail" 
+      data-hexagram="{{currentSixYaoHexagram}}"
+      bindtouchstart="onTouchStart"
+      bindtouchmove="onTouchMove"
+      bindtouchend="onTouchEnd"
+    >
+      <!-- 卦象序号 -->
+      <view class="hexagram-sequence">第{{currentSixYaoHexagram.id}}卦</view>
+      
+      <!-- 卦象 -->
+      <view class="hexagram-symbol-large">{{currentSixYaoHexagram.symbol}}</view>
+      
+      <!-- 卦名和拼音 -->
+      <view class="hexagram-name-row">
+        <view class="hexagram-name-large">{{currentSixYaoHexagram.name}}</view>
+        <view class="hexagram-pinyin-large">{{currentSixYaoHexagram.pinyin}}</view>
+      </view>
+      
+      <!-- 别名和上下卦 -->
+      <view class="hexagram-extra-info">
+        <view class="hexagram-alias">{{currentSixYaoHexagram.alias}}</view>
+        <view class="hexagram-trigrams">上{{currentSixYaoHexagram.upperTrigram}}下{{currentSixYaoHexagram.lowerTrigram}}</view>
+      </view>
+      
+      <!-- 卦辞 -->
+      <view class="hexagram-text-section">
+        <text class="section-title">卦辞</text>
+        <text class="hexagram-text">{{currentSixYaoHexagram.hexagramText}}</text>
+      </view>
+    </view>
+    
+    <!-- 六爻按钮 -->
+    <view class="six-yao-buttons">
+      <view 
+        class="yao-button {{sixYaoStates[item.index] ? 'yang' : 'yin'}}" 
+        wx:for="{{sixYaoButtons}}" 
+        wx:key="index"
+        data-index="{{item.index}}"
+        bindtap="onYaoButtonTap"
+      >
+        <text class="yao-text">{{item.text}}</text>
+        <text class="yao-symbol">{{item.symbol}}</text>
+      </view>
     </view>
   </view>
 

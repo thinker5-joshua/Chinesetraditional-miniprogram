@@ -248,7 +248,7 @@ Page({
     return {
       title: '五脏五行 - 探索中国传统哲学',
       path: '/miniprogram/subgames/WuxingMysteries/pages/wuzang/index',
-      imageUrl: '' // 可以添加分享图片
+      imageUrl: '/images/wyhd-share-default.png'
     };
   }
 });

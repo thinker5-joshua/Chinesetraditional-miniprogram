@@ -87,5 +87,27 @@ Page({
       currentPoem: this.data.poems[nextIndex],
       currentPoemIndex: nextIndex
     })
+  },
+
+  /**
+   * 用户点击右上角分享给朋友
+   */
+  onShareAppMessage(options) {
+    return {
+      title: `文益互动 - 传统文化益智互动合集`,
+      path: `/pages/game/game?id=${this.data.gameId}`,
+      imageUrl: '/images/wyhd-share-default.png'
+    };
+  },
+
+  /**
+   * 用户点击右上角分享到朋友圈
+   */
+  onShareTimeline() {
+    return {
+      title: `文益互动 - 传统文化益智互动合集`,
+      query: `id=${this.data.gameId}`,
+      imageUrl: '/images/wyhd-share-default.png'
+    };
   }
 })
