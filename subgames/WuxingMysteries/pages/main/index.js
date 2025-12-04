@@ -55,7 +55,13 @@ Page({
     wufangElements: [],
     wuseElements: [],
     wuzangElements: [],
-    wuweiElements: []
+    wuweiElements: [],
+    
+    // 触摸事件相关
+    startX: 0,
+    startY: 0,
+    moveX: 0,
+    moveY: 0
   },
 
   onLoad() {
@@ -998,6 +1004,65 @@ Page({
    */
   goBack() {
     wx.navigateBack();
+  },
+
+  /**
+   * 触摸开始事件
+   */
+  onTouchStart(e) {
+    this.setData({
+      startX: e.touches[0].clientX,
+      startY: e.touches[0].clientY
+    });
+  },
+
+  /**
+   * 触摸移动事件
+   */
+  onTouchMove(e) {
+    this.setData({
+      moveX: e.touches[0].clientX,
+      moveY: e.touches[0].clientY
+    });
+  },
+
+  /**
+   * 触摸结束事件
+   */
+  onTouchEnd() {
+    const { startX, moveX, startY, moveY, activeTabs, currentTab } = this.data;
+    const deltaX = moveX - startX;
+    const deltaY = moveY - startY;
+    
+    // 设定滑动阈值，大于50px且水平滑动距离大于垂直滑动距离才触发Tab切换
+    if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      // 获取当前Tab索引
+      const currentIndex = activeTabs.findIndex(tab => tab.id === currentTab);
+      
+      // 计算新的Tab索引
+      let newIndex;
+      if (deltaX > 0) {
+        // 向右滑动，切换到上一个Tab
+        newIndex = (currentIndex - 1 + activeTabs.length) % activeTabs.length;
+      } else {
+        // 向左滑动，切换到下一个Tab
+        newIndex = (currentIndex + 1) % activeTabs.length;
+      }
+      
+      // 获取新的Tab ID
+      const newTabId = activeTabs[newIndex].id;
+      
+      // 构造模拟事件对象，调用现有的onTabChange函数
+      const mockEvent = {
+        currentTarget: {
+          dataset: {
+            tab: newTabId
+          }
+        }
+      };
+      
+      this.onTabChange(mockEvent);
+    }
   },
 
   /**

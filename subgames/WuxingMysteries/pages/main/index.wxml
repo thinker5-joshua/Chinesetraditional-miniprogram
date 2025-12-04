@@ -17,7 +17,10 @@
   <!-- 图表和知识的统一滚动容器 -->
   <scroll-view class="scrollable-content" scroll-y="true">
     <!-- 图表显示容器 -->
-    <view class="chart-display-container">
+    <view class="chart-display-container"
+          bindtouchstart="onTouchStart"
+          bindtouchmove="onTouchMove"
+          bindtouchend="onTouchEnd">
       <!-- 五行图表 -->
       <view wx:if="{{currentTab === 'wuxing'}}" class="chart-wrapper">
         <view class="mystical-frame">
