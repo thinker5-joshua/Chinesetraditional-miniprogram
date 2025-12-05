@@ -55,13 +55,21 @@
           <view class="decorative-line"></view>
         </view>
         <view class="wuxing-relations">
-          <view class="relation-group">
+          <!-- 相生关系 -->
+          <view class="relation-section">
             <view class="relation-label">相生：</view>
-            <view class="relation-content">{{elementInfo.wuxingRelationships.sheng}}</view>
+            <view class="relation-content-two-lines">
+              <view class="relation-line">{{elementInfo.wuxingRelationships.shengLine1}}</view>
+              <view class="relation-line">{{elementInfo.wuxingRelationships.shengLine2}}</view>
+            </view>
           </view>
-          <view class="relation-group">
+          <!-- 相克关系 -->
+          <view class="relation-section">
             <view class="relation-label">相克：</view>
-            <view class="relation-content">{{elementInfo.wuxingRelationships.ke}}</view>
+            <view class="relation-content-two-lines">
+              <view class="relation-line">{{elementInfo.wuxingRelationships.keLine1}}</view>
+              <view class="relation-line">{{elementInfo.wuxingRelationships.keLine2}}</view>
+            </view>
           </view>
         </view>
       </view>

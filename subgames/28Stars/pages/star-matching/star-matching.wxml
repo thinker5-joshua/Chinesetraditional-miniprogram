@@ -1,11 +1,13 @@
 <view class="matching-container">
   <!-- 标题 -->
   <view class="header-section">
-    <text class="page-title">星宿配对</text>
-    <button class="back-btn" bindtap="goBack">
-      <text class="back-icon">←</text>
-      <text>返回</text>
-    </button>
+    <view class="title-row">
+      <text class="page-title">星宿配对</text>
+      <button class="back-btn" bindtap="goBack">
+        返回
+      </button>
+    </view>
+    <text class="page-description">从四个方位的星宿中我们各随机选择了一个星宿，请您将之归属于其所属圣兽</text>
   </view>
 
   <!-- 游戏主体 -->
@@ -23,6 +25,7 @@
           bindtap="selectStar" 
           data-star="{{item}}"
           data-direction="{{item.matchedDirection}}">
+          <text class="star-spaces">　　</text>
           <view class="star-symbol">{{item.symbol}}</view>
           <text class="star-pinyin">{{item.pinyin}}</text>
         </view>

@@ -291,22 +291,44 @@ page::before {
   font-weight: 500;
 }
 
-/* 五行关系 - 仿六十四卦详情页 */
+/* 五行关系 - 两行显示 */
 .wuxing-relations {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   margin-top: 16px;
 }
 
-.relation-group {
+.relation-section {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.relation-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #8b4513;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.relation-content-two-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.relation-line {
+  font-size: 18px;
+  font-weight: 700;
+  color: #d2691e;
+  padding: 8px 12px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 245, 235, 0.8));
-  padding: 12px;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+  border-left: 3px solid rgba(210, 105, 30, 0.3);
 }
 
 .relation-label {

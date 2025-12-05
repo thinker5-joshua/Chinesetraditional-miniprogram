@@ -329,20 +329,24 @@ Page({
     const keWho = getWhoKeElement(currentWuxing);  // 谁克当前元素
     
     if (tabType === 'wuxing') {
-      // 五行tab：显示五行元素
+      // 五行tab：显示五行元素，分两行
       if (shengPrev && shengNext) {
-        relationships.sheng = `${shengPrev}生${currentWuxing}，${currentWuxing}生${shengNext}`;
+        relationships.shengLine1 = `${shengPrev}生${currentWuxing}`;
+        relationships.shengLine2 = `${currentWuxing}生${shengNext}`;
       } else {
-        relationships.sheng = '暂无相生关系数据';
+        relationships.shengLine1 = '暂无相生关系数据';
+        relationships.shengLine2 = '';
       }
       
       if (keTarget && keWho) {
-        relationships.ke = `${keWho}克${currentWuxing}，${currentWuxing}克${keTarget}`;
+        relationships.keLine1 = `${keWho}克${currentWuxing}`;
+        relationships.keLine2 = `${currentWuxing}克${keTarget}`;
       } else {
-        relationships.ke = '暂无相克关系数据';
+        relationships.keLine1 = '暂无相克关系数据';
+        relationships.keLine2 = '';
       }
     } else {
-      // 其他tab：显示对应元素
+      // 其他tab：显示对应元素，分两行
       const currentElementName = elementData.element;
       
       const shengPrevElement = this.elementTypeMap[tabType][shengPrev];
@@ -351,15 +355,19 @@ Page({
       const keWhoElement = this.elementTypeMap[tabType][keWho];
       
       if (shengPrevElement && shengNextElement && currentElementName) {
-        relationships.sheng = `${shengPrevElement}（${shengPrev}）生${currentElementName}（${currentWuxing}），${currentElementName}（${currentWuxing}）生${shengNextElement}（${shengNext}）`;
+        relationships.shengLine1 = `${shengPrevElement}（${shengPrev}）生${currentElementName}（${currentWuxing}）`;
+        relationships.shengLine2 = `${currentElementName}（${currentWuxing}）生${shengNextElement}（${shengNext}）`;
       } else {
-        relationships.sheng = '暂无相生关系数据';
+        relationships.shengLine1 = '暂无相生关系数据';
+        relationships.shengLine2 = '';
       }
       
       if (keTargetElement && keWhoElement && currentElementName) {
-        relationships.ke = `${keWhoElement}（${keWho}）克${currentElementName}（${currentWuxing}），${currentElementName}（${currentWuxing}）克${keTargetElement}（${keTarget}）`;
+        relationships.keLine1 = `${keWhoElement}（${keWho}）克${currentElementName}（${currentWuxing}）`;
+        relationships.keLine2 = `${currentElementName}（${currentWuxing}）克${keTargetElement}（${keTarget}）`;
       } else {
-        relationships.ke = '暂无相克关系数据';
+        relationships.keLine1 = '暂无相克关系数据';
+        relationships.keLine2 = '';
       }
     }
     
