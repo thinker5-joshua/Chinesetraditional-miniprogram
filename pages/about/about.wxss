@@ -285,3 +285,23 @@ page {
     font-size: 22rpx;
   }
 }
+
+/* 客服按钮样式 */
+.customer-service {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-guide {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.contact-btn {
+  transform: scale(1.2); /* 适当放大按钮 */
+}

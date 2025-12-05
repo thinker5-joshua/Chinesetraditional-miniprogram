@@ -2,6 +2,8 @@
 const { starsData, fourBeastsRhyme } = require('../../stars-data.js');
 
 Page({
+  // 添加定时器ID数组，用于保存所有定时器ID
+  matchTimers: [],
   data: {
     // 显示的星宿（从每个方位随机选择1宿，总共4宿）
     displayStars: [],
@@ -209,12 +211,13 @@ Page({
         });
       }
 
-      // 2秒后清除当前配对显示
-      setTimeout(() => {
+      // 2秒后清除当前配对
+      const timerId1 = setTimeout(() => {
         this.setData({
           currentMatch: null
         });
       }, 2000);
+      this.matchTimers.push(timerId1);
       
     } else {
       // 配对失败
@@ -240,8 +243,8 @@ Page({
         icon: 'error'
       });
       
-      // 重置选择和错误状态，但保持已配对成功的星宿状态不变
-      setTimeout(() => {
+      // 2秒后重置选择
+      const timerId2 = setTimeout(() => {
         const resetStars = this.data.displayStars.map(star => {
           if (star.status === 'matched') {
             return star; // 已配对的星宿保持原状态
@@ -259,6 +262,7 @@ Page({
           currentMatch: null
         });
       }, 2000);
+      this.matchTimers.push(timerId2);
     }
   },
 
@@ -311,5 +315,15 @@ Page({
       title: '星宿配对互动',
       query: ''
     };
+  },
+
+  /**
+   * 页面卸载时清理所有定时器
+   */
+  onUnload() {
+    // 清理所有定时器
+    this.matchTimers.forEach(timer => clearTimeout(timer));
+    // 清空定时器数组
+    this.matchTimers = [];
   }
 });

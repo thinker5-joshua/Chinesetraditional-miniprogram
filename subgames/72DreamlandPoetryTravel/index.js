@@ -1,20 +1,17 @@
-// 游戏数据存储
-let gameData = {
-    caves: [],
-    poets: [],
-    currentCave: null,
-    currentPoem: null,
-    hiddenChars: [],
-    selectedPoetId: null,
-    revealedHints: 0
-};
-
-// 全局变量用于存储当前显示的洞天和定时器
-let currentDisplayedCaves = [];
-let caveRotationTimer = null;
-
 Page({
   data: {
+    // 游戏数据
+    gameData: {
+      caves: [],
+      poets: [],
+      currentCave: null,
+      currentPoem: null,
+      hiddenChars: [],
+      selectedPoetId: null,
+      revealedHints: 0
+    },
+    
+    // 页面状态
     currentView: 'compass',
     showStars: true,
     showSuccessModal: false,
@@ -24,7 +21,10 @@ Page({
     currentPoem: null,
     currentCavePoem: null,
     displayedCaves: [],
-    mapMarkers: []
+    mapMarkers: [],
+    
+    // 当前显示的洞天
+    currentDisplayedCaves: []
   },
 
   onLoad() {
@@ -50,15 +50,17 @@ Page({
 
   onHide() {
     // 清理定时器
-    if (caveRotationTimer) {
-      clearInterval(caveRotationTimer);
+    if (this.caveRotationTimer) {
+      clearInterval(this.caveRotationTimer);
+      this.caveRotationTimer = null;
     }
   },
 
   onUnload() {
     // 页面卸载时清理资源
-    if (caveRotationTimer) {
-      clearInterval(caveRotationTimer);
+    if (this.caveRotationTimer) {
+      clearInterval(this.caveRotationTimer);
+      this.caveRotationTimer = null;
     }
   },
 
@@ -72,11 +74,13 @@ Page({
       const data = require('./data_full.js');
       
       // 存储游戏数据
-      gameData.caves = data.caves || [];
-      gameData.poets = data.poets || [];
+      this.setData({
+        'gameData.caves': data.caves || [],
+        'gameData.poets': data.poets || []
+      });
       
-      console.log('成功加载数据:', gameData.caves.length, '个洞天');
-      console.log('洞天数据样本:', gameData.caves.slice(0, 2).map(c => ({ id: c.id, name: c.name })));
+      console.log('成功加载数据:', this.data.gameData.caves.length, '个洞天');
+      console.log('洞天数据样本:', this.data.gameData.caves.slice(0, 2).map(c => ({ id: c.id, name: c.name })));
       
       // 延迟初始化仙界地图，确保数据完全加载
       setTimeout(() => {
@@ -94,7 +98,7 @@ Page({
    */
   useMockData() {
     // 模拟数据与data.json中的结构一致，每个洞天直接包含相关诗词
-    gameData.caves = [
+    const mockCaves = [
       {
         "id": 1,
         "name": "黄山",
@@ -131,6 +135,10 @@ Page({
       }
     ];
     
+    this.setData({
+      'gameData.caves': mockCaves
+    });
+    
     // 初始化仙界地图
     this.initializeImmortalMap();
   },
@@ -152,10 +160,10 @@ Page({
     this.createStars();
     
     // 打印游戏数据信息
-    console.log('游戏数据中有洞天数量:', gameData.caves ? gameData.caves.length : 0);
+    console.log('游戏数据中有洞天数量:', this.data.gameData.caves ? this.data.gameData.caves.length : 0);
     
     // 检查数据有效性
-    if (!gameData.caves || gameData.caves.length === 0) {
+    if (!this.data.gameData.caves || this.data.gameData.caves.length === 0) {
       console.error('游戏数据为空，无法初始化地图');
       wx.showToast({
         title: '数据加载失败',
@@ -166,27 +174,28 @@ Page({
     
     // 立即显示洞天体，与地图同步显示
     console.log('开始显示随机洞天...');
-    currentDisplayedCaves = this.displayRandomCaves();
-    console.log('洞天体数据准备完成:', currentDisplayedCaves);
+    const displayedCaves = this.displayRandomCaves();
+    console.log('洞天体数据准备完成:', displayedCaves);
     
     // 更新页面数据
     this.setData({
-      displayedCaves: currentDisplayedCaves,
+      displayedCaves: displayedCaves,
+      currentDisplayedCaves: displayedCaves,
       currentView: 'compass'
     }, () => {
-      console.log('页面数据更新完成，洞天体数量:', currentDisplayedCaves.length);
+      console.log('页面数据更新完成，洞天体数量:', displayedCaves.length);
       console.log('当前视图状态:', this.data.currentView);
       console.log('实际页面数据中的洞天数量:', this.data.displayedCaves.length);
       
       // 强制触发页面重绘
       setTimeout(() => {
         this.setData({
-          displayedCaves: [...currentDisplayedCaves]
+          displayedCaves: [...displayedCaves]
         });
       }, 100);
     });
     
-    console.log('洞天体显示完成，共显示:', currentDisplayedCaves.length);
+    console.log('洞天体显示完成，共显示:', displayedCaves.length);
     
     // 设置定时器，每2秒轮换显示新的洞天体
     console.log('启动洞天轮换定时器...');
@@ -209,20 +218,21 @@ Page({
    */
   startCaveRotation() {
     // 清除已有的定时器（如果存在）
-    if (caveRotationTimer) {
-      clearInterval(caveRotationTimer);
+    if (this.caveRotationTimer) {
+      clearInterval(this.caveRotationTimer);
     }
     
     // 设置新的定时器，每2秒执行一次
-    caveRotationTimer = setInterval(() => {
+    this.caveRotationTimer = setInterval(() => {
       // 淡出当前洞天体
       this.fadeOutCurrentCaves();
       
       // 短暂延迟后显示新的洞天体
       setTimeout(() => {
-        currentDisplayedCaves = this.displayRandomCaves();
+        const displayedCaves = this.displayRandomCaves();
         this.setData({
-          displayedCaves: currentDisplayedCaves
+          displayedCaves: displayedCaves,
+          currentDisplayedCaves: displayedCaves
         });
       }, 400);
     }, 2000);
@@ -249,10 +259,10 @@ Page({
     
     // 3. 从游戏数据中随机选择5个洞天
     let cavesToDisplay = [];
-    if (gameData.caves && gameData.caves.length > 0) {
-      console.log('使用游戏数据中的洞天，总数:', gameData.caves.length);
+    if (this.data.gameData.caves && this.data.gameData.caves.length > 0) {
+      console.log('使用游戏数据中的洞天，总数:', this.data.gameData.caves.length);
       // 复制数组以避免修改原始数据
-      const cavesCopy = [...gameData.caves];
+      const cavesCopy = [...this.data.gameData.caves];
       // 随机排序并取前5个
       cavesToDisplay = cavesCopy.sort(() => Math.random() - 0.5).slice(0, Math.min(5, cavesCopy.length));
     } else {
@@ -269,44 +279,33 @@ Page({
     
     console.log('选择的洞天数量:', cavesToDisplay.length);
     
-    // 创建所有洞天体，确保不重叠
+    // 缓存固定位置，避免每次都重新计算
+    if (!this.cavePositions) {
+      // 预计算位置网格，避免碰撞检测循环
+      this.cavePositions = [
+        { x: 20 + Math.random() * 10, y: 15 + Math.random() * 8 },
+        { x: 50 + Math.random() * 10, y: 15 + Math.random() * 8 },
+        { x: 80 + Math.random() * 10, y: 15 + Math.random() * 8 },
+        { x: 35 + Math.random() * 10, y: 40 + Math.random() * 8 },
+        { x: 65 + Math.random() * 10, y: 40 + Math.random() * 8 }
+      ];
+    }
+    
+    // 创建所有洞天体，使用预计算的位置
     const displayCaves = [];
-    const positions = [];
     
     for (let i = 0; i < cavesToDisplay.length; i++) {
       const cave = cavesToDisplay[i];
-      let x, y;
-      let attempts = 0;
-      
-      // 尝试找到不重叠的位置
-      do {
-        // 使用网格布局避免重叠
-        const gridCols = 3; // 3列布局
-        const cellWidth = 25; // 每列宽度25%
-        const cellHeight = 25; // 每行高度25%
-        
-        const col = i % gridCols;
-        const row = Math.floor(i / gridCols);
-        
-        x = 10 + col * cellWidth + Math.random() * 10; // 10%开始，加随机偏移
-        y = 5 + row * cellHeight + Math.random() * 8;   // 5%开始，加随机偏移
-        
-        attempts++;
-      } while (positions.some(pos => 
-        Math.abs(pos.x - x) < 15 && Math.abs(pos.y - y) < 15
-      ) && attempts < 50);
-      
+      const pos = this.cavePositions[i];
       const colorIndex = Math.floor(Math.random() * colors.length);
       
-      positions.push({ x, y });
-      
-      console.log(`创建洞天 ${i + 1}/${cavesToDisplay.length}: ${cave.name}，位置(${x.toFixed(1)}%, ${y.toFixed(1)}%)，颜色: ${colors[colorIndex]}`);
+      console.log(`创建洞天 ${i + 1}/${cavesToDisplay.length}: ${cave.name}，位置(${pos.x.toFixed(1)}%, ${pos.y.toFixed(1)}%)，颜色: ${colors[colorIndex]}`);
       
       displayCaves.push({
         id: cave.id,
         name: cave.name,
-        x: x,
-        y: y,
+        x: pos.x,
+        y: pos.y,
         color: colors[colorIndex],
         animationDelay: `${i * 0.3}s`,
         zIndex: 1000 + i
@@ -334,8 +333,9 @@ Page({
     console.log('点击仙界任意门');
     
     // 暂停定时器
-    if (caveRotationTimer) {
-      clearInterval(caveRotationTimer);
+    if (this.caveRotationTimer) {
+      clearInterval(this.caveRotationTimer);
+      this.caveRotationTimer = null;
     }
     
     // 播放音效
@@ -371,14 +371,15 @@ Page({
     const caveId = e.currentTarget.dataset.caveId;
     
     // 暂停定时器
-    if (caveRotationTimer) {
-      clearInterval(caveRotationTimer);
+    if (this.caveRotationTimer) {
+      clearInterval(this.caveRotationTimer);
+      this.caveRotationTimer = null;
     }
     
     // 查找对应的洞天数据
-    gameData.currentCave = gameData.caves.find(cave => cave.id === caveId);
+    const currentCave = this.data.gameData.caves.find(cave => cave.id === caveId);
     
-    if (!gameData.currentCave) {
+    if (!currentCave) {
       wx.showToast({
         title: '洞天数据加载失败',
         icon: 'none'
@@ -387,11 +388,12 @@ Page({
     }
     
     // 从该洞天相关的诗词中随机选择一首
-    if (gameData.currentCave.related_poems && gameData.currentCave.related_poems.length > 0) {
-      gameData.currentPoem = gameData.currentCave.related_poems[Math.floor(Math.random() * gameData.currentCave.related_poems.length)];
+    let currentPoem;
+    if (currentCave.related_poems && currentCave.related_poems.length > 0) {
+      currentPoem = currentCave.related_poems[Math.floor(Math.random() * currentCave.related_poems.length)];
     } else {
       // 设置一个基本的默认诗词
-      gameData.currentPoem = {
+      currentPoem = {
         title: '默认诗词',
         content: '此处应有诗词内容',
         author: '未知诗人',
@@ -399,19 +401,23 @@ Page({
       };
     }
     
-    // 重置游戏状态
-    gameData.hiddenChars = [];
-    gameData.selectedPoetId = null;
-    gameData.revealedHints = 0;
+    // 更新游戏状态
+    this.setData({
+      'gameData.currentCave': currentCave,
+      'gameData.currentPoem': currentPoem,
+      'gameData.hiddenChars': [],
+      'gameData.selectedPoetId': null,
+      'gameData.revealedHints': 0
+    });
     
     // 播放选择音效
     this.playSelectSound();
     
     // 更新页面数据
     this.setData({
-      currentCave: gameData.currentCave,
-      currentPoem: gameData.currentPoem,
-      cavePromptText: `你即将进入${gameData.currentCave.name}，请你完成此洞天诗词通关`,
+      currentCave: currentCave,
+      currentPoem: currentPoem,
+      cavePromptText: `你即将进入${currentCave.name}，请你完成此洞天诗词通关`,
       displayedCaves: [] // 隐藏洞天体
     });
     
@@ -450,11 +456,14 @@ Page({
    * 从当前显示的5个洞天中随机选择一个
    */
   selectRandomCaveFromDisplayed() {
+    const currentDisplayedCaves = this.data.currentDisplayedCaves;
+    
     if (currentDisplayedCaves.length === 0) {
       // 重新显示洞天体
-      currentDisplayedCaves = this.displayRandomCaves();
+      const displayedCaves = this.displayRandomCaves();
       this.setData({
-        displayedCaves: currentDisplayedCaves
+        displayedCaves: displayedCaves,
+        currentDisplayedCaves: displayedCaves
       });
       return;
     }
@@ -464,14 +473,15 @@ Page({
     const selectedCave = currentDisplayedCaves[randomIndex];
     
     // 查找对应的洞天数据
-    gameData.currentCave = gameData.caves.find(cave => cave.id === selectedCave.id);
+    const currentCave = this.data.gameData.caves.find(cave => cave.id === selectedCave.id);
     
     // 从该洞天相关的诗词中随机选择一首
-    if (gameData.currentCave && gameData.currentCave.related_poems && gameData.currentCave.related_poems.length > 0) {
-      gameData.currentPoem = gameData.currentCave.related_poems[Math.floor(Math.random() * gameData.currentCave.related_poems.length)];
+    let currentPoem;
+    if (currentCave && currentCave.related_poems && currentCave.related_poems.length > 0) {
+      currentPoem = currentCave.related_poems[Math.floor(Math.random() * currentCave.related_poems.length)];
     } else {
       // 设置一个基本的默认诗词
-      gameData.currentPoem = {
+      currentPoem = {
         title: '默认诗词',
         content: '此处应有诗词内容',
         author: '未知诗人',
@@ -479,16 +489,16 @@ Page({
       };
     }
     
-    // 重置游戏状态
-    gameData.hiddenChars = [];
-    gameData.selectedPoetId = null;
-    gameData.revealedHints = 0;
-    
-    // 更新页面数据
+    // 更新游戏状态
     this.setData({
-      currentCave: gameData.currentCave,
-      currentPoem: gameData.currentPoem,
-      cavePromptText: `你即将进入${gameData.currentCave.name}，请你完成此洞天诗词通关`,
+      'gameData.currentCave': currentCave,
+      'gameData.currentPoem': currentPoem,
+      'gameData.hiddenChars': [],
+      'gameData.selectedPoetId': null,
+      'gameData.revealedHints': 0,
+      currentCave: currentCave,
+      currentPoem: currentPoem,
+      cavePromptText: `你即将进入${currentCave.name}，请你完成此洞天诗词通关`,
       displayedCaves: [] // 隐藏洞天体
     });
     
@@ -505,7 +515,8 @@ Page({
     console.log('显示诗词挑战界面');
     
     // 检查诗词数据
-    if (!gameData.currentPoem) {
+    const currentPoem = this.data.gameData.currentPoem;
+    if (!currentPoem) {
       wx.showToast({
         title: '无法加载诗词挑战，请重试',
         icon: 'none'
@@ -550,12 +561,13 @@ Page({
    * 处理诗词内容，生成挑战
    */
   processPoemContent() {
-    if (!gameData.currentPoem || !gameData.currentPoem.content) {
+    const currentPoem = this.data.gameData.currentPoem;
+    if (!currentPoem || !currentPoem.content) {
       console.error('诗词数据无效');
       return;
     }
     
-    const content = gameData.currentPoem.content;
+    const content = currentPoem.content;
     
     // 随机选择要隐藏的字
     const chars = content.split('');
@@ -750,8 +762,9 @@ Page({
     });
     
     // 设置洞天诗词
-    if (gameData.currentCave.related_poems && gameData.currentCave.related_poems.length > 0) {
-      const poem = gameData.currentCave.related_poems[0];
+    const currentCave = this.data.gameData.currentCave;
+    if (currentCave.related_poems && currentCave.related_poems.length > 0) {
+      const poem = currentCave.related_poems[0];
       // 处理诗词分行排版
       const poemLines = this.processPoemLines(poem.content);
       
@@ -764,10 +777,10 @@ Page({
     // 设置地图标记
     this.setData({
       mapMarkers: [{
-        id: gameData.currentCave.id,
-        latitude: gameData.currentCave.latitude || 39.9042,
-        longitude: gameData.currentCave.longitude || 116.4074,
-        title: gameData.currentCave.name
+        id: currentCave.id,
+        latitude: currentCave.latitude || 39.9042,
+        longitude: currentCave.longitude || 116.4074,
+        title: currentCave.name
       }]
     });
     
@@ -790,7 +803,8 @@ Page({
    * 下一首诗
    */
   nextPoem() {
-    if (!gameData.currentCave.related_poems || gameData.currentCave.related_poems.length <= 1) {
+    const currentCave = this.data.gameData.currentCave;
+    if (!currentCave.related_poems || currentCave.related_poems.length <= 1) {
       wx.showToast({
         title: '没有更多诗词了',
         icon: 'none'
@@ -798,7 +812,7 @@ Page({
       return;
     }
     
-    const currentPoems = gameData.currentCave.related_poems;
+    const currentPoems = currentCave.related_poems;
     const currentIndex = currentPoems.findIndex(poem => poem.id === this.data.currentCavePoem.id);
     const nextIndex = (currentIndex + 1) % currentPoems.length;
     const nextPoem = currentPoems[nextIndex];
@@ -824,11 +838,15 @@ Page({
    * 重置游戏状态
    */
   resetGameState() {
-    gameData.currentCave = null;
-    gameData.currentPoem = null;
-    gameData.hiddenChars = [];
-    gameData.selectedPoetId = null;
-    gameData.revealedHints = 0;
+    // 重置游戏状态
+    this.setData({
+      'gameData.currentCave': null,
+      'gameData.currentPoem': null,
+      'gameData.hiddenChars': [],
+      'gameData.selectedPoetId': null,
+      'gameData.revealedHints': 0,
+      'gameData.showHint': false
+    });
     
     // 重置页面数据
     this.setData({

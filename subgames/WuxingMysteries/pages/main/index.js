@@ -61,7 +61,16 @@ Page({
     startX: 0,
     startY: 0,
     moveX: 0,
-    moveY: 0
+    moveY: 0,
+    
+    // Canvas绘制状态标记，避免重复绘制
+    isCanvasDrawn: {
+      wuxing: false,
+      wufang: false,
+      wuse: false,
+      wuzang: false,
+      wuwei: false
+    }
   },
 
   onLoad() {
@@ -70,16 +79,20 @@ Page({
 
   onShow() {
     // 页面显示时重新绘制图表，确保从详情页面返回后图表正常显示
-    setTimeout(() => {
-      this.drawCurrentTabCanvas();
-    }, 100);
+    if (!this.data.isCanvasDrawn[this.data.currentTab]) {
+      setTimeout(() => {
+        this.drawCurrentTabCanvas();
+      }, 100);
+    }
   },
 
   onReady() {
     // 确保页面和数据都已准备好再绘制
-    setTimeout(() => {
-      this.drawCurrentTabCanvas();
-    }, 300);
+    if (!this.data.isCanvasDrawn[this.data.currentTab]) {
+      setTimeout(() => {
+        this.drawCurrentTabCanvas();
+      }, 300);
+    }
   },
 
   /**
@@ -89,14 +102,23 @@ Page({
     try {
       const wuxingData = require('../../data.js');
       
+      // 重置canvas绘制状态，确保数据更新后能重新绘制
+      const resetCanvasState = {
+        wuxing: false,
+        wufang: false,
+        wuse: false,
+        wuzang: false,
+        wuwei: false
+      };
+      
       this.setData({
-        wuxingData: wuxingData
+        wuxingData: wuxingData,
+        isCanvasDrawn: resetCanvasState
       }, () => {
         // 数据加载完成后绘制图表
         this.drawCurrentTabCanvas();
       });
     } catch (err) {
-
       wx.showToast({
         title: '数据加载失败',
         icon: 'none',
@@ -125,7 +147,9 @@ Page({
     // 先清除所有Canvas，防止切换标签时图表叠加
     this.clearAllCanvas();
 
-    switch(this.data.currentTab) {
+    const currentTab = this.data.currentTab;
+    
+    switch(currentTab) {
       case 'wuxing':
         this.drawWuxingCanvas();
         break;
@@ -142,6 +166,11 @@ Page({
         this.drawWuweiCanvas();
         break;
     }
+    
+    // 绘制完成后更新状态，标记为已绘制
+    this.setData({
+      [`isCanvasDrawn.${currentTab}`]: true
+    });
   },
 
   /**
@@ -175,13 +204,23 @@ Page({
       'wuwei': '探索味道与五行的奥秘'
     };
 
+    // 重置所有canvas绘制状态
+    const resetCanvasState = {
+      wuxing: false,
+      wufang: false,
+      wuse: false,
+      wuzang: false,
+      wuwei: false
+    };
+
     this.setData({
       currentTab: tabId,
       currentSubtitle: subtitleMap[tabId] || '探索中国传统哲学的宇宙观',
       selectedElement: null,
       selectedDirection: null,
       selectedColor: null,
-      selectedOrgan: null
+      selectedOrgan: null,
+      isCanvasDrawn: resetCanvasState
     }, () => {
       // Tab切换后绘制对应图表，增加延迟确保DOM更新完成
       setTimeout(() => {

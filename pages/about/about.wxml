@@ -111,6 +111,15 @@
       <text class="content-text">感谢您使用文益互动！如有任何建议或问题，欢迎与我们联系。</text>
       <view class="contact-info">
         <text class="contact-item">📧 邮箱：thinker5@126.com</text>
+        <view class="customer-service">
+          <text class="service-guide">也可点击下方按钮一键进入客服会话，直接交流</text>
+          <contact-button 
+            type="default-dark" 
+            size="20" 
+            session-from="文益互动-关于页面"
+            class="contact-btn"
+          ></contact-button>
+        </view>
       </view>
     </view>
   </view>
