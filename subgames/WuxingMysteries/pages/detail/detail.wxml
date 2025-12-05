@@ -1,38 +1,46 @@
-<!-- 弹出框容器 -->
-<view class="modal-overlay" bindtap="goBack">
-  <view class="modal-container" catchtap="stopPropagation">
-    
-    <!-- 弹出框头部 -->
-    <view class="modal-header">
+<!-- 页面容器 -->
+<view class="page-container">
+  <!-- 固定头部区域 -->
+  <view class="header-section">
+    <view class="header-main">
       <view class="element-symbol" style="background: {{elementInfo.color || '#667eea'}};">
         <text class="symbol-text">{{elementInfo.symbol || elementInfo.title}}</text>
       </view>
-      <view class="element-title">
+      <view class="element-title-container">
         <view class="element-name">{{elementInfo.element}}</view>
-        <view class="element-pinyin" wx:if="{{elementInfo.pinyin}}">{{elementInfo.pinyin}}</view>
+        <view class="element-wuxing" wx:if="{{elementInfo.wuxing && tabType !== 'wuxing'}}">
+          <text class="wuxing-label">五行：</text>
+          <text class="wuxing-value">{{elementInfo.wuxing}}</text>
+        </view>
       </view>
     </view>
+  </view>
+  
+  <!-- 滚动内容区域 -->
+  <scroll-view class="content-scroll" scroll-y="true">
+    <!-- 数据加载状态提示 -->
+    <view wx:if="{{!elementInfo.element}}" class="loading-container">
+      <view class="loading-icon">🔄</view>
+      <text class="loading-text">正在加载数据...</text>
+    </view>
+    
+    <view wx:else class="content-wrapper">
 
-    <!-- 弹出框内容区域 -->
-    <scroll-view class="modal-content" scroll-y="true">
-      
-      <!-- 数据加载状态提示 -->
-      <view wx:if="{{!elementInfo.element}}" class="loading-container">
-        <view class="loading-icon">🔄</view>
-        <text class="loading-text">正在加载数据...</text>
-      </view>
-      
-
-      
       <!-- 基本描述 -->
-      <view class="content-section">
-        <view class="section-title">核心特征</view>
+      <view class="description-section">
+        <view class="card-header">
+          <text class="section-title">核心特征</text>
+          <view class="decorative-line"></view>
+        </view>
         <view class="description-text">{{elementInfo.description}}</view>
       </view>
 
       <!-- 基本属性 -->
-      <view class="content-section" wx:if="{{elementInfo.properties && elementInfo.properties.length > 0}}">
-        <view class="section-title">主要特性</view>
+      <view class="properties-section" wx:if="{{elementInfo.properties && elementInfo.properties.length > 0}}">
+        <view class="card-header">
+          <text class="section-title">主要特性</text>
+          <view class="decorative-line"></view>
+        </view>
         <view class="attribute-list">
           <view class="attribute-item" wx:for="{{elementInfo.properties}}" wx:key="*this">
             <text class="attribute-text">{{item}}</text>
@@ -40,26 +48,30 @@
         </view>
       </view>
 
-      <!-- 五行关系 -->
-      <view class="content-section" wx:if="{{elementInfo.sheng || elementInfo.ke}}">
-        <view class="section-title">五行关系</view>
+      <!-- 五行关系 - 完整显示相生相克 -->
+      <view class="wuxing-section" wx:if="{{elementInfo.wuxingRelationships}}">
+        <view class="card-header">
+          <text class="section-title">五行关系</text>
+          <view class="decorative-line"></view>
+        </view>
         <view class="wuxing-relations">
-          <view class="relation-card sheng" wx:if="{{elementInfo.sheng}}">
-            <view class="relation-label">相生</view>
-            <view class="relation-value">→ {{elementInfo.sheng}}</view>
-            <view class="relation-desc">被{{elementInfo.sheng}}所生，或生成{{elementInfo.sheng}}</view>
+          <view class="relation-group">
+            <view class="relation-label">相生：</view>
+            <view class="relation-content">{{elementInfo.wuxingRelationships.sheng}}</view>
           </view>
-          <view class="relation-card ke" wx:if="{{elementInfo.ke}}">
-            <view class="relation-label">相克</view>
-            <view class="relation-value">→ {{elementInfo.ke}}</view>
-            <view class="relation-desc">被{{elementInfo.ke}}所克，或克制{{elementInfo.ke}}</view>
+          <view class="relation-group">
+            <view class="relation-label">相克：</view>
+            <view class="relation-content">{{elementInfo.wuxingRelationships.ke}}</view>
           </view>
         </view>
       </view>
 
       <!-- 自然对应 -->
-      <view class="content-section" wx:if="{{elementInfo.season || elementInfo.direction || elementInfo.planet || elementInfo.number}}">
-        <view class="section-title">自然对应</view>
+      <view class="nature-section" wx:if="{{elementInfo.season || elementInfo.direction || elementInfo.planet || elementInfo.number}}">
+        <view class="card-header">
+          <text class="section-title">自然对应</text>
+          <view class="decorative-line"></view>
+        </view>
         <view class="nature-grid">
           <view class="nature-item" wx:if="{{elementInfo.season}}">
             <view class="nature-label">季节</view>
@@ -81,50 +93,39 @@
       </view>
 
       <!-- 养生建议 -->
-      <view class="content-section" wx:if="{{elementInfo.healthTips && elementInfo.healthTips.length > 0}}">
-        <view class="section-title">养生建议</view>
+      <view class="health-section" wx:if="{{elementInfo.healthTips && elementInfo.healthTips.length > 0}}">
+        <view class="card-header">
+          <text class="section-title">养生建议</text>
+          <view class="decorative-line"></view>
+        </view>
         <view class="health-tips">
           <view class="health-tip" wx:for="{{elementInfo.healthTips}}" wx:key="*this">
-            <text class="tip-text">{{item}}</text>
+            {{item}}
           </view>
         </view>
       </view>
 
       <!-- 文化意义 -->
-      <view class="content-section" wx:if="{{elementInfo.cultural && elementInfo.cultural.length > 0}}">
-        <view class="section-title">文化意义</view>
+      <view class="cultural-section" wx:if="{{elementInfo.cultural && elementInfo.cultural.length > 0}}">
+        <view class="card-header">
+          <text class="section-title">文化意义</text>
+          <view class="decorative-line"></view>
+        </view>
         <view class="cultural-content">
           <view class="cultural-item" wx:for="{{elementInfo.cultural}}" wx:key="*this">
-            <text class="cultural-text">{{item}}</text>
+            {{item}}
           </view>
         </view>
       </view>
 
-      <!-- 相关元素 -->
-      <view class="content-section" wx:if="{{relatedElements && relatedElements.length > 0}}">
-        <view class="section-title">相关元素</view>
-        <view class="related-elements">
-          <view 
-            class="related-element"
-            wx:for="{{relatedElements}}" 
-            wx:key="name"
-            bindtap="onRelatedElementTap"
-            data-element="{{item.name}}"
-          >
-            <view class="related-symbol">{{item.symbol || item.name}}</view>
-            <view class="related-name">{{item.name}}</view>
-          </view>
-        </view>
-      </view>
 
-    </scroll-view>
-
-    <!-- 底部固定返回按钮 -->
-    <view class="modal-footer">
-      <view class="back-button" bindtap="goBack">
-        <text class="back-text">返回</text>
-      </view>
     </view>
+  </scroll-view>
 
+  <!-- 底部固定返回按钮 -->
+  <view class="footer-section">
+    <view class="back-button" bindtap="goBack">
+      <text class="back-text">返回</text>
+    </view>
   </view>
 </view>

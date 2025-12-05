@@ -96,7 +96,7 @@ page::before {
   background-color: #8b4513;
   color: #fff;
   border: 2px solid #b8a57e;
-  padding: 6px 12px;
+  padding: 18px 12px;
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;

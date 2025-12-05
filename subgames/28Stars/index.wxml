@@ -63,16 +63,22 @@
   <view class="star-modal {{showStarDetail ? 'show' : ''}}" bindtap="hideStarDetail">
     <view class="modal-content" catchtap="">
       <view class="modal-header">
-        <view class="modal-symbol">{{selectedStarInfo.symbol}}</view>
-        <text class="modal-name">{{selectedStarInfo.name}}</text>
-        <text class="modal-pinyin">{{selectedStarInfo.pinyin}}</text>
+        <view class="modal-header-left">
+          <view class="modal-symbol">{{selectedStarInfo.symbol}}</view>
+        </view>
+        <view class="modal-header-right">
+          <view class="modal-title-row">
+            <text class="modal-name">{{selectedStarInfo.name}}</text>
+            <text class="modal-pinyin">{{selectedStarInfo.pinyin}}</text>
+          </view>
+          <view class="modal-animal-row">
+            <text class="modal-animal">{{selectedStarInfo.animal}}</text>
+          </view>
+        </view>
       </view>
       
       <view class="modal-body">
-        <view class="modal-section">
-          <text class="section-title">象征动物</text>
-          <text class="section-content animal-name">{{selectedStarInfo.animal}}</text>
-        </view>
+
         
         <view class="modal-section">
           <text class="section-title">星宿含义</text>
@@ -96,10 +102,7 @@
           <text class="section-content">{{selectedStarInfo.description}}</text>
         </view>
         
-        <view class="modal-section">
-          <text class="section-title">方位位置</text>
-          <text class="section-content">第 {{selectedStarInfo.positionIndex}} 宿</text>
-        </view>
+
       </view>
       
       <button class="modal-close" bindtap="hideStarDetail">关闭</button>

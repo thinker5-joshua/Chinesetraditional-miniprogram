@@ -1034,8 +1034,10 @@ Page({
     const deltaX = moveX - startX;
     const deltaY = moveY - startY;
     
-    // 设定滑动阈值，大于50px且水平滑动距离大于垂直滑动距离才触发Tab切换
-    if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    // 增加滑动检测的阈值，只有明显的滑动动作才会触发Tab切换
+    // 水平移动距离需要大于100px，且水平移动距离大于垂直移动距离的2倍
+    // 这样可以确保只有真正的滑动才会触发切换，避免点击元素按钮时的轻微移动被误识别
+    if (Math.abs(deltaX) > 100 && Math.abs(deltaX) > Math.abs(deltaY) * 2) {
       // 获取当前Tab索引
       const currentIndex = activeTabs.findIndex(tab => tab.id === currentTab);
       

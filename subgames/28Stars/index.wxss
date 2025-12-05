@@ -529,12 +529,41 @@ page {
   backdrop-filter: blur(30rpx);
   position: relative;
 }
-
+/* 模态框头部 */
 .modal-header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
   margin-bottom: 30rpx;
   padding-bottom: 20rpx;
   border-bottom: 1rpx solid rgba(100, 255, 218, 0.3);
+  text-align: left;
+}
+
+/* 头部左侧 */
+.modal-header-left {
+  flex-shrink: 0;
+}
+
+/* 头部右侧 */
+.modal-header-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+/* 标题行 */
+.modal-title-row {
+  display: flex;
+  align-items: center;
+  gap: 15rpx;
+}
+
+/* 动物行 */
+.modal-animal-row {
+  display: flex;
+  align-items: center;
 }
 
 .modal-symbol {
@@ -553,25 +582,30 @@ page {
 }
 
 .modal-name {
-  font-size: 48rpx;
+  font-size: 56rpx;
   font-weight: bold;
   color: #64ffda;
-  margin-bottom: 10rpx;
-  display: block;
   text-shadow: 0 0 20rpx rgba(100, 255, 218, 0.4);
   letter-spacing: 2rpx;
+  display: inline-block;
 }
 
 .modal-pinyin {
-  font-size: 30rpx;
+  font-size: 36rpx;
   color: #f39c12;
-  margin-bottom: 10rpx;
-  display: block;
   font-style: italic;
+  display: inline-block;
+}
+
+.modal-animal {
+  font-size: 40rpx;
+  color: #f39c12;
+  font-weight: bold;
+  text-shadow: 0 0 15rpx rgba(243, 156, 18, 0.4);
 }
 
 .modal-body {
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .modal-section {
@@ -583,7 +617,7 @@ page {
 }
 
 .section-title {
-  font-size: 32rpx;
+  font-size: 36rpx;
   color: #64ffda;
   font-weight: bold;
   margin-bottom: 10rpx;
@@ -591,22 +625,16 @@ page {
 }
 
 .section-content {
-  font-size: 30rpx;
+  font-size: 36rpx;
   color: #ffffff;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* 成语列表样式 */
 .idioms-list {
-  font-size: 30rpx;
+  font-size: 36rpx;
   color: #ffffff;
-  line-height: 1.6;
-}
-
-.animal-name {
-  font-size: 34rpx;
-  color: #f39c12;
-  font-weight: bold;
+  line-height: 1.7;
 }
 
 .idioms-list {
@@ -620,8 +648,8 @@ page {
   background: rgba(100, 255, 218, 0.1);
   border: 1rpx solid rgba(100, 255, 218, 0.3);
   border-radius: 20rpx;
-  padding: 8rpx 16rpx;
-  font-size: 20rpx;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
   color: #64ffda;
   display: inline-block;
   transition: all 0.3s ease;

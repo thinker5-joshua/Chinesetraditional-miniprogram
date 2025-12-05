@@ -40,18 +40,72 @@ Page({
     this.generateDetailData(decodedElement, decodedTabType);
   },
 
+  // 五行关系数据
+  wuxingRelationships: {
+    // 相生关系：A生B
+    sheng: {
+      '木': '火',
+      '火': '土',
+      '土': '金',
+      '金': '水',
+      '水': '木'
+    },
+    // 相克关系：A克B
+    ke: {
+      '木': '土',
+      '火': '金',
+      '土': '水',
+      '金': '木',
+      '水': '火'
+    }
+  },
+
+  // 五行元素对应的其他元素映射
+  elementTypeMap: {
+    // 五方
+    wufang: {
+      '木': '东',
+      '火': '南',
+      '土': '中',
+      '金': '西',
+      '水': '北'
+    },
+    // 五色
+    wuse: {
+      '木': '青',
+      '火': '赤',
+      '土': '黄',
+      '金': '白',
+      '水': '黑'
+    },
+    // 五脏
+    wuzang: {
+      '木': '肝',
+      '火': '心',
+      '土': '脾',
+      '金': '肺',
+      '水': '肾'
+    },
+    // 五味
+    wuwei: {
+      '木': '酸',
+      '火': '苦',
+      '土': '甘',
+      '金': '辛',
+      '水': '咸'
+    }
+  },
+
   // 生成详情数据
   generateDetailData(elementName, tabType) {
     try {
       // 加载数据文件
       const wuxingData = require('../../data.js');
       
-
-      
       let elementData = {};
       let foundElement = null;
       
-      // 优化的数据查找逻辑 - 使用数组查找代替循环遍历
+      // 优化的数据查找逻辑 - 使用Object.values和find方法优化查找
       switch(tabType) {
         case 'wuxing':
           // 使用Object.values和find方法优化查找
@@ -61,9 +115,15 @@ Page({
           if (foundElement) {
             elementData = Object.assign({}, foundElement);
             elementData.element = elementName;
-
+            elementData.wuxing = elementName; // 设置五行属性为中文
           } else {
-
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
           }
           break;
           
@@ -76,11 +136,21 @@ Page({
             if (wuxingElement) {
               elementData = Object.assign({}, wuxingElement, foundElement);
               elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
             } else {
               elementData = Object.assign({}, foundElement);
               elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
             }
-
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
           }
           break;
           
@@ -93,11 +163,21 @@ Page({
             if (wuxingElement) {
               elementData = Object.assign({}, wuxingElement, foundElement);
               elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
             } else {
               elementData = Object.assign({}, foundElement);
               elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
             }
-
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
           }
           break;
           
@@ -110,11 +190,21 @@ Page({
             if (wuxingElement) {
               elementData = Object.assign({}, wuxingElement, foundElement);
               elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
             } else {
               elementData = Object.assign({}, foundElement);
               elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
             }
-
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
           }
           break;
           
@@ -127,43 +217,40 @@ Page({
             if (wuxingElement) {
               elementData = Object.assign({}, wuxingElement, foundElement);
               elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
             } else {
               elementData = Object.assign({}, foundElement);
               elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
             }
-
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
           }
           break;
       }
       
-      // 设置元素信息
-
-      
-      // 确保至少有基本数据
-      if (!elementData.element) {
-
-        // 设置默认数据避免页面空白
-        elementData = {
-          element: elementName,
-          title: elementName,
-          description: '数据加载失败，请重试',
-          symbol: '⚠️'
-        };
+      // 生成完整的五行关系
+      if (elementData.wuxing || tabType === 'wuxing') {
+        const relationships = this.generateWuxingRelationships(elementData, tabType);
+        elementData.wuxingRelationships = relationships;
       }
       
       this.setData({
         elementInfo: elementData
-      }, () => {
-
       });
       
-      // 生成相关元素 - 避免在数据错误时继续处理
-      if (elementData.element && elementData.element !== elementName) {
-        this.generateRelatedElements(elementData, tabType);
-      }
+      // 生成相关元素
+      this.generateRelatedElements(elementData, tabType);
       
     } catch (error) {
-
+      console.error('Error generating detail data:', error);
       // 设置错误状态
       this.setData({
         elementInfo: {
@@ -176,60 +263,178 @@ Page({
     }
   },
 
+  // 生成五行关系
+  generateWuxingRelationships(elementData, tabType) {
+    let relationships = {
+      sheng: '',
+      ke: ''
+    };
+    
+    // 五行相生相克关系 - 使用中文直接定义
+    const wuxingSheng = {
+      '木': '火',
+      '火': '土',
+      '土': '金',
+      '金': '水',
+      '水': '木'
+    };
+    
+    const wuxingKe = {
+      '木': '土',
+      '火': '金',
+      '土': '水',
+      '金': '木',
+      '水': '火'
+    };
+    
+    // 获取当前五行元素
+    let currentWuxing = '';
+    if (tabType === 'wuxing') {
+      currentWuxing = elementData.element;
+    } else {
+      currentWuxing = elementData.wuxing;
+    }
+    
+    if (!currentWuxing) {
+      relationships.sheng = '暂无关系数据';
+      relationships.ke = '暂无关系数据';
+      return relationships;
+    }
+    
+    // 获取相生关系的前一个元素
+    function getPreviousWuxing(element, relationMap) {
+      const elements = ['木', '火', '土', '金', '水'];
+      const index = elements.indexOf(element);
+      if (index === -1) return null;
+      const previousIndex = (index - 1 + elements.length) % elements.length;
+      return elements[previousIndex];
+    }
+    
+    // 获取克当前元素的元素（谁克当前元素）
+    function getWhoKeElement(element) {
+      const keMap = {
+        '木': '金',  // 金克木
+        '火': '水',  // 水克火
+        '土': '木',  // 木克土
+        '金': '火',  // 火克金
+        '水': '土'   // 土克水
+      };
+      return keMap[element];
+    }
+    
+    // 获取相生相克关系
+    const shengPrev = getPreviousWuxing(currentWuxing, wuxingSheng);
+    const shengNext = wuxingSheng[currentWuxing];
+    const keTarget = wuxingKe[currentWuxing];        // 当前元素克的元素
+    const keWho = getWhoKeElement(currentWuxing);  // 谁克当前元素
+    
+    if (tabType === 'wuxing') {
+      // 五行tab：显示五行元素
+      if (shengPrev && shengNext) {
+        relationships.sheng = `${shengPrev}生${currentWuxing}，${currentWuxing}生${shengNext}`;
+      } else {
+        relationships.sheng = '暂无相生关系数据';
+      }
+      
+      if (keTarget && keWho) {
+        relationships.ke = `${keWho}克${currentWuxing}，${currentWuxing}克${keTarget}`;
+      } else {
+        relationships.ke = '暂无相克关系数据';
+      }
+    } else {
+      // 其他tab：显示对应元素
+      const currentElementName = elementData.element;
+      
+      const shengPrevElement = this.elementTypeMap[tabType][shengPrev];
+      const shengNextElement = this.elementTypeMap[tabType][shengNext];
+      const keTargetElement = this.elementTypeMap[tabType][keTarget];
+      const keWhoElement = this.elementTypeMap[tabType][keWho];
+      
+      if (shengPrevElement && shengNextElement && currentElementName) {
+        relationships.sheng = `${shengPrevElement}（${shengPrev}）生${currentElementName}（${currentWuxing}），${currentElementName}（${currentWuxing}）生${shengNextElement}（${shengNext}）`;
+      } else {
+        relationships.sheng = '暂无相生关系数据';
+      }
+      
+      if (keTargetElement && keWhoElement && currentElementName) {
+        relationships.ke = `${keWhoElement}（${keWho}）克${currentElementName}（${currentWuxing}），${currentElementName}（${currentWuxing}）克${keTargetElement}（${keTarget}）`;
+      } else {
+        relationships.ke = '暂无相克关系数据';
+      }
+    }
+    
+    return relationships;
+  },
+
+  // 获取前一个元素（用于相生相克关系）
+  getPreviousElement(currentElement, relationshipMap) {
+    const keys = Object.keys(relationshipMap);
+    const index = keys.indexOf(currentElement);
+    const previousIndex = (index - 1 + keys.length) % keys.length;
+    return keys[previousIndex];
+  },
+
   // 生成相关元素
   generateRelatedElements(elementData, tabType) {
     let relatedElements = [];
+    const elementName = elementData.element;
     
-    if (tabType === 'wuxing') {
-      // 五行相关元素
-      const relatedNames = {
-        '木': ['火', '土', '金', '水'],
-        '火': ['土', '金', '水', '木'],
-        '土': ['金', '水', '木', '火'],
-        '金': ['水', '木', '火', '土'],
-        '水': ['木', '火', '土', '金']
-      };
-      
-      relatedElements = (relatedNames[elementData.element] || []).map(name => ({
-        name: name,
-        symbol: this.getElementSymbol(name)
-      }));
-    } else if (tabType === 'wufang') {
-      // 五方相关元素
-      const directions = ['东', '南', '中', '西', '北'];
-      relatedElements = directions
-        .filter(dir => dir !== elementData.element)
-        .map(dir => ({
-          name: dir,
-          symbol: this.getElementSymbol(dir)
-        }));
-    } else if (tabType === 'wuse') {
-      // 五色相关元素
-      const colors = ['青', '赤', '黄', '白', '黑'];
-      relatedElements = colors
-        .filter(color => color !== elementData.element)
-        .map(color => ({
-          name: color,
-          symbol: this.getElementSymbol(color)
-        }));
-    } else if (tabType === 'wuzang') {
-      // 五脏相关元素
-      const organs = ['肝', '心', '脾', '肺', '肾'];
-      relatedElements = organs
-        .filter(organ => organ !== elementData.element)
-        .map(organ => ({
-          name: organ,
-          symbol: this.getElementSymbol(organ)
-        }));
-    } else if (tabType === 'wuwei') {
-      // 五味相关元素
-      const flavors = ['酸', '苦', '甘', '辛', '咸'];
-      relatedElements = flavors
-        .filter(flavor => flavor !== elementData.element)
-        .map(flavor => ({
-          name: flavor,
-          symbol: this.getElementSymbol(flavor)
-        }));
+    // 根据不同tab类型生成相关元素
+    switch(tabType) {
+      case 'wuxing':
+        // 五行相关元素
+        const wuxingElements = ['木', '火', '土', '金', '水'];
+        relatedElements = wuxingElements
+          .filter(wuxing => wuxing !== elementName)
+          .map(name => ({
+            name: name,
+            symbol: this.getElementSymbol(name)
+          }));
+        break;
+        
+      case 'wufang':
+        // 五方相关元素
+        const directions = ['东', '南', '中', '西', '北'];
+        relatedElements = directions
+          .filter(dir => dir !== elementName)
+          .map(dir => ({
+            name: dir,
+            symbol: this.getElementSymbol(dir)
+          }));
+        break;
+        
+      case 'wuse':
+        // 五色相关元素
+        const colors = ['青', '赤', '黄', '白', '黑'];
+        relatedElements = colors
+          .filter(color => color !== elementName)
+          .map(color => ({
+            name: color,
+            symbol: this.getElementSymbol(color)
+          }));
+        break;
+        
+      case 'wuzang':
+        // 五脏相关元素
+        const organs = ['肝', '心', '脾', '肺', '肾'];
+        relatedElements = organs
+          .filter(organ => organ !== elementName)
+          .map(organ => ({
+            name: organ,
+            symbol: this.getElementSymbol(organ)
+          }));
+        break;
+        
+      case 'wuwei':
+        // 五味相关元素
+        const flavors = ['酸', '苦', '甘', '辛', '咸'];
+        relatedElements = flavors
+          .filter(flavor => flavor !== elementName)
+          .map(flavor => ({
+            name: flavor,
+            symbol: this.getElementSymbol(flavor)
+          }));
+        break;
     }
     
     this.setData({ relatedElements });
