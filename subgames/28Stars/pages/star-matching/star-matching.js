@@ -276,7 +276,17 @@ Page({
       showCancel: false,
       confirmText: '返回主页',
       success: () => {
-        wx.navigateBack();
+        // 获取页面栈
+        const pages = getCurrentPages();
+        if (pages.length > 1) {
+          // 正常返回上一页
+          wx.navigateBack();
+        } else {
+          // 从分享进入，跳转到模块首页
+          wx.redirectTo({
+            url: '/subgames/28Stars/index'
+          });
+        }
       }
     });
   },
@@ -294,7 +304,17 @@ Page({
    * 返回主页
    */
   goBack() {
-    wx.navigateBack();
+    // 获取页面栈
+    const pages = getCurrentPages();
+    if (pages.length > 1) {
+      // 正常返回上一页
+      wx.navigateBack();
+    } else {
+      // 从分享进入，跳转到模块首页
+      wx.redirectTo({
+        url: '/subgames/28Stars/index'
+      });
+    }
   },
 
   /**

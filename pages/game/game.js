@@ -70,7 +70,17 @@ Page({
   },
 
   goBack() {
-    wx.navigateBack()
+    // 获取页面栈
+    const pages = getCurrentPages();
+    if (pages.length > 1) {
+      // 正常返回上一页
+      wx.navigateBack();
+    } else {
+      // 从分享进入，跳转到首页
+      wx.switchTab({
+        url: '/pages/index/index'
+      });
+    }
   },
 
   nextHexagram() {
