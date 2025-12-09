@@ -595,13 +595,13 @@ module.exports = {
     "longitude": 118.7986
   },
   {
-  "id": 67,
-  "name": "儋州",
-  "location": "海南省儋州市",
-  "description": "儋州是海南历史文化名城，是北宋大文豪苏东坡被贬谪之地，有'诗乡歌海'之称，境内有东坡书院等历史名胜。",
-  "map_image": "assets/images/danzhou.jpg",
-  "latitude": 19.5181,
-  "longitude": 109.5341
+    "id": 67,
+    "name": "三亚",
+    "location": "海南省三亚市",
+    "description": "三亚是中国著名的旅游城市，以热带海滨风光闻名，有'东方夏威夷'之称。",
+    "map_image": "assets/images/sanya.jpg",
+    "latitude": 18.25,
+    "longitude": 109.5
   },
   {
     "id": 68,

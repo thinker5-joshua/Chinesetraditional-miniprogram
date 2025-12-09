@@ -1,5 +1,5 @@
-// 批量为洞天补充诗词
-// 从chinese-poetry数据库中查找与各洞天相关的诗词并补充
+// 为新洞天添加诗词脚本
+// 为每个新洞天查找并添加3-5首相关诗词
 
 const fs = require('fs');
 const path = require('path');
@@ -7,9 +7,9 @@ const { promisify } = require('util');
 const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
 
-// 读取洞穴数据和现有诗词数据
-const cavesData = require('./caves_data.js');
+// 读取现有诗词数据和洞天数据
 const poemsData = require('./poems_data.js');
+const cavesData = require('./caves_data.js');
 
 // 创建cave_id到name的映射
 const caveMap = {};
@@ -104,7 +104,8 @@ const locationAliases = {
   '南昌': ['洪州', '豫章'],
   '福州': ['闽都', '三山'],
   '广州': ['番禺', '羊城', '花城'],
-  '珠海': ['香山县']
+  '珠海': ['香山县'],
+  '儋州': ['儋耳', '儋县', '昌化军', '儋州古城', '东坡书院']
 };
 
 // 查找与特定地点相关的诗词
@@ -159,8 +160,8 @@ async function findLocationPoems(location, aliases = []) {
                 sourceDir: dir
               });
               
-              // 每个地点最多返回5首诗词
-              if (foundPoems.length >= 5) {
+              // 最多返回10首诗词，以便后续筛选
+              if (foundPoems.length >= 10) {
                 return foundPoems;
               }
             }
@@ -171,19 +172,39 @@ async function findLocationPoems(location, aliases = []) {
         continue;
       }
     }
-    
-    // 每个地点最多返回5首诗词
-    if (foundPoems.length >= 5) {
-      return foundPoems;
-    }
   }
   
   return foundPoems;
 }
 
+// 获取诗词语料库中的朝代信息
+function getDynasty(sourceDir) {
+  switch (sourceDir) {
+    case '全唐诗':
+    case '御定全唐詩':
+      return '唐';
+    case '宋词':
+      return '宋';
+    case '元曲':
+      return '元';
+    case '五代诗词':
+      return '五代';
+    default:
+      return '未知';
+  }
+}
+
 // 主函数
 async function main() {
-  console.log('开始为洞天批量补充诗词...');
+  console.log('开始为所有洞天添加诗词...');
+  
+  // 获取所有洞天
+  const allCaves = cavesData.caves;
+  
+  // 只处理儋州（id:67）
+  const cavesToAdd = allCaves.filter(cave => cave.id === 67);
+  
+  console.log(`\n=== 处理儋州 (id 67) ===`);
   
   // 创建现有诗词的映射，避免重复
   const existingPoemsMap = new Map();
@@ -192,57 +213,15 @@ async function main() {
     existingPoemsMap.set(key, true);
   });
   
-  // 统计现有各洞天的诗词数量
-  const cavePoemCount = {};
-  cavesData.caves.forEach(cave => {
-    cavePoemCount[cave.id] = 0;
-  });
-  
-  poemsData.poems.forEach(poem => {
-    cavePoemCount[poem.cave_id] = (cavePoemCount[poem.cave_id] || 0) + 1;
-  });
-  
-  // 为每个洞天补充诗词
-  let nextPoemId = Math.max(...poemsData.poems.map(p => p.id)) + 1;
+  // 为每个洞天添加诗词
+  let nextPoemId = 1; // 从1开始重新编号
   const newPoems = [...poemsData.poems];
   
-  // 批次处理，只处理第一批次（ID 1-18）
-  const batch = 1;
-  const batchSize = 18;
-  const startId = (batch - 1) * batchSize + 1;
-  const endId = batch * batchSize;
-  
-  console.log(`\n开始处理第 ${batch} 批次，地点ID范围: ${startId}-${endId}`);
-  
-  for (const cave of cavesData.caves) {
+  for (const cave of cavesToAdd) {
     const caveId = cave.id;
-    
-    // 只处理当前批次的地点
-    if (caveId < startId || caveId > endId) {
-      continue;
-    }
-    
     const caveName = cave.name;
-    const currentCount = cavePoemCount[caveId] || 0;
     
     console.log(`\n正在处理 ${caveName} (${caveId})...`);
-    console.log(`现有诗词数量: ${currentCount}`);
-    
-    // 如果已经有3-5首诗词，跳过
-    if (currentCount >= 3 && currentCount <= 5) {
-      console.log(`诗词数量已符合要求，跳过`);
-      continue;
-    }
-    
-    // 需要补充的诗词数量
-    const neededCount = Math.max(3, Math.min(5, currentCount + 3));
-    const poemsToAdd = neededCount - currentCount;
-    
-    console.log(`需要补充 ${poemsToAdd} 首诗词`);
-    
-    if (poemsToAdd <= 0) {
-      continue;
-    }
     
     // 查找相关诗词
     const aliases = locationAliases[caveName] || [];
@@ -250,10 +229,10 @@ async function main() {
     
     console.log(`找到 ${foundPoems.length} 首相关诗词`);
     
-    // 选择需要的诗词数量
+    // 筛选并添加3-5首诗词
     let addedCount = 0;
     for (const poem of foundPoems) {
-      if (addedCount >= poemsToAdd) {
+      if (addedCount >= 5) {
         break;
       }
       
@@ -270,11 +249,9 @@ async function main() {
         title: poem.title,
         author: poem.author,
         content: poem.paragraphs.join('\n'),
-        dynasty: poem.dynasty || poem.sourceDir === '全唐诗' || poem.sourceDir === '御定全唐詩' ? '唐' : 
-                poem.sourceDir === '宋词' ? '宋' : 
-                poem.sourceDir === '元曲' ? '元' : '五代',
+        dynasty: getDynasty(poem.sourceDir),
         location: caveName,
-        reason: `诗词内容直接提及${caveName}`
+        reason: `诗词内容、标题或别名提及${caveName}`
       };
       
       newPoems.push(newPoem);
@@ -284,40 +261,28 @@ async function main() {
       console.log(`已添加: ${poem.title} - ${poem.author}`);
     }
     
-    console.log(`实际补充 ${addedCount} 首诗词`);
+    console.log(`实际添加 ${addedCount} 首诗词`);
     
-    // 如果找到的诗词不够，生成一些经典诗词
-    if (addedCount < poemsToAdd) {
-      console.log(`未找到足够的相关诗词，使用经典诗词补充`);
-      
-      // 这里可以添加一些默认的经典诗词
-      // 由于时间关系，我们先跳过，后续手动补充
+    // 如果找到的诗词不够，显示警告
+    if (addedCount < 3) {
+      console.warn(`警告：${caveName} 只添加了 ${addedCount} 首诗词，数量不足3首`);
     }
   }
   
   // 保存更新后的诗词数据
   const outputPath = path.join(__dirname, 'poems_data.js');
-  const content = `module.exports = {\n  "poems": ${JSON.stringify(newPoems, null, 2)}\n};`;
+  const content = `module.exports = {
+  "poems": ${JSON.stringify(newPoems, null, 2)}
+};`;
   
   fs.writeFileSync(outputPath, content, 'utf8');
   
-  console.log(`\n诗词补充完成！`);
+  console.log(`\n诗词添加完成！`);
   console.log(`总诗词数量: ${newPoems.length}`);
-  
-  // 统计最终各洞天的诗词数量
-  const finalCount = {};
-  newPoems.forEach(poem => {
-    finalCount[poem.cave_id] = (finalCount[poem.cave_id] || 0) + 1;
-  });
-  
-  console.log(`\n最终各洞天诗词数量:`);
-  for (const cave of cavesData.caves) {
-    console.log(`${cave.name}: ${finalCount[cave.id] || 0} 首`);
-  }
 }
 
 // 运行主函数
 main().catch(err => {
-  console.error('批量补充诗词过程中出现错误:', err);
+  console.error('添加诗词过程中出现错误:', err);
   process.exit(1);
 });

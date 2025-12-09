@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "chinese-conv": "^3.2.2",
+    "opencc-js": "^1.0.5"
+  }
+}
