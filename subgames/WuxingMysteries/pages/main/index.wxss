@@ -27,14 +27,22 @@
 .tab-list {
   display: flex;
   padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tab-list::-webkit-scrollbar {
+  display: none;
 }
 
 .tab-item {
-  flex: 1;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30rpx 16rpx;
+  padding: 30rpx 20rpx;
   background: transparent;
   border: none;
   transition: all 0.3s ease;
@@ -58,7 +66,7 @@
 }
 
 .tab-title {
-  font-size: 28rpx;
+  font-size: 32rpx;
   font-weight: 500;
   color: #6c757d;
   transition: color 0.3s ease;

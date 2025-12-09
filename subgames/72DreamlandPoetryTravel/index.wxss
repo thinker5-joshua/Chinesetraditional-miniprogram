@@ -158,6 +158,11 @@ page {
     1rpx 1rpx 0 rgba(255, 255, 255, 0.3);
   /* 减少模糊效果 */
   backdrop-filter: none;
+  /* 使用transform进行精确定位，避免超出边界 */
+  transform: translate(-50%, -50%);
+  /* 确保不会超出容器边界 */
+  max-width: 180rpx;
+  max-height: 180rpx;
 }
 
 @keyframes caveFloat {

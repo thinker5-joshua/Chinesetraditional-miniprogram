@@ -86,6 +86,14 @@ Page({
       '金': '肺',
       '水': '肾'
     },
+    // 五腑
+    wufu: {
+      '木': '胆',
+      '火': '小肠',
+      '土': '胃',
+      '金': '大肠',
+      '水': '膀胱'
+    },
     // 五味
     wuwei: {
       '木': '酸',
@@ -93,6 +101,86 @@ Page({
       '土': '甘',
       '金': '辛',
       '水': '咸'
+    },
+    // 五音
+    wuyin: {
+      '木': '角',
+      '火': '徵',
+      '土': '宫',
+      '金': '商',
+      '水': '羽'
+    },
+    // 五官
+    wuguan: {
+      '木': '目',
+      '火': '舌',
+      '土': '口',
+      '金': '鼻',
+      '水': '耳'
+    },
+    // 五气
+    wuqi: {
+      '木': '风',
+      '火': '热',
+      '土': '湿',
+      '金': '燥',
+      '水': '寒'
+    },
+    // 五季
+    wuji: {
+      '木': '春',
+      '火': '夏',
+      '土': '长夏',
+      '金': '秋',
+      '水': '冬'
+    },
+    // 五志
+    wuzhi: {
+      '木': '怒',
+      '火': '喜',
+      '土': '思',
+      '金': '忧',
+      '水': '恐'
+    },
+    // 五德
+    wude: {
+      '木': '仁',
+      '火': '礼',
+      '土': '信',
+      '金': '义',
+      '水': '智'
+    },
+    // 五星
+    wuxingStars: {
+      '木': '木星',
+      '火': '火星',
+      '土': '土星',
+      '金': '金星',
+      '水': '水星'
+    },
+    // 天干
+    tianGan: {
+      '木': '甲',
+      '火': '丙',
+      '土': '戊',
+      '金': '庚',
+      '水': '壬'
+    },
+    // 地支
+    diZhi: {
+      '木': '寅',
+      '火': '午',
+      '土': '辰',
+      '金': '申',
+      '水': '子'
+    },
+    // 八卦
+    bagua: {
+      '木': '震',
+      '火': '离',
+      '土': '坤',
+      '金': '乾',
+      '水': '坎'
     }
   },
 
@@ -234,9 +322,306 @@ Page({
             };
           }
           break;
+          
+        case 'wuyin':
+          const wuyinElements = Object.values(wuxingData.wuyin);
+          foundElement = wuyinElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'wuguan':
+          const wuguanElements = Object.values(wuxingData.wuguan);
+          foundElement = wuguanElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'wuqi':
+          const wuqiElements = Object.values(wuxingData.wuqi);
+          foundElement = wuqiElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'wuji':
+          const wujiElements = Object.values(wuxingData.wuji);
+          foundElement = wujiElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'wuzhi':
+          const wuzhiElements = Object.values(wuxingData.wuzhi);
+          foundElement = wuzhiElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'wude':
+          const wudeElements = Object.values(wuxingData.wude);
+          foundElement = wudeElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'wuxingStars':
+          const wuxingStarsElements = Object.values(wuxingData.wuxingStars);
+          foundElement = wuxingStarsElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'wufu':
+          const wufuElements = Object.values(wuxingData.wufu);
+          foundElement = wufuElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'tianGan':
+          const tianGanElements = Object.values(wuxingData.tianGan);
+          foundElement = tianGanElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'diZhi':
+          const diZhiElements = Object.values(wuxingData.diZhi);
+          foundElement = diZhiElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
+          
+        case 'bagua':
+          const baguaElements = Object.values(wuxingData.bagua);
+          foundElement = baguaElements.find(element => element.name === elementName);
+          
+          if (foundElement) {
+            const wuxingElement = wuxingData.wuxing[foundElement.wuxing];
+            if (wuxingElement) {
+              elementData = Object.assign({}, wuxingElement, foundElement);
+              elementData.element = elementName;
+              // 确保wuxing属性是中文
+              elementData.wuxing = wuxingElement.name;
+            } else {
+              elementData = Object.assign({}, foundElement);
+              elementData.element = elementName;
+              elementData.wuxing = foundElement.wuxing;
+            }
+          } else {
+            // 设置默认数据
+            elementData = {
+              element: elementName,
+              title: elementName,
+              description: '数据加载失败，请重试',
+              symbol: '⚠️'
+            };
+          }
+          break;
       }
       
-      // 生成完整的五行关系
+      // 生成完整的五行关系","}}}
       if (elementData.wuxing || tabType === 'wuxing') {
         const relationships = this.generateWuxingRelationships(elementData, tabType);
         elementData.wuxingRelationships = relationships;
@@ -443,6 +828,127 @@ Page({
             symbol: this.getElementSymbol(flavor)
           }));
         break;
+        
+      case 'wuyin':
+        // 五音相关元素
+        const sounds = ['角', '徵', '宫', '商', '羽'];
+        relatedElements = sounds
+          .filter(sound => sound !== elementName)
+          .map(sound => ({
+            name: sound,
+            symbol: this.getElementSymbol(sound)
+          }));
+        break;
+        
+      case 'wuguan':
+        // 五官相关元素
+        const senses = ['目', '舌', '口', '鼻', '耳'];
+        relatedElements = senses
+          .filter(sense => sense !== elementName)
+          .map(sense => ({
+            name: sense,
+            symbol: this.getElementSymbol(sense)
+          }));
+        break;
+        
+      case 'wuqi':
+        // 五气相关元素
+        const qi = ['风', '热', '湿', '燥', '寒'];
+        relatedElements = qi
+          .filter(qiItem => qiItem !== elementName)
+          .map(qiItem => ({
+            name: qiItem,
+            symbol: this.getElementSymbol(qiItem)
+          }));
+        break;
+        
+      case 'wuji':
+        // 五季相关元素
+        const seasons = ['春', '夏', '长夏', '秋', '冬'];
+        relatedElements = seasons
+          .filter(season => season !== elementName)
+          .map(season => ({
+            name: season,
+            symbol: this.getElementSymbol(season)
+          }));
+        break;
+        
+      case 'wuzhi':
+        // 五志相关元素
+        const emotions = ['怒', '喜', '思', '忧', '恐'];
+        relatedElements = emotions
+          .filter(emotion => emotion !== elementName)
+          .map(emotion => ({
+            name: emotion,
+            symbol: this.getElementSymbol(emotion)
+          }));
+        break;
+        
+      case 'wude':
+        // 五德相关元素
+        const virtues = ['仁', '礼', '信', '义', '智'];
+        relatedElements = virtues
+          .filter(virtue => virtue !== elementName)
+          .map(virtue => ({
+            name: virtue,
+            symbol: this.getElementSymbol(virtue)
+          }));
+        break;
+        
+      case 'wuxingStars':
+        // 五星相关元素
+        const stars = ['木星', '火星', '土星', '金星', '水星'];
+        relatedElements = stars
+          .filter(star => star !== elementName)
+          .map(star => ({
+            name: star,
+            symbol: this.getElementSymbol(star)
+          }));
+        break;
+        
+      case 'wufu':
+        // 五腑相关元素
+        const bowels = ['胆', '胃', '小肠', '大肠', '膀胱'];
+        relatedElements = bowels
+          .filter(bowel => bowel !== elementName)
+          .map(bowel => ({
+            name: bowel,
+            symbol: this.getElementSymbol(bowel)
+          }));
+        break;
+        
+      case 'tianGan':
+        // 天干相关元素
+        const tianGans = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+        relatedElements = tianGans
+          .filter(tianGan => tianGan !== elementName)
+          .map(tianGan => ({
+            name: tianGan,
+            symbol: this.getElementSymbol(tianGan)
+          }));
+        break;
+        
+      case 'diZhi':
+        // 地支相关元素
+        const diZhis = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+        relatedElements = diZhis
+          .filter(diZhi => diZhi !== elementName)
+          .map(diZhi => ({
+            name: diZhi,
+            symbol: this.getElementSymbol(diZhi)
+          }));
+        break;
+        
+      case 'bagua':
+        // 八卦相关元素
+        const baguas = ['乾', '坤', '震', '巽', '坎', '离', '艮', '兑'];
+        relatedElements = baguas
+          .filter(bagua => bagua !== elementName)
+          .map(bagua => ({
+            name: bagua,
+            symbol: this.getElementSymbol(bagua)
+          }));
+        break;
     }
     
     this.setData({ relatedElements });
@@ -455,7 +961,22 @@ Page({
       '东': '🌅', '南': '☀️', '中': '⭕', '西': '🌅', '北': '❄️',
       '青': '🟢', '赤': '🔴', '黄': '🟡', '白': '⚪', '黑': '⚫',
       '肝': '💚', '心': '❤️', '脾': '💛', '肺': '⚪', '肾': '🔵',
-      '酸': '🍋', '苦': '🌶️', '甘': '🍯', '辛': '🌶️', '咸': '🧂'
+      '胆': '🫀', '胃': '🫀', '小肠': '🫀', '大肠': '🫀', '膀胱': '🫀',
+      '酸': '🍋', '苦': '🌶️', '甘': '🍯', '辛': '🌶️', '咸': '🧂',
+      '角': '🎵', '徵': '🎵', '宫': '🎵', '商': '🎵', '羽': '🎵',
+      '目': '👁️', '舌': '👅', '口': '👄', '鼻': '👃', '耳': '👂',
+      '风': '💨', '热': '🌡️', '湿': '💧', '燥': '🔥', '寒': '❄️',
+      '春': '🌸', '夏': '☀️', '长夏': '🌾', '秋': '🍂', '冬': '❄️',
+      '怒': '😠', '喜': '😄', '思': '🤔', '忧': '😟', '恐': '😨',
+      '仁': '🤝', '礼': '🙏', '信': '✋', '义': '⚖️', '智': '💡',
+      '木星': '🪐', '火星': '🔴', '土星': '🟤', '金星': '🌟', '水星': '🌊',
+      '甲': '📜', '乙': '📜', '丙': '📜', '丁': '📜', '戊': '📜',
+      '己': '📜', '庚': '📜', '辛': '📜', '壬': '📜', '癸': '📜',
+      '子': '🐁', '丑': '🐂', '寅': '🐅', '卯': '🐇', '辰': '🐉',
+      '巳': '🐍', '午': '🐎', '未': '🐑', '申': '🐒', '酉': '🐔',
+      '戌': '🐕', '亥': '🐖',
+      '乾': '☰', '坤': '☷', '震': '☳', '巽': '☴', '坎': '☵',
+      '离': '☲', '艮': '☶', '兑': '☱'
     };
     return symbols[elementName] || '✨';
   },

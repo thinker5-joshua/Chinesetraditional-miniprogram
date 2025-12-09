@@ -71,15 +71,17 @@ Page({
     try {
       console.log('开始加载游戏数据...');
       // 使用JavaScript模块加载数据
-      const data = require('./data_full.js');
+      const cavesData = require('./caves_data.js');
+      const poemsData = require('./poems_data.js');
       
       // 存储游戏数据
       this.setData({
-        'gameData.caves': data.caves || [],
-        'gameData.poets': data.poets || []
+        'gameData.caves': cavesData.caves || [],
+        'gameData.poems': poemsData.poems || [],
+        'gameData.poets': [] // 暂时为空，后续可以从诗词数据中提取
       });
       
-      console.log('成功加载数据:', this.data.gameData.caves.length, '个洞天');
+      console.log('成功加载数据:', this.data.gameData.caves.length, '个洞天，', this.data.gameData.poems.length, '首诗词');
       console.log('洞天数据样本:', this.data.gameData.caves.slice(0, 2).map(c => ({ id: c.id, name: c.name })));
       
       // 延迟初始化仙界地图，确保数据完全加载
@@ -281,13 +283,15 @@ Page({
     
     // 缓存固定位置，避免每次都重新计算
     if (!this.cavePositions) {
-      // 预计算位置网格，避免碰撞检测循环
+      // 预计算位置网格，确保在屏幕中间均匀分布
+      // 洞天体尺寸：180rpx × 180rpx，在750rpx宽屏上约占24%宽度
+      // 确保洞天体中心位置在合理范围内，避免超出边界
       this.cavePositions = [
-        { x: 20 + Math.random() * 10, y: 15 + Math.random() * 8 },
-        { x: 50 + Math.random() * 10, y: 15 + Math.random() * 8 },
-        { x: 80 + Math.random() * 10, y: 15 + Math.random() * 8 },
-        { x: 35 + Math.random() * 10, y: 40 + Math.random() * 8 },
-        { x: 65 + Math.random() * 10, y: 40 + Math.random() * 8 }
+        { x: 15 + Math.random() * 10, y: 20 + Math.random() * 10 },  // 左上：15%-25%
+        { x: 40 + Math.random() * 8, y: 20 + Math.random() * 10 },   // 中上：40%-48%
+        { x: 65 + Math.random() * 10, y: 20 + Math.random() * 10 },  // 右上：65%-75%
+        { x: 25 + Math.random() * 8, y: 50 + Math.random() * 10 },    // 左下：25%-33%
+        { x: 50 + Math.random() * 8, y: 50 + Math.random() * 10 }    // 右下：50%-58%
       ];
     }
     
@@ -310,6 +314,8 @@ Page({
         animationDelay: `${i * 0.3}s`,
         zIndex: 1000 + i
       });
+      
+      console.log(`洞天体 ${cave.name} 位置设置为: 左边距 ${pos.x.toFixed(1)}%, 上边距 ${pos.y.toFixed(1)}%`);
     }
     
     console.log('所有洞天体创建完成，预期数量:', cavesToDisplay.length, '，实际创建数量:', displayCaves.length);
@@ -387,10 +393,13 @@ Page({
       return;
     }
     
+    // 从诗词数据中查找与该洞天相关的诗词
+    const relatedPoems = this.data.gameData.poems.filter(poem => poem.cave_id === caveId);
+    
     // 从该洞天相关的诗词中随机选择一首
     let currentPoem;
-    if (currentCave.related_poems && currentCave.related_poems.length > 0) {
-      currentPoem = currentCave.related_poems[Math.floor(Math.random() * currentCave.related_poems.length)];
+    if (relatedPoems && relatedPoems.length > 0) {
+      currentPoem = relatedPoems[Math.floor(Math.random() * relatedPoems.length)];
     } else {
       // 设置一个基本的默认诗词
       currentPoem = {
@@ -475,10 +484,13 @@ Page({
     // 查找对应的洞天数据
     const currentCave = this.data.gameData.caves.find(cave => cave.id === selectedCave.id);
     
+    // 从诗词数据中查找与该洞天相关的诗词
+    const relatedPoems = this.data.gameData.poems.filter(poem => poem.cave_id === currentCave.id);
+    
     // 从该洞天相关的诗词中随机选择一首
     let currentPoem;
-    if (currentCave && currentCave.related_poems && currentCave.related_poems.length > 0) {
-      currentPoem = currentCave.related_poems[Math.floor(Math.random() * currentCave.related_poems.length)];
+    if (relatedPoems && relatedPoems.length > 0) {
+      currentPoem = relatedPoems[Math.floor(Math.random() * relatedPoems.length)];
     } else {
       // 设置一个基本的默认诗词
       currentPoem = {
@@ -763,8 +775,10 @@ Page({
     
     // 设置洞天诗词
     const currentCave = this.data.gameData.currentCave;
-    if (currentCave.related_poems && currentCave.related_poems.length > 0) {
-      const poem = currentCave.related_poems[0];
+    const relatedPoems = this.data.gameData.poems.filter(poem => poem.cave_id === currentCave.id);
+    
+    if (relatedPoems && relatedPoems.length > 0) {
+      const poem = relatedPoems[0];
       // 处理诗词分行排版
       const poemLines = this.processPoemLines(poem.content);
       
@@ -804,7 +818,9 @@ Page({
    */
   nextPoem() {
     const currentCave = this.data.gameData.currentCave;
-    if (!currentCave.related_poems || currentCave.related_poems.length <= 1) {
+    const relatedPoems = this.data.gameData.poems.filter(poem => poem.cave_id === currentCave.id);
+    
+    if (!relatedPoems || relatedPoems.length <= 1) {
       wx.showToast({
         title: '没有更多诗词了',
         icon: 'none'
@@ -812,7 +828,7 @@ Page({
       return;
     }
     
-    const currentPoems = currentCave.related_poems;
+    const currentPoems = relatedPoems;
     const currentIndex = currentPoems.findIndex(poem => poem.id === this.data.currentCavePoem.id);
     const nextIndex = (currentIndex + 1) % currentPoems.length;
     const nextPoem = currentPoems[nextIndex];

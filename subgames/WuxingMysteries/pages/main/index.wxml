@@ -117,6 +117,30 @@
         </view>
       </view>
       
+      <!-- 五腑图表 -->
+      <view wx:elif="{{currentTab === 'wufu'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wufuCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五腑元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wufuElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wufu"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
       <!-- 五味图表 -->
       <view wx:elif="{{currentTab === 'wuwei'}}" class="chart-wrapper">
         <view class="mystical-frame">
@@ -135,6 +159,246 @@
               bindtap="onElementTap"
               data-element="{{item.name}}"
               data-tab="wuwei"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五音图表 -->
+      <view wx:elif="{{currentTab === 'wuyin'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuyinCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五音元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuyinElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuyin"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五官图表 -->
+      <view wx:elif="{{currentTab === 'wuguan'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuguanCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五官元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuguanElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuguan"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五气图表 -->
+      <view wx:elif="{{currentTab === 'wuqi'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuqiCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五气元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuqiElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuqi"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五季图表 -->
+      <view wx:elif="{{currentTab === 'wuji'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wujiCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五季元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wujiElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuji"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五志图表 -->
+      <view wx:elif="{{currentTab === 'wuzhi'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuzhiCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五志元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuzhiElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuzhi"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五德图表 -->
+      <view wx:elif="{{currentTab === 'wude'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wudeCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五德元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wudeElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wude"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 五星图表 -->
+      <view wx:elif="{{currentTab === 'wuxingStars'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="wuxingStarsCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 五星元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{wuxingStarsElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="wuxingStars"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 天干图表 -->
+      <view wx:elif="{{currentTab === 'tianGan'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="tianGanCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 天干元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{tianGanElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="tianGan"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 地支图表 -->
+      <view wx:elif="{{currentTab === 'diZhi'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="diZhiCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 地支元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{diZhiElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="diZhi"
+            >
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 八卦图表 -->
+      <view wx:elif="{{currentTab === 'bagua'}}" class="chart-wrapper">
+        <view class="mystical-frame">
+          <canvas 
+            class="mystical-canvas" 
+            canvas-id="baguaCanvas"
+            style="width: 700rpx; height: 700rpx;"
+          ></canvas>
+          <!-- 八卦元素按钮覆盖层 -->
+          <view class="element-buttons-overlay">
+            <view 
+              class="element-button"
+              wx:for="{{baguaElements}}" 
+              wx:key="name"
+              style="{{item.style}}"
+              bindtap="onElementTap"
+              data-element="{{item.name}}"
+              data-tab="bagua"
             >
             </view>
           </view>
@@ -299,6 +563,336 @@
           <view class="knowledge-section-block">
             <view class="knowledge-heading">现代科学验证</view>
             <view class="knowledge-paragraph">现代营养学研究为五味理论提供了科学支撑。酸味食物富含有机酸，有助消化和抗菌；苦味食物含生物碱，具有调节生理功能的作用；甘味食物多为碳水化合物，提供能量和营养；辛味食物含挥发性成分，有促进血液循环和新陈代谢的作用；咸味食物提供必需的矿物质，维持体液平衡。这些科学发现印证了五味理论的合理性和实用价值。</view>
+          </view>
+        </view>
+        
+        <!-- 五音知识 -->
+        <view wx:elif="{{currentTab === 'wuyin'}}" class="knowledge-content">
+          <view class="knowledge-title">五音学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论起源</view>
+            <view class="knowledge-paragraph">五音学说是中国古代音乐理论的核心，将角、徵、宫、商、羽五种基本音调与五行理论相结合，形成了完整的音乐哲学体系。这一理论不仅是关于音乐的认知，更是对宇宙万物和谐规律的深刻洞察，体现了中国人对音乐与自然关系的独特理解。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行音调对应</view>
+            <view class="knowledge-paragraph">五音与五行形成了严密的对应关系：角音属木，代表生机与成长；徵音属火，象征热情与活力；宫音属土，寓意稳定与厚重；商音属金，体现纯净与收敛；羽音属水，代表深沉与神秘。这种对应关系揭示了音调背后的能量属性和情感内涵。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">中医音乐疗法</view>
+            <view class="knowledge-paragraph">在中医理论中，五音与五脏密切相关。角音入肝，能疏肝理气，缓解抑郁情绪；徵音入心，可养心安神，舒缓紧张焦虑；宫音入脾，能健脾和胃，改善消化功能；商音入肺，可宣肺止咳，缓解呼吸系统不适；羽音入肾，能补肾益精，调节内分泌系统。这种音乐疗法体现了"五音疗疾"的传统智慧。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">文化与艺术影响</view>
+            <view class="knowledge-paragraph">五音理论对中国传统音乐和文化产生了深远影响。传统音乐作品多以五音为基础，追求和谐统一的美学境界。在文学创作中，也常以五音象征不同的情感和意境。这种文化认知深深影响着中国人的审美观念和艺术创作，成为中华文化的重要组成部分。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代应用价值</view>
+            <view class="knowledge-paragraph">现代研究表明，不同音调对人体生理和心理确实有不同影响。五音理论为现代音乐治疗提供了古老而有效的指导，在心理治疗、康复护理等领域得到广泛应用。同时，五音理论也为音乐创作和欣赏提供了独特的视角，有助于人们更好地理解音乐的本质和作用。</view>
+          </view>
+        </view>
+        
+        <!-- 五官知识 -->
+        <view wx:elif="{{currentTab === 'wuguan'}}" class="knowledge-content">
+          <view class="knowledge-title">五官学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">基本概念</view>
+            <view class="knowledge-paragraph">五官学说是中医理论的重要组成部分，将目、舌、口、鼻、耳五种感官与五行理论和五脏功能相结合，形成了独特的感官医学体系。这一理论不仅揭示了感官与脏腑的内在联系，也为疾病诊断和治疗提供了重要依据，体现了"有诸内必形诸外"的中医诊断原则。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行感官对应</view>
+            <view class="knowledge-paragraph">五官与五行形成了完整的对应关系：目属木，与肝相应，主视觉功能；舌属火，与心相应，主味觉和语言；口属土，与脾相应，主咀嚼和消化；鼻属金，与肺相应，主嗅觉和呼吸；耳属水，与肾相应，主听觉和平衡。这种对应关系揭示了感官背后的脏腑功能和气血运行状态。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">中医诊断应用</view>
+            <view class="knowledge-paragraph">在中医诊断中，五官望诊具有重要价值。通过观察五官的形态、色泽和功能变化，可以判断脏腑健康状况：目赤肿痛多与肝火上炎相关，舌绛红多为心火旺盛，口淡无味常提示脾虚湿盛，鼻塞流涕多为肺气不宣，耳鸣耳聋往往与肾虚有关。这种"以象测脏"的诊断方法体现了中医整体观念。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">养生保健方法</view>
+            <view class="knowledge-paragraph">根据五官与脏腑的对应关系，中医提出了相应的养生保健方法。养肝明目，宜避免长时间用眼，多吃清肝明目的食物；养心护舌，应保持心态平和，少吃辛辣刺激食物；健脾护口，需饮食有节，避免暴饮暴食；养肺护鼻，要注意保暖，避免吸入有害气体；补肾护耳，宜节制房事，多吃补肾益精食物。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代医学验证</view>
+            <view class="knowledge-paragraph">现代医学研究为五官学说提供了科学支撑。视觉功能与肝脏健康密切相关，肝脏疾病常导致视力异常；味觉功能与心脏健康相关，心脏疾病可影响味觉敏感度；口腔健康与脾胃功能相关，脾胃虚弱易导致口腔疾病；嗅觉功能与肺部健康相关，肺部疾病可引起嗅觉障碍；听觉功能与肾脏健康相关，肾脏疾病可导致听力下降。这些发现印证了五官学说的合理性。</view>
+          </view>
+        </view>
+        
+        <!-- 五气知识 -->
+        <view wx:elif="{{currentTab === 'wuqi'}}" class="knowledge-content">
+          <view class="knowledge-title">五气学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论体系</view>
+            <view class="knowledge-paragraph">五气学说是中医气象医学的重要组成部分，将风、热、湿、燥、寒五种自然气候与五行理论相结合，形成了独特的气候医学体系。这一理论不仅揭示了气候与人体健康的内在联系，也为疾病预防和治疗提供了重要依据，体现了"天人相应"的中医整体观念。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行气候对应</view>
+            <view class="knowledge-paragraph">五气与五行形成了严密的对应关系：风气属木，代表生机与变化；热气属火，象征炎热与活力；湿气属土，寓意湿润与厚重；燥气属金，体现干燥与收敛；寒气属水，代表寒冷与收藏。这种对应关系揭示了气候背后的能量属性和致病特点。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">病因病机理论</view>
+            <view class="knowledge-paragraph">在中医病因学中，五气是重要的外感病因，称为"六淫"之一（风、寒、暑、湿、燥、火）。当气候异常或人体抵抗力下降时，五气可转化为致病因素，称为"六淫邪气"。风邪善行而数变，易导致外感疾病；热邪易耗气伤津，多引起热病；湿邪黏滞重浊，易导致脾胃疾病；燥邪易伤津液，多引起呼吸系统疾病；寒邪凝滞收引，易导致疼痛病症。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">季节性疾病预防</view>
+            <view class="knowledge-paragraph">根据五气理论，中医提出了季节性疾病预防方法。春季防风，宜注意保暖，避免外感风邪；夏季防暑热，应避免暴晒，多喝水；长夏防湿，需注意祛湿健脾，避免潮湿环境；秋季防燥，要注意润燥养肺，多吃润肺食物；冬季防寒，宜保暖固精，避免受寒。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代气象医学</view>
+            <view class="knowledge-paragraph">现代气象医学研究为五气学说提供了科学支撑。不同气候条件对人体生理和心理确实有不同影响：风天易导致过敏和呼吸系统疾病；热天易引发中暑和心脑血管疾病；湿天易加重关节炎和消化系统疾病；燥天易引起皮肤干燥和呼吸系统不适；寒天易导致心脑血管疾病和关节疼痛。这些发现验证了五气学说的临床价值。</view>
+          </view>
+        </view>
+        
+        <!-- 五季知识 -->
+        <view wx:elif="{{currentTab === 'wuji'}}" class="knowledge-content">
+          <view class="knowledge-title">五季学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论体系</view>
+            <view class="knowledge-paragraph">五季学说是中国古代历法理论的重要组成部分，将春、夏、长夏、秋、冬五个季节与五行理论相结合，形成了完整的季节哲学体系。这一理论不仅揭示了季节变化的规律，也为养生保健提供了重要依据，体现了"顺应自然"的中医养生原则。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行季节对应</view>
+            <view class="knowledge-paragraph">五季与五行形成了严密的对应关系：春季属木，代表生机与成长；夏季属火，象征炎热与繁茂；长夏属土，寓意孕育与转化；秋季属金，体现成熟与收敛；冬季属水，代表收藏与休息。这种对应关系揭示了季节背后的自然规律和生命节奏。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">季节性养生原则</view>
+            <view class="knowledge-paragraph">根据五季理论，中医提出了"春夏养阳，秋冬养阴"的养生原则。春季养肝，宜舒畅情志，早睡早起；夏季养心，应保持心态平和，避免过劳；长夏养脾，需饮食有节，忌生冷油腻；秋季养肺，当收敛神气，防燥润肺；冬季养肾，要保暖固精，节制房事。这种顺应季节的养生方式有助于维护身体健康。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">农业生产指导</view>
+            <view class="knowledge-paragraph">五季理论对中国传统农业生产产生了深远影响。农民根据季节变化安排播种、耕作和收获，形成了"春生夏长，秋收冬藏"的农业生产规律。这种顺应自然的生产方式不仅提高了农业产量，也保护了生态环境，体现了可持续发展的理念。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">文化与哲学意义</view>
+            <view class="knowledge-paragraph">五季理论在中国文化中具有深刻的哲学意义。它揭示了自然界的循环规律和生命的变化节奏，体现了"天人合一"的哲学思想。这种思想影响了中国人的生活方式和价值观念，成为中华文化的重要组成部分。</view>
+          </view>
+        </view>
+        
+        <!-- 五志知识 -->
+        <view wx:elif="{{currentTab === 'wuzhi'}}" class="knowledge-content">
+          <view class="knowledge-title">五志学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论体系</view>
+            <view class="knowledge-paragraph">五志学说是中医情志理论的核心，将怒、喜、思、忧、恐五种基本情绪与五行理论和五脏功能相结合，形成了独特的情志医学体系。这一理论不仅揭示了情绪与人体生理的内在联系，也为心理调节和疾病治疗提供了重要依据，体现了"心身合一"的中医整体观念。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行情绪对应</view>
+            <view class="knowledge-paragraph">五志与五行形成了严密的对应关系：怒属木，与肝相应，主疏泄调达；喜属火，与心相应，主血脉神明；思属土，与脾相应，主运化统血；忧属金，与肺相应，主气司呼吸；恐属水，与肾相应，主藏精生长。这种对应关系揭示了情绪背后的脏腑功能和气血运行状态。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">情志致病机制</view>
+            <view class="knowledge-paragraph">在中医病因学中，情志失调是重要的内伤病因。过度或持久的情绪变化可导致脏腑功能失调，气血运行紊乱，从而引发疾病。怒则气上，易导致肝阳上亢；喜则气缓，可引起心气涣散；思则气结，易导致脾胃气滞；忧则气郁，可引起肺气郁滞；恐则气下，易导致肾气不固。这种"七情致病"的理论体现了中医对心理因素的重视。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">情志调节方法</view>
+            <view class="knowledge-paragraph">根据五志理论，中医提出了相应的情志调节方法。对于易怒者，宜疏肝理气，可通过运动和音乐缓解情绪；对于过度兴奋者，应养心安神，可通过冥想和深呼吸平静心情；对于思虑过度者，需健脾和胃，可通过饮食调理和适当休息改善；对于忧愁者，要宣肺解郁，可通过户外活动和社交缓解；对于恐惧者，应补肾安神，可通过中药调理和心理疏导改善。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代心理医学验证</view>
+            <view class="knowledge-paragraph">现代心理医学研究为五志学说提供了科学支撑。情绪变化确实会影响人体生理功能：长期愤怒可导致高血压和心血管疾病；过度兴奋可引起心律失常；思虑过度可导致消化系统疾病；长期忧愁可引起抑郁症和免疫系统紊乱；恐惧可导致内分泌失调和生殖系统问题。这些发现印证了五志学说的临床价值。</view>
+          </view>
+        </view>
+        
+        <!-- 五德知识 -->
+        <view wx:elif="{{currentTab === 'wude'}}" class="knowledge-content">
+          <view class="knowledge-title">五德学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论起源</view>
+            <view class="knowledge-paragraph">五德学说是中国古代伦理思想的核心，将仁、礼、信、义、智五种基本道德品质与五行理论相结合，形成了完整的道德哲学体系。这一理论不仅是关于道德的认知，更是对人格完善和社会和谐的深刻洞察，体现了中国人对道德与自然关系的独特理解。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行道德对应</view>
+            <view class="knowledge-paragraph">五德与五行形成了严密的对应关系：仁属木，代表慈爱与成长；礼属火，象征恭敬与文明；信属土，寓意诚信与厚重；义属金，体现正义与收敛；智属水，代表智慧与深沉。这种对应关系揭示了道德背后的人格特质和社会价值。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">人格修养指导</view>
+            <view class="knowledge-paragraph">五德理论为中国人的人格修养提供了重要指导。仁者爱人，宜培养慈爱之心和包容精神；礼者敬人，应注重礼仪规范和文明行为；信者诚人，需诚实守信和言出必行；义者正人，当坚持正义和公平原则；智者知人，要追求智慧和理性思维。这种全面的道德修养有助于构建和谐的人际关系和社会秩序。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">治国理政应用</view>
+            <view class="knowledge-paragraph">五德理论对中国古代治国理政产生了深远影响。君主被要求具备五德品质，以实现国家的长治久安。仁政爱民，礼法并用，诚信为本，义行天下，智慧决策，这些原则成为中国传统政治思想的重要组成部分，对现代管理和领导艺术仍具有重要启示。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">文化传承意义</view>
+            <view class="knowledge-paragraph">五德理论是中华文化的重要精神遗产，体现了中国人对理想人格和社会秩序的追求。这种道德观念深深影响着中国人的行为方式和价值判断，成为中华文化的核心价值观之一。在现代社会，五德理论仍然具有重要的现实意义，有助于构建社会主义核心价值观和和谐社会。</view>
+          </view>
+        </view>
+        
+        <!-- 五星知识 -->
+        <view wx:elif="{{currentTab === 'wuxingStars'}}" class="knowledge-content">
+          <view class="knowledge-title">五星学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论起源</view>
+            <view class="knowledge-paragraph">五星学说是中国古代天文学的重要组成部分，将木星、火星、土星、金星、水星五颗行星与五行理论相结合，形成了完整的星象哲学体系。这一理论不仅是关于天文的认知，更是对宇宙规律和人事命运的深刻洞察，体现了中国人对天象与人事关系的独特理解。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行行星对应</view>
+            <view class="knowledge-paragraph">五星与五行形成了严密的对应关系：木星属木，代表生机与成长；火星属火，象征热情与活力；土星属土，寓意稳定与厚重；金星属金，体现纯净与收敛；水星属水，代表深沉与变化。这种对应关系揭示了行星背后的能量属性和象征意义。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">天文历法应用</view>
+            <view class="knowledge-paragraph">在古代天文学中，五星的运行规律被用于制定历法和指导农业生产。木星的运行周期约为12年，被用于纪年，称为"岁星纪年法"；土星的运行周期约为28年，被用于划分二十八宿；金星的出没规律被用于确定季节和时辰。这些天文观测和应用体现了中国古代天文学的高度发达。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">星象占卜文化</view>
+            <view class="knowledge-paragraph">五星学说是中国古代星象占卜的重要依据。古人认为五星的运行变化与人间祸福密切相关，通过观测五星的位置、亮度和颜色变化，可以预测国家兴衰和人事吉凶。这种星象文化虽然带有神秘色彩，但也反映了古人对宇宙规律的探索和对命运的思考。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代科学认识</view>
+            <view class="knowledge-paragraph">现代天文学研究为五星学说提供了科学解释。五星都是太阳系内的行星，围绕太阳公转，其运行周期和位置变化有固定规律。虽然星象与人事吉凶没有直接联系，但五星学说是中国古代天文学的重要成果，为现代天文学的发展奠定了基础。同时，五星的象征意义仍然在文化和艺术创作中得到广泛应用。</view>
+          </view>
+        </view>
+        
+        <!-- 五腑知识 -->
+        <view wx:elif="{{currentTab === 'wufu'}}" class="knowledge-content">
+          <view class="knowledge-title">五腑学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">基本概念</view>
+            <view class="knowledge-paragraph">五腑学说是中医脏象学说的重要组成部分，将胆、胃、小肠、大肠、膀胱五种腑器与五行理论相结合，形成了独特的腑器医学体系。这一理论不仅揭示了腑器的生理功能，也为疾病诊断和治疗提供了重要依据，体现了中医"六腑以通为用"的治疗原则。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行腑器对应</view>
+            <view class="knowledge-paragraph">五腑与五行形成了完整的对应关系：胆属木，与肝相表里，主决断和贮藏胆汁；胃属土，与脾相表里，主受纳和腐熟水谷；小肠属火，与心相表里，主受盛化物和泌别清浊；大肠属金，与肺相表里，主传导糟粕和排泄粪便；膀胱属水，与肾相表里，主贮藏尿液和排泄小便。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">生理功能特点</view>
+            <view class="knowledge-paragraph">五腑具有"传化物而不藏"的共同特点，即不断地受纳、消化、传导和排泄，具有通降下行为顺的生理特性。六腑之间相互衔接，共同完成饮食的消化、吸收和排泄过程，维持人体的新陈代谢。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">病理联系与诊断</view>
+            <view class="knowledge-paragraph">在病理状态下，五腑的病变会相互影响，也会影响到对应的脏器。胆病可影响肝的疏泄功能，胃病可导致脾的运化失常，小肠病可影响心的功能，大肠病可导致肺的宣降失调，膀胱病可影响肾的气化功能。中医通过观察腑器的症状和体征，判断病变的部位和性质。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">养生保健方法</view>
+            <view class="knowledge-paragraph">根据五腑理论，中医提出了相应的养生保健方法。养胆宜保持情绪稳定，避免过度紧张；养胃需饮食规律，避免暴饮暴食；养小肠应注意饮食卫生，避免食用不洁食物；养大肠要保持大便通畅，多食富含膳食纤维的食物；养膀胱需避免憋尿，保持小便通畅。</view>
+          </view>
+        </view>
+        
+        <!-- 天干知识 -->
+        <view wx:elif="{{currentTab === 'tianGan'}}" class="knowledge-content">
+          <view class="knowledge-title">天干学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论起源</view>
+            <view class="knowledge-paragraph">天干学说是中国古代天文历法的重要组成部分，将甲、乙、丙、丁、戊、己、庚、辛、壬、癸十个天干与五行理论相结合，形成了独特的天干哲学体系。这一理论不仅用于纪年、纪月、纪日，也用于预测气候变化和人事吉凶，体现了中国人对宇宙规律的深刻洞察。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行天干对应</view>
+            <view class="knowledge-paragraph">天干与五行形成了严密的对应关系：甲、乙属木，甲为阳木，乙为阴木；丙、丁属火，丙为阳火，丁为阴火；戊、己属土，戊为阳土，己为阴土；庚、辛属金，庚为阳金，辛为阴金；壬、癸属水，壬为阳水，癸为阴水。这种阴阳五行的组合，体现了事物的对立统一规律。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">天文历法应用</view>
+            <view class="knowledge-paragraph">天干在古代历法中具有重要作用，与地支配合形成了"六十甲子"纪年法，六十年一循环，是中国传统纪年的主要方式。天干还用于纪月，形成了"五虎遁"歌诀，用于确定各月的天干；天干也用于纪日，形成了复杂的干支纪日系统。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">命理预测文化</view>
+            <view class="knowledge-paragraph">天干学说是中国传统命理学的重要依据。古人认为天干的组合和排列可以反映人的命运和运势，通过分析出生年月日时的天干地支组合，可以预测人的一生祸福吉凶。这种命理文化虽然带有神秘色彩，但也反映了古人对命运和人生的思考。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">现代文化价值</view>
+            <view class="knowledge-paragraph">天干理论在中国文化中具有重要的象征意义，广泛应用于文学、艺术、医学等领域。天干作为中国传统文化的重要符号，承载着丰富的文化内涵和历史记忆，是中华文化的重要组成部分。在现代社会，天干仍然在农历、节庆等方面得到广泛应用，体现了中华文化的延续性和生命力。</view>
+          </view>
+        </view>
+        
+        <!-- 地支知识 -->
+        <view wx:elif="{{currentTab === 'diZhi'}}" class="knowledge-content">
+          <view class="knowledge-title">地支学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论体系</view>
+            <view class="knowledge-paragraph">地支学说是中国古代天文历法的重要组成部分，将子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥十二个地支与五行理论相结合，形成了独特的地支哲学体系。这一理论不仅用于纪年、纪月、纪日、纪时，也用于预测气候变化和人事吉凶，体现了中国人对宇宙规律的深刻理解。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行地支对应</view>
+            <view class="knowledge-paragraph">地支与五行形成了严密的对应关系：子属水，丑属土，寅属木，卯属木，辰属土，巳属火，午属火，未属土，申属金，酉属金，戌属土，亥属水。这种对应关系体现了地支的阴阳五行属性和季节方位特点。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">十二生肖对应</view>
+            <view class="knowledge-paragraph">地支与十二生肖形成了固定的对应关系：子鼠、丑牛、寅虎、卯兔、辰龙、巳蛇、午马、未羊、申猴、酉鸡、戌狗、亥猪。这种对应关系不仅用于纪年，也用于性格分析和命运预测，是中国传统文化的重要组成部分。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">二十四节气联系</view>
+            <view class="knowledge-paragraph">地支与二十四节气密切相关，每个地支对应两个节气。例如，寅对应立春和雨水，卯对应惊蛰和春分，辰对应清明和谷雨，以此类推。这种对应关系体现了地支与季节变化的紧密联系，是中国传统历法的重要组成部分。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">文化传承意义</view>
+            <view class="knowledge-paragraph">地支理论在中国文化中具有重要的传承意义，广泛应用于文学、艺术、医学、建筑等领域。地支作为中国传统文化的重要符号，承载着丰富的文化内涵和历史记忆，是中华文化的重要组成部分。在现代社会，地支仍然在农历、节庆、命名等方面得到广泛应用，体现了中华文化的延续性和生命力。</view>
+          </view>
+        </view>
+        
+        <!-- 八卦知识 -->
+        <view wx:elif="{{currentTab === 'bagua'}}" class="knowledge-content">
+          <view class="knowledge-title">八卦学说</view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">理论起源</view>
+            <view class="knowledge-paragraph">八卦学说是中国古代哲学的重要组成部分，由伏羲氏创立，经过周文王、孔子等先贤的发展完善，形成了完整的八卦哲学体系。这一理论将宇宙万物归纳为乾、坤、震、巽、坎、离、艮、兑八种基本卦象，通过卦象的变化揭示宇宙的运行规律，体现了中国人对宇宙本质的深刻思考。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">五行卦象对应</view>
+            <view class="knowledge-paragraph">八卦与五行形成了严密的对应关系：乾属金，象征天、阳刚、健动；坤属土，象征地、阴柔、顺承；震属木，象征雷、震动、奋起；巽属木，象征风、柔顺、入；坎属水，象征水、险陷、流动；离属火，象征火、光明、依附；艮属土，象征山、静止、阻止；兑属金，象征泽、喜悦、口舌。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">卦象象征意义</view>
+            <view class="knowledge-paragraph">八卦具有丰富的象征意义，代表着自然界的各种现象和人类社会的各种事物。乾代表天、父、君、首；坤代表地、母、臣、腹；震代表雷、长男、足；巽代表风、长女、股；坎代表水、中男、耳；离代表火、中女、目；艮代表山、少男、手；兑代表泽、少女、口。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">卦变与应用</view>
+            <view class="knowledge-paragraph">八卦通过组合变化形成了六十四卦，每卦由上下两个经卦组成，代表着更复杂的事物和关系。八卦和六十四卦广泛应用于预测、决策、哲学思考等领域，是中国传统文化的重要组成部分。</view>
+          </view>
+          
+          <view class="knowledge-section-block">
+            <view class="knowledge-heading">文化与哲学影响</view>
+            <view class="knowledge-paragraph">八卦学说是中国传统文化的重要源头，对哲学、文学、艺术、医学、建筑等领域产生了深远影响。八卦中的阴阳对立统一思想，成为中国哲学的核心观念之一；八卦的象征思维和类比方法，影响了中国人的思维方式和认知模式。</view>
           </view>
         </view>
       </view>
