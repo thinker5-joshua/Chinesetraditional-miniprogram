@@ -1311,7 +1311,6 @@ Page({
     
     query.exec(res => {
       if (!res || res.length < 3 || !res[0] || !res[1] || !res[2]) {
-        console.error('获取元素位置失败');
         return;
       }
       
