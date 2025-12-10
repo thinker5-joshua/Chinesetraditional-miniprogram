@@ -22,12 +22,13 @@
   background: #fff;
   border-bottom: 1px solid #e9ecef;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow-x: auto; /* 允许横向滚动 */
+  -webkit-overflow-scrolling: touch;
 }
 
 .tab-list {
   display: flex;
   padding: 0;
-  overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
   -ms-overflow-style: none;

@@ -10,7 +10,6 @@
         <text class="icon-text">{{item.iconText}}</text>
       </view>
       <text class="game-title clickable">{{item.title}}</text>
-      <text class="game-desc">{{item.description}}</text>
     </view>
   </view>
   

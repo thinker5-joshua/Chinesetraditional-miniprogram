@@ -1,7 +1,7 @@
 <view class="wuxing-container">
   <!-- Tab标签区域 -->
-  <view class="tab-container">
-    <view class="tab-list">
+  <scroll-view class="tab-container" scroll-x="true" scroll-left="{{scrollToLeft}}" scroll-with-animation="true">
+    <view class="tab-list" id="tabList">
       <view 
         class="tab-item {{currentTab === item.id ? 'active' : ''}}"
         wx:for="{{activeTabs}}" 
@@ -12,7 +12,7 @@
         <text class="tab-title">{{item.title}}</text>
       </view>
     </view>
-  </view>
+  </scroll-view>
 
   <!-- 图表和知识的统一滚动容器 -->
   <scroll-view class="scrollable-content" scroll-y="true">

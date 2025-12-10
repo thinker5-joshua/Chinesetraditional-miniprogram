@@ -7,6 +7,9 @@ Page({
     // 当前副标题
     currentSubtitle: '探索中国传统哲学的宇宙观',
     
+    // 滚动位置
+    scrollToLeft: 0,
+    
     // Tab标签列表（只显示已激活的）
     activeTabs: [
       {
@@ -379,6 +382,8 @@ Page({
       // Tab切换后绘制对应图表，增加延迟确保DOM更新完成
       setTimeout(() => {
         this.drawCurrentTabCanvas();
+        // 滚动当前激活的tab到可视区域
+        this.scrollToActiveTab();
       }, 200);
     });
   },
@@ -1210,6 +1215,26 @@ Page({
   },
 
   /**
+   * 滚动当前激活的tab到可视区域
+   */
+  scrollToActiveTab() {
+    // 使用setTimeout确保DOM已更新
+    setTimeout(() => {
+      const query = wx.createSelectorQuery().in(this);
+      query.select('.tab-item.active').node((res) => {
+        if (res.node) {
+          // 使用scrollIntoView将当前激活的tab滚动到可视区域中央
+          res.node.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center'
+          });
+        }
+      }).exec();
+    }, 100);
+  },
+
+  /**
    * 触摸开始事件
    */
   onTouchStart(e) {
@@ -1267,7 +1292,44 @@ Page({
       };
       
       this.onTabChange(mockEvent);
+      
+      // 滚动当前激活的tab到可视区域
+      setTimeout(() => {
+        this.scrollToActiveTab();
+      }, 100);
     }
+  },
+
+  /**
+   * 滚动当前激活的tab到可视区域
+   */
+  scrollToActiveTab() {
+    const query = wx.createSelectorQuery().in(this);
+    query.select('.tab-item.active').boundingClientRect();
+    query.select('.tab-container').boundingClientRect();
+    query.select('.tab-container').scrollOffset();
+    
+    query.exec(res => {
+      if (!res || res.length < 3 || !res[0] || !res[1] || !res[2]) {
+        console.error('获取元素位置失败');
+        return;
+      }
+      
+      const activeTabRect = res[0];
+      const tabContainerRect = res[1];
+      const tabContainerScroll = res[2];
+      
+      // 计算目标滚动位置：将激活tab的中心对准容器中心
+      const targetLeft = activeTabRect.left + tabContainerScroll.scrollLeft - (tabContainerRect.width / 2) + (activeTabRect.width / 2);
+      
+      // 确保滚动位置不小于0
+      const finalScrollLeft = Math.max(0, targetLeft);
+      
+      // 直接通过setData设置scroll-left属性实现滚动
+      this.setData({
+        scrollToLeft: finalScrollLeft
+      });
+    });
   },
 
   /**

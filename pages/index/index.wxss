@@ -23,7 +23,7 @@ page {
 /* 页面头部 - 完全融入背景 */
 .about-header {
   text-align: center;
-  margin: 60rpx 0 40rpx 0;
+  margin: 60rpx 0 120rpx 0;
   padding: 30rpx 40rpx;
   position: relative;
 }
@@ -49,58 +49,76 @@ page {
 .games-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25rpx;
-  margin-bottom: 40rpx;
-  padding: 0 40rpx;
-  flex: 1;
+  gap: 50rpx;
+  margin-bottom: 60rpx;
+  padding: 0 80rpx;
+  flex: 0;
   align-content: start;
 }
 
 /* 游戏卡片样式 */
 .game-card {
-  background-color: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.9) 100%);
   backdrop-filter: blur(10rpx);
-  border-radius: 25rpx;
-  padding: 30rpx 20rpx;
+  border-radius: 30rpx;
+  padding: 30rpx 25rpx;
   text-align: center;
-  box-shadow: 0 8rpx 25rpx rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  box-shadow: 0 12rpx 35rpx rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  min-height: 320rpx;
+  min-height: 220rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1rpx solid rgba(255, 255, 255, 0.3);
+  border: 2rpx solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
 }
 
 .game-card:active {
-  transform: scale(0.98);
-  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.2);
+  transform: scale(0.97);
+  box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, 0.18);
+  animation: clickFeedback 0.3s ease-out;
+}
+
+.game-card:hover {
+  transform: translateY(-6rpx);
+  box-shadow: 0 18rpx 45rpx rgba(0, 0, 0, 0.15);
+}
+
+@keyframes clickFeedback {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.97);
+  }
 }
 
 .game-card.coming-soon {
-  opacity: 0.8;
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
 .game-card.coming-soon:hover {
   transform: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12rpx 35rpx rgba(0, 0, 0, 0.12);
 }
 
 /* 游戏图标 */
 .game-icon {
-  width: 120rpx;
-  height: 120rpx;
+  width: 140rpx;
+  height: 140rpx;
   background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20rpx;
+  margin: 0 auto 30rpx;
   color: white;
   box-shadow: 0 6rpx 20rpx rgba(52, 152, 219, 0.25);
   position: relative;
@@ -225,35 +243,79 @@ page {
   }
   
   .main-title {
-    font-size: 40rpx;
+    font-size: 42rpx;
+  }
+  
+  .sub-title {
+    font-size: 26rpx;
+  }
+  
+  .about-header {
+    margin: 50rpx 0 120rpx 0;
+    padding: 30rpx 40rpx;
+  }
+  
+  .games-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40rpx;
+    padding: 0 60rpx;
+    margin-bottom: 50rpx;
+  }
+  
+  .game-card {
+    padding: 30rpx 20rpx;
+    min-height: 200rpx;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.9) 100%);
+  }
+  
+  .game-icon {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto 25rpx;
+  }
+  
+  .icon-text {
+    font-size: 42rpx;
+  }
+  
+  .game-title {
+    font-size: 32rpx;
+    margin-bottom: 0;
+  }
+}
+
+/* 超小屏适配 */
+@media (max-width: 480rpx) {
+  .about-header {
+    margin: 40rpx 0 100rpx 0;
+    padding: 25rpx 30rpx;
+  }
+  
+  .main-title {
+    font-size: 38rpx;
   }
   
   .sub-title {
     font-size: 24rpx;
   }
   
-  .about-header {
-    margin: 40rpx 0 30rpx 0;
-    padding: 25rpx 30rpx;
-  }
-  
   .games-container {
     grid-template-columns: 1fr 1fr;
-    gap: 20rpx;
-    padding: 0 30rpx;
-    margin-bottom: 30rpx;
+    gap: 30rpx;
+    padding: 0 40rpx;
+    margin-bottom: 40rpx;
   }
   
   .game-card {
     padding: 25rpx 15rpx;
-    min-height: 280rpx;
-    background-color: rgba(255, 255, 255, 0.93);
+    min-height: 180rpx;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.9) 100%);
   }
   
   .game-icon {
-    width: 100rpx;
-    height: 100rpx;
-    margin: 0 auto 12rpx;
+    width: 110rpx;
+    height: 110rpx;
+    margin: 0 auto 20rpx;
   }
   
   .icon-text {
@@ -262,64 +324,6 @@ page {
   
   .game-title {
     font-size: 30rpx;
-    margin-bottom: 8rpx;
+    margin-bottom: 0;
   }
-  
-  .game-desc {
-    font-size: 20rpx;
-    margin-bottom: 12rpx;
-  }
-  
-
-}
-
-/* 超小屏适配 */
-@media (max-width: 480rpx) {
-  .about-header {
-    margin: 30rpx 0 25rpx 0;
-    padding: 20rpx 25rpx;
-  }
-  
-  .main-title {
-    font-size: 36rpx;
-  }
-  
-  .sub-title {
-    font-size: 20rpx;
-  }
-  
-  .games-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 15rpx;
-    padding: 0 20rpx;
-    margin-bottom: 25rpx;
-  }
-  
-  .game-card {
-    padding: 22rpx 12rpx;
-    min-height: 260rpx;
-    background-color: rgba(255, 255, 255, 0.92);
-  }
-  
-  .game-icon {
-    width: 90rpx;
-    height: 90rpx;
-    margin: 0 auto 10rpx;
-  }
-  
-  .icon-text {
-    font-size: 34rpx;
-  }
-  
-  .game-title {
-    font-size: 28rpx;
-    margin-bottom: 6rpx;
-  }
-  
-  .game-desc {
-    font-size: 18rpx;
-    margin-bottom: 10rpx;
-  }
-  
-
 }

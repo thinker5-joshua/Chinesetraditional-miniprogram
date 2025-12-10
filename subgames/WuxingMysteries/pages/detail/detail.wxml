@@ -3,15 +3,8 @@
   <!-- 固定头部区域 -->
   <view class="header-section">
     <view class="header-main">
-      <view class="element-symbol" style="background: {{elementInfo.color || '#667eea'}};">
-        <text class="symbol-text">{{elementInfo.symbol || elementInfo.title}}</text>
-      </view>
       <view class="element-title-container">
-        <view class="element-name">{{elementInfo.element}}</view>
-        <view class="element-wuxing" wx:if="{{elementInfo.wuxing && tabType !== 'wuxing'}}">
-          <text class="wuxing-label">五行：</text>
-          <text class="wuxing-value">{{elementInfo.wuxing}}</text>
-        </view>
+        <view class="element-name">{{elementInfo.element}}<text wx:if="{{elementInfo.wuxing && tabType !== 'wuxing'}}">（五行：{{elementInfo.wuxing}}）</text></view>
       </view>
     </view>
   </view>

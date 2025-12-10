@@ -23,6 +23,9 @@ Page({
     displayedCaves: [],
     mapMarkers: [],
     
+    // 诗词内容按行拆分
+    currentPoemLines: [],
+    
     // 当前显示的洞天
     currentDisplayedCaves: []
   },
@@ -92,6 +95,23 @@ Page({
       console.error('加载数据失败:', error);
       // 使用模拟数据
       this.useMockData();
+    }
+  },
+
+  /**
+   * 拆分诗词内容为行数组
+   */
+  splitPoemContent() {
+    if (this.data.currentPoem && this.data.currentPoem.content) {
+      const poemLines = this.data.currentPoem.content.split('\n').filter(line => line.trim() !== '');
+      this.setData({
+        currentPoemLines: poemLines
+      });
+    } else if (this.data.currentCavePoem && this.data.currentCavePoem.content) {
+      const poemLines = this.data.currentCavePoem.content.split('\n').filter(line => line.trim() !== '');
+      this.setData({
+        poemLines: poemLines
+      });
     }
   },
 
@@ -426,7 +446,7 @@ Page({
     this.setData({
       currentCave: currentCave,
       currentPoem: currentPoem,
-      cavePromptText: `你即将进入${currentCave.name}，请你完成此洞天诗词通关`,
+      cavePromptText: '即将进入洞天，请先完成此洞天诗词通关',
       displayedCaves: [] // 隐藏洞天体
     });
     
@@ -510,7 +530,7 @@ Page({
       'gameData.revealedHints': 0,
       currentCave: currentCave,
       currentPoem: currentPoem,
-      cavePromptText: `你即将进入${currentCave.name}，请你完成此洞天诗词通关`,
+      cavePromptText: '即将进入洞天，请先完成此洞天诗词通关',
       displayedCaves: [] // 隐藏洞天体
     });
     
@@ -540,6 +560,9 @@ Page({
     this.setData({
       currentView: 'poetry-challenge'
     });
+    
+    // 拆分诗词内容为行数组
+    this.splitPoemContent();
     
     // 处理诗词内容，生成隐藏字和选项
     this.processPoemContent();
@@ -609,17 +632,23 @@ Page({
     // 生成答案选项
     const answerOptions = this.generateRelatedOptions(targetChar);
     
-    // 构建显示内容，隐藏的字用特殊标记
-    const displayContent = chars.map((char, index) => {
+    // 构建显示内容，隐藏的字用星星符号替代
+    const modifiedChars = chars.map((char, index) => {
       if (index === actualIndex) {
-        return '🌟';
+        return '<span class="hidden-char">🌟</span>';
       }
       return char;
-    }).join('');
+    });
+    
+    const modifiedContent = modifiedChars.join('');
+    
+    // 生成带隐藏字的诗行
+    const poemLines = modifiedContent.split('\n').filter(line => line.trim() !== '');
     
     // 更新页面数据
     this.setData({
-      poemDisplayContent: displayContent,
+      poemDisplayContent: modifiedContent,
+      currentPoemLines: poemLines,
       answerOptions: answerOptions,
       targetChar: targetChar
     });
@@ -779,8 +808,8 @@ Page({
     
     if (relatedPoems && relatedPoems.length > 0) {
       const poem = relatedPoems[0];
-      // 处理诗词分行排版
-      const poemLines = this.processPoemLines(poem.content);
+      // 使用数据中的换行符分割诗词内容
+      const poemLines = poem.content.split('\n').filter(line => line.trim() !== '');
       
       this.setData({
         currentCavePoem: poem,
@@ -833,9 +862,10 @@ Page({
     const nextIndex = (currentIndex + 1) % currentPoems.length;
     const nextPoem = currentPoems[nextIndex];
     
-    // 处理新诗的分行排版
-    const poemLines = this.processPoemLines(nextPoem.content);
+    // 直接处理诗词分行并更新数据
+    const poemLines = nextPoem.content.split('\n').filter(line => line.trim() !== '');
     
+    // 更新数据
     this.setData({
       currentCavePoem: nextPoem,
       poemLines: poemLines

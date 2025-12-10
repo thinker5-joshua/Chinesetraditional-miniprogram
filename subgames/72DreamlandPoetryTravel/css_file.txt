@@ -255,21 +255,7 @@ page {
 
 /* 诗词挑战界面 */
 .challenge-container {
-  padding: 20rpx;
-}
-
-/* 洞天名称大字显示 */
-.cave-name-big {
-  text-align: center;
-  margin-bottom: 20rpx;
-}
-
-.cave-name-big text {
-  font-size: 60rpx;
-  font-weight: bold;
-  color: #64ffda;
-  text-shadow: 0 0 20rpx rgba(100, 255, 218, 0.5);
-  display: block;
+  padding: 40rpx;
 }
 
 .cave-prompt {
@@ -282,91 +268,50 @@ page {
 
 .poem-content-container {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 15rpx;
-  padding: 15rpx;
-  margin-bottom: 15rpx;
-  backdrop-filter: blur(5rpx);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  backdrop-filter: blur(10rpx);
 }
 
 .poem-display {
   text-align: center;
-  margin-bottom: 25rpx;
+  margin-bottom: 40rpx;
 }
 
 .poem-title {
-  font-size: 40rpx;
+  font-size: 48rpx;
   font-weight: bold;
   color: #ffd700;
-  margin-bottom: 15rpx;
-  display: block;
-}
-
-.poet-info {
-  font-size: 30rpx;
-  color: #b0b0b0;
   margin-bottom: 20rpx;
   display: block;
 }
 
-/* 统一诗词显示样式 */
-.poem-content-traditional {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 5rpx 0;
-  padding: 5rpx;
-  background: transparent;
-  border-radius: 8rpx;
-  backdrop-filter: none;
+.poet-info {
+  font-size: 34rpx;
+  color: #b0b0b0;
+  margin-bottom: 30rpx;
+  display: block;
 }
 
-.poem-line {
-  font-size: 36rpx;
-  line-height: 1.8;
+.poem-content {
+  line-height: 2;
+  font-size: 38rpx;
   color: #e6e6e6;
-  text-align: center;
-  margin: 8rpx 0;
-  font-family: 'KaiTi', '楷体', serif;
-  letter-spacing: 0.5rpx;
-  max-width: 100%;
-  overflow: visible;
-  white-space: normal;
-  word-wrap: break-word;
 }
 
 /* 隐藏字标识 */
-.hidden-char {
+.poem-content .hidden-char {
   display: inline-block;
-  color: #ffd700;
-  font-size: 36rpx;
-  margin: 0 2rpx;
-  animation: star-pulse 2s ease-in-out infinite;
-  vertical-align: middle;
-  text-align: center;
-  line-height: 1;
-  text-shadow: 0 0 12rpx rgba(255, 215, 0, 0.8);
-  padding: 0;
-  width: auto;
-  height: auto;
-  min-width: auto;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-/* 星星闪烁动画 */
-@keyframes star-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-    text-shadow: 0 0 12rpx rgba(255, 215, 0, 0.8);
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-    text-shadow: 0 0 20rpx rgba(255, 215, 0, 1);
-  }
+  background: linear-gradient(135deg, #ffd700, #ff6b6b);
+  color: white;
+  padding: 8rpx 16rpx;
+  border-radius: 10rpx;
+  font-weight: bold;
+  font-size: 38rpx;
+  margin: 0 6rpx;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 20rpx rgba(255, 215, 0, 0.6);
 }
 
 @keyframes pulse {
@@ -523,6 +468,15 @@ page {
   height: 100%;
 }
 
+/* 诗词区域调整 */
+.poem-section {
+  min-height: auto; /* 根据内容自动调整高度 */
+}
+
+.poem-content-traditional {
+  margin: 20rpx 0; /* 减少上下边距 */
+}
+
 /* 现代化区块样式 */
 .modern-section {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
@@ -553,7 +507,6 @@ page {
   color: #e6e6e6;
   text-align: justify;
 }
-
 
 
 
@@ -588,6 +541,27 @@ page {
   color: #a0a0a0;
   display: block;
   font-style: italic;
+}
+
+/* 传统诗词分行排版 */
+.poem-content-traditional {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30rpx;
+}
+
+/* 传统诗词分行排版 */
+.poem-line {
+  font-size: 40rpx;
+  line-height: 2.2;
+  color: #e6e6e6;
+  text-align: center;
+  margin: 8rpx 0;
+  font-family: 'KaiTi', '楷体', serif;
+  letter-spacing: 4rpx;
 }
 
 /* 诗词操作区 */

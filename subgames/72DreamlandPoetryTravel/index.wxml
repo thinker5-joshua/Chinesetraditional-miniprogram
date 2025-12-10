@@ -41,6 +41,11 @@
   <!-- 诗词挑战界面 -->
 <view id="poetry-challenge-view" class="game-view {{currentView === 'poetry-challenge' ? 'active' : ''}}">
 <view class="challenge-container">
+  <!-- 洞天名称大字显示 -->
+  <view class="cave-name-big">
+    <text>{{currentCave.name}}</text>
+  </view>
+  
   <!-- 洞天提示 -->
 <view class="cave-prompt">
   <text>{{cavePromptText}}</text>
@@ -52,8 +57,10 @@
   <view class="poet-info">
     <text>{{currentPoem.author}}</text>
   </view>
-  <view class="poem-content">
-    <text>{{poemDisplayContent}}</text>
+  <view class="poem-content-traditional">
+    <block wx:for="{{currentPoemLines}}" wx:key="index">
+      <rich-text class="poem-line" nodes="{{item}}"></rich-text>
+    </block>
   </view>
 </view>
 
