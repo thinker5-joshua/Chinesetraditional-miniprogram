@@ -1,0 +1,139 @@
+<!-- 脊兽详情页 -->
+<view class="detail-container">
+  <!-- 背景装饰 -->
+  <view class="background-decoration">
+    <view class="decoration-item"></view>
+    <view class="decoration-item"></view>
+    <view class="decoration-item"></view>
+  </view>
+
+  <!-- 详情内容 -->
+  <view class="detail-content" wx:if="{{beast}}">
+    <!-- 神兽图片 -->
+    <view class="beast-image-section">
+      <image 
+        class="beast-image" 
+        src="{{beast.image}}" 
+        mode="aspectFit"
+      ></image>
+      <view class="image-glow"></view>
+    </view>
+
+    <!-- 基本信息 -->
+    <view class="basic-info-section">
+      <view class="info-header">
+        <text class="beast-name">{{beast.name}}</text>
+        <text class="beast-pinyin">{{beast.pinyin}}</text>
+      </view>
+      <view class="beast-position">
+        <text class="position-text">{{beast.rank}}</text>
+      </view>
+      <!-- 新增：神兽名称 -->
+      <view class="beast-beastname" wx:if="{{beast.beastName}}">
+        <text class="beastname-text">神兽名称：{{beast.beastName}}</text>
+      </view>
+    </view>
+
+    <!-- 详细信息卡片 -->
+    <view class="detail-card">
+      <!-- 起源故事 -->
+      <view class="info-item">
+        <view class="item-title">
+          <text class="title-icon">📜</text>
+          <text class="title-text">起源故事</text>
+        </view>
+        <text class="item-content">{{beast.origin}}</text>
+      </view>
+
+      <!-- 寓意 -->
+      <view class="info-item">
+        <view class="item-title">
+          <text class="title-icon">✨</text>
+          <text class="title-text">寓意</text>
+        </view>
+        <text class="item-content">{{beast.meaning}}</text>
+      </view>
+
+      <!-- 性格特征 -->
+      <view class="info-item">
+        <view class="item-title">
+          <text class="title-icon">🦁</text>
+          <text class="title-text">性格特征</text>
+        </view>
+        <text class="item-content">{{beast.personality}}</text>
+      </view>
+
+      <!-- 契主特质 -->
+      <view class="info-item">
+        <view class="item-title">
+          <text class="title-icon">👤</text>
+          <text class="title-text">契主特质</text>
+        </view>
+        <text class="item-content">{{beast.ownerTrait}}</text>
+      </view>
+
+      <!-- 守护能力 -->
+      <view class="info-item">
+        <view class="item-title">
+          <text class="title-icon">🛡️</text>
+          <text class="title-text">守护能力</text>
+        </view>
+        <text class="item-content">{{beast.guardianAbility}}</text>
+      </view>
+
+      <!-- 新增：形态特征 -->
+      <view class="info-item" wx:if="{{beast.shape}}">
+        <view class="item-title">
+          <text class="title-icon">🦄</text>
+          <text class="title-text">形态特征</text>
+        </view>
+        <text class="item-content">{{beast.shape}}</text>
+      </view>
+
+      <!-- 新增：特殊能力 -->
+      <view class="info-item" wx:if="{{beast.abilities && beast.abilities.length > 0}}">
+        <view class="item-title">
+          <text class="title-icon">✨</text>
+          <text class="title-text">特殊能力</text>
+        </view>
+        <view class="abilities-list">
+          <text class="ability-item" wx:for="{{beast.abilities}}" wx:key="index">{{item}}</text>
+        </view>
+      </view>
+
+      <!-- 新增：契约标记 -->
+      <view class="info-item" wx:if="{{beast.contractMark}}">
+        <view class="item-title">
+          <text class="title-icon">🔖</text>
+          <text class="title-text">契约标记</text>
+        </view>
+        <text class="item-content">{{beast.contractMark}}</text>
+      </view>
+
+      <!-- 完整描述 -->
+      <view class="info-item">
+        <view class="item-title">
+          <text class="title-icon">📖</text>
+          <text class="title-text">详细描述</text>
+        </view>
+        <text class="item-content">{{beast.description}}</text>
+      </view>
+    </view>
+
+    <!-- 返回按钮 -->
+    <view class="back-button-container">
+      <button 
+        class="back-button" 
+        bindtap="goBack"
+      >
+        返回列表
+      </button>
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-container" wx:if="{{!beast}}">
+    <text class="loading-text">加载中...</text>
+    <view class="loading-spinner"></view>
+  </view>
+</view>

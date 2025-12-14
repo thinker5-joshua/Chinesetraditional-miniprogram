@@ -1,0 +1,118 @@
+<!-- 守护神兽首页 -->
+<view class="container">
+  <!-- 页面头部 -->
+  <view class="about-header">
+    <text class="main-title">守护神兽</text>
+    <text class="sub-title">古建脊兽，守护灵契</text>
+  </view>
+
+  <!-- 已抽取的守护神兽展示区 -->
+  <view class="extracted-beast-section" wx:if="{{extractedBeast}}">
+    <view class="section-title">
+      <text class="title-text">您的专属守护神兽</text>
+    </view>
+    <view class="extracted-beast-card">
+      <!-- 脊兽图片和信息并行显示 -->
+      <view class="beast-main-content">
+        <!-- 脊兽图片，带火焰效果 -->
+        <view class="beast-image-large-container">
+          <image 
+            class="beast-image-large" 
+            src="{{extractedBeast.image}}" 
+            mode="aspectFit"
+          ></image>
+          <!-- 火焰效果 -->
+          <view class="flame-top"></view>
+          <view class="flame-right"></view>
+          <view class="flame-bottom"></view>
+          <view class="flame-left"></view>
+        </view>
+        
+        <!-- 脊兽信息，只显示name和beastName -->
+        <view class="beast-info-large">
+          <text class="beast-name-large">{{extractedBeast.name}}</text>
+          <text class="beast-beastName-large">{{extractedBeast.beastName || '守护神兽'}}</text>
+        </view>
+      </view>
+      
+      <!-- 操作按钮 -->
+      <view class="action-buttons">
+        <button class="action-btn primary" bindtap="viewExtractedPoster">查看海报</button>
+        <button class="action-btn secondary" bindtap="goToDraw">重新抽取</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 待抽取守护神兽展示区 -->
+  <view class="pending-section" wx:else>
+    <view class="section-title">
+      <text class="title-text">抽取您的专属守护神兽</text>
+    </view>
+    
+    <!-- 守护神兽卡 -->
+    <view class="guardian-card-container">
+      <!-- 背面图，带微光闪烁 -->
+      <view class="guardian-card back" animation="{{cardAnimation}}">
+        <image 
+          class="card-image" 
+          src="{{cardBackImage}}" 
+          mode="aspectFit"
+        ></image>
+        <view class="card-glow"></view>
+      </view>
+    </view>
+    
+    <!-- 抽取按钮 -->
+    <view class="draw-section">
+      <button class="draw-btn" bindtap="goToDraw">
+        <text class="btn-text">开始抽取仪式</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 脊兽列表区域 -->
+  <view class="beasts-list-section">
+    <view class="page-title">
+      <text class="title-text">守护神兽天团-脊兽图鉴</text>
+    </view>
+    
+    <!-- 脊兽列表 -->
+    <view class="beasts-list">
+      <!-- 列表项 -->
+      <view 
+        class="beast-list-item" 
+        wx:for="{{beastsList}}" 
+        wx:key="id"
+        bindtap="navigateToDetail"
+        data-beast-id="{{item.id}}"
+      >
+        <!-- 左边图象区 -->
+        <view class="beast-image-section">
+          <image 
+            class="beast-image" 
+            src="{{item.image}}" 
+            mode="aspectFit"
+          ></image>
+        </view>
+
+        <!-- 右边内容区 -->
+        <view class="beast-content-section">
+          <view class="info-header">
+            <text class="beast-name">{{item.name}}</text>
+            <text class="beast-pinyin">{{item.pinyin}}</text>
+            <text class="beast-ability">{{item.guardianAbility}}</text>
+          </view>
+
+          <view class="info-description">
+            <text class="description-text">{{item.meaning}}</text>
+          </view>
+        </view>
+
+        <!-- 右下角排名 -->
+        <view class="rank-badge">
+          <text class="rank-text">{{item.rank}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

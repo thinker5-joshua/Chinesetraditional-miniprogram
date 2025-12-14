@@ -1,0 +1,88 @@
+<!-- 抽取结果页 -->
+<view class="result-container">
+  <!-- 背景装饰 -->
+  <view class="background-decoration">
+    <view class="decoration-item"></view>
+    <view class="decoration-item"></view>
+    <view class="decoration-item"></view>
+  </view>
+
+  <!-- 结果内容 -->
+  <view class="result-content" wx:if="{{beast}}">
+    <!-- 神兽形象 -->
+    <view class="beast-image-container">
+      <image 
+        class="beast-image" 
+        src="{{beast.image}}" 
+        mode="aspectFit"
+      ></image>
+      <view class="image-glow"></view>
+    </view>
+
+    <!-- 神兽基本信息 -->
+    <view class="beast-info">
+      <view class="beast-name-container">
+        <text class="beast-name">{{beast.name}}</text>
+        <text class="beast-pinyin">{{beast.pinyin}}</text>
+      </view>
+      <view class="beast-position">
+        <text class="position-text">{{beast.rank}}</text>
+      </view>
+    </view>
+
+    <!-- 专属箴言 -->
+    <view class="proverb-section">
+      <text class="proverb-label">专属箴言</text>
+      <text class="proverb-content">{{beast.selectedProverb}}</text>
+    </view>
+
+    <!-- 契主特质 -->
+    <view class="trait-section">
+      <view class="section-title">
+        <text class="title-icon">🔍</text>
+        <text class="title-text">契主特质</text>
+      </view>
+      <text class="trait-content">{{beast.ownerTrait}}</text>
+    </view>
+
+    <!-- 守护能力 -->
+    <view class="ability-section">
+      <view class="section-title">
+        <text class="title-icon">🛡️</text>
+        <text class="title-text">守护能力</text>
+      </view>
+      <text class="ability-content">{{beast.guardianAbility}}</text>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-buttons">
+      <button 
+        class="action-button primary" 
+        bindtap="generatePoster"
+        disabled="{{isGeneratingPoster}}"
+      >
+        {{isGeneratingPoster ? '生成中...' : '生成海报'}}
+      </button>
+      <view class="secondary-buttons">
+        <button 
+          class="action-button secondary" 
+          bindtap="viewDetail"
+        >
+          查看详情
+        </button>
+        <button 
+          class="action-button secondary" 
+          bindtap="redraw"
+        >
+          重新抽取
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部信息 -->
+  <view class="footer">
+    <text class="footer-text">© 2025 文益互动 - 传统文化益智互动群落</text>
+    <text class="footer-text">传承中华文化，寓教于乐</text>
+  </view>
+</view>

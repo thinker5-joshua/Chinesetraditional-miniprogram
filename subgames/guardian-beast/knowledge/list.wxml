@@ -1,0 +1,51 @@
+<!-- 脊兽列表页 -->
+<view class="list-container">
+  <!-- 页面标题 -->
+  <view class="page-title">
+    <text class="title-text">守护神兽天团-脊兽图鉴</text>
+  </view>
+
+  <!-- 脊兽列表 -->
+  <view class="beasts-list">
+    <!-- 列表项 -->
+    <view 
+      class="beast-list-item" 
+      wx:for="{{beastsList}}" 
+      wx:key="id"
+      bindtap="navigateToDetail"
+      data-beast-id="{{item.id}}"
+    >
+      <!-- 左边图象区 -->
+      <view class="beast-image-section">
+        <image 
+          class="beast-image" 
+          src="{{item.image}}" 
+          mode="aspectFit"
+        ></image>
+      </view>
+
+      <!-- 右边内容区 -->
+      <view class="beast-content-section">
+        <view class="info-header">
+          <text class="beast-name">{{item.name}}</text>
+          <text class="beast-pinyin">{{item.pinyin}}</text>
+          <text class="beast-ability">{{item.guardianAbility}}</text>
+        </view>
+
+        <view class="info-description">
+          <text class="description-text">{{item.meaning}}</text>
+        </view>
+      </view>
+
+      <!-- 右下角排名 -->
+      <view class="rank-badge">
+        <text class="rank-text">{{item.rank}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态提示 -->
+  <view class="empty-state" wx:if="{{beastsList.length === 0}}">
+    <text class="empty-text">暂无脊兽数据</text>
+  </view>
+</view>

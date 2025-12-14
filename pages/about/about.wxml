@@ -124,6 +124,40 @@
     </view>
   </view>
 
+  <!-- 添加到我的小程序 -->
+  <view class="content-section add-to-miniprogram-section">
+    <view class="section-title">
+      <text class="title-icon">⭐️</text>
+      <text class="title-text">添加到我的小程序</text>
+    </view>
+    <view class="content-card add-to-miniprogram-card">
+      <text class="content-text">将文益互动添加到我的小程序，方便后续快速访问</text>
+      <view class="add-steps">
+        <view class="step-item">
+          <view class="step-number">1</view>
+          <view class="step-content">
+            <text class="step-icon">🔹</text>
+            <text class="step-text">点击右上角的「...」图标</text>
+          </view>
+        </view>
+        <view class="step-item">
+          <view class="step-number">2</view>
+          <view class="step-content">
+            <text class="step-icon">🔹</text>
+            <text class="step-text">选择「添加到我的小程序」选项</text>
+          </view>
+        </view>
+        <view class="step-item">
+          <view class="step-number">3</view>
+          <view class="step-content">
+            <text class="step-icon">🔹</text>
+            <text class="step-text">完成添加，下次可在「我的小程序」中快速找到</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
   <!-- 版本信息 -->
   <view class="footer">
     <text class="footer-text">© 2025 文益互动 - 传统文化益智互动群落</text>

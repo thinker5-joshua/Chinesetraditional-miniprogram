@@ -1,0 +1,22 @@
+<!-- 琢器轩首页 -->
+<view class="container">
+  <!-- 页面头部 -->
+  <view class="about-header">
+    <text class="main-title">琢器轩</text>
+    <text class="sub-title">琢器成器，淬炼成长</text>
+  </view>
+
+  <!-- 游戏列表 -->
+  <view class="games-container">
+    <view 
+      class="game-card"
+      bindtap="navigateToGame"
+      data-game="guardian-beast"
+    >
+      <view class="game-icon guardian-icon">
+        <text class="icon-text">守</text>
+      </view>
+      <text class="game-title clickable">守护神兽</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,270 @@
+/* 抽取仪式页样式 - 参考二十八星宿探秘风格 */
+.draw-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0515 0%, #1a0f2a 50%, #0a0515 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 背景星空 */
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: 
+    radial-gradient(2rpx 2rpx at 20% 30%, rgba(100, 255, 218, 0.8), transparent),
+    radial-gradient(2rpx 2rpx at 60% 70%, rgba(100, 255, 218, 0.6), transparent),
+    radial-gradient(1rpx 1rpx at 80% 20%, rgba(100, 255, 218, 0.7), transparent),
+    radial-gradient(1rpx 1rpx at 40% 80%, rgba(100, 255, 218, 0.5), transparent);
+  background-size: 300rpx 300rpx, 400rpx 400rpx, 250rpx 250rpx, 350rpx 350rpx;
+  animation: twinkle 15s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 5, 21, 0.7) 0%, rgba(26, 15, 42, 0.8) 100%);
+}
+
+/* 仪式内容 */
+.ritual-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 40rpx;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* 仪式标题 */
+.ritual-title {
+  margin-bottom: 60rpx;
+  text-align: center;
+}
+
+.title-text {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #64ffda;
+  text-shadow: 0 0 30rpx rgba(100, 255, 218, 0.6);
+  letter-spacing: 10rpx;
+  display: block;
+}
+
+/* 引导文案 */
+.guidance-text {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2rpx solid rgba(100, 255, 218, 0.3);
+  border-radius: 30rpx;
+  padding: 40rpx;
+  backdrop-filter: blur(10rpx);
+  margin-bottom: 60rpx;
+  max-width: 800rpx;
+  box-shadow: 0 0 25rpx rgba(100, 255, 218, 0.15);
+}
+
+/* 第一行引导文案 */
+.guidance-line.first-line {
+  display: block;
+  font-size: 32rpx;
+  color: #64ffda;
+  font-weight: bold;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 30rpx;
+  font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+  text-shadow: 0 0 20rpx rgba(100, 255, 218, 0.4);
+}
+
+/* 后续引导文案段落 */
+.guidance-paragraph {
+  display: block;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 2;
+  text-align: center;
+  font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+  letter-spacing: 1rpx;
+}
+
+/* 圆形神兽卡背面样式 */
+.guardian-card-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.guardian-card {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10rpx 30rpx rgba(100, 255, 218, 0.3);
+  border: 3rpx solid rgba(100, 255, 218, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guardian-card .card-image {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+}
+
+/* 背面卡样式 */
+.guardian-card.back {
+  animation: cardGlow 3s ease-in-out infinite;
+}
+
+/* 微光效果 */
+.card-glow {
+  position: absolute;
+  top: -20rpx;
+  left: -20rpx;
+  right: -20rpx;
+  bottom: -20rpx;
+  background: radial-gradient(circle at 50% 50%, rgba(100, 255, 218, 0.4) 0%, rgba(100, 255, 218, 0.1) 50%, rgba(100, 255, 218, 0) 70%);
+  animation: glowPulse 2s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* 卡牌发光动画 */
+@keyframes cardGlow {
+  0%, 100% { box-shadow: 0 10rpx 30rpx rgba(100, 255, 218, 0.3); }
+  50% { box-shadow: 0 15rpx 40rpx rgba(100, 255, 218, 0.6); }
+}
+
+/* 微光脉冲动画 */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* 移除背景图样式 */
+.background-image {
+  display: none;
+}
+
+/* 倒计时显示 */
+.countdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20rpx;
+  margin-bottom: 60rpx;
+}
+
+.countdown-number {
+  font-size: 120rpx;
+  font-weight: bold;
+  color: #64ffda;
+  text-shadow: 0 0 50rpx rgba(100, 255, 218, 0.6);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.countdown-text {
+  font-size: 48rpx;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* 按钮样式 */
+.button-container {
+  margin-top: auto;
+  margin-bottom: 40rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.draw-button {
+  background: linear-gradient(135deg, #64ffda 0%, #00bcd4 100%);
+  color: #0a0515;
+  border: none;
+  border-radius: 50rpx;
+  padding: 25rpx 80rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  box-shadow: 0 15rpx 40rpx rgba(100, 255, 218, 0.4);
+  transition: all 0.3s ease;
+  min-width: 400rpx;
+  letter-spacing: 4rpx;
+}
+
+.draw-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 8rpx 20rpx rgba(100, 255, 218, 0.3);
+}
+
+.draw-button[disabled] {
+  background: rgba(100, 255, 218, 0.3);
+  color: rgba(255, 255, 255, 0.6);
+  box-shadow: none;
+  transform: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 750rpx) {
+  .ritual-content {
+    padding: 60rpx 20rpx;
+  }
+  
+  .title-text {
+    font-size: 48rpx;
+    letter-spacing: 8rpx;
+  }
+  
+  .guidance-text {
+    padding: 30rpx;
+    margin-bottom: 50rpx;
+  }
+  
+  .guidance-line {
+    font-size: 24rpx;
+    margin-bottom: 15rpx;
+  }
+  
+  .countdown-number {
+    font-size: 100rpx;
+  }
+  
+  .countdown-text {
+    font-size: 40rpx;
+  }
+  
+  .draw-button {
+    font-size: 32rpx;
+    padding: 20rpx 60rpx;
+    min-width: 300rpx;
+  }
+}

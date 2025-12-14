@@ -1,0 +1,224 @@
+/* 脊兽列表页样式 - 参考二十八星宿探秘风格 */
+.list-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0515 0%, #1a0f2a 50%, #0a0515 100%);
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景星空 */
+.list-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2rpx 2rpx at 20% 30%, rgba(100, 255, 218, 0.8), transparent),
+    radial-gradient(2rpx 2rpx at 60% 70%, rgba(100, 255, 218, 0.6), transparent),
+    radial-gradient(1rpx 1rpx at 80% 20%, rgba(100, 255, 218, 0.7), transparent),
+    radial-gradient(1rpx 1rpx at 40% 80%, rgba(100, 255, 218, 0.5), transparent);
+  background-size: 300rpx 300rpx, 400rpx 400rpx, 250rpx 250rpx, 350rpx 350rpx;
+  animation: twinkle 15s infinite ease-in-out;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* 页面标题 */
+.page-title {
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid rgba(100, 255, 218, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.title-text {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #64ffda;
+  text-shadow: 0 0 20rpx rgba(100, 255, 218, 0.5);
+  display: block;
+  letter-spacing: 8rpx;
+  font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+}
+
+/* 脊兽列表 */
+.beasts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25rpx;
+  position: relative;
+  z-index: 1;
+}
+
+/* 列表项样式 */
+.beast-list-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2rpx solid rgba(100, 255, 218, 0.3);
+  border-radius: 20rpx;
+  padding: 25rpx;
+  display: flex;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10rpx);
+  box-shadow: 0 0 20rpx rgba(100, 255, 218, 0.15);
+  width: 100%;
+  height: auto;
+}
+
+.beast-list-item:active {
+  background: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 10rpx 25rpx rgba(100, 255, 218, 0.25);
+}
+
+/* 左边图象区 */
+.beast-image-section {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.beast-image {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(100, 255, 218, 0.2), rgba(0, 255, 255, 0.1));
+  padding: 10rpx;
+  box-sizing: border-box;
+  border: 3rpx solid #64ffda;
+  box-shadow: 0 0 30rpx rgba(100, 255, 218, 0.5);
+  object-fit: contain;
+}
+
+/* 右边内容区 */
+.beast-content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+  text-align: left;
+}
+
+.beast-name {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+  margin-bottom: 10rpx;
+}
+
+.beast-pinyin {
+  font-size: 32rpx;
+  color: rgba(100, 255, 218, 0.8);
+  font-style: italic;
+  margin-bottom: 15rpx;
+}
+
+/* 守护能力 */
+.beast-ability {
+  font-size: 36rpx;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  text-align: left;
+}
+
+/* 隐藏描述文本 */
+.info-description,
+.description-text {
+  display: none;
+}
+
+/* 右下角排名 */
+.rank-badge {
+  position: absolute;
+  bottom: 15rpx;
+  right: 15rpx;
+  background: rgba(100, 255, 218, 0.1);
+  padding: 8rpx 15rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid rgba(100, 255, 218, 0.3);
+}
+
+.rank-text {
+  font-size: 24rpx;
+  color: rgba(100, 255, 218, 0.8);
+  font-weight: bold;
+}
+
+/* 空状态提示 */
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 28rpx;
+}
+
+/* 响应式设计 */
+@media (max-width: 750rpx) {
+  .list-container {
+    padding: 20rpx 15rpx;
+  }
+  
+  .page-title {
+    padding: 20rpx 0;
+    margin-bottom: 30rpx;
+  }
+  
+  .title-text {
+    font-size: 36rpx;
+  }
+  
+  .subtitle-text {
+    font-size: 22rpx;
+  }
+  
+  .beast-list-item {
+    padding: 20rpx;
+    gap: 20rpx;
+  }
+  
+  .beast-image-container {
+    width: 100rpx;
+    height: 100rpx;
+  }
+  
+  .beast-name {
+    font-size: 28rpx;
+  }
+  
+  .beast-pinyin {
+    font-size: 22rpx;
+  }
+  
+  .position-label,
+  .position-value,
+  .description-text {
+    font-size: 22rpx;
+  }
+  
+  .arrow-icon {
+    font-size: 28rpx;
+  }
+}

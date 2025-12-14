@@ -305,3 +305,97 @@ page {
 .contact-btn {
   transform: scale(1.2); /* 适当放大按钮 */
 }
+
+/* 添加到我的小程序样式 */
+.add-to-miniprogram-card {
+  background: linear-gradient(135deg, #fffaf0 0%, #f5f1e9 100%);
+  border: 2rpx solid rgba(139, 69, 19, 0.2);
+  transition: all 0.3s ease;
+}
+
+.add-to-miniprogram-card:hover {
+  box-shadow: 0 15rpx 30rpx rgba(139, 69, 19, 0.2);
+  transform: translateY(-5rpx);
+}
+
+.add-steps {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20rpx;
+  padding: 20rpx;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15rpx;
+  border-left: 6rpx solid #8B4513;
+  transition: all 0.3s ease;
+}
+
+.step-item:active {
+  transform: translateX(10rpx);
+  box-shadow: 0 10rpx 20rpx rgba(139, 69, 19, 0.15);
+}
+
+.step-number {
+  width: 50rpx;
+  height: 50rpx;
+  background: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+  color: white;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6rpx 15rpx rgba(139, 69, 19, 0.3);
+}
+
+.step-content {
+  display: flex;
+  align-items: center;
+  gap: 15rpx;
+  flex: 1;
+}
+
+.step-icon {
+  font-size: 32rpx;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-size: 26rpx;
+  color: #555;
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* 响应式设计 - 添加到我的小程序 */
+@media (max-width: 750rpx) {
+  .add-steps {
+    gap: 20rpx;
+  }
+  
+  .step-item {
+    padding: 15rpx;
+  }
+  
+  .step-number {
+    width: 40rpx;
+    height: 40rpx;
+    font-size: 24rpx;
+  }
+  
+  .step-icon {
+    font-size: 28rpx;
+  }
+  
+  .step-text {
+    font-size: 24rpx;
+  }
+}

@@ -1,0 +1,51 @@
+<!-- 抽取仪式页 -->
+<view class="draw-container">
+  <!-- 背景星空 -->
+  <view class="background-container">
+    <view class="background-overlay"></view>
+  </view>
+
+  <!-- 仪式内容 -->
+  <view class="ritual-content">
+    <!-- 标题 -->
+    <view class="ritual-title">
+      <text class="title-text">灵契启阵</text>
+    </view>
+
+    <!-- 引导文案 -->
+    <view class="guidance-text">
+      <text class="guidance-line first-line">请闭眼凝神3秒，默念心中至诚之问——</text>
+      <text class="guidance-paragraph">古建脊兽，位列庑殿顶巅，本是镇守乾坤的礼制符号。今依《营造法式》残卷中的通灵篇，将其本源之力化形为守护神兽。请静观殿顶——从仙人指路，到行什收尾，各尊脊兽已候千年，待你唤醒其一。</text>
+    </view>
+
+    <!-- 圆形神兽卡背面图 -->
+    <view class="guardian-card-container">
+      <view class="guardian-card back" animation="{{cardAnimation}}">
+        <image 
+          class="card-image" 
+          src="{{cardBackImage}}" 
+          mode="aspectFit"
+        ></image>
+        <view class="card-glow"></view>
+      </view>
+    </view>
+
+    <!-- 倒计时显示 -->
+    <view class="countdown-container" wx:if="{{showCountdown}}">
+      <text class="countdown-number">{{countdown}}</text>
+      <text class="countdown-text">秒</text>
+    </view>
+
+    <!-- 开始抽取按钮 -->
+    <view class="button-container">
+      <button 
+        class="draw-button" 
+        type="primary"
+        disabled="{{isDrawing}}"
+        bindtap="startDraw"
+      >
+        {{isDrawing ? '抽取中...' : '开始抽取'}}
+      </button>
+    </view>
+  </view>
+</view>

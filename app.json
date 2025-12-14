@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/game/game",
     "pages/about/about",
+    "pages/zhuoqixuan/index",
     "subgames/64Hexagrams/pages/hexagram-list/hexagram-list",
     "subgames/64Hexagrams/pages/hexagram-detail/hexagram-detail",
     "subgames/future/index",
@@ -19,7 +20,13 @@
     "subgames/WuxingMysteries/pages/wufang/index",
     "subgames/WuxingMysteries/pages/wuse/index",
     "subgames/WuxingMysteries/pages/wuzang/index",
-    "subgames/WuxingMysteries/pages/detail/detail"
+    "subgames/WuxingMysteries/pages/detail/detail",
+    "subgames/guardian-beast/index",
+    "subgames/guardian-beast/draw",
+    "subgames/guardian-beast/result",
+    "subgames/guardian-beast/poster",
+    "subgames/guardian-beast/knowledge/list",
+    "subgames/guardian-beast/knowledge/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,6 +43,10 @@
       {
         "pagePath": "pages/index/index",
         "text": "益游阁"
+      },
+      {
+        "pagePath": "pages/zhuoqixuan/index",
+        "text": "琢器轩"
       },
       {
         "pagePath": "pages/about/about",

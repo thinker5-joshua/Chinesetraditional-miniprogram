@@ -1,0 +1,56 @@
+<!-- 海报生成页 -->
+<view class="poster-container">
+  <!-- 页面标题 -->
+  <view class="page-title">
+    <text class="title-text">生成分享海报</text>
+  </view>
+
+  <!-- 海报生成区域 -->
+  <view class="poster-generation-section">
+    <!-- 海报预览 -->
+    <view class="poster-preview-container">
+      <!-- 隐藏的Canvas用于绘制海报 -->
+    <canvas 
+      type="2d"
+      id="posterCanvas" 
+      class="poster-canvas" 
+      style="width: 600rpx; height: 900rpx;"
+    ></canvas>
+
+      <!-- 海报预览图 -->
+      <image 
+        class="poster-preview" 
+        src="{{posterImage}}" 
+        mode="aspectFit"
+        wx:if="{{posterImage}}"
+      ></image>
+
+      <!-- 生成中提示 -->
+      <view class="generating-hint" wx:if="{{isGenerating}}">
+        <text class="hint-text">海报生成中...</text>
+        <view class="loading-spinner"></view>
+      </view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-buttons" wx:if="{{posterImage}}">
+      <button 
+        class="action-button primary" 
+        bindtap="saveToAlbum"
+      >
+        保存到相册
+      </button>
+      <button 
+        class="action-button secondary" 
+        bindtap="sharePoster"
+      >
+        分享海报
+      </button>
+    </view>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="bottom-hint" wx:if="{{posterImage}}">
+    <text class="hint-content">保存海报后，您可以分享到朋友圈或微信好友</text>
+  </view>
+</view>

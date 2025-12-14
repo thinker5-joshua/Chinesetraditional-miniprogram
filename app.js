@@ -6,7 +6,7 @@ App({
       console.error('请使用 2.2.3 或以上的基础库以使用云能力');
     } else {
       wx.cloud.init({
-        env: 'cloud1-9gc2gh7abcf27e54-1386637660', // 使用腾讯云开发环境ID
+        env: 'cloud1-4g76v9gbd3112c01', // 使用腾讯云开发环境ID
         traceUser: true,
       });
     }

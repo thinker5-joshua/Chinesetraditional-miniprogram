@@ -1,0 +1,330 @@
+/* 抽取结果页样式 - 参考二十八星宿探秘风格 */
+.result-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0515 0%, #1a0f2a 50%, #0a0515 100%);
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 背景星空 */
+.background-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    radial-gradient(2rpx 2rpx at 20% 30%, rgba(100, 255, 218, 0.8), transparent),
+    radial-gradient(2rpx 2rpx at 60% 70%, rgba(100, 255, 218, 0.6), transparent),
+    radial-gradient(1rpx 1rpx at 80% 20%, rgba(100, 255, 218, 0.7), transparent),
+    radial-gradient(1rpx 1rpx at 40% 80%, rgba(100, 255, 218, 0.5), transparent);
+  background-size: 300rpx 300rpx, 400rpx 400rpx, 250rpx 250rpx, 350rpx 350rpx;
+  animation: twinkle 15s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* 结果内容 */
+.result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700rpx;
+  position: relative;
+  z-index: 1;
+}
+
+/* 神兽形象 */
+.beast-image-container {
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.beast-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 0 60rpx rgba(100, 255, 218, 0.3);
+  z-index: 2;
+  position: relative;
+  border: 3rpx solid rgba(100, 255, 218, 0.5);
+}
+
+.image-glow {
+  position: absolute;
+  top: -20rpx;
+  left: -20rpx;
+  right: -20rpx;
+  bottom: -20rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.3) 0%, transparent 70%);
+  animation: glowPulse 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0.5; }
+}
+
+/* 神兽基本信息 */
+.beast-info {
+  text-align: center;
+  margin-bottom: 40rpx;
+  width: 100%;
+}
+
+.beast-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.beast-name {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #64ffda;
+  text-shadow: 0 0 30rpx rgba(100, 255, 218, 0.6);
+  letter-spacing: 10rpx;
+  font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+}
+
+.beast-pinyin {
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+.beast-position {
+  margin-top: 15rpx;
+  background: rgba(100, 255, 218, 0.1);
+  border: 2rpx solid rgba(100, 255, 218, 0.3);
+  border-radius: 30rpx;
+  padding: 10rpx 30rpx;
+  display: inline-block;
+  box-shadow: 0 0 20rpx rgba(100, 255, 218, 0.15);
+}
+
+.position-text {
+  font-size: 26rpx;
+  color: #64ffda;
+  font-weight: bold;
+}
+
+/* 专属箴言 */
+.proverb-section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2rpx solid rgba(100, 255, 218, 0.3);
+  border-radius: 30rpx;
+  padding: 30rpx;
+  width: 100%;
+  margin-bottom: 40rpx;
+  text-align: center;
+  backdrop-filter: blur(10rpx);
+  box-shadow: 0 0 25rpx rgba(100, 255, 218, 0.15);
+}
+
+.proverb-label {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.proverb-content {
+  font-size: 32rpx;
+  color: #64ffda;
+  line-height: 1.6;
+  font-weight: bold;
+  text-shadow: 0 0 10rpx rgba(100, 255, 218, 0.5);
+  display: block;
+  font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+}
+
+/* 契主特质和守护能力通用样式 */
+.trait-section,
+.ability-section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2rpx solid rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  width: 100%;
+  margin-bottom: 30rpx;
+  backdrop-filter: blur(10rpx);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 15rpx;
+  margin-bottom: 20rpx;
+}
+
+.title-icon {
+  font-size: 32rpx;
+}
+
+.title-text {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.trait-content,
+.ability-content {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.action-button {
+  border-radius: 50rpx;
+  padding: 25rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+  letter-spacing: 4rpx;
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, #64ffda 0%, #00bcd4 100%);
+  color: #0a0515;
+  border: none;
+  box-shadow: 0 15rpx 40rpx rgba(100, 255, 218, 0.4);
+  min-height: 90rpx;
+}
+
+.action-button.primary:active {
+  transform: scale(0.95);
+  box-shadow: 0 8rpx 20rpx rgba(100, 255, 218, 0.3);
+}
+
+.action-button.secondary {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 2rpx solid rgba(100, 255, 218, 0.4);
+  box-shadow: 0 0 25rpx rgba(100, 255, 218, 0.15);
+  font-size: 28rpx;
+  padding: 20rpx;
+  min-height: 80rpx;
+}
+
+.action-button.secondary:active {
+  background: rgba(100, 255, 218, 0.1);
+  transform: scale(0.95);
+}
+
+.action-button[disabled] {
+  background: rgba(100, 255, 218, 0.3);
+  color: rgba(255, 255, 255, 0.6);
+  box-shadow: none;
+  border: none;
+  transform: none;
+}
+
+.secondary-buttons {
+  display: flex;
+  gap: 20rpx;
+}
+
+.secondary-buttons .action-button {
+  flex: 1;
+}
+
+/* 底部信息 */
+.footer {
+  text-align: center;
+  padding: 60rpx 40rpx 40rpx;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.4);
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+/* 响应式设计 */
+@media (max-width: 750rpx) {
+  .result-container {
+    padding: 30rpx 20rpx;
+  }
+  
+  .beast-image-container {
+    width: 250rpx;
+    height: 250rpx;
+    margin-bottom: 30rpx;
+  }
+  
+  .beast-name {
+    font-size: 48rpx;
+  }
+  
+  .beast-pinyin {
+    font-size: 28rpx;
+  }
+  
+  .proverb-content {
+    font-size: 28rpx;
+  }
+  
+  .action-button.primary {
+    font-size: 28rpx;
+  }
+  
+  .action-button.secondary {
+    font-size: 26rpx;
+  }
+  
+  .trait-section,
+  .ability-section {
+    padding: 25rpx;
+  }
+  
+  .section-title {
+    margin-bottom: 15rpx;
+  }
+  
+  .title-text {
+    font-size: 26rpx;
+  }
+  
+  .trait-content,
+  .ability-content {
+    font-size: 24rpx;
+  }
+}
