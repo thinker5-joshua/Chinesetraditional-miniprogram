@@ -28,11 +28,14 @@
     <view class="quote-container" wx:if="{{!isLoading && !showFavorites && !showOriginalDetail}}">
       <view class="quote-card" bindtap="showOriginalDetail">
         <view class="quote-content">
+          <view class="quote-summary">
+            <text user-select="true">{{currentQuote.theme}}</text>
+          </view>
           <view class="quote-text">
-            <text>{{currentQuote.quote}}</text>
+            <text user-select="true">{{currentQuote.quote}}</text>
           </view>
           <view class="quote-source">
-            <text>{{currentQuote.source}}</text>
+            <text user-select="true">{{currentQuote.source}}</text>
           </view>
         </view>
       </view>
@@ -45,19 +48,20 @@
           <text class="back-icon">←</text>
           <text class="back-text">返回</text>
         </button>
-        <text class="detail-title">原文详情</text>
+        <text class="detail-title">详解详情</text>
         <view class="header-placeholder"></view>
       </view>
       
       <view class="detail-content">
         <view class="detail-quote">
-          <text class="detail-quote-text">{{currentQuote.quote}}</text>
-          <text class="detail-quote-source">——《菜根谭》{{currentQuote.source}}</text>
+          <text class="detail-quote-text" user-select="true">{{currentQuote.quote}}</text>
+          <text class="detail-quote-source" user-select="true">——《菜根谭》{{currentQuote.source}}</text>
         </view>
         
         <view class="detail-original">
-          <text class="detail-original-title">原文</text>
-          <text class="detail-original-text">{{currentQuote.fullText}}</text>
+          <text class="detail-original-title">详解</text>
+          <text class="detail-original-text" user-select="true">{{currentQuote.fullText}}</text>
+          <text>\n\n</text>
         </view>
       </view>
     </view>
@@ -76,13 +80,9 @@
         <text class="nav-icon">→</text>
       </button>
     </view>
-  </view>
-
-
-
-  <!-- 底部信息 -->
-  <view class="app-footer" wx:if="{{!isLoading && !showOriginalDetail}}">
-    <text class="footer-hint">点击卡片查看原文</text>
+    <view class="action-hint" wx:if="{{!showOriginalDetail}}">
+      <text>点击卡片查看详解</text>
+    </view>
   </view>
 
   <!-- 加载动画 -->

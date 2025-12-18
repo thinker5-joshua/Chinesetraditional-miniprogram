@@ -4,6 +4,7 @@ const data = require('./data.js');
 Page({
   data: {
     quotes: [],
+    randomSequence: [],
     currentIndex: 0,
     currentQuote: null,
     isOriginalVisible: false,
@@ -35,12 +36,28 @@ Page({
   },
 
   /**
+   * 生成随机序列
+   */
+  shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  },
+
+  /**
    * 初始化应用
    */
   initApp() {
     // 加载名言数据
+    const quotes = data.quotes;
+    // 生成随机序列
+    const randomSequence = this.shuffleArray(Array.from({ length: quotes.length }, (_, i) => i));
     this.setData({
-      quotes: data.quotes
+      quotes: quotes,
+      randomSequence: randomSequence
     });
     
     // 显示随机名言
@@ -56,23 +73,25 @@ Page({
    * 显示随机名言
    */
   showRandomQuote() {
-    const quotes = this.data.quotes;
-    if (!quotes || quotes.length === 0) return;
+    const randomSequence = this.data.randomSequence;
+    if (!randomSequence || randomSequence.length === 0) return;
     
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    this.showQuote(randomIndex);
+    const randomPosition = Math.floor(Math.random() * randomSequence.length);
+    this.showQuote(randomPosition);
   },
 
   /**
-   * 显示指定索引的名言
+   * 显示指定索引的名言（基于随机序列）
    */
-  showQuote(index) {
+  showQuote(sequenceIndex) {
     const quotes = this.data.quotes;
-    if (!quotes || index < 0 || index >= quotes.length) return;
+    const randomSequence = this.data.randomSequence;
+    if (!quotes || !randomSequence || sequenceIndex < 0 || sequenceIndex >= randomSequence.length) return;
     
-    const currentQuote = quotes[index];
+    const quoteIndex = randomSequence[sequenceIndex];
+    const currentQuote = quotes[quoteIndex];
     this.setData({
-      currentIndex: index,
+      currentIndex: sequenceIndex,
       currentQuote: currentQuote,
       isOriginalVisible: false,
       showOriginalDetail: false
@@ -80,27 +99,27 @@ Page({
   },
 
   /**
-   * 显示上一句名言
+   * 显示上一句名言（基于随机序列）
    */
   showPreviousQuote() {
-    const newIndex = this.data.currentIndex - 1;
+    const randomSequence = this.data.randomSequence;
+    let newIndex = this.data.currentIndex - 1;
     if (newIndex < 0) {
-      this.showQuote(this.data.quotes.length - 1);
-    } else {
-      this.showQuote(newIndex);
+      newIndex = randomSequence.length - 1;
     }
+    this.showQuote(newIndex);
   },
 
   /**
-   * 显示下一句名言
+   * 显示下一句名言（基于随机序列）
    */
   showNextQuote() {
-    const newIndex = this.data.currentIndex + 1;
-    if (newIndex >= this.data.quotes.length) {
-      this.showQuote(0);
-    } else {
-      this.showQuote(newIndex);
+    const randomSequence = this.data.randomSequence;
+    let newIndex = this.data.currentIndex + 1;
+    if (newIndex >= randomSequence.length) {
+      newIndex = 0;
     }
+    this.showQuote(newIndex);
   },
 
   /**
@@ -142,7 +161,7 @@ Page({
     const quote = this.data.currentQuote;
     if (!quote) return;
     
-    const copyContent = `${quote.quote}\n\n——《菜根谭》${quote.source}`;
+    const copyContent = `${quote.theme}\n\n${quote.quote}\n\n——《菜根谭》${quote.source}`;
     
     wx.setClipboardData({
       data: copyContent,
@@ -177,7 +196,7 @@ Page({
     }
     
     return {
-      title: `菜根谭智慧：${quote.quote.substring(0, 20)}${quote.quote.length > 20 ? '...' : ''}`,
+      title: `菜根谭智慧：${quote.theme} - ${quote.quote.substring(0, 15)}${quote.quote.length > 15 ? '...' : ''}`,
       path: '/subgames/VegetableRootSayings/index'
     };
   },
@@ -195,7 +214,7 @@ Page({
     }
     
     return {
-      title: `菜根谭智慧：${quote.quote.substring(0, 20)}${quote.quote.length > 20 ? '...' : ''}`,
+      title: `菜根谭智慧：${quote.theme} - ${quote.quote.substring(0, 15)}${quote.quote.length > 15 ? '...' : ''}`,
       query: ''
     };
   }

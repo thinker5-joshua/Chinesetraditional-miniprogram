@@ -10,13 +10,15 @@
   <view class="games-container">
     <view 
       class="game-card"
+      wx:for="{{gameList}}" 
+      wx:key="id"
       bindtap="navigateToGame"
-      data-game="guardian-beast"
+      data-game="{{item.id}}"
     >
-      <view class="game-icon guardian-icon">
-        <text class="icon-text">守</text>
+      <view class="game-icon {{item.cssClass}}">
+        <text class="icon-text">{{item.iconText}}</text>
       </view>
-      <text class="game-title clickable">守护神兽</text>
+      <text class="game-title clickable">{{item.name}}</text>
     </view>
   </view>
 </view>

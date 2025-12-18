@@ -26,54 +26,40 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    // 图片加载完成调试代码
-    console.log('=== 页面渲染完成 ===');
-    if (this.data.beast) {
-      console.log('当前神兽:', this.data.beast.name);
-      console.log('当前神兽图片:', this.data.beast.image);
-    }
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
   },
 
   /**
-   * 用户点击右上角分享
+   * 用户点击右上角分享给朋友
    */
   onShareAppMessage() {
-
+    const { beast } = this.data;
+    return {
+      title: `我抽到了${beast.name} - 守护神兽`,
+      path: `/subgames/guardian-beast/result?beastId=${beast.id}&proverb=${encodeURIComponent(beast.selectedProverb || '')}`
+    };
+  },
+  
+  /**
+   * 用户点击右上角分享到朋友圈
+   */
+  onShareTimeline() {
+    const { beast } = this.data;
+    return {
+      title: `我抽到了${beast.name} - 守护神兽`,
+      query: `beastId=${beast.id}&proverb=${encodeURIComponent(beast.selectedProverb || '')}`
+    };
   },
 
   // 加载神兽数据
@@ -88,32 +74,14 @@ Page({
       
       this.setData({ beast });
       
-      // 图片获取调试代码
-      console.log('=== 图片获取调试 ===');
-      console.log('神兽ID:', beastId);
-      console.log('图片路径:', beast.image);
-      
-      // 测试图片是否能正常获取
-      wx.getImageInfo({
-        src: beast.image,
-        success: (res) => {
-          console.log('图片获取成功:', res.width, 'x', res.height);
-        },
-        fail: (err) => {
-          console.error('图片获取失败:', err);
-        }
-      });
-      
       // 将抽取的神兽保存到本地存储
       try {
         wx.setStorageSync('guardianBeast', beast);
-        console.log('神兽数据保存到本地成功');
       } catch (error) {
         console.error('保存抽取神兽到本地存储失败', error);
       }
     } else {
       // 如果没有找到对应神兽，返回首页
-      console.error('未找到对应神兽:', beastId);
       wx.navigateBack();
     }
   },
@@ -140,10 +108,10 @@ Page({
     });
   },
 
-  // 查看详情
-  viewDetail() {
+  // 返回首页
+  goBack() {
     wx.navigateTo({
-      url: '/subgames/guardian-beast/knowledge/detail?id=' + this.data.beast.id
+      url: '/subgames/guardian-beast/index'
     });
   }
 })

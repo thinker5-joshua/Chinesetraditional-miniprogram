@@ -17,20 +17,23 @@
         mode="aspectFit"
       ></image>
       <view class="image-glow"></view>
+      <!-- 添加rank排名到图片右下角 -->
+      <view class="beast-rank">
+        <text class="rank-text">{{beast.rank}}</text>
+      </view>
     </view>
 
     <!-- 基本信息 -->
     <view class="basic-info-section">
       <view class="info-header">
-        <text class="beast-name">{{beast.name}}</text>
-        <text class="beast-pinyin">{{beast.pinyin}}</text>
-      </view>
-      <view class="beast-position">
-        <text class="position-text">{{beast.rank}}</text>
+        <view class="name-pinyin-container">
+          <text class="beast-name">{{beast.name}}</text>
+          <text class="beast-pinyin">{{beast.pinyin}}</text>
+        </view>
       </view>
       <!-- 新增：神兽名称 -->
       <view class="beast-beastname" wx:if="{{beast.beastName}}">
-        <text class="beastname-text">神兽名称：{{beast.beastName}}</text>
+        <text class="beastname-text">{{beast.beastName}}</text>
       </view>
     </view>
 

@@ -78,6 +78,18 @@ Page({
    * 跳转到抽取页面
    */
   goToDraw() {
+    // 重置抽取状态和记录，先回到没有抽取的状态
+    try {
+      // 清除本地存储的已抽取神兽数据
+      wx.removeStorageSync('guardianBeast');
+      // 重置页面状态
+      this.setData({
+        extractedBeast: null
+      });
+    } catch (error) {
+      console.error('重置抽取状态失败', error);
+    }
+    
     wx.navigateTo({
       url: '/subgames/guardian-beast/draw'
     });
@@ -96,7 +108,7 @@ Page({
   },
 
   /**
-   * 跳转到脊兽详情页
+   * 跳转到详情页
    */
   navigateToDetail(e) {
     const beastId = e.currentTarget.dataset.beastId;
@@ -104,6 +116,8 @@ Page({
       url: `/subgames/guardian-beast/knowledge/detail?id=${beastId}`
     });
   },
+  
+
   
   /**
    * 初始化卡牌动画
@@ -174,5 +188,25 @@ Page({
         });
       }
     });
+  },
+  
+  /**
+   * 用户点击右上角分享给朋友
+   */
+  onShareAppMessage() {
+    return {
+      title: '守护神兽 - 古建脊兽，守护灵契',
+      path: '/subgames/guardian-beast/index'
+    };
+  },
+  
+  /**
+   * 用户点击右上角分享到朋友圈
+   */
+  onShareTimeline() {
+    return {
+      title: '守护神兽 - 古建脊兽，守护灵契',
+      query: ''
+    };
   }
 })

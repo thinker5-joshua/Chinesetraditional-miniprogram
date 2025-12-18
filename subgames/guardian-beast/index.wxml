@@ -28,10 +28,11 @@
           <view class="flame-left"></view>
         </view>
         
-        <!-- 脊兽信息，只显示name和beastName -->
+        <!-- 脊兽信息，显示name、beastName和guardianAbility -->
         <view class="beast-info-large">
           <text class="beast-name-large">{{extractedBeast.name}}</text>
           <text class="beast-beastName-large">{{extractedBeast.beastName || '守护神兽'}}</text>
+          <text class="beast-ability-large">{{extractedBeast.guardianAbility}}</text>
         </view>
       </view>
       
@@ -115,4 +116,6 @@
       </view>
     </view>
   </view>
+  
+
 </view>

@@ -15,7 +15,7 @@
   </scroll-view>
 
   <!-- 图表和知识的统一滚动容器 -->
-  <scroll-view class="scrollable-content" scroll-y="true">
+  <scroll-view class="scrollable-content" scroll-y="true" bindscroll="onScroll">
     <!-- 图表显示容器 -->
     <view class="chart-display-container"
           bindtouchstart="onTouchStart"
@@ -26,7 +26,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuxingCanvas"
+            type="2d"
+            id="wuxingCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五行元素按钮覆盖层 -->
@@ -50,7 +51,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wufangCanvas"
+            type="2d"
+            id="wufangCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五方元素按钮覆盖层 -->
@@ -74,7 +76,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuseCanvas"
+            type="2d"
+            id="wuseCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五色元素按钮覆盖层 -->
@@ -98,7 +101,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuzangCanvas"
+            type="2d"
+            id="wuzangCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五脏元素按钮覆盖层 -->
@@ -122,7 +126,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wufuCanvas"
+            type="2d"
+            id="wufuCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五腑元素按钮覆盖层 -->
@@ -146,7 +151,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuweiCanvas"
+            type="2d"
+            id="wuweiCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五味元素按钮覆盖层 -->
@@ -170,7 +176,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuyinCanvas"
+            type="2d"
+            id="wuyinCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五音元素按钮覆盖层 -->
@@ -194,7 +201,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuguanCanvas"
+            type="2d"
+            id="wuguanCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五官元素按钮覆盖层 -->
@@ -218,7 +226,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuqiCanvas"
+            type="2d"
+            id="wuqiCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五气元素按钮覆盖层 -->
@@ -242,7 +251,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wujiCanvas"
+            type="2d"
+            id="wujiCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五季元素按钮覆盖层 -->
@@ -266,7 +276,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuzhiCanvas"
+            type="2d"
+            id="wuzhiCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五志元素按钮覆盖层 -->
@@ -290,7 +301,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wudeCanvas"
+            type="2d"
+            id="wudeCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五德元素按钮覆盖层 -->
@@ -314,7 +326,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="wuxingStarsCanvas"
+            type="2d"
+            id="wuxingStarsCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 五星元素按钮覆盖层 -->
@@ -338,7 +351,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="tianGanCanvas"
+            type="2d"
+            id="tianGanCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 天干元素按钮覆盖层 -->
@@ -362,7 +376,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="diZhiCanvas"
+            type="2d"
+            id="diZhiCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 地支元素按钮覆盖层 -->
@@ -386,7 +401,8 @@
         <view class="mystical-frame">
           <canvas 
             class="mystical-canvas" 
-            canvas-id="baguaCanvas"
+            type="2d"
+            id="baguaCanvas"
             style="width: 700rpx; height: 700rpx;"
           ></canvas>
           <!-- 八卦元素按钮覆盖层 -->
@@ -405,12 +421,7 @@
         </view>
       </view>
       
-      <!-- 开发中提示 -->
-      <view wx:else class="coming-soon-mystical">
-        <view class="mystical-symbol">📊</view>
-        <text class="coming-soon-text">功能开发中</text>
-        <text class="coming-soon-subtitle">敬请期待</text>
-      </view>
+      <!-- 开发中提示 - 已移除wx:else，所有tab都有对应内容 -->
     </view>
 
     <!-- 知识介绍区域 -->

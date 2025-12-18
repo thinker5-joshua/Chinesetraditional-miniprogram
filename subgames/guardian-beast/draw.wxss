@@ -86,7 +86,7 @@
   color: #64ffda;
   font-weight: bold;
   line-height: 1.8;
-  text-align: center;
+  text-align: left;
   margin-bottom: 30rpx;
   font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
   text-shadow: 0 0 20rpx rgba(100, 255, 218, 0.4);
@@ -95,21 +95,51 @@
 /* 后续引导文案段落 */
 .guidance-paragraph {
   display: block;
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: rgba(255, 255, 255, 0.9);
   line-height: 2;
-  text-align: center;
-  font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+  text-align: left;
+  font-family: 'SimSun', serif;
   letter-spacing: 1rpx;
+  font-style: normal;
 }
 
 /* 圆形神兽卡背面样式 */
 .guardian-card-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 60rpx;
+  margin-bottom: 120rpx; /* 与下方按钮保持适当间距 */
   position: relative;
   z-index: 1;
+  height: 400rpx; /* 调整高度 */
+  margin-top: 40rpx; /* 与引导文案保持适当间距 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 故宫背景图样式 */
+.gugong-background {
+  position: absolute;
+  top: 50%; /* 整体向上移动 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550rpx; /* 背景图尺寸不变 */
+  height: 550rpx; /* 背景图尺寸不变 */
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.gugong-bg-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5; /* 减少淡化效果 */
+  filter: blur(3rpx) brightness(0.9) contrast(1); /* 减少虚化效果 */
+  object-fit: cover;
 }
 
 .guardian-card {
@@ -125,6 +155,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1; /* 确保卡片在背景图上方 */
 }
 
 .guardian-card .card-image {
@@ -172,11 +203,16 @@
 
 /* 倒计时显示 */
 .countdown-container {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20rpx;
-  margin-bottom: 60rpx;
+  z-index: 100;
+  transform: translateY(-50%);
 }
 
 .countdown-number {

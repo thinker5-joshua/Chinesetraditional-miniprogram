@@ -49,7 +49,8 @@ page {
 .games-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50rpx;
+  grid-column-gap: 50rpx;
+  grid-row-gap: 150rpx;
   margin-bottom: 60rpx;
   padding: 0 80rpx;
   flex: 0;

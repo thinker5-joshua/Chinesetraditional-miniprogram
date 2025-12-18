@@ -19,7 +19,7 @@ const beastsData = {
         "负天载命：可替你承受一次因果反噬，随后沉睡三十三日"
       ],
       "contractMark": "锁骨处浮现一枚凤尾云纹，温度随危险逼近升高",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-xianren.png"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-xianren.jpg"
     },
     {
       "id": "dragon",
@@ -32,14 +32,14 @@ const beastsData = {
       "personality": "'静则镇宅千年，动则吞灾平祸'——平日如雕塑般沉静",
       "ownerTrait": "外冷内热，压抑着某种激烈情感者",
       "description": "龙为百鳞之长，象征着皇权和尊贵。在脊兽中位列第一，代表着至高无上的权威和力量。龙头鱼身，鳞片似琉璃瓦，张口可吞烈焰。",
-      "guardianAbility": "领导力提升，事业顺遂",
+      "guardianAbility": "镇火安宅，驱邪护家",
       "shape": "龙头鱼身，鳞片似琉璃瓦，张口可吞烈焰",
       "abilities": [
         "纳火为珠：将愤怒、嫉妒等情绪之火吞下，吐出冷静琉璃珠",
         "屋脊结界：在落脚处张开'绝对庇护领域'（大小随修行增长）"
       ],
       "contractMark": "右手掌心出现一道闭合的龙口纹，情绪激动时会微微张开",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-dragon.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-dragon.jpg"
     },
     {
       "id": "phoenix",
@@ -59,7 +59,7 @@ const beastsData = {
         "风羽传影：拔下一羽可化作持续一炷香的分身哨兵"
       ],
       "contractMark": "后颈发际线处生有三枚金色羽状痣，呈三角排列",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-phoenix.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-phoenix.jpg"
     },
     {
       "id": "lion",
@@ -79,7 +79,7 @@ const beastsData = {
         "坐镇法相：召唤巨狮虚影镇压一地气运（一日一次）"
       ],
       "contractMark": "胸口正中有一圈旋涡状狮鬃纹，心跳加速时会缓缓旋转",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-lion.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-lion.jpg"
     },
     {
       "id": "tianma",
@@ -99,7 +99,7 @@ const beastsData = {
         "祥云载命：每片云可替你抵挡一次致命伤害（云色随机补充）"
       ],
       "contractMark": "脚踝处环绕一道云纹蹄印，每日步数越多，印记越亮",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-tianma.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-tianma.jpg"
     },
     {
       "id": "haima",
@@ -119,7 +119,7 @@ const beastsData = {
         "四海通达：增强旅行运势，避免旅途危险"
       ],
       "contractMark": "手腕处浮现蓝色海浪纹，遇水时会发出微光",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-haima.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-haima.jpg"
     },
     {
       "id": "suanmi",
@@ -129,8 +129,8 @@ const beastsData = {
       "beastName": "烟岚尊",
       "origin": "龙生九子之一，形似狮子却喜静好坐，尤其喜欢烟火",
       "meaning": "常出现在香炉上，置于屋顶则护佑平安",
-      "personality": "'安然自若，内心强大'——沉稳内敛，内心强大",
-      "ownerTrait": "外冷内热，压抑着某种激烈情感者",
+      "personality": "安然自若，内心强大——沉稳内敛，内心强大",
+      "ownerTrait": "沉稳内敛，内心深处藏着热情的人",
       "description": "狻猊是龙的九子之一，喜欢烟火，象征着安然自若。在脊兽中位列第六，代表着内心的强大。形似狮子，好坐，象征威严。",
       "guardianAbility": "内心强大，安然自若",
       "shape": "形似狮子，好坐，鬃毛如火焰，常闭目养神",
@@ -139,7 +139,7 @@ const beastsData = {
         "静气凝神：使周围环境变得宁静，安抚情绪"
       ],
       "contractMark": "眉心处浮现金色火焰纹，情绪激动时会发光",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-suanmi.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-suanmi.jpg"
     },
     {
       "id": "xiayu",
@@ -159,7 +159,7 @@ const beastsData = {
         "水火双相：可根据环境在'水形态'（治疗）与'火形态'（净化）间切换"
       ],
       "contractMark": "耳后生出两片半透明的鱼鳞，左蓝右红",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-xiayu.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-xiayu.jpg"
     },
     {
       "id": "xiezhi",
@@ -179,7 +179,7 @@ const beastsData = {
         "判言领域：在领域内所有生灵无法说谎（消耗极大）"
       ],
       "contractMark": "眉心上方出现一道竖直的金色细痕，遇不公会发热",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-xiezhi.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-xiezhi.jpg"
     },
     {
       "id": "douniu",
@@ -199,7 +199,7 @@ const beastsData = {
         "负岳：短暂获得山岳般不可动摇的防御与意志"
       ],
       "contractMark": "双手手背各有一枚牛角状水纹，在情绪波动时会荡漾",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-douniu.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-douniu.jpg"
     },
     {
       "id": "hangshi",
@@ -219,7 +219,7 @@ const beastsData = {
         "破障金声：发出雷音，能破除幻术、封印、心魔等无形障碍"
       ],
       "contractMark": "脊椎末端尾骨处有一点雷电形胎记，积蓄力量时会沿脊柱发热",
-      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-hangshi.PNG"
+      "image": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-hangshi.jpg"
     }
   ]
 };

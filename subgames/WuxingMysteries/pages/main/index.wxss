@@ -12,7 +12,6 @@
 .scrollable-content {
   flex: 1;
   position: relative;
-  z-index: 1;
   height: calc(100vh - 120rpx); /* 减去tab栏高度 */
 }
 
@@ -106,7 +105,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 1;
 }
 
 /* 元素按钮覆盖层 */
@@ -117,7 +115,7 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 3;
+  z-index: 2;
 }
 
 .element-button {
@@ -140,8 +138,10 @@
 .mystical-canvas {
   width: 700rpx;
   height: 700rpx;
-  z-index: 2;
   display: block;
+  position: relative;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* 开发中提示 */
@@ -247,6 +247,19 @@
 
 .knowledge-paragraph:last-child {
   margin-bottom: 0;
+}
+
+/* 图表显示控制 */
+.hidden-chart {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hidden-overlay {
+  pointer-events: none;
+  opacity: 0;
 }
 
 /* 知识介绍专用容器 - 自动高度 */

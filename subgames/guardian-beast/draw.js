@@ -74,10 +74,23 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
+   * 用户点击右上角分享给朋友
    */
   onShareAppMessage() {
-
+    return {
+      title: '守护神兽抽取仪式',
+      path: '/subgames/guardian-beast/draw'
+    };
+  },
+  
+  /**
+   * 用户点击右上角分享到朋友圈
+   */
+  onShareTimeline() {
+    return {
+      title: '守护神兽抽取仪式',
+      query: ''
+    };
   },
 
   // 开始抽取

@@ -96,21 +96,21 @@ page::before {
   background-color: #8b4513;
   color: #fff;
   border: 2px solid #b8a57e;
-  padding: 18px 12px;
-  font-size: 16px;
-  border-radius: 6px;
+  padding: 18px 20px;
+  font-size: 22px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: "SimSun", "STSong", serif;
-  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+  box-shadow: 0 3px 12px rgba(139, 69, 19, 0.3);
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   width: auto;
   flex-shrink: 0;
   white-space: nowrap;
   order: 2;
-  min-width: 70px;
-  max-width: 90px;
+  min-width: 100px;
+  max-width: 120px;
 }
 
 /* 游戏容器 */

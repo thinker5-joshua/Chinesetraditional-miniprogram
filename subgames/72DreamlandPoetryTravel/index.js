@@ -176,17 +176,11 @@ Page({
    * 初始化仙界地图
    */
   initializeImmortalMap() {
-    console.log('开始初始化仙界地图...');
-    
     // 创建星空效果
     this.createStars();
     
-    // 打印游戏数据信息
-    console.log('游戏数据中有洞天数量:', this.data.gameData.caves ? this.data.gameData.caves.length : 0);
-    
     // 检查数据有效性
     if (!this.data.gameData.caves || this.data.gameData.caves.length === 0) {
-      console.error('游戏数据为空，无法初始化地图');
       wx.showToast({
         title: '数据加载失败',
         icon: 'none'
@@ -195,9 +189,7 @@ Page({
     }
     
     // 立即显示洞天体，与地图同步显示
-    console.log('开始显示随机洞天...');
     const displayedCaves = this.displayRandomCaves();
-    console.log('洞天体数据准备完成:', displayedCaves);
     
     // 更新页面数据
     this.setData({
@@ -205,10 +197,6 @@ Page({
       currentDisplayedCaves: displayedCaves,
       currentView: 'compass'
     }, () => {
-      console.log('页面数据更新完成，洞天体数量:', displayedCaves.length);
-      console.log('当前视图状态:', this.data.currentView);
-      console.log('实际页面数据中的洞天数量:', this.data.displayedCaves.length);
-      
       // 强制触发页面重绘
       setTimeout(() => {
         this.setData({
@@ -217,12 +205,8 @@ Page({
       }, 100);
     });
     
-    console.log('洞天体显示完成，共显示:', displayedCaves.length);
-    
     // 设置定时器，每2秒轮换显示新的洞天体
-    console.log('启动洞天轮换定时器...');
     this.startCaveRotation();
-    console.log('仙界地图初始化完成');
   },
 
   /**
@@ -356,8 +340,6 @@ Page({
    * 仙界任意门点击
    */
   startMapClick() {
-    console.log('点击仙界任意门');
-    
     // 暂停定时器
     if (this.caveRotationTimer) {
       clearInterval(this.caveRotationTimer);
@@ -386,7 +368,7 @@ Page({
       // 振动反馈
       wx.vibrateShort({ type: 'light' });
     } catch (error) {
-      console.log('音效播放失败:', error);
+      // 静默处理音效播放失败
     }
   },
 

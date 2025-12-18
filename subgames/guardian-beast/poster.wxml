@@ -1,15 +1,9 @@
 <!-- 海报生成页 -->
 <view class="poster-container">
-  <!-- 页面标题 -->
-  <view class="page-title">
-    <text class="title-text">生成分享海报</text>
-  </view>
-
   <!-- 海报生成区域 -->
   <view class="poster-generation-section">
     <!-- 海报预览 -->
-    <view class="poster-preview-container">
-      <!-- 隐藏的Canvas用于绘制海报 -->
+    <!-- Canvas用于绘制海报，完全隐藏 -->
     <canvas 
       type="2d"
       id="posterCanvas" 
@@ -17,34 +11,42 @@
       style="width: 600rpx; height: 900rpx;"
     ></canvas>
 
-      <!-- 海报预览图 -->
+    <!-- 生成中提示 -->
+    <view class="generating-hint" wx:if="{{isGenerating}}">
+      <text class="hint-text">海报生成中...</text>
+      <view class="loading-spinner"></view>
+    </view>
+    
+    <!-- 完整显示生成的海报图片 -->
+    <view class="poster-full-container" wx:if="{{posterImage}}">
       <image 
-        class="poster-preview" 
+        class="poster-full-image" 
         src="{{posterImage}}" 
-        mode="aspectFit"
-        wx:if="{{posterImage}}"
+        mode="widthFix"
       ></image>
-
-      <!-- 生成中提示 -->
-      <view class="generating-hint" wx:if="{{isGenerating}}">
-        <text class="hint-text">海报生成中...</text>
-        <view class="loading-spinner"></view>
-      </view>
     </view>
 
     <!-- 操作按钮 -->
     <view class="action-buttons" wx:if="{{posterImage}}">
+      <view class="main-buttons">
+        <button 
+          class="action-button primary" 
+          bindtap="saveToAlbum"
+        >
+          保存到相册
+        </button>
+        <button 
+          class="action-button secondary" 
+          bindtap="sharePoster"
+        >
+          分享海报
+        </button>
+      </view>
       <button 
-        class="action-button primary" 
-        bindtap="saveToAlbum"
+        class="action-button back-button" 
+        bindtap="goBack"
       >
-        保存到相册
-      </button>
-      <button 
-        class="action-button secondary" 
-        bindtap="sharePoster"
-      >
-        分享海报
+        返回首页
       </button>
     </view>
   </view>

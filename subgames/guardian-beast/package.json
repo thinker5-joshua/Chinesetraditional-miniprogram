@@ -1,0 +1,16 @@
+{
+  "name": "guardian-beast-image-compressor",
+  "version": "1.0.0",
+  "description": "压缩守护神兽游戏的图片资源",
+  "main": "compress-images.js",
+  "scripts": {
+    "compress": "node compress-images.js"
+  },
+  "dependencies": {
+    "request": "^2.88.2",
+    "sharp": "^0.33.2"
+  },
+  "keywords": ["image", "compression", "wechat", "miniprogram"],
+  "author": "",
+  "license": "MIT"
+}

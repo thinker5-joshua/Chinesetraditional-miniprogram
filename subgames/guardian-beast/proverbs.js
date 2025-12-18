@@ -193,7 +193,7 @@ const proverbsData = {
       "beastId": "haima"
     },
     
-    // 狻猊 - 静焰狮尊
+    // 狻猊 - 烟岚尊
     {
       "id": 31,
       "content": "安然自若，内心强大",

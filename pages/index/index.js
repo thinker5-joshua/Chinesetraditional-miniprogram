@@ -21,18 +21,6 @@ Page({
         cssClass: 'star-icon'
       },
       {
-        id: '72DreamlandPoetryTravel',
-        title: '洞天诗意游',
-        iconText: '诗',
-        cssClass: 'poetry-icon'
-      },
-      {
-        id: 'WuxingMysteries',
-        title: '五行奥秘',
-        iconText: '五',
-        cssClass: 'wuxing-icon'
-      },
-      {
         id: 'VegetableRootSayings',
         title: '菜根谭摘录',
         iconText: '根',

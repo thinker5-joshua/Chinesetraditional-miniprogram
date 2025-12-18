@@ -8,9 +8,20 @@ Page({
       {
         id: 'guardian-beast',
         name: '守护神兽',
-        description: '抽取你的专属守护神兽，生成精美海报分享',
-        icon: 'cloud://env-id/tradEngage/guardian-beast-icon.png',
-        path: '/subgames/guardian-beast/index'
+        iconText: '守',
+        cssClass: 'guardian-icon'
+      },
+      {
+        id: 'WuxingMysteries',
+        name: '五行奥秘',
+        iconText: '五',
+        cssClass: 'wuxing-icon'
+      },
+      {
+        id: '72DreamlandPoetryTravel',
+        name: '洞天诗意游',
+        iconText: '诗',
+        cssClass: 'poetry-icon'
       }
     ]
   },
@@ -77,15 +88,8 @@ Page({
   // 跳转到游戏页面
   navigateToGame(e) {
     const gameId = e.currentTarget.dataset.game;
-    // 根据游戏ID跳转到对应的游戏页面
-    switch (gameId) {
-      case 'guardian-beast':
-        wx.navigateTo({
-          url: '/subgames/guardian-beast/index'
-        });
-        break;
-      default:
-        console.error('未知游戏ID:', gameId);
-    }
+    wx.navigateTo({
+      url: `/subgames/${gameId}/index`
+    });
   }
 })

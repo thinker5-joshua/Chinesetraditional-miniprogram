@@ -15,11 +15,21 @@
     <!-- 引导文案 -->
     <view class="guidance-text">
       <text class="guidance-line first-line">请闭眼凝神3秒，默念心中至诚之问——</text>
-      <text class="guidance-paragraph">古建脊兽，位列庑殿顶巅，本是镇守乾坤的礼制符号。今依《营造法式》残卷中的通灵篇，将其本源之力化形为守护神兽。请静观殿顶——从仙人指路，到行什收尾，各尊脊兽已候千年，待你唤醒其一。</text>
+      <text class="guidance-paragraph">古建脊兽，位列庑殿顶巅，镇守乾坤。今依营造通灵篇，将其本源之力化形为守护神兽。请静观殿顶，各尊脊兽已候千年，待你唤醒其一。</text>
     </view>
 
-    <!-- 圆形神兽卡背面图 -->
+    <!-- 故宫背景图和神兽卡容器 -->
     <view class="guardian-card-container">
+      <!-- 故宫背景图 -->
+      <view class="gugong-background">
+        <image 
+          class="gugong-bg-image" 
+          src="cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-gugong.jpg" 
+          mode="aspectFill"
+        ></image>
+      </view>
+      
+      <!-- 圆形神兽卡背面图 -->
       <view class="guardian-card back" animation="{{cardAnimation}}">
         <image 
           class="card-image" 

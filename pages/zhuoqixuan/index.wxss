@@ -50,7 +50,8 @@ page {
 .games-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50rpx;
+  grid-column-gap: 50rpx;
+  grid-row-gap: 200rpx;
   margin-bottom: 60rpx;
   padding: 0 80rpx;
   flex: 0;
@@ -133,6 +134,18 @@ page {
 .guardian-icon {
   background: linear-gradient(135deg, #FF8C00 0%, #FF4500 100%);
   box-shadow: 0 6rpx 20rpx rgba(255, 140, 0, 0.25);
+}
+
+/* 五行奥秘图标颜色 */
+.wuxing-icon {
+  background: linear-gradient(135deg, #FFD700 0%, #8B4513 100%);
+  box-shadow: 0 6rpx 20rpx rgba(255, 215, 0, 0.25);
+}
+
+/* 洞天诗意游图标颜色 */
+.poetry-icon {
+  background: linear-gradient(135deg, #6C5CE7 0%, #A55EEA 100%);
+  box-shadow: 0 6rpx 20rpx rgba(108, 92, 231, 0.25);
 }
 
 /* 游戏标题 */

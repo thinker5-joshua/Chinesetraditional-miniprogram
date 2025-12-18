@@ -141,27 +141,7 @@ Page({
     startX: 0,
     startY: 0,
     moveX: 0,
-    moveY: 0,
-    
-    // Canvas绘制状态标记，避免重复绘制
-    isCanvasDrawn: {
-      wuxing: false,
-      wufang: false,
-      wuse: false,
-      wuzang: false,
-      wufu: false,
-      wuwei: false,
-      wuyin: false,
-      wuguan: false,
-      wuqi: false,
-      wuji: false,
-      wuzhi: false,
-      wude: false,
-      wuxingStars: false,
-      tianGan: false,
-      diZhi: false,
-      bagua: false
-    }
+    moveY: 0
   },
 
   onLoad() {
@@ -170,20 +150,16 @@ Page({
 
   onShow() {
     // 页面显示时重新绘制图表，确保从详情页面返回后图表正常显示
-    if (!this.data.isCanvasDrawn[this.data.currentTab]) {
-      setTimeout(() => {
-        this.drawCurrentTabCanvas();
-      }, 100);
-    }
+    setTimeout(() => {
+      this.drawCurrentTabCanvas();
+    }, 100);
   },
 
   onReady() {
     // 确保页面和数据都已准备好再绘制
-    if (!this.data.isCanvasDrawn[this.data.currentTab]) {
-      setTimeout(() => {
-        this.drawCurrentTabCanvas();
-      }, 300);
-    }
+    setTimeout(() => {
+      this.drawCurrentTabCanvas();
+    }, 300);
   },
 
   /**
@@ -193,29 +169,8 @@ Page({
     try {
       const wuxingData = require('../../data.js');
       
-      // 重置canvas绘制状态，确保数据更新后能重新绘制
-      const resetCanvasState = {
-        wuxing: false,
-        wufang: false,
-        wuse: false,
-        wuzang: false,
-        wufu: false,
-        wuwei: false,
-        wuyin: false,
-        wuguan: false,
-        wuqi: false,
-        wuji: false,
-        wuzhi: false,
-        wude: false,
-        wuxingStars: false,
-        tianGan: false,
-        diZhi: false,
-        bagua: false
-      };
-      
       this.setData({
-        wuxingData: wuxingData,
-        isCanvasDrawn: resetCanvasState
+        wuxingData: wuxingData
       }, () => {
         // 数据加载完成后绘制图表
         this.drawCurrentTabCanvas();
@@ -227,6 +182,13 @@ Page({
         duration: 2000
       });
     }
+    
+    // 小程序Canvas 2D API使用离屏渲染，添加额外的绘制确认
+    // 确保绘制结果正确显示，避免离屏缓存问题
+    setTimeout(() => {
+      // 延迟触发一次重绘，确保内容正确显示
+      this.drawCurrentTabCanvas();
+    }, 50);
   },
 
   /**
@@ -246,66 +208,40 @@ Page({
       return;
     }
 
-    // 先清除所有Canvas，防止切换标签时图表叠加
-    this.clearAllCanvas();
-
     const currentTab = this.data.currentTab;
     
-    switch(currentTab) {
-      case 'wuxing':
-        this.drawWuxingCanvas();
-        break;
-      case 'wufang':
-        this.drawWufangCanvas();
-        break;
-      case 'wuse':
-        this.drawWuseCanvas();
-        break;
-      case 'wuzang':
-        this.drawWuzangCanvas();
-        break;
-      case 'wufu':
-        this.drawWufuCanvas();
-        break;
-      case 'wuwei':
-        this.drawWuweiCanvas();
-        break;
-      case 'wuyin':
-        this.drawWuyinCanvas();
-        break;
-      case 'wuguan':
-        this.drawWuguanCanvas();
-        break;
-      case 'wuqi':
-        this.drawWuqiCanvas();
-        break;
-      case 'wuji':
-        this.drawWujiCanvas();
-        break;
-      case 'wuzhi':
-        this.drawWuzhiCanvas();
-        break;
-      case 'wude':
-        this.drawWudeCanvas();
-        break;
-      case 'wuxingStars':
-        this.drawWuxingStarsCanvas();
-        break;
-      case 'tianGan':
-        this.drawTianGanCanvas();
-        break;
-      case 'diZhi':
-        this.drawDiZhiCanvas();
-        break;
-      case 'bagua':
-        this.drawBaguaCanvas();
-        break;
-    }
+    // 根据当前标签调用对应的绘制方法
+    const drawMethod = {
+      'wuxing': this.drawWuxingCanvas,
+      'wufang': this.drawWufangCanvas,
+      'wuse': this.drawWuseCanvas,
+      'wuzang': this.drawWuzangCanvas,
+      'wufu': this.drawWufuCanvas,
+      'wuwei': this.drawWuweiCanvas,
+      'wuyin': this.drawWuyinCanvas,
+      'wuguan': this.drawWuguanCanvas,
+      'wuqi': this.drawWuqiCanvas,
+      'wuji': this.drawWujiCanvas,
+      'wuzhi': this.drawWuzhiCanvas,
+      'wude': this.drawWudeCanvas,
+      'wuxingStars': this.drawWuxingStarsCanvas,
+      'tianGan': this.drawTianGanCanvas,
+      'diZhi': this.drawDiZhiCanvas,
+      'bagua': this.drawBaguaCanvas
+    };
     
-    // 绘制完成后更新状态，标记为已绘制
-    this.setData({
-      [`isCanvasDrawn.${currentTab}`]: true
-    });
+    // 获取对应的绘制方法
+    const drawFunc = drawMethod[currentTab];
+    if (drawFunc) {
+      // 立即执行绘制
+      drawFunc.call(this);
+      
+      // 添加一次延迟重绘，确保绘制成功
+      // 针对tab切换时DOM可能未完全更新的情况
+      setTimeout(() => {
+        drawFunc.call(this);
+      }, 150);
+    }
   },
 
   /**
@@ -316,11 +252,20 @@ Page({
     
     canvasIds.forEach(canvasId => {
       try {
-        const ctx = wx.createCanvasContext(canvasId);
-        ctx.clearRect(0, 0, 350, 350); // 清除整个画布区域
-        ctx.draw(true); // 使用true参数立即绘制，确保清除操作生效
+        // 使用Canvas 2D API获取上下文，并指定当前页面
+        wx.createSelectorQuery().in(this)
+          .select(`#${canvasId}`)
+          .fields({ node: true, size: true })
+          .exec(res => {
+            if (res[0] && res[0].node) {
+              const canvas = res[0].node;
+              const ctx = canvas.getContext('2d');
+              const { width, height } = res[0];
+              ctx.clearRect(0, 0, width, height); // 清除整个画布区域
+            }
+          });
       } catch (error) {
-
+        console.error('清除画布失败', error);
       }
     });
   },
@@ -351,41 +296,21 @@ Page({
     };
 
     // 重置所有canvas绘制状态
-    const resetCanvasState = {
-      wuxing: false,
-      wufang: false,
-      wuse: false,
-      wuzang: false,
-      wufu: false,
-      wuwei: false,
-      wuyin: false,
-      wuguan: false,
-      wuqi: false,
-      wuji: false,
-      wuzhi: false,
-      wude: false,
-      wuxingStars: false,
-      tianGan: false,
-      diZhi: false,
-      bagua: false
-    };
-
     this.setData({
-      currentTab: tabId,
-      currentSubtitle: subtitleMap[tabId] || '探索中国传统哲学的宇宙观',
-      selectedElement: null,
-      selectedDirection: null,
-      selectedColor: null,
-      selectedOrgan: null,
-      isCanvasDrawn: resetCanvasState
-    }, () => {
-      // Tab切换后绘制对应图表，增加延迟确保DOM更新完成
-      setTimeout(() => {
-        this.drawCurrentTabCanvas();
-        // 滚动当前激活的tab到可视区域
-        this.scrollToActiveTab();
-      }, 200);
-    });
+        currentTab: tabId,
+        currentSubtitle: subtitleMap[tabId] || '探索中国传统哲学的宇宙观',
+        selectedElement: null,
+        selectedDirection: null,
+        selectedColor: null,
+        selectedOrgan: null
+      }, () => {
+        // Tab切换后绘制对应图表，增加延迟确保DOM更新完成
+        setTimeout(() => {
+          this.drawCurrentTabCanvas();
+          // 滚动当前激活的tab到可视区域
+          this.scrollToActiveTab();
+        }, 300);
+      });
   },
 
   // 元素按钮点击事件
@@ -436,27 +361,52 @@ Page({
    */
   drawWuxingCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuxingCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
-      if (!res || res.length < 2) {
-        return;
+      try {
+        if (!res || res.length < 2) {
+          console.warn('绘制五行图表失败：查询结果无效');
+          return;
+        }
+        
+        const canvasInfo = res[0];
+        const frameRect = res[1];
+        
+        if (!canvasInfo || !canvasInfo.node || !frameRect) {
+          console.warn('绘制五行图表失败：Canvas或Frame元素无效');
+          return;
+        }
+        
+        const canvas = canvasInfo.node;
+        const ctx = canvas.getContext('2d');
+        
+        if (!ctx) {
+          console.warn('绘制五行图表失败：无法获取Canvas上下文');
+          return;
+        }
+        
+        // 获取设备像素比，用于高清显示
+        const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+        
+        // 使用实际的canvas尺寸，确保内容不会超出边框
+        const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+        const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+        
+        // 设置Canvas的实际宽高（考虑dpr）
+        canvas.width = width * pixelRatio;
+        canvas.height = height * pixelRatio;
+        
+        // 缩放上下文以适应dpr
+        ctx.scale(pixelRatio, pixelRatio);
+        
+        // 先清空画布
+        ctx.clearRect(0, 0, width, height);
+        
+        this.drawWuxingChart(ctx, width, height, frameRect);
+      } catch (error) {
+        console.error('绘制五行图表失败：', error);
       }
-      
-      const canvasRect = res[0];
-      const frameRect = res[1];
-      
-      if (!canvasRect || !frameRect) {
-        return;
-      }
-      
-      // 700rpx = 350px (在大部分设备上，750rpx = 375px屏幕宽度)
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      
-      const ctx = wx.createCanvasContext('wuxingCanvas');
-      this.drawWuxingChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -465,23 +415,52 @@ Page({
    */
   drawWufangCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wufangCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
-      if (!res || res.length < 2) {
-        return;
+      try {
+        if (!res || res.length < 2) {
+          console.warn('绘制五方图表失败：查询结果无效');
+          return;
+        }
+        
+        const canvasInfo = res[0];
+        const frameRect = res[1];
+        
+        if (!canvasInfo || !canvasInfo.node || !frameRect) {
+          console.warn('绘制五方图表失败：Canvas或Frame元素无效');
+          return;
+        }
+        
+        const canvas = canvasInfo.node;
+        const ctx = canvas.getContext('2d');
+        
+        if (!ctx) {
+          console.warn('绘制五方图表失败：无法获取Canvas上下文');
+          return;
+        }
+        
+        // 获取设备像素比，用于高清显示
+        const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+        
+        // 使用实际的canvas尺寸，确保内容不会超出边框
+        const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+        const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+        
+        // 设置Canvas的实际宽高（考虑dpr）
+        canvas.width = width * pixelRatio;
+        canvas.height = height * pixelRatio;
+        
+        // 缩放上下文以适应dpr
+        ctx.scale(pixelRatio, pixelRatio);
+        
+        // 先清空画布
+        ctx.clearRect(0, 0, width, height);
+        
+        this.drawWufangChart(ctx, width, height, frameRect);
+      } catch (error) {
+        console.error('绘制五方图表失败：', error);
       }
-      
-      const frameRect = res[1];
-      if (!frameRect) {
-        return;
-      }
-      
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wufangCanvas');
-      this.drawWufangChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -490,23 +469,37 @@ Page({
    */
   drawWuseCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuseCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wuseCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWuseChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -515,23 +508,37 @@ Page({
    */
   drawWuzangCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuzangCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wuzangCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWuzangChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -582,8 +589,8 @@ Page({
     const colors = ['#4CAF50', '#F44336', '#FF9800', '#FFD700', '#2196F3'];
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -611,7 +618,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -623,21 +630,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -654,10 +661,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -667,7 +674,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -679,15 +686,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -698,27 +705,25 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle);
       
       // 圆形背景 - 统一尺寸为35px
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 元素名称
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(24);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '24px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(element, x, y);
     });
-    
-
     
     // 计算Canvas在frame中的偏移量
     const canvasOffsetX = (frameRect.width - width) / 2;
@@ -761,8 +766,8 @@ Page({
     // 绘制连接线
     positions.forEach((pos, index) => {
       if (index !== 2) { // 中心位置不绘制连接线
-        ctx.setStrokeStyle('#e0e0e0');
-        ctx.setLineWidth(3);
+        ctx.strokeStyle = '#e0e0e0';
+        ctx.lineWidth = 3;
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(pos.x, pos.y);
@@ -773,35 +778,35 @@ Page({
     // 绘制五方位
     positions.forEach((pos) => {
       // 圆形背景
-      ctx.setFillStyle(pos.color);
+      ctx.fillStyle = pos.color;
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, 40, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, 40, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 方位名称 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(28);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '28px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(pos.name, pos.x, pos.y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(pos.x - 18, pos.y);
       ctx.lineTo(pos.x + 18, pos.y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(pos.element, pos.x, pos.y + 15);
     });
     
@@ -835,11 +840,9 @@ Page({
     // 清空画布
     ctx.clearRect(0, 0, width, height);
     
-
-    
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -865,7 +868,7 @@ Page({
       const arrowY = startY + (endY - startY) * 2/3;
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(arrowX, arrowY);
       ctx.lineTo(arrowX - arrowSize * Math.cos(arrowAngle - Math.PI / 6), 
@@ -878,21 +881,21 @@ Page({
       // 绘制"生"字标注 - 白色到黑色间用深色背景
       const isWhiteToBlack = (colors[i] === '#FFFFFF' && colors[(i + 1) % 5] === '#212121') ||
                          (colors[i] === '#212121' && colors[(i + 1) % 5] === '#FFFFFF');
-      ctx.setFillStyle(isWhiteToBlack ? '#666666' : colors[i]);
+      ctx.fillStyle = isWhiteToBlack ? '#666666' : colors[i];
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -909,10 +912,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -920,7 +923,7 @@ Page({
       const arrowY = startY + (endY - startY) * 2/3;
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(arrowX, arrowY);
       ctx.lineTo(arrowX - arrowSize * Math.cos(arrowAngle - Math.PI / 6), 
@@ -931,15 +934,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -950,35 +953,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 边框（深色边框）
-      ctx.setStrokeStyle(colors[index] === '#FFEB3B' ? '#F57F17' : '#333');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = colors[index] === '#FFEB3B' ? '#F57F17' : '#333';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 颜色名称 - 五行属性格式
-      ctx.setFillStyle(colors[index] === '#FFEB3B' || colors[index] === '#FFFFFF' ? '#333' : '#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = colors[index] === '#FFEB3B' || colors[index] === '#FFFFFF' ? '#333' : '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(name, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle(colors[index] === '#FFEB3B' || colors[index] === '#FFFFFF' ? '#333' : '#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = colors[index] === '#FFEB3B' || colors[index] === '#FFFFFF' ? '#333' : '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
@@ -1025,11 +1028,9 @@ Page({
     // 清空画布
     ctx.clearRect(0, 0, width, height);
     
-
-    
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -1055,7 +1056,7 @@ Page({
       const arrowY = startY + (endY - startY) * 2/3;
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(arrowX, arrowY);
       ctx.lineTo(arrowX - arrowSize * Math.cos(arrowAngle - Math.PI / 6), 
@@ -1066,21 +1067,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注
-      ctx.setFillStyle(organs[i].color);
+      ctx.fillStyle = organs[i].color;
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -1097,10 +1098,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -1108,7 +1109,7 @@ Page({
       const arrowY = startY + (endY - startY) * 2/3;
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(arrowX, arrowY);
       ctx.lineTo(arrowX - arrowSize * Math.cos(arrowAngle - Math.PI / 6), 
@@ -1119,15 +1120,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -1138,35 +1139,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(organ.color);
+      ctx.fillStyle = organ.color;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 脏腑名称 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(organ.name, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(organ.element, x, y + 15);
     });
     
@@ -1299,6 +1300,23 @@ Page({
       }, 100);
     }
   },
+  
+  /**
+   * 滚动事件处理函数
+   * 监听scroll-view的滚动，触发图表重绘
+   */
+  onScroll() {
+    // 防抖处理，避免频繁重绘导致性能问题
+    if (this.scrollTimer) {
+      clearTimeout(this.scrollTimer);
+    }
+    
+    // 100ms防抖，平衡性能和绘制及时性
+    this.scrollTimer = setTimeout(() => {
+      // 触发当前标签的图表重绘
+      this.drawCurrentTabCanvas();
+    }, 100);
+  },
 
   /**
    * 滚动当前激活的tab到可视区域
@@ -1353,23 +1371,37 @@ Page({
    */
   drawWufuCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wufuCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wufuCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWufuChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -1393,8 +1425,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -1420,7 +1452,7 @@ Page({
       const arrowY = startY + (endY - startY) * 2/3;
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(arrowX, arrowY);
       ctx.lineTo(arrowX - arrowSize * Math.cos(arrowAngle - Math.PI / 6), 
@@ -1431,21 +1463,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注
-      ctx.setFillStyle(organs[i].color);
+      ctx.fillStyle = organs[i].color;
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -1462,10 +1494,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -1473,7 +1505,7 @@ Page({
       const arrowY = startY + (endY - startY) * 2/3;
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(arrowX, arrowY);
       ctx.lineTo(arrowX - arrowSize * Math.cos(arrowAngle - Math.PI / 6), 
@@ -1484,15 +1516,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -1503,35 +1535,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(organ.color);
+      ctx.fillStyle = organ.color;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 腑名称 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(organ.name, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(organ.element, x, y + 15);
     });
     
@@ -1562,23 +1594,37 @@ Page({
    */
   drawTianGanCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#tianGanCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('tianGanCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawTianGanChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -1613,43 +1659,43 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(tianGan.color);
+      ctx.fillStyle = tianGan.color;
       ctx.beginPath();
       ctx.arc(x, y, 30, 0, 2 * Math.PI);
       ctx.fill();
       
       // 边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 30, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 天干名称
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(22);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '22px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(tianGan.name, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 18, y);
       ctx.lineTo(x + 18, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(14);
+      ctx.font = '14px sans-serif';
       ctx.fillText(tianGan.element, x, y + 15);
     });
     
     // 绘制中心"天干"文字
-    ctx.setFillStyle('#333');
-    ctx.setFontSize(32);
-    ctx.setTextAlign('center');
-    ctx.setTextBaseline('middle');
+    ctx.fillStyle = '#333';
+    ctx.font = '32px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText('天干', centerX, centerY);
     
     // 计算Canvas在frame中的偏移量
@@ -1679,23 +1725,37 @@ Page({
    */
   drawDiZhiCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#diZhiCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('diZhiCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawDiZhiChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -1732,43 +1792,43 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(diZhi.color);
+      ctx.fillStyle = diZhi.color;
       ctx.beginPath();
       ctx.arc(x, y, 28, 0, 2 * Math.PI);
       ctx.fill();
       
       // 边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 28, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 地支名称
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(20);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '20px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(diZhi.name, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 16, y);
       ctx.lineTo(x + 16, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(14);
+      ctx.font = '14px sans-serif';
       ctx.fillText(diZhi.element, x, y + 15);
     });
     
     // 绘制中心"地支"文字
-    ctx.setFillStyle('#333');
-    ctx.setFontSize(32);
-    ctx.setTextAlign('center');
-    ctx.setTextBaseline('middle');
+    ctx.fillStyle = '#333';
+    ctx.font = '32px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText('地支', centerX, centerY);
     
     // 计算Canvas在frame中的偏移量
@@ -1798,23 +1858,37 @@ Page({
    */
   drawBaguaCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#baguaCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('baguaCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawBaguaChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -1847,43 +1921,43 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(bagua.color);
+      ctx.fillStyle = bagua.color;
       ctx.beginPath();
       ctx.arc(x, y, 32, 0, 2 * Math.PI);
       ctx.fill();
       
       // 边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 32, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 八卦名称
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(22);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '22px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(bagua.name, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 18, y);
       ctx.lineTo(x + 18, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(14);
+      ctx.font = '14px sans-serif';
       ctx.fillText(bagua.element, x, y + 15);
     });
     
     // 绘制中心"八卦"文字
-    ctx.setFillStyle('#333');
-    ctx.setFontSize(32);
-    ctx.setTextAlign('center');
-    ctx.setTextBaseline('middle');
+    ctx.fillStyle = '#333';
+    ctx.font = '32px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText('八卦', centerX, centerY);
     
     // 计算Canvas在frame中的偏移量
@@ -1919,7 +1993,7 @@ Page({
     ctx.arc(x + radius / 2, y, radius / 2, 1.5 * Math.PI, 0.5 * Math.PI, false);
     ctx.arc(x - radius / 2, y, radius / 2, 0.5 * Math.PI, 1.5 * Math.PI, true);
     ctx.closePath();
-    ctx.setFillStyle('#ffffff');
+    ctx.fillStyle = '#ffffff';
     ctx.fill();
     
     // 绘制太极图右半部分（黑色）
@@ -1928,18 +2002,18 @@ Page({
     ctx.arc(x - radius / 2, y, radius / 2, 1.5 * Math.PI, 0.5 * Math.PI, true);
     ctx.arc(x + radius / 2, y, radius / 2, 0.5 * Math.PI, 1.5 * Math.PI, false);
     ctx.closePath();
-    ctx.setFillStyle('#333333');
+    ctx.fillStyle = '#333333';
     ctx.fill();
     
     // 绘制太极图中的两个小圆
     ctx.beginPath();
     ctx.arc(x - radius / 2, y, radius / 5, 0, 2 * Math.PI);
-    ctx.setFillStyle('#333333');
+    ctx.fillStyle = '#333333';
     ctx.fill();
     
     ctx.beginPath();
     ctx.arc(x + radius / 2, y, radius / 5, 0, 2 * Math.PI);
-    ctx.setFillStyle('#ffffff');
+    ctx.fillStyle = '#ffffff';
     ctx.fill();
   },
 
@@ -1948,23 +2022,37 @@ Page({
    */
   drawWuweiCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuweiCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wuweiCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWuweiChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
 
@@ -1984,8 +2072,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -2012,7 +2100,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2024,21 +2112,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -2055,10 +2143,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -2067,7 +2155,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2079,15 +2167,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -2098,35 +2186,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 味名 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(flavor, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
@@ -2157,23 +2245,37 @@ Page({
    */
   drawWuyinCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuyinCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wuyinCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWuyinChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
   
@@ -2193,8 +2295,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -2221,7 +2323,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2233,21 +2335,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -2264,10 +2366,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -2276,7 +2378,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2288,15 +2390,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -2307,35 +2409,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 音名 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(sound, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
@@ -2366,23 +2468,37 @@ Page({
    */
   drawWuguanCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuguanCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wuguanCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWuguanChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
   
@@ -2402,8 +2518,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -2430,7 +2546,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2442,21 +2558,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -2473,10 +2589,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -2485,7 +2601,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2497,15 +2613,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -2516,35 +2632,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 官名 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(sense, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
@@ -2575,23 +2691,37 @@ Page({
    */
   drawWuqiCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuqiCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wuqiCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWuqiChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
   
@@ -2611,8 +2741,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -2639,7 +2769,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2651,21 +2781,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -2682,10 +2812,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -2694,7 +2824,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2706,15 +2836,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -2725,35 +2855,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 气名 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(qiItem, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
@@ -2784,23 +2914,37 @@ Page({
    */
   drawWujiCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wujiCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wujiCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWujiChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
   
@@ -2820,8 +2964,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -2848,7 +2992,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2860,21 +3004,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -2891,10 +3035,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -2903,7 +3047,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -2915,15 +3059,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -2934,35 +3078,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 季名 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(season, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
@@ -2993,23 +3137,37 @@ Page({
    */
   drawWuzhiCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuzhiCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wuzhiCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWuzhiChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
   
@@ -3029,8 +3187,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -3057,7 +3215,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -3069,21 +3227,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -3100,10 +3258,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -3112,7 +3270,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -3124,15 +3282,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -3143,35 +3301,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 志名 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(emotion, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
@@ -3202,23 +3360,37 @@ Page({
    */
   drawWudeCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wudeCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wudeCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWudeChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
   
@@ -3238,8 +3410,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -3266,7 +3438,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -3278,21 +3450,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -3309,10 +3481,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -3321,7 +3493,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -3333,15 +3505,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -3352,35 +3524,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 德名 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(26);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '26px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(virtue, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
@@ -3411,23 +3583,37 @@ Page({
    */
   drawWuxingStarsCanvas() {
     const query = wx.createSelectorQuery().in(this);
-    query.select('.mystical-canvas').boundingClientRect();
+    query.select('#wuxingStarsCanvas').fields({ node: true, size: true });
     query.select('.mystical-frame').boundingClientRect();
     query.exec((res) => {
       if (!res || res.length < 2) {
         return;
       }
       
+      const canvasInfo = res[0];
       const frameRect = res[1];
-      if (!frameRect) {
+      if (!canvasInfo || !canvasInfo.node || !frameRect) {
         return;
       }
       
-      const width = 350; // 700rpx转换的像素值
-      const height = 350; // 700rpx转换的像素值
-      const ctx = wx.createCanvasContext('wuxingStarsCanvas');
+      const canvas = canvasInfo.node;
+      const ctx = canvas.getContext('2d');
+      
+      // 获取设备像素比，用于高清显示
+      const pixelRatio = wx.getWindowInfo().pixelRatio || 1;
+      
+      // 使用实际的canvas尺寸，确保内容不会超出边框
+      const width = Math.min(canvasInfo.width, frameRect.width * 0.95); // 留5%的边距
+      const height = Math.min(canvasInfo.height, frameRect.height * 0.95); // 留5%的边距
+      
+      // 设置Canvas的实际宽高（考虑dpr）
+      canvas.width = width * pixelRatio;
+      canvas.height = height * pixelRatio;
+      
+      // 缩放上下文以适应dpr
+      ctx.scale(pixelRatio, pixelRatio);
+      
       this.drawWuxingStarsChart(ctx, width, height, frameRect);
-      ctx.draw(true); // 使用true参数，确保立即绘制并覆盖之前的内容
     });
   },
   
@@ -3447,8 +3633,8 @@ Page({
     ctx.clearRect(0, 0, width, height);
     
     // 绘制相生关系线（实线）和标注
-    ctx.setStrokeStyle('#4CAF50');
-    ctx.setLineWidth(3);
+    ctx.strokeStyle = '#4CAF50';
+    ctx.lineWidth = 3;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
@@ -3475,7 +3661,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -3487,21 +3673,21 @@ Page({
       ctx.stroke();
       
       // 绘制"生"字标注 - 用圆框背景（线段的三分之一处）
-      ctx.setFillStyle(colors[i]); // 使用对应元素的颜色
+      ctx.fillStyle = colors[i]; // 使用对应元素的颜色
       ctx.beginPath();
       ctx.arc(labelX, labelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('生', labelX, labelY);
     }
     
     // 绘制相克关系线（虚线）和标注
-    ctx.setStrokeStyle('#F44336');
-    ctx.setLineWidth(2);
+    ctx.strokeStyle = '#F44336';
+    ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
       const startAngle = (i * 72 - 90) * Math.PI / 180;
       const endAngle = ((i + 2) * 72 - 90) * Math.PI / 180;
@@ -3518,10 +3704,10 @@ Page({
       
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.setLineDash([5, 5]);
+      ctx.lineDash = [5, 5];
       ctx.lineTo(endX, endY);
       ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.lineDash = [];
       
       // 绘制箭头（在线段的三分之二处）
       const arrowSize = 15;
@@ -3530,7 +3716,7 @@ Page({
       const arrowAngle = Math.atan2(endY - startY, endX - startX);
       
       // 重新设置线宽确保箭头清晰
-      ctx.setLineWidth(3);
+      ctx.lineWidth = 3;
       ctx.beginPath();
       // 绘制完整的箭头形状
       ctx.moveTo(arrowX, arrowY);
@@ -3542,15 +3728,15 @@ Page({
       ctx.stroke();
       
       // 绘制"克"字标注 - 用圆框背景（线段的八分之三处）
-      ctx.setFillStyle('#555555');
+      ctx.fillStyle = '#555555';
       ctx.beginPath();
       ctx.arc(keLabelX, keLabelY, 16, 0, 2 * Math.PI);
       ctx.fill();
       
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(12);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '12px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText('克', keLabelX, keLabelY);
     }
     
@@ -3561,35 +3747,35 @@ Page({
       const y = centerY + (radius + 15) * Math.sin(angle) + 10;
       
       // 圆形背景
-      ctx.setFillStyle(colors[index]);
+      ctx.fillStyle = colors[index];
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.fill();
       
       // 白色边框
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(3);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.arc(x, y, 35, 0, 2 * Math.PI);
       ctx.stroke();
       
       // 星名 - 五行属性格式
-      ctx.setFillStyle('#fff');
-      ctx.setFontSize(18);
-      ctx.setTextAlign('center');
-      ctx.setTextBaseline('middle');
+      ctx.fillStyle = '#fff';
+      ctx.font = '18px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       ctx.fillText(star, x, y - 15);
       
       // 横杠
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineWidth(2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(x - 15, y);
       ctx.lineTo(x + 15, y);
       ctx.stroke();
       
       // 五行属性
-      ctx.setFontSize(20);
+      ctx.font = '20px sans-serif';
       ctx.fillText(elements[index], x, y + 15);
     });
     
