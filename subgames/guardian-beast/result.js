@@ -63,7 +63,7 @@ Page({
   },
 
   // 加载神兽数据
-  loadBeastData(beastId, proverb) {
+  async loadBeastData(beastId, proverb) {
     // 从本地JSON文件加载数据
     const beasts = beastsData.beasts;
     const beast = beasts.find(item => item.id === beastId);
@@ -71,6 +71,16 @@ Page({
     if (beast) {
       // 为神兽添加选中的箴言
       beast.selectedProverb = proverb;
+      
+      // 加载神兽图片到缓存
+      try {
+        const cachedImage = await imageConfig.getCachedImage(beast.id);
+        beast.image = cachedImage;
+      } catch (err) {
+        console.error('加载神兽图片失败:', err);
+        // 使用原始图片路径作为备选
+        beast.image = imageConfig.getImage(beast.id);
+      }
       
       this.setData({ beast });
       
@@ -110,7 +120,7 @@ Page({
 
   // 返回首页
   goBack() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/subgames/guardian-beast/index'
     });
   }

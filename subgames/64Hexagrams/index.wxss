@@ -62,33 +62,46 @@ page::before {
   margin-top: 3px;
 }
 
-/* 说明容器（包含说明文字和去学卦按钮） */
-.instruction-container {
+/* 顶部内容区 - 左右布局 */
+.top-content-section {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding: 15px 20px;
-  background-color: rgba(211, 199, 167, 0.3);
-  border: 2px solid rgba(184, 165, 126, 0.5);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
-  position: relative;
-  z-index: 1;
-  flex-wrap: nowrap;
+  margin-bottom: 30px;
+  width: 100%;
+  gap: 20px;
+}
+
+/* 左侧文字区域 */
+.left-text-section {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  min-height: auto;
+}
+
+/* 右侧按钮区域 */
+.right-button-section {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  min-height: auto;
+  max-width: 200px;
 }
 
 /* 说明文字 */
 .instruction-content {
-  font-size: 15px;
+  font-size: 18px;
   color: #8b4513;
   line-height: 1.5;
-  flex: 1;
   text-align: left;
-  letter-spacing: 0.5px;
-  min-width: 0;
-  order: 1;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-family: "SimSun", "STSong", serif;
 }
 
 /* 行内去学卦按钮 */
@@ -96,21 +109,20 @@ page::before {
   background-color: #8b4513;
   color: #fff;
   border: 2px solid #b8a57e;
-  padding: 18px 20px;
-  font-size: 22px;
-  border-radius: 8px;
+  padding: 5px 5px;
+  font-size: 20px;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: "SimSun", "STSong", serif;
-  box-shadow: 0 3px 12px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
   font-weight: bold;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   width: auto;
-  flex-shrink: 0;
+  max-width: none;
   white-space: nowrap;
-  order: 2;
-  min-width: 100px;
-  max-width: 120px;
+  height: auto;
+  min-height: auto;
 }
 
 /* 游戏容器 */
@@ -650,10 +662,10 @@ page::before {
   }
   
   .inline-learn-button {
-    font-size: 14px;
-    padding: 5px 10px;
-    min-width: 65px;
-    max-width: 85px;
+    font-size: 20px;
+    padding: 5px 5px;
+    min-width: auto;
+    max-width: none;
   }
 }
 
@@ -702,9 +714,9 @@ page::before {
   }
   
   .inline-learn-button {
-    font-size: 13px;
-    padding: 4px 8px;
-    min-width: 60px;
-    max-width: 80px;
+    font-size: 20px;
+    padding: 5px 5px;
+    min-width: auto;
+    max-width: none;
   }
 }

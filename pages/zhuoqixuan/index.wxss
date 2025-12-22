@@ -130,10 +130,10 @@ page {
   text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 0.3);
 }
 
-/* 守护神兽图标颜色 */
-.guardian-icon {
-  background: linear-gradient(135deg, #FF8C00 0%, #FF4500 100%);
-  box-shadow: 0 6rpx 20rpx rgba(255, 140, 0, 0.25);
+/* 六十四卦学习图标颜色 */
+.yijing-icon {
+  background: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+  box-shadow: 0 6rpx 20rpx rgba(139, 69, 19, 0.25);
 }
 
 /* 五行奥秘图标颜色 */

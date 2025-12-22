@@ -4,10 +4,16 @@
     <text class="subtitle">易经六十四卦记忆学习，了解中国传统哲学思想</text>
   </view>
   
-  <!-- 说明文字和去学卦按钮合并在一个框中 -->
-  <view class="instruction-container">
-    <text class="instruction-content">您可以尝试配对卦象、卦名，也可以先去学卦</text>
-    <button class="inline-learn-button" bindtap="goToLearnHexagrams">去学卦</button>
+  <!-- 顶部内容区 -->
+  <view class="top-content-section">
+    <!-- 左侧说明文字 -->
+    <view class="left-text-section">
+      <text class="instruction-content">尝试配对卦象卦名，或先去学卦</text>
+    </view>
+    <!-- 右侧按钮区域 -->
+    <view class="right-button-section">
+      <button class="inline-learn-button" bindtap="goToLearnHexagrams">去学卦</button>
+    </view>
   </view>
   
   <view class="game-container">

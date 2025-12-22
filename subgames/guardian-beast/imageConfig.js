@@ -1,6 +1,8 @@
 // 图片配置文件 - 集中管理所有图片路径
 // 注意：云存储文件名区分大小写，必须与实际存储完全一致
 
+const imageCache = require('./imageCache');
+
 const imageConfig = {
   // 图片尺寸配置
   sizes: {
@@ -29,9 +31,47 @@ const imageConfig = {
     "back": "cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/TradEngage/guardian-beast-Back.jpg"
   },
   
-  // 获取图片路径的方法
-  getImage(imageId) {
+  // 获取原始图片路径的方法
+  getOriginalImage(imageId) {
     return this.beasts[imageId] || this.cardBack[imageId] || '';
+  },
+  
+  // 获取图片路径的方法（带缓存）
+  getImage(imageId) {
+    return this.getOriginalImage(imageId);
+  },
+  
+  // 获取图片的缓存路径（异步）
+  async getCachedImage(imageId) {
+    const imageUrl = this.getOriginalImage(imageId);
+    if (!imageUrl) return '';
+    
+    try {
+      return await imageCache.getImage(imageUrl);
+    } catch (err) {
+      console.error('获取缓存图片失败:', imageId, err);
+      return imageUrl;
+    }
+  },
+  
+  // 预加载所有图片到缓存
+  preloadAllImages() {
+    const allImageUrls = [
+      ...Object.values(this.beasts),
+      ...Object.values(this.cardBack)
+    ];
+    
+    return imageCache.preloadImages(allImageUrls);
+  },
+  
+  // 清理过期缓存
+  clearExpiredCache() {
+    return imageCache.clearExpiredCache();
+  },
+  
+  // 获取缓存统计信息
+  getCacheInfo() {
+    return imageCache.getCacheInfo();
   },
   
   // 获取指定尺寸的方法

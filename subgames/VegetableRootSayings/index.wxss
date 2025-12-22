@@ -253,7 +253,7 @@ page {
 
 .secondary-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap: 15rpx;
   width: 100%;
@@ -269,14 +269,14 @@ page {
   background: rgba(245, 245, 240, 0.9);
   border: 1rpx solid rgba(212, 175, 55, 0.6);
   border-radius: 8rpx;
-  padding: 20rpx 25rpx;
-  font-size: 24rpx;
+  padding: 18rpx 15rpx;
+  font-size: 22rpx;
   color: #8b4513;
   transition: all 0.2s ease;
   flex: 1;
-  gap: 10rpx;
-  min-width: 180rpx;
-  max-width: 200rpx;
+  gap: 8rpx;
+  min-width: 120rpx;
+  max-width: 180rpx;
   white-space: nowrap;
 }
 

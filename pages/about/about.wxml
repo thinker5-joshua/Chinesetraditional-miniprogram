@@ -99,7 +99,7 @@
         </view>
       </view>
       <view class="game-item">
-        <view class="game-icon beast-icon">兽</view>
+        <view class="game-icon beast-icon">守</view>
         <view class="game-info">
           <text class="game-name">守护神兽</text>
           <text class="game-desc">抽取古建脊兽作为守护神兽，探索其象征意义和文化内涵</text>

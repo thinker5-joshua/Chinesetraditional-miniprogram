@@ -73,12 +73,22 @@ Page({
   },
 
   // 加载脊兽详情数据
-  loadBeastDetail(beastId) {
+  async loadBeastDetail(beastId) {
     // 从本地JSON文件加载数据
     const beasts = beastsData.beasts;
     const beast = beasts.find(item => item.id === beastId);
     
     if (beast) {
+      // 加载神兽图片到缓存
+      try {
+        const cachedImage = await imageConfig.getCachedImage(beastId);
+        beast.image = cachedImage;
+      } catch (err) {
+        console.error('加载神兽图片失败:', err);
+        // 使用原始图片路径作为备选
+        beast.image = imageConfig.getImage(beastId);
+      }
+      
       this.setData({ beast });
     } else {
       // 如果没有找到对应神兽，返回列表页

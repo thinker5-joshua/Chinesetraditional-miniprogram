@@ -6,10 +6,10 @@ Page({
   data: {
     gameList: [
       {
-        id: 'guardian-beast',
-        name: '守护神兽',
-        iconText: '守',
-        cssClass: 'guardian-icon'
+        id: '64Hexagrams',
+        name: '六十四卦学习',
+        iconText: '易',
+        cssClass: 'yijing-icon'
       },
       {
         id: 'WuxingMysteries',

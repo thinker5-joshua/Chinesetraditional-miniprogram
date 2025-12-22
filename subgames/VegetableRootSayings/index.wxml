@@ -15,6 +15,11 @@
         <text class="secondary-text">复制</text>
       </button>
       
+      <button class="secondary-btn save-btn" bindtap="saveCard">
+        <text class="secondary-icon">📥</text>
+        <text class="secondary-text">保存</text>
+      </button>
+      
       <button class="secondary-btn share-btn" open-type="share" bindtap="shareQuote">
         <text class="secondary-icon">↑</text>
         <text class="secondary-text">分享</text>
@@ -92,4 +97,10 @@
       <text>正在加载智慧箴言...</text>
     </view>
   </view>
+
+  <!-- 分享图片画布（隐藏） -->
+  <canvas type="2d" id="shareCanvas" style="width: 750px; height: 1334px; position: absolute; left: -9999px; top: -9999px;"></canvas>
+  
+  <!-- 隐藏的分享按钮，用于触发分享弹窗 -->
+  <button id="share-btn" open-type="share" style="position: absolute; left: -9999px; top: -9999px; width: 0; height: 0; opacity: 0;"></button>
 </view>

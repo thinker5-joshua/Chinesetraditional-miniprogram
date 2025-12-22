@@ -90,7 +90,8 @@ Page({
       console.error('重置抽取状态失败', error);
     }
     
-    wx.navigateTo({
+    // 使用redirectTo确保无论页面栈状态如何都能跳转到抽取页
+    wx.redirectTo({
       url: '/subgames/guardian-beast/draw'
     });
   },
@@ -140,7 +141,7 @@ Page({
     });
     
     // 持续播放动画
-    setInterval(() => {
+    this.cardAnimationTimer = setInterval(() => {
       animation.scale(1.05).opacity(0.9).scale(1).opacity(1).step();
       this.setData({
         cardAnimation: animation.export()
@@ -151,7 +152,7 @@ Page({
   /**
    * 预加载所有图片
    */
-  preloadAllImages() {
+  async preloadAllImages() {
     const allImageIds = [...Object.keys(imageConfig.beasts), 'back'];
     const totalImages = allImageIds.length;
     
@@ -160,34 +161,38 @@ Page({
       preloadingImages: totalImages
     });
     
-    // 预加载所有图片
-    allImageIds.forEach(imageId => {
-      this.preloadImage(imageConfig.getImage(imageId));
-    });
+    try {
+      // 使用缓存模块预加载所有图片
+      await imageConfig.preloadAllImages();
+      console.log('所有图片预加载完成');
+    } catch (err) {
+      console.error('图片预加载失败:', err);
+    } finally {
+      // 更新预加载计数
+      this.setData({
+        preloadingImages: 0
+      });
+    }
   },
   
   /**
    * 预加载单张图片
-   * @param {string} imageUrl - 图片URL
+   * @param {string} imageId - 图片ID
    */
-  preloadImage(imageUrl) {
-    if (!imageUrl) return;
+  async preloadImage(imageId) {
+    if (!imageId) return;
     
-    wx.getImageInfo({
-      src: imageUrl,
-      success: () => {
-        console.log('图片预加载成功:', imageUrl);
-      },
-      fail: (err) => {
-        console.error('图片预加载失败:', imageUrl, err);
-      },
-      complete: () => {
-        // 更新预加载计数
-        this.setData({
-          preloadingImages: this.data.preloadingImages - 1
-        });
-      }
-    });
+    try {
+      await imageConfig.getCachedImage(imageId);
+      console.log('图片预加载成功:', imageId);
+    } catch (err) {
+      console.error('图片预加载失败:', imageId, err);
+    } finally {
+      // 更新预加载计数
+      this.setData({
+        preloadingImages: this.data.preloadingImages - 1
+      });
+    }
   },
   
   /**
@@ -208,5 +213,16 @@ Page({
       title: '守护神兽 - 古建脊兽，守护灵契',
       query: ''
     };
+  },
+  
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+    // 清除动画定时器，防止内存泄漏
+    if (this.cardAnimationTimer) {
+      clearInterval(this.cardAnimationTimer);
+      this.cardAnimationTimer = null;
+    }
   }
 })

@@ -3,10 +3,10 @@ Page({
     openid: '',
     games: [
       {
-        id: '64Hexagrams',
-        title: '六十四卦学习',
-        iconText: '易',
-        cssClass: 'yijing-icon'
+        id: 'guardian-beast',
+        title: '守护神兽',
+        iconText: '守',
+        cssClass: 'guardian-icon'
       },
       {
         id: 'future',

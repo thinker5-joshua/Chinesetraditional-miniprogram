@@ -89,7 +89,7 @@
 .poster-full-image {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: fill;
   border-radius: 20rpx;
   display: block;
   max-width: 100%;
