@@ -1,0 +1,93 @@
+<view class="container">
+  <view class="header">
+    <text class="title">易经六十四卦配对</text>
+    <text class="subtitle">尝试配对卦象和卦名，测试你的学习成果</text>
+  </view>
+  
+  <view class="game-container">
+    <view class="score-board">
+      <view class="progress-stars">
+        <text class="progress-label">配对进度</text>
+        <view class="stars-container">
+            <view class="star {{successCount >= 1 ? 'active' : ''}}">★</view>
+            <view class="star {{successCount >= 2 ? 'active' : ''}}">★</view>
+            <view class="star {{successCount >= 3 ? 'active' : ''}}">★</view>
+            <view class="star {{successCount >= 4 ? 'active' : ''}}">★</view>
+          </view>
+        <text class="progress-text">{{progressText}}</text>
+      </view>
+    </view>
+    
+    <view class="game-board-container">
+      <!-- 卦象列 -->
+      <view class="hexagram-column">
+        <view 
+          wx:for="{{leftCards}}" 
+          wx:key="id"
+          class="hexagram-block {{item.selected ? 'selected' : ''}} {{item.matched ? 'matched-' + item.matchColor : ''}}"
+          bindtap="selectCard"
+          data-card="{{item}}"
+          data-side="left"
+          style="{{item.matched ? 'border-color: ' + item.matchColor + '; background-color: ' + item.matchColor + '20;' : ''}}"
+        >
+          <view class="hexagram-symbol">{{item.symbol}}</view>
+        </view>
+      </view>
+      
+      <!-- 卦名列 -->
+      <view class="name-column">
+        <view 
+          wx:for="{{rightCards}}" 
+          wx:key="id"
+          class="hexagram-block {{item.selected ? 'selected' : ''}} {{item.matched ? 'matched-' + item.matchColor : ''}}"
+          bindtap="selectCard"
+          data-card="{{item}}"
+          data-side="right"
+          style="{{item.matched ? 'border-color: ' + item.matchColor + '; background-color: ' + item.matchColor + '20;' : ''}}"
+        >
+          <view class="hexagram-name-row">
+            <view class="hexagram-name">{{item.name}}</view>
+            <view class="hexagram-pinyin">{{item.pinyin}}</view>
+          </view>
+          <view class="hexagram-extra-info">
+            <view class="hexagram-alias">{{item.alias}}</view>
+            <view class="hexagram-trigrams">(上{{item.upperTrigram}}下{{item.lowerTrigram}})</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="selected-info">
+      <text>已选择: <text class="selected-display">{{selectedDisplay}}</text></text>
+    </view>
+  </view>
+
+  <!-- 返回按钮 -->
+  <view class="back-button-container">
+    <button class="back-button" bindtap="goBack">返回</button>
+  </view>
+
+</view>
+
+<!-- 成功模态框 -->
+<view class="modal" wx:if="{{showSuccessModal}}">
+  <view class="modal-content">
+    <text class="modal-title">恭喜您！</text>
+    <text class="success-message">您已成功匹配所有四组卦象！</text>
+    <view class="hexagram-info">
+      <view class="hexagram-preview-list">
+        <view 
+          wx:for="{{matchedHexagrams}}" 
+          wx:key="id"
+          class="hexagram-preview-item large-preview"
+          bindtap="showHexagramDetail"
+          data-hexagram="{{item}}"
+        >
+          <view class="preview-symbol">{{item.symbol}}</view>
+          <view class="preview-name">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <button class="play-again-button" bindtap="playAgain">再玩一次</button>
+  </view>
+</view>

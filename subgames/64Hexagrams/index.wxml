@@ -1,100 +1,160 @@
 <view class="container">
+  <!-- Canvas组件，用于生成卡片 -->
+  <canvas type="2d" id="hexagram-canvas" style="width: 0px; height: 0px; position: absolute; left: -9999px;"></canvas>
+  
   <view class="header">
     <text class="title">易经六十四卦学习</text>
-    <text class="subtitle">易经六十四卦记忆学习，了解中国传统哲学思想</text>
+    <text class="subtitle">探索中国传统哲学智慧</text>
   </view>
-  
-  <!-- 顶部内容区 -->
-  <view class="top-content-section">
-    <!-- 左侧说明文字 -->
-    <view class="left-text-section">
-      <text class="instruction-content">尝试配对卦象卦名，或先去学卦</text>
-    </view>
-    <!-- 右侧按钮区域 -->
-    <view class="right-button-section">
-      <button class="inline-learn-button" bindtap="goToLearnHexagrams">去学卦</button>
+
+  <!-- 顶部按钮区域 -->
+  <view class="top-buttons">
+    <button class="top-button" bindtap="saveHexagramCard">
+      <text class="button-icon">📄</text>
+      <text> 存卡片</text>
+    </button>
+    <button class="top-button" bindtap="goToGroupView">
+      <text class="button-icon">📋</text>
+      <text> 分组看</text>
+    </button>
+    <button class="top-button" bindtap="goToMatchingGame">
+      <text class="button-icon">🔍</text>
+      <text> 去识卦</text>
+    </button>
+  </view>
+
+  <!-- 查看模式选择 -->
+  <view class="mode-selector">
+    <view class="mode-buttons">
+      <button 
+        class="mode-button {{viewMode === 'random' ? 'active' : ''}}" 
+        bindtap="switchToRandom"
+      >随机翻</button>
+      <button 
+        class="mode-button {{viewMode === 'sixYaoChange' ? 'active' : ''}}" 
+        bindtap="switchToSixYaoChange"
+      >六爻变</button>
     </view>
   </view>
-  
-  <view class="game-container">
-    <view class="score-board">
-      <view class="progress-stars">
-        <text class="progress-label">配对进度</text>
-        <view class="stars-container">
-          <view class="star {{successCount >= 1 ? 'active' : ''}}">★</view>
-          <view class="star {{successCount >= 2 ? 'active' : ''}}">★</view>
-          <view class="star {{successCount >= 3 ? 'active' : ''}}">★</view>
-        </view>
-        <text class="progress-text">{{progressText}}</text>
-      </view>
-    </view>
-    
-    <view class="game-board-container">
-      <!-- 卦象列 -->
-      <view class="hexagram-column">
-        <view 
-          wx:for="{{leftCards}}" 
-          wx:key="id"
-          class="hexagram-block {{item.selected ? 'selected' : ''}} {{item.matched ? 'matched-' + item.matchColor : ''}}"
-          bindtap="selectCard"
-          data-card="{{item}}"
-          data-side="left"
-          style="{{item.matched ? 'border-color: ' + item.matchColor + '; background-color: ' + item.matchColor + '20;' : ''}}"
-        >
-          <view class="hexagram-symbol">{{item.symbol}}</view>
-        </view>
+
+
+
+  <!-- 随机翻阅模式内容 -->
+  <view wx:if="{{viewMode === 'random'}}" class="random-view">
+    <!-- 随机卦象卡片 -->
+      <view 
+        class="random-card" 
+        bindtap="goToHexagramDetail" 
+        data-hexagram="{{currentRandomHexagram}}"
+        bindtouchstart="onTouchStart"
+        bindtouchmove="onTouchMove"
+        bindtouchend="onTouchEnd"
+      >
+      <!-- 卦象序号 -->
+      <view class="hexagram-sequence">第{{currentRandomHexagram.id}}卦</view>
+      
+      <!-- 卦象 -->
+      <view class="hexagram-symbol-large">{{currentRandomHexagram.symbol}}</view>
+      
+      <!-- 卦名和拼音 -->
+      <view class="hexagram-name-row">
+        <view class="hexagram-name-large">{{currentRandomHexagram.name}}</view>
+        <view class="hexagram-pinyin-large">{{currentRandomHexagram.pinyin}}</view>
       </view>
       
-      <!-- 卦名列 -->
-      <view class="name-column">
-        <view 
-          wx:for="{{rightCards}}" 
-          wx:key="id"
-          class="hexagram-block {{item.selected ? 'selected' : ''}} {{item.matched ? 'matched-' + item.matchColor : ''}}"
-          bindtap="selectCard"
-          data-card="{{item}}"
-          data-side="right"
-          style="{{item.matched ? 'border-color: ' + item.matchColor + '; background-color: ' + item.matchColor + '20;' : ''}}"
-        >
-          <view class="hexagram-name-row">
-            <view class="hexagram-name">{{item.name}}</view>
-            <view class="hexagram-pinyin">{{item.pinyin}}</view>
-          </view>
-          <view class="hexagram-extra-info">
-            <view class="hexagram-alias">{{item.alias}}</view>
-            <view class="hexagram-trigrams">(上{{item.upperTrigram}}下{{item.lowerTrigram}})</view>
-          </view>
-        </view>
+      <!-- 别名和上下卦 -->
+      <view class="hexagram-extra-info">
+        <view class="hexagram-alias">{{currentRandomHexagram.alias}}</view>
+        <view class="hexagram-trigrams">上{{currentRandomHexagram.upperTrigram}}下{{currentRandomHexagram.lowerTrigram}}</view>
+      </view>
+      
+      <!-- 卦辞 -->
+      <view class="hexagram-text-section">
+        <text class="section-title">卦辞</text>
+        <text class="hexagram-text">{{currentRandomHexagram.hexagramText}}</text>
       </view>
     </view>
     
-    <view class="selected-info">
-      <text>已选择: <text class="selected-display">{{selectedDisplay}}</text></text>
+    <!-- 随机翻阅翻页控制 -->
+    <view class="random-pagination">
+      <button class="random-page-button" bindtap="previousRandomHexagram">
+        <text class="page-arrow">←</text>
+        <text>上一个</text>
+      </button>
+      <button class="random-page-button" bindtap="nextRandomHexagram">
+        <text>下一个</text>
+        <text class="page-arrow">→</text>
+      </button>
     </view>
+    
+    <!-- 提示文字 -->
+    <view class="hint-text">点击卡片查看卦详情</view>
   </view>
-
-</view>
-
-<!-- 成功模态框 -->
-<view class="modal" wx:if="{{showSuccessModal}}">
-  <view class="modal-content">
-    <text class="modal-title">恭喜您！</text>
-    <text class="success-message">您已成功匹配所有三组卦象！</text>
-    <view class="hexagram-info">
-      <view class="hexagram-preview-list">
-        <view 
-          wx:for="{{matchedHexagrams}}" 
-          wx:key="id"
-          class="hexagram-preview-item large-preview"
-          bindtap="showHexagramDetail"
-          data-hexagram="{{item}}"
-        >
-          <view class="preview-symbol">{{item.symbol}}</view>
-          <view class="preview-name">{{item.name}}</view>
-        </view>
+  
+  <!-- 六爻变模式内容 -->
+  <view wx:if="{{viewMode === 'sixYaoChange'}}" class="six-yao-view">
+    <!-- 随机卦象卡片 -->
+    <view 
+      class="random-card" 
+      bindtap="goToHexagramDetail" 
+      data-hexagram="{{currentSixYaoHexagram}}"
+      bindtouchstart="onTouchStart"
+      bindtouchmove="onTouchMove"
+      bindtouchend="onTouchEnd"
+    >
+      <!-- 卦象序号 -->
+      <view class="hexagram-sequence">第{{currentSixYaoHexagram.id}}卦</view>
+      
+      <!-- 卦象 -->
+      <view class="hexagram-symbol-large">{{currentSixYaoHexagram.symbol}}</view>
+      
+      <!-- 卦名和拼音 -->
+      <view class="hexagram-name-row">
+        <view class="hexagram-name-large">{{currentSixYaoHexagram.name}}</view>
+        <view class="hexagram-pinyin-large">{{currentSixYaoHexagram.pinyin}}</view>
+      </view>
+      
+      <!-- 别名和上下卦 -->
+      <view class="hexagram-extra-info">
+        <view class="hexagram-alias">{{currentSixYaoHexagram.alias}}</view>
+        <view class="hexagram-trigrams">上{{currentSixYaoHexagram.upperTrigram}}下{{currentSixYaoHexagram.lowerTrigram}}</view>
+      </view>
+      
+      <!-- 卦辞 -->
+      <view class="hexagram-text-section">
+        <text class="section-title">卦辞</text>
+        <text class="hexagram-text">{{currentSixYaoHexagram.hexagramText}}</text>
       </view>
     </view>
-    <button class="play-again-button" bindtap="playAgain">再玩一次</button>
+    
+    <!-- 六爻按钮 -->
+    <view class="six-yao-buttons">
+      <view 
+        class="yao-button {{sixYaoStates[item.index] ? 'yang' : 'yin'}}" 
+        wx:for="{{sixYaoButtons}}" 
+        wx:key="index"
+        data-index="{{item.index}}"
+        bindtap="onYaoButtonTap"
+      >
+        <text class="yao-text">{{item.text}}</text>
+        <text class="yao-symbol">{{item.symbol}}</text>
+      </view>
+    </view>
+    
+    <!-- 随机翻阅翻页控制 -->
+    <view class="random-pagination" wx:if="{{viewMode !== 'sixYaoChange'}}">
+      <button class="random-page-button" bindtap="previousSixYaoHexagram">
+        <text class="page-arrow">←</text>
+        <text>上一个</text>
+      </button>
+      <button class="random-page-button" bindtap="nextSixYaoHexagram">
+        <text>下一个</text>
+        <text class="page-arrow">→</text>
+      </button>
+    </view>
+    
+    <!-- 提示文字 -->
+    <view class="hint-text">点击卡片查看卦详情</view>
   </view>
-</view>
 
+</view>

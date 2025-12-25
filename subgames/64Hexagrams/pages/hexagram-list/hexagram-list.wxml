@@ -171,8 +171,5 @@
     </view>
   </view>
 
-  <!-- 返回按钮 -->
-  <view class="back-container">
-    <button class="back-button" bindtap="goBack">返回64卦配对</button>
-  </view>
+
 </view>
