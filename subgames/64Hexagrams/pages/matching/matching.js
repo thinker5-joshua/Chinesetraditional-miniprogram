@@ -1,5 +1,6 @@
 // 引入完整的六十四卦数据
 const hexagramsData = require('../../hexagrams-data.js').hexagramsData;
+const cloudStorage = require('../../../../utils/cloudStorage');
 
 Page({
     data: {
@@ -14,10 +15,21 @@ Page({
         showSuccessModal: false,
         currentHexagrams: [],
         remainingHexagrams: [],
-        matchedPairs: [] // 存储已匹配的卦对，用于颜色区分
+        matchedPairs: [], // 存储已匹配的卦对，用于颜色区分
+        wyhdShareDefaultUrl: ''
     },
 
     onLoad() {
+        // 获取分享默认图片URL
+        getCloudImageUrl('wyhd-share-default.png')
+          .then(url => {
+            this.setData({
+              wyhdShareDefaultUrl: url
+            });
+          })
+          .catch(error => {
+            console.error('Get share default image error:', error);
+          });
         this.initGame();
     },
 
@@ -268,7 +280,7 @@ Page({
         return {
             title: '易经六十四卦配对游戏',
             path: '/subgames/64Hexagrams/pages/matching/matching',
-            imageUrl: '/images/wyhd-share-default.png'
+            imageUrl: this.data.wyhdShareDefaultUrl || '/images/wyhd-share-default.png'
         };
     },
 

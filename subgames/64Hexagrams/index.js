@@ -1,5 +1,6 @@
 // 引入完整的六十四卦数据
 const hexagramsData = require('./hexagrams-data.js').hexagramsData;
+const cloudStorage = require('../../../utils/cloudStorage');
 
 Page({
   data: {
@@ -648,8 +649,15 @@ Page({
                 img.src = res.tempFilePath;
               },
               fail: () => {
-                // 下载失败，使用本地默认图片作为备选
-                img.src = '../../images/wyhd-share-default.png';
+                // 下载失败，使用云存储默认图片作为备选
+                cloudStorage.getImage('wyhd-share-default.png')
+                  .then(url => {
+                    img.src = url;
+                  })
+                  .catch(error => {
+                    console.error('Get backup image error:', error);
+                    // 如果云存储也获取失败，保持空白或使用其他备选方案
+                  });
               }
             });
           }

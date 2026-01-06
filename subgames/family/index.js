@@ -1,8 +1,11 @@
 // 家族谱系探索页面
 const { generateFamilyTree, calculateRelationship } = require('./family-tree-data.js');
 
+const cloudStorage = require('../../utils/cloudStorage');
+
 Page({
   data: {
+    wyhdShareDefaultUrl: '',
     // 家族树数据
     familyTree: {},
     familyMembers: [],
@@ -29,6 +32,16 @@ Page({
   },
 
   onLoad() {
+    // 获取分享默认图片URL
+    cloudStorage.getImage('wyhd-share-default.png')
+      .then(url => {
+        this.setData({
+          wyhdShareDefaultUrl: url
+        });
+      })
+      .catch(error => {
+        console.error('Get share default image error:', error);
+      });
     this.initFamilyTree();
   },
 
@@ -342,7 +355,7 @@ Page({
     return {
       title: '家族谱系探索',
       path: '/subgames/family/index',
-      imageUrl: '/images/wyhd-share-default.png'
+      imageUrl: this.data.wyhdShareDefaultUrl
     };
   },
 

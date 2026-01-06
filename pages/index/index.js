@@ -1,6 +1,9 @@
+const cloudStorage = require('../../utils/cloudStorage');
+
 Page({
   data: {
     openid: '',
+    wyhdShareDefaultUrl: '',
     games: [
       {
         id: 'guardian-beast',
@@ -15,10 +18,10 @@ Page({
         cssClass: 'chengyu-icon'
       },
       {
-        id: '28Stars',
-        title: '二十八星宿探秘',
-        iconText: '星',
-        cssClass: 'star-icon'
+        id: 'daily-character',
+        title: '每日一字',
+        iconText: '字',
+        cssClass: 'character-icon'
       },
       {
         id: 'VegetableRootSayings',
@@ -29,7 +32,16 @@ Page({
     ]
   },
   onLoad() {
-    // 移除云函数调用，成语消除游戏不需要用户认证
+    // 获取分享默认图片URL
+    cloudStorage.getImage('wyhd-share-default.png')
+      .then(url => {
+        this.setData({
+          wyhdShareDefaultUrl: url
+        });
+      })
+      .catch(error => {
+        console.error('Get share default image error:', error);
+      });
   },
   
   navigateToGame(e) {
@@ -46,7 +58,7 @@ Page({
     return {
       title: '探索中国传统文化的魅力',
       path: '/pages/index/index',
-      imageUrl: '/images/wyhd-share-default.png'
+      imageUrl: this.data.wyhdShareDefaultUrl
     };
   },
 
@@ -57,7 +69,7 @@ Page({
     return {
       title: '探索中国传统文化的魅力',
       query: '',
-      imageUrl: '/images/wyhd-share-default.png'
+      imageUrl: this.data.wyhdShareDefaultUrl || '/images/wyhd-share-default.png'
     };
   }
 })

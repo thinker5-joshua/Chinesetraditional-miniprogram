@@ -1,4 +1,6 @@
 // app.js
+const cloudStorage = require('./utils/cloudStorage');
+
 App({
   onLaunch: function() {
     // 初始化云开发
@@ -10,6 +12,12 @@ App({
         traceUser: true,
       });
     }
+
+    // 清理过期缓存
+    cloudStorage.clearExpiredCache();
+    
+    // 预加载常用云存储图片
+    cloudStorage.preloadCloudImages(['official-account-qr.png', 'wyhd-share-default.png']);
 
     // 获取用户信息
     wx.getSetting({

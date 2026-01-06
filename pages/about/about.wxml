@@ -16,6 +16,22 @@
     <view class="content-card">
       <text class="content-text">本平台致力于通过问答互动体验的方式传承和弘扬中国传统文化，让用户在轻松愉快的氛围中学习和体验中华传统智慧。</text>
       <text class="content-text">我们将持续开发更多融合传统文化元素的益智互动体验板块，敬请关注！</text>
+      
+      <!-- 公众号关注引导 -->
+      <view class="wechat-section">
+        <text class="wechat-guide">请关注我们的公众号</text>
+        <text class="wechat-subtitle">获取更多传统文化资讯和专属福利</text>
+        
+        <!-- 新增二维码展示 -->
+        <view class="wechat-qr-container">
+          <image src="{{officialAccountQrUrl}}" class="wechat-qr" mode="aspectFit"></image>
+          <text class="wechat-name">传统文化益智互动群落</text>
+        </view>
+        
+        <!-- 优化按钮功能 -->
+        <button class="wechat-btn" bindtap="onWechatBtnTap">关注传统文化益智互动群落</button>
+        <text class="wechat-tip">长按二维码可直接关注</text>
+      </view>
     </view>
   </view>
 
@@ -170,5 +186,7 @@
     <text class="footer-text">© 2025 文益互动 - 传统文化益智互动群落</text>
     <text class="footer-text">传承中华文化，寓教于乐</text>
     <text class="version-text">版本 v1.1</text>
+    
+    <!-- 移除底部组件 -->
   </view>
 </view>

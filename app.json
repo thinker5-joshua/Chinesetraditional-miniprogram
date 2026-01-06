@@ -28,7 +28,10 @@
     "subgames/guardian-beast/result",
     "subgames/guardian-beast/poster",
     "subgames/guardian-beast/knowledge/list",
-    "subgames/guardian-beast/knowledge/detail"
+    "subgames/guardian-beast/knowledge/detail",
+    "subgames/daily-character/index",
+    "subgames/daily-character/pages/card/index",
+    "subgames/daily-character/pages/test/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

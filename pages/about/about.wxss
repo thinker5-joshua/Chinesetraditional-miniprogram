@@ -6,6 +6,12 @@ page {
   min-height: 100vh;
 }
 
+/* 公众号关注样式 */
+.official-account-section {
+  margin-top: 30rpx;
+  text-align: center;
+}
+
 .about-container {
   padding: 40rpx 30rpx;
   max-width: 750rpx;
@@ -399,4 +405,79 @@ page {
   .step-text {
     font-size: 24rpx;
   }
+}
+
+/* 公众号关注样式 */
+.wechat-section {
+  margin-top: 40rpx;
+  text-align: center;
+  padding: 30rpx;
+  background: linear-gradient(135deg, #f5f1e9 0%, #e8dfd2 100%);
+  border-radius: 20rpx;
+  border: 2rpx solid rgba(139, 69, 19, 0.2);
+  box-shadow: 0 8rpx 20rpx rgba(139, 69, 19, 0.1);
+}
+
+.wechat-guide {
+  font-size: 28rpx;
+  color: #8B4513;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15rpx;
+}
+
+.wechat-subtitle {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  margin-bottom: 30rpx;
+  line-height: 1.5;
+}
+
+.wechat-qr-container {
+  margin-bottom: 30rpx;
+}
+
+.wechat-qr {
+  width: 250rpx;
+  height: 250rpx;
+  margin: 0 auto 20rpx;
+  display: block;
+  border-radius: 15rpx;
+  box-shadow: 0 6rpx 15rpx rgba(0, 0, 0, 0.15);
+  background: white;
+  padding: 20rpx;
+}
+
+.wechat-name {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5rpx;
+}
+
+.wechat-btn {
+  background: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+  color: white;
+  border: none;
+  border-radius: 50rpx;
+  padding: 20rpx 60rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  box-shadow: 0 6rpx 15rpx rgba(139, 69, 19, 0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 15rpx;
+}
+
+.wechat-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 3rpx 10rpx rgba(139, 69, 19, 0.2);
+}
+
+.wechat-tip {
+  font-size: 22rpx;
+  color: #999;
+  display: block;
+  margin-top: 10rpx;
 }

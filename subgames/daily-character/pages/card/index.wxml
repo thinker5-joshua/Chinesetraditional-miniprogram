@@ -1,0 +1,67 @@
+<view class="container">
+  <view class="card-container" wx:if="{{!loading}}">
+    <!-- 汉字展示区 -->
+    <view class="character-section">
+      <text class="character">{{character.char}}</text>
+      <view class="pronunciation-section">
+        <text class="correct-pronunciation">正确读音：{{character.correctPronunciation}}</text>
+        <text class="wrong-pronunciation">常见错误：{{character.wrongPronunciations.join('、')}}</text>
+      </view>
+    </view>
+
+    <!-- 详细解析区 -->
+    <view class="detail-section">
+      <view class="section-title">详细解析</view>
+      <view class="explanation">
+        {{character.explanation}}
+      </view>
+    </view>
+
+    <!-- 词组区 -->
+    <view class="phrases-section">
+      <view class="section-title">相关词组</view>
+      <view class="phrases-grid">
+        <view class="phrase-item" wx:for="{{character.relatedPhrases}}" wx:key="index">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 常见错误区 -->
+    <view class="wrong-phrases-section">
+      <view class="section-title">易读错词组</view>
+      <view class="wrong-phrases-list">
+        <view class="wrong-phrase-item" wx:for="{{character.wrongPhrases}}" wx:key="index">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 古诗词区 -->
+    <view class="poems-section">
+      <view class="section-title">相关古诗词</view>
+      <view class="poem-item" wx:for="{{relatedPoems}}" wx:key="index">
+        <view class="poem-title">{{item.poemTitle}}</view>
+        <view class="poem-content" wx:for="{{item.relatedLines}}" wx:for-item="line" wx:key="line-index">
+          {{line}}
+        </view>
+        <view class="poem-author">{{item.author}} - {{item.dynasty}}</view>
+      </view>
+    </view>
+
+    <!-- 操作按钮区 -->
+    <view class="action-buttons">
+      <button class="action-btn reload-btn" bindtap="reloadCharacter">
+        换一个字
+      </button>
+      <button class="action-btn test-btn" bindtap="navigateToTest">
+        开始测试
+      </button>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:else>
+    <text>加载中...</text>
+  </view>
+</view>

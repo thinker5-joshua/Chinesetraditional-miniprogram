@@ -1,0 +1,769 @@
+[
+  {
+    "id": 1,
+    "char": "龟",
+    "correctPronunciation": "jūn",
+    "wrongPronunciations": [
+      "guī",
+      "qiū"
+    ],
+    "relatedPhrases": [
+      "龟字"
+    ],
+    "explanation": "龟 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 2,
+    "char": "巷",
+    "correctPronunciation": "hàng",
+    "wrongPronunciations": [
+      "xiàng"
+    ],
+    "relatedPhrases": [
+      "巷字"
+    ],
+    "explanation": "巷〈名〉hang",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 3,
+    "char": "薄",
+    "correctPronunciation": "bò",
+    "wrongPronunciations": [
+      "báo",
+      "bó"
+    ],
+    "relatedPhrases": [
+      "薄字"
+    ],
+    "explanation": "薄 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 4,
+    "char": "折",
+    "correctPronunciation": "shé",
+    "wrongPronunciations": [
+      "zhé",
+      "zhē"
+    ],
+    "relatedPhrases": [
+      "朝攀暮折",
+      "朝折暮折",
+      "榱崩栋折",
+      "榱栋崩折"
+    ],
+    "explanation": "折〈动〉 she",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 5,
+    "char": "乘",
+    "correctPronunciation": "shèng",
+    "wrongPronunciations": [
+      "chéng"
+    ],
+    "relatedPhrases": [
+      "乘字"
+    ],
+    "explanation": "乘  cheng",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 6,
+    "char": "仇",
+    "correctPronunciation": "qiú",
+    "wrongPronunciations": [
+      "chóu"
+    ],
+    "relatedPhrases": [
+      "仇字"
+    ],
+    "explanation": "仇 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 7,
+    "char": "给",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciations": [
+      "gěi"
+    ],
+    "relatedPhrases": [
+      "呼不给吸",
+      "家给民足",
+      "家给人足",
+      "目不暇给"
+    ],
+    "explanation": "给  gei",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 8,
+    "char": "血",
+    "correctPronunciation": "xuè",
+    "wrongPronunciations": [
+      "xiě"
+    ],
+    "relatedPhrases": [
+      "抱璞泣血",
+      "碧血丹心",
+      "兵不血刃",
+      "兵无血刃"
+    ],
+    "explanation": "血  xie",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 9,
+    "char": "载",
+    "correctPronunciation": "zǎi",
+    "wrongPronunciations": [
+      "zài"
+    ],
+    "relatedPhrases": [
+      "百载树人",
+      "车载船装",
+      "饿莩载道",
+      "跗萼载韡"
+    ],
+    "explanation": "载 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 10,
+    "char": "着",
+    "correctPronunciation": "zhuó",
+    "wrongPronunciations": [
+      "zháo",
+      "zhāo",
+      "zhe"
+    ],
+    "relatedPhrases": [
+      "鞭辟着里",
+      "不着边际",
+      "不着疼热",
+      "沉着痛快"
+    ],
+    "explanation": "着  zhao",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 11,
+    "char": "氛",
+    "correctPronunciation": "fēn",
+    "wrongPronunciations": [
+      "fèn"
+    ],
+    "relatedPhrases": [
+      "氛字"
+    ],
+    "explanation": "氛 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 12,
+    "char": "场",
+    "correctPronunciation": "cháng",
+    "wrongPronunciations": [
+      "chǎng"
+    ],
+    "relatedPhrases": [
+      "矮人观场",
+      "矮子观场",
+      "膏场绣浍"
+    ],
+    "explanation": "场 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 13,
+    "char": "称",
+    "correctPronunciation": "chèn",
+    "wrongPronunciations": [
+      "chēng",
+      "chèng"
+    ],
+    "relatedPhrases": [
+      "称家有无",
+      "称体载衣",
+      "称心快意",
+      "称心满意"
+    ],
+    "explanation": "称  chen",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 14,
+    "char": "种",
+    "correctPronunciation": "chóng",
+    "wrongPronunciations": [
+      "zhǒng",
+      "zhòng"
+    ],
+    "relatedPhrases": [
+      "种字"
+    ],
+    "explanation": "种 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 15,
+    "char": "憧",
+    "correctPronunciation": "chōng",
+    "wrongPronunciations": [
+      "chóng"
+    ],
+    "relatedPhrases": [
+      "憧字"
+    ],
+    "explanation": "憧 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 16,
+    "char": "骋",
+    "correctPronunciation": "chěng",
+    "wrongPronunciations": [
+      "chéng"
+    ],
+    "relatedPhrases": [
+      "骋怀游目",
+      "骋耆奔欲",
+      "骋嗜奔欲",
+      "驰骋疆场"
+    ],
+    "explanation": "骋 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 17,
+    "char": "处",
+    "correctPronunciation": "chǔ",
+    "wrongPronunciations": [
+      "chù"
+    ],
+    "relatedPhrases": [
+      "安常处顺",
+      "安时处顺",
+      "抱法处势",
+      "不遑宁处"
+    ],
+    "explanation": "处〈动〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 18,
+    "char": "啜",
+    "correctPronunciation": "chuài",
+    "wrongPronunciations": [
+      "duō",
+      "chuò"
+    ],
+    "relatedPhrases": [
+      "啜字"
+    ],
+    "explanation": "啜喇",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 19,
+    "char": "汆",
+    "correctPronunciation": "cuān",
+    "wrongPronunciations": [
+      "cuàn"
+    ],
+    "relatedPhrases": [
+      "汆字"
+    ],
+    "explanation": "汆 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 20,
+    "char": "档",
+    "correctPronunciation": "dàng",
+    "wrongPronunciations": [
+      "dǎng"
+    ],
+    "relatedPhrases": [
+      "一搭一档"
+    ],
+    "explanation": "档 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 21,
+    "char": "当",
+    "correctPronunciation": "dàng",
+    "wrongPronunciations": [
+      "dāng"
+    ],
+    "relatedPhrases": [
+      "安步当车",
+      "不了不当",
+      "长歌当哭",
+      "大而无当"
+    ],
+    "explanation": "当 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 22,
+    "char": "订",
+    "correctPronunciation": "dìng",
+    "wrongPronunciations": [
+      "dīng"
+    ],
+    "relatedPhrases": [
+      "订字"
+    ],
+    "explanation": "订 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 23,
+    "char": "胴",
+    "correctPronunciation": "dòng",
+    "wrongPronunciations": [
+      "tóng"
+    ],
+    "relatedPhrases": [
+      "胴字"
+    ],
+    "explanation": "胴 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 24,
+    "char": "掇",
+    "correctPronunciation": "duo",
+    "wrongPronunciations": [
+      "duò"
+    ],
+    "relatedPhrases": [
+      "拾掇无遗"
+    ],
+    "explanation": "掇 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 25,
+    "char": "菲",
+    "correctPronunciation": "fěi",
+    "wrongPronunciations": [
+      "fēi"
+    ],
+    "relatedPhrases": [
+      "卑宫菲食",
+      "菲食薄衣",
+      "躬自菲薄",
+      "妄自菲薄"
+    ],
+    "explanation": "菲〈形〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 26,
+    "char": "脯",
+    "correctPronunciation": "fǔ",
+    "wrongPronunciations": [
+      "pú"
+    ],
+    "relatedPhrases": [
+      "漏脯充饥",
+      "肉山脯林",
+      "玄酒瓠脯"
+    ],
+    "explanation": "脯〈名〉fu",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 27,
+    "char": "噶",
+    "correctPronunciation": "gá",
+    "wrongPronunciations": [
+      "gé"
+    ],
+    "relatedPhrases": [
+      "噶字"
+    ],
+    "explanation": "噶----译音用字。如噶布伦,噶伦(原西藏地方政府的主要官员);萨噶达娃节(藏族地区纪念释迦牟尼诞生的节日);噶厦(原西藏地方政府,1959年西藏叛乱事件发生后解散)",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 28,
+    "char": "呱",
+    "correctPronunciation": "gū",
+    "wrongPronunciations": [
+      "guā"
+    ],
+    "relatedPhrases": [
+      "呱字"
+    ],
+    "explanation": "呱〈名〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 29,
+    "char": "扛",
+    "correctPronunciation": "gāng",
+    "wrongPronunciations": [
+      "káng"
+    ],
+    "relatedPhrases": [
+      "拔山扛鼎",
+      "扛鼎拔山",
+      "力能扛鼎"
+    ],
+    "explanation": "扛  gang",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 30,
+    "char": "诃",
+    "correctPronunciation": "hē",
+    "wrongPronunciations": [
+      "kē"
+    ],
+    "relatedPhrases": [
+      "诃佛诋巫",
+      "诃佛骂祖"
+    ],
+    "explanation": "同呵”。",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 31,
+    "char": "行",
+    "correctPronunciation": "héng",
+    "wrongPronunciations": [
+      "háng",
+      "xíng"
+    ],
+    "relatedPhrases": [
+      "行字"
+    ],
+    "explanation": "行〈名〉hang",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 32,
+    "char": "横",
+    "correctPronunciation": "hèng",
+    "wrongPronunciations": [
+      "héng"
+    ],
+    "relatedPhrases": [
+      "飞来横祸",
+      "飞灾横祸",
+      "横恩滥赏",
+      "横祸飞灾"
+    ],
+    "explanation": "横〈名〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 33,
+    "char": "哄",
+    "correctPronunciation": "hòng",
+    "wrongPronunciations": [
+      "hōng",
+      "hǒng"
+    ],
+    "relatedPhrases": [
+      "撮科打哄"
+    ],
+    "explanation": "哄〈动〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 34,
+    "char": "骸",
+    "correctPronunciation": "hái",
+    "wrongPronunciations": [
+      "hài"
+    ],
+    "relatedPhrases": [
+      "放荡形骸",
+      "放浪形骸",
+      "四体百骸",
+      "四肢百骸"
+    ],
+    "explanation": "骸〈名〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 35,
+    "char": "薅",
+    "correctPronunciation": "hāo",
+    "wrongPronunciations": [
+      "rǔ"
+    ],
+    "relatedPhrases": [
+      "薅字"
+    ],
+    "explanation": "薅〈动〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 36,
+    "char": "桦",
+    "correctPronunciation": "huà",
+    "wrongPronunciations": [
+      "huá"
+    ],
+    "relatedPhrases": [
+      "桦字"
+    ],
+    "explanation": "桦 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 37,
+    "char": "馄",
+    "correctPronunciation": "hún",
+    "wrongPronunciations": [
+      "hùn"
+    ],
+    "relatedPhrases": [
+      "馄字"
+    ],
+    "explanation": "馄饨",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 38,
+    "char": "和",
+    "correctPronunciation": "huó",
+    "wrongPronunciations": [
+      "hé",
+      "hè",
+      "huò"
+    ],
+    "relatedPhrases": [
+      "和字"
+    ],
+    "explanation": "和 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 39,
+    "char": "囫",
+    "correctPronunciation": "hú",
+    "wrongPronunciations": [
+      "hù"
+    ],
+    "relatedPhrases": [
+      "囫囵半片",
+      "囫囵吞枣"
+    ],
+    "explanation": "囫 (形声。从囗,勿声)",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 40,
+    "char": "溃",
+    "correctPronunciation": "huì",
+    "wrongPronunciations": [
+      "kuì"
+    ],
+    "relatedPhrases": [
+      "溃字"
+    ],
+    "explanation": "溃 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 41,
+    "char": "缉",
+    "correctPronunciation": "jī",
+    "wrongPronunciations": [
+      "qī",
+      "jí"
+    ],
+    "relatedPhrases": [
+      "挨风缉缝"
+    ],
+    "explanation": "缉 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 42,
+    "char": "几",
+    "correctPronunciation": "jī",
+    "wrongPronunciations": [
+      "jǐ"
+    ],
+    "relatedPhrases": [
+      "窗明几净",
+      "堆案盈几",
+      "极深研几",
+      "几不欲生"
+    ],
+    "explanation": "几 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 43,
+    "char": "嫉",
+    "correctPronunciation": "jí",
+    "wrongPronunciations": [
+      "jì"
+    ],
+    "relatedPhrases": [
+      "妒贤嫉能",
+      "忿世嫉俗",
+      "愤世嫉俗",
+      "刚肠嫉恶"
+    ],
+    "explanation": "嫉 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 44,
+    "char": "济",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciations": [
+      "jì"
+    ],
+    "relatedPhrases": [
+      "彬彬济济",
+      "材优干济",
+      "济济一堂",
+      "人才济济"
+    ],
+    "explanation": "济 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 45,
+    "char": "脊",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciations": [
+      "jí"
+    ],
+    "relatedPhrases": [
+      "飞檐走脊"
+    ],
+    "explanation": "脊 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 46,
+    "char": "渐",
+    "correctPronunciation": "jiān",
+    "wrongPronunciations": [
+      "jiàn"
+    ],
+    "relatedPhrases": [
+      "渐字"
+    ],
+    "explanation": "渐 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 47,
+    "char": "睑",
+    "correctPronunciation": "jiǎn",
+    "wrongPronunciations": [
+      "liǎn"
+    ],
+    "relatedPhrases": [
+      "睑字"
+    ],
+    "explanation": "睑 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 48,
+    "char": "绢",
+    "correctPronunciation": "juàn",
+    "wrongPronunciations": [
+      "juān"
+    ],
+    "relatedPhrases": [
+      "黄绢幼妇"
+    ],
+    "explanation": "绢 ",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 49,
+    "char": "角",
+    "correctPronunciation": "jué",
+    "wrongPronunciations": [
+      "jiǎo"
+    ],
+    "relatedPhrases": [
+      "埒才角妙",
+      "以宫笑角"
+    ],
+    "explanation": "角〈名〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 50,
+    "char": "酵",
+    "correctPronunciation": "jiào",
+    "wrongPronunciations": [
+      "xiào"
+    ],
+    "relatedPhrases": [
+      "酵字"
+    ],
+    "explanation": "酵〈名〉",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  }
+]

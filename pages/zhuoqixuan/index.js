@@ -22,6 +22,12 @@ Page({
         name: '洞天诗意游',
         iconText: '诗',
         cssClass: 'poetry-icon'
+      },
+      {
+        id: '28Stars',
+        name: '二十八星宿探秘',
+        iconText: '星',
+        cssClass: 'star-icon'
       }
     ]
   },

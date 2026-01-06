@@ -1,0 +1,181 @@
+/* 全局样式 */
+.container {
+  min-height: 100vh;
+  background-color: #f8f6f0;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 卡片容器 */
+.card-container {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  border: 2rpx solid #e8e4d8;
+}
+
+/* 汉字展示区 */
+.character-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+  padding: 40rpx 0;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.character {
+  font-size: 200rpx;
+  font-weight: bold;
+  color: #8B4513;
+  margin-bottom: 30rpx;
+}
+
+.pronunciation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15rpx;
+}
+
+.correct-pronunciation {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.wrong-pronunciation {
+  font-size: 28rpx;
+  color: #ff6b6b;
+}
+
+/* 通用区块样式 */
+.detail-section,
+.phrases-section,
+.wrong-phrases-section,
+.poems-section {
+  margin-bottom: 40rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #8B4513;
+  margin-bottom: 20rpx;
+  padding-left: 10rpx;
+  border-left: 8rpx solid #8B4513;
+}
+
+/* 详细解析区 */
+.explanation {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* 词组区 */
+.phrases-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8rpx;
+}
+
+.phrase-item {
+  background-color: #f5f5f5;
+  padding: 15rpx 25rpx;
+  border-radius: 25rpx;
+  font-size: 26rpx;
+  color: #555;
+  margin: 8rpx;
+}
+
+/* 常见错误区 */
+.wrong-phrases-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrong-phrase-item {
+  background-color: #fff3f3;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  font-size: 28rpx;
+  color: #d9534f;
+  border: 1rpx solid #ffdddd;
+  margin-bottom: 15rpx;
+}
+
+/* 古诗词区 */
+.poem-item {
+  margin-bottom: 25rpx;
+  padding: 25rpx;
+  background-color: #f8f9fa;
+  border-radius: 15rpx;
+  border-left: 6rpx solid #D2B48C;
+}
+
+.poem-title {
+  font-size: 28rpx;
+  color: #8B4513;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  text-align: center;
+}
+
+.poem-content {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15rpx;
+  font-style: italic;
+  text-align: center;
+}
+
+.poem-author {
+  font-size: 24rpx;
+  color: #888;
+  text-align: right;
+}
+
+/* 操作按钮区 */
+.action-buttons {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 30rpx;
+}
+
+.action-btn {
+  flex: 1;
+  height: 90rpx;
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reload-btn {
+  background-color: #D2B48C;
+  color: #8B4513;
+}
+
+.test-btn {
+  background-color: #8B4513;
+  color: white;
+}
+
+/* 加载状态 */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500rpx;
+  font-size: 32rpx;
+  color: #666;
+}

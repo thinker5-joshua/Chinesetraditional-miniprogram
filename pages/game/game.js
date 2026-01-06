@@ -1,7 +1,10 @@
+const cloudStorage = require('../../utils/cloudStorage');
+
 Page({
   data: {
     gameId: '',
     gameName: '',
+    wyhdShareDefaultUrl: '',
     starsList: [
       { id: 1, name: '角宿', desc: '东方青龙角，春分点标志' },
       { id: 2, name: '亢宿', desc: '青龙颈项，主管农业' },
@@ -67,6 +70,17 @@ Page({
     wx.setNavigationBarTitle({
       title: this.data.gameName
     })
+
+    // 获取分享默认图片URL
+    cloudStorage.getImage('wyhd-share-default.png')
+      .then(url => {
+        this.setData({
+          wyhdShareDefaultUrl: url
+        });
+      })
+      .catch(error => {
+        console.error('Get share default image error:', error);
+      });
   },
 
   goBack() {
@@ -106,7 +120,7 @@ Page({
     return {
       title: `文益互动 - 传统文化益智互动合集`,
       path: `/pages/game/game?id=${this.data.gameId}`,
-      imageUrl: '/images/wyhd-share-default.png'
+      imageUrl: this.data.wyhdShareDefaultUrl
     };
   },
 
@@ -117,7 +131,7 @@ Page({
     return {
       title: `文益互动 - 传统文化益智互动合集`,
       query: `id=${this.data.gameId}`,
-      imageUrl: '/images/wyhd-share-default.png'
+      imageUrl: this.data.wyhdShareDefaultUrl || '/images/wyhd-share-default.png'
     };
   }
 })

@@ -1,0 +1,201 @@
+<view class="app-container">
+  <!-- 顶部导航 -->
+  <view class="app-header">
+    <view class="header-content">
+      <text class="app-title">每日一字</text>
+      <text class="app-subtitle">探索汉字奥秘，学习正确读音</text>
+    </view>
+  </view>
+
+  <!-- 次要操作按钮区 -->
+  <view class="secondary-action-bar">
+    <view class="secondary-actions">
+      <!-- 保存按钮 -->
+      <button class="secondary-btn save-btn" 
+              bindtap="saveCard"
+              plain="true"
+              style="background:none; border:none; padding:0;">
+        <text class="secondary-icon">📥</text>
+      </button>
+      
+      <!-- 列表按钮 -->
+      <button class="secondary-btn list-btn" 
+              bindtap="showCharacterList"
+              plain="true"
+              style="background:none; border:none; padding:0;">
+        <text class="secondary-icon">📋</text>
+      </button>
+      
+      <!-- 收藏按钮 -->
+      <button class="secondary-btn favorite-btn {{isFavorite ? 'active' : ''}}" 
+              bindtap="toggleFavorite"
+              plain="true"
+              style="background:none; border:none; padding:0;">
+        <text class="secondary-icon">{{isFavorite ? '❤️' : '🤍'}}</text>
+      </button>
+      
+      <!-- 测试按钮 -->
+      <button class="secondary-btn test-btn" 
+              bindtap="navigateToTest"
+              plain="true"
+              style="background:none; border:none; padding:0;">
+        <text class="secondary-icon">📝</text>
+      </button>
+      
+      <!-- 设置按钮 -->
+      <button class="secondary-btn setting-btn" 
+              bindtap="openSettings"
+              plain="true"
+              style="background:none; border:none; padding:0;">
+        <text class="secondary-icon">⚙️</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 主内容区域 -->
+  <view class="main-content" wx:if="{{!loading}}">
+    
+    <!-- 字卡容器 -->
+    <view class="character-container">
+      <!-- 可翻转字卡 -->
+      <view class="card" bindtap="toggleCardFlip">
+        <!-- 字卡正面 -->
+        <view class="card-face card-front {{isFlipped ? 'hidden' : ''}}">
+          <view class="character-section">
+            <text class="character">{{todayCharacter.char}}</text>
+            <text class="correct-pronunciation">{{todayCharacter.correctPronunciation}}</text>
+          </view>
+          
+          <view class="related-phrases">
+            <view class="section-label">相关词组</view>
+            <view class="phrases-grid">
+              <view class="phrase-item" wx:for="{{todayCharacter.relatedPhrases}}" wx:key="index">
+                {{item}}
+              </view>
+            </view>
+          </view>
+        </view>
+        
+        <!-- 字卡背面 -->
+        <view class="card-face card-back {{isFlipped ? '' : 'hidden'}}">
+          <!-- 缩小版正面内容 -->
+          <view class="mini-front">
+            <text class="mini-character">{{todayCharacter.char}}</text>
+            <text class="mini-pronunciation">{{todayCharacter.correctPronunciation}}</text>
+          </view>
+          
+          <!-- 详细内容 -->
+          <view class="detail-content">
+            <view class="detail-item inline-detail">
+              <text class="detail-label">详细解析：</text>
+              <text class="detail-text">{{todayCharacter.explanation}}</text>
+            </view>
+            
+            <view class="detail-item inline-detail">
+              <text class="detail-label">错误读音：</text>
+              <text class="detail-text">{{wrongPronunciationsText}}</text>
+            </view>
+            
+            <view class="detail-item inline-detail">
+              <text class="detail-label">错误原因：</text>
+              <text class="detail-text">{{errorReasonText}}</text>
+            </view>
+            
+            <view class="detail-item poems-section">
+              <view class="detail-title">关联诗词：</view>
+              <view class="poem-item" wx:for="{{relatedPoems}}" wx:key="index">
+                <view class="poem-line" wx:for="{{item.relatedLines}}" wx:for-item="line" wx:key="index">
+                  {{line}}
+                </view>
+                <view class="poem-author">{{item.author}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 加载动画 -->
+    <view class="loading-overlay" wx:if="{{loading}}">
+      <view class="loading-spinner">
+        <view class="spinner"></view>
+        <text>正在加载汉字...</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部固定操作栏 -->
+  <view class="bottom-bar">
+    <!-- 主要操作按钮 -->
+    <view class="main-actions">
+      <button class="action-btn nav-btn prev" bindtap="showPreviousCharacter">
+        <text class="nav-icon">←</text>
+        <text class="nav-text">上一字</text>
+      </button>
+      
+      <button class="action-btn nav-btn next" bindtap="showNextCharacter">
+        <text class="nav-text">下一字</text>
+        <text class="nav-icon">→</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 分享图片画布（隐藏） -->
+  <canvas type="2d" id="shareCanvas" style="width: 750px; height: 1334px; position: absolute; left: -9999px; top: -9999px;"></canvas>
+  
+  <!-- 设置窗口 -->
+  <view class="setting-overlay" wx:if="{{settingVisible}}">
+    <view class="setting-container">
+      <!-- 设置标题 -->
+      <view class="setting-header">
+        <text class="setting-title">设置</text>
+      </view>
+      
+      <!-- 设置内容 -->
+      <view class="setting-content">
+        <!-- 字卡难度选择配置 -->
+        <view class="setting-section">
+          <text class="setting-section-title">字卡难度选择配置</text>
+          <text class="setting-section-desc">您可以选择是否显示如下难度的字，初（初级）、进（中级）、精（高级）、战（挑战级）。</text>
+          <view class="difficulty-options">
+            <view class="difficulty-option {{tempDifficulties.beginner ? 'active' : ''}}" bindtap="toggleTempDifficulty" data-level="初级">
+              初
+            </view>
+            <view class="difficulty-option {{tempDifficulties.intermediate ? 'active' : ''}}" bindtap="toggleTempDifficulty" data-level="中级">
+              进
+            </view>
+            <view class="difficulty-option {{tempDifficulties.advanced ? 'active' : ''}}" bindtap="toggleTempDifficulty" data-level="高级">
+              精
+            </view>
+            <view class="difficulty-option {{tempDifficulties.challenge ? 'active' : ''}}" bindtap="toggleTempDifficulty" data-level="挑战级">
+              战
+            </view>
+          </view>
+        </view>
+        
+        <!-- 测试难度选择配置 -->
+        <view class="setting-section">
+          <text class="setting-section-title">测试难度选择配置</text>
+          <text class="setting-section-desc">您可以根据需要选择容易、均衡、挑战测试难度，下次进入测试时将出现对应难度题目</text>
+          <view class="test-difficulty-options">
+            <view class="test-difficulty-option {{testDifficulty === '容易' ? 'active' : ''}}" bindtap="selectTestDifficulty" data-difficulty="容易">
+              容易
+            </view>
+            <view class="test-difficulty-option {{testDifficulty === '均衡' ? 'active' : ''}}" bindtap="selectTestDifficulty" data-difficulty="均衡">
+              均衡
+            </view>
+            <view class="test-difficulty-option {{testDifficulty === '挑战' ? 'active' : ''}}" bindtap="selectTestDifficulty" data-difficulty="挑战">
+              挑战
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 设置按钮 -->
+      <view class="setting-buttons">
+        <button class="setting-btn return-btn" bindtap="closeSettings">返回</button>
+        <button class="setting-btn confirm-btn" bindtap="saveSettings">确认</button>
+      </view>
+    </view>
+  </view>
+</view>
