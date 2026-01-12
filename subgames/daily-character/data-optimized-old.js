@@ -15,8 +15,8 @@ const characters = [
     "char": "龟",
     "correctPronunciation": "jūn",
     "wrongPronunciations": [
-      "qiū",
-      "guī"
+      "guī",
+      "qiū"
     ],
     "relatedPhrases": [
       "龟裂",
@@ -117,11 +117,11 @@ const characters = [
       "gěi"
     ],
     "relatedPhrases": [
-      "目不暇给",
-      "家给民足",
-      "供给",
       "呼不给吸",
-      "家给人足"
+      "家给民足",
+      "家给人足",
+      "目不暇给",
+      "供给"
     ],
     "explanation": "表示供给、丰足、接续等义，属于文言用法",
     "errorReasonType": 4,
@@ -153,9 +153,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "百载树人",
-      "千载难逢",
       "饿莩载道",
-      "跗萼载韡"
+      "跗萼载韡",
+      "千载难逢"
     ],
     "explanation": "年（百载）、充满（载道）。 ",
     "errorReasonType": 4,
@@ -166,13 +166,13 @@ const characters = [
     "char": "着",
     "correctPronunciation": "zhuó",
     "wrongPronunciations": [
+      "zháo",
       "zhāo",
-      "zhe",
-      "zháo"
+      "zhe"
     ],
     "relatedPhrases": [
-      "不着疼热",
       "不着边际",
+      "不着疼热",
       "着想"
     ],
     "explanation": "表示接触、达到、感受、用于古语、书面语",
@@ -187,9 +187,9 @@ const characters = [
       "fèn"
     ],
     "relatedPhrases": [
+      "氛围",
       "气氛",
-      "氛氲",
-      "氛围"
+      "氛氲"
     ],
     "explanation": "氛（fēn）：周围的气氛或情调。如：氛围。",
     "errorReasonType": 4,
@@ -220,10 +220,10 @@ const characters = [
       "chèng"
     ],
     "relatedPhrases": [
+      "称心快意",
       "称心满意",
       "称心",
-      "匀称",
-      "称心快意"
+      "匀称"
     ],
     "explanation": "表示符合、适合，指心意完全契合、满意。",
     "errorReasonType": 4,
@@ -255,11 +255,11 @@ const characters = [
       "chù"
     ],
     "relatedPhrases": [
-      "不遑宁处",
+      "安常处顺",
       "处世之道",
       "抱法处势",
-      "处女",
-      "安常处顺"
+      "不遑宁处",
+      "处女"
     ],
     "explanation": "在文言和成语中，处读chǔ，作动词使用，表示以下含义：处于、安于（强调状态），处理、安置（强调动作）",
     "errorReasonType": 4,
@@ -273,10 +273,10 @@ const characters = [
       "cuàn"
     ],
     "relatedPhrases": [
-      "汆白肉",
-      "汆鱼",
       "汆丸子",
-      "汆汤"
+      "汆汤",
+      "汆白肉",
+      "汆鱼"
     ],
     "explanation": "汆（cuān）：把食物放到沸水里稍微一煮。如：汆丸子。",
     "errorReasonType": 4,
@@ -290,9 +290,9 @@ const characters = [
       "dǎng"
     ],
     "relatedPhrases": [
-      "档期",
-      "档案",
       "一搭一档",
+      "档案",
+      "档期",
       "档位"
     ],
     "explanation": "量词/名词 成套事物（文件、时间、分界）",
@@ -308,9 +308,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "当仁不让",
-      "大而无当",
       "安步当车",
-      "长歌当哭"
+      "长歌当哭",
+      "大而无当"
     ],
     "explanation": "表当作，文言用法，仅用于成语、固定搭配。",
     "errorReasonType": 4,
@@ -354,11 +354,11 @@ const characters = [
       "fēi"
     ],
     "relatedPhrases": [
-      "卑宫菲食",
-      "菲薄",
-      "躬自菲薄",
       "妄自菲薄",
-      "菲食薄衣"
+      "菲食薄衣",
+      "躬自菲薄",
+      "卑宫菲食",
+      "菲薄"
     ],
     "explanation": "古汉语中表微薄、简陋，固定读 fěi（第三声），与菲读 fēi（第一声，如芳菲）无关。",
     "errorReasonType": 4,
@@ -389,8 +389,8 @@ const characters = [
       "guā"
     ],
     "relatedPhrases": [
-      "呱呱而泣",
       "呱呱坠地",
+      "呱呱而泣",
       "呱呱声",
       "呱呱叫"
     ],
@@ -437,15 +437,15 @@ const characters = [
     "char": "骸",
     "correctPronunciation": "hái",
     "wrongPronunciations": [
-      "hǎi",
-      "hài"
+      "hài",
+      "hǎi"
     ],
     "relatedPhrases": [
-      "四肢百骸",
       "骸骨",
       "放浪形骸",
-      "骨骸",
-      "残骸"
+      "残骸",
+      "四肢百骸",
+      "骨骸"
     ],
     "explanation": "本义为胫骨（小腿骨），后引申为人体骨骼的总称，再进一步引申为身体的代称。",
     "errorReasonType": 4,
@@ -476,11 +476,11 @@ const characters = [
       "huá"
     ],
     "relatedPhrases": [
+      "白桦",
       "桦树",
-      "白桦树",
-      "桦林",
       "桦木",
-      "白桦"
+      "桦林",
+      "白桦树"
     ],
     "explanation": "桦（huà）：落叶乔木或灌木，树皮白色、灰色、黄色或黑色，有的光滑，有的开裂。木材致密，可制器具。如：白桦。",
     "errorReasonType": 4,
@@ -546,9 +546,10 @@ const characters = [
       "kuì"
     ],
     "relatedPhrases": [
+      "溃脓",
+      "溃脓",
       "溃破",
-      "溃疡",
-      "溃脓"
+      "溃疡"
     ],
     "explanation": "在医学语境中（如溃脓）必须读作huì，而在其他语境（如溃烂、溃败）中读作kuì。这是汉语中典型的多音字在不同语境下读音不同的现象。",
     "errorReasonType": 4,
@@ -559,12 +560,12 @@ const characters = [
     "char": "缉",
     "correctPronunciation": "jī",
     "wrongPronunciations": [
-      "jí",
-      "qī"
+      "qī",
+      "jí"
     ],
     "relatedPhrases": [
-      "通缉",
-      "挨风缉缝"
+      "挨风缉缝",
+      "通缉"
     ],
     "explanation": "缉 ",
     "errorReasonType": 4,
@@ -578,10 +579,10 @@ const characters = [
       "jǐ"
     ],
     "relatedPhrases": [
-      "几不欲生",
-      "堆案盈几",
       "窗明几净",
-      "极深研几"
+      "堆案盈几",
+      "极深研几",
+      "几不欲生"
     ],
     "explanation": "几 ",
     "errorReasonType": 4,
@@ -595,11 +596,11 @@ const characters = [
       "jì"
     ],
     "relatedPhrases": [
-      "愤世嫉俗",
+      "妒贤嫉能",
       "忿世嫉俗",
-      "嫉妒",
+      "愤世嫉俗",
       "刚肠嫉恶",
-      "妒贤嫉能"
+      "嫉妒"
     ],
     "explanation": "嫉 ",
     "errorReasonType": 4,
@@ -613,10 +614,10 @@ const characters = [
       "jì"
     ],
     "relatedPhrases": [
-      "人才济济",
       "彬彬济济",
+      "材优干济",
       "济济一堂",
-      "材优干济"
+      "人才济济"
     ],
     "explanation": "济 ",
     "errorReasonType": 4,
@@ -639,8 +640,9 @@ const characters = [
     "errorReasonType": 4,
     "difficultyLevel": "初级"
   },
+
   {
-    "id": 38,
+    "id": 1,
     "char": "塞",
     "correctPronunciation": "sè",
     "wrongPronunciations": [
@@ -659,7 +661,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 39,
+    "id": 2,
     "char": "匕",
     "correctPronunciation": "bǐ",
     "wrongPronunciations": [],
@@ -671,7 +673,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 40,
+    "id": 3,
     "char": "羼",
     "correctPronunciation": "chàn",
     "wrongPronunciations": [],
@@ -683,7 +685,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 41,
+    "id": 4,
     "char": "哄",
     "correctPronunciation": "hǒng",
     "wrongPronunciations": [],
@@ -695,7 +697,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 42,
+    "id": 5,
     "char": "憧",
     "correctPronunciation": "chōng",
     "wrongPronunciations": [],
@@ -707,7 +709,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 43,
+    "id": 6,
     "char": "模",
     "correctPronunciation": "mú",
     "wrongPronunciations": [
@@ -722,7 +724,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 44,
+    "id": 7,
     "char": "讪",
     "correctPronunciation": "shàn",
     "wrongPronunciations": [],
@@ -734,7 +736,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 45,
+    "id": 8,
     "char": "龋",
     "correctPronunciation": "qǔ",
     "wrongPronunciations": [],
@@ -746,7 +748,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 46,
+    "id": 9,
     "char": "骁",
     "correctPronunciation": "xiāo",
     "wrongPronunciations": [],
@@ -758,7 +760,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 47,
+    "id": 10,
     "char": "枢",
     "correctPronunciation": "shū",
     "wrongPronunciations": [],
@@ -770,7 +772,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 48,
+    "id": 11,
     "char": "谮",
     "correctPronunciation": "zèn",
     "wrongPronunciations": [],
@@ -782,7 +784,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 49,
+    "id": 12,
     "char": "札",
     "correctPronunciation": "zhá",
     "wrongPronunciations": [],
@@ -794,7 +796,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 50,
+    "id": 13,
     "char": "轴",
     "correctPronunciation": "zhòu",
     "wrongPronunciations": [],
@@ -806,7 +808,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 51,
+    "id": 14,
     "char": "睑",
     "correctPronunciation": "jiǎn",
     "wrongPronunciations": [],
@@ -818,7 +820,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 52,
+    "id": 15,
     "char": "纂",
     "correctPronunciation": "zuǎn",
     "wrongPronunciations": [],
@@ -830,7 +832,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 53,
+    "id": 16,
     "char": "髓",
     "correctPronunciation": "suǐ",
     "wrongPronunciations": [],
@@ -842,7 +844,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 54,
+    "id": 17,
     "char": "坯",
     "correctPronunciation": "pī",
     "wrongPronunciations": [],
@@ -854,7 +856,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 55,
+    "id": 18,
     "char": "畦",
     "correctPronunciation": "qí",
     "wrongPronunciations": [],
@@ -866,7 +868,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 56,
+    "id": 19,
     "char": "淖",
     "correctPronunciation": "nào",
     "wrongPronunciations": [],
@@ -878,7 +880,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 57,
+    "id": 20,
     "char": "脯",
     "correctPronunciation": "fǔ",
     "wrongPronunciations": [],
@@ -890,7 +892,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 58,
+    "id": 21,
     "char": "轧",
     "correctPronunciation": "yà",
     "wrongPronunciations": [],
@@ -902,7 +904,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 59,
+    "id": 22,
     "char": "累",
     "correctPronunciation": "lěi",
     "wrongPronunciations": [],
@@ -914,7 +916,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 60,
+    "id": 23,
     "char": "哑",
     "correctPronunciation": "yin",
     "wrongPronunciations": [],
@@ -926,7 +928,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 61,
+    "id": 24,
     "char": "辍",
     "correctPronunciation": "chuò",
     "wrongPronunciations": [],
@@ -938,7 +940,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 62,
+    "id": 25,
     "char": "臭",
     "correctPronunciation": "xiù",
     "wrongPronunciations": [
@@ -953,7 +955,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 63,
+    "id": 26,
     "char": "诘",
     "correctPronunciation": "jié",
     "wrongPronunciations": [],
@@ -965,7 +967,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 64,
+    "id": 27,
     "char": "啜",
     "correctPronunciation": "chuò",
     "wrongPronunciations": [],
@@ -977,7 +979,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 65,
+    "id": 28,
     "char": "撷",
     "correctPronunciation": "xié",
     "wrongPronunciations": [],
@@ -989,7 +991,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 66,
+    "id": 29,
     "char": "凿",
     "correctPronunciation": "záo",
     "wrongPronunciations": [
@@ -1004,7 +1006,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 67,
+    "id": 30,
     "char": "憔",
     "correctPronunciation": "qiáo",
     "wrongPronunciations": [],
@@ -1016,7 +1018,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 68,
+    "id": 31,
     "char": "脊",
     "correctPronunciation": "jǐ",
     "wrongPronunciations": [
@@ -1031,7 +1033,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 69,
+    "id": 32,
     "char": "渍",
     "correctPronunciation": "zì",
     "wrongPronunciations": [],
@@ -1043,7 +1045,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 70,
+    "id": 33,
     "char": "俭",
     "correctPronunciation": "jiǎn",
     "wrongPronunciations": [],
@@ -1055,7 +1057,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 71,
+    "id": 34,
     "char": "否",
     "correctPronunciation": "pǐ",
     "wrongPronunciations": [
@@ -1070,7 +1072,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 72,
+    "id": 35,
     "char": "勘",
     "correctPronunciation": "kān",
     "wrongPronunciations": [],
@@ -1082,7 +1084,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 73,
+    "id": 36,
     "char": "拯",
     "correctPronunciation": "zhěng",
     "wrongPronunciations": [],
@@ -1094,7 +1096,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 74,
+    "id": 37,
     "char": "笺",
     "correctPronunciation": "jiān",
     "wrongPronunciations": [],
@@ -1106,7 +1108,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 75,
+    "id": 38,
     "char": "贮",
     "correctPronunciation": "zhù",
     "wrongPronunciations": [],
@@ -1118,7 +1120,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 76,
+    "id": 39,
     "char": "忏",
     "correctPronunciation": "chàn",
     "wrongPronunciations": [],
@@ -1130,7 +1132,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 77,
+    "id": 40,
     "char": "勾",
     "correctPronunciation": "gòu",
     "wrongPronunciations": [],
@@ -1142,7 +1144,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 78,
+    "id": 41,
     "char": "佣",
     "correctPronunciation": "yōng",
     "wrongPronunciations": [],
@@ -1154,7 +1156,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 79,
+    "id": 42,
     "char": "曳",
     "correctPronunciation": "yè",
     "wrongPronunciations": [],
@@ -1166,7 +1168,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 80,
+    "id": 43,
     "char": "喟",
     "correctPronunciation": "kuì",
     "wrongPronunciations": [],
@@ -1178,7 +1180,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 81,
+    "id": 44,
     "char": "诣",
     "correctPronunciation": "yì",
     "wrongPronunciations": [
@@ -1193,7 +1195,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 82,
+    "id": 45,
     "char": "傀",
     "correctPronunciation": "kuǐ",
     "wrongPronunciations": [],
@@ -1205,7 +1207,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 83,
+    "id": 46,
     "char": "魇",
     "correctPronunciation": "yǎn",
     "wrongPronunciations": [],
@@ -1217,7 +1219,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 84,
+    "id": 47,
     "char": "括",
     "correctPronunciation": "kuò",
     "wrongPronunciations": [],
@@ -1229,7 +1231,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 85,
+    "id": 48,
     "char": "赝",
     "correctPronunciation": "yàn",
     "wrongPronunciations": [],
@@ -1241,7 +1243,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 86,
+    "id": 49,
     "char": "瞰",
     "correctPronunciation": "kàn",
     "wrongPronunciations": [],
@@ -1253,7 +1255,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 87,
+    "id": 50,
     "char": "靥",
     "correctPronunciation": "yè",
     "wrongPronunciations": [],
@@ -1265,7 +1267,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 88,
+    "id": 51,
     "char": "恪",
     "correctPronunciation": "kè",
     "wrongPronunciations": [],
@@ -1277,7 +1279,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 89,
+    "id": 52,
     "char": "忖",
     "correctPronunciation": "cǔn",
     "wrongPronunciations": [],
@@ -1289,7 +1291,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 90,
+    "id": 53,
     "char": "度",
     "correctPronunciation": "duó",
     "wrongPronunciations": [
@@ -1304,7 +1306,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 91,
+    "id": 54,
     "char": "稂",
     "correctPronunciation": "láng",
     "wrongPronunciations": [],
@@ -1316,7 +1318,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 92,
+    "id": 55,
     "char": "莠",
     "correctPronunciation": "yǒu",
     "wrongPronunciations": [
@@ -1332,7 +1334,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 93,
+    "id": 56,
     "char": "弦",
     "correctPronunciation": "xián",
     "wrongPronunciations": [
@@ -1347,7 +1349,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 94,
+    "id": 57,
     "char": "岚",
     "correctPronunciation": "lán",
     "wrongPronunciations": [],
@@ -1359,7 +1361,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 95,
+    "id": 58,
     "char": "黠",
     "correctPronunciation": "xiá",
     "wrongPronunciations": [],
@@ -1371,7 +1373,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 96,
+    "id": 59,
     "char": "罹",
     "correctPronunciation": "lí",
     "wrongPronunciations": [],
@@ -1383,7 +1385,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 97,
+    "id": 60,
     "char": "酗",
     "correctPronunciation": "xù",
     "wrongPronunciations": [],
@@ -1395,7 +1397,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 98,
+    "id": 61,
     "char": "繆",
     "correctPronunciation": "móu",
     "wrongPronunciations": [],
@@ -1407,7 +1409,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 99,
+    "id": 62,
     "char": "檄",
     "correctPronunciation": "xí",
     "wrongPronunciations": [],
@@ -1419,7 +1421,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 100,
+    "id": 63,
     "char": "脉",
     "correctPronunciation": "mò",
     "wrongPronunciations": [
@@ -1434,7 +1436,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 101,
+    "id": 64,
     "char": "暇",
     "correctPronunciation": "xiá",
     "wrongPronunciations": [],
@@ -1446,7 +1448,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 102,
+    "id": 65,
     "char": "袂",
     "correctPronunciation": "mèi",
     "wrongPronunciations": [],
@@ -1458,7 +1460,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 103,
+    "id": 66,
     "char": "谑",
     "correctPronunciation": "xuè",
     "wrongPronunciations": [],
@@ -1470,7 +1472,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 104,
+    "id": 67,
     "char": "懑",
     "correctPronunciation": "mèn",
     "wrongPronunciations": [],
@@ -1482,7 +1484,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 105,
+    "id": 68,
     "char": "辖",
     "correctPronunciation": "xiá",
     "wrongPronunciations": [],
@@ -1494,7 +1496,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 106,
+    "id": 69,
     "char": "谬",
     "correctPronunciation": "miù",
     "wrongPronunciations": [
@@ -1509,7 +1511,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 107,
+    "id": 70,
     "char": "兴",
     "correctPronunciation": "xīng",
     "wrongPronunciations": [],
@@ -1521,7 +1523,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 108,
+    "id": 71,
     "char": "霾",
     "correctPronunciation": "mái",
     "wrongPronunciations": [],
@@ -1533,7 +1535,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 109,
+    "id": 72,
     "char": "淆",
     "correctPronunciation": "xiáo",
     "wrongPronunciations": [],
@@ -1545,7 +1547,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 110,
+    "id": 73,
     "char": "赧",
     "correctPronunciation": "nǎn",
     "wrongPronunciations": [],
@@ -1557,7 +1559,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 111,
+    "id": 74,
     "char": "噱",
     "correctPronunciation": "xué",
     "wrongPronunciations": [],
@@ -1569,7 +1571,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 112,
+    "id": 75,
     "char": "懦",
     "correctPronunciation": "nuò",
     "wrongPronunciations": [],
@@ -1581,7 +1583,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 113,
+    "id": 76,
     "char": "斡",
     "correctPronunciation": "wò",
     "wrongPronunciations": [],
@@ -1593,7 +1595,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 114,
+    "id": 77,
     "char": "拗",
     "correctPronunciation": "niù",
     "wrongPronunciations": [],
@@ -1605,7 +1607,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 115,
+    "id": 78,
     "char": "娲",
     "correctPronunciation": "wā",
     "wrongPronunciations": [],
@@ -1617,7 +1619,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 116,
+    "id": 79,
     "char": "馁",
     "correctPronunciation": "něi",
     "wrongPronunciations": [],
@@ -1629,7 +1631,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 117,
+    "id": 80,
     "char": "挞",
     "correctPronunciation": "tà",
     "wrongPronunciations": [
@@ -1644,7 +1646,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 118,
+    "id": 81,
     "char": "酝",
     "correctPronunciation": "yùn",
     "wrongPronunciations": [],
@@ -1656,7 +1658,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 119,
+    "id": 82,
     "char": "酿",
     "correctPronunciation": "niàng",
     "wrongPronunciations": [],
@@ -1668,7 +1670,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 120,
+    "id": 83,
     "char": "帖",
     "correctPronunciation": "tiè",
     "wrongPronunciations": [],
@@ -1680,7 +1682,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 121,
+    "id": 84,
     "char": "拈",
     "correctPronunciation": "nian",
     "wrongPronunciations": [],
@@ -1692,7 +1694,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 122,
+    "id": 85,
     "char": "迢",
     "correctPronunciation": "tiáo",
     "wrongPronunciations": [],
@@ -1704,7 +1706,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 123,
+    "id": 86,
     "char": "捺",
     "correctPronunciation": "nà",
     "wrongPronunciations": [],
@@ -1716,7 +1718,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 124,
+    "id": 87,
     "char": "湍",
     "correctPronunciation": "tuān",
     "wrongPronunciations": [],
@@ -1728,7 +1730,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 125,
+    "id": 88,
     "char": "炮",
     "correctPronunciation": "páo",
     "wrongPronunciations": [
@@ -1743,7 +1745,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 126,
+    "id": 89,
     "char": "赡",
     "correctPronunciation": "shàn",
     "wrongPronunciations": [],
@@ -1755,7 +1757,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 127,
+    "id": 90,
     "char": "粕",
     "correctPronunciation": "pò",
     "wrongPronunciations": [],
@@ -1767,7 +1769,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 128,
+    "id": 91,
     "char": "说",
     "correctPronunciation": "shuì",
     "wrongPronunciations": [],
@@ -1779,7 +1781,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 129,
+    "id": 92,
     "char": "溯",
     "correctPronunciation": "sù",
     "wrongPronunciations": [],
@@ -1791,7 +1793,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 130,
+    "id": 93,
     "char": "讣",
     "correctPronunciation": "fù",
     "wrongPronunciations": [],
@@ -1803,7 +1805,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 131,
+    "id": 94,
     "char": "中",
     "correctPronunciation": "zhòng",
     "wrongPronunciations": [
@@ -1818,7 +1820,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 132,
+    "id": 95,
     "char": "胚",
     "correctPronunciation": "pēi",
     "wrongPronunciations": [],
@@ -1830,7 +1832,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 133,
+    "id": 96,
     "char": "绽",
     "correctPronunciation": "zhàn",
     "wrongPronunciations": [],
@@ -1842,7 +1844,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 134,
+    "id": 97,
     "char": "剖",
     "correctPronunciation": "pōu",
     "wrongPronunciations": [],
@@ -1854,7 +1856,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 135,
+    "id": 98,
     "char": "璞",
     "correctPronunciation": "pú",
     "wrongPronunciations": [],
@@ -1866,7 +1868,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 136,
+    "id": 99,
     "char": "绮",
     "correctPronunciation": "qǐ",
     "wrongPronunciations": [],
@@ -1878,7 +1880,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 137,
+    "id": 100,
     "char": "悭",
     "correctPronunciation": "qiān",
     "wrongPronunciations": [],
@@ -1890,7 +1892,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 138,
+    "id": 101,
     "char": "翘",
     "correctPronunciation": "qiáo",
     "wrongPronunciations": [],
@@ -1902,7 +1904,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 139,
+    "id": 102,
     "char": "栖",
     "correctPronunciation": "qī",
     "wrongPronunciations": [],
@@ -1914,7 +1916,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 140,
+    "id": 103,
     "char": "擎",
     "correctPronunciation": "qíng",
     "wrongPronunciations": [],
@@ -1926,7 +1928,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 141,
+    "id": 104,
     "char": "戕",
     "correctPronunciation": "qiang",
     "wrongPronunciations": [],
@@ -1938,7 +1940,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 142,
+    "id": 105,
     "char": "堑",
     "correctPronunciation": "qiàn",
     "wrongPronunciations": [],
@@ -1950,7 +1952,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 143,
+    "id": 106,
     "char": "慑",
     "correctPronunciation": "shè",
     "wrongPronunciations": [],
@@ -1962,7 +1964,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 144,
+    "id": 107,
     "char": "蹊",
     "correctPronunciation": "qī",
     "wrongPronunciations": [],
@@ -1974,7 +1976,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 145,
+    "id": 108,
     "char": "闷",
     "correctPronunciation": "mēn",
     "wrongPronunciations": [],
@@ -1986,7 +1988,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 146,
+    "id": 109,
     "char": "遒",
     "correctPronunciation": "qiú",
     "wrongPronunciations": [],
@@ -1998,7 +2000,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 147,
+    "id": 110,
     "char": "殷",
     "correctPronunciation": "yān",
     "wrongPronunciations": [],
@@ -2010,7 +2012,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 148,
+    "id": 111,
     "char": "蜷",
     "correctPronunciation": "quán",
     "wrongPronunciations": [],
@@ -2022,7 +2024,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 149,
+    "id": 112,
     "char": "徜",
     "correctPronunciation": "cháng",
     "wrongPronunciations": [],
@@ -2034,7 +2036,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 150,
+    "id": 113,
     "char": "癖",
     "correctPronunciation": "pǐ",
     "wrongPronunciations": [
@@ -2050,7 +2052,19 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 151,
+    "id": 114,
+    "char": "巷",
+    "correctPronunciation": "hàng",
+    "wrongPronunciations": [],
+    "relatedPhrases": [
+      "巷道"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 115,
     "char": "狩",
     "correctPronunciation": "shòu",
     "wrongPronunciations": [],
@@ -2062,7 +2076,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 152,
+    "id": 116,
     "char": "媲",
     "correctPronunciation": "pì",
     "wrongPronunciations": [],
@@ -2074,7 +2088,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 153,
+    "id": 117,
     "char": "涮",
     "correctPronunciation": "shuàn",
     "wrongPronunciations": [],
@@ -2086,7 +2100,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 154,
+    "id": 118,
     "char": "湃",
     "correctPronunciation": "pài",
     "wrongPronunciations": [],
@@ -2098,7 +2112,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 155,
+    "id": 119,
     "char": "稔",
     "correctPronunciation": "rěn",
     "wrongPronunciations": [],
@@ -2110,7 +2124,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 156,
+    "id": 120,
     "char": "纶",
     "correctPronunciation": "guān",
     "wrongPronunciations": [],
@@ -2122,7 +2136,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 157,
+    "id": 121,
     "char": "肖",
     "correctPronunciation": "xiào",
     "wrongPronunciations": [
@@ -2138,7 +2152,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 158,
+    "id": 122,
     "char": "蓦",
     "correctPronunciation": "mò",
     "wrongPronunciations": [],
@@ -2150,7 +2164,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 159,
+    "id": 123,
     "char": "谄",
     "correctPronunciation": "chǎn",
     "wrongPronunciations": [
@@ -2165,7 +2179,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 160,
+    "id": 124,
     "char": "恫",
     "correctPronunciation": "dòng",
     "wrongPronunciations": [],
@@ -2177,7 +2191,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 161,
+    "id": 125,
     "char": "择",
     "correctPronunciation": "zhái",
     "wrongPronunciations": [],
@@ -2189,7 +2203,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 162,
+    "id": 126,
     "char": "藉",
     "correctPronunciation": "jiè",
     "wrongPronunciations": [],
@@ -2201,7 +2215,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 163,
+    "id": 127,
     "char": "拮",
     "correctPronunciation": "jié",
     "wrongPronunciations": [],
@@ -2213,7 +2227,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 164,
+    "id": 128,
     "char": "屑",
     "correctPronunciation": "xiè",
     "wrongPronunciations": [
@@ -2228,7 +2242,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 165,
+    "id": 129,
     "char": "悚",
     "correctPronunciation": "sǒng",
     "wrongPronunciations": [],
@@ -2240,7 +2254,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 166,
+    "id": 130,
     "char": "讧",
     "correctPronunciation": "hòng",
     "wrongPronunciations": [],
@@ -2252,7 +2266,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 167,
+    "id": 131,
     "char": "剽",
     "correctPronunciation": "piāo",
     "wrongPronunciations": [],
@@ -2264,7 +2278,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 168,
+    "id": 132,
     "char": "卡",
     "correctPronunciation": "qiǎ",
     "wrongPronunciations": [
@@ -2279,7 +2293,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 169,
+    "id": 133,
     "char": "讹",
     "correctPronunciation": "é",
     "wrongPronunciations": [],
@@ -2292,7 +2306,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 170,
+    "id": 134,
     "char": "禅",
     "correctPronunciation": "shàn",
     "wrongPronunciations": [],
@@ -2304,7 +2318,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 171,
+    "id": 135,
     "char": "怵",
     "correctPronunciation": "chù",
     "wrongPronunciations": [],
@@ -2316,7 +2330,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 172,
+    "id": 136,
     "char": "挟",
     "correctPronunciation": "xié",
     "wrongPronunciations": [],
@@ -2328,7 +2342,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 173,
+    "id": 137,
     "char": "谧",
     "correctPronunciation": "mì",
     "wrongPronunciations": [],
@@ -2340,7 +2354,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 174,
+    "id": 138,
     "char": "弋",
     "correctPronunciation": "yì",
     "wrongPronunciations": [],
@@ -2352,7 +2366,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 175,
+    "id": 139,
     "char": "烙",
     "correctPronunciation": "lào",
     "wrongPronunciations": [],
@@ -2364,7 +2378,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 176,
+    "id": 140,
     "char": "与",
     "correctPronunciation": "yù",
     "wrongPronunciations": [],
@@ -2376,7 +2390,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 177,
+    "id": 141,
     "char": "泞",
     "correctPronunciation": "ning",
     "wrongPronunciations": [],
@@ -2388,7 +2402,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 178,
+    "id": 142,
     "char": "鄙",
     "correctPronunciation": "bǐ",
     "wrongPronunciations": [],
@@ -2400,7 +2414,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 179,
+    "id": 143,
     "char": "绥",
     "correctPronunciation": "suí",
     "wrongPronunciations": [],
@@ -2412,7 +2426,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 180,
+    "id": 144,
     "char": "跛",
     "correctPronunciation": "bǒ",
     "wrongPronunciations": [],
@@ -2424,7 +2438,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 181,
+    "id": 145,
     "char": "纤",
     "correctPronunciation": "xiān",
     "wrongPronunciations": [],
@@ -2436,7 +2450,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 182,
+    "id": 146,
     "char": "挫",
     "correctPronunciation": "cuò",
     "wrongPronunciations": [],
@@ -2448,7 +2462,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 183,
+    "id": 147,
     "char": "瑰",
     "correctPronunciation": "guī",
     "wrongPronunciations": [
@@ -2463,7 +2477,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 184,
+    "id": 148,
     "char": "宿",
     "correctPronunciation": "sù",
     "wrongPronunciations": [],
@@ -2475,7 +2489,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 185,
+    "id": 149,
     "char": "梏",
     "correctPronunciation": "gù",
     "wrongPronunciations": [],
@@ -2487,7 +2501,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 186,
+    "id": 150,
     "char": "拙",
     "correctPronunciation": "zhuō",
     "wrongPronunciations": [
@@ -2502,7 +2516,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 187,
+    "id": 151,
     "char": "亘",
     "correctPronunciation": "gèn",
     "wrongPronunciations": [
@@ -2517,7 +2531,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 188,
+    "id": 152,
     "char": "伉",
     "correctPronunciation": "kàng",
     "wrongPronunciations": [],
@@ -2529,7 +2543,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 189,
+    "id": 153,
     "char": "扳",
     "correctPronunciation": "bān",
     "wrongPronunciations": [],
@@ -2541,7 +2555,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 190,
+    "id": 154,
     "char": "奔",
     "correctPronunciation": "bèn",
     "wrongPronunciations": [],
@@ -2553,7 +2567,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 191,
+    "id": 155,
     "char": "豁",
     "correctPronunciation": "huò",
     "wrongPronunciations": [],
@@ -2565,7 +2579,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 192,
+    "id": 156,
     "char": "脂",
     "correctPronunciation": "zhī",
     "wrongPronunciations": [],
@@ -2577,7 +2591,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 193,
+    "id": 157,
     "char": "荷",
     "correctPronunciation": "hè",
     "wrongPronunciations": [
@@ -2592,7 +2606,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 194,
+    "id": 158,
     "char": "婢",
     "correctPronunciation": "bì",
     "wrongPronunciations": [],
@@ -2604,7 +2618,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 195,
+    "id": 159,
     "char": "诲",
     "correctPronunciation": "huì",
     "wrongPronunciations": [],
@@ -2616,7 +2630,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 196,
+    "id": 160,
     "char": "和",
     "correctPronunciation": "huò",
     "wrongPronunciations": [],
@@ -2628,7 +2642,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 197,
+    "id": 161,
     "char": "涸",
     "correctPronunciation": "hé",
     "wrongPronunciations": [
@@ -2643,7 +2657,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 198,
+    "id": 162,
     "char": "噬",
     "correctPronunciation": "shì",
     "wrongPronunciations": [
@@ -2658,7 +2672,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 199,
+    "id": 163,
     "char": "峙",
     "correctPronunciation": "zhì",
     "wrongPronunciations": [],
@@ -2670,7 +2684,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 200,
+    "id": 164,
     "char": "阂",
     "correctPronunciation": "hé",
     "wrongPronunciations": [],
@@ -2682,7 +2696,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 201,
+    "id": 165,
     "char": "屏",
     "correctPronunciation": "bǐng",
     "wrongPronunciations": [],
@@ -2694,7 +2708,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 202,
+    "id": 166,
     "char": "隽",
     "correctPronunciation": "juàn",
     "wrongPronunciations": [],
@@ -2706,7 +2720,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 203,
+    "id": 167,
     "char": "祛",
     "correctPronunciation": "qū",
     "wrongPronunciations": [],
@@ -2718,7 +2732,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 204,
+    "id": 168,
     "char": "逮",
     "correctPronunciation": "dài",
     "wrongPronunciations": [],
@@ -2730,7 +2744,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 205,
+    "id": 169,
     "char": "剥",
     "correctPronunciation": "bō",
     "wrongPronunciations": [],
@@ -2742,7 +2756,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 206,
+    "id": 170,
     "char": "削",
     "correctPronunciation": "xuē",
     "wrongPronunciations": [],
@@ -2755,7 +2769,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 207,
+    "id": 171,
     "char": "痹",
     "correctPronunciation": "bì",
     "wrongPronunciations": [
@@ -2770,7 +2784,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 208,
+    "id": 172,
     "char": "隘",
     "correctPronunciation": "ài",
     "wrongPronunciations": [],
@@ -2782,7 +2796,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 209,
+    "id": 173,
     "char": "庇",
     "correctPronunciation": "bì",
     "wrongPronunciations": [],
@@ -2794,7 +2808,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 210,
+    "id": 174,
     "char": "恻",
     "correctPronunciation": "cè",
     "wrongPronunciations": [],
@@ -2806,7 +2820,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 211,
+    "id": 175,
     "char": "濒",
     "correctPronunciation": "bīn",
     "wrongPronunciations": [],
@@ -2818,7 +2832,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 212,
+    "id": 176,
     "char": "徊",
     "correctPronunciation": "huái",
     "wrongPronunciations": [],
@@ -2830,7 +2844,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 213,
+    "id": 177,
     "char": "哺",
     "correctPronunciation": "bǔ",
     "wrongPronunciations": [
@@ -2845,7 +2859,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 214,
+    "id": 178,
     "char": "莅",
     "correctPronunciation": "li",
     "wrongPronunciations": [],
@@ -2857,7 +2871,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 215,
+    "id": 179,
     "char": "肄",
     "correctPronunciation": "yì",
     "wrongPronunciations": [],
@@ -2869,7 +2883,22 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 216,
+    "id": 180,
+    "char": "称",
+    "correctPronunciation": "chèn",
+    "wrongPronunciations": [
+      "chèng"
+    ],
+    "relatedPhrases": [
+      "称心",
+      "匀称"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 181,
     "char": "吁",
     "correctPronunciation": "yù",
     "wrongPronunciations": [],
@@ -2881,7 +2910,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 217,
+    "id": 182,
     "char": "饬",
     "correctPronunciation": "chì",
     "wrongPronunciations": [],
@@ -2893,7 +2922,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 218,
+    "id": 183,
     "char": "赁",
     "correctPronunciation": "lìn",
     "wrongPronunciations": [],
@@ -2905,7 +2934,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 219,
+    "id": 184,
     "char": "刹",
     "correctPronunciation": "chà",
     "wrongPronunciations": [],
@@ -2917,7 +2946,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 220,
+    "id": 185,
     "char": "憎",
     "correctPronunciation": "zēng",
     "wrongPronunciations": [
@@ -2932,7 +2961,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 221,
+    "id": 186,
     "char": "颤",
     "correctPronunciation": "chàn",
     "wrongPronunciations": [],
@@ -2944,7 +2973,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 222,
+    "id": 187,
     "char": "悄",
     "correctPronunciation": "qiǎo",
     "wrongPronunciations": [],
@@ -2956,7 +2985,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 223,
+    "id": 188,
     "char": "木",
     "correctPronunciation": "nè",
     "wrongPronunciations": [],
@@ -2968,7 +2997,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 224,
+    "id": 189,
     "char": "殍",
     "correctPronunciation": "piǎo",
     "wrongPronunciations": [],
@@ -2980,7 +3009,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 225,
+    "id": 190,
     "char": "悼",
     "correctPronunciation": "dào",
     "wrongPronunciations": [],
@@ -2992,7 +3021,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 226,
+    "id": 191,
     "char": "膝",
     "correctPronunciation": "xī",
     "wrongPronunciations": [
@@ -3008,7 +3037,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 227,
+    "id": 192,
     "char": "提",
     "correctPronunciation": "dī",
     "wrongPronunciations": [],
@@ -3020,7 +3049,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 228,
+    "id": 193,
     "char": "稽",
     "correctPronunciation": "jī",
     "wrongPronunciations": [],
@@ -3032,7 +3061,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 229,
+    "id": 194,
     "char": "侩",
     "correctPronunciation": "kuài",
     "wrongPronunciations": [],
@@ -3044,7 +3073,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 230,
+    "id": 195,
     "char": "祈",
     "correctPronunciation": "qí",
     "wrongPronunciations": [],
@@ -3056,7 +3085,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 231,
+    "id": 196,
     "char": "浣",
     "correctPronunciation": "huàn",
     "wrongPronunciations": [],
@@ -3068,7 +3097,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 232,
+    "id": 197,
     "char": "茎",
     "correctPronunciation": "jīng",
     "wrongPronunciations": [],
@@ -3080,7 +3109,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 233,
+    "id": 198,
     "char": "扁",
     "correctPronunciation": "piān",
     "wrongPronunciations": [],
@@ -3092,7 +3121,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 234,
+    "id": 199,
     "char": "慎",
     "correctPronunciation": "shèn",
     "wrongPronunciations": [],
@@ -3104,7 +3133,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 235,
+    "id": 200,
     "char": "驰",
     "correctPronunciation": "chěng",
     "wrongPronunciations": [],
@@ -3116,7 +3145,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 236,
+    "id": 201,
     "char": "倥",
     "correctPronunciation": "kǒng",
     "wrongPronunciations": [],
@@ -3128,7 +3157,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 237,
+    "id": 202,
     "char": "偬",
     "correctPronunciation": "zǒng",
     "wrongPronunciations": [],
@@ -3140,7 +3169,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 238,
+    "id": 203,
     "char": "腼",
     "correctPronunciation": "miǎn",
     "wrongPronunciations": [],
@@ -3152,7 +3181,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 239,
+    "id": 204,
     "char": "腆",
     "correctPronunciation": "tiǎn",
     "wrongPronunciations": [
@@ -3166,7 +3195,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 240,
+    "id": 205,
     "char": "娉",
     "correctPronunciation": "pīng",
     "wrongPronunciations": [],
@@ -3179,7 +3208,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 241,
+    "id": 206,
     "char": "忸",
     "correctPronunciation": "niǔ",
     "wrongPronunciations": [],
@@ -3191,7 +3220,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 242,
+    "id": 207,
     "char": "怩",
     "correctPronunciation": "ní",
     "wrongPronunciations": [],
@@ -3203,7 +3232,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 243,
+    "id": 208,
     "char": "睥睨",
     "correctPronunciation": "pì",
     "wrongPronunciations": [],
@@ -3215,7 +3244,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 244,
+    "id": 209,
     "char": "睨",
     "correctPronunciation": "nì",
     "wrongPronunciations": [],
@@ -3227,7 +3256,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 245,
+    "id": 210,
     "char": "窈",
     "correctPronunciation": "yǎo",
     "wrongPronunciations": [],
@@ -3239,7 +3268,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 246,
+    "id": 211,
     "char": "窕",
     "correctPronunciation": "tiǎo",
     "wrongPronunciations": [],
@@ -3251,7 +3280,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 247,
+    "id": 212,
     "char": "矩",
     "correctPronunciation": "jǔ",
     "wrongPronunciations": [
@@ -3266,7 +3295,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 248,
+    "id": 213,
     "char": "砭",
     "correctPronunciation": "biān",
     "wrongPronunciations": [],
@@ -3278,7 +3307,19 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 249,
+    "id": 214,
+    "char": "龟",
+    "correctPronunciation": "jūn",
+    "wrongPronunciations": [],
+    "relatedPhrases": [
+      "龟裂"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 215,
     "char": "扒",
     "correctPronunciation": "pá",
     "wrongPronunciations": [],
@@ -3290,7 +3331,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 250,
+    "id": 216,
     "char": "畸",
     "correctPronunciation": "jī",
     "wrongPronunciations": [],
@@ -3302,7 +3343,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 251,
+    "id": 217,
     "char": "迸",
     "correctPronunciation": "bèng",
     "wrongPronunciations": [],
@@ -3314,7 +3355,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 252,
+    "id": 218,
     "char": "狙",
     "correctPronunciation": "jū",
     "wrongPronunciations": [],
@@ -3326,7 +3367,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 253,
+    "id": 219,
     "char": "糙",
     "correctPronunciation": "cāo",
     "wrongPronunciations": [],
@@ -3338,7 +3379,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 254,
+    "id": 220,
     "char": "戛",
     "correctPronunciation": "jiá",
     "wrongPronunciations": [],
@@ -3350,7 +3391,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 255,
+    "id": 221,
     "char": "亵",
     "correctPronunciation": "xiè",
     "wrongPronunciations": [],
@@ -3362,7 +3403,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 256,
+    "id": 222,
     "char": "歼",
     "correctPronunciation": "jiān",
     "wrongPronunciations": [],
@@ -3374,7 +3415,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 257,
+    "id": 223,
     "char": "孽",
     "correctPronunciation": "niè",
     "wrongPronunciations": [],
@@ -3386,7 +3427,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 258,
+    "id": 224,
     "char": "矜",
     "correctPronunciation": "jīn",
     "wrongPronunciations": [],
@@ -3398,7 +3439,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 259,
+    "id": 225,
     "char": "劣",
     "correctPronunciation": "liè",
     "wrongPronunciations": [],
@@ -3410,7 +3451,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 260,
+    "id": 226,
     "char": "粳",
     "correctPronunciation": "jīng",
     "wrongPronunciations": [],
@@ -3422,7 +3463,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 261,
+    "id": 227,
     "char": "纤",
     "correctPronunciation": "qiàn",
     "wrongPronunciations": [],
@@ -3434,7 +3475,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 262,
+    "id": 228,
     "char": "棘",
     "correctPronunciation": "jí",
     "wrongPronunciations": [],
@@ -3446,7 +3487,19 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 263,
+    "id": 229,
+    "char": "着",
+    "correctPronunciation": "zhuó",
+    "wrongPronunciations": [],
+    "relatedPhrases": [
+      "着想"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 230,
     "char": "间",
     "correctPronunciation": "jiàn",
     "wrongPronunciations": [],
@@ -3458,7 +3511,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 264,
+    "id": 231,
     "char": "著",
     "correctPronunciation": "zhuó",
     "wrongPronunciations": [],
@@ -3470,7 +3523,19 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 265,
+    "id": 232,
+    "char": "给",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciations": [],
+    "relatedPhrases": [
+      "供给"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 233,
     "char": "娠",
     "correctPronunciation": "shēn",
     "wrongPronunciations": [],
@@ -3482,7 +3547,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 266,
+    "id": 234,
     "char": "角",
     "correctPronunciation": "jué",
     "wrongPronunciations": [],
@@ -3494,7 +3559,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 267,
+    "id": 235,
     "char": "泌",
     "correctPronunciation": "mì",
     "wrongPronunciations": [],
@@ -3506,7 +3571,19 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 268,
+    "id": 236,
+    "char": "缉",
+    "correctPronunciation": "jī",
+    "wrongPronunciations": [],
+    "relatedPhrases": [
+      "通缉"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 237,
     "char": "症",
     "correctPronunciation": "zhēng",
     "wrongPronunciations": [],
@@ -3518,7 +3595,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 269,
+    "id": 238,
     "char": "汲",
     "correctPronunciation": "jí",
     "wrongPronunciations": [],
@@ -3530,7 +3607,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 270,
+    "id": 239,
     "char": "蛰",
     "correctPronunciation": "zhé",
     "wrongPronunciations": [],
@@ -3542,7 +3619,19 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 271,
+    "id": 240,
+    "char": "嫉",
+    "correctPronunciation": "jí",
+    "wrongPronunciations": [],
+    "relatedPhrases": [
+      "嫉妒"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 241,
     "char": "缜",
     "correctPronunciation": "zhěn",
     "wrongPronunciations": [],
@@ -3554,7 +3643,21 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 272,
+    "id": 242,
+    "char": "氛",
+    "correctPronunciation": "fēn",
+    "wrongPronunciations": [
+      "fèn"
+    ],
+    "relatedPhrases": [
+      "氛围"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 243,
     "char": "一",
     "correctPronunciation": "cháng",
     "wrongPronunciations": [
@@ -3568,7 +3671,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 273,
+    "id": 244,
     "char": "4",
     "correctPronunciation": "chóng",
     "wrongPronunciations": [],
@@ -3580,7 +3683,49 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 274,
+    "id": 245,
+    "char": "处",
+    "correctPronunciation": "chǔ",
+    "wrongPronunciations": [
+      "chù"
+    ],
+    "relatedPhrases": [
+      "处女"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 246,
+    "char": "汆",
+    "correctPronunciation": "cuān",
+    "wrongPronunciations": [
+      "cuàn"
+    ],
+    "relatedPhrases": [
+      "汆丸子"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 247,
+    "char": "档",
+    "correctPronunciation": "dàng",
+    "wrongPronunciations": [
+      "dǎng"
+    ],
+    "relatedPhrases": [
+      "档案"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 248,
     "char": "安",
     "correctPronunciation": "dàng",
     "wrongPronunciations": [
@@ -3594,7 +3739,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 275,
+    "id": 249,
     "char": "订",
     "correctPronunciation": "dìng",
     "wrongPronunciations": [
@@ -3608,7 +3753,21 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 276,
+    "id": 250,
+    "char": "胴",
+    "correctPronunciation": "dòng",
+    "wrongPronunciations": [
+      "tóng"
+    ],
+    "relatedPhrases": [
+      "胴体"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 251,
     "char": "掇",
     "correctPronunciation": "duo",
     "wrongPronunciations": [
@@ -3622,7 +3781,21 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 277,
+    "id": 252,
+    "char": "菲",
+    "correctPronunciation": "fěi",
+    "wrongPronunciations": [
+      "fēi"
+    ],
+    "relatedPhrases": [
+      "菲薄"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 253,
     "char": "准",
     "correctPronunciation": "gá",
     "wrongPronunciations": [
@@ -3636,7 +3809,35 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 278,
+    "id": 254,
+    "char": "呱",
+    "correctPronunciation": "gū",
+    "wrongPronunciations": [
+      "guā"
+    ],
+    "relatedPhrases": [
+      "呱呱坠地"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 255,
+    "char": "诃",
+    "correctPronunciation": "hē",
+    "wrongPronunciations": [
+      "kē"
+    ],
+    "relatedPhrases": [
+      "契诃夫"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 256,
     "char": "横",
     "correctPronunciation": "hèng",
     "wrongPronunciations": [
@@ -3650,7 +3851,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 279,
+    "id": 257,
     "char": "横",
     "correctPronunciation": "héng",
     "wrongPronunciations": [
@@ -3664,7 +3865,51 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 280,
+    "id": 258,
+    "char": "骸",
+    "correctPronunciation": "hái",
+    "wrongPronunciations": [
+      "hǎi",
+      "hài"
+    ],
+    "relatedPhrases": [
+      "骨骸",
+      "放浪形骸"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 259,
+    "char": "薅",
+    "correctPronunciation": "hāo",
+    "wrongPronunciations": [
+      "rǔ"
+    ],
+    "relatedPhrases": [
+      "薅草"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 260,
+    "char": "桦",
+    "correctPronunciation": "huà",
+    "wrongPronunciations": [
+      "huá"
+    ],
+    "relatedPhrases": [
+      "白桦树"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 261,
     "char": "饨",
     "correctPronunciation": "tun",
     "wrongPronunciations": [
@@ -3678,7 +3923,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 281,
+    "id": 262,
     "char": "囵",
     "correctPronunciation": "lún",
     "wrongPronunciations": [
@@ -3692,7 +3937,50 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 282,
+    "id": 263,
+    "char": "溃",
+    "correctPronunciation": "huì",
+    "wrongPronunciations": [
+      "kuì"
+    ],
+    "relatedPhrases": [
+      "溃脓"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 264,
+    "char": "几",
+    "correctPronunciation": "jī",
+    "wrongPronunciations": [
+      "jǐ"
+    ],
+    "relatedPhrases": [
+      "窗明几净"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 265,
+    "char": "济",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciations": [
+      "jì"
+    ],
+    "relatedPhrases": [
+      "人才济济",
+      "济济一堂"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 266,
     "char": "渐",
     "correctPronunciation": "jiān",
     "wrongPronunciations": [
@@ -3706,7 +3994,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 283,
+    "id": 267,
     "char": "绢",
     "correctPronunciation": "juàn",
     "wrongPronunciations": [
@@ -3720,7 +4008,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 284,
+    "id": 268,
     "char": "解",
     "correctPronunciation": "jiè",
     "wrongPronunciations": [
@@ -3734,7 +4022,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 285,
+    "id": 269,
     "char": "解",
     "correctPronunciation": "xiè",
     "wrongPronunciations": [
@@ -3748,7 +4036,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 286,
+    "id": 270,
     "char": "籼",
     "correctPronunciation": "xīan",
     "wrongPronunciations": [
@@ -3762,7 +4050,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 287,
+    "id": 271,
     "char": "颈",
     "correctPronunciation": "jǐng",
     "wrongPronunciations": [
@@ -3776,7 +4064,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 288,
+    "id": 272,
     "char": "靓",
     "correctPronunciation": "jìng",
     "wrongPronunciations": [
@@ -3790,7 +4078,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 289,
+    "id": 273,
     "char": "儆",
     "correctPronunciation": "jǐng",
     "wrongPronunciations": [
@@ -3804,7 +4092,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 290,
+    "id": 274,
     "char": "腈",
     "correctPronunciation": "jīng",
     "wrongPronunciations": [
@@ -3818,7 +4106,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 291,
+    "id": 275,
     "char": "唠",
     "correctPronunciation": "láo",
     "wrongPronunciations": [
@@ -3832,7 +4120,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 292,
+    "id": 276,
     "char": "落",
     "correctPronunciation": "lào",
     "wrongPronunciations": [
@@ -3846,7 +4134,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 293,
+    "id": 277,
     "char": "量",
     "correctPronunciation": "liàng",
     "wrongPronunciations": [
@@ -3860,7 +4148,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 294,
+    "id": 278,
     "char": "丽",
     "correctPronunciation": "lí",
     "wrongPronunciations": [
@@ -3874,7 +4162,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 295,
+    "id": 279,
     "char": "淋",
     "correctPronunciation": "lìn",
     "wrongPronunciations": [
@@ -3888,7 +4176,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 296,
+    "id": 280,
     "char": "绿",
     "correctPronunciation": "lù",
     "wrongPronunciations": [
@@ -3902,7 +4190,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 297,
+    "id": 281,
     "char": "莽",
     "correctPronunciation": "mǎng",
     "wrongPronunciations": [
@@ -3916,7 +4204,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 298,
+    "id": 282,
     "char": "扪",
     "correctPronunciation": "mén",
     "wrongPronunciations": [
@@ -3930,7 +4218,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 299,
+    "id": 283,
     "char": "酊",
     "correctPronunciation": "dǐng",
     "wrongPronunciations": [
@@ -3944,7 +4232,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 300,
+    "id": 284,
     "char": "靡",
     "correctPronunciation": "mǐ",
     "wrongPronunciations": [
@@ -3959,7 +4247,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 301,
+    "id": 285,
     "char": "抹",
     "correctPronunciation": "mò",
     "wrongPronunciations": [
@@ -3973,7 +4261,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 302,
+    "id": 286,
     "char": "喷",
     "correctPronunciation": "pèn",
     "wrongPronunciations": [
@@ -3987,7 +4275,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 303,
+    "id": 287,
     "char": "睥",
     "correctPronunciation": "pì",
     "wrongPronunciations": [
@@ -4001,7 +4289,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 304,
+    "id": 288,
     "char": "胖",
     "correctPronunciation": "pán",
     "wrongPronunciations": [
@@ -4015,7 +4303,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 305,
+    "id": 289,
     "char": "便",
     "correctPronunciation": "pián",
     "wrongPronunciations": [
@@ -4029,7 +4317,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 306,
+    "id": 290,
     "char": "骠",
     "correctPronunciation": "piào",
     "wrongPronunciations": [
@@ -4043,7 +4331,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 307,
+    "id": 291,
     "char": "砒",
     "correctPronunciation": "pī",
     "wrongPronunciations": [
@@ -4057,7 +4345,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 308,
+    "id": 292,
     "char": "繁",
     "correctPronunciation": "pó",
     "wrongPronunciations": [
@@ -4071,7 +4359,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 309,
+    "id": 293,
     "char": "强",
     "correctPronunciation": "qiǎng",
     "wrongPronunciations": [
@@ -4085,7 +4373,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 310,
+    "id": 294,
     "char": "台",
     "correctPronunciation": "tāi",
     "wrongPronunciations": [
@@ -4099,7 +4387,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 311,
+    "id": 295,
     "char": "节",
     "correctPronunciation": "jiē",
     "wrongPronunciations": [
@@ -4113,7 +4401,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 312,
+    "id": 296,
     "char": "吱",
     "correctPronunciation": "zī",
     "wrongPronunciations": [
@@ -4127,7 +4415,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 313,
+    "id": 297,
     "char": "妮",
     "correctPronunciation": "nī",
     "wrongPronunciations": [
@@ -4141,7 +4429,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 314,
+    "id": 298,
     "char": "邪",
     "correctPronunciation": "yé",
     "wrongPronunciations": [
@@ -4155,7 +4443,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 315,
+    "id": 299,
     "char": "剔",
     "correctPronunciation": "tī",
     "wrongPronunciations": [
@@ -4169,7 +4457,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 316,
+    "id": 300,
     "char": "汤",
     "correctPronunciation": "shāng",
     "wrongPronunciations": [],
@@ -4181,7 +4469,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 317,
+    "id": 301,
     "char": "结",
     "correctPronunciation": "jié",
     "wrongPronunciations": [
@@ -4195,7 +4483,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 318,
+    "id": 302,
     "char": "坊",
     "correctPronunciation": "fáng",
     "wrongPronunciations": [
@@ -4209,7 +4497,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 319,
+    "id": 303,
     "char": "蔓",
     "correctPronunciation": "wàn",
     "wrongPronunciations": [
@@ -4223,7 +4511,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 320,
+    "id": 304,
     "char": "糊",
     "correctPronunciation": "hù",
     "wrongPronunciations": [
@@ -4237,7 +4525,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 321,
+    "id": 305,
     "char": "禁",
     "correctPronunciation": "jīn",
     "wrongPronunciations": [
@@ -4253,7 +4541,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 322,
+    "id": 306,
     "char": "梵",
     "correctPronunciation": "fàn",
     "wrongPronunciations": [
@@ -4267,7 +4555,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 323,
+    "id": 307,
     "char": "雒",
     "correctPronunciation": "luò",
     "wrongPronunciations": [],
@@ -4279,7 +4567,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 324,
+    "id": 308,
     "char": "袅",
     "correctPronunciation": "niǎo",
     "wrongPronunciations": [],
@@ -4291,7 +4579,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 325,
+    "id": 309,
     "char": "娜",
     "correctPronunciation": "nuó",
     "wrongPronunciations": [],
@@ -4303,7 +4591,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 326,
+    "id": 310,
     "char": "涕",
     "correctPronunciation": "tī",
     "wrongPronunciations": [],
@@ -4315,7 +4603,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 327,
+    "id": 311,
     "char": "泗",
     "correctPronunciation": "sì",
     "wrongPronunciations": [],
@@ -4327,7 +4615,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 328,
+    "id": 312,
     "char": "滂",
     "correctPronunciation": "pāng",
     "wrongPronunciations": [],
@@ -4339,7 +4627,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 329,
+    "id": 313,
     "char": "沱",
     "correctPronunciation": "tuó",
     "wrongPronunciations": [],
@@ -4351,7 +4639,21 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 330,
+    "id": 314,
+    "char": "当",
+    "correctPronunciation": "dàng",
+    "wrongPronunciations": [
+      "dāng"
+    ],
+    "relatedPhrases": [
+      "安步当车"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 315,
     "char": "恙",
     "correctPronunciation": "yàng",
     "wrongPronunciations": [
@@ -4365,7 +4667,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 331,
+    "id": 316,
     "char": "重",
     "correctPronunciation": "zhòng",
     "wrongPronunciations": [
@@ -4379,7 +4681,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 332,
+    "id": 317,
     "char": "骥",
     "correctPronunciation": "jì",
     "wrongPronunciations": [
@@ -4393,7 +4695,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 333,
+    "id": 318,
     "char": "屹",
     "correctPronunciation": "yì",
     "wrongPronunciations": [
@@ -4407,7 +4709,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 334,
+    "id": 319,
     "char": "跋",
     "correctPronunciation": "bá",
     "wrongPronunciations": [
@@ -4422,7 +4724,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 335,
+    "id": 320,
     "char": "挠",
     "correctPronunciation": "náo",
     "wrongPronunciations": [
@@ -4437,7 +4739,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 336,
+    "id": 321,
     "char": "稗",
     "correctPronunciation": "bài",
     "wrongPronunciations": [
@@ -4451,7 +4753,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 337,
+    "id": 322,
     "char": "遂",
     "correctPronunciation": "suí",
     "wrongPronunciations": [
@@ -4465,7 +4767,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 338,
+    "id": 323,
     "char": "冯",
     "correctPronunciation": "píng",
     "wrongPronunciations": [
@@ -4479,7 +4781,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 339,
+    "id": 324,
     "char": "殄",
     "correctPronunciation": "tiǎn",
     "wrongPronunciations": [
@@ -4493,7 +4795,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 340,
+    "id": 325,
     "char": "髀",
     "correctPronunciation": "bì",
     "wrongPronunciations": [
@@ -4507,7 +4809,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 341,
+    "id": 326,
     "char": "辟",
     "correctPronunciation": "pì",
     "wrongPronunciations": [
@@ -4521,7 +4823,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 342,
+    "id": 327,
     "char": "便",
     "correctPronunciation": "biàn",
     "wrongPronunciations": [
@@ -4535,7 +4837,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 343,
+    "id": 328,
     "char": "杼",
     "correctPronunciation": "zhù",
     "wrongPronunciations": [
@@ -4549,7 +4851,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 344,
+    "id": 329,
     "char": "长",
     "correctPronunciation": "cháng",
     "wrongPronunciations": [
@@ -4563,7 +4865,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 345,
+    "id": 330,
     "char": "彬",
     "correctPronunciation": "bīn",
     "wrongPronunciations": [
@@ -4577,7 +4879,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 346,
+    "id": 331,
     "char": "悖",
     "correctPronunciation": "bèi",
     "wrongPronunciations": [
@@ -4591,7 +4893,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 347,
+    "id": 332,
     "char": "肓",
     "correctPronunciation": "huāng",
     "wrongPronunciations": [
@@ -4605,7 +4907,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 348,
+    "id": 333,
     "char": "擘",
     "correctPronunciation": "bò",
     "wrongPronunciations": [
@@ -4619,7 +4921,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 349,
+    "id": 334,
     "char": "捕",
     "correctPronunciation": "bǔ",
     "wrongPronunciations": [
@@ -4633,7 +4935,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 350,
+    "id": 335,
     "char": "畛",
     "correctPronunciation": "zhěn",
     "wrongPronunciations": [
@@ -4647,7 +4949,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 351,
+    "id": 336,
     "char": "寂",
     "correctPronunciation": "jì",
     "wrongPronunciations": [
@@ -4661,7 +4963,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 352,
+    "id": 337,
     "char": "穑",
     "correctPronunciation": "sè",
     "wrongPronunciations": [
@@ -4675,7 +4977,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 353,
+    "id": 338,
     "char": "缕",
     "correctPronunciation": "lǚ",
     "wrongPronunciations": [
@@ -4689,7 +4991,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 354,
+    "id": 339,
     "char": "磨",
     "correctPronunciation": "mó",
     "wrongPronunciations": [
@@ -4704,7 +5006,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 355,
+    "id": 340,
     "char": "窠",
     "correctPronunciation": "kē",
     "wrongPronunciations": [
@@ -4718,7 +5020,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 356,
+    "id": 341,
     "char": "省",
     "correctPronunciation": "xǐng",
     "wrongPronunciations": [
@@ -4734,7 +5036,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 357,
+    "id": 342,
     "char": "粟",
     "correctPronunciation": "sù",
     "wrongPronunciations": [
@@ -4748,7 +5050,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 358,
+    "id": 343,
     "char": "菅",
     "correctPronunciation": "jiān",
     "wrongPronunciations": [
@@ -4762,7 +5064,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 359,
+    "id": 344,
     "char": "姹",
     "correctPronunciation": "chà",
     "wrongPronunciations": [
@@ -4776,7 +5078,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 360,
+    "id": 345,
     "char": "载",
     "correctPronunciation": "zài",
     "wrongPronunciations": [
@@ -4791,7 +5093,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 361,
+    "id": 346,
     "char": "瞠",
     "correctPronunciation": "chēng",
     "wrongPronunciations": [
@@ -4805,7 +5107,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 362,
+    "id": 347,
     "char": "媚",
     "correctPronunciation": "mèi",
     "wrongPronunciations": [
@@ -4819,7 +5121,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 363,
+    "id": 348,
     "char": "臭",
     "correctPronunciation": "chòu",
     "wrongPronunciations": [
@@ -4833,7 +5135,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 364,
+    "id": 349,
     "char": "疵",
     "correctPronunciation": "cī",
     "wrongPronunciations": [
@@ -4847,7 +5149,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 365,
+    "id": 350,
     "char": "涎",
     "correctPronunciation": "xián",
     "wrongPronunciations": [
@@ -4861,7 +5163,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 366,
+    "id": 351,
     "char": "厥",
     "correctPronunciation": "jué",
     "wrongPronunciations": [
@@ -4875,7 +5177,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 367,
+    "id": 352,
     "char": "凛",
     "correctPronunciation": "lǐn",
     "wrongPronunciations": [
@@ -4889,7 +5191,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 368,
+    "id": 353,
     "char": "殚",
     "correctPronunciation": "dān",
     "wrongPronunciations": [
@@ -4903,7 +5205,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 369,
+    "id": 354,
     "char": "食",
     "correctPronunciation": "sì",
     "wrongPronunciations": [
@@ -4917,7 +5219,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 370,
+    "id": 355,
     "char": "喝",
     "correctPronunciation": "hè",
     "wrongPronunciations": [
@@ -4931,7 +5233,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 371,
+    "id": 356,
     "char": "膜",
     "correctPronunciation": "mó",
     "wrongPronunciations": [
@@ -4945,7 +5247,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 372,
+    "id": 357,
     "char": "垣",
     "correctPronunciation": "yuán",
     "wrongPronunciations": [
@@ -4959,7 +5261,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 373,
+    "id": 358,
     "char": "咄",
     "correctPronunciation": "duō",
     "wrongPronunciations": [
@@ -4973,7 +5275,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 374,
+    "id": 359,
     "char": "阿",
     "correctPronunciation": "ē",
     "wrongPronunciations": [
@@ -4988,7 +5290,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 375,
+    "id": 360,
     "char": "鬓",
     "correctPronunciation": "bìn",
     "wrongPronunciations": [
@@ -5002,7 +5304,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 376,
+    "id": 361,
     "char": "缛",
     "correctPronunciation": "rù",
     "wrongPronunciations": [
@@ -5016,7 +5318,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 377,
+    "id": 362,
     "char": "吠",
     "correctPronunciation": "fèi",
     "wrongPronunciations": [
@@ -5030,7 +5332,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 378,
+    "id": 363,
     "char": "晷",
     "correctPronunciation": "guǐ",
     "wrongPronunciations": [
@@ -5044,7 +5346,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 379,
+    "id": 364,
     "char": "仆",
     "correctPronunciation": "pú",
     "wrongPronunciations": [
@@ -5058,7 +5360,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 380,
+    "id": 365,
     "char": "掣",
     "correctPronunciation": "chè",
     "wrongPronunciations": [
@@ -5072,7 +5374,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 381,
+    "id": 366,
     "char": "唳",
     "correctPronunciation": "lì",
     "wrongPronunciations": [
@@ -5086,7 +5388,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 382,
+    "id": 367,
     "char": "荫",
     "correctPronunciation": "yìn",
     "wrongPronunciations": [
@@ -5100,7 +5402,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 383,
+    "id": 368,
     "char": "隅",
     "correctPronunciation": "yú",
     "wrongPronunciations": [
@@ -5114,7 +5416,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 384,
+    "id": 369,
     "char": "愎",
     "correctPronunciation": "bì",
     "wrongPronunciations": [
@@ -5128,7 +5430,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 385,
+    "id": 370,
     "char": "瓴",
     "correctPronunciation": "líng",
     "wrongPronunciations": [
@@ -5142,7 +5444,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 386,
+    "id": 371,
     "char": "纛",
     "correctPronunciation": "dào",
     "wrongPronunciations": [
@@ -5156,7 +5458,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 387,
+    "id": 372,
     "char": "篑",
     "correctPronunciation": "kuì",
     "wrongPronunciations": [
@@ -5170,7 +5472,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 388,
+    "id": 373,
     "char": "掷",
     "correctPronunciation": "zhì",
     "wrongPronunciations": [
@@ -5184,7 +5486,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 389,
+    "id": 374,
     "char": "蒂",
     "correctPronunciation": "dì",
     "wrongPronunciations": [
@@ -5198,7 +5500,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 390,
+    "id": 375,
     "char": "窥",
     "correctPronunciation": "kuī",
     "wrongPronunciations": [
@@ -5212,7 +5514,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 391,
+    "id": 376,
     "char": "霁",
     "correctPronunciation": "jì",
     "wrongPronunciations": [
@@ -5226,7 +5528,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 392,
+    "id": 377,
     "char": "枯",
     "correctPronunciation": "kū",
     "wrongPronunciations": [
@@ -5242,7 +5544,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 393,
+    "id": 378,
     "char": "蜃",
     "correctPronunciation": "shèn",
     "wrongPronunciations": [
@@ -5256,7 +5558,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 394,
+    "id": 379,
     "char": "咀",
     "correctPronunciation": "jǔ",
     "wrongPronunciations": [
@@ -5270,7 +5572,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 395,
+    "id": 380,
     "char": "浃",
     "correctPronunciation": "jiā",
     "wrongPronunciations": [
@@ -5284,7 +5586,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 396,
+    "id": 381,
     "char": "沆",
     "correctPronunciation": "hàng",
     "wrongPronunciations": [
@@ -5298,7 +5600,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 397,
+    "id": 382,
     "char": "瀣",
     "correctPronunciation": "xiè",
     "wrongPronunciations": [
@@ -5312,7 +5614,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 398,
+    "id": 383,
     "char": "恶",
     "correctPronunciation": "wù",
     "wrongPronunciations": [
@@ -5327,7 +5629,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 399,
+    "id": 384,
     "char": "敛",
     "correctPronunciation": "liǎn",
     "wrongPronunciations": [
@@ -5341,7 +5643,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 400,
+    "id": 385,
     "char": "怙",
     "correctPronunciation": "hù",
     "wrongPronunciations": [
@@ -5355,7 +5657,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 401,
+    "id": 386,
     "char": "悛",
     "correctPronunciation": "quān",
     "wrongPronunciations": [
@@ -5369,7 +5671,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 402,
+    "id": 387,
     "char": "讳",
     "correctPronunciation": "huì",
     "wrongPronunciations": [
@@ -5383,7 +5685,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 403,
+    "id": 388,
     "char": "蹙",
     "correctPronunciation": "cù",
     "wrongPronunciations": [
@@ -5397,7 +5699,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 404,
+    "id": 389,
     "char": "矫",
     "correctPronunciation": "jiǎo",
     "wrongPronunciations": [
@@ -5412,7 +5714,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 405,
+    "id": 390,
     "char": "嗟",
     "correctPronunciation": "jiē",
     "wrongPronunciations": [
@@ -5426,7 +5728,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 406,
+    "id": 391,
     "char": "泾",
     "correctPronunciation": "jīng",
     "wrongPronunciations": [
@@ -5440,7 +5742,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 407,
+    "id": 392,
     "char": "鹄",
     "correctPronunciation": "hú",
     "wrongPronunciations": [
@@ -5454,7 +5756,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 408,
+    "id": 393,
     "char": "揖",
     "correctPronunciation": "yī",
     "wrongPronunciations": [
@@ -5468,7 +5770,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 409,
+    "id": 394,
     "char": "岿",
     "correctPronunciation": "kuī",
     "wrongPronunciations": [
@@ -5482,7 +5784,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 410,
+    "id": 395,
     "char": "妪",
     "correctPronunciation": "yù",
     "wrongPronunciations": [
@@ -5496,7 +5798,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 411,
+    "id": 396,
     "char": "栉",
     "correctPronunciation": "zhì",
     "wrongPronunciations": [
@@ -5510,7 +5812,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 412,
+    "id": 397,
     "char": "觑",
     "correctPronunciation": "qù",
     "wrongPronunciations": [
@@ -5524,7 +5826,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 413,
+    "id": 398,
     "char": "朝",
     "correctPronunciation": "zhāo",
     "wrongPronunciations": [
@@ -5538,7 +5840,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 414,
+    "id": 399,
     "char": "沸",
     "correctPronunciation": "fèi",
     "wrongPronunciations": [
@@ -5552,7 +5854,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 415,
+    "id": 400,
     "char": "杵",
     "correctPronunciation": "chǔ",
     "wrongPronunciations": [
@@ -5566,7 +5868,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 416,
+    "id": 401,
     "char": "呕",
     "correctPronunciation": "ǒu",
     "wrongPronunciations": [
@@ -5580,7 +5882,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 417,
+    "id": 402,
     "char": "杞",
     "correctPronunciation": "qǐ",
     "wrongPronunciations": [
@@ -5594,7 +5896,21 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 418,
+    "id": 403,
+    "char": "载",
+    "correctPronunciation": "zǎi",
+    "wrongPronunciations": [
+      "zài"
+    ],
+    "relatedPhrases": [
+      "千载难逢"
+    ],
+    "explanation": "",
+    "errorReasonType": 4,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 404,
     "char": "倨",
     "correctPronunciation": "jù",
     "wrongPronunciations": [
@@ -5608,7 +5924,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 419,
+    "id": 405,
     "char": "锲",
     "correctPronunciation": "qiè",
     "wrongPronunciations": [
@@ -5622,7 +5938,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 420,
+    "id": 406,
     "char": "箧",
     "correctPronunciation": "qiè",
     "wrongPronunciations": [
@@ -5636,7 +5952,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 421,
+    "id": 407,
     "char": "黩",
     "correctPronunciation": "dú",
     "wrongPronunciations": [
@@ -5650,7 +5966,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 422,
+    "id": 408,
     "char": "啮",
     "correctPronunciation": "niè",
     "wrongPronunciations": [
@@ -5664,7 +5980,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 423,
+    "id": 409,
     "char": "和",
     "correctPronunciation": "hè",
     "wrongPronunciations": [
@@ -5679,7 +5995,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 424,
+    "id": 410,
     "char": "塞",
     "correctPronunciation": "sài",
     "wrongPronunciations": [
@@ -5693,7 +6009,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 425,
+    "id": 411,
     "char": "缄",
     "correctPronunciation": "jiān",
     "wrongPronunciations": [
@@ -5707,7 +6023,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 426,
+    "id": 412,
     "char": "少",
     "correctPronunciation": "shào",
     "wrongPronunciations": [
@@ -5721,7 +6037,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 427,
+    "id": 413,
     "char": "矢",
     "correctPronunciation": "shǐ",
     "wrongPronunciations": [
@@ -5736,7 +6052,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 428,
+    "id": 414,
     "char": "俑",
     "correctPronunciation": "yǒng",
     "wrongPronunciations": [
@@ -5750,7 +6066,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 429,
+    "id": 415,
     "char": "舐",
     "correctPronunciation": "shì",
     "wrongPronunciations": [
@@ -5764,7 +6080,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 430,
+    "id": 416,
     "char": "忾",
     "correctPronunciation": "kài",
     "wrongPronunciations": [
@@ -5778,7 +6094,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 431,
+    "id": 417,
     "char": "舍",
     "correctPronunciation": "shè",
     "wrongPronunciations": [
@@ -5792,7 +6108,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 432,
+    "id": 418,
     "char": "绔",
     "correctPronunciation": "kù",
     "wrongPronunciations": [
@@ -5806,7 +6122,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 433,
+    "id": 419,
     "char": "喑",
     "correctPronunciation": "yīn",
     "wrongPronunciations": [
@@ -5820,7 +6136,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 434,
+    "id": 420,
     "char": "伥",
     "correctPronunciation": "chāng",
     "wrongPronunciations": [
@@ -5834,7 +6150,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 435,
+    "id": 421,
     "char": "缪",
     "correctPronunciation": "móu",
     "wrongPronunciations": [
@@ -5848,7 +6164,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 436,
+    "id": 422,
     "char": "券",
     "correctPronunciation": "quàn",
     "wrongPronunciations": [
@@ -5862,7 +6178,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 437,
+    "id": 423,
     "char": "毋",
     "correctPronunciation": "wú",
     "wrongPronunciations": [
@@ -5876,7 +6192,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 438,
+    "id": 424,
     "char": "绌",
     "correctPronunciation": "chù",
     "wrongPronunciations": [
@@ -5890,7 +6206,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 439,
+    "id": 425,
     "char": "旰",
     "correctPronunciation": "gàn",
     "wrongPronunciations": [
@@ -5904,7 +6220,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 440,
+    "id": 426,
     "char": "戚",
     "correctPronunciation": "qī",
     "wrongPronunciations": [
@@ -5918,7 +6234,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 441,
+    "id": 427,
     "char": "栩",
     "correctPronunciation": "xǔ",
     "wrongPronunciations": [
@@ -5932,7 +6248,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 442,
+    "id": 428,
     "char": "揠",
     "correctPronunciation": "yà",
     "wrongPronunciations": [
@@ -5946,7 +6262,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 443,
+    "id": 429,
     "char": "赅",
     "correctPronunciation": "gāi",
     "wrongPronunciations": [
@@ -5960,7 +6276,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 444,
+    "id": 430,
     "char": "奄",
     "correctPronunciation": "yǎn",
     "wrongPronunciations": [
@@ -5974,7 +6290,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 445,
+    "id": 431,
     "char": "要",
     "correctPronunciation": "yào",
     "wrongPronunciations": [
@@ -5988,7 +6304,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 446,
+    "id": 432,
     "char": "蹴",
     "correctPronunciation": "cù",
     "wrongPronunciations": [
@@ -6002,7 +6318,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 447,
+    "id": 433,
     "char": "脉",
     "correctPronunciation": "mài",
     "wrongPronunciations": [
@@ -6016,7 +6332,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 448,
+    "id": 434,
     "char": "暴",
     "correctPronunciation": "pù",
     "wrongPronunciations": [
@@ -6030,7 +6346,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 449,
+    "id": 435,
     "char": "呵",
     "correctPronunciation": "hē",
     "wrongPronunciations": [
@@ -6044,7 +6360,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 450,
+    "id": 436,
     "char": "貉",
     "correctPronunciation": "hé",
     "wrongPronunciations": [
@@ -6058,7 +6374,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 451,
+    "id": 437,
     "char": "应",
     "correctPronunciation": "yīng",
     "wrongPronunciations": [
@@ -6072,7 +6388,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 452,
+    "id": 438,
     "char": "的",
     "correctPronunciation": "dì",
     "wrongPronunciations": [
@@ -6086,7 +6402,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 453,
+    "id": 439,
     "char": "壑",
     "correctPronunciation": "hè",
     "wrongPronunciations": [
@@ -6100,7 +6416,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 454,
+    "id": 440,
     "char": "衣",
     "correctPronunciation": "yì",
     "wrongPronunciations": [
@@ -6114,7 +6430,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 455,
+    "id": 441,
     "char": "吭",
     "correctPronunciation": "háng",
     "wrongPronunciations": [
@@ -6128,7 +6444,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 456,
+    "id": 442,
     "char": "蝇",
     "correctPronunciation": "yíng",
     "wrongPronunciations": [
@@ -6143,7 +6459,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 457,
+    "id": 443,
     "char": "绕",
     "correctPronunciation": "rào",
     "wrongPronunciations": [
@@ -6157,7 +6473,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 458,
+    "id": 444,
     "char": "贾",
     "correctPronunciation": "gǔ",
     "wrongPronunciations": [
@@ -6171,7 +6487,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 459,
+    "id": 445,
     "char": "俎",
     "correctPronunciation": "zǔ",
     "wrongPronunciations": [
@@ -6185,7 +6501,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 460,
+    "id": 446,
     "char": "罔",
     "correctPronunciation": "wǎng",
     "wrongPronunciations": [
@@ -6199,7 +6515,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 461,
+    "id": 447,
     "char": "惴",
     "correctPronunciation": "zhuì",
     "wrongPronunciations": [
@@ -6213,7 +6529,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 462,
+    "id": 448,
     "char": "艾",
     "correctPronunciation": "yì",
     "wrongPronunciations": [
@@ -6227,7 +6543,7 @@ const characters = [
     "difficultyLevel": "初级"
   },
   {
-    "id": 463,
+    "id": 449,
     "char": "捭",
     "correctPronunciation": "bǎi",
     "wrongPronunciations": [
@@ -6241,3 +6557,7 @@ const characters = [
     "difficultyLevel": "初级"
   }
 ];
+
+module.exports = {
+  characters
+};
