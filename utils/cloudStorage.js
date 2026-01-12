@@ -3,13 +3,15 @@
 // 云存储文件配置
 const cloudFiles = {
   'official-account-qr.png': 'cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/main/official-account-qr.png',
-  'wyhd-share-default.png': 'cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/main/wyhd-share-default.png'
+  'wyhd-share-default.png': 'cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/main/wyhd-share-default.png',
+  'wyhd-minipro.png': 'cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/main/wyhd-minipro.png'
 };
 
 // 本地图片备选路径
 const localFiles = {
   'official-account-qr.png': '/images/official-account-qr.png',
-  'wyhd-share-default.png': '/images/wyhd-share-default.png'
+  'wyhd-share-default.png': '/images/wyhd-share-default.png',
+  'wyhd-minipro.png': '/images/wyhd-minipro.png'
 };
 
 // 缓存过期时间（7天，单位：毫秒）

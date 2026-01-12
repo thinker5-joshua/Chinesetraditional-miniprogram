@@ -1,0 +1,80 @@
+<!-- 每日一字列表页面 -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-title">易读错字列表</view>
+    <button class="back-button" bindtap="goBack">返回</button>
+  </view>
+
+  <!-- 筛选选项栏 -->
+  <view class="filter-bar">
+    <view 
+      class="filter-item {{listFilter === 'default' ? 'active' : ''}}"
+      data-filter="default"
+      bindtap="changeListFilter"
+    >
+      默认难度
+    </view>
+    <view 
+      class="filter-item {{listFilter === 'all' ? 'active' : ''}}"
+      data-filter="all"
+      bindtap="changeListFilter"
+    >
+      所有
+    </view>
+    <view 
+      class="filter-item {{listFilter === 'favorites' ? 'active' : ''}}"
+      data-filter="favorites"
+      bindtap="changeListFilter"
+    >
+      收藏
+    </view>
+  </view>
+
+  <!-- 加载动画 -->
+  <view wx:if="{{loading}}" class="loading-container">
+    <view class="loading"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- 字列表 -->
+  <scroll-view 
+    wx:else 
+    class="character-list" 
+    scroll-y 
+    style="height: calc(100vh - 160px);"
+  >
+    <view wx:if="{{characterList.length === 0}}" class="empty-list">
+      <text class="empty-text">暂无符合条件的汉字</text>
+    </view>
+    
+    <view wx:else class="list-content">
+      <!-- 列表项 -->
+      <view wx:for="{{characterList}}" wx:key="id" class="character-item">
+        <!-- 序号 -->
+        <view class="item-index">{{index + 1}}</view>
+        
+        <view class="item-header">
+          <view class="character">
+            <text class="character-text">{{item.char}}</text>
+          </view>
+          <view class="pronunciation">
+            <text class="pronunciation-text">{{item.correctPronunciation}}</text>
+          </view>
+        </view>
+        <view class="item-body">
+          <text class="phrases-label">相关词组：</text>
+          <view class="phrases-content">
+            <view wx:if="{{item.relatedPhrases && item.relatedPhrases.length > 0}}" class="phrases-list">
+              <block wx:for="{{item.relatedPhrases}}" wx:for-item="phrase" wx:key="index">
+                <text class="phrase-item">{{phrase}}</text>
+                <text wx:if="{{index < item.relatedPhrases.length - 1}}" class="phrase-separator">、</text>
+              </block>
+            </view>
+            <text wx:else class="phrases-text">暂无</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

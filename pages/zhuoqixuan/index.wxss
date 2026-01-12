@@ -148,6 +148,18 @@ page {
   box-shadow: 0 6rpx 20rpx rgba(108, 92, 231, 0.25);
 }
 
+/* 二十八星宿图标颜色 */
+.star-icon {
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  box-shadow: 0 6rpx 20rpx rgba(102, 126, 234, 0.25);
+}
+
+/* 每日一字图标颜色 */
+.character-icon {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  box-shadow: 0 6rpx 20rpx rgba(76, 175, 80, 0.25);
+}
+
 /* 游戏标题 */
 .game-title {
   font-size: 34rpx;

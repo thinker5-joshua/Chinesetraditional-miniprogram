@@ -1,4 +1,23 @@
-const cloudStorage = require('../../utils/cloudStorage');
+// 尝试引入云存储模块，添加错误处理
+let cloudStorage = null;
+try {
+  cloudStorage = require('../../utils/cloudStorage');
+} catch (error) {
+  console.error('引入云存储模块失败:', error);
+  // 提供备用实现
+  cloudStorage = {
+    getImage: (fileName) => {
+      return new Promise((resolve) => {
+        // 使用本地默认图片
+        const defaultPaths = {
+          'official-account-qr.png': '/images/official-account-qr.png',
+          'wyhd-share-default.png': '/images/qrcode-default.png'
+        };
+        resolve(defaultPaths[fileName] || '/images/qrcode-default.png');
+      });
+    }
+  };
+}
 
 Page({
   data: {

@@ -31,7 +31,8 @@
     "subgames/guardian-beast/knowledge/detail",
     "subgames/daily-character/index",
     "subgames/daily-character/pages/card/index",
-    "subgames/daily-character/pages/test/index"
+    "subgames/daily-character/pages/test/index",
+    "subgames/daily-character/pages/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

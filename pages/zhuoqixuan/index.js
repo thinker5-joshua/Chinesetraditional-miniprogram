@@ -6,10 +6,10 @@ Page({
   data: {
     gameList: [
       {
-        id: '64Hexagrams',
-        name: '六十四卦学习',
-        iconText: '易',
-        cssClass: 'yijing-icon'
+        id: 'daily-character',
+        name: '每日一字',
+        iconText: '字',
+        cssClass: 'character-icon'
       },
       {
         id: 'WuxingMysteries',

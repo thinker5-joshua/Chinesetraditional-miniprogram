@@ -1,11 +1,31 @@
 // 每日一字入口页面
+
+// 尝试引入云存储模块，添加错误处理
+let cloudStorage = null;
+try {
+  cloudStorage = require('../../utils/cloudStorage');
+} catch (error) {
+  console.error('引入云存储模块失败:', error);
+  // 提供备用实现
+  cloudStorage = {
+    getImage: (fileName) => {
+      return new Promise((resolve) => {
+        // 使用本地默认图片
+        const defaultPaths = {
+          'wyhd-share-default.png': '/images/qrcode-default.png'
+        };
+        resolve(defaultPaths[fileName] || '/images/qrcode-default.png');
+      });
+    }
+  };
+}
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     todayCharacter: null,
-    relatedPoems: [],
     loading: true,
     isFlipped: false,
     isFavorite: false,
@@ -31,6 +51,12 @@ Page({
     testDifficultyOptions: ['容易', '均衡', '挑战']
   },
 
+  // 触摸事件相关的临时变量（不放入data中，避免异步更新问题）
+  touchStartX: 0,
+  touchStartY: 0,
+  touchMoveX: 0,
+  touchMoveY: 0,
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -51,7 +77,6 @@ Page({
         difficultyIntermediate = savedDifficulties.difficultyIntermediate || true;
         difficultyAdvanced = savedDifficulties.difficultyAdvanced || true;
         difficultyChallenge = savedDifficulties.difficultyChallenge || true;
-        console.log('读取到本地存储的难度模式:', savedDifficulties);
       } 
       // 如果是旧的数组格式，转换为新格式
       else if (Array.isArray(savedDifficulties)) {
@@ -59,12 +84,6 @@ Page({
         difficultyIntermediate = savedDifficulties.includes('中级');
         difficultyAdvanced = savedDifficulties.includes('高级');
         difficultyChallenge = savedDifficulties.includes('挑战级');
-        console.log('读取到旧格式本地存储，转换为新格式:', {
-          difficultyBeginner,
-          difficultyIntermediate,
-          difficultyAdvanced,
-          difficultyChallenge
-        });
         
         // 保存为新格式
         wx.setStorageSync('dailyCharacterDifficulties', {
@@ -76,7 +95,6 @@ Page({
       }
     } else {
       // 无本地存储，使用默认值
-      console.log('无本地存储，使用默认难度模式');
       // 保存默认值到本地存储
       wx.setStorageSync('dailyCharacterDifficulties', {
         difficultyBeginner,
@@ -89,7 +107,6 @@ Page({
     // 读取测试难度设置
     const savedTestDifficulty = wx.getStorageSync('dailyCharacterTestDifficulty');
     const testDifficulty = savedTestDifficulty || '均衡';
-    console.log('读取到本地存储的测试难度:', testDifficulty);
     
     // 设置初始状态
     this.setData({
@@ -125,7 +142,6 @@ Page({
    */
   loadCharacters() {
     const characters = require('./data-optimized.js').characters;
-    const poems = require('./poems-optimized.js').poems;
     
     this.setData({
       allCharacters: characters,
@@ -153,19 +169,11 @@ Page({
     const randomIndex = Math.floor(Math.random() * filteredCharacters.length);
     const character = filteredCharacters[randomIndex];
     
-    // 加载关联的诗词
-    const poems = require('./poems.js').poems;
-    const relatedPoems = poems.filter(poem => poem.charId === character.id);
-    
     // 检查是否已收藏
     const favorites = wx.getStorageSync('dailyCharacterFavorites') || [];
     const isFavorite = favorites.includes(character.id);
     
-    // 调试代码：输出相关数据
-    console.log('加载的汉字数据:', character);
-    console.log('错误读音:', character.wrongPronunciations);
-    console.log('错误原因类型:', character.errorReasonType);
-    console.log('转换后的错误原因:', this.getErrorReasonText(character.errorReasonType));
+
     
     // 处理错误读音显示
     const wrongPronunciationsText = character.wrongPronunciations ? character.wrongPronunciations.join('、') : '暂无数据';
@@ -175,7 +183,6 @@ Page({
     
     this.setData({
       todayCharacter: character,
-      relatedPoems: relatedPoems,
       isFavorite: isFavorite,
       currentCharacterIndex: randomIndex,
       wrongPronunciationsText: wrongPronunciationsText,
@@ -197,11 +204,288 @@ Page({
    * 保存字卡
    */
   saveCard() {
-    wx.showToast({
-      title: '保存功能开发中',
-      icon: 'none'
+    const { todayCharacter } = this.data;
+    
+    if (!todayCharacter) {
+      wx.showToast({
+        title: '请先加载一个汉字',
+        icon: 'none'
+      });
+      return;
+    }
+
+    // 显示加载提示
+    wx.showLoading({
+      title: '生成卡片中...',
+      mask: true
     });
-    // 后续实现保存字卡图像到相册功能
+
+    // 获取canvas上下文
+    const query = wx.createSelectorQuery();
+    query.select('#character-canvas')
+      .fields({ node: true, size: true })
+      .exec((res) => {
+        if (!res || !res[0]) {
+          wx.hideLoading();
+          wx.showToast({
+            title: '获取画布失败',
+            icon: 'none'
+          });
+          return;
+        }
+        
+        const canvas = res[0].node;
+        const ctx = canvas.getContext('2d');
+
+        // 设置canvas尺寸
+        const width = 750;
+        const height = 1334;
+        canvas.width = width;
+        canvas.height = height;
+
+        // 绘制背景
+        ctx.fillStyle = '#f8f6f0';
+        ctx.fillRect(0, 0, width, height);
+
+        // 绘制边框
+        ctx.strokeStyle = '#e8e4d8';
+        ctx.lineWidth = 20;
+        ctx.strokeRect(10, 10, width - 20, height - 20);
+
+        // 绘制标题
+        ctx.fillStyle = '#8B4513';
+        ctx.font = '52px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('每日一字', width / 2, 140);
+
+        // 绘制分隔线
+        ctx.strokeStyle = '#d2b48c';
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(50, 180);
+        ctx.lineTo(width - 50, 180);
+        ctx.stroke();
+
+        // 绘制正面内容（上半部分）
+        const frontTop = 220;
+        const frontHeight = 400;
+        
+        // 绘制汉字
+        ctx.fillStyle = '#8B4513';
+        ctx.font = '160px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(todayCharacter.char, width / 2, frontTop + 150);
+        
+        // 绘制正确读音
+        ctx.fillStyle = '#28a745';
+        ctx.font = '60px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(todayCharacter.correctPronunciation, width / 2, frontTop + 250);
+        
+        // 绘制相关词组
+        if (todayCharacter.relatedPhrases && todayCharacter.relatedPhrases.length > 0) {
+          ctx.fillStyle = '#666';
+          ctx.font = '32px sans-serif';
+          ctx.textAlign = 'center';
+          
+          const phrasesText = todayCharacter.relatedPhrases.join('、');
+          const lineHeight = 40;
+          const maxWidth = 650;
+          let startY = frontTop + 310;
+          let currentLine = '';
+
+          // 自动换行绘制词组
+          for (let i = 0; i < phrasesText.length; i++) {
+            const testLine = currentLine + phrasesText[i];
+            const metrics = ctx.measureText(testLine);
+            
+            if (metrics.width > maxWidth && i > 0) {
+              ctx.fillText(currentLine, width / 2, startY);
+              startY += lineHeight;
+              currentLine = phrasesText[i];
+            } else {
+              currentLine = testLine;
+            }
+          }
+          ctx.fillText(currentLine, width / 2, startY);
+        }
+
+        // 绘制分隔线
+        ctx.strokeStyle = '#d2b48c';
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(50, frontTop + frontHeight);
+        ctx.lineTo(width - 50, frontTop + frontHeight);
+        ctx.stroke();
+
+        // 绘制背面内容（下半部分）
+        const backTop = frontTop + frontHeight + 40;
+        
+        // 绘制详细解析
+        ctx.fillStyle = '#333';
+        ctx.font = '32px sans-serif';
+        ctx.textAlign = 'left';
+        
+        const explanation = todayCharacter.explanation || '暂无解析';
+        const lineHeight = 40;
+        const maxWidth = 650;
+        let startY = backTop + 80;
+        let currentLine = '';
+
+        // 自动换行绘制解析
+        for (let i = 0; i < explanation.length; i++) {
+          const testLine = currentLine + explanation[i];
+          const metrics = ctx.measureText(testLine);
+          
+          if (metrics.width > maxWidth && i > 0) {
+            ctx.fillText(currentLine, (width - maxWidth) / 2, startY);
+            startY += lineHeight;
+            currentLine = explanation[i];
+          } else {
+            currentLine = testLine;
+          }
+        }
+        ctx.fillText(currentLine, (width - maxWidth) / 2, startY);
+        startY += lineHeight * 2;
+
+        // 绘制错误读音
+        ctx.fillStyle = '#8B4513';
+        ctx.font = '34px sans-serif';
+        ctx.textAlign = 'left';
+        const wrongPronunciationsLabel = '常见错误读音：';
+        ctx.fillText(wrongPronunciationsLabel, (width - maxWidth) / 2, startY);
+        
+        const wrongPronunciations = todayCharacter.wrongPronunciations || [];
+        const wrongPronunciationsText = wrongPronunciations.join('、') || '暂无错误读音';
+        ctx.fillStyle = '#ff6b6b';
+        ctx.font = '32px sans-serif';
+        const labelWidth = ctx.measureText(wrongPronunciationsLabel).width;
+        ctx.fillText(wrongPronunciationsText, (width - maxWidth) / 2 + labelWidth + 10, startY);
+        startY += lineHeight * 2;
+
+        // 绘制错误原因
+        ctx.fillStyle = '#8B4513';
+        ctx.font = '34px sans-serif';
+        ctx.textAlign = 'left';
+        const errorReasonLabel = '错误原因：';
+        ctx.fillText(errorReasonLabel, (width - maxWidth) / 2, startY);
+        
+        const errorReasonText = this.getErrorReasonText(todayCharacter.errorReasonType) || '暂无错误原因';
+        ctx.fillStyle = '#333';
+        ctx.font = '32px sans-serif';
+        const errorReasonLabelWidth = ctx.measureText(errorReasonLabel).width;
+        ctx.fillText(errorReasonText, (width - maxWidth) / 2 + errorReasonLabelWidth + 10, startY);
+
+        // 绘制底部装饰
+        const bottomGradient = ctx.createLinearGradient(0, height - 200, 0, height);
+        bottomGradient.addColorStop(0, 'rgba(210, 180, 140, 0.2)');
+        bottomGradient.addColorStop(1, 'rgba(210, 180, 140, 0.4)');
+        ctx.fillStyle = bottomGradient;
+        ctx.fillRect(0, height - 200, width, 200);
+
+        // 绘制小程序码
+        const qrcodeSize = 120;
+        const qrcodeX = 50;
+        const qrcodeY = height - 170;
+
+        // 加载并绘制小程序码
+        const img = canvas.createImage();
+        
+        // 绘制提示文字的函数
+        const drawQrCodeText = () => {
+          try {
+            // 绘制小程序文字
+            ctx.fillStyle = '#666666';
+            ctx.font = '28px sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('文益互动', qrcodeX + qrcodeSize + 20, qrcodeY + 50);
+            ctx.fillText('长按识别二维码', qrcodeX + qrcodeSize + 20, qrcodeY + 90);
+          } catch (e) {
+            // 绘制失败不影响后续保存
+          }
+        };
+
+        // 保存图片到临时文件的函数，无论图片加载成功与否都调用
+        const saveCanvasToImage = () => {
+          // 保存图片到临时文件
+          wx.canvasToTempFilePath({
+            canvas: canvas,
+            success: (res) => {
+              wx.hideLoading();
+              
+              // 保存图片到相册
+              wx.saveImageToPhotosAlbum({
+                filePath: res.tempFilePath,
+                success: () => {
+                  wx.showToast({
+                    title: '卡片已保存到相册',
+                    icon: 'success',
+                    duration: 2000
+                  });
+                },
+                fail: (err) => {
+                  wx.hideLoading();
+                  wx.showToast({
+                    title: '保存失败，请重试',
+                    icon: 'none'
+                  });
+                  // 处理用户拒绝授权的情况
+                  if (err.errMsg.indexOf('auth deny') > -1 || err.errMsg.indexOf('auth denied') > -1) {
+                    wx.showModal({
+                      title: '授权提示',
+                      content: '需要您授权保存图片到相册',
+                      success: (modalRes) => {
+                        if (modalRes.confirm) {
+                          wx.openSetting();
+                        }
+                      }
+                    });
+                  }
+                }
+              });
+            },
+            fail: (err) => {
+              wx.hideLoading();
+              wx.showToast({
+                title: '图片生成失败',
+                icon: 'none'
+              });
+            }
+          });
+        };
+        
+        img.onload = () => {
+          try {
+            ctx.drawImage(img, qrcodeX, qrcodeY, qrcodeSize, qrcodeSize);
+          } catch (e) {
+            // 绘制失败不影响后续保存
+          }
+          
+          // 绘制提示文字
+          drawQrCodeText();
+          
+          // 保存图片
+          saveCanvasToImage();
+        };
+        
+        // 添加图片加载失败处理
+        img.onerror = () => {
+          // 图片加载失败，绘制提示文字，然后保存图片
+          drawQrCodeText();
+          saveCanvasToImage();
+        };
+        
+        // 从云存储获取小程序码图片（带缓存）
+        cloudStorage.getImage('wyhd-minipro.png')
+          .then(qrcodeUrl => {
+            img.src = qrcodeUrl;
+          })
+          .catch(error => {
+            // 云存储获取失败，使用本地默认图片
+            const defaultQrcodePath = '/images/qrcode-default.png';
+            img.src = defaultQrcodePath;
+          });
+      });
   },
 
   /**
@@ -244,10 +528,8 @@ Page({
    * 显示易读错字列表
    */
   showCharacterList() {
-    wx.showToast({
-      title: '功能开发中',
-      icon: 'none',
-      duration: 1500
+    wx.navigateTo({
+      url: '/subgames/daily-character/pages/list/list'
     });
   },
 
@@ -406,19 +688,9 @@ Page({
     const { filteredCharacters } = this.data;
     const character = filteredCharacters[index];
     
-    // 加载关联的诗词
-    const poems = require('./poems.js').poems;
-    const relatedPoems = poems.filter(poem => poem.charId === character.id);
-    
     // 检查是否已收藏
     const favorites = wx.getStorageSync('dailyCharacterFavorites') || [];
     const isFavorite = favorites.includes(character.id);
-    
-    // 调试代码：输出相关数据
-    console.log('加载的汉字数据:', character);
-    console.log('错误读音:', character.wrongPronunciations);
-    console.log('错误原因类型:', character.errorReasonType);
-    console.log('转换后的错误原因:', this.getErrorReasonText(character.errorReasonType));
     
     // 处理错误读音显示
     const wrongPronunciationsText = character.wrongPronunciations ? character.wrongPronunciations.join('、') : '暂无数据';
@@ -428,7 +700,6 @@ Page({
     
     this.setData({
       todayCharacter: character,
-      relatedPoems: relatedPoems,
       isFavorite: isFavorite,
       currentCharacterIndex: index,
       wrongPronunciationsText: wrongPronunciationsText,
@@ -444,17 +715,9 @@ Page({
    */
   filterCharacters() {
     const { allCharacters, difficultyBeginner, difficultyIntermediate, difficultyAdvanced, difficultyChallenge } = this.data;
-    console.log('过滤汉字 - 所有汉字数量:', allCharacters.length);
-    console.log('难度选择状态:', {
-      difficultyBeginner,
-      difficultyIntermediate,
-      difficultyAdvanced,
-      difficultyChallenge
-    });
     
     // 空值检查
     if (!allCharacters || !Array.isArray(allCharacters)) {
-      console.error('allCharacters不是有效的数组:', allCharacters);
       return;
     }
     
@@ -470,12 +733,9 @@ Page({
         case '挑战级':
           return difficultyChallenge;
         default:
-          console.error('未知的难度等级:', char.difficultyLevel);
           return false;
       }
     });
-    
-    console.log('过滤后汉字数量:', filteredCharacters.length);
     
     this.setData({
       filteredCharacters: filteredCharacters
@@ -497,31 +757,287 @@ Page({
       6: '偏僻字/生僻字'
     };
     
-    // 详细调试日志
-    console.log('错误原因类型转换 - 输入:', type, '类型:', typeof type);
-    
     // 确保type是数字类型
     const numType = Number(type) || 0;
-    console.log('转换为数字类型:', numType);
     
     // 获取对应的文本
     const text = errorReasonMap[numType] || '未知类型';
     
     // 确保返回字符串类型
     const result = String(text);
-    console.log('最终结果:', result, '类型:', typeof result);
     
     return result;
+  },
+
+  /**
+   * 生成分享图片
+   */
+  generateShareImage(callback) {
+    const { todayCharacter } = this.data;
+    
+    if (!todayCharacter) {
+      callback('');
+      return;
+    }
+
+    // 检查是否有缓存的分享图片
+    const cacheKey = `share_image_${todayCharacter.id}`;
+    try {
+      const cachedImage = wx.getStorageSync(cacheKey);
+      if (cachedImage) {
+        // 检查缓存文件是否存在
+        const fs = wx.getFileSystemManager();
+        fs.accessSync(cachedImage);
+        callback(cachedImage);
+        return;
+      }
+    } catch (error) {
+      // 缓存不存在或已过期，重新生成
+    }
+
+    // 获取canvas上下文
+    const query = wx.createSelectorQuery();
+    query.select('#character-canvas')
+      .fields({ node: true, size: true })
+      .exec((res) => {
+        if (!res || !res[0]) {
+          callback('');
+          return;
+        }
+        
+        const canvas = res[0].node;
+        const ctx = canvas.getContext('2d');
+
+        // 设置canvas尺寸
+        const width = 750;
+        const height = 750;
+        canvas.width = width;
+        canvas.height = height;
+
+        // 绘制背景
+        ctx.fillStyle = '#f8f6f0';
+        ctx.fillRect(0, 0, width, height);
+
+        // 绘制边框
+        ctx.strokeStyle = '#e8e4d8';
+        ctx.lineWidth = 20;
+        ctx.strokeRect(10, 10, width - 20, height - 20);
+
+        // 绘制标题
+        ctx.fillStyle = '#8B4513';
+        ctx.font = '52px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('每日一字', width / 2, 140);
+
+        // 绘制分隔线
+        ctx.strokeStyle = '#d2b48c';
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(50, 180);
+        ctx.lineTo(width - 50, 180);
+        ctx.stroke();
+
+        // 绘制汉字
+        ctx.fillStyle = '#8B4513';
+        ctx.font = '180px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(todayCharacter.char, width / 2, 320);
+        
+        // 绘制正确读音
+        ctx.fillStyle = '#28a745';
+        ctx.font = '60px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(todayCharacter.correctPronunciation, width / 2, 400);
+        
+        // 绘制相关词组
+        if (todayCharacter.relatedPhrases && todayCharacter.relatedPhrases.length > 0) {
+          ctx.fillStyle = '#666';
+          ctx.font = '32px sans-serif';
+          ctx.textAlign = 'center';
+          
+          const phrasesText = todayCharacter.relatedPhrases.join('、');
+          const lineHeight = 40;
+          const maxWidth = 650;
+          let startY = 470;
+          let currentLine = '';
+
+          // 自动换行绘制词组
+          for (let i = 0; i < phrasesText.length; i++) {
+            const testLine = currentLine + phrasesText[i];
+            const metrics = ctx.measureText(testLine);
+            
+            if (metrics.width > maxWidth && i > 0) {
+              ctx.fillText(currentLine, width / 2, startY);
+              startY += lineHeight;
+              currentLine = phrasesText[i];
+            } else {
+              currentLine = testLine;
+            }
+          }
+          ctx.fillText(currentLine, width / 2, startY);
+        }
+
+        // 绘制底部装饰
+        const bottomGradient = ctx.createLinearGradient(0, height - 200, 0, height);
+        bottomGradient.addColorStop(0, 'rgba(210, 180, 140, 0.2)');
+        bottomGradient.addColorStop(1, 'rgba(210, 180, 140, 0.4)');
+        ctx.fillStyle = bottomGradient;
+        ctx.fillRect(0, height - 200, width, 200);
+
+        // 绘制小程序码
+        const qrcodeSize = 120;
+        const qrcodeX = 50;
+        const qrcodeY = height - 170;
+
+        // 绘制提示文字的函数
+        const drawQrCodeText = () => {
+          try {
+            // 绘制小程序文字
+            ctx.fillStyle = '#666666';
+            ctx.font = '28px sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('文益互动', qrcodeX + qrcodeSize + 20, qrcodeY + 50);
+            ctx.fillText('长按识别二维码', qrcodeX + qrcodeSize + 20, qrcodeY + 90);
+          } catch (e) {
+            // 绘制失败不影响后续保存
+          }
+        };
+
+        // 保存图片到临时文件的函数，无论图片加载成功与否都调用
+        const saveCanvasToImage = () => {
+          // 保存图片到临时文件
+          wx.canvasToTempFilePath({
+            canvas: canvas,
+            success: (res) => {
+              // 缓存生成的分享图片（7天有效期）
+              try {
+                const fs = wx.getFileSystemManager();
+                const cachePath = `${wx.env.USER_DATA_PATH}/share_${todayCharacter.id}_${Date.now()}.png`;
+                fs.copyFileSync(res.tempFilePath, cachePath);
+                
+                // 保存缓存路径到本地存储，并设置7天过期时间
+                const cacheData = {
+                  path: cachePath,
+                  expire: Date.now() + 7 * 24 * 60 * 60 * 1000
+                };
+                wx.setStorageSync(cacheKey, cachePath);
+              } catch (error) {
+                // 缓存失败不影响分享
+              }
+              
+              callback(res.tempFilePath);
+            },
+            fail: (err) => {
+              callback('');
+            }
+          });
+        };
+        
+        // 从云存储获取小程序码图片（带缓存）
+        cloudStorage.getImage('wyhd-minipro.png')
+          .then(qrcodeUrl => {
+            const img = canvas.createImage();
+            
+            img.onload = () => {
+              try {
+                ctx.drawImage(img, qrcodeX, qrcodeY, qrcodeSize, qrcodeSize);
+              } catch (e) {
+                // 绘制失败不影响后续保存
+              }
+              
+              // 绘制提示文字
+              drawQrCodeText();
+              
+              // 保存图片
+              saveCanvasToImage();
+            };
+            
+            // 添加图片加载失败处理
+            img.onerror = () => {
+              // 图片加载失败，绘制提示文字，然后保存图片
+              drawQrCodeText();
+              saveCanvasToImage();
+            };
+            
+            img.src = qrcodeUrl;
+          })
+          .catch(error => {
+            // 云存储获取失败，直接绘制提示文字并保存图片
+            drawQrCodeText();
+            saveCanvasToImage();
+          });
+      });
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-    return {
-      title: `每日一字 - ${this.data.todayCharacter?.char || '汉字学习'}`,
-      path: '/subgames/daily-character/index',
-      imageUrl: ''
-    };
+    return new Promise((resolve) => {
+      // 生成分享图片
+      this.generateShareImage((imageUrl) => {
+        resolve({
+          title: `每日一字 - ${this.data.todayCharacter?.char || '汉字学习'}`,
+          path: '/subgames/daily-character/index',
+          imageUrl: imageUrl
+        });
+      });
+    });
+  },
+
+  /**
+   * 用户点击分享到朋友圈
+   */
+  onShareTimeline() {
+    return new Promise((resolve) => {
+      // 生成分享图片
+      this.generateShareImage((imageUrl) => {
+        resolve({
+          title: `每日一字 - ${this.data.todayCharacter?.char || '汉字学习'}`,
+          query: 'from=timeline',
+          imageUrl: imageUrl
+        });
+      });
+    });
+  },
+
+  // 触摸开始事件
+  onTouchStart(e) {
+    // 使用临时变量存储触摸开始位置
+    this.touchStartX = e.touches[0].clientX;
+    this.touchStartY = e.touches[0].clientY;
+  },
+
+  // 触摸移动事件
+  onTouchMove(e) {
+    // 使用临时变量存储触摸移动位置
+    this.touchMoveX = e.touches[0].clientX;
+    this.touchMoveY = e.touches[0].clientY;
+  },
+
+  // 触摸结束事件
+  onTouchEnd() {
+    // 使用临时变量计算触摸距离
+    const deltaX = this.touchMoveX - this.touchStartX;
+    const deltaY = this.touchMoveY - this.touchStartY;
+    
+    // 增加滑动检测的阈值，只有明显的滑动动作才会触发翻页
+    // 水平移动距离需要大于100px，且水平移动距离大于垂直移动距离的2倍
+    // 这样可以确保只有真正的滑动才会触发翻页，避免点击时的轻微移动被误识别
+    if (Math.abs(deltaX) > 100 && Math.abs(deltaX) > Math.abs(deltaY) * 2) {
+      if (deltaX > 0) {
+        // 向右滑动，显示上一个汉字
+        this.showPreviousCharacter();
+      } else {
+        // 向左滑动，显示下一个汉字
+        this.showNextCharacter();
+      }
+    }
+    
+    // 重置触摸事件相关的临时变量，避免影响下一次触摸事件
+    this.touchStartX = 0;
+    this.touchStartY = 0;
+    this.touchMoveX = 0;
+    this.touchMoveY = 0;
   }
 });

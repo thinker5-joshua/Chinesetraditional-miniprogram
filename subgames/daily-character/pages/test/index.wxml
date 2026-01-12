@@ -17,6 +17,15 @@
     <!-- 当前题目 -->
     <view class="question-section">
       <text class="question-character">{{testQuestions[currentQuestionIndex].character}}</text>
+      <view class="related-phrases">
+        <text class="phrases-label">相关词组：</text>
+        <view class="phrases-content">
+          <view wx:if="{{testQuestions[currentQuestionIndex].relatedPhrases && testQuestions[currentQuestionIndex].relatedPhrases.length > 0}}" class="phrases-list">
+            <text class="phrase-item" wx:for="{{testQuestions[currentQuestionIndex].relatedPhrases}}" wx:key="index">{{item}}{{index < testQuestions[currentQuestionIndex].relatedPhrases.length - 1 ? '、' : ''}}</text>
+          </view>
+          <text wx:else class="phrases-text">暂无</text>
+        </view>
+      </view>
       <text class="question-prompt">请选择正确的读音</text>
     </view>
 

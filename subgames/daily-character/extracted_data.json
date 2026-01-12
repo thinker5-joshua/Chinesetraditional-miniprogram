@@ -1,0 +1,4646 @@
+[
+  {
+    "char": "塞",
+    "correctPronunciation": "sè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "堵塞"
+    ],
+    "originalText": "堵塞(sè) "
+  },
+  {
+    "char": "匕",
+    "correctPronunciation": "bǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "匕首"
+    ],
+    "originalText": "匕首(bǐ) "
+  },
+  {
+    "char": "羼",
+    "correctPronunciation": "chàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "羼水"
+    ],
+    "originalText": " 羼水(chàn)"
+  },
+  {
+    "char": "哄",
+    "correctPronunciation": "hǒng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "哄骗"
+    ],
+    "originalText": "哄骗(hǒng) "
+  },
+  {
+    "char": "憧",
+    "correctPronunciation": "chōng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "憧憬"
+    ],
+    "originalText": "憧憬 (chōng ) "
+  },
+  {
+    "char": "模",
+    "correctPronunciation": "mú",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "模样"
+    ],
+    "originalText": " 模样(mú)"
+  },
+  {
+    "char": "讪",
+    "correctPronunciation": "shàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "讪笑"
+    ],
+    "originalText": "讪笑(shàn)"
+  },
+  {
+    "char": "龋",
+    "correctPronunciation": "qǔ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "龋齿"
+    ],
+    "originalText": "龋齿(qǔ)"
+  },
+  {
+    "char": "骁",
+    "correctPronunciation": "xiāo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "骁勇"
+    ],
+    "originalText": "骁勇(xiāo)"
+  },
+  {
+    "char": "枢",
+    "correctPronunciation": "shū",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "枢纽"
+    ],
+    "originalText": "枢纽(shū) 谮言(zèn) 札记(zhá)"
+  },
+  {
+    "char": "谮",
+    "correctPronunciation": "zèn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "谮言"
+    ],
+    "originalText": "枢纽(shū) 谮言(zèn) 札记(zhá)"
+  },
+  {
+    "char": "札",
+    "correctPronunciation": "zhá",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "札记"
+    ],
+    "originalText": "枢纽(shū) 谮言(zèn) 札记(zhá)"
+  },
+  {
+    "char": "轴",
+    "correctPronunciation": "zhòu",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "压轴"
+    ],
+    "originalText": "压轴 (zhòu) 眼睑(jiǎn ) 编纂(zuǎn)"
+  },
+  {
+    "char": "睑",
+    "correctPronunciation": "jiǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "眼睑"
+    ],
+    "originalText": "压轴 (zhòu) 眼睑(jiǎn ) 编纂(zuǎn)"
+  },
+  {
+    "char": "纂",
+    "correctPronunciation": "zuǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "编纂"
+    ],
+    "originalText": "压轴 (zhòu) 眼睑(jiǎn ) 编纂(zuǎn)"
+  },
+  {
+    "char": "髓",
+    "correctPronunciation": "suǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "精髓"
+    ],
+    "originalText": "精髓(suǐ) 土坯( pī) 菜畦(qí)"
+  },
+  {
+    "char": "坯",
+    "correctPronunciation": "pī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "土坯"
+    ],
+    "originalText": "精髓(suǐ) 土坯( pī) 菜畦(qí)"
+  },
+  {
+    "char": "畦",
+    "correctPronunciation": "qí",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "菜畦"
+    ],
+    "originalText": "精髓(suǐ) 土坯( pī) 菜畦(qí)"
+  },
+  {
+    "char": "淖",
+    "correctPronunciation": "nào",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "泥淖"
+    ],
+    "originalText": "泥淖 (nào ) 果脯(fǔ) 倾轧(yà)"
+  },
+  {
+    "char": "脯",
+    "correctPronunciation": "fǔ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "果脯"
+    ],
+    "originalText": "泥淖 (nào ) 果脯(fǔ) 倾轧(yà)"
+  },
+  {
+    "char": "轧",
+    "correctPronunciation": "yà",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "倾轧"
+    ],
+    "originalText": "泥淖 (nào ) 果脯(fǔ) 倾轧(yà)"
+  },
+  {
+    "char": "累",
+    "correctPronunciation": "lěi",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "连累"
+    ],
+    "originalText": "连累( lěi ) 喑哑(yin) 辍学(chuò)"
+  },
+  {
+    "char": "哑",
+    "correctPronunciation": "yin",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "喑哑"
+    ],
+    "originalText": "连累( lěi ) 喑哑(yin) 辍学(chuò)"
+  },
+  {
+    "char": "辍",
+    "correctPronunciation": "chuò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "辍学"
+    ],
+    "originalText": "连累( lěi ) 喑哑(yin) 辍学(chuò)"
+  },
+  {
+    "char": "臭",
+    "correctPronunciation": "xiù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "乳臭"
+    ],
+    "originalText": "乳臭(xiù ) 诘问(jié ) 啜泣(chuÒ)"
+  },
+  {
+    "char": "诘",
+    "correctPronunciation": "jié",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "诘问"
+    ],
+    "originalText": "乳臭(xiù ) 诘问(jié ) 啜泣(chuÒ)"
+  },
+  {
+    "char": "啜",
+    "correctPronunciation": "chuò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "啜泣"
+    ],
+    "originalText": "乳臭(xiù ) 诘问(jié ) 啜泣(chuÒ)"
+  },
+  {
+    "char": "撷",
+    "correctPronunciation": "xié",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "采撷"
+    ],
+    "originalText": "采撷(xié) 确凿( záo) 憔悴(qiáo)"
+  },
+  {
+    "char": "凿",
+    "correctPronunciation": "záo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "确凿"
+    ],
+    "originalText": "采撷(xié) 确凿( záo) 憔悴(qiáo)"
+  },
+  {
+    "char": "憔",
+    "correctPronunciation": "qiáo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "憔悴"
+    ],
+    "originalText": "采撷(xié) 确凿( záo) 憔悴(qiáo)"
+  },
+  {
+    "char": "脊",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "脊梁"
+    ],
+    "originalText": "脊梁 ( jǐ ) 浸渍(zì) 勤俭(jiǎn )"
+  },
+  {
+    "char": "渍",
+    "correctPronunciation": "zì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "浸渍"
+    ],
+    "originalText": "脊梁 ( jǐ ) 浸渍(zì) 勤俭(jiǎn )"
+  },
+  {
+    "char": "俭",
+    "correctPronunciation": "jiǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "勤俭"
+    ],
+    "originalText": "脊梁 ( jǐ ) 浸渍(zì) 勤俭(jiǎn )"
+  },
+  {
+    "char": "否",
+    "correctPronunciation": "pǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "臧否"
+    ],
+    "originalText": "臧否( pǐ ) 校勘(kān) 拯救(zhěng)"
+  },
+  {
+    "char": "勘",
+    "correctPronunciation": "kān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "校勘"
+    ],
+    "originalText": "臧否( pǐ ) 校勘(kān) 拯救(zhěng)"
+  },
+  {
+    "char": "拯",
+    "correctPronunciation": "zhěng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "拯救"
+    ],
+    "originalText": "臧否( pǐ ) 校勘(kān) 拯救(zhěng)"
+  },
+  {
+    "char": "笺",
+    "correctPronunciation": "jiān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "信笺"
+    ],
+    "originalText": "信笺 ( jiān) 贮存(zhù) 忏悔(chàn)"
+  },
+  {
+    "char": "贮",
+    "correctPronunciation": "zhù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "贮存"
+    ],
+    "originalText": "信笺 ( jiān) 贮存(zhù) 忏悔(chàn)"
+  },
+  {
+    "char": "忏",
+    "correctPronunciation": "chàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "忏悔"
+    ],
+    "originalText": "信笺 ( jiān) 贮存(zhù) 忏悔(chàn)"
+  },
+  {
+    "char": "勾",
+    "correctPronunciation": "gòu",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "勾当"
+    ],
+    "originalText": "勾当 (gòu ) 佣人 (yōng) 摇曳(yè)"
+  },
+  {
+    "char": "佣",
+    "correctPronunciation": "yōng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "佣人"
+    ],
+    "originalText": "勾当 (gòu ) 佣人 (yōng) 摇曳(yè)"
+  },
+  {
+    "char": "曳",
+    "correctPronunciation": "yè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "摇曳"
+    ],
+    "originalText": "勾当 (gòu ) 佣人 (yōng) 摇曳(yè)"
+  },
+  {
+    "char": "喟",
+    "correctPronunciation": "kuì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "感喟"
+    ],
+    "originalText": "感喟(kuì ) 造诣( yì) 傀儡(kuǐ)"
+  },
+  {
+    "char": "诣",
+    "correctPronunciation": "yì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "造诣"
+    ],
+    "originalText": "感喟(kuì ) 造诣( yì) 傀儡(kuǐ)"
+  },
+  {
+    "char": "傀",
+    "correctPronunciation": "kuǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "傀儡"
+    ],
+    "originalText": "感喟(kuì ) 造诣( yì) 傀儡(kuǐ)"
+  },
+  {
+    "char": "魇",
+    "correctPronunciation": "yǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "梦魇"
+    ],
+    "originalText": "梦魇 ( yǎn ) 囊括(kuò ) 赝品(yàn )"
+  },
+  {
+    "char": "括",
+    "correctPronunciation": "kuò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "囊括"
+    ],
+    "originalText": "梦魇 ( yǎn ) 囊括(kuò ) 赝品(yàn )"
+  },
+  {
+    "char": "赝",
+    "correctPronunciation": "yàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "赝品"
+    ],
+    "originalText": "梦魇 ( yǎn ) 囊括(kuò ) 赝品(yàn )"
+  },
+  {
+    "char": "瞰",
+    "correctPronunciation": "kàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "鸟瞰"
+    ],
+    "originalText": "鸟瞰( kàn) 笑靥(yè ) 恪守(kè)"
+  },
+  {
+    "char": "靥",
+    "correctPronunciation": "yè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "笑靥"
+    ],
+    "originalText": "鸟瞰( kàn) 笑靥(yè ) 恪守(kè)"
+  },
+  {
+    "char": "恪",
+    "correctPronunciation": "kè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "恪守"
+    ],
+    "originalText": "鸟瞰( kàn) 笑靥(yè ) 恪守(kè)"
+  },
+  {
+    "char": "忖",
+    "correctPronunciation": "cǔn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "忖度"
+    ],
+    "originalText": "忖度 (cǔn duó) 稂莠(lángyǒu) 弓弦 (xián )"
+  },
+  {
+    "char": "度",
+    "correctPronunciation": "duó",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "忖度"
+    ],
+    "originalText": "忖度 (cǔn duó) 稂莠(lángyǒu) 弓弦 (xián )"
+  },
+  {
+    "char": "稂",
+    "correctPronunciation": "láng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "稂莠"
+    ],
+    "originalText": "忖度 (cǔn duó) 稂莠(lángyǒu) 弓弦 (xián )"
+  },
+  {
+    "char": "莠",
+    "correctPronunciation": "yǒu",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "稂莠"
+    ],
+    "originalText": "忖度 (cǔn duó) 稂莠(lángyǒu) 弓弦 (xián )"
+  },
+  {
+    "char": "弦",
+    "correctPronunciation": "xián",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "弓弦"
+    ],
+    "originalText": "忖度 (cǔn duó) 稂莠(lángyǒu) 弓弦 (xián )"
+  },
+  {
+    "char": "岚",
+    "correctPronunciation": "lán",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "山岚"
+    ],
+    "originalText": "山岚( lán ) 狡黠(xiá) 罹难(í)"
+  },
+  {
+    "char": "黠",
+    "correctPronunciation": "xiá",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "狡黠"
+    ],
+    "originalText": "山岚( lán ) 狡黠(xiá) 罹难(í)"
+  },
+  {
+    "char": "罹",
+    "correctPronunciation": "lí",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "罹难"
+    ],
+    "originalText": "山岚( lán ) 狡黠(xiá) 罹难(í)"
+  },
+  {
+    "char": "酗",
+    "correctPronunciation": "xù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "酗酒"
+    ],
+    "originalText": "酗酒( xù ) 绸繆(móu) 檄文( xí)"
+  },
+  {
+    "char": "繆",
+    "correctPronunciation": "móu",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "绸繆"
+    ],
+    "originalText": "酗酒( xù ) 绸繆(móu) 檄文( xí)"
+  },
+  {
+    "char": "檄",
+    "correctPronunciation": "xí",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "檄文"
+    ],
+    "originalText": "酗酒( xù ) 绸繆(móu) 檄文( xí)"
+  },
+  {
+    "char": "脉",
+    "correctPronunciation": "mò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "脉脉"
+    ],
+    "originalText": "脉脉(mò) 闲暇(xiá) 联袂(mèi)"
+  },
+  {
+    "char": "暇",
+    "correctPronunciation": "xiá",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "闲暇"
+    ],
+    "originalText": "脉脉(mò) 闲暇(xiá) 联袂(mèi)"
+  },
+  {
+    "char": "袂",
+    "correctPronunciation": "mèi",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "联袂"
+    ],
+    "originalText": "脉脉(mò) 闲暇(xiá) 联袂(mèi)"
+  },
+  {
+    "char": "谑",
+    "correctPronunciation": "xuè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "戏谑"
+    ],
+    "originalText": "戏谑 (xuè ) 愤懑(mèn) 辖制(xiá )"
+  },
+  {
+    "char": "懑",
+    "correctPronunciation": "mèn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "愤懑"
+    ],
+    "originalText": "戏谑 (xuè ) 愤懑(mèn) 辖制(xiá )"
+  },
+  {
+    "char": "辖",
+    "correctPronunciation": "xiá",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "辖制"
+    ],
+    "originalText": "戏谑 (xuè ) 愤懑(mèn) 辖制(xiá )"
+  },
+  {
+    "char": "谬",
+    "correctPronunciation": "miù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "荒谬"
+    ],
+    "originalText": "荒谬 (miù) 兴奋(xīng) 阴霾( mái)"
+  },
+  {
+    "char": "兴",
+    "correctPronunciation": "xīng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "兴奋"
+    ],
+    "originalText": "荒谬 (miù) 兴奋(xīng) 阴霾( mái)"
+  },
+  {
+    "char": "霾",
+    "correctPronunciation": "mái",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "阴霾"
+    ],
+    "originalText": "荒谬 (miù) 兴奋(xīng) 阴霾( mái)"
+  },
+  {
+    "char": "淆",
+    "correctPronunciation": "xiáo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "混淆"
+    ],
+    "originalText": "混淆(xiáo) 羞赧(nǎn) 噱头( xué)"
+  },
+  {
+    "char": "赧",
+    "correctPronunciation": "nǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "羞赧"
+    ],
+    "originalText": "混淆(xiáo) 羞赧(nǎn) 噱头( xué)"
+  },
+  {
+    "char": "噱",
+    "correctPronunciation": "xué",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "噱头"
+    ],
+    "originalText": "混淆(xiáo) 羞赧(nǎn) 噱头( xué)"
+  },
+  {
+    "char": "懦",
+    "correctPronunciation": "nuò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "怯懦"
+    ],
+    "originalText": "怯懦 (nuò) 斡旋(wò ) 执拗(niù)"
+  },
+  {
+    "char": "斡",
+    "correctPronunciation": "wò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "斡旋"
+    ],
+    "originalText": "怯懦 (nuò) 斡旋(wò ) 执拗(niù)"
+  },
+  {
+    "char": "拗",
+    "correctPronunciation": "niù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "执拗"
+    ],
+    "originalText": "怯懦 (nuò) 斡旋(wò ) 执拗(niù)"
+  },
+  {
+    "char": "娲",
+    "correctPronunciation": "wā",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "女娲"
+    ],
+    "originalText": "女娲( wā) 气馁(něi) 鞭挞(tà)"
+  },
+  {
+    "char": "馁",
+    "correctPronunciation": "něi",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "气馁"
+    ],
+    "originalText": "女娲( wā) 气馁(něi) 鞭挞(tà)"
+  },
+  {
+    "char": "挞",
+    "correctPronunciation": "tà",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "鞭挞"
+    ],
+    "originalText": "女娲( wā) 气馁(něi) 鞭挞(tà)"
+  },
+  {
+    "char": "酝",
+    "correctPronunciation": "yùn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "酝酿"
+    ],
+    "originalText": "酝酿 ( yùn niàng) 字帖(tiè ) 拈轻(nian)"
+  },
+  {
+    "char": "酿",
+    "correctPronunciation": "niàng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "酝酿"
+    ],
+    "originalText": "酝酿 ( yùn niàng) 字帖(tiè ) 拈轻(nian)"
+  },
+  {
+    "char": "帖",
+    "correctPronunciation": "tiè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "字帖"
+    ],
+    "originalText": "酝酿 ( yùn niàng) 字帖(tiè ) 拈轻(nian)"
+  },
+  {
+    "char": "拈",
+    "correctPronunciation": "nian",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "拈轻"
+    ],
+    "originalText": "酝酿 ( yùn niàng) 字帖(tiè ) 拈轻(nian)"
+  },
+  {
+    "char": "迢",
+    "correctPronunciation": "tiáo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "迢迢"
+    ],
+    "originalText": "迢迢(tiáo) 按捺( nà ) 湍急( tuān )"
+  },
+  {
+    "char": "捺",
+    "correctPronunciation": "nà",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "按捺"
+    ],
+    "originalText": "迢迢(tiáo) 按捺( nà ) 湍急( tuān )"
+  },
+  {
+    "char": "湍",
+    "correctPronunciation": "tuān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "湍急"
+    ],
+    "originalText": "迢迢(tiáo) 按捺( nà ) 湍急( tuān )"
+  },
+  {
+    "char": "炮",
+    "correctPronunciation": "páo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "炮制"
+    ],
+    "originalText": "炮制(páo) 赡养(shàn) 糟粕(pò)"
+  },
+  {
+    "char": "赡",
+    "correctPronunciation": "shàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "赡养"
+    ],
+    "originalText": "炮制(páo) 赡养(shàn) 糟粕(pò)"
+  },
+  {
+    "char": "粕",
+    "correctPronunciation": "pò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "糟粕"
+    ],
+    "originalText": "炮制(páo) 赡养(shàn) 糟粕(pò)"
+  },
+  {
+    "char": "说",
+    "correctPronunciation": "shuì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "游说"
+    ],
+    "originalText": "游说(shuì) 奇蔄( nē ) 追溯( sù )"
+  },
+  {
+    "char": "溯",
+    "correctPronunciation": "sù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "追溯"
+    ],
+    "originalText": "游说(shuì) 奇蔄( nē ) 追溯( sù )"
+  },
+  {
+    "char": "讣",
+    "correctPronunciation": "fù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "讣告"
+    ],
+    "originalText": "讣告(fù) 中伤(zhòng) 胚胎(pēi)"
+  },
+  {
+    "char": "中",
+    "correctPronunciation": "zhòng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "中伤"
+    ],
+    "originalText": "讣告(fù) 中伤(zhòng) 胚胎(pēi)"
+  },
+  {
+    "char": "胚",
+    "correctPronunciation": "pēi",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "胚胎"
+    ],
+    "originalText": "讣告(fù) 中伤(zhòng) 胚胎(pēi)"
+  },
+  {
+    "char": "绽",
+    "correctPronunciation": "zhàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "破绽"
+    ],
+    "originalText": "破绽 (zhàn) 剖析(pōu) 璞玉(pú)"
+  },
+  {
+    "char": "剖",
+    "correctPronunciation": "pōu",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "剖析"
+    ],
+    "originalText": "破绽 (zhàn) 剖析(pōu) 璞玉(pú)"
+  },
+  {
+    "char": "璞",
+    "correctPronunciation": "pú",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "璞玉"
+    ],
+    "originalText": "破绽 (zhàn) 剖析(pōu) 璞玉(pú)"
+  },
+  {
+    "char": "绮",
+    "correctPronunciation": "qǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "绮丽"
+    ],
+    "originalText": "绮丽 ( qǐ ) 悭吝(qiān) 翘望(qiáo)"
+  },
+  {
+    "char": "悭",
+    "correctPronunciation": "qiān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "悭吝"
+    ],
+    "originalText": "绮丽 ( qǐ ) 悭吝(qiān) 翘望(qiáo)"
+  },
+  {
+    "char": "翘",
+    "correctPronunciation": "qiáo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "翘望"
+    ],
+    "originalText": "绮丽 ( qǐ ) 悭吝(qiān) 翘望(qiáo)"
+  },
+  {
+    "char": "栖",
+    "correctPronunciation": "qī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "栖息"
+    ],
+    "originalText": "栖息( qī) 引擎(qíng) 戕害(qiang)"
+  },
+  {
+    "char": "擎",
+    "correctPronunciation": "qíng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "引擎"
+    ],
+    "originalText": "栖息( qī) 引擎(qíng) 戕害(qiang)"
+  },
+  {
+    "char": "戕",
+    "correctPronunciation": "qiang",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "戕害"
+    ],
+    "originalText": "栖息( qī) 引擎(qíng) 戕害(qiang)"
+  },
+  {
+    "char": "堑",
+    "correctPronunciation": "qiàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "天堑"
+    ],
+    "originalText": "天堑(qiàn) 慑服(shè) 蹊跷( qī )"
+  },
+  {
+    "char": "慑",
+    "correctPronunciation": "shè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "慑服"
+    ],
+    "originalText": "天堑(qiàn) 慑服(shè) 蹊跷( qī )"
+  },
+  {
+    "char": "蹊",
+    "correctPronunciation": "qī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "蹊跷"
+    ],
+    "originalText": "天堑(qiàn) 慑服(shè) 蹊跷( qī )"
+  },
+  {
+    "char": "闷",
+    "correctPronunciation": "mēn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "闷热"
+    ],
+    "originalText": "闷热(mēn) 遒劲(qiú ) 殷红(yān)"
+  },
+  {
+    "char": "遒",
+    "correctPronunciation": "qiú",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "遒劲"
+    ],
+    "originalText": "闷热(mēn) 遒劲(qiú ) 殷红(yān)"
+  },
+  {
+    "char": "殷",
+    "correctPronunciation": "yān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "殷红"
+    ],
+    "originalText": "闷热(mēn) 遒劲(qiú ) 殷红(yān)"
+  },
+  {
+    "char": "蜷",
+    "correctPronunciation": "quán",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "蜷曲"
+    ],
+    "originalText": "蜷曲 (quán) 徜徉 cháng 怪癖(pǐ)"
+  },
+  {
+    "char": "徜",
+    "correctPronunciation": "cháng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "徜徉"
+    ],
+    "originalText": "蜷曲 (quán) 徜徉 cháng 怪癖(pǐ)"
+  },
+  {
+    "char": "癖",
+    "correctPronunciation": "pǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "怪癖"
+    ],
+    "originalText": "蜷曲 (quán) 徜徉 cháng 怪癖(pǐ)"
+  },
+  {
+    "char": "巷",
+    "correctPronunciation": "hàng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "巷道"
+    ],
+    "originalText": "巷道 (hàng) 狩猎(shòu) 媲美( pì)"
+  },
+  {
+    "char": "狩",
+    "correctPronunciation": "shòu",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "狩猎"
+    ],
+    "originalText": "巷道 (hàng) 狩猎(shòu) 媲美( pì)"
+  },
+  {
+    "char": "媲",
+    "correctPronunciation": "pì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "媲美"
+    ],
+    "originalText": "巷道 (hàng) 狩猎(shòu) 媲美( pì)"
+  },
+  {
+    "char": "涮",
+    "correctPronunciation": "shuàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "洗涮"
+    ],
+    "originalText": "洗涮 (shuàn) 澎湃 (pài) 熟稔(rěn)"
+  },
+  {
+    "char": "湃",
+    "correctPronunciation": "pài",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "澎湃"
+    ],
+    "originalText": "洗涮 (shuàn) 澎湃 (pài) 熟稔(rěn)"
+  },
+  {
+    "char": "稔",
+    "correctPronunciation": "rěn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "熟稔"
+    ],
+    "originalText": "洗涮 (shuàn) 澎湃 (pài) 熟稔(rěn)"
+  },
+  {
+    "char": "纶",
+    "correctPronunciation": "guān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "纶巾"
+    ],
+    "originalText": "纶巾 (guān) 肖像(xiào) 蓦然(mò)"
+  },
+  {
+    "char": "肖",
+    "correctPronunciation": "xiào",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "肖像"
+    ],
+    "originalText": "纶巾 (guān) 肖像(xiào) 蓦然(mò)"
+  },
+  {
+    "char": "蓦",
+    "correctPronunciation": "mò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "蓦然"
+    ],
+    "originalText": "纶巾 (guān) 肖像(xiào) 蓦然(mò)"
+  },
+  {
+    "char": "谄",
+    "correctPronunciation": "chǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "谄媚"
+    ],
+    "originalText": "谄媚(chǎn) 恫吓(dòng) 择菜(zhái)"
+  },
+  {
+    "char": "恫",
+    "correctPronunciation": "dòng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "恫吓"
+    ],
+    "originalText": "谄媚(chǎn) 恫吓(dòng) 择菜(zhái)"
+  },
+  {
+    "char": "择",
+    "correctPronunciation": "zhái",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "择菜"
+    ],
+    "originalText": "谄媚(chǎn) 恫吓(dòng) 择菜(zhái)"
+  },
+  {
+    "char": "藉",
+    "correctPronunciation": "jiè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "慰藉"
+    ],
+    "originalText": "慰藉(jiè ) 拮据( jié ) 纸屑(xiè )"
+  },
+  {
+    "char": "拮",
+    "correctPronunciation": "jié",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "拮据"
+    ],
+    "originalText": "慰藉(jiè ) 拮据( jié ) 纸屑(xiè )"
+  },
+  {
+    "char": "屑",
+    "correctPronunciation": "xiè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "纸屑"
+    ],
+    "originalText": "慰藉(jiè ) 拮据( jié ) 纸屑(xiè )"
+  },
+  {
+    "char": "悚",
+    "correctPronunciation": "sǒng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "悚然"
+    ],
+    "originalText": "悚然 (sǒng) 内讧(hòng) 剽悍(piāo)"
+  },
+  {
+    "char": "讧",
+    "correctPronunciation": "hòng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "内讧"
+    ],
+    "originalText": "悚然 (sǒng) 内讧(hòng) 剽悍(piāo)"
+  },
+  {
+    "char": "剽",
+    "correctPronunciation": "piāo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "剽悍"
+    ],
+    "originalText": "悚然 (sǒng) 内讧(hòng) 剽悍(piāo)"
+  },
+  {
+    "char": "卡",
+    "correctPronunciation": "qiǎ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "关卡"
+    ],
+    "originalText": "关卡( qiǎ) 讹诈(é) 禅让(shàn)"
+  },
+  {
+    "char": "讹",
+    "correctPronunciation": "é",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "讹诈"
+    ],
+    "originalText": "关卡( qiǎ) 讹诈(é) 禅让(shàn)"
+  },
+  {
+    "char": "禅",
+    "correctPronunciation": "shàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "禅让"
+    ],
+    "originalText": "关卡( qiǎ) 讹诈(é) 禅让(shàn)"
+  },
+  {
+    "char": "怵",
+    "correctPronunciation": "chù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "发怵"
+    ],
+    "originalText": "发怵 (chù ) 挟持(xié) 静谧(mì)"
+  },
+  {
+    "char": "挟",
+    "correctPronunciation": "xié",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "挟持"
+    ],
+    "originalText": "发怵 (chù ) 挟持(xié) 静谧(mì)"
+  },
+  {
+    "char": "谧",
+    "correctPronunciation": "mì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "静谧"
+    ],
+    "originalText": "发怵 (chù ) 挟持(xié) 静谧(mì)"
+  },
+  {
+    "char": "弋",
+    "correctPronunciation": "yì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "游弋"
+    ],
+    "originalText": "游弋( yì) 烙印( lào ) 与会( yù)"
+  },
+  {
+    "char": "烙",
+    "correctPronunciation": "lào",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "烙印"
+    ],
+    "originalText": "游弋( yì) 烙印( lào ) 与会( yù)"
+  },
+  {
+    "char": "与",
+    "correctPronunciation": "yù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "与会"
+    ],
+    "originalText": "游弋( yì) 烙印( lào ) 与会( yù)"
+  },
+  {
+    "char": "泞",
+    "correctPronunciation": "ning",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "泥泞"
+    ],
+    "originalText": "泥泞(ning) 卑鄙(bǐ) 绥靖( suí)"
+  },
+  {
+    "char": "鄙",
+    "correctPronunciation": "bǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "卑鄙"
+    ],
+    "originalText": "泥泞(ning) 卑鄙(bǐ) 绥靖( suí)"
+  },
+  {
+    "char": "绥",
+    "correctPronunciation": "suí",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "绥靖"
+    ],
+    "originalText": "泥泞(ning) 卑鄙(bǐ) 绥靖( suí)"
+  },
+  {
+    "char": "跛",
+    "correctPronunciation": "bǒ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "跛脚"
+    ],
+    "originalText": "跛脚(bǒ ) 纤维(xiān) 挫折(cuò)"
+  },
+  {
+    "char": "纤",
+    "correctPronunciation": "xiān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "纤维"
+    ],
+    "originalText": "跛脚(bǒ ) 纤维(xiān) 挫折(cuò)"
+  },
+  {
+    "char": "挫",
+    "correctPronunciation": "cuò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "挫折"
+    ],
+    "originalText": "跛脚(bǒ ) 纤维(xiān) 挫折(cuò)"
+  },
+  {
+    "char": "瑰",
+    "correctPronunciation": "guī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "瑰丽"
+    ],
+    "originalText": "瑰丽(gui) 宿敌(sù) 桎梏(gù)"
+  },
+  {
+    "char": "宿",
+    "correctPronunciation": "sù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "宿敌"
+    ],
+    "originalText": "瑰丽(gui) 宿敌(sù) 桎梏(gù)"
+  },
+  {
+    "char": "梏",
+    "correctPronunciation": "gù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "桎梏"
+    ],
+    "originalText": "瑰丽(gui) 宿敌(sù) 桎梏(gù)"
+  },
+  {
+    "char": "拙",
+    "correctPronunciation": "zhuō",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "拙劣"
+    ],
+    "originalText": "拙劣(zhuō) 绵亘(gèn) 伉俪(kàng)"
+  },
+  {
+    "char": "亘",
+    "correctPronunciation": "gèn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "绵亘"
+    ],
+    "originalText": "拙劣(zhuō) 绵亘(gèn) 伉俪(kàng)"
+  },
+  {
+    "char": "伉",
+    "correctPronunciation": "kàng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "伉俪"
+    ],
+    "originalText": "拙劣(zhuō) 绵亘(gèn) 伉俪(kàng)"
+  },
+  {
+    "char": "扳",
+    "correctPronunciation": "bān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "扳平"
+    ],
+    "originalText": "扳平 (bān) 投奔(bèn) 豁免( huò)"
+  },
+  {
+    "char": "奔",
+    "correctPronunciation": "bèn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "投奔"
+    ],
+    "originalText": "扳平 (bān) 投奔(bèn) 豁免( huò)"
+  },
+  {
+    "char": "豁",
+    "correctPronunciation": "huò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "豁免"
+    ],
+    "originalText": "扳平 (bān) 投奔(bèn) 豁免( huò)"
+  },
+  {
+    "char": "脂",
+    "correctPronunciation": "zhī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "血脂"
+    ],
+    "originalText": "血脂(zhī) 负荷(hè) 奴婢(bì)"
+  },
+  {
+    "char": "荷",
+    "correctPronunciation": "hè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "负荷"
+    ],
+    "originalText": "血脂(zhī) 负荷(hè) 奴婢(bì)"
+  },
+  {
+    "char": "婢",
+    "correctPronunciation": "bì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "奴婢"
+    ],
+    "originalText": "血脂(zhī) 负荷(hè) 奴婢(bì)"
+  },
+  {
+    "char": "诲",
+    "correctPronunciation": "huì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "教诲"
+    ],
+    "originalText": "教诲 ( huì) 和稀泥(huò) 干涸(hé)"
+  },
+  {
+    "char": "和",
+    "correctPronunciation": "huò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "和稀泥"
+    ],
+    "originalText": "教诲 ( huì) 和稀泥(huò) 干涸(hé)"
+  },
+  {
+    "char": "涸",
+    "correctPronunciation": "hé",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "干涸"
+    ],
+    "originalText": "教诲 ( huì) 和稀泥(huò) 干涸(hé)"
+  },
+  {
+    "char": "噬",
+    "correctPronunciation": "shì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "吞噬"
+    ],
+    "originalText": "吞噬 ( shì) 对峙(zhì) 隔阂(hé)"
+  },
+  {
+    "char": "峙",
+    "correctPronunciation": "zhì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "对峙"
+    ],
+    "originalText": "吞噬 ( shì) 对峙(zhì) 隔阂(hé)"
+  },
+  {
+    "char": "阂",
+    "correctPronunciation": "hé",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "隔阂"
+    ],
+    "originalText": "吞噬 ( shì) 对峙(zhì) 隔阂(hé)"
+  },
+  {
+    "char": "屏",
+    "correctPronunciation": "bǐng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "屏气"
+    ],
+    "originalText": "屏气(bǐng) 隽永( juàn) 祛除( qū)"
+  },
+  {
+    "char": "隽",
+    "correctPronunciation": "juàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "隽永"
+    ],
+    "originalText": "屏气(bǐng) 隽永( juàn) 祛除( qū)"
+  },
+  {
+    "char": "祛",
+    "correctPronunciation": "qū",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "祛除"
+    ],
+    "originalText": "屏气(bǐng) 隽永( juàn) 祛除( qū)"
+  },
+  {
+    "char": "逮",
+    "correctPronunciation": "dài",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "逮捕"
+    ],
+    "originalText": "逮捕 (dài) 剥削(bōxuē) 麻痹(bì)"
+  },
+  {
+    "char": "剥",
+    "correctPronunciation": "bō",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "剥削"
+    ],
+    "originalText": "逮捕 (dài) 剥削(bōxuē) 麻痹(bì)"
+  },
+  {
+    "char": "削",
+    "correctPronunciation": "xuē",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "剥削"
+    ],
+    "originalText": "逮捕 (dài) 剥削(bōxuē) 麻痹(bì)"
+  },
+  {
+    "char": "痹",
+    "correctPronunciation": "bì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "麻痹"
+    ],
+    "originalText": "逮捕 (dài) 剥削(bōxuē) 麻痹(bì)"
+  },
+  {
+    "char": "隘",
+    "correctPronunciation": "ài",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "狭隘"
+    ],
+    "originalText": "狭隘 (ài) 包庇( bi) 恻隐(cè )"
+  },
+  {
+    "char": "庇",
+    "correctPronunciation": "bì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "包庇"
+    ],
+    "originalText": "狭隘 (ài) 包庇( bi) 恻隐(cè )"
+  },
+  {
+    "char": "恻",
+    "correctPronunciation": "cè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "恻隐"
+    ],
+    "originalText": "狭隘 (ài) 包庇( bi) 恻隐(cè )"
+  },
+  {
+    "char": "濒",
+    "correctPronunciation": "bīn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "濒临"
+    ],
+    "originalText": "濒临(bīn) 徘徊(huái) 哺育(bǔ)"
+  },
+  {
+    "char": "徊",
+    "correctPronunciation": "huái",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "徘徊"
+    ],
+    "originalText": "濒临(bīn) 徘徊(huái) 哺育(bǔ)"
+  },
+  {
+    "char": "哺",
+    "correctPronunciation": "bǔ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "哺育"
+    ],
+    "originalText": "濒临(bīn) 徘徊(huái) 哺育(bǔ)"
+  },
+  {
+    "char": "讹",
+    "correctPronunciation": "é",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "讹传"
+    ],
+    "originalText": "讹传(é) 莅临(li) 肄业(yì)"
+  },
+  {
+    "char": "莅",
+    "correctPronunciation": "li",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "莅临"
+    ],
+    "originalText": "讹传(é) 莅临(li) 肄业(yì)"
+  },
+  {
+    "char": "肄",
+    "correctPronunciation": "yì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "肄业"
+    ],
+    "originalText": "讹传(é) 莅临(li) 肄业(yì)"
+  },
+  {
+    "char": "称",
+    "correctPronunciation": "chèn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "称心"
+    ],
+    "originalText": "称心 (chèn) 呼吁 ( yù ) 整饬(chì)"
+  },
+  {
+    "char": "吁",
+    "correctPronunciation": "yù",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "呼吁"
+    ],
+    "originalText": "称心 (chèn) 呼吁 ( yù ) 整饬(chì)"
+  },
+  {
+    "char": "饬",
+    "correctPronunciation": "chì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "整饬"
+    ],
+    "originalText": "称心 (chèn) 呼吁 ( yù ) 整饬(chì)"
+  },
+  {
+    "char": "赁",
+    "correctPronunciation": "lìn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "租赁"
+    ],
+    "originalText": "租赁(lin ) 刹那(chà) 憎恨(zēng)"
+  },
+  {
+    "char": "刹",
+    "correctPronunciation": "chà",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "刹那"
+    ],
+    "originalText": "租赁(lin ) 刹那(chà) 憎恨(zēng)"
+  },
+  {
+    "char": "憎",
+    "correctPronunciation": "zēng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "憎恨"
+    ],
+    "originalText": "租赁(lin ) 刹那(chà) 憎恨(zēng)"
+  },
+  {
+    "char": "颤",
+    "correctPronunciation": "chàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "颤动"
+    ],
+    "originalText": "颤动 (chàn) 悄然 (qiǎo) 鞭笞((chī)"
+  },
+  {
+    "char": "悄",
+    "correctPronunciation": "qiǎo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "悄然"
+    ],
+    "originalText": "颤动 (chàn) 悄然 (qiǎo) 鞭笞((chī)"
+  },
+  {
+    "char": "木",
+    "correctPronunciation": "nè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "木讷"
+    ],
+    "originalText": "木讷 (nè) 谄媚 (chǎn) 饿殍 (piǎo)"
+  },
+  {
+    "char": "谄",
+    "correctPronunciation": "chǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "谄媚"
+    ],
+    "originalText": "木讷 (nè) 谄媚 (chǎn) 饿殍 (piǎo)"
+  },
+  {
+    "char": "殍",
+    "correctPronunciation": "piǎo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "饿殍"
+    ],
+    "originalText": "木讷 (nè) 谄媚 (chǎn) 饿殍 (piǎo)"
+  },
+  {
+    "char": "悼",
+    "correctPronunciation": "dào",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "悼念"
+    ],
+    "originalText": "悼念 (dà o) 膝盖 (xī) 提防(dī)"
+  },
+  {
+    "char": "膝",
+    "correctPronunciation": "xī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "膝盖"
+    ],
+    "originalText": "悼念 (dà o) 膝盖 (xī) 提防(dī)"
+  },
+  {
+    "char": "提",
+    "correctPronunciation": "dī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "提防"
+    ],
+    "originalText": "悼念 (dà o) 膝盖 (xī) 提防(dī)"
+  },
+  {
+    "char": "忏",
+    "correctPronunciation": "chàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "忏悔"
+    ],
+    "originalText": "忏悔 (chàn) 滑稽( jī ) 市侩(kuài)"
+  },
+  {
+    "char": "稽",
+    "correctPronunciation": "jī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "滑稽"
+    ],
+    "originalText": "忏悔 (chàn) 滑稽( jī ) 市侩(kuài)"
+  },
+  {
+    "char": "侩",
+    "correctPronunciation": "kuài",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "市侩"
+    ],
+    "originalText": "忏悔 (chàn) 滑稽( jī ) 市侩(kuài)"
+  },
+  {
+    "char": "祈",
+    "correctPronunciation": "qí",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "祈祷"
+    ],
+    "originalText": "祈祷( qí) 浣洗(huàn) 根茎(jīng)"
+  },
+  {
+    "char": "浣",
+    "correctPronunciation": "huàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "浣洗"
+    ],
+    "originalText": "祈祷( qí) 浣洗(huàn) 根茎(jīng)"
+  },
+  {
+    "char": "茎",
+    "correctPronunciation": "jīng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "根茎"
+    ],
+    "originalText": "祈祷( qí) 浣洗(huàn) 根茎(jīng)"
+  },
+  {
+    "char": "削",
+    "correctPronunciation": "xuē",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "削减"
+    ],
+    "originalText": "削减(xuē) 扁舟(piān) 慎重(shèn)"
+  },
+  {
+    "char": "扁",
+    "correctPronunciation": "piān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "扁舟"
+    ],
+    "originalText": "削减(xuē) 扁舟(piān) 慎重(shèn)"
+  },
+  {
+    "char": "慎",
+    "correctPronunciation": "shèn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "慎重"
+    ],
+    "originalText": "削减(xuē) 扁舟(piān) 慎重(shèn)"
+  },
+  {
+    "char": "驰",
+    "correctPronunciation": "chěng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "驰骋"
+    ],
+    "originalText": "驰骋 (chěng) 倥偬( kǒng zǒng) 腼腆 miǎntiǎn"
+  },
+  {
+    "char": "倥",
+    "correctPronunciation": "kǒng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "倥偬"
+    ],
+    "originalText": "驰骋 (chěng) 倥偬( kǒng zǒng) 腼腆 miǎntiǎn"
+  },
+  {
+    "char": "偬",
+    "correctPronunciation": "zǒng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "倥偬"
+    ],
+    "originalText": "驰骋 (chěng) 倥偬( kǒng zǒng) 腼腆 miǎntiǎn"
+  },
+  {
+    "char": "腼",
+    "correctPronunciation": "miǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "腼腆"
+    ],
+    "originalText": "驰骋 (chěng) 倥偬( kǒng zǒng) 腼腆 miǎntiǎn"
+  },
+  {
+    "char": "腆",
+    "correctPronunciation": "tiǎn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "腼腆"
+    ],
+    "originalText": "驰骋 (chěng) 倥偬( kǒng zǒng) 腼腆 miǎntiǎn"
+  },
+  {
+    "char": "娉",
+    "correctPronunciation": "pīng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "娉婷"
+    ],
+    "originalText": "踯躅 zhízhú 伛偻 yǔ lǚ 娉婷 (pīng)"
+  },
+  {
+    "char": "忸",
+    "correctPronunciation": "niǔ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "忸怩"
+    ],
+    "originalText": "忸怩(niǔní) 睥睨 pì nì 窈窕 yǎotiǎo"
+  },
+  {
+    "char": "怩",
+    "correctPronunciation": "ní",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "忸怩"
+    ],
+    "originalText": "忸怩(niǔní) 睥睨 pì nì 窈窕 yǎotiǎo"
+  },
+  {
+    "char": "睥睨",
+    "correctPronunciation": "pì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "睥睨"
+    ],
+    "originalText": "忸怩(niǔní) 睥睨 pì nì 窈窕 yǎotiǎo"
+  },
+  {
+    "char": "睨",
+    "correctPronunciation": "nì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "睥睨"
+    ],
+    "originalText": "忸怩(niǔní) 睥睨 pì nì 窈窕 yǎotiǎo"
+  },
+  {
+    "char": "窈",
+    "correctPronunciation": "yǎo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "窈窕"
+    ],
+    "originalText": "忸怩(niǔní) 睥睨 pì nì 窈窕 yǎotiǎo"
+  },
+  {
+    "char": "窕",
+    "correctPronunciation": "tiǎo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "窈窕"
+    ],
+    "originalText": "忸怩(niǔní) 睥睨 pì nì 窈窕 yǎotiǎo"
+  },
+  {
+    "char": "矩",
+    "correctPronunciation": "jǔ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "矩形"
+    ],
+    "originalText": "矩形( jǔ ) 针砭( biān) 龟裂(jūn)"
+  },
+  {
+    "char": "砭",
+    "correctPronunciation": "biān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "针砭"
+    ],
+    "originalText": "矩形( jǔ ) 针砭( biān) 龟裂(jūn)"
+  },
+  {
+    "char": "龟",
+    "correctPronunciation": "jūn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "龟裂"
+    ],
+    "originalText": "矩形( jǔ ) 针砭( biān) 龟裂(jūn)"
+  },
+  {
+    "char": "扒",
+    "correctPronunciation": "pá",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "扒窃"
+    ],
+    "originalText": "扒窃 ( pá) 畸形( jī) 迸发( bèng)"
+  },
+  {
+    "char": "畸",
+    "correctPronunciation": "jī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "畸形"
+    ],
+    "originalText": "扒窃 ( pá) 畸形( jī) 迸发( bèng)"
+  },
+  {
+    "char": "迸",
+    "correctPronunciation": "bèng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "迸发"
+    ],
+    "originalText": "扒窃 ( pá) 畸形( jī) 迸发( bèng)"
+  },
+  {
+    "char": "狙",
+    "correctPronunciation": "jū",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "狙击"
+    ],
+    "originalText": "狙击( jū) 粗糙( cāo) 戛然( jiá)"
+  },
+  {
+    "char": "糙",
+    "correctPronunciation": "cāo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "粗糙"
+    ],
+    "originalText": "狙击( jū) 粗糙( cāo) 戛然( jiá)"
+  },
+  {
+    "char": "戛",
+    "correctPronunciation": "jiá",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "戛然"
+    ],
+    "originalText": "狙击( jū) 粗糙( cāo) 戛然( jiá)"
+  },
+  {
+    "char": "亵",
+    "correctPronunciation": "xiè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "亵渎"
+    ],
+    "originalText": "亵渎(xiè) 歼灭(jiān) 罪孽( niè)"
+  },
+  {
+    "char": "歼",
+    "correctPronunciation": "jiān",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "歼灭"
+    ],
+    "originalText": "亵渎(xiè) 歼灭(jiān) 罪孽( niè)"
+  },
+  {
+    "char": "孽",
+    "correctPronunciation": "niè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "罪孽"
+    ],
+    "originalText": "亵渎(xiè) 歼灭(jiān) 罪孽( niè)"
+  },
+  {
+    "char": "矜",
+    "correctPronunciation": "jīn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "矜夸"
+    ],
+    "originalText": "矜夸(jīn) 劣迹( liè ) 粳米(jīng)"
+  },
+  {
+    "char": "劣",
+    "correctPronunciation": "liè",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "劣迹"
+    ],
+    "originalText": "矜夸(jīn) 劣迹( liè ) 粳米(jīng)"
+  },
+  {
+    "char": "粳",
+    "correctPronunciation": "jīng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "粳米"
+    ],
+    "originalText": "矜夸(jīn) 劣迹( liè ) 粳米(jīng)"
+  },
+  {
+    "char": "纤",
+    "correctPronunciation": "qiàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "拉纤"
+    ],
+    "originalText": "拉纤 (qiàn) 棘手( jí) 着想(zhuó)"
+  },
+  {
+    "char": "棘",
+    "correctPronunciation": "jí",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "棘手"
+    ],
+    "originalText": "拉纤 (qiàn) 棘手( jí) 着想(zhuó)"
+  },
+  {
+    "char": "着",
+    "correctPronunciation": "zhuó",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "着想"
+    ],
+    "originalText": "拉纤 (qiàn) 棘手( jí) 着想(zhuó)"
+  },
+  {
+    "char": "间",
+    "correctPronunciation": "jiàn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "离间"
+    ],
+    "originalText": "离间( jiàn) 执著(zhuó) 供给( jǐ)"
+  },
+  {
+    "char": "著",
+    "correctPronunciation": "zhuó",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "执著"
+    ],
+    "originalText": "离间( jiàn) 执著(zhuó) 供给( jǐ)"
+  },
+  {
+    "char": "给",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "供给"
+    ],
+    "originalText": "离间( jiàn) 执著(zhuó) 供给( jǐ)"
+  },
+  {
+    "char": "娠",
+    "correctPronunciation": "shēn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "妊娠"
+    ],
+    "originalText": "妊娠 (shēn) 角色( jué) 分泌( mì)"
+  },
+  {
+    "char": "角",
+    "correctPronunciation": "jué",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "角色"
+    ],
+    "originalText": "妊娠 (shēn) 角色( jué) 分泌( mì)"
+  },
+  {
+    "char": "泌",
+    "correctPronunciation": "mì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "分泌"
+    ],
+    "originalText": "妊娠 (shēn) 角色( jué) 分泌( mì)"
+  },
+  {
+    "char": "缉",
+    "correctPronunciation": "jī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "通缉"
+    ],
+    "originalText": "通缉(jī) 症结(zhēng ） 汲水( jí)"
+  },
+  {
+    "char": "症",
+    "correctPronunciation": "zhēng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "症结"
+    ],
+    "originalText": "通缉(jī) 症结(zhēng ） 汲水( jí)"
+  },
+  {
+    "char": "汲",
+    "correctPronunciation": "jí",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "汲水"
+    ],
+    "originalText": "通缉(jī) 症结(zhēng ） 汲水( jí)"
+  },
+  {
+    "char": "蛰",
+    "correctPronunciation": "zhé",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "惊蛰"
+    ],
+    "originalText": "惊蛰( zhé) 嫉妒( jí) 缜密(zhěn)"
+  },
+  {
+    "char": "嫉",
+    "correctPronunciation": "jí",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "嫉妒"
+    ],
+    "originalText": "惊蛰( zhé) 嫉妒( jí) 缜密(zhěn)"
+  },
+  {
+    "char": "缜",
+    "correctPronunciation": "zhěn",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "缜密"
+    ],
+    "originalText": "惊蛰( zhé) 嫉妒( jí) 缜密(zhěn)"
+  },
+  {
+    "char": "氛",
+    "correctPronunciation": "fēn",
+    "wrongPronunciation": "fèn",
+    "relatedPhrases": [
+      "氛围"
+    ],
+    "originalText": "1、氛(fēn)围 错误读音：（fèn）"
+  },
+  {
+    "char": "一",
+    "correctPronunciation": "cháng",
+    "wrongPronunciation": "chǎng",
+    "relatedPhrases": [
+      "一场雨"
+    ],
+    "originalText": "2、一场(cháng)雨 错误读音：(chǎng)"
+  },
+  {
+    "char": "称",
+    "correctPronunciation": "chèn",
+    "wrongPronunciation": "chèng",
+    "relatedPhrases": [
+      "匀称"
+    ],
+    "originalText": "3、匀称(chèn) 错误读音：(chèng)"
+  },
+  {
+    "char": "4",
+    "correctPronunciation": "chóng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "种师正"
+    ],
+    "originalText": "4、种(chóng)（姓氏）错误读音：(zhǒng)"
+  },
+  {
+    "char": "处",
+    "correctPronunciation": "chǔ",
+    "wrongPronunciation": "chù",
+    "relatedPhrases": [
+      "处女"
+    ],
+    "originalText": "7、处(chǔ)女 错误读音：（chù）"
+  },
+  {
+    "char": "汆",
+    "correctPronunciation": "cuān",
+    "wrongPronunciation": "cuàn",
+    "relatedPhrases": [
+      "汆丸子"
+    ],
+    "originalText": "9、汆(cuān)丸子 错误读音：（cuàn）"
+  },
+  {
+    "char": "档",
+    "correctPronunciation": "dàng",
+    "wrongPronunciation": "dǎng",
+    "relatedPhrases": [
+      "档案"
+    ],
+    "originalText": "10、档(dàng)案 错误读音：（dǎng）"
+  },
+  {
+    "char": "安",
+    "correctPronunciation": "dàng",
+    "wrongPronunciation": "dāng",
+    "relatedPhrases": [
+      "安步当车"
+    ],
+    "originalText": "11、安步当(dàng)车 错误读音：(dāng)"
+  },
+  {
+    "char": "订",
+    "correctPronunciation": "dìng",
+    "wrongPronunciation": "dīng",
+    "relatedPhrases": [
+      "订正"
+    ],
+    "originalText": "12、订(dìng)正 错误读音：（dīng）"
+  },
+  {
+    "char": "胴",
+    "correctPronunciation": "dòng",
+    "wrongPronunciation": "tóng",
+    "relatedPhrases": [
+      "胴体"
+    ],
+    "originalText": "13、胴(dòng)体 错误读音：（tóng）"
+  },
+  {
+    "char": "掇",
+    "correctPronunciation": "duo",
+    "wrongPronunciation": "duò",
+    "relatedPhrases": [
+      "掇拾"
+    ],
+    "originalText": "14、掇拾(duo) 错误读音：（duò）"
+  },
+  {
+    "char": "菲",
+    "correctPronunciation": "fěi",
+    "wrongPronunciation": "fēi",
+    "relatedPhrases": [
+      "菲薄"
+    ],
+    "originalText": "15、菲(fěi)薄 错误读音：（fēi）"
+  },
+  {
+    "char": "准",
+    "correctPronunciation": "gá",
+    "wrongPronunciation": "gé",
+    "relatedPhrases": [
+      "准噶尔"
+    ],
+    "originalText": "17、准噶(gá)尔 错误读音：（gé）"
+  },
+  {
+    "char": "呱",
+    "correctPronunciation": "gū",
+    "wrongPronunciation": "guā",
+    "relatedPhrases": [
+      "呱呱坠地"
+    ],
+    "originalText": "18、小孩呱(gū)呱坠地 错误读音：（guā）"
+  },
+  {
+    "char": "诃",
+    "correctPronunciation": "hē",
+    "wrongPronunciation": "kē",
+    "relatedPhrases": [
+      "契诃夫"
+    ],
+    "originalText": "20、契诃(hē)夫 错误读音：(kē)"
+  },
+  {
+    "char": "横",
+    "correctPronunciation": "hèng",
+    "wrongPronunciation": "héng",
+    "relatedPhrases": [
+      "飞来横祸"
+    ],
+    "originalText": "22、飞来横(hèng)祸 错误读音：(héng)"
+  },
+  {
+    "char": "横",
+    "correctPronunciation": "héng",
+    "wrongPronunciation": "hèng",
+    "relatedPhrases": [
+      "横加阻拦"
+    ],
+    "originalText": "23、横(héng)加阻拦 错误读音：(hèng)"
+  },
+  {
+    "char": "骸",
+    "correctPronunciation": "hái",
+    "wrongPronunciation": "hǎi",
+    "relatedPhrases": [
+      "骨骸"
+    ],
+    "originalText": "25、骨骸(hái) 错误读音：（hǎi）"
+  },
+  {
+    "char": "薅",
+    "correctPronunciation": "hāo",
+    "wrongPronunciation": "rǔ",
+    "relatedPhrases": [
+      "薅草"
+    ],
+    "originalText": "26、薅(hāo)草 错误读音：（rǔ）"
+  },
+  {
+    "char": "桦",
+    "correctPronunciation": "huà",
+    "wrongPronunciation": "huá",
+    "relatedPhrases": [
+      "白桦树"
+    ],
+    "originalText": "27、白桦(huà)树 错误读音：(huá)"
+  },
+  {
+    "char": "饨",
+    "correctPronunciation": "tun",
+    "wrongPronunciation": "dùn",
+    "relatedPhrases": [
+      "馄饨"
+    ],
+    "originalText": "28、馄饨(tun) 错误读音：(dùn)"
+  },
+  {
+    "char": "囵",
+    "correctPronunciation": "lún",
+    "wrongPronunciation": "lùn",
+    "relatedPhrases": [
+      "囫囵吞枣"
+    ],
+    "originalText": "30、囫囵(lún)吞枣 错误读音：(lùn)"
+  },
+  {
+    "char": "溃",
+    "correctPronunciation": "huì",
+    "wrongPronunciation": "kuì",
+    "relatedPhrases": [
+      "溃脓"
+    ],
+    "originalText": "31、溃(huì)脓 错误读音：（kuì）"
+  },
+  {
+    "char": "几",
+    "correctPronunciation": "jī",
+    "wrongPronunciation": "jǐ",
+    "relatedPhrases": [
+      "窗明几净"
+    ],
+    "originalText": "33、窗明几(jī)净 错误读音：（jǐ）"
+  },
+  {
+    "char": "济",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciation": "jì",
+    "relatedPhrases": [
+      "人才济济"
+    ],
+    "originalText": "35、人才济(jǐ)济 错误读音：(jì)"
+  },
+  {
+    "char": "脊",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciation": "jī",
+    "relatedPhrases": [
+      "里脊"
+    ],
+    "originalText": "36、里脊(jǐ) 错误读音：（jī）"
+  },
+  {
+    "char": "渐",
+    "correctPronunciation": "jiān",
+    "wrongPronunciation": "jiàn",
+    "relatedPhrases": [
+      "渐染"
+    ],
+    "originalText": "37、渐(jiān)染 错误读音：（jiàn）"
+  },
+  {
+    "char": "绢",
+    "correctPronunciation": "juàn",
+    "wrongPronunciation": "juān",
+    "relatedPhrases": [
+      "绢花"
+    ],
+    "originalText": "39、绢(juàn)花 错误读音：（juān）"
+  },
+  {
+    "char": "解",
+    "correctPronunciation": "jiè",
+    "wrongPronunciation": "jiě",
+    "relatedPhrases": [
+      "押解"
+    ],
+    "originalText": "42、押解(jiè) 错误读音：（jiě）"
+  },
+  {
+    "char": "解",
+    "correctPronunciation": "xiè",
+    "wrongPronunciation": "jiě",
+    "relatedPhrases": [
+      "浑身解数"
+    ],
+    "originalText": "43、浑身解(xiè)数 错误读音：（jiě）"
+  },
+  {
+    "char": "籼",
+    "correctPronunciation": "xīan",
+    "wrongPronunciation": "shān",
+    "relatedPhrases": [
+      "籼米"
+    ],
+    "originalText": "44、籼(xīan)米 错误读音：(shān)"
+  },
+  {
+    "char": "颈",
+    "correctPronunciation": "jǐng",
+    "wrongPronunciation": "jìng",
+    "relatedPhrases": [
+      "颈部"
+    ],
+    "originalText": "45、颈(jǐng)部 错误读音：（jìng）"
+  },
+  {
+    "char": "靓",
+    "correctPronunciation": "jìng",
+    "wrongPronunciation": "liàng",
+    "relatedPhrases": [
+      "靓妆"
+    ],
+    "originalText": "46、靓(jìng)妆 错误读音：(liàng)"
+  },
+  {
+    "char": "矩",
+    "correctPronunciation": "jǔ",
+    "wrongPronunciation": "jù",
+    "relatedPhrases": [
+      "循规蹈矩"
+    ],
+    "originalText": "47、循规蹈矩(jǔ) 错误读音：（jù）"
+  },
+  {
+    "char": "儆",
+    "correctPronunciation": "jǐng",
+    "wrongPronunciation": "jìng",
+    "relatedPhrases": [
+      "以儆效尤"
+    ],
+    "originalText": "49、以儆(jǐng)效尤 错误读音：(jìng)"
+  },
+  {
+    "char": "腈",
+    "correctPronunciation": "jīng",
+    "wrongPronunciation": "qíng",
+    "relatedPhrases": [
+      "腈纶"
+    ],
+    "originalText": "50、腈(jīng)纶 错误读音：(qíng)"
+  },
+  {
+    "char": "唠",
+    "correctPronunciation": "láo",
+    "wrongPronunciation": "lào",
+    "relatedPhrases": [
+      "唠叨"
+    ],
+    "originalText": "51、唠(láo)叨 错误读音：（lào）"
+  },
+  {
+    "char": "落",
+    "correctPronunciation": "lào",
+    "wrongPronunciation": "luò",
+    "relatedPhrases": [
+      "落不是"
+    ],
+    "originalText": "52、落(lào)不是 错误读音：（luò）"
+  },
+  {
+    "char": "量",
+    "correctPronunciation": "liàng",
+    "wrongPronunciation": "liáng",
+    "relatedPhrases": [
+      "量体裁衣"
+    ],
+    "originalText": "53、量(liàng)体裁衣 错误读音：（liáng）"
+  },
+  {
+    "char": "丽",
+    "correctPronunciation": "lí",
+    "wrongPronunciation": "lì",
+    "relatedPhrases": [
+      "浙江丽水"
+    ],
+    "originalText": "56、浙江丽(lí)水 错误读音：(lì)"
+  },
+  {
+    "char": "淋",
+    "correctPronunciation": "lìn",
+    "wrongPronunciation": "lín",
+    "relatedPhrases": [
+      "淋病"
+    ],
+    "originalText": "57、淋(lìn)病 错误读音：（lín）"
+  },
+  {
+    "char": "绿",
+    "correctPronunciation": "lù",
+    "wrongPronunciation": "lǜ",
+    "relatedPhrases": [
+      "绿林好汉"
+    ],
+    "originalText": "58、绿(lù)林好汉 错误读音：（lǜ）"
+  },
+  {
+    "char": "莽",
+    "correctPronunciation": "mǎng",
+    "wrongPronunciation": "máng",
+    "relatedPhrases": [
+      "草莽"
+    ],
+    "originalText": "59、草莽(mǎng) 错误读音：（máng）"
+  },
+  {
+    "char": "扪",
+    "correctPronunciation": "mén",
+    "wrongPronunciation": "mèn",
+    "relatedPhrases": [
+      "扪心自问"
+    ],
+    "originalText": "60、扪(mén)心自问 错误读音：（mèn）"
+  },
+  {
+    "char": "腆",
+    "correctPronunciation": "tiǎn",
+    "wrongPronunciation": "diǎn",
+    "relatedPhrases": [
+      "腼腆"
+    ],
+    "originalText": "61、腼腆(tiǎn) 错误读音：（diǎn）"
+  },
+  {
+    "char": "酊",
+    "correctPronunciation": "dǐng",
+    "wrongPronunciation": "dīng",
+    "relatedPhrases": [
+      "酩酊"
+    ],
+    "originalText": "62、酩酊(dǐng) 错误读音：(dīng)"
+  },
+  {
+    "char": "靡",
+    "correctPronunciation": "mǐ",
+    "wrongPronunciation": "mí",
+    "relatedPhrases": [
+      "所向披靡"
+    ],
+    "originalText": "63、所向披靡(mǐ) 错误读音：（mí）"
+  },
+  {
+    "char": "抹",
+    "correctPronunciation": "mò",
+    "wrongPronunciation": "mǒ",
+    "relatedPhrases": [
+      "抹墙"
+    ],
+    "originalText": "64、抹(mò)墙 错误读音：（mǒ）"
+  },
+  {
+    "char": "喷",
+    "correctPronunciation": "pèn",
+    "wrongPronunciation": "pēn",
+    "relatedPhrases": [
+      "喷香"
+    ],
+    "originalText": "67、喷(pèn)香 错误读音：（pēn）"
+  },
+  {
+    "char": "癖",
+    "correctPronunciation": "pǐ",
+    "wrongPronunciation": "pì",
+    "relatedPhrases": [
+      "癖好"
+    ],
+    "originalText": "68、癖(pǐ)好 错误读音：（pì）"
+  },
+  {
+    "char": "睥",
+    "correctPronunciation": "pì",
+    "wrongPronunciation": "bǐ",
+    "relatedPhrases": [
+      "睥睨"
+    ],
+    "originalText": "69、睥(pì)睨 错误读音：(bǐ)"
+  },
+  {
+    "char": "胖",
+    "correctPronunciation": "pán",
+    "wrongPronunciation": "pàng",
+    "relatedPhrases": [
+      "心广体胖"
+    ],
+    "originalText": "72、心广体胖(pán) 错误读音：（pàng）"
+  },
+  {
+    "char": "便",
+    "correctPronunciation": "pián",
+    "wrongPronunciation": "biàn",
+    "relatedPhrases": [
+      "大腹便便"
+    ],
+    "originalText": "73、大腹便(pián)便 错误读音：（biàn）"
+  },
+  {
+    "char": "骠",
+    "correctPronunciation": "piào",
+    "wrongPronunciation": "biāo",
+    "relatedPhrases": [
+      "骠勇"
+    ],
+    "originalText": "74、骠(piào)勇 错误读音：（biāo）"
+  },
+  {
+    "char": "砒",
+    "correctPronunciation": "pī",
+    "wrongPronunciation": "pí",
+    "relatedPhrases": [
+      "砒霜"
+    ],
+    "originalText": "76、砒(pī)霜 错误读音：（pí）"
+  },
+  {
+    "char": "繁",
+    "correctPronunciation": "pó",
+    "wrongPronunciation": "fán",
+    "relatedPhrases": [
+      "繁钦"
+    ],
+    "originalText": "77、繁(pó)（姓氏） 错误读音：（fán）"
+  },
+  {
+    "char": "卡",
+    "correctPronunciation": "qiǎ",
+    "wrongPronunciation": "kǎ",
+    "relatedPhrases": [
+      "哨卡"
+    ],
+    "originalText": "78、哨卡(qiǎ) 错误读音：（kǎ）"
+  },
+  {
+    "char": "强",
+    "correctPronunciation": "qiǎng",
+    "wrongPronunciation": "qiáng",
+    "relatedPhrases": [
+      "牵强附会"
+    ],
+    "originalText": "80、牵强(qiǎng)附会 错误读音：(qiáng)"
+  },
+  {
+    "char": "肖",
+    "correctPronunciation": "xiào",
+    "wrongPronunciation": "xiāo",
+    "relatedPhrases": [
+      "生肖"
+    ],
+    "originalText": "81、生肖(xiào) 错误读音：(xiāo )"
+  },
+  {
+    "char": "台",
+    "correctPronunciation": "tāi",
+    "wrongPronunciation": "tái",
+    "relatedPhrases": [
+      "台州"
+    ],
+    "originalText": "82、台(tāi)州 错误读音：(tái)"
+  },
+  {
+    "char": "节",
+    "correctPronunciation": "jiē",
+    "wrongPronunciation": "jié",
+    "relatedPhrases": [
+      "节骨眼"
+    ],
+    "originalText": "83、节(jiē)骨眼 错误读音：(jié)"
+  },
+  {
+    "char": "吱",
+    "correctPronunciation": "zī",
+    "wrongPronunciation": "zhī",
+    "relatedPhrases": [
+      "不吱声"
+    ],
+    "originalText": "84、不吱(zī)声 错误读音：(zhī)"
+  },
+  {
+    "char": "妮",
+    "correctPronunciation": "nī",
+    "wrongPronunciation": "ní",
+    "relatedPhrases": [
+      "燕妮"
+    ],
+    "originalText": "85、燕妮(nī) 错误读音：(ní)"
+  },
+  {
+    "char": "邪",
+    "correctPronunciation": "yé",
+    "wrongPronunciation": "xié",
+    "relatedPhrases": [
+      "莫邪"
+    ],
+    "originalText": "87、莫邪(yé) 错误读音：(xié)"
+  },
+  {
+    "char": "剔",
+    "correctPronunciation": "tī",
+    "wrongPronunciation": "tì",
+    "relatedPhrases": [
+      "剔透"
+    ],
+    "originalText": "88、剔(tī)透 错误读音：(tì)"
+  },
+  {
+    "char": "汤",
+    "correctPronunciation": "shāng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "浩浩汤汤"
+    ],
+    "originalText": "90、浩浩汤(shāng) 错误读音：汤(dàng)"
+  },
+  {
+    "char": "结",
+    "correctPronunciation": "jié",
+    "wrongPronunciation": "jiē",
+    "relatedPhrases": [
+      "结婚"
+    ],
+    "originalText": "91、结(jié)婚 错误读音：(jiē)"
+  },
+  {
+    "char": "坊",
+    "correctPronunciation": "fáng",
+    "wrongPronunciation": "fāng",
+    "relatedPhrases": [
+      "磨坊"
+    ],
+    "originalText": "92、磨坊(fáng) 错误读音：(fāng)"
+  },
+  {
+    "char": "荷",
+    "correctPronunciation": "hè",
+    "wrongPronunciation": "hé",
+    "relatedPhrases": [
+      "荷锄"
+    ],
+    "originalText": "93、荷(hè)锄 错误读音：(hé)"
+  },
+  {
+    "char": "蔓",
+    "correctPronunciation": "wàn",
+    "wrongPronunciation": "màn",
+    "relatedPhrases": [
+      "藤蔓"
+    ],
+    "originalText": "94、藤蔓(wàn) 错误读音：(màn)"
+  },
+  {
+    "char": "瑰",
+    "correctPronunciation": "guī",
+    "wrongPronunciation": "guì",
+    "relatedPhrases": [
+      "玫瑰"
+    ],
+    "originalText": "95、玫瑰(guī) 错误读音：(guì)"
+  },
+  {
+    "char": "糊",
+    "correctPronunciation": "hù",
+    "wrongPronunciation": "hú",
+    "relatedPhrases": [
+      "芝麻糊"
+    ],
+    "originalText": "96、芝麻糊(hù) 错误读音：（hú）"
+  },
+  {
+    "char": "禁",
+    "correctPronunciation": "jīn",
+    "wrongPronunciation": "jìn",
+    "relatedPhrases": [
+      "情不自禁"
+    ],
+    "originalText": "98、情不自禁(jīn) 错误读音：（jìn）"
+  },
+  {
+    "char": "梵",
+    "correctPronunciation": "fàn",
+    "wrongPronunciation": "fán",
+    "relatedPhrases": [
+      "梵语"
+    ],
+    "originalText": "99、梵(fàn)语 错误读音：（fán）"
+  },
+  {
+    "char": "雒",
+    "correctPronunciation": "luò",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "雒城"
+    ],
+    "originalText": "16雒(luò) 城"
+  },
+  {
+    "char": "娉",
+    "correctPronunciation": "pīng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "娉婷袅娜"
+    ],
+    "originalText": "108娉(pīng)婷袅(niǎo)娜(nuó)。"
+  },
+  {
+    "char": "袅",
+    "correctPronunciation": "niǎo",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "娉婷袅娜"
+    ],
+    "originalText": "108娉(pīng)婷袅(niǎo)娜(nuó)。"
+  },
+  {
+    "char": "娜",
+    "correctPronunciation": "nuó",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "娉婷袅娜"
+    ],
+    "originalText": "108娉(pīng)婷袅(niǎo)娜(nuó)。"
+  },
+  {
+    "char": "涕",
+    "correctPronunciation": "tī",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "涕泗滂沱"
+    ],
+    "originalText": "113涕(tī)泗(sì)滂(pāng)沱(tuó)"
+  },
+  {
+    "char": "泗",
+    "correctPronunciation": "sì",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "涕泗滂沱"
+    ],
+    "originalText": "113涕(tī)泗(sì)滂(pāng)沱(tuó)"
+  },
+  {
+    "char": "滂",
+    "correctPronunciation": "pāng",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "涕泗滂沱"
+    ],
+    "originalText": "113涕(tī)泗(sì)滂(pāng)沱(tuó)"
+  },
+  {
+    "char": "沱",
+    "correctPronunciation": "tuó",
+    "wrongPronunciation": "",
+    "relatedPhrases": [
+      "涕泗滂沱"
+    ],
+    "originalText": "113涕(tī)泗(sì)滂(pāng)沱(tuó)"
+  },
+  {
+    "char": "憎",
+    "correctPronunciation": "zēng",
+    "wrongPronunciation": "zèng",
+    "relatedPhrases": [
+      "爱憎分明"
+    ],
+    "originalText": "爱憎zēng（zèng）分明"
+  },
+  {
+    "char": "当",
+    "correctPronunciation": "dàng",
+    "wrongPronunciation": "dāng",
+    "relatedPhrases": [
+      "安步当车"
+    ],
+    "originalText": "安步当dàng（dāng）车"
+  },
+  {
+    "char": "恙",
+    "correctPronunciation": "yàng",
+    "wrongPronunciation": "gāo",
+    "relatedPhrases": [
+      "安然无恙"
+    ],
+    "originalText": "安然无恙yàng（gāo）"
+  },
+  {
+    "char": "重",
+    "correctPronunciation": "zhòng",
+    "wrongPronunciation": "chóng",
+    "relatedPhrases": [
+      "安土重迁"
+    ],
+    "originalText": "安土重zhòng（chóng）迁"
+  },
+  {
+    "char": "骥",
+    "correctPronunciation": "jì",
+    "wrongPronunciation": "yì",
+    "relatedPhrases": [
+      "按图索骥"
+    ],
+    "originalText": "按图索骥jì（yì）"
+  },
+  {
+    "char": "哺",
+    "correctPronunciation": "bǔ",
+    "wrongPronunciation": "fǔ",
+    "relatedPhrases": [
+      "嗷嗷待哺"
+    ],
+    "originalText": "嗷嗷待哺bǔ（fǔ）"
+  },
+  {
+    "char": "屹",
+    "correctPronunciation": "yì",
+    "wrongPronunciation": "yī",
+    "relatedPhrases": [
+      "傲然屹立"
+    ],
+    "originalText": "傲然屹yì（yī）立"
+  },
+  {
+    "char": "跋",
+    "correctPronunciation": "bá",
+    "wrongPronunciation": "pá",
+    "relatedPhrases": [
+      "跋山涉水"
+    ],
+    "originalText": "跋bá（pá）山涉水"
+  },
+  {
+    "char": "中",
+    "correctPronunciation": "zhòng",
+    "wrongPronunciation": "zhōng",
+    "relatedPhrases": [
+      "百发百中"
+    ],
+    "originalText": "百发百中zhòng（zhōng）"
+  },
+  {
+    "char": "挠",
+    "correctPronunciation": "náo",
+    "wrongPronunciation": "ráo",
+    "relatedPhrases": [
+      "百折不挠"
+    ],
+    "originalText": "百折不挠náo（ráo）"
+  },
+  {
+    "char": "稗",
+    "correctPronunciation": "bài",
+    "wrongPronunciation": "bēi",
+    "relatedPhrases": [
+      "稗官野史"
+    ],
+    "originalText": "稗bài（bēi）官野史"
+  },
+  {
+    "char": "遂",
+    "correctPronunciation": "suí",
+    "wrongPronunciation": "zhú",
+    "relatedPhrases": [
+      "半身不遂"
+    ],
+    "originalText": "半身不遂suí（zhú）"
+  },
+  {
+    "char": "冯",
+    "correctPronunciation": "píng",
+    "wrongPronunciation": "féng",
+    "relatedPhrases": [
+      "暴虎冯河"
+    ],
+    "originalText": "暴虎冯píng（féng）河"
+  },
+  {
+    "char": "殄",
+    "correctPronunciation": "tiǎn",
+    "wrongPronunciation": "zhēn",
+    "relatedPhrases": [
+      "暴殄天物"
+    ],
+    "originalText": "暴殄tiǎn（zhēn）天物"
+  },
+  {
+    "char": "膝",
+    "correctPronunciation": "xī",
+    "wrongPronunciation": "qī",
+    "relatedPhrases": [
+      "卑躬屈膝"
+    ],
+    "originalText": "卑躬屈膝xī（qī）"
+  },
+  {
+    "char": "塞",
+    "correctPronunciation": "sè",
+    "wrongPronunciation": "sāi",
+    "relatedPhrases": [
+      "闭目塞听"
+    ],
+    "originalText": "闭目塞sè（sāi）听"
+  },
+  {
+    "char": "髀",
+    "correctPronunciation": "bì",
+    "wrongPronunciation": "pì",
+    "relatedPhrases": [
+      "髀肉复生"
+    ],
+    "originalText": "髀bì（pì）肉复生"
+  },
+  {
+    "char": "辟",
+    "correctPronunciation": "pì",
+    "wrongPronunciation": "bì",
+    "relatedPhrases": [
+      "鞭辟入里"
+    ],
+    "originalText": "鞭辟pì（bì）入里"
+  },
+  {
+    "char": "便",
+    "correctPronunciation": "biàn",
+    "wrongPronunciation": "pián",
+    "relatedPhrases": [
+      "便宜行事"
+    ],
+    "originalText": "便biàn（pián）宜行事"
+  },
+  {
+    "char": "杼",
+    "correctPronunciation": "zhù",
+    "wrongPronunciation": "shū",
+    "relatedPhrases": [
+      "别出机杼"
+    ],
+    "originalText": "别出机杼zhù（shū）"
+  },
+  {
+    "char": "长",
+    "correctPronunciation": "cháng",
+    "wrongPronunciation": "zhǎng",
+    "relatedPhrases": [
+      "别无长物"
+    ],
+    "originalText": "别无长cháng（zhǎng）物"
+  },
+  {
+    "char": "彬",
+    "correctPronunciation": "bīn",
+    "wrongPronunciation": "shān",
+    "relatedPhrases": [
+      "彬彬有礼"
+    ],
+    "originalText": "彬bīn（shān）彬有礼"
+  },
+  {
+    "char": "悖",
+    "correctPronunciation": "bèi",
+    "wrongPronunciation": "bó",
+    "relatedPhrases": [
+      "并行不悖"
+    ],
+    "originalText": "并行不悖bèi（bó）"
+  },
+  {
+    "char": "肓",
+    "correctPronunciation": "huāng",
+    "wrongPronunciation": "máng",
+    "relatedPhrases": [
+      "病入膏肓"
+    ],
+    "originalText": "病入膏肓huāng（máng）"
+  },
+  {
+    "char": "擘",
+    "correctPronunciation": "bò",
+    "wrongPronunciation": "bì",
+    "relatedPhrases": [
+      "擘肌分理"
+    ],
+    "originalText": "擘bò（bì）肌分理"
+  },
+  {
+    "char": "捕",
+    "correctPronunciation": "bǔ",
+    "wrongPronunciation": "pǔ",
+    "relatedPhrases": [
+      "捕风捉影"
+    ],
+    "originalText": "捕bǔ（pǔ）风捉影"
+  },
+  {
+    "char": "畛",
+    "correctPronunciation": "zhěn",
+    "wrongPronunciation": "zhèn",
+    "relatedPhrases": [
+      "不分畛域"
+    ],
+    "originalText": "不分畛zhěn（zhèn）域"
+  },
+  {
+    "char": "寂",
+    "correctPronunciation": "jì",
+    "wrongPronunciation": "jí",
+    "relatedPhrases": [
+      "不甘寂寞"
+    ],
+    "originalText": "不甘寂jì（jí）寞"
+  },
+  {
+    "char": "穑",
+    "correctPronunciation": "sè",
+    "wrongPronunciation": "qiáng",
+    "relatedPhrases": [
+      "不稼不穑"
+    ],
+    "originalText": "不稼不穑sè（qiáng）"
+  },
+  {
+    "char": "缕",
+    "correctPronunciation": "lǚ",
+    "wrongPronunciation": "lǒu",
+    "relatedPhrases": [
+      "不绝如缕"
+    ],
+    "originalText": "不绝如缕lǚ（lǒu）"
+  },
+  {
+    "char": "磨",
+    "correctPronunciation": "mó",
+    "wrongPronunciation": "mò",
+    "relatedPhrases": [
+      "不可磨灭"
+    ],
+    "originalText": "不可磨mó（mò）灭"
+  },
+  {
+    "char": "莠",
+    "correctPronunciation": "yǒu",
+    "wrongPronunciation": "xiù",
+    "relatedPhrases": [
+      "不稂不莠"
+    ],
+    "originalText": "不稂不莠yǒu（xiù）"
+  },
+  {
+    "char": "窠",
+    "correctPronunciation": "kē",
+    "wrongPronunciation": "cháo",
+    "relatedPhrases": [
+      "不落窠臼"
+    ],
+    "originalText": "不落窠kē（cháo）臼"
+  },
+  {
+    "char": "挠",
+    "correctPronunciation": "náo",
+    "wrongPronunciation": "ráo",
+    "relatedPhrases": [
+      "不屈不挠"
+    ],
+    "originalText": "不屈不挠náo（ráo）"
+  },
+  {
+    "char": "塞",
+    "correctPronunciation": "sè",
+    "wrongPronunciation": "sāi",
+    "relatedPhrases": [
+      "不塞不流"
+    ],
+    "originalText": "不塞sè（sāi）不流"
+  },
+  {
+    "char": "肖",
+    "correctPronunciation": "xiào",
+    "wrongPronunciation": "xiāo",
+    "relatedPhrases": [
+      "不肖子孙"
+    ],
+    "originalText": "不肖xiào（xiāo）子孙"
+  },
+  {
+    "char": "屑",
+    "correctPronunciation": "xiè",
+    "wrongPronunciation": "xuē",
+    "relatedPhrases": [
+      "不屑一顾"
+    ],
+    "originalText": "不屑xiè（xuē）一顾"
+  },
+  {
+    "char": "省",
+    "correctPronunciation": "xǐng",
+    "wrongPronunciation": "shěng",
+    "relatedPhrases": [
+      "不省人事"
+    ],
+    "originalText": "不省xǐng（shěng）人事"
+  },
+  {
+    "char": "粟",
+    "correctPronunciation": "sù",
+    "wrongPronunciation": "lì",
+    "relatedPhrases": [
+      "沧海一粟"
+    ],
+    "originalText": "沧海一粟sù（lì）"
+  },
+  {
+    "char": "菅",
+    "correctPronunciation": "jiān",
+    "wrongPronunciation": "guǎn",
+    "relatedPhrases": [
+      "草菅人命"
+    ],
+    "originalText": "草菅jiān（guǎn）人命"
+  },
+  {
+    "char": "姹",
+    "correctPronunciation": "chà",
+    "wrongPronunciation": "chá",
+    "relatedPhrases": [
+      "姹紫嫣红"
+    ],
+    "originalText": "姹chà（chá）紫嫣红"
+  },
+  {
+    "char": "载",
+    "correctPronunciation": "zài",
+    "wrongPronunciation": "zǎi",
+    "relatedPhrases": [
+      "车载斗量"
+    ],
+    "originalText": "车载zài（zǎi）斗量"
+  },
+  {
+    "char": "瞠",
+    "correctPronunciation": "chēng",
+    "wrongPronunciation": "táng",
+    "relatedPhrases": [
+      "瞠目结舌"
+    ],
+    "originalText": "瞠chēng（táng）目结舌"
+  },
+  {
+    "char": "媚",
+    "correctPronunciation": "mèi",
+    "wrongPronunciation": "méi",
+    "relatedPhrases": [
+      "崇洋媚外"
+    ],
+    "originalText": "崇洋媚mèi（méi）外"
+  },
+  {
+    "char": "臭",
+    "correctPronunciation": "chòu",
+    "wrongPronunciation": "xiù",
+    "relatedPhrases": [
+      "臭味相投"
+    ],
+    "originalText": "臭chòu（xiù）味相投"
+  },
+  {
+    "char": "几",
+    "correctPronunciation": "jī",
+    "wrongPronunciation": "jǐ",
+    "relatedPhrases": [
+      "窗明几净"
+    ],
+    "originalText": "窗明几jī（jǐ）净"
+  },
+  {
+    "char": "疵",
+    "correctPronunciation": "cī",
+    "wrongPronunciation": "bǐ",
+    "relatedPhrases": [
+      "吹毛求疵"
+    ],
+    "originalText": "吹毛求疵cī（bǐ）"
+  },
+  {
+    "char": "涎",
+    "correctPronunciation": "xián",
+    "wrongPronunciation": "yán",
+    "relatedPhrases": [
+      "垂涎欲滴"
+    ],
+    "originalText": "垂涎xián（yán）欲滴"
+  },
+  {
+    "char": "膝",
+    "correctPronunciation": "xī",
+    "wrongPronunciation": "qī",
+    "relatedPhrases": [
+      "促膝谈心"
+    ],
+    "originalText": "促膝xī（qī）谈心"
+  },
+  {
+    "char": "厥",
+    "correctPronunciation": "jué",
+    "wrongPronunciation": "què",
+    "relatedPhrases": [
+      "大放厥词"
+    ],
+    "originalText": "大放厥jué（què）词"
+  },
+  {
+    "char": "便",
+    "correctPronunciation": "pián",
+    "wrongPronunciation": "biàn",
+    "relatedPhrases": [
+      "大腹便便"
+    ],
+    "originalText": "大腹便pián（biàn）便"
+  },
+  {
+    "char": "谬",
+    "correctPronunciation": "miù",
+    "wrongPronunciation": "miào",
+    "relatedPhrases": [
+      "大谬不然"
+    ],
+    "originalText": "大谬miù（miào）不然"
+  },
+  {
+    "char": "凛",
+    "correctPronunciation": "lǐn",
+    "wrongPronunciation": "bǐng",
+    "relatedPhrases": [
+      "大义凛然"
+    ],
+    "originalText": "大义凛lǐn（bǐng）然"
+  },
+  {
+    "char": "挞",
+    "correctPronunciation": "tà",
+    "wrongPronunciation": "dá",
+    "relatedPhrases": [
+      "大张挞伐"
+    ],
+    "originalText": "大张挞tà（dá）伐"
+  },
+  {
+    "char": "殚",
+    "correctPronunciation": "dān",
+    "wrongPronunciation": "chán",
+    "relatedPhrases": [
+      "殚精竭虑"
+    ],
+    "originalText": "殚dān（chán）精竭虑"
+  },
+  {
+    "char": "食",
+    "correctPronunciation": "sì",
+    "wrongPronunciation": "shí",
+    "relatedPhrases": [
+      "箪食壶浆"
+    ],
+    "originalText": "箪食sì（shí）壶浆"
+  },
+  {
+    "char": "喝",
+    "correctPronunciation": "hè",
+    "wrongPronunciation": "hē",
+    "relatedPhrases": [
+      "当头棒喝"
+    ],
+    "originalText": "当头棒喝hè（hē）"
+  },
+  {
+    "char": "膜",
+    "correctPronunciation": "mó",
+    "wrongPronunciation": "mò",
+    "relatedPhrases": [
+      "顶礼膜拜"
+    ],
+    "originalText": "顶礼膜mó（mò）拜"
+  },
+  {
+    "char": "垣",
+    "correctPronunciation": "yuán",
+    "wrongPronunciation": "héng",
+    "relatedPhrases": [
+      "断井颓垣"
+    ],
+    "originalText": "断井颓垣yuán（héng）"
+  },
+  {
+    "char": "咄",
+    "correctPronunciation": "duō",
+    "wrongPronunciation": "duó",
+    "relatedPhrases": [
+      "咄咄逼人"
+    ],
+    "originalText": "咄duō（duó）咄逼人"
+  },
+  {
+    "char": "阿",
+    "correctPronunciation": "ē",
+    "wrongPronunciation": "ā",
+    "relatedPhrases": [
+      "阿谀奉承"
+    ],
+    "originalText": "阿ē（ā）谀奉承"
+  },
+  {
+    "char": "鬓",
+    "correctPronunciation": "bìn",
+    "wrongPronunciation": "bīn",
+    "relatedPhrases": [
+      "耳鬓厮磨"
+    ],
+    "originalText": "耳鬓bìn（bīn）厮磨"
+  },
+  {
+    "char": "省",
+    "correctPronunciation": "xǐng",
+    "wrongPronunciation": "shěng",
+    "relatedPhrases": [
+      "发人深省"
+    ],
+    "originalText": "发人深省xǐng（shěng）"
+  },
+  {
+    "char": "缛",
+    "correctPronunciation": "rù",
+    "wrongPronunciation": "rǔ",
+    "relatedPhrases": [
+      "繁文缛节"
+    ],
+    "originalText": "繁文缛rù（rǔ）节"
+  },
+  {
+    "char": "省",
+    "correctPronunciation": "xǐng",
+    "wrongPronunciation": "shěng",
+    "relatedPhrases": [
+      "反躬自省"
+    ],
+    "originalText": "反躬自省xǐng（shěng）"
+  },
+  {
+    "char": "骸",
+    "correctPronunciation": "hái",
+    "wrongPronunciation": "hài",
+    "relatedPhrases": [
+      "放浪形骸"
+    ],
+    "originalText": "放浪形骸hái（hài）"
+  },
+  {
+    "char": "跋",
+    "correctPronunciation": "bá",
+    "wrongPronunciation": "pá",
+    "relatedPhrases": [
+      "飞扬跋扈"
+    ],
+    "originalText": "飞扬跋bá（pá）扈"
+  },
+  {
+    "char": "吠",
+    "correctPronunciation": "fèi",
+    "wrongPronunciation": "quǎn",
+    "relatedPhrases": [
+      "吠形吠声"
+    ],
+    "originalText": "吠fèi（quǎn）形吠fèi（quǎn）声"
+  },
+  {
+    "char": "晷",
+    "correctPronunciation": "guǐ",
+    "wrongPronunciation": "jiù",
+    "relatedPhrases": [
+      "焚膏继晷"
+    ],
+    "originalText": "焚膏继晷guǐ（jiù）"
+  },
+  {
+    "char": "仆",
+    "correctPronunciation": "pú",
+    "wrongPronunciation": "pū",
+    "relatedPhrases": [
+      "风尘仆仆"
+    ],
+    "originalText": "风尘仆pú（pū）仆"
+  },
+  {
+    "char": "掣",
+    "correctPronunciation": "chè",
+    "wrongPronunciation": "zhì",
+    "relatedPhrases": [
+      "风驰电掣"
+    ],
+    "originalText": "风驰电掣chè（zhì）"
+  },
+  {
+    "char": "唳",
+    "correctPronunciation": "lì",
+    "wrongPronunciation": "lèi",
+    "relatedPhrases": [
+      "风声鹤唳"
+    ],
+    "originalText": "风声鹤唳lì（lèi）"
+  },
+  {
+    "char": "荫",
+    "correctPronunciation": "yìn",
+    "wrongPronunciation": "yīn",
+    "relatedPhrases": [
+      "封妻荫子"
+    ],
+    "originalText": "封妻荫yìn（yīn）子"
+  },
+  {
+    "char": "塞",
+    "correctPronunciation": "sè",
+    "wrongPronunciation": "sāi",
+    "relatedPhrases": [
+      "敷衍塞责"
+    ],
+    "originalText": "敷衍塞sè（sāi）责"
+  },
+  {
+    "char": "隅",
+    "correctPronunciation": "yú",
+    "wrongPronunciation": "ǒu",
+    "relatedPhrases": [
+      "负隅顽抗"
+    ],
+    "originalText": "负隅yú（ǒu）顽抗"
+  },
+  {
+    "char": "弦",
+    "correctPronunciation": "xián",
+    "wrongPronunciation": "xuán",
+    "relatedPhrases": [
+      "改弦更张"
+    ],
+    "originalText": "改弦xián（xuán）更张"
+  },
+  {
+    "char": "愎",
+    "correctPronunciation": "bì",
+    "wrongPronunciation": "fù",
+    "relatedPhrases": [
+      "刚愎自用"
+    ],
+    "originalText": "刚愎bì（fù）自用"
+  },
+  {
+    "char": "阿",
+    "correctPronunciation": "ē",
+    "wrongPronunciation": "ā",
+    "relatedPhrases": [
+      "刚直不阿"
+    ],
+    "originalText": "刚直不阿ē（ā）"
+  },
+  {
+    "char": "瓴",
+    "correctPronunciation": "líng",
+    "wrongPronunciation": "lǐng",
+    "relatedPhrases": [
+      "高屋建瓴"
+    ],
+    "originalText": "高屋建瓴líng（lǐng）"
+  },
+  {
+    "char": "纛",
+    "correctPronunciation": "dào",
+    "wrongPronunciation": "dú",
+    "relatedPhrases": [
+      "高牙大纛"
+    ],
+    "originalText": "高牙大纛dào（dú）"
+  },
+  {
+    "char": "亘",
+    "correctPronunciation": "gèn",
+    "wrongPronunciation": "dàn",
+    "relatedPhrases": [
+      "亘古未有"
+    ],
+    "originalText": "亘gèn（dàn）古未有"
+  },
+  {
+    "char": "篑",
+    "correctPronunciation": "kuì",
+    "wrongPronunciation": "guì",
+    "relatedPhrases": [
+      "功亏一篑"
+    ],
+    "originalText": "功亏一篑kuì（guì）"
+  },
+  {
+    "char": "掷",
+    "correctPronunciation": "zhì",
+    "wrongPronunciation": "zhèng",
+    "relatedPhrases": [
+      "孤注一掷"
+    ],
+    "originalText": "孤注一掷zhì（zhèng）"
+  },
+  {
+    "char": "蒂",
+    "correctPronunciation": "dì",
+    "wrongPronunciation": "tí",
+    "relatedPhrases": [
+      "瓜熟蒂落"
+    ],
+    "originalText": "瓜熟蒂dì（tí）落"
+  },
+  {
+    "char": "窥",
+    "correctPronunciation": "kuī",
+    "wrongPronunciation": "guī",
+    "relatedPhrases": [
+      "管中窥豹"
+    ],
+    "originalText": "管中窥kuī（guī）豹"
+  },
+  {
+    "char": "霁",
+    "correctPronunciation": "jì",
+    "wrongPronunciation": "qí",
+    "relatedPhrases": [
+      "光风霁月"
+    ],
+    "originalText": "光风霁jì（qí）月"
+  },
+  {
+    "char": "枯",
+    "correctPronunciation": "kū",
+    "wrongPronunciation": "gù",
+    "relatedPhrases": [
+      "海枯石烂"
+    ],
+    "originalText": "海枯kū（gù）石烂"
+  },
+  {
+    "char": "蜃",
+    "correctPronunciation": "shèn",
+    "wrongPronunciation": "chén",
+    "relatedPhrases": [
+      "海市蜃楼"
+    ],
+    "originalText": "海市蜃shèn（chén）楼"
+  },
+  {
+    "char": "脉",
+    "correctPronunciation": "mò",
+    "wrongPronunciation": "mài",
+    "relatedPhrases": [
+      "含情脉脉"
+    ],
+    "originalText": "含情脉mò（mài）脉"
+  },
+  {
+    "char": "咀",
+    "correctPronunciation": "jǔ",
+    "wrongPronunciation": "zuǐ",
+    "relatedPhrases": [
+      "含英咀华"
+    ],
+    "originalText": "含英咀jǔ（zuǐ）华"
+  },
+  {
+    "char": "浃",
+    "correctPronunciation": "jiā",
+    "wrongPronunciation": "jiá",
+    "relatedPhrases": [
+      "汗流浃背"
+    ],
+    "originalText": "汗流浃jiā（jiá）背"
+  },
+  {
+    "char": "沆",
+    "correctPronunciation": "hàng",
+    "wrongPronunciation": "kàng",
+    "relatedPhrases": [
+      "沆瀣一气"
+    ],
+    "originalText": "沆hàng（kàng）瀣xiè（jiǔ）一气"
+  },
+  {
+    "char": "瀣",
+    "correctPronunciation": "xiè",
+    "wrongPronunciation": "jiǔ",
+    "relatedPhrases": [
+      "沆瀣一气"
+    ],
+    "originalText": "沆hàng（kàng）瀣xiè（jiǔ）一气"
+  },
+  {
+    "char": "恶",
+    "correctPronunciation": "wù",
+    "wrongPronunciation": "è",
+    "relatedPhrases": [
+      "好逸恶劳"
+    ],
+    "originalText": "好逸恶wù（è）劳"
+  },
+  {
+    "char": "涸",
+    "correctPronunciation": "hé",
+    "wrongPronunciation": "gù",
+    "relatedPhrases": [
+      "涸辙之鲋"
+    ],
+    "originalText": "涸hé（gù）辙之鲋"
+  },
+  {
+    "char": "敛",
+    "correctPronunciation": "liǎn",
+    "wrongPronunciation": "jiǎn",
+    "relatedPhrases": [
+      "横征暴敛"
+    ],
+    "originalText": "横征暴敛liǎn（jiǎn）"
+  },
+  {
+    "char": "怙",
+    "correctPronunciation": "hù",
+    "wrongPronunciation": "gǔ",
+    "relatedPhrases": [
+      "怙恶不悛"
+    ],
+    "originalText": "怙hù（gǔ）恶不悛quān（jùn）"
+  },
+  {
+    "char": "悛",
+    "correctPronunciation": "quān",
+    "wrongPronunciation": "jùn",
+    "relatedPhrases": [
+      "怙恶不悛"
+    ],
+    "originalText": "怙hù（gǔ）恶不悛quān（jùn）"
+  },
+  {
+    "char": "讳",
+    "correctPronunciation": "huì",
+    "wrongPronunciation": "wěi",
+    "relatedPhrases": [
+      "讳莫如深"
+    ],
+    "originalText": "讳huì（wěi）莫如深"
+  },
+  {
+    "char": "蹙",
+    "correctPronunciation": "cù",
+    "wrongPronunciation": "zù",
+    "relatedPhrases": [
+      "疾首蹙额"
+    ],
+    "originalText": "疾首蹙cù（zù）额"
+  },
+  {
+    "char": "济",
+    "correctPronunciation": "jǐ",
+    "wrongPronunciation": "jì",
+    "relatedPhrases": [
+      "济济一堂"
+    ],
+    "originalText": "济jǐ（jì）济一堂"
+  },
+  {
+    "char": "矫",
+    "correctPronunciation": "jiǎo",
+    "wrongPronunciation": "jiāo",
+    "relatedPhrases": [
+      "矫揉造作"
+    ],
+    "originalText": "矫jiǎo（jiāo）揉造作"
+  },
+  {
+    "char": "矫",
+    "correctPronunciation": "jiǎo",
+    "wrongPronunciation": "jiāo",
+    "relatedPhrases": [
+      "矫枉过正"
+    ],
+    "originalText": "矫jiǎo（jiāo）枉过正"
+  },
+  {
+    "char": "嗟",
+    "correctPronunciation": "jiē",
+    "wrongPronunciation": "cuō",
+    "relatedPhrases": [
+      "嗟来之食"
+    ],
+    "originalText": "嗟jiē（cuō）来之食"
+  },
+  {
+    "char": "泾",
+    "correctPronunciation": "jīng",
+    "wrongPronunciation": "jìng",
+    "relatedPhrases": [
+      "泾渭分明"
+    ],
+    "originalText": "泾jīng（jìng）渭分明"
+  },
+  {
+    "char": "鹄",
+    "correctPronunciation": "hú",
+    "wrongPronunciation": "hào",
+    "relatedPhrases": [
+      "鸠形鹄面"
+    ],
+    "originalText": "鸠形鹄hú（hào）面"
+  },
+  {
+    "char": "揖",
+    "correctPronunciation": "yī",
+    "wrongPronunciation": "jī",
+    "relatedPhrases": [
+      "开门揖盗"
+    ],
+    "originalText": "开门揖yī（jī）盗"
+  },
+  {
+    "char": "枯",
+    "correctPronunciation": "kū",
+    "wrongPronunciation": "gū",
+    "relatedPhrases": [
+      "枯木逢春"
+    ],
+    "originalText": "枯kū（gū）木逢春"
+  },
+  {
+    "char": "诣",
+    "correctPronunciation": "yì",
+    "wrongPronunciation": "zhǐ",
+    "relatedPhrases": [
+      "苦心孤诣"
+    ],
+    "originalText": "苦心孤诣yì（zhǐ）"
+  },
+  {
+    "char": "岿",
+    "correctPronunciation": "kuī",
+    "wrongPronunciation": "guī",
+    "relatedPhrases": [
+      "岿然不动"
+    ],
+    "originalText": "岿kuī（guī）然不动"
+  },
+  {
+    "char": "妪",
+    "correctPronunciation": "yù",
+    "wrongPronunciation": "ōu",
+    "relatedPhrases": [
+      "老妪能解"
+    ],
+    "originalText": "老妪yù（ōu）能解"
+  },
+  {
+    "char": "莠",
+    "correctPronunciation": "yǒu",
+    "wrongPronunciation": "xiù",
+    "relatedPhrases": [
+      "良莠不齐"
+    ],
+    "originalText": "良莠yǒu（xiù）不齐"
+  },
+  {
+    "char": "栉",
+    "correctPronunciation": "zhì",
+    "wrongPronunciation": "jié",
+    "relatedPhrases": [
+      "鳞次栉比"
+    ],
+    "originalText": "鳞次栉zhì（jié）比"
+  },
+  {
+    "char": "绿",
+    "correctPronunciation": "lù",
+    "wrongPronunciation": "lǜ",
+    "relatedPhrases": [
+      "绿林好汉"
+    ],
+    "originalText": "绿lù（lǜ）林好汉"
+  },
+  {
+    "char": "痹",
+    "correctPronunciation": "bì",
+    "wrongPronunciation": "pí",
+    "relatedPhrases": [
+      "麻痹大意"
+    ],
+    "originalText": "麻痹bì（pí）大意"
+  },
+  {
+    "char": "塞",
+    "correctPronunciation": "sè",
+    "wrongPronunciation": "sài",
+    "relatedPhrases": [
+      "茅塞顿开"
+    ],
+    "originalText": "茅塞sè（sài）顿开"
+  },
+  {
+    "char": "靡",
+    "correctPronunciation": "mǐ",
+    "wrongPronunciation": "mí",
+    "relatedPhrases": [
+      "靡靡之音"
+    ],
+    "originalText": "靡mǐ（mí）靡之音"
+  },
+  {
+    "char": "觑",
+    "correctPronunciation": "qù",
+    "wrongPronunciation": "xū",
+    "relatedPhrases": [
+      "面面相觑"
+    ],
+    "originalText": "面面相觑qù（xū）"
+  },
+  {
+    "char": "朝",
+    "correctPronunciation": "zhāo",
+    "wrongPronunciation": "cháo",
+    "relatedPhrases": [
+      "灭此朝食"
+    ],
+    "originalText": "灭此朝zhāo（cháo）食"
+  },
+  {
+    "char": "沸",
+    "correctPronunciation": "fèi",
+    "wrongPronunciation": "fú",
+    "relatedPhrases": [
+      "民怨沸腾"
+    ],
+    "originalText": "民怨沸fèi（fú）腾"
+  },
+  {
+    "char": "磨",
+    "correctPronunciation": "mó",
+    "wrongPronunciation": "mò",
+    "relatedPhrases": [
+      "磨杵成针"
+    ],
+    "originalText": "磨mó（mò）杵chǔ（wǔ）成针"
+  },
+  {
+    "char": "杵",
+    "correctPronunciation": "chǔ",
+    "wrongPronunciation": "wǔ",
+    "relatedPhrases": [
+      "磨杵成针"
+    ],
+    "originalText": "磨mó（mò）杵chǔ（wǔ）成针"
+  },
+  {
+    "char": "拙",
+    "correctPronunciation": "zhuō",
+    "wrongPronunciation": "zhuó",
+    "relatedPhrases": [
+      "弄巧成拙"
+    ],
+    "originalText": "弄巧成拙zhuō（zhuó）"
+  },
+  {
+    "char": "呕",
+    "correctPronunciation": "ǒu",
+    "wrongPronunciation": "ōu",
+    "relatedPhrases": [
+      "呕心沥血"
+    ],
+    "originalText": "呕ǒu（ōu）心沥血"
+  },
+  {
+    "char": "否",
+    "correctPronunciation": "pǐ",
+    "wrongPronunciation": "fǒu",
+    "relatedPhrases": [
+      "否极泰来"
+    ],
+    "originalText": "否pǐ（fǒu）极泰来"
+  },
+  {
+    "char": "杞",
+    "correctPronunciation": "qǐ",
+    "wrongPronunciation": "jǐ",
+    "relatedPhrases": [
+      "杞人忧天"
+    ],
+    "originalText": "杞qǐ（jǐ）人忧天"
+  },
+  {
+    "char": "载",
+    "correctPronunciation": "zǎi",
+    "wrongPronunciation": "zài",
+    "relatedPhrases": [
+      "千载难逢"
+    ],
+    "originalText": "千载zǎi（zài）难逢"
+  },
+  {
+    "char": "倨",
+    "correctPronunciation": "jù",
+    "wrongPronunciation": "jǔ",
+    "relatedPhrases": [
+      "前倨后恭"
+    ],
+    "originalText": "前倨jù（jǔ）后恭"
+  },
+  {
+    "char": "锲",
+    "correctPronunciation": "qiè",
+    "wrongPronunciation": "qì",
+    "relatedPhrases": [
+      "锲而不舍"
+    ],
+    "originalText": "锲qiè（qì）而不舍"
+  },
+  {
+    "char": "箧",
+    "correctPronunciation": "qiè",
+    "wrongPronunciation": "jiá",
+    "relatedPhrases": [
+      "倾箱倒箧"
+    ],
+    "originalText": "倾箱倒箧qiè（jiá）"
+  },
+  {
+    "char": "黩",
+    "correctPronunciation": "dú",
+    "wrongPronunciation": "mài",
+    "relatedPhrases": [
+      "穷兵黩武"
+    ],
+    "originalText": "穷兵黩dú（mài）武"
+  },
+  {
+    "char": "啮",
+    "correctPronunciation": "niè",
+    "wrongPronunciation": "chǐ",
+    "relatedPhrases": [
+      "穷鼠啮狸"
+    ],
+    "originalText": "穷鼠啮niè（chǐ）狸"
+  },
+  {
+    "char": "和",
+    "correctPronunciation": "hè",
+    "wrongPronunciation": "hé",
+    "relatedPhrases": [
+      "曲高和寡"
+    ],
+    "originalText": "曲高和hè（hé）寡"
+  },
+  {
+    "char": "凿",
+    "correctPronunciation": "záo",
+    "wrongPronunciation": "zuò",
+    "relatedPhrases": [
+      "确凿不移"
+    ],
+    "originalText": "确凿záo（zuò）不移"
+  },
+  {
+    "char": "禁",
+    "correctPronunciation": "jīn",
+    "wrongPronunciation": "jìn",
+    "relatedPhrases": [
+      "忍俊不禁"
+    ],
+    "originalText": "忍俊不禁jīn（jìn）"
+  },
+  {
+    "char": "炮",
+    "correctPronunciation": "páo",
+    "wrongPronunciation": "pào",
+    "relatedPhrases": [
+      "如法炮制"
+    ],
+    "originalText": "如法炮páo（pào）制"
+  },
+  {
+    "char": "臭",
+    "correctPronunciation": "xiù",
+    "wrongPronunciation": "chòu",
+    "relatedPhrases": [
+      "乳臭未干"
+    ],
+    "originalText": "乳臭xiù（chòu）未干"
+  },
+  {
+    "char": "禁",
+    "correctPronunciation": "jīn",
+    "wrongPronunciation": "jìn",
+    "relatedPhrases": [
+      "弱不禁风"
+    ],
+    "originalText": "弱不禁jīn（jìn）风"
+  },
+  {
+    "char": "塞",
+    "correctPronunciation": "sài",
+    "wrongPronunciation": "sè",
+    "relatedPhrases": [
+      "塞翁失马"
+    ],
+    "originalText": "塞sài（sè）翁失马"
+  },
+  {
+    "char": "缄",
+    "correctPronunciation": "jiān",
+    "wrongPronunciation": "jiàn",
+    "relatedPhrases": [
+      "三缄其口"
+    ],
+    "originalText": "三缄jiān（jiàn）其口"
+  },
+  {
+    "char": "少",
+    "correctPronunciation": "shào",
+    "wrongPronunciation": "shǎo",
+    "relatedPhrases": [
+      "少不更事"
+    ],
+    "originalText": "少shào（shǎo）不更事"
+  },
+  {
+    "char": "恶",
+    "correctPronunciation": "wù",
+    "wrongPronunciation": "è",
+    "relatedPhrases": [
+      "深恶痛绝"
+    ],
+    "originalText": "深恶wù（è）痛绝"
+  },
+  {
+    "char": "度",
+    "correctPronunciation": "duó",
+    "wrongPronunciation": "dù",
+    "relatedPhrases": [
+      "审时度势"
+    ],
+    "originalText": "审时度duó（dù）势"
+  },
+  {
+    "char": "矢",
+    "correctPronunciation": "shǐ",
+    "wrongPronunciation": "shī",
+    "relatedPhrases": [
+      "矢口否认"
+    ],
+    "originalText": "矢shǐ（shī）口否认"
+  },
+  {
+    "char": "俑",
+    "correctPronunciation": "yǒng",
+    "wrongPronunciation": "yōng",
+    "relatedPhrases": [
+      "始作俑者"
+    ],
+    "originalText": "始作俑yǒng（yōng）者"
+  },
+  {
+    "char": "癖",
+    "correctPronunciation": "pǐ",
+    "wrongPronunciation": "pì",
+    "relatedPhrases": [
+      "嗜痂成癖"
+    ],
+    "originalText": "嗜痂成癖pǐ（pì）"
+  },
+  {
+    "char": "噬",
+    "correctPronunciation": "shì",
+    "wrongPronunciation": "wū",
+    "relatedPhrases": [
+      "噬脐莫及"
+    ],
+    "originalText": "噬shì（wū）脐莫及"
+  },
+  {
+    "char": "舐",
+    "correctPronunciation": "shì",
+    "wrongPronunciation": "tiǎn",
+    "relatedPhrases": [
+      "吮痈舐痔"
+    ],
+    "originalText": "吮痈舐shì（tiǎn）痔"
+  },
+  {
+    "char": "靡",
+    "correctPronunciation": "mǐ",
+    "wrongPronunciation": "mí",
+    "relatedPhrases": [
+      "所向披靡"
+    ],
+    "originalText": "所向披靡mǐ（mí）"
+  },
+  {
+    "char": "忾",
+    "correctPronunciation": "kài",
+    "wrongPronunciation": "qì",
+    "relatedPhrases": [
+      "同仇敌忾"
+    ],
+    "originalText": "同仇敌忾kài（qì）"
+  },
+  {
+    "char": "舍",
+    "correctPronunciation": "shè",
+    "wrongPronunciation": "shě",
+    "relatedPhrases": [
+      "退避三舍"
+    ],
+    "originalText": "退避三舍shè（shě）"
+  },
+  {
+    "char": "绔",
+    "correctPronunciation": "kù",
+    "wrongPronunciation": "kuà",
+    "relatedPhrases": [
+      "纨绔子弟"
+    ],
+    "originalText": "纨绔kù（kuà）子弟"
+  },
+  {
+    "char": "喑",
+    "correctPronunciation": "yīn",
+    "wrongPronunciation": "àn",
+    "relatedPhrases": [
+      "万马齐喑"
+    ],
+    "originalText": "万马齐喑yīn（àn）"
+  },
+  {
+    "char": "伥",
+    "correctPronunciation": "chāng",
+    "wrongPronunciation": "cháng",
+    "relatedPhrases": [
+      "为虎作伥"
+    ],
+    "originalText": "为虎作伥chāng（cháng）"
+  },
+  {
+    "char": "缪",
+    "correctPronunciation": "móu",
+    "wrongPronunciation": "miú",
+    "relatedPhrases": [
+      "未雨绸缪"
+    ],
+    "originalText": "未雨绸缪móu（miú）"
+  },
+  {
+    "char": "券",
+    "correctPronunciation": "quàn",
+    "wrongPronunciation": "juàn",
+    "relatedPhrases": [
+      "稳操胜券"
+    ],
+    "originalText": "稳操胜券quàn（juàn）"
+  },
+  {
+    "char": "矢",
+    "correctPronunciation": "shǐ",
+    "wrongPronunciation": "shī",
+    "relatedPhrases": [
+      "无的放矢"
+    ],
+    "originalText": "无的放矢shǐ（shī）"
+  },
+  {
+    "char": "毋",
+    "correctPronunciation": "wú",
+    "wrongPronunciation": "wù",
+    "relatedPhrases": [
+      "毋庸置疑"
+    ],
+    "originalText": "毋wú（wù）庸置疑"
+  },
+  {
+    "char": "绌",
+    "correctPronunciation": "chù",
+    "wrongPronunciation": "zhuó",
+    "relatedPhrases": [
+      "相形见绌"
+    ],
+    "originalText": "相形见绌chù（zhuó）"
+  },
+  {
+    "char": "旰",
+    "correctPronunciation": "gàn",
+    "wrongPronunciation": "gān",
+    "relatedPhrases": [
+      "宵衣旰食"
+    ],
+    "originalText": "宵衣旰gàn（gān）食"
+  },
+  {
+    "char": "谄",
+    "correctPronunciation": "chǎn",
+    "wrongPronunciation": "xiàn",
+    "relatedPhrases": [
+      "胁肩谄笑"
+    ],
+    "originalText": "胁肩谄chǎn（xiàn）笑"
+  },
+  {
+    "char": "戚",
+    "correctPronunciation": "qī",
+    "wrongPronunciation": "qì",
+    "relatedPhrases": [
+      "休戚相关"
+    ],
+    "originalText": "休戚qī（qì）相关"
+  },
+  {
+    "char": "栩",
+    "correctPronunciation": "xǔ",
+    "wrongPronunciation": "yǔ",
+    "relatedPhrases": [
+      "栩栩如生"
+    ],
+    "originalText": "栩栩xǔ（yǔ）如生"
+  },
+  {
+    "char": "揠",
+    "correctPronunciation": "yà",
+    "wrongPronunciation": "yàn",
+    "relatedPhrases": [
+      "揠苗助长"
+    ],
+    "originalText": "揠yà（yàn）苗助长"
+  },
+  {
+    "char": "赅",
+    "correctPronunciation": "gāi",
+    "wrongPronunciation": "hài",
+    "relatedPhrases": [
+      "言简意赅"
+    ],
+    "originalText": "言简意赅gāi（hài）"
+  },
+  {
+    "char": "奄",
+    "correctPronunciation": "yǎn",
+    "wrongPronunciation": "yān",
+    "relatedPhrases": [
+      "奄奄一息"
+    ],
+    "originalText": "奄yǎn（yān）奄一息"
+  },
+  {
+    "char": "要",
+    "correctPronunciation": "yào",
+    "wrongPronunciation": "yāo",
+    "relatedPhrases": [
+      "要言不烦"
+    ],
+    "originalText": "要yào（yāo）言不烦"
+  },
+  {
+    "char": "和",
+    "correctPronunciation": "hè",
+    "wrongPronunciation": "hé",
+    "relatedPhrases": [
+      "一唱一和"
+    ],
+    "originalText": "一唱一和hè（hé）"
+  },
+  {
+    "char": "蹴",
+    "correctPronunciation": "cù",
+    "wrongPronunciation": "jiù",
+    "relatedPhrases": [
+      "一蹴而就"
+    ],
+    "originalText": "一蹴cù（jiù）而就"
+  },
+  {
+    "char": "脉",
+    "correctPronunciation": "mài",
+    "wrongPronunciation": "mò",
+    "relatedPhrases": [
+      "一脉相传"
+    ],
+    "originalText": "一脉mài（mò）相传"
+  },
+  {
+    "char": "模",
+    "correctPronunciation": "mú",
+    "wrongPronunciation": "mó",
+    "relatedPhrases": [
+      "一模一样"
+    ],
+    "originalText": "一模mú（mó）一样"
+  },
+  {
+    "char": "暴",
+    "correctPronunciation": "pù",
+    "wrongPronunciation": "bào",
+    "relatedPhrases": [
+      "一暴十寒"
+    ],
+    "originalText": "一暴pù（bào）十寒"
+  },
+  {
+    "char": "呵",
+    "correctPronunciation": "hē",
+    "wrongPronunciation": "hā",
+    "relatedPhrases": [
+      "一气呵成"
+    ],
+    "originalText": "一气呵hē（hā）成"
+  },
+  {
+    "char": "貉",
+    "correctPronunciation": "hé",
+    "wrongPronunciation": "hè",
+    "relatedPhrases": [
+      "一丘之貉"
+    ],
+    "originalText": "一丘之貉hé（hè）"
+  },
+  {
+    "char": "应",
+    "correctPronunciation": "yīng",
+    "wrongPronunciation": "yìng",
+    "relatedPhrases": [
+      "一应俱全"
+    ],
+    "originalText": "一应yīng（yìng）俱全"
+  },
+  {
+    "char": "的",
+    "correctPronunciation": "dì",
+    "wrongPronunciation": "dí",
+    "relatedPhrases": [
+      "一语破的"
+    ],
+    "originalText": "一语破的dì（dí）"
+  },
+  {
+    "char": "壑",
+    "correctPronunciation": "hè",
+    "wrongPronunciation": "huō",
+    "relatedPhrases": [
+      "以邻为壑"
+    ],
+    "originalText": "以邻为壑hè（huō）"
+  },
+  {
+    "char": "衣",
+    "correctPronunciation": "yì",
+    "wrongPronunciation": "yī",
+    "relatedPhrases": [
+      "衣锦还乡"
+    ],
+    "originalText": "衣yì（yī）锦还乡"
+  },
+  {
+    "char": "吭",
+    "correctPronunciation": "háng",
+    "wrongPronunciation": "kēng",
+    "relatedPhrases": [
+      "引吭高歌"
+    ],
+    "originalText": "引吭háng（kēng）高歌"
+  },
+  {
+    "char": "蝇",
+    "correctPronunciation": "yíng",
+    "wrongPronunciation": "yīng",
+    "relatedPhrases": [
+      "蝇头小利"
+    ],
+    "originalText": "蝇yíng（yīng）头小利"
+  },
+  {
+    "char": "蝇",
+    "correctPronunciation": "yíng",
+    "wrongPronunciation": "yīng",
+    "relatedPhrases": [
+      "蝇营狗苟"
+    ],
+    "originalText": "蝇yíng（yīng）营狗苟"
+  },
+  {
+    "char": "绕",
+    "correctPronunciation": "rào",
+    "wrongPronunciation": "rǎo",
+    "relatedPhrases": [
+      "余音绕梁"
+    ],
+    "originalText": "余音绕rào（rǎo）梁"
+  },
+  {
+    "char": "贾",
+    "correctPronunciation": "gǔ",
+    "wrongPronunciation": "jiǎ",
+    "relatedPhrases": [
+      "余勇可贾"
+    ],
+    "originalText": "余勇可贾gǔ（jiǎ）"
+  },
+  {
+    "char": "俎",
+    "correctPronunciation": "zǔ",
+    "wrongPronunciation": "qiě",
+    "relatedPhrases": [
+      "越俎代庖"
+    ],
+    "originalText": "越俎zǔ（qiě）代庖páo（bāo）"
+  },
+  {
+    "char": "载",
+    "correctPronunciation": "zài",
+    "wrongPronunciation": "zǎi",
+    "relatedPhrases": [
+      "载歌载舞"
+    ],
+    "originalText": "载zài（zǎi）歌载舞"
+  },
+  {
+    "char": "罔",
+    "correctPronunciation": "wǎng",
+    "wrongPronunciation": "máng",
+    "relatedPhrases": [
+      "置若罔闻"
+    ],
+    "originalText": "置若罔wǎng（máng）闻"
+  },
+  {
+    "char": "惴",
+    "correctPronunciation": "zhuì",
+    "wrongPronunciation": "chuǎn",
+    "relatedPhrases": [
+      "惴惴不安"
+    ],
+    "originalText": "惴zhuì（chuǎn）惴不安"
+  },
+  {
+    "char": "艾",
+    "correctPronunciation": "yì",
+    "wrongPronunciation": "ài",
+    "relatedPhrases": [
+      "自怨自艾"
+    ],
+    "originalText": "自怨自艾yì（ài）"
+  },
+  {
+    "char": "捭",
+    "correctPronunciation": "bǎi",
+    "wrongPronunciation": "bē",
+    "relatedPhrases": [
+      "纵横捭阖"
+    ],
+    "originalText": "纵横捭bǎi（bē）阖"
+  }
+]

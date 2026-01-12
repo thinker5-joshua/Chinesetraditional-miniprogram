@@ -1,6 +1,25 @@
 // 引入完整的六十四卦数据
 const hexagramsData = require('./hexagrams-data.js').hexagramsData;
-const cloudStorage = require('../../../utils/cloudStorage');
+
+// 尝试引入云存储模块，添加错误处理
+let cloudStorage = null;
+try {
+  cloudStorage = require('../../utils/cloudStorage');
+} catch (error) {
+  console.error('引入云存储模块失败:', error);
+  // 提供备用实现
+  cloudStorage = {
+    getImage: (fileName) => {
+      return new Promise((resolve) => {
+        // 使用本地默认图片
+        const defaultPaths = {
+          'wyhd-share-default.png': '/images/qrcode-default.png'
+        };
+        resolve(defaultPaths[fileName] || '/images/qrcode-default.png');
+      });
+    }
+  };
+}
 
 Page({
   data: {
@@ -551,6 +570,20 @@ Page({
         // 加载并绘制小程序码
         const img = canvas.createImage();
         
+        // 绘制提示文字的函数
+        const drawQrCodeText = () => {
+          try {
+            // 绘制小程序文字
+            ctx.fillStyle = '#666666';
+            ctx.font = '28px sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('文益互动', qrcodeX + qrcodeSize + 20, qrcodeY + 50);
+            ctx.fillText('长按识别二维码', qrcodeX + qrcodeSize + 20, qrcodeY + 90);
+          } catch (e) {
+            // 绘制失败不影响后续保存
+          }
+        };
+
         // 保存图片到临时文件的函数，无论图片加载成功与否都调用
         const saveCanvasToImage = () => {
           // 保存图片到临时文件
@@ -603,16 +636,12 @@ Page({
         img.onload = () => {
           try {
             ctx.drawImage(img, qrcodeX, qrcodeY, qrcodeSize, qrcodeSize);
-            
-            // 绘制小程序文字
-            ctx.fillStyle = '#666666';
-            ctx.font = '28px sans-serif';
-            ctx.textAlign = 'left';
-            ctx.fillText('文益互动', qrcodeX + qrcodeSize + 20, qrcodeY + 50);
-            ctx.fillText('长按识别二维码', qrcodeX + qrcodeSize + 20, qrcodeY + 90);
           } catch (e) {
             // 绘制失败不影响后续保存
           }
+          
+          // 绘制提示文字
+          drawQrCodeText();
           
           // 保存图片
           saveCanvasToImage();
@@ -620,48 +649,20 @@ Page({
         
         // 添加图片加载失败处理
         img.onerror = () => {
-          // 图片加载失败，跳过小程序码绘制，直接保存图片
+          // 图片加载失败，绘制提示文字，然后保存图片
+          drawQrCodeText();
           saveCanvasToImage();
         };
         
-        // 云存储图片路径
-        const cloudImagePath = 'cloud://cloud1-4g76v9gbd3112c01.636c-cloud1-4g76v9gbd3112c01-1391701420/main/wyhd-minipro.png';
-        // 本地缓存key
-        const imageCacheKey = 'wxapp_qrcode_image';
-        
-        // 检查本地是否有缓存的图片
-        wx.getStorage({
-          key: imageCacheKey,
-          success: (res) => {
-            // 有缓存，直接使用本地缓存文件
-            img.src = res.data;
-          },
-          fail: () => {
-            // 无缓存，从云存储下载图片
-            wx.cloud.downloadFile({
-              fileID: cloudImagePath,
-              success: (res) => {
-                // 下载成功，缓存到本地
-                wx.setStorage({
-                  key: imageCacheKey,
-                  data: res.tempFilePath
-                });
-                img.src = res.tempFilePath;
-              },
-              fail: () => {
-                // 下载失败，使用云存储默认图片作为备选
-                cloudStorage.getImage('wyhd-share-default.png')
-                  .then(url => {
-                    img.src = url;
-                  })
-                  .catch(error => {
-                    console.error('Get backup image error:', error);
-                    // 如果云存储也获取失败，保持空白或使用其他备选方案
-                  });
-              }
-            });
-          }
-        });
+        // 从云存储获取小程序码图片（带缓存）
+        cloudStorage.getImage('wyhd-minipro.png')
+          .then(qrcodeUrl => {
+            img.src = qrcodeUrl;
+          })
+          .catch(error => {
+            console.error('获取小程序码图片失败:', error);
+            // 云存储获取失败，保持空白或使用其他备选方案
+          });
       });
   },
 

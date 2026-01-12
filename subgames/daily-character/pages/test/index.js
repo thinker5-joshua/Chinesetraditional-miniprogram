@@ -23,7 +23,7 @@ Page({
    * 生成测试题目
    */
   generateTestQuestions() {
-    const characters = require('../../data.js').characters;
+    const characters = require('../../data-optimized.js').characters;
     const testQuestions = [];
     
     // 随机选择5个不同的汉字
@@ -52,7 +52,8 @@ Page({
         character: character.char,
         correctAnswer: character.correctPronunciation,
         options: options,
-        userAnswer: null
+        userAnswer: null,
+        relatedPhrases: character.relatedPhrases || []
       });
     });
     

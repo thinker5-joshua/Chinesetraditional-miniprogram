@@ -20,8 +20,8 @@ Page({
    * 加载汉字详情
    */
   loadCharacter() {
-    const characters = require('../../data.js').characters;
-    const poems = require('../../poems.js').poems;
+    const characters = require('../../data-optimized.js').characters;
+    const poems = require('../../poems-optimized.js').poems;
     
     // 简单实现：随机选择一个汉字展示
     const randomIndex = Math.floor(Math.random() * characters.length);

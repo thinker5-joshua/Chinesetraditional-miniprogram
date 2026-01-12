@@ -37,18 +37,6 @@
       </view>
     </view>
 
-    <!-- 古诗词区 -->
-    <view class="poems-section">
-      <view class="section-title">相关古诗词</view>
-      <view class="poem-item" wx:for="{{relatedPoems}}" wx:key="index">
-        <view class="poem-title">{{item.poemTitle}}</view>
-        <view class="poem-content" wx:for="{{item.relatedLines}}" wx:for-item="line" wx:key="line-index">
-          {{line}}
-        </view>
-        <view class="poem-author">{{item.author}} - {{item.dynasty}}</view>
-      </view>
-    </view>
-
     <!-- 操作按钮区 -->
     <view class="action-buttons">
       <button class="action-btn reload-btn" bindtap="reloadCharacter">

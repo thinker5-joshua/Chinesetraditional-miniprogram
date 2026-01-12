@@ -11,44 +11,29 @@
   <view class="secondary-action-bar">
     <view class="secondary-actions">
       <!-- 保存按钮 -->
-      <button class="secondary-btn save-btn" 
-              bindtap="saveCard"
-              plain="true"
-              style="background:none; border:none; padding:0;">
+      <view class="secondary-btn save-btn" bindtap="saveCard">
         <text class="secondary-icon">📥</text>
-      </button>
+      </view>
       
       <!-- 列表按钮 -->
-      <button class="secondary-btn list-btn" 
-              bindtap="showCharacterList"
-              plain="true"
-              style="background:none; border:none; padding:0;">
+      <view class="secondary-btn list-btn" bindtap="showCharacterList">
         <text class="secondary-icon">📋</text>
-      </button>
+      </view>
       
       <!-- 收藏按钮 -->
-      <button class="secondary-btn favorite-btn {{isFavorite ? 'active' : ''}}" 
-              bindtap="toggleFavorite"
-              plain="true"
-              style="background:none; border:none; padding:0;">
+      <view class="secondary-btn favorite-btn {{isFavorite ? 'active' : ''}}" bindtap="toggleFavorite">
         <text class="secondary-icon">{{isFavorite ? '❤️' : '🤍'}}</text>
-      </button>
+      </view>
       
       <!-- 测试按钮 -->
-      <button class="secondary-btn test-btn" 
-              bindtap="navigateToTest"
-              plain="true"
-              style="background:none; border:none; padding:0;">
+      <view class="secondary-btn test-btn" bindtap="navigateToTest">
         <text class="secondary-icon">📝</text>
-      </button>
+      </view>
       
       <!-- 设置按钮 -->
-      <button class="secondary-btn setting-btn" 
-              bindtap="openSettings"
-              plain="true"
-              style="background:none; border:none; padding:0;">
+      <view class="secondary-btn setting-btn" bindtap="openSettings">
         <text class="secondary-icon">⚙️</text>
-      </button>
+      </view>
     </view>
   </view>
 
@@ -58,7 +43,7 @@
     <!-- 字卡容器 -->
     <view class="character-container">
       <!-- 可翻转字卡 -->
-      <view class="card" bindtap="toggleCardFlip">
+      <view class="card" bindtap="toggleCardFlip" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
         <!-- 字卡正面 -->
         <view class="card-face card-front {{isFlipped ? 'hidden' : ''}}">
           <view class="character-section">
@@ -101,15 +86,7 @@
               <text class="detail-text">{{errorReasonText}}</text>
             </view>
             
-            <view class="detail-item poems-section">
-              <view class="detail-title">关联诗词：</view>
-              <view class="poem-item" wx:for="{{relatedPoems}}" wx:key="index">
-                <view class="poem-line" wx:for="{{item.relatedLines}}" wx:for-item="line" wx:key="index">
-                  {{line}}
-                </view>
-                <view class="poem-author">{{item.author}}</view>
-              </view>
-            </view>
+
           </view>
         </view>
       </view>
@@ -142,6 +119,9 @@
 
   <!-- 分享图片画布（隐藏） -->
   <canvas type="2d" id="shareCanvas" style="width: 750px; height: 1334px; position: absolute; left: -9999px; top: -9999px;"></canvas>
+  
+  <!-- 字卡保存画布（隐藏） -->
+  <canvas type="2d" id="character-canvas" style="width: 750px; height: 1334px; position: absolute; left: -9999px; top: -9999px;"></canvas>
   
   <!-- 设置窗口 -->
   <view class="setting-overlay" wx:if="{{settingVisible}}">

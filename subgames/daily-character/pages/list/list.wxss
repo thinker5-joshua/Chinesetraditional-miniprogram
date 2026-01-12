@@ -1,0 +1,214 @@
+/* 每日一字列表页面样式 */
+
+.container {
+  background-color: #f8f6f0;
+  min-height: 100vh;
+}
+
+/* 顶部导航栏 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  background-color: #8B4513;
+  color: white;
+  padding: 0 20rpx;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  flex: 1;
+}
+
+.back-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2rpx solid rgba(255, 255, 255, 0.4);
+  font-size: 32rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 8rpx;
+  transition: all 0.3s ease;
+  max-width: 120rpx;
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  z-index: 101;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-title {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 60px;
+}
+/* 筛选选项栏 */
+.filter-bar {
+  display: flex;
+  background-color: white;
+  padding: 15rpx 0;
+  border-bottom: 1rpx solid #e8e4d8;
+}
+
+.filter-item {
+  flex: 1;
+  text-align: center;
+  padding: 15rpx 0;
+  font-size: 32rpx;
+  color: #666;
+  border-bottom: 3rpx solid transparent;
+}
+
+.filter-item.active {
+  color: #8B4513;
+  border-bottom-color: #8B4513;
+  font-weight: bold;
+}
+
+/* 加载动画 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500rpx;
+}
+
+.loading {
+  width: 80rpx;
+  height: 80rpx;
+  border: 8rpx solid #f3f3f3;
+  border-top: 8rpx solid #8B4513;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 32rpx;
+  color: #666;
+}
+
+/* 字列表 */
+.character-list {
+  margin-top: 10rpx;
+}
+
+.empty-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.empty-text {
+  text-align: center;
+}
+
+.list-content {
+  padding: 0 20rpx;
+}
+
+/* 列表项 */
+.character-item {
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 25rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* 序号样式 */
+.item-index {
+  position: absolute;
+  top: 10rpx;
+  right: 15rpx;
+  font-size: 24rpx;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5rpx 10rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+.character {
+  margin-right: 30rpx;
+}
+
+.character-text {
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #8B4513;
+}
+
+.pronunciation {
+  flex: 1;
+}
+
+.pronunciation-text {
+  font-size: 36rpx;
+  color: #28a745;
+  font-weight: 500;
+}
+
+.item-body {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.phrases-label {
+  font-size: 32rpx;
+  color: #8B4513;
+  font-weight: 500;
+  margin-right: 10rpx;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.phrases-text {
+  flex: 1;
+  font-size: 32rpx;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* 响应式调整 */
+@media (max-width: 375px) {
+  .character-text {
+    font-size: 50rpx;
+  }
+  
+  .pronunciation-text {
+    font-size: 32rpx;
+  }
+  
+  .phrases-text {
+    font-size: 28rpx;
+  }
+}
