@@ -84,39 +84,54 @@
 .related-phrases {
   margin: 20rpx 0 40rpx 0;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .phrases-label {
-  font-size: 32rpx;
-  color: #666;
-  font-weight: 500;
+  font-size: 36rpx;
+  color: #8B4513;
+  font-weight: bold;
 }
 
 .phrases-text {
-  font-size: 32rpx;
-  color: #888;
+  font-size: 36rpx;
+  color: #8B4513;
+  font-weight: 500;
+}
+
+.phrases-list {
+  font-size: 36rpx;
+  color: #8B4513;
+  font-weight: 500;
+}
+
+.phrase-item {
+  font-size: 36rpx;
+  color: #8B4513;
+  font-weight: 500;
 }
 
 /* 选项列表 */
 .options-list {
   display: flex;
   flex-direction: column;
-  gap: 30rpx;
+  gap: 35rpx;
 }
 
 .option-item {
   background-color: #f5f5f5;
-  padding: 40rpx;
+  padding: 30rpx 40rpx;
   border-radius: 15rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   font-size: 42rpx;
   color: #555;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2rpx solid transparent;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 80rpx;
 }
 
 .option-item:active {
@@ -125,6 +140,7 @@
 
 .option-item.selected {
   border-color: #8B4513;
+  box-shadow: 0 0 0 4rpx rgba(139, 69, 19, 0.2);
 }
 
 .option-item.correct {
@@ -139,9 +155,72 @@
   color: #721c24;
 }
 
+/* 选项内容容器 */
+.option-content {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 选项标记 */
+.option-label {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: white;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+
+/* 选项文本 */
 .option-text {
   font-size: 42rpx;
   font-weight: 500;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 100rpx);
+}
+
+/* 每个选项的不同底色 */
+.option-0 {
+  background-color: #e3f2fd;
+}
+
+.option-1 {
+  background-color: #e8f5e9;
+}
+
+.option-2 {
+  background-color: #fff8e1;
+}
+
+.option-3 {
+  background-color: #f3e5f5;
+}
+
+/* 选项标记颜色 */
+.option-0 .option-label {
+  background-color: #2196f3;
+}
+
+.option-1 .option-label {
+  background-color: #4caf50;
+}
+
+.option-2 .option-label {
+  background-color: #ff9800;
+}
+
+.option-3 .option-label {
+  background-color: #9c27b0;
 }
 
 /* 结果容器 */

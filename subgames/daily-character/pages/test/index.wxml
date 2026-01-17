@@ -31,14 +31,19 @@
 
     <!-- 选项列表 -->
     <view class="options-list">
-      <view class="option-item" 
-            wx:for="{{testQuestions[currentQuestionIndex].options}}" 
-            wx:key="index"
-            bindtap="handleAnswerSelect"
-            data-answer="{{item}}"
-            class="{{testQuestions[currentQuestionIndex].userAnswer === item ? 'selected' : ''}} {{testQuestions[currentQuestionIndex].userAnswer && item === testQuestions[currentQuestionIndex].correctAnswer ? 'correct' : ''}} {{testQuestions[currentQuestionIndex].userAnswer && item !== testQuestions[currentQuestionIndex].correctAnswer && testQuestions[currentQuestionIndex].userAnswer === item ? 'wrong' : ''}}">
-        <text class="option-text">{{item}}</text>
-      </view>
+      <block wx:for="{{testQuestions[currentQuestionIndex].options}}" wx:key="index">
+        <view class="option-item" 
+              bindtap="handleAnswerSelect"
+              data-answer="{{item.value}}"
+              class="option-{{index}} {{selectedClass(testQuestions[currentQuestionIndex].userAnswer, item.value, testQuestions[currentQuestionIndex].correctAnswer)}}">
+          <view class="option-content">
+            <view class="option-label">
+              <text>{{item.label}}</text>
+            </view>
+            <text class="option-text">{{item.value}}</text>
+          </view>
+        </view>
+      </block>
     </view>
   </view>
 

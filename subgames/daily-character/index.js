@@ -20,6 +20,20 @@ try {
   };
 }
 
+// 引入云数据服务模块
+let cloudDataService = null;
+try {
+  cloudDataService = require('./cloudDataService.js').default;
+} catch (error) {
+  console.error('引入云数据服务模块失败:', error);
+  // 提供备用实现
+  cloudDataService = {
+    preloadData: () => Promise.resolve([]),
+    getRandomCharacter: () => Promise.resolve(null),
+    getAllCharacters: () => Promise.resolve([])
+  };
+}
+
 Page({
   /**
    * 页面的初始数据
@@ -56,11 +70,21 @@ Page({
   touchStartY: 0,
   touchMoveX: 0,
   touchMoveY: 0,
+  isTouchLocked: false, // 触摸锁定状态，用于防止页面滚动
+  touchLockThreshold: 30, // 触摸锁定阈值，单位px
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  async onLoad(options) {
+    // 禁止页面滚动
+    wx.setPageStyle({
+      style: {
+        overflow: 'hidden',
+        height: '100vh'
+      }
+    });
+    
     // 读取上次选择的难度模式
     const savedDifficulties = wx.getStorageSync('dailyCharacterDifficulties');
     
@@ -124,7 +148,8 @@ Page({
       testDifficulty
     });
     
-    this.loadCharacters();
+    // 异步加载数据
+    await this.loadCharacters();
   },
 
   /**
@@ -140,16 +165,41 @@ Page({
   /**
    * 加载汉字数据
    */
-  loadCharacters() {
-    const characters = require('./data-optimized.js').characters;
-    
-    this.setData({
-      allCharacters: characters,
-      filteredCharacters: characters,
-      loading: false
-    });
-    
-    this.loadRandomCharacter();
+  async loadCharacters() {
+    try {
+      this.setData({ loading: true });
+      
+      // 从云数据库预加载数据
+      const characters = await cloudDataService.preloadData();
+      
+      this.setData({
+        allCharacters: characters,
+        filteredCharacters: characters,
+        loading: false
+      });
+      
+      this.loadRandomCharacter();
+    } catch (error) {
+      console.error('加载数据失败:', error);
+      
+      // 加载失败时使用本地备用数据
+      try {
+        const characters = require('./data-optimized.js').characters;
+        this.setData({
+          allCharacters: characters,
+          filteredCharacters: characters,
+          loading: false
+        });
+        this.loadRandomCharacter();
+      } catch (localError) {
+        console.error('加载本地备用数据失败:', localError);
+        this.setData({ loading: false });
+        wx.showToast({
+          title: '加载数据失败，请重试',
+          icon: 'none'
+        });
+      }
+    }
   },
 
   /**
@@ -750,11 +800,13 @@ Page({
   getErrorReasonText(type) {
     const errorReasonMap = {
       1: '形声字误读',
-      2: '形近字混淆',  
-      3: '音近字/同音字混淆',
-      4: '多音字误读',
-      5: '字义误解',
-      6: '偏僻字/生僻字'
+      2: '多音字误读',
+      3: '声母误读',
+      4: '韵母误读',
+      5: '声调误读',
+      6: '形似字误读',
+      7: '方言影响误读',
+      8: '其他误读原因'
     };
     
     // 确保type是数字类型
@@ -1003,9 +1055,16 @@ Page({
 
   // 触摸开始事件
   onTouchStart(e) {
+    // 重置触摸锁定状态
+    this.isTouchLocked = false;
+    
     // 使用临时变量存储触摸开始位置
     this.touchStartX = e.touches[0].clientX;
     this.touchStartY = e.touches[0].clientY;
+    
+    // 检测触摸起始位置，如果在页面右边缘（右侧20px以内），保留右滑退出功能
+    const windowWidth = wx.getSystemInfoSync().windowWidth;
+    this.isEdgeTouch = (windowWidth - this.touchStartX) < 20;
   },
 
   // 触摸移动事件
@@ -1013,6 +1072,26 @@ Page({
     // 使用临时变量存储触摸移动位置
     this.touchMoveX = e.touches[0].clientX;
     this.touchMoveY = e.touches[0].clientY;
+    
+    // 计算滑动距离
+    const deltaX = this.touchMoveX - this.touchStartX;
+    const deltaY = this.touchMoveY - this.touchStartY;
+    
+    // 如果是边缘触摸，保留默认行为（右滑退出）
+    if (this.isEdgeTouch) {
+      return;
+    }
+    
+    // 如果还没有锁定，检查是否超过阈值
+    if (!this.isTouchLocked) {
+      // 如果水平滑动距离超过阈值，锁定触摸事件
+      if (Math.abs(deltaX) > this.touchLockThreshold) {
+        this.isTouchLocked = true;
+      }
+    }
+    
+    // 阻止所有垂直滚动，只允许水平滑动
+    e.preventDefault();
   },
 
   // 触摸结束事件
@@ -1021,16 +1100,19 @@ Page({
     const deltaX = this.touchMoveX - this.touchStartX;
     const deltaY = this.touchMoveY - this.touchStartY;
     
-    // 增加滑动检测的阈值，只有明显的滑动动作才会触发翻页
-    // 水平移动距离需要大于100px，且水平移动距离大于垂直移动距离的2倍
-    // 这样可以确保只有真正的滑动才会触发翻页，避免点击时的轻微移动被误识别
-    if (Math.abs(deltaX) > 100 && Math.abs(deltaX) > Math.abs(deltaY) * 2) {
-      if (deltaX > 0) {
-        // 向右滑动，显示上一个汉字
-        this.showPreviousCharacter();
-      } else {
-        // 向左滑动，显示下一个汉字
-        this.showNextCharacter();
+    // 如果是边缘触摸，不处理字卡切换
+    if (!this.isEdgeTouch) {
+      // 增加滑动检测的阈值，只有明显的滑动动作才会触发翻页
+      // 水平移动距离需要大于100px，且水平移动距离大于垂直移动距离的2倍
+      // 这样可以确保只有真正的滑动才会触发翻页，避免点击时的轻微移动被误识别
+      if (Math.abs(deltaX) > 100 && Math.abs(deltaX) > Math.abs(deltaY) * 2) {
+        if (deltaX > 0) {
+          // 向右滑动，显示上一个汉字
+          this.showPreviousCharacter();
+        } else {
+          // 向左滑动，显示下一个汉字
+          this.showNextCharacter();
+        }
       }
     }
     
@@ -1039,5 +1121,7 @@ Page({
     this.touchStartY = 0;
     this.touchMoveX = 0;
     this.touchMoveY = 0;
+    this.isTouchLocked = false;
+    this.isEdgeTouch = false;
   }
 });

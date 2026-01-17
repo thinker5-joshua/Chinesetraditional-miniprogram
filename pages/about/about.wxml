@@ -121,6 +121,13 @@
           <text class="game-desc">抽取古建脊兽作为守护神兽，探索其象征意义和文化内涵</text>
         </view>
       </view>
+      <view class="game-item">
+        <view class="game-icon character-icon">字</view>
+        <view class="game-info">
+          <text class="game-name">每日一字</text>
+          <text class="game-desc">每日学习一个易读错的汉字，提升汉字认知水平</text>
+        </view>
+      </view>
     </view>
   </view>
 

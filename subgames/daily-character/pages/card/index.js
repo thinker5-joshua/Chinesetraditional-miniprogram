@@ -1,4 +1,6 @@
 // 字卡展示页面
+const cloudDataService = require('../../cloudDataService').default;
+
 Page({
   /**
    * 页面的初始数据
@@ -19,32 +21,56 @@ Page({
   /**
    * 加载汉字详情
    */
-  loadCharacter() {
-    const characters = require('../../data-optimized.js').characters;
-    const poems = require('../../poems-optimized.js').poems;
-    
-    // 简单实现：随机选择一个汉字展示
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    const character = characters[randomIndex];
-    
-    // 加载关联的诗词
-    const relatedPoems = poems.filter(poem => poem.charId === character.id);
-    
-    this.setData({
-      character: character,
-      relatedPoems: relatedPoems,
-      loading: false
-    });
+  async loadCharacter() {
+    try {
+      console.log('开始加载字卡数据...');
+      
+      // 使用云数据服务的每日一字功能
+      const character = await cloudDataService.getDailyCharacter();
+      
+      console.log('字卡数据加载成功:', character.char);
+      
+      // 这里可以添加诗词关联逻辑
+      // 暂时使用空数组
+      const relatedPoems = [];
+      
+      this.setData({
+        character: character,
+        relatedPoems: relatedPoems,
+        loading: false
+      });
+    } catch (error) {
+      console.error('字卡数据加载失败:', error);
+      this.setData({
+        loading: false
+      });
+    }
   },
 
   /**
    * 重新加载一个新的汉字
    */
-  reloadCharacter() {
+  async reloadCharacter() {
     this.setData({ loading: true });
-    setTimeout(() => {
-      this.loadCharacter();
-    }, 500);
+    try {
+      console.log('重新加载字卡数据...');
+      
+      // 使用云数据服务的随机汉字功能
+      const character = await cloudDataService.getRandomCharacter();
+      
+      console.log('字卡数据重新加载成功:', character.char);
+      
+      const relatedPoems = [];
+      
+      this.setData({
+        character: character,
+        relatedPoems: relatedPoems,
+        loading: false
+      });
+    } catch (error) {
+      console.error('字卡数据重新加载失败:', error);
+      this.setData({ loading: false });
+    }
   },
 
   /**

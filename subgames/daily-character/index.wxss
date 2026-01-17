@@ -1,10 +1,24 @@
 /* 全局样式 */
+page {
+  overflow: hidden;
+  height: 100vh;
+  touch-action: pan-y;
+}
+
+/* 全局样式 */
 .app-container {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background-color: #faf8f3;
   font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Button默认样式重置 - 只针对次要按钮 */
@@ -189,6 +203,7 @@ button.secondary-btn::after {
   margin-top: 0rpx;
   margin-bottom: 80rpx;
   position: relative;
+  overflow: hidden;
 }
 
 /* 字卡容器 */
@@ -200,6 +215,8 @@ button.secondary-btn::after {
   position: relative;
   padding-bottom: 0rpx;
   margin-top: 0rpx;
+  overflow: hidden;
+  height: 100%;
 }
 
 .card {
@@ -216,6 +233,8 @@ button.secondary-btn::after {
   margin: 0 auto;
   padding: 0;
   min-height: 900rpx;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .card-face {
@@ -668,7 +687,7 @@ button.secondary-btn::after {
 }
 
 .setting-content {
-  padding: 40rpx;
+  padding: 50rpx;
 }
 
 .setting-section {
@@ -680,34 +699,34 @@ button.secondary-btn::after {
 }
 
 .setting-section-title {
-  font-size: 28rpx;
+  font-size: 32rpx;
   font-weight: bold;
   color: #8B4513;
-  margin-bottom: 20rpx;
+  margin-bottom: 25rpx;
   display: block;
 }
 
 .setting-section-desc {
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #666;
-  margin-bottom: 35rpx;
-  line-height: 1.5;
+  margin-bottom: 40rpx;
+  line-height: 1.6;
   display: block;
 }
 
 /* 设置中的难度选项 */
 .setting-section .difficulty-options {
   display: flex;
-  gap: 20rpx;
+  gap: 25rpx;
   justify-content: center;
   margin-top: 20rpx;
 }
 
 .setting-section .difficulty-option {
   text-align: center;
-  padding: 16rpx 20rpx;
+  padding: 18rpx 24rpx;
   border-radius: 16rpx;
-  font-size: 28rpx;
+  font-size: 32rpx;
   background-color: #f8f5e6;
   color: #8B4513;
   cursor: pointer;
@@ -733,16 +752,16 @@ button.secondary-btn::after {
 /* 测试难度选项 */
 .test-difficulty-options {
   display: flex;
-  gap: 20rpx;
+  gap: 25rpx;
   justify-content: center;
   margin-top: 20rpx;
 }
 
 .test-difficulty-option {
   text-align: center;
-  padding: 16rpx 28rpx;
+  padding: 18rpx 32rpx;
   border-radius: 16rpx;
-  font-size: 28rpx;
+  font-size: 32rpx;
   background-color: #f8f5e6;
   color: #8B4513;
   cursor: pointer;
@@ -769,15 +788,15 @@ button.secondary-btn::after {
 .setting-buttons {
   display: flex;
   gap: 20rpx;
-  padding: 20rpx 30rpx 30rpx;
+  padding: 30rpx 30rpx 40rpx;
   justify-content: center;
 }
 
 .setting-btn {
   flex: 1;
-  height: 80rpx;
+  height: 85rpx;
   border-radius: 16rpx;
-  font-size: 30rpx;
+  font-size: 32rpx;
   font-weight: bold;
   transition: all 0.3s ease;
   padding: 0;

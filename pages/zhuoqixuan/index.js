@@ -6,10 +6,10 @@ Page({
   data: {
     gameList: [
       {
-        id: 'daily-character',
-        name: '每日一字',
-        iconText: '字',
-        cssClass: 'character-icon'
+        id: 'future',
+        name: '成语消除',
+        iconText: '语',
+        cssClass: 'chengyu-icon'
       },
       {
         id: 'WuxingMysteries',

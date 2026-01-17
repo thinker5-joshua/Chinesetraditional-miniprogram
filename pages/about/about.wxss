@@ -218,7 +218,8 @@ page {
 .poetry-icon { background: linear-gradient(135deg, #6C5CE7 0%, #A55EEA 100%); }
 .wuxing-icon { background: linear-gradient(135deg, #FFD700 0%, #8B4513 100%); }
 .root-icon { background: linear-gradient(135deg, #636E72 0%, #2D3436 100%); }
-.beast-icon { background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%); }
+.beast-icon { background: linear-gradient(135deg, #FF8C00 0%, #FF4500 100%); }
+.character-icon { background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%); }
 
 /* 联系信息 */
 .contact-info {

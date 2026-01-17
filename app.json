@@ -3,37 +3,82 @@
     "pages/index/index",
     "pages/game/game",
     "pages/about/about",
-    "pages/zhuoqixuan/index",
-    "subgames/64Hexagrams/pages/hexagram-list/hexagram-list",
-    "subgames/64Hexagrams/pages/hexagram-detail/hexagram-detail",
-    "subgames/64Hexagrams/pages/group-view/group-view",
-    "subgames/64Hexagrams/pages/matching/matching",
-    "subgames/future/index",
-    "subgames/64Hexagrams/index",
-    "subgames/28Stars/index",
-    "subgames/28Stars/pages/constellation-map/constellation-map",
-    "subgames/28Stars/pages/star-matching/star-matching",
-    "subgames/72DreamlandPoetryTravel/index",
-    "subgames/family/index",
-    "subgames/VegetableRootSayings/index",
-    "subgames/WuxingMysteries/index",
-    "subgames/WuxingMysteries/pages/main/index",
-    "subgames/WuxingMysteries/pages/wuxing/index",
-    "subgames/WuxingMysteries/pages/wufang/index",
-    "subgames/WuxingMysteries/pages/wuse/index",
-    "subgames/WuxingMysteries/pages/wuzang/index",
-    "subgames/WuxingMysteries/pages/detail/detail",
-    "subgames/guardian-beast/index",
-    "subgames/guardian-beast/draw",
-    "subgames/guardian-beast/result",
-    "subgames/guardian-beast/poster",
-    "subgames/guardian-beast/knowledge/list",
-    "subgames/guardian-beast/knowledge/detail",
-    "subgames/daily-character/index",
-    "subgames/daily-character/pages/card/index",
-    "subgames/daily-character/pages/test/index",
-    "subgames/daily-character/pages/list/list"
+    "pages/zhuoqixuan/index"
   ],
+  "subPackages": [
+    {
+      "root": "subgames/28Stars",
+      "pages": [
+        "index",
+        "pages/constellation-map/constellation-map",
+        "pages/star-matching/star-matching"
+      ]
+    },
+    {
+      "root": "subgames/64Hexagrams",
+      "pages": [
+        "index",
+        "pages/group-view/group-view",
+        "pages/hexagram-detail/hexagram-detail",
+        "pages/hexagram-list/hexagram-list",
+        "pages/matching/matching"
+      ]
+    },
+    {
+      "root": "subgames/72DreamlandPoetryTravel",
+      "pages": ["index"]
+    },
+    {
+      "root": "subgames/VegetableRootSayings",
+      "pages": ["index"]
+    },
+    {
+      "root": "subgames/WuxingMysteries",
+      "pages": [
+        "index",
+        "pages/main/index",
+        "pages/wuxing/index",
+        "pages/wufang/index",
+        "pages/wuse/index",
+        "pages/wuzang/index",
+        "pages/detail/detail"
+      ]
+    },
+    {
+      "root": "subgames/daily-character",
+      "pages": [
+        "index",
+        "pages/card/index",
+        "pages/test/index",
+        "pages/list/list"
+      ]
+    },
+    {
+      "root": "subgames/family",
+      "pages": ["index"]
+    },
+    {
+      "root": "subgames/future",
+      "pages": ["index"]
+    },
+    {
+      "root": "subgames/guardian-beast",
+      "pages": [
+        "index",
+        "draw",
+        "result",
+        "poster",
+        "knowledge/list",
+        "knowledge/detail"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["subgames/guardian-beast", "subgames/64Hexagrams", "subgames/daily-character", "subgames/VegetableRootSayings"]
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#8B4513",

@@ -48,10 +48,18 @@ Page({
         [options[i], options[j]] = [options[j], options[i]];
       }
       
+      // 为选项添加A/B/C/D标记
+      const optionsWithLabels = options.map((option, idx) => {
+        return {
+          label: String.fromCharCode(65 + idx),
+          value: option
+        };
+      });
+      
       testQuestions.push({
         character: character.char,
         correctAnswer: character.correctPronunciation,
-        options: options,
+        options: optionsWithLabels,
         userAnswer: null,
         relatedPhrases: character.relatedPhrases || []
       });
@@ -86,6 +94,17 @@ Page({
     setTimeout(() => {
       this.nextQuestion();
     }, 500);
+  },
+  
+  /**
+   * 计算选项的类名
+   */
+  selectedClass(userAnswer, itemValue, correctAnswer) {
+    if (!userAnswer) return '';
+    if (userAnswer === itemValue && itemValue === correctAnswer) return 'selected correct';
+    if (userAnswer === itemValue && itemValue !== correctAnswer) return 'selected wrong';
+    if (itemValue === correctAnswer) return 'correct';
+    return '';
   },
 
   /**

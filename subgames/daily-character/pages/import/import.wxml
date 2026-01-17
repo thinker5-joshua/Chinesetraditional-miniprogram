@@ -1,0 +1,79 @@
+<!-- 数据导入测试页面 -->
+<view class="container">
+  <view class="header">
+    <text class="title">数据导入测试</text>
+    <text class="subtitle">将每日一字数据导入到云数据库</text>
+  </view>
+
+  <view class="content">
+    <view class="info-card">
+      <text class="info-title">导入信息</text>
+      <view class="info-item">
+        <text class="info-label">数据文件：</text>
+        <text class="info-value">export_data.json</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">目标集合：</text>
+        <text class="info-value">daily_characters</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">预计数据量：</text>
+        <text class="info-value">462 条</text>
+      </view>
+    </view>
+
+    <view class="button-area">
+      <button 
+        class="primary-button" 
+        bindtap="importData" 
+        disabled="{{isImporting}}"
+        loading="{{isImporting}}"
+      >
+        {{isImporting ? '导入中...' : '开始导入'}}
+      </button>
+      <button 
+        class="secondary-button" 
+        bindtap="checkData"
+        disabled="{{isImporting}}"
+      >
+        检查数据
+      </button>
+    </view>
+
+    <view class="result-area" wx:if="{{importResult}}">
+      <text class="result-title">导入结果</text>
+      <view class="result-item">
+        <text class="result-label">状态：</text>
+        <text class="result-value {{importResult.success ? 'success' : 'error'}}">
+          {{importResult.success ? '成功' : '失败'}}
+        </text>
+      </view>
+      <view class="result-item">
+        <text class="result-label">消息：</text>
+        <text class="result-value">{{importResult.message}}</text>
+      </view>
+      <view class="result-item" wx:if="{{importResult.imported}}">
+        <text class="result-label">成功导入：</text>
+        <text class="result-value">{{importResult.imported}} 条</text>
+      </view>
+      <view class="result-item" wx:if="{{importResult.failed}}">
+        <text class="result-label">失败：</text>
+        <text class="result-value">{{importResult.failed}} 条</text>
+      </view>
+      <view class="result-item" wx:if="{{importResult.total}}">
+        <text class="result-label">总计：</text>
+        <text class="result-value">{{importResult.total}} 条</text>
+      </view>
+    </view>
+
+    <view class="logs-area" wx:if="{{logs.length > 0}}">
+      <text class="logs-title">操作日志</text>
+      <scroll-view class="logs-scroll" scroll-y="true">
+        <view class="log-item" wx:for="{{logs}}" wx:key="index">
+          <text class="log-time">{{item.time}}</text>
+          <text class="log-content">{{item.content}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

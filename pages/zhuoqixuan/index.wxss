@@ -154,6 +154,12 @@ page {
   box-shadow: 0 6rpx 20rpx rgba(102, 126, 234, 0.25);
 }
 
+/* 成语消除图标颜色 */
+.chengyu-icon {
+  background: linear-gradient(135deg, #FF6B6B 0%, #C44569 100%);
+  box-shadow: 0 6rpx 20rpx rgba(255, 107, 107, 0.25);
+}
+
 /* 每日一字图标颜色 */
 .character-icon {
   background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);

@@ -43,8 +43,19 @@ Page({
     touchStartY: 0,
     touchMoveX: 0,
     touchMoveY: 0,
+    isTouchLocked: false, // 触摸锁定状态，用于防止页面滚动
+    touchLockThreshold: 30, // 触摸锁定阈值，单位px
+    isEdgeTouch: false, // 是否为边缘触摸，用于保留右滑退出功能
 
     onLoad() {
+        // 禁止页面滚动
+        wx.setPageStyle({
+          style: {
+            overflow: 'hidden',
+            height: '100vh'
+          }
+        });
+        
         this.initializeGroups();
         this.initializeRandomHexagrams();
         
@@ -311,9 +322,17 @@ Page({
 
     // 触摸开始事件
     onTouchStart(e) {
+        // 重置触摸锁定状态
+        this.isTouchLocked = false;
+        this.isEdgeTouch = false;
+        
         // 使用临时变量存储触摸开始位置
         this.touchStartX = e.touches[0].clientX;
         this.touchStartY = e.touches[0].clientY;
+        
+        // 检测触摸起始位置，如果在页面右边缘（右侧20px以内），保留右滑退出功能
+        const windowWidth = wx.getSystemInfoSync().windowWidth;
+        this.isEdgeTouch = (windowWidth - this.touchStartX) < 20;
     },
 
     // 触摸移动事件
@@ -321,6 +340,26 @@ Page({
         // 使用临时变量存储触摸移动位置
         this.touchMoveX = e.touches[0].clientX;
         this.touchMoveY = e.touches[0].clientY;
+        
+        // 计算滑动距离
+        const deltaX = this.touchMoveX - this.touchStartX;
+        const deltaY = this.touchMoveY - this.touchStartY;
+        
+        // 如果是边缘触摸，保留默认行为（右滑退出）
+        if (this.isEdgeTouch) {
+            return;
+        }
+        
+        // 如果还没有锁定，检查是否超过阈值
+        if (!this.isTouchLocked) {
+            // 如果水平滑动距离超过阈值，锁定触摸事件
+            if (Math.abs(deltaX) > this.touchLockThreshold) {
+                this.isTouchLocked = true;
+            }
+        }
+        
+        // 阻止所有垂直滚动，只允许水平滑动
+        e.preventDefault();
     },
 
     // 触摸结束事件
@@ -330,27 +369,30 @@ Page({
         const deltaY = this.touchMoveY - this.touchStartY;
         const { viewMode } = this.data;
         
-        // 增加滑动检测的阈值，只有明显的滑动动作才会触发翻页
-        // 水平移动距离需要大于100px，且水平移动距离大于垂直移动距离的2倍
-        // 这样可以确保只有真正的滑动才会触发翻页，避免点击时的轻微移动被误识别
-        if (Math.abs(deltaX) > 100 && Math.abs(deltaX) > Math.abs(deltaY) * 2) {
-            if (viewMode === 'sixYaoChange') {
-                // 六爻变模式
-                if (deltaX > 0) {
-                    // 向右滑动，显示上一个卦象
-                    this.previousSixYaoHexagram();
-                } else {
-                    // 向左滑动，显示下一个卦象
-                    this.nextSixYaoHexagram();
-                }
-            } else if (viewMode === 'random') {
-                // 随机翻阅模式
-                if (deltaX > 0) {
-                    // 向右滑动，显示上一个卦象
-                    this.previousRandomHexagram();
-                } else {
-                    // 向左滑动，显示下一个卦象
-                    this.nextRandomHexagram();
+        // 如果是边缘触摸，不处理卦卡切换
+        if (!this.isEdgeTouch) {
+            // 增加滑动检测的阈值，只有明显的滑动动作才会触发翻页
+            // 水平移动距离需要大于100px，且水平移动距离大于垂直移动距离的2倍
+            // 这样可以确保只有真正的滑动才会触发翻页，避免点击时的轻微移动被误识别
+            if (Math.abs(deltaX) > 100 && Math.abs(deltaX) > Math.abs(deltaY) * 2) {
+                if (viewMode === 'sixYaoChange') {
+                    // 六爻变模式
+                    if (deltaX > 0) {
+                        // 向右滑动，显示上一个卦象
+                        this.previousSixYaoHexagram();
+                    } else {
+                        // 向左滑动，显示下一个卦象
+                        this.nextSixYaoHexagram();
+                    }
+                } else if (viewMode === 'random') {
+                    // 随机翻阅模式
+                    if (deltaX > 0) {
+                        // 向右滑动，显示上一个卦象
+                        this.previousRandomHexagram();
+                    } else {
+                        // 向左滑动，显示下一个卦象
+                        this.nextRandomHexagram();
+                    }
                 }
             }
         }
@@ -360,6 +402,8 @@ Page({
         this.touchStartY = 0;
         this.touchMoveX = 0;
         this.touchMoveY = 0;
+        this.isTouchLocked = false;
+        this.isEdgeTouch = false;
     },
 
     // 生成六爻按钮配置

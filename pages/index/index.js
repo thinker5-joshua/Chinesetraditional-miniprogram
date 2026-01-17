@@ -30,10 +30,10 @@ Page({
         cssClass: 'guardian-icon'
       },
       {
-        id: 'future',
-        title: '成语消除',
-        iconText: '语',
-        cssClass: 'chengyu-icon'
+        id: 'daily-character',
+        title: '每日一字',
+        iconText: '字',
+        cssClass: 'character-icon'
       },
       {
         id: '64Hexagrams',

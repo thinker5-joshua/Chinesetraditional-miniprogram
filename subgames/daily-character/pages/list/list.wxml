@@ -42,17 +42,17 @@
     wx:else 
     class="character-list" 
     scroll-y 
-    style="height: calc(100vh - 160px);"
+    style="height: calc(100vh - 220px);"
   >
-    <view wx:if="{{characterList.length === 0}}" class="empty-list">
+    <view wx:if="{{paginationData.length === 0}}" class="empty-list">
       <text class="empty-text">暂无符合条件的汉字</text>
     </view>
     
     <view wx:else class="list-content">
       <!-- 列表项 -->
-      <view wx:for="{{characterList}}" wx:key="id" class="character-item">
+      <view wx:for="{{paginationData}}" wx:key="id" class="character-item">
         <!-- 序号 -->
-        <view class="item-index">{{index + 1}}</view>
+        <view class="item-index">{{(currentPage - 1) * pageSize + index + 1}}</view>
         
         <view class="item-header">
           <view class="character">
@@ -77,4 +77,39 @@
       </view>
     </view>
   </scroll-view>
+
+  <!-- 分页控制 -->
+  <view wx:if="{{showPagination}}" class="pagination-container">
+    <view class="pagination-info">
+      <text>第 {{currentPage}}/{{totalPages}} 页</text>
+      <text>共 {{totalItems}} 条</text>
+    </view>
+    <view class="pagination-controls">
+      <button 
+        class="page-button" 
+        bindtap="prevPage" 
+        disabled="{{currentPage === 1}}"
+      >
+        上一页
+      </button>
+      <view class="page-input-container">
+        <input 
+          class="page-input" 
+          value="{{currentPage}}" 
+          bindconfirm="goToPageByInput"
+          type="number"
+          min="1"
+          max="{{totalPages}}"
+        />
+        <text class="page-input-hint">/{{totalPages}}</text>
+      </view>
+      <button 
+        class="page-button" 
+        bindtap="nextPage" 
+        disabled="{{currentPage === totalPages}}"
+      >
+        下一页
+      </button>
+    </view>
+  </view>
 </view>
