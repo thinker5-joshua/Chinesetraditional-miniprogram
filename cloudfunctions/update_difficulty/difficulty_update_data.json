@@ -1,0 +1,802 @@
+[
+  {
+    "charId": 40,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 48,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 83,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 87,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 91,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 99,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 110,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 141,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 155,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 185,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 188,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 217,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 224,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 237,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 246,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 290,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 323,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 348,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 350,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 352,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 378,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.967Z"
+  },
+  {
+    "charId": 396,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 397,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 401,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 421,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 443,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 463,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 464,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 471,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 474,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 475,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 479,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 482,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 483,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 485,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 492,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 497,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 513,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 514,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 515,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 516,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 518,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 530,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 531,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 532,
+    "difficultyLevel": "挑战级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 16,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 19,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 20,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 26,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 27,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 31,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 42,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 45,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 46,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 51,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 52,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 55,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 56,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 61,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 65,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 74,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 80,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 81,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 82,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 85,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 86,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 92,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 95,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 96,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 102,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 105,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 108,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 115,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 117,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 122,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 126,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.991Z"
+  },
+  {
+    "charId": 137,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 142,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 159,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 173,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 174,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 194,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 198,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 200,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 208,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 210,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 214,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 215,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 229,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 231,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 238,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 239,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 241,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 242,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 243,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 244,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 245,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 248,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 255,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 258,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 262,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 281,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 286,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 298,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 303,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 307,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 332,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 334,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 336,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 339,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 340,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 343,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 346,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 347,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 355,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 358,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 361,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 365,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 366,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 368,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 372,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 373,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 376,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 380,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 383,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 384,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 385,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 387,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 390,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 391,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 393,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 394,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 400,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.992Z"
+  },
+  {
+    "charId": 408,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 409,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 410,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 418,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 420,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 422,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 425,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 428,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 429,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:28.999Z"
+  },
+  {
+    "charId": 430,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 432,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 433,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 434,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 437,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 441,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 442,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 446,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 453,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 459,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 460,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 37,
+    "difficultyLevel": "初级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 44,
+    "difficultyLevel": "初级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 47,
+    "difficultyLevel": "初级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 64,
+    "difficultyLevel": "初级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 67,
+    "difficultyLevel": "初级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 73,
+    "difficultyLevel": "初级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  },
+  {
+    "charId": 3,
+    "difficultyLevel": "高级",
+    "updatedAt": "2026-01-17T05:05:29.001Z"
+  }
+]

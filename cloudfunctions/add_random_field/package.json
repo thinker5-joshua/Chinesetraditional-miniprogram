@@ -1,0 +1,15 @@
+{
+  "name": "add_random_field",
+  "version": "1.0.0",
+  "description": "为围炉夜话格言添加randomField字段",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "~2.3.3"
+  }
+}
