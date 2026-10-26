@@ -24,7 +24,12 @@
   "compileType": "miniprogram",
   "simulatorPluginLibVersion": {},
   "packOptions": {
-    "ignore": [],
+    "ignore": [
+      {
+        "type": "folder",
+        "value": "cloud-data-backup"
+      }
+    ],
     "include": []
   },
   "appid": "wx4a01b43f997284bc",

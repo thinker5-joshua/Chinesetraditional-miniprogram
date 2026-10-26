@@ -8,6 +8,7 @@
 // explanation: 字典解释
 // errorReasonType: 常见错误原因分类
 // difficultyLevel: 测试难度等级（初级、中级、高级、挑战级）
+// 数据来源：微信云数据库 daily_characters 集合导出（2026-10-26 取回，共 629 条）
 
 const characters = [
   {
@@ -39,8 +40,7 @@ const characters = [
     "relatedPhrases": [
       "巷道",
       "平巷",
-      "矿巷",
-      "巷战"
+      "矿巷"
     ],
     "explanation": "巷（hàng）指采矿或探矿时在地面或地下挖掘的大致成水平方向的坑道，一般用于工矿领域，如“巷道”。此读音主要用于特定专业术语，与表示街道、胡同的“巷（xiàng）”区分。",
     "errorReasonType": 2,
@@ -62,7 +62,7 @@ const characters = [
     ],
     "explanation": "薄（bò）：用于“薄荷”，多年生草本植物，茎和叶有清凉香味，可入药，或用于食品、日化等。此读音专用于该植物名称。",
     "errorReasonType": 2,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 4,
@@ -169,11 +169,11 @@ const characters = [
     ],
     "relatedPhrases": [
       "百载树人",
-      "饿莩载道",
-      "跗萼载韡",
+      "三年五载",
+      "刊载",
       "千载难逢"
     ],
-    "explanation": "载（zǎi）：① 记录；刊登：记载 | 刊载 | 转载。② 年：一年半载 | 千载难逢。③ 表示同时做两个动作：载歌载舞。",
+    "explanation": "载（zǎi）：① 记录；刊登：记载 | 刊载 | 转载。② 年：一年半载 | 千载难逢。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -218,15 +218,13 @@ const characters = [
     "char": "场",
     "correctPronunciation": "cháng",
     "wrongPronunciations": [
-      "chǎng",
-      "cháng (作为量词时)",
-      "cháng (作为姓氏时)"
+      "chǎng"
     ],
     "relatedPhrases": [
       "矮人观场",
       "打谷场",
-      "膏场绣浍",
-      "场地"
+      "赶场",
+      "一场大雪"
     ],
     "explanation": "场（cháng）：1. 平坦的空地，多用来翻晒粮食，碾轧谷物。如：打场、场院。2. 量词，用于事情的经过。如：一场大雨、一场空欢喜。3. 集市。如：赶场。4. 用于文娱体育活动的次数。如：一场电影。注意：此读音主要用于与农事活动、集市及作为量词时。",
     "errorReasonType": 2,
@@ -264,7 +262,7 @@ const characters = [
       "种谔",
       "种师道"
     ],
-    "explanation": "chóng：1. 副词，表示动作、行为的重复或再次发生，相当于“再”、“又”。2. 量词，用于重叠、积累的事物，如“九重天”。3. 动词，使重叠在一起；重复。4. 形容词，层，如“重峦叠嶂”。",
+    "explanation": "种（Zhǒng）： 姓。 例：种暠（东汉名臣）、种世衡（北宋名将）。",
     "errorReasonType": 2,
     "difficultyLevel": "初级"
   },
@@ -303,7 +301,7 @@ const characters = [
     ],
     "explanation": "1. 一种烹调方法，把食物放到沸水里稍微一煮：汆丸子、汆汤。2. 方言，用汆子（烧水用的薄铁筒）快速烧水：汆一汆子水。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 17,
@@ -333,10 +331,10 @@ const characters = [
       "dǎng"
     ],
     "relatedPhrases": [
-      "当仁不让",
+      "当铺",
       "安步当车",
-      "长歌当哭",
-      "大而无当"
+      "以一当十",
+      "上当受骗"
     ],
     "explanation": "当（dàng）字在此读音下主要有以下释义：1. 合适；合宜。如：恰当、妥当。2. 抵得上；等于。如：以一当十。3. 作为；当作。如：安步当车。4. 认为；以为。如：当真。5. 指事情发生的（时间）。如：当天、当年。6. 抵押物品的铺子。如：当铺。",
     "errorReasonType": 2,
@@ -358,7 +356,7 @@ const characters = [
     ],
     "explanation": "胴（dòng）：1. 躯干，身体除去头部、四肢的部分。2. 大肠。3. 某些器物中间空的部分。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 20,
@@ -377,7 +375,7 @@ const characters = [
     ],
     "explanation": "掇（duō）：1. 拾取；摘取。如：掇拾。2. 用双手拿；搬取。如：掇条凳子。3. 整理；收拾。如：拾掇。4. 怂恿；劝诱。如：撺掇。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 21,
@@ -428,10 +426,10 @@ const characters = [
     "relatedPhrases": [
       "呱呱坠地",
       "呱呱而泣",
-      "呱呱声",
-      "呱呱叫"
+      "呱泣",
+      "呱啼"
     ],
-    "explanation": "1. 象声词，形容鸭子、青蛙等的叫声。2. 形容小儿哭声：呱呱而泣。3. 形容好、出色：呱呱叫。",
+    "explanation": " 拟声词，形容小儿哭声：呱呱而泣。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -491,7 +489,7 @@ const characters = [
     ],
     "explanation": "骸 hái：1. 骨头（多指人的）：尸骸。骸骨。2. 借指身体：形骸。病骸。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 27,
@@ -510,7 +508,7 @@ const characters = [
     ],
     "explanation": "动词。1. 拔除（杂草等）：薅草。2. 揪：薅下几根头发。3. 引申为获取好处（多指通过不正当手段或占小便宜）：薅羊毛。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 28,
@@ -563,8 +561,7 @@ const characters = [
     "relatedPhrases": [
       "和面",
       "和泥",
-      "和面团",
-      "和稀泥"
+      "和面团"
     ],
     "explanation": "动词。1. 在粉状物中加液体搅拌或揉弄使有黏性：和面、和泥。2. 量词，指洗东西换水的次数或一剂药煎的次数：衣裳洗了三和、二和药。",
     "errorReasonType": 2,
@@ -587,7 +584,7 @@ const characters = [
     ],
     "explanation": "囫：音hú。本义指完整、整个的。在现代汉语中，主要与“囵”字连用，构成“囫囵”一词，表示完整、整个儿、浑然一体，多用来形容对事物不加分析、笼统接受或含糊不清的状态，如“囫囵吞枣”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 32,
@@ -599,10 +596,7 @@ const characters = [
       "huī"
     ],
     "relatedPhrases": [
-      "溃脓",
-      "溃脓",
-      "溃破",
-      "溃疡"
+      "溃脓"
     ],
     "explanation": "溃（huì）：1. 同“殨”，指疮溃烂。2. 溃（huì）脓：指疮口化脓。此为“溃”字的一个较少见的读音，主要用于医学或特定语境中描述疮疡化脓。",
     "errorReasonType": 2,
@@ -701,7 +695,7 @@ const characters = [
     ],
     "explanation": "酵：读音为jiào。本义指发酵，即有机物在微生物（如酵母菌、细菌等）的作用下分解，产生气体、酸、酒精等物质的过程。也指能使有机物发酵的物质，如酵母、酵素。在现代汉语中，主要用于与发酵相关的词汇。",
     "errorReasonType": 3,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "初级"
   },
   {
     "id": 38,
@@ -758,7 +752,7 @@ const characters = [
     ],
     "explanation": "羼，读音为chàn。本义为群羊杂居，引申为掺杂、混杂的意思。在《说文解字》中解释为“羊相厕也”，即羊群混杂在一起。现代汉语中多用于表示将不同的东西掺杂、混合在一起，常含贬义，指胡乱掺入劣质或不相干的东西。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 41,
@@ -795,7 +789,7 @@ const characters = [
     ],
     "explanation": "憧（chōng）：1. 心意不定。2. 向往；憧憬。如“憧憬未来”，表示对美好事物的向往和期待。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 43,
@@ -832,7 +826,7 @@ const characters = [
     ],
     "explanation": "讪：shàn。1. 讥笑，如“讪笑”。2. 难为情的样子，如“讪讪地走开”。3. 搭讪，为接近对方而找话说。",
     "errorReasonType": 3,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "初级"
   },
   {
     "id": 45,
@@ -851,7 +845,7 @@ const characters = [
     ],
     "explanation": "龋（qǔ）：牙齿被腐蚀而残缺。本义指蛀牙，牙齿因细菌作用而发生的腐蚀性病变。也泛指物体被腐蚀而残缺。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 46,
@@ -870,7 +864,7 @@ const characters = [
     ],
     "explanation": "骁（xiāo）：1. 好马。2. 勇猛矫健：～勇。～将。～悍。～骑（勇猛的骑兵）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 47,
@@ -888,7 +882,7 @@ const characters = [
     ],
     "explanation": "枢（shū）：1. 门上的转轴：户～不蠹。2. 重要的或中心的部分，起决定性作用的部分：中～。～纽。～机。",
     "errorReasonType": 3,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "初级"
   },
   {
     "id": 48,
@@ -907,7 +901,7 @@ const characters = [
     ],
     "explanation": "谮，读音为zèn。动词，意为说坏话诬陷别人。在古汉语中，指无中生有地进谗言，毁谤、中伤他人。例如《论语·颜渊》中有“浸润之谮，肤受之愬”的用法。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 49,
@@ -934,15 +928,14 @@ const characters = [
     "correctPronunciation": "zhòu",
     "wrongPronunciations": [
       "zhú",
-      "zhù"
+      "zhóu"
     ],
     "relatedPhrases": [
       "压轴",
-      "车轴",
-      "轴承",
-      "轴心"
+      "大轴子",
+      "压轴子"
     ],
-    "explanation": "1. 穿在轮子中间的圆柱形物件：车轴。轴承。\n2. 像车轴的：轴心。轴线。\n3. 把平面或立体分成对称部分的直线：轴线。\n4. 量词，古代用于以轴装成的书卷，现用于缠在轴上的线以及装裱带轴子的字画等：两轴丝线。一轴山水画。\n5. 数学上指一条直线，周围的点围绕它旋转，或用它作为确定各点位置的标准：转动轴。坐标轴。",
+    "explanation": "见“大轴子”。一次演出的若干戏曲节目中排在最末的一出戏。也叫大轴。见“压轴子”。①把某一出戏排为一次戏曲演出中的倒数第二个节目（最后的一出戏叫大轴子）。②名一次演出的戏曲节目中排在倒数第二的一出戏，现也指一场演出排在最后的较精彩的节目。",
     "errorReasonType": 2,
     "difficultyLevel": "初级"
   },
@@ -963,7 +956,7 @@ const characters = [
     ],
     "explanation": "睑（jiǎn）：指眼皮，眼睑。在解剖学上指覆盖在眼球前部的可活动的皮肤褶皱，分为上睑和下睑，具有保护眼球、帮助分泌泪液和分布泪膜的功能。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 52,
@@ -982,7 +975,7 @@ const characters = [
     ],
     "explanation": "1. 搜集材料编书：～修。～辑。编～。 2. 〈方〉妇女梳在头后边的发髻。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 53,
@@ -990,7 +983,6 @@ const characters = [
     "correctPronunciation": "suǐ",
     "wrongPronunciations": [
       "suí",
-      "suǐ (声调错误)",
       "suì"
     ],
     "relatedPhrases": [
@@ -1038,7 +1030,7 @@ const characters = [
     ],
     "explanation": "畦，读音qí。名词，指田园中分成的小区，通常有土埂围着，用于种植蔬菜、花卉等。如：菜畦、畦田。也用作量词，指田园中分成的小区，如：一畦菜地。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 56,
@@ -1047,17 +1039,17 @@ const characters = [
     "wrongPronunciations": [
       "zhuó",
       "chuò",
-      "zào"
+      "zhào"
     ],
     "relatedPhrases": [
       "泥淖",
-      "淖尔",
-      "淖冰",
+      "淖污",
+      "淖田",
       "泽淖"
     ],
     "explanation": "淖，读音为nào。基本释义：1. 烂泥，泥沼。如：泥淖。2. 柔和。如：淖约（同“绰约”，柔美的样子）。3. 古同“绰”，绰约。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 57,
@@ -1071,7 +1063,7 @@ const characters = [
       "果脯",
       "肉脯",
       "鹿脯",
-      "脯子"
+      "杏脯"
     ],
     "explanation": "脯（fǔ）：1. 肉干：肉脯。果脯。2. 蜜饯果干：桃脯。杏脯。",
     "errorReasonType": 2,
@@ -1088,9 +1080,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "倾轧",
-      "轧钢",
-      "轧机",
-      "轧辊"
+      "碾轧",
+      "轧花机",
+      "机声轧轧"
     ],
     "explanation": "1. 圆轴或轮子等压在物体上转：～场（cháng）。～棉花。2. 排挤：倾～。3. 姓。4. 形容机器开动时发出的声音：机声～～。",
     "errorReasonType": 2,
@@ -1107,16 +1099,16 @@ const characters = [
     "relatedPhrases": [
       "连累",
       "积累",
-      "累积",
-      "累赘"
+      "连篇累牍",
+      "危如累卵"
     ],
-    "explanation": "1. 堆积；积聚：日积月～。2. 屡次；连续：～教不改。3. 牵连：牵～。4. 疲乏；过劳：劳～。",
+    "explanation": "1. 堆积；积聚：日积月～。2. 屡次；连续：～教不改。3. 牵连：牵～。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
   {
     "id": 60,
-    "char": "哑",
+    "char": "喑",
     "correctPronunciation": "yin",
     "wrongPronunciations": [
       "yīn",
@@ -1127,7 +1119,7 @@ const characters = [
       "喑哑",
       "万马齐喑",
       "喑呜",
-      "喑哑无声"
+      "喑默"
     ],
     "explanation": "喑（yīn）：1. 嗓子哑，不能出声；失音。如：喑哑。2. 缄默，不说话。如：万马齐喑。",
     "errorReasonType": 2,
@@ -1150,7 +1142,7 @@ const characters = [
     ],
     "explanation": "辍（chuò）：动词。1. 中途停止；中断。如：辍学、辍笔。2. 废止；舍弃。如：辍业、辍朝。本义指车队行列间断又连接起来，引申为停止、中止。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 62,
@@ -1194,8 +1186,7 @@ const characters = [
     "correctPronunciation": "chuò",
     "wrongPronunciations": [
       "duō",
-      "zhuì",
-      "chuò (第四声)"
+      "zhuì"
     ],
     "relatedPhrases": [
       "啜泣",
@@ -1205,7 +1196,7 @@ const characters = [
     ],
     "explanation": "啜（chuò）：1. 饮，吃：啜茶、啜粥。2. 哭泣时抽噎的样子：啜泣。",
     "errorReasonType": 5,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "初级"
   },
   {
     "id": 65,
@@ -1224,7 +1215,7 @@ const characters = [
     ],
     "explanation": "撷（xié）：1. 摘下，取下。如：撷取、采撷。2. 用衣襟兜东西。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 66,
@@ -1262,7 +1253,7 @@ const characters = [
     ],
     "explanation": "憔，读音为qiáo。本义指形容人瘦弱、面色不好看的样子，常与“悴”字连用，组成“憔悴”一词，表示人因劳累、忧虑或疾病而显得消瘦、面色黄黑、精神不振。在古汉语中，也可单用，如“憔然”形容忧愁、忧虑的样子。",
     "errorReasonType": 3,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "初级"
   },
   {
     "id": 68,
@@ -1375,7 +1366,7 @@ const characters = [
     ],
     "explanation": "拯（zhěng）：动词，意为救助、援救。本义为向上举，引申为从危难或困苦中救出。常见于书面语，如“拯救生命”“拯民于水火”。",
     "errorReasonType": 3,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "初级"
   },
   {
     "id": 74,
@@ -1394,7 +1385,7 @@ const characters = [
     ],
     "explanation": "笺（jiān）：1. 注释：～注。2. 小幅华贵的纸张，古时用以题咏或写书信：便～。信～。3. 书信：～札。～牍。华～。4. 文体名，书札、奏记一类：～奏。奏～（多呈皇后、太子、诸王）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 75,
@@ -1444,12 +1435,9 @@ const characters = [
       "hòu"
     ],
     "relatedPhrases": [
-      "勾当",
-      "勾画",
-      "勾勒",
-      "勾引"
+      "勾当"
     ],
-    "explanation": "1. 用笔画出钩形符号，表示删除或截取。2. 画出形象的轮廓；描画。3. 用灰、水泥等涂抹砖石建筑物的缝。4. 调和使黏。5. 招引；引。6. 结合。7. 我国古代称不等腰直角三角形中较短的直角边。8. 姓。",
+    "explanation": "1. 同“够”（多见于早期白话）。2.姓 。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -1506,7 +1494,7 @@ const characters = [
     ],
     "explanation": "喟，读音为kuì。本义指叹息、叹气。形容因感慨、感叹而发出的叹息声。常见于书面语，用于表达深沉的情感或感慨。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 81,
@@ -1525,7 +1513,7 @@ const characters = [
     ],
     "explanation": "诣（yì）：1. 到，特指到尊长那里去：诣前请教。2. （学业、技艺等）所达到的程度：造诣。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 82,
@@ -1544,7 +1532,7 @@ const characters = [
     ],
     "explanation": "傀（kuǐ）：1. 怪异：～奇。2. 独立的样子：～然独立。3. 木偶戏里的木头人：～儡。～儡戏（喻徒有虚名，被人操纵的人或组织）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 83,
@@ -1563,7 +1551,7 @@ const characters = [
     ],
     "explanation": "1. 梦中惊叫，或觉得有什么东西压住不能动弹：梦～。～住了。2. 迷惑：“被妖术～住”。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 84,
@@ -1600,7 +1588,7 @@ const characters = [
     ],
     "explanation": "赝（yàn）：形容词，指伪造的、假的。多用于书面语，形容伪造的物品，如赝品（伪造的艺术品或文物）、赝币（伪造的货币）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 86,
@@ -1618,7 +1606,7 @@ const characters = [
     ],
     "explanation": "瞰，读音为kàn。动词。本义为从高处向下看，俯视。引申为远望、窥视。在现代汉语中，主要用于表示从高处向下看，如“俯瞰大地”、“鸟瞰全城”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 87,
@@ -1637,7 +1625,7 @@ const characters = [
     ],
     "explanation": "靥（yè）：名词。指人脸上的酒窝，特指女子笑时脸上出现的小圆窝。也泛指面颊上的微涡。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 88,
@@ -1711,7 +1699,7 @@ const characters = [
     ],
     "explanation": "稂，读音为láng。指一种形似禾苗的杂草，即狼尾草，常用来比喻害群之人或不良的事物。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 92,
@@ -1730,7 +1718,7 @@ const characters = [
     ],
     "explanation": "莠，读音为yǒu。本义指狗尾草，一种一年生草本植物，形似谷子，常混在禾苗中生长，被视为杂草。引申义：1. 比喻品质坏、恶的人或事物（如：良莠不齐）。2. 形容事物粗劣、不好（如：莠言）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 93,
@@ -1786,7 +1774,7 @@ const characters = [
     ],
     "explanation": "黠，读音为xiá，阳平声（第二声）。本义指聪明而狡猾，机敏而带点诡诈。如《说文解字》释为：“黠，坚黑也。”引申为聪慧、机敏，但常含贬义，指狡诈、诡谲。在现代汉语中，多用于形容人聪明而狡猾，如“狡黠的笑容”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 96,
@@ -1805,7 +1793,7 @@ const characters = [
     ],
     "explanation": "罹，读音为lí。本义指遭受苦难或不幸，如遭遇灾难、疾病等。在古汉语中，也指忧愁、忧患。常见于书面语，表示遭受、遭遇之意。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 97,
@@ -1861,7 +1849,7 @@ const characters = [
     ],
     "explanation": "檄（xí）：古代用于征召、声讨的文书。如“檄文”指古代官府用以征召、晓谕或声讨的文书；“传檄”指传递檄文；“羽檄”指插有鸟羽的紧急军事文书。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 100,
@@ -1917,7 +1905,7 @@ const characters = [
     ],
     "explanation": "袂（mèi）：名词，指衣袖。如“联袂”指手拉着手，比喻一同（来、去等）；“分袂”指离别；“投袂”指甩袖，形容决绝或奋发。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 103,
@@ -1974,7 +1962,7 @@ const characters = [
     ],
     "explanation": "1. 大车轴头上穿着的小铁棍，可以管住轮子使不脱落。2. 管理：统～。直～市。省～市。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 106,
@@ -2001,8 +1989,7 @@ const characters = [
     "correctPronunciation": "xīng",
     "wrongPronunciations": [
       "xìng",
-      "xīng (第四声)",
-      "xīng (第二声)"
+      "xíng"
     ],
     "relatedPhrases": [
       "兴奋",
@@ -2030,7 +2017,7 @@ const characters = [
     ],
     "explanation": "霾：mái。1. 名词，空气中因悬浮着大量的烟、尘等微粒而形成的混浊现象。2. 动词，通“埋”，指掩埋、埋葬。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 109,
@@ -2068,24 +2055,24 @@ const characters = [
     ],
     "explanation": "赧，读音为nǎn。本义指因羞愧而脸红。常用义为：1. 因羞愧而脸红。如：赧颜（因羞愧而脸红）、赧然（羞愧脸红的样子）。2. 引申为忧惧、惭愧。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 111,
     "char": "噱",
-    "correctPronunciation": "xué",
+    "correctPronunciation": "jué",
     "wrongPronunciations": [
       "xuè",
-      "xuě",
+      "xué",
       "xuē"
     ],
     "relatedPhrases": [
-      "噱头",
-      "发噱",
-      "噱笑",
-      "噱谈"
+      "欢噱",
+      "诙噱",
+      "笑噱",
+      "喜噱"
     ],
-    "explanation": "噱（xué）：1. 笑；使人发笑的话或举动。如：噱头。2. 大笑。",
+    "explanation": "动词  〈书〉大笑。1笑；使人发笑的话或举动。部分方言中读xué。",
     "errorReasonType": 4,
     "difficultyLevel": "中级"
   },
@@ -2113,8 +2100,7 @@ const characters = [
     "correctPronunciation": "wò",
     "wrongPronunciations": [
       "gàn",
-      "hàn",
-      "wò (误读为第四声)"
+      "hàn"
     ],
     "relatedPhrases": [
       "斡旋",
@@ -2138,10 +2124,10 @@ const characters = [
     "relatedPhrases": [
       "执拗",
       "拗不过",
-      "拗口",
+      "争拗",
       "拗脾气"
     ],
-    "explanation": "1. 固执；不随和；不驯顺：脾气很拗。2. 向相反或不顺的方向扭转：把竹竿拗断了。",
+    "explanation": "读niù时，意为固执；不随和；不驯顺：脾气很拗。读ào时，如拗（ào）口，动词  不顺；不顺从。读ǎo时，如拗断，动词  〈方〉弯曲使断，折。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -2162,7 +2148,7 @@ const characters = [
     ],
     "explanation": "娲（wā）：古代神话中的女帝王，传说她曾炼五色石补天。该字在现代汉语中主要用于专有名词“女娲”，是中国古代神话中的人类始祖和创世神。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 116,
@@ -2200,7 +2186,7 @@ const characters = [
     ],
     "explanation": "挞（tà）：1. 用鞭子或棍子打：鞭挞。2. 引申为攻击、讨伐：挞伐。3. 古代刑罚的一种。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 118,
@@ -2293,7 +2279,7 @@ const characters = [
     ],
     "explanation": "迢（tiáo）：形容词。1. 形容路途遥远。如：千里迢迢。2. 形容时间久长。如：迢递（也作“迢遰”，形容遥远或高峻的样子）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 123,
@@ -2367,7 +2353,7 @@ const characters = [
     ],
     "explanation": "赡（shàn）：1. 供给人财物，特指子女对父母在物质上和生活上进行帮助：赡养。2. 丰富，充足：丰赡。力不赡（力不足）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 127,
@@ -2375,7 +2361,6 @@ const characters = [
     "correctPronunciation": "pò",
     "wrongPronunciations": [
       "bó",
-      "pò (读成破音)",
       "pā"
     ],
     "relatedPhrases": [
@@ -2399,7 +2384,6 @@ const characters = [
     "relatedPhrases": [
       "游说",
       "说客",
-      "说服",
       "说士"
     ],
     "explanation": "“说”字读作shuì时，是动词，意为用言语劝说别人，使其听从自己的意见。在古代汉语中常见，如“游说”指周游各国，向君主陈说自己的政治主张；“说客”指从事游说工作的人。现代汉语中，此读音多用于书面语或特定词组。",
@@ -2486,7 +2470,6 @@ const characters = [
     "correctPronunciation": "zhàn",
     "wrongPronunciations": [
       "dìng",
-      "zhàn (声调误读为四声)",
       "zhān"
     ],
     "relatedPhrases": [
@@ -2573,7 +2556,7 @@ const characters = [
     ],
     "explanation": "悭（qiān）：1. 吝啬；小气。如：悭吝。2. 缺少；欠缺。如：缘悭一面（缺少一面之缘）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 138,
@@ -2645,7 +2628,7 @@ const characters = [
     ],
     "explanation": "戕（qiāng）：动词，意为杀害、伤害、残害。如“自戕”指自杀，“戕害”指伤害、残害。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 142,
@@ -2664,7 +2647,7 @@ const characters = [
     ],
     "explanation": "堑，读音为qiàn，本义指壕沟、护城河，引申为比喻障碍、困难或挫折。在古汉语中常指防御工事中的深沟，如“堑壕”指战壕；也用于比喻难以逾越的障碍，如“天堑”指天然形成的难以跨越的深沟或江河。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 143,
@@ -2694,12 +2677,9 @@ const characters = [
       "xì"
     ],
     "relatedPhrases": [
-      "蹊跷",
-      "蹊径",
-      "独辟蹊径",
-      "桃李不言，下自成蹊"
+      "蹊跷"
     ],
-    "explanation": "蹊（qī）：1. 蹊跷（qī qiao）：奇怪；可疑。2. 蹊径（qī jìng）：小路；途径。3. 另见 xī。",
+    "explanation": "蹊（qī）：1. 蹊跷（qī qiao）：奇怪；可疑。  读（xī）时〈文〉小路，如蹊径。",
     "errorReasonType": 2,
     "difficultyLevel": "高级"
   },
@@ -2713,9 +2693,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "闷热",
-      "闷声",
+      "闷声不响",
       "闷头",
-      "闷气"
+      "闷葫芦 "
     ],
     "explanation": "闷（mēn）字在此读音下的解释：1. 因空气不流通而引起的不舒服的感觉：闷热。2. 密闭，使不透气：茶刚沏上，闷一会儿再喝。3. 不吭声，不声张：闷着头干。4. 声音不响亮：闷声闷气。",
     "errorReasonType": 2,
@@ -2908,7 +2888,7 @@ const characters = [
     ],
     "explanation": "1. 庄稼成熟：丰～。 2. 年；一年：凡五～。 3. 熟悉（多指对人）：素～。～知。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 156,
@@ -2982,7 +2962,7 @@ const characters = [
     ],
     "explanation": "谄（chǎn）：奉承，巴结。指用卑贱的态度向人讨好。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 160,
@@ -3243,7 +3223,7 @@ const characters = [
     ],
     "explanation": "谧（mì）：形容词，意为安宁、平静、安静。常用于形容环境、氛围或心境，如“静谧的夜晚”、“安谧的乡村”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 174,
@@ -3262,7 +3242,7 @@ const characters = [
     ],
     "explanation": "1. 用带绳子的箭射鸟：弋凫与雁。2. 泛指射猎：弋猎。3. 姓。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 175,
@@ -3270,8 +3250,7 @@ const characters = [
     "correctPronunciation": "lào",
     "wrongPronunciations": [
       "luò",
-      "lù",
-      "lào (阳平声调)"
+      "lù"
     ],
     "relatedPhrases": [
       "烙印",
@@ -3295,7 +3274,7 @@ const characters = [
       "与会",
       "参与",
       "与闻",
-      "与人为善"
+      "咸与维新"
     ],
     "explanation": "与（yù）在此读音下，主要含义为：1. 参加，参与。如：与会、参与其事。2. 同“欤”，文言助词，表示疑问或感叹，但现代汉语中较少使用此义。",
     "errorReasonType": 2,
@@ -3304,16 +3283,15 @@ const characters = [
   {
     "id": 177,
     "char": "泞",
-    "correctPronunciation": "ning",
+    "correctPronunciation": "nìng",
     "wrongPronunciations": [
       "níng",
-      "nìng",
       "nǐng"
     ],
     "relatedPhrases": [
       "泥泞",
       "泥泞不堪",
-      "道路泥泞",
+      "泞滞",
       "泞滑难行"
     ],
     "explanation": "泞（nìng）：指烂泥、泥沼。形容道路因雨水或积水而变得湿滑、泥泞难行。",
@@ -3467,7 +3445,7 @@ const characters = [
     ],
     "explanation": "梏（gù）：1. 古代拘住罪人两手的刑具，如“桎梏”。2. 引申为束缚、限制，如“梏亡”（指因受束缚而丧失本性）。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 186,
@@ -3513,8 +3491,7 @@ const characters = [
     "correctPronunciation": "kàng",
     "wrongPronunciations": [
       "kēng",
-      "háng",
-      "kàng (误以为四声)"
+      "háng"
     ],
     "relatedPhrases": [
       "伉俪",
@@ -3524,7 +3501,7 @@ const characters = [
     ],
     "explanation": "1. 对等；相称：～俪（指配偶、夫妇）。2. 高大。3. 姓。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 189,
@@ -3556,9 +3533,8 @@ const characters = [
     ],
     "relatedPhrases": [
       "投奔",
-      "奔放",
-      "奔跑",
-      "奔波"
+      "奔五十了",
+      "奔命去干"
     ],
     "explanation": "奔（bèn）字在此读音下，主要有以下释义：1. 直往，投向：直奔目的地。2. 为某种目的而尽力去做：奔命。3. 年纪接近（四十岁、五十岁等）：他是奔六十的人了。",
     "errorReasonType": 2,
@@ -3570,14 +3546,13 @@ const characters = [
     "correctPronunciation": "huò",
     "wrongPronunciations": [
       "huō",
-      "huá",
-      "huò (第四声)"
+      "huá"
     ],
     "relatedPhrases": [
       "豁免",
       "豁达",
       "豁然开朗",
-      "豁口"
+      "豁亮"
     ],
     "explanation": "豁（huò）：1. 开通，敞亮：～达。～朗。～然开朗。2. 免除：～免。3. 舍弃，狠心付出代价：～出性命。",
     "errorReasonType": 5,
@@ -3636,7 +3611,7 @@ const characters = [
     ],
     "explanation": "婢，读音为bì。本义指古代罪人的眷属没入官府为奴，后泛指旧时供有钱人家役使的女孩子或女仆。在《说文解字》中解释为“女之卑者也”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 195,
@@ -3665,7 +3640,7 @@ const characters = [
     ],
     "relatedPhrases": [
       "和稀泥",
-      "和面",
+      "拌和",
       "和药",
       "和弄"
     ],
@@ -3709,7 +3684,7 @@ const characters = [
     ],
     "explanation": "噬（shì）：动词，意为咬、吞食。如《说文解字》：“噬，啗也。” 引申为侵蚀、侵害。常见于表示用牙齿咬或比喻侵害、吞并的语境中。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 199,
@@ -3747,7 +3722,7 @@ const characters = [
     ],
     "explanation": "阂（hé）：1. 阻隔；阻碍。如：隔阂。2. 界限；界限不清。如：阂目（界限不清）。3. 疑阂：疑虑阻碍。4. 阂滞：阻碍不通。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 201,
@@ -3778,11 +3753,11 @@ const characters = [
     ],
     "relatedPhrases": [
       "隽永",
-      "隽语",
-      "隽秀",
-      "清隽"
+      "隽妙",
+      "隽远",
+      "名言隽语"
     ],
-    "explanation": "隽（juàn）：1. 鸟肉肥美，味道好，引申为意味深长。如：隽永。2. 姓。",
+    "explanation": "隽（juàn）：1. 鸟肉肥美，味道好，引申为意味深长。如：隽永。2. 姓。 读（jùn）时，同“俊”。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -3816,8 +3791,8 @@ const characters = [
     "relatedPhrases": [
       "逮捕",
       "力有未逮",
-      "逮住",
-      "逮个正着"
+      "逮至",
+      "力所不逮"
     ],
     "explanation": "逮（dài）：1. 捉，捕，用于书面语或固定词组，如“逮捕”、“力有未逮”。2. 达到，及，如“力所不逮”。3. 介词，趁着，如“逮其未至”。",
     "errorReasonType": 2,
@@ -3834,7 +3809,7 @@ const characters = [
     ],
     "relatedPhrases": [
       "剥削",
-      "剥皮",
+      "盘剥",
       "剥夺",
       "剥落"
     ],
@@ -3852,9 +3827,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "剥削",
-      "削减",
-      "削皮",
-      "削铅笔"
+      "削职为民",
+      "削铁如泥",
+      "削足适履"
     ],
     "explanation": "削（xuē）：1. 用刀斜着去掉物体的表层。如：削皮、削铅笔。2. 减少；减弱。如：削减、削弱。3. 形容陡峭或瘦削。如：削壁、瘦削。4. 古代一种长刃有柄的小刀，也称书刀，用于修削木简或竹简上的文字。",
     "errorReasonType": 2,
@@ -3895,7 +3870,7 @@ const characters = [
     ],
     "explanation": "隘，读音为ài。本义指狭窄、狭小，如“狭隘”。引申指险要的地方，多指山间狭窄的通道或关口，是易守难攻的军事要地，如“关隘”、“要隘”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 209,
@@ -3933,7 +3908,7 @@ const characters = [
     ],
     "explanation": "恻，读音为cè。本义为悲痛、忧伤。在《说文解字》中解释为“痛也”。引申为同情、怜悯，如“恻隐之心”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 211,
@@ -3965,8 +3940,6 @@ const characters = [
     ],
     "relatedPhrases": [
       "徘徊",
-      "徊翔",
-      "低徊",
       "徊徨"
     ],
     "explanation": "徊，读音为huái。本义指回旋、来回地走，常与“徘”字连用，构成“徘徊”，表示在一个地方来回地走，比喻犹豫不决或事物在某个范围内来回浮动、起伏。",
@@ -3995,10 +3968,9 @@ const characters = [
   {
     "id": 214,
     "char": "莅",
-    "correctPronunciation": "li",
+    "correctPronunciation": "lì",
     "wrongPronunciations": [
-      "wèi",
-      "lì"
+      "wèi"
     ],
     "relatedPhrases": [
       "莅临",
@@ -4008,7 +3980,7 @@ const characters = [
     ],
     "explanation": "莅（lì）：动词。1. 到，来临。如：莅临指导。2. 治理，管理。如：莅官（到职，就任官职）。3. 执掌，主管。如：莅事（处理事务）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 215,
@@ -4026,7 +3998,7 @@ const characters = [
     ],
     "explanation": "肄，读音yì。本义为学习、练习。现代汉语中主要组成“肄业”一词，指在学校学习但未达到毕业要求或未完成规定学业。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 216,
@@ -4063,7 +4035,7 @@ const characters = [
     ],
     "explanation": "饬（chì）字本义为整治、整顿。在现代汉语中，主要含义有：1. 整顿；使整齐（如：整饬纪律）。2. 谨慎；恭敬（如：谨饬）。3. 旧时指上级命令下级（如：饬令、饬知）。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 218,
@@ -4193,7 +4165,7 @@ const characters = [
     ],
     "explanation": "殍，读音为piǎo。本义指饿死的人，也指饿死。在现代汉语中，多用于书面语，形容因饥饿而死亡的人或现象，常与“饿”字连用，构成“饿殍”一词，表示饿死的人。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 225,
@@ -4242,7 +4214,6 @@ const characters = [
     "relatedPhrases": [
       "提防",
       "提溜",
-      "提拉",
       "提溜着"
     ],
     "explanation": "提（dī）：用于“提防”（小心防备）、“提溜”（手提、拎着）等词语中，表示一种特定的动作或状态。",
@@ -4284,7 +4255,7 @@ const characters = [
     ],
     "explanation": "侩，读音为kuài。本义指撮合买卖双方交易并从中获利的人，即中间商、经纪人。后多含贬义，指唯利是图、庸俗可厌的人。如“市侩”指唯利是图的商人，也泛指贪图私利、庸俗虚伪的人。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 230,
@@ -4322,7 +4293,7 @@ const characters = [
     ],
     "explanation": "浣：读音为huàn。本义为洗涤衣物，如“浣衣”、“浣纱”。也指唐代官吏每十天休息沐浴一次，后称每月上、中、下旬为上、中、下浣。在词牌名“浣溪沙”中也读此音。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 232,
@@ -4382,7 +4353,7 @@ const characters = [
   },
   {
     "id": 235,
-    "char": "驰",
+    "char": "骋",
     "correctPronunciation": "chěng",
     "wrongPronunciations": [
       "chéng",
@@ -4434,7 +4405,7 @@ const characters = [
     ],
     "explanation": "偬（zǒng）：【倥偬】kǒng zǒng，形容事情急迫匆忙，如“戎马倥偬”。也指穷困。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 238,
@@ -4453,7 +4424,7 @@ const characters = [
     ],
     "explanation": "腼（miǎn）：1. 害羞，不自然的样子，如“腼腆”。2. 惭愧的样子，如“腼颜”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 239,
@@ -4472,7 +4443,7 @@ const characters = [
     ],
     "explanation": "腆（tiǎn）：1. 丰厚，美好。如：不腆之仪（谦辞，指微薄的礼物）。2. 凸出或挺起（胸、腹）。如：腆着胸脯。3. 厚着脸皮。如：腆着脸。4. 羞惭的样子。如：腆颜（厚着脸皮）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 240,
@@ -4510,7 +4481,7 @@ const characters = [
     ],
     "explanation": "忸，读音为niǔ。本义指羞惭、不好意思的样子。常与“怩”字连用为“忸怩”，形容害羞、不大方或故作姿态的样子。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 242,
@@ -4529,26 +4500,7 @@ const characters = [
     ],
     "explanation": "怩，读音ní。形容不好意思或不大方的样子，常与“忸”连用为“忸怩”，表示羞愧、不好意思、难为情的神态或举止。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
-  },
-  {
-    "id": 243,
-    "char": "睥睨",
-    "correctPronunciation": "pì",
-    "wrongPronunciations": [
-      "bì",
-      "pǐ",
-      "bǐ"
-    ],
-    "relatedPhrases": [
-      "睥睨",
-      "睥睨天下",
-      "睥睨群雄",
-      "睥睨一切"
-    ],
-    "explanation": "睥：1. 斜着眼睛看，表示傲视或厌恶。如：睥睨。2. 城墙上呈凹凸形的矮墙，亦称“女墙”。",
-    "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 244,
@@ -4567,7 +4519,7 @@ const characters = [
     ],
     "explanation": "睨（nì）：动词。1. 斜着眼睛看，表示轻视、傲慢或不屑。如：睥睨、睨视。2. 泛指看、视。如：斜睨。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 245,
@@ -4586,7 +4538,7 @@ const characters = [
     ],
     "explanation": "窈，读音为yǎo。本义指幽深、深远的样子，形容女子文静而美好。在《说文解字》中解释为“深远也”，常用来形容山水、洞穴的幽深，或女子体态、神情的娴静美好。如“窈窕”一词，既可形容山水深远，也形容女子文静美好。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 246,
@@ -4605,7 +4557,7 @@ const characters = [
     ],
     "explanation": "窕，读音为tiǎo。本义指深邃、幽深。在古汉语中，常用来形容宫室、山水等深邃幽静的样子。也引申指美好、优雅，如“窈窕”一词，形容女子文静而美好。此外，还可表示闲暇、从容不迫的样子。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 247,
@@ -4643,7 +4595,7 @@ const characters = [
     ],
     "explanation": "1. 古代用石针扎皮肉治病：～石。～针。2. 引申为刺或规劝：针～时弊。痛～。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 249,
@@ -4656,8 +4608,8 @@ const characters = [
     "relatedPhrases": [
       "扒窃",
       "扒手",
-      "扒开",
-      "扒拉"
+      "扒草",
+      "扒痒"
     ],
     "explanation": "1. 用手或工具使东西聚拢或散开：扒草。扒土。2. 搔，抓：扒痒。3. 一种烹饪方法，将原料煨烂：扒羊肉。4. 偷窃：扒窃。扒手。",
     "errorReasonType": 2,
@@ -4774,7 +4726,7 @@ const characters = [
     ],
     "explanation": "亵（xiè）：1. 轻慢，不庄重。如：亵渎、亵慢。2. 淫秽，下流。如：猥亵、亵语。3. 贴身的衣服。如：亵衣。4. 亲近而不庄重。如：亵玩。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 256,
@@ -4831,7 +4783,7 @@ const characters = [
     ],
     "explanation": "矜（jīn）字主要有以下释义：1. 怜悯；怜惜。如：矜恤。2. 自尊自大；自夸。如：矜夸、矜功。3. 慎重；拘谨。如：矜持。4. 庄重；端庄。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 259,
@@ -4884,7 +4836,7 @@ const characters = [
       "拉纤",
       "纤夫",
       "纤绳",
-      "纤手"
+      "纤索"
     ],
     "explanation": "纤（qiàn）：用于拉船前进的绳子。如：纤绳、拉纤。也指拉船的人，如：纤夫。",
     "errorReasonType": 2,
@@ -4896,8 +4848,7 @@ const characters = [
     "correctPronunciation": "jí",
     "wrongPronunciations": [
       "là",
-      "cì",
-      "là jí"
+      "cì"
     ],
     "relatedPhrases": [
       "棘手",
@@ -4907,7 +4858,7 @@ const characters = [
     ],
     "explanation": "1. 酸枣树，落叶灌木，有刺，果实味酸。2. 泛指有刺的草木：荆棘。3. 针形的刺：棘皮动物。4. 扎手，比喻事情难办：棘手。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 263,
@@ -4919,11 +4870,11 @@ const characters = [
     ],
     "relatedPhrases": [
       "离间",
-      "此间",
-      "人间",
-      "时间"
+      "间隔",
+      "亲密无间",
+      "间谍"
     ],
-    "explanation": "1. 方位词。表示一定的空间范围：这里；此地。2. 方位词。表示一定的时间范围：近来；最近。3. 量词。用于房屋的最小单位：一间屋子。",
+    "explanation": "\"间\"字读jiàn时，主要表示\"空隙\"、\"隔阂\"、\"挑拨\"、\"拔去\"、\"偏僻小路\"等含义，与读jiān时的\"中间\"、\"空间\"、\"时间\"等含义有明显区别。",
     "errorReasonType": 2,
     "difficultyLevel": "初级"
   },
@@ -4938,11 +4889,10 @@ const characters = [
     ],
     "relatedPhrases": [
       "执著",
-      "著书立说",
-      "著作等身",
-      "显著"
+      "著衣",
+      "画蛇著足"
     ],
-    "explanation": "1. 显明，显出：～名。～称。显～。昭～。卓～。2. 写文章，写书：～述。编～。～书立说。3. 写出来的文章或书：名～。巨～。遗～。译～。",
+    "explanation": "\"著\"读作zhuó时，表示附着，穿着。同\"着（zhuó）\"。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -4995,8 +4945,7 @@ const characters = [
     "relatedPhrases": [
       "分泌",
       "泌尿",
-      "泌乳",
-      "泌阳县"
+      "泌乳"
     ],
     "explanation": "泌（mì）：液体由细孔排出。如：分泌、泌尿。另作地名用字，如河南省泌阳县（在此地名中读bì，属多音字，但现代汉语中“泌”作动词时通常读mì）。",
     "errorReasonType": 2,
@@ -5011,9 +4960,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "症结",
-      "症状",
-      "症候",
-      "病症"
+      "症瘕",
+      "症痼 ",
+      "症坚"
     ],
     "explanation": "zhēng：中医指腹内结块的病。如：症瘕（腹中结块的病，比喻事情疑难的关键）。",
     "errorReasonType": 2,
@@ -5077,7 +5026,7 @@ const characters = [
   },
   {
     "id": 272,
-    "char": "一",
+    "char": "长",
     "correctPronunciation": "cháng",
     "wrongPronunciations": [
       "chǎng",
@@ -5085,31 +5034,12 @@ const characters = [
       "zhàng"
     ],
     "relatedPhrases": [
-      "一场雨",
+      "别无长物",
       "长短",
       "长期",
       "长远"
     ],
     "explanation": "1. 两端之间的距离大（与“短”相对）。指空间：这条路很长。指时间：长寿。2. 长度：南京长江大桥气势雄伟，铁路桥全长6772米。3. 长处：特长。取长补短。一技之长。4. 对某事做得特别好：他长于写作。",
-    "errorReasonType": 2,
-    "difficultyLevel": "初级"
-  },
-  {
-    "id": 273,
-    "char": "4",
-    "correctPronunciation": "chóng",
-    "wrongPronunciations": [
-      "zhòng",
-      "chǒng",
-      "chōng"
-    ],
-    "relatedPhrases": [
-      "种师正",
-      "重复",
-      "重新",
-      "重叠"
-    ],
-    "explanation": "1. 再；又一次。如：重做、重写。2. 层。如：双重、重重包围。3. 表示动作行为的重复或继续。如：重演、重播。4. 表示程度加深或数量增加。如：重罚、重赏。",
     "errorReasonType": 2,
     "difficultyLevel": "初级"
   },
@@ -5153,7 +5083,7 @@ const characters = [
   },
   {
     "id": 277,
-    "char": "准",
+    "char": "旮",
     "correctPronunciation": "gá",
     "wrongPronunciations": [
       "gé",
@@ -5161,7 +5091,6 @@ const characters = [
       "gǎ"
     ],
     "relatedPhrases": [
-      "准噶尔",
       "旮旯",
       "山旮旯",
       "墙旮旯"
@@ -5176,7 +5105,6 @@ const characters = [
     "correctPronunciation": "hèng",
     "wrongPronunciations": [
       "héng",
-      "hèng (误以为轻声或变调)",
       "hēng"
     ],
     "relatedPhrases": [
@@ -5232,18 +5160,16 @@ const characters = [
     "correctPronunciation": "lún",
     "wrongPronunciations": [
       "lùn",
-      "lūn",
-      "lún (读成二声但声调不准)"
+      "lūn"
     ],
     "relatedPhrases": [
       "囫囵吞枣",
-      "囵圄",
       "囵吞",
       "囵囵"
     ],
     "explanation": "囵，读音为lún，阳平声（第二声）。此字在现代汉语中一般不单独使用，主要出现在“囫囵”一词中。“囫囵”意为完整、整个儿的，如“囫囵吞枣”（比喻读书等不加分析地笼统接受）。该字本义指完整无缺，未被分割或破坏的状态。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 282,
@@ -5256,9 +5182,8 @@ const characters = [
     ],
     "relatedPhrases": [
       "渐染",
-      "逐渐",
-      "渐进",
-      "渐行渐远"
+      "东渐于海",
+      "渐江水"
     ],
     "explanation": "渐（jiān）字在此读音下，主要用作动词，表示浸渍、流入、疏导等含义。例如《诗经·卫风·氓》中“淇水汤汤，渐车帷裳”，意为淇水浩浩荡荡，浸湿了车上的帷帐。此外，在古汉语中，“渐”也通“尖”，表示尖锐。现代汉语中，此读音多用于文言或特定词语，如“渐染”（指因长期接触而逐渐受到影响）。",
     "errorReasonType": 2,
@@ -5285,38 +5210,36 @@ const characters = [
   },
   {
     "id": 284,
-    "char": "解",
+    "char": "藉",
     "correctPronunciation": "jiè",
     "wrongPronunciations": [
-      "jiě",
+      "jí",
       "jié",
       "jì"
     ],
     "relatedPhrases": [
-      "押解",
       "慰藉",
       "枕藉",
       "蕴藉"
     ],
-    "explanation": "1. 垫在下面的东西。2. 垫；衬。3. 同“借”。4. 抚慰。5. 含蓄。",
+    "explanation": "“藉”读 jiè 时，仅用于“慰藉”“枕藉”“蕴藉”三词，含义分别为“安慰”“堆积”“含蓄”，现代汉语必须读 jiè。狼藉才读 jí。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
   {
     "id": 285,
     "char": "解",
-    "correctPronunciation": "xiè",
+    "correctPronunciation": "jiè",
     "wrongPronunciations": [
       "jiě",
-      "jiè"
+      "xiè"
     ],
     "relatedPhrases": [
-      "浑身解数",
-      "解数",
-      "解不开",
-      "解甲归田"
+      "押解",
+      "解送",
+      "起解"
     ],
-    "explanation": "1. 分开，剖开：～剖。分～。瓦～。～体。2. 把束缚着、系着的东西打开：～开。～甲归田。～囊相助。3. 除去，除，废除，停止：～放（a．使广大人民群众脱离压迫；b．解除束缚而得到自由）。～除。～饿。～乏。～惑。～疑。～围。～脱。～雇。～聘。～散。～毒。4. 溶化：溶～。～冻。5. 讲明白，分析说明：～释。～析。～说。劝～。～嘲。6. 懂，明白：理～。见～。7. 调和，处理：～决。和～。调（tiáo）～。排～。8. 高兴，开心：～颜而笑。9. 排泄：～手。10. 代数方程中未知数的值。11. 演算方程式：～方程。12. 文体的一种，如韩愈《进学解》。",
+    "explanation": "“解”读 jiè 时，专指押送、递送行为，常见于司法、军事、物流等场景。其组词多含“强制转移”色彩（如押解、起解），需与表示“分开”（jiě）或姓氏（xiè）的读音严格区分。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -5337,7 +5260,7 @@ const characters = [
     ],
     "explanation": "指籼稻，一种水稻的亚种，其米粒细长，黏性较小，与粳稻相对。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 287,
@@ -5369,10 +5292,10 @@ const characters = [
     "relatedPhrases": [
       "靓妆",
       "靓丽",
-      "靓女",
-      "靓仔"
+      "靓衣",
+      "靓白"
     ],
-    "explanation": "1. 妆饰艳丽，打扮：～饰。～衣（艳丽的衣饰）。～妆。2. 方言，漂亮，好看：～女。～仔。",
+    "explanation": "读jìng时：1.动词妆饰，打扮。2.形容艳丽。3.幽静，通静。  liàng 为粤语方言",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -5411,15 +5334,14 @@ const characters = [
     ],
     "explanation": "腈，读音jīng。指一类含有氰基（-CN）的有机化合物，通常由烃基与氰基连接而成。常见于化学名词，如腈纶（一种合成纤维）、丙烯腈等。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 291,
     "char": "唠",
     "correctPronunciation": "láo",
     "wrongPronunciations": [
-      "lào",
-      "láo（第二声读得过重或过轻）"
+      "lào"
     ],
     "relatedPhrases": [
       "唠叨",
@@ -5473,16 +5395,15 @@ const characters = [
     "correctPronunciation": "lí",
     "wrongPronunciations": [
       "lì",
-      "lǐ",
-      "lī"
+      "lǐ"
     ],
     "relatedPhrases": [
       "浙江丽水",
-      "美丽",
-      "秀丽",
-      "华丽"
+      "高丽",
+      "高句丽",
+      "高丽参"
     ],
-    "explanation": "丽（lí）：用于‘高丽’，朝鲜半岛历史上的王朝（公元918—1392年）。现在也指朝鲜。注意：此读音仅用于专有名词‘高丽’，其他情况均读lì。",
+    "explanation": "丽（lí）：丽水（Líshuǐ），地名，在浙江。用于‘高丽’，①我国古族名，古国名。又叫高句丽。②朝鲜半岛历史上的王朝，即王氏高丽。",
     "errorReasonType": 2,
     "difficultyLevel": "高级"
   },
@@ -5496,11 +5417,10 @@ const characters = [
     ],
     "relatedPhrases": [
       "淋病",
-      "淋浴",
-      "淋雨",
-      "淋漓尽致"
+      "淋滤",
+      "过淋"
     ],
-    "explanation": "1. 浇：淋浴、淋湿、日晒雨淋。2. 指淋病，一种性传播疾病。3. 过滤：过淋。4. 畅快，透彻：淋漓尽致。",
+    "explanation": "1. 动词  过滤。2. 指淋病，一种性传播疾病。",
     "errorReasonType": 2,
     "difficultyLevel": "初级"
   },
@@ -5509,9 +5429,7 @@ const characters = [
     "char": "绿",
     "correctPronunciation": "lù",
     "wrongPronunciations": [
-      "lǜ",
-      "lǜ (绿林)",
-      "lǜ (绿色)"
+      "lǜ"
     ],
     "relatedPhrases": [
       "绿林好汉",
@@ -5529,8 +5447,7 @@ const characters = [
     "correctPronunciation": "mǎng",
     "wrongPronunciations": [
       "máng",
-      "māng",
-      "mǎngg"
+      "māng"
     ],
     "relatedPhrases": [
       "草莽",
@@ -5559,7 +5476,7 @@ const characters = [
     ],
     "explanation": "扪，读音为mén，动词。本义为抚摸、按着。常见于文言或书面语中，表示用手触摸或按压的动作。例如“扪心自问”指摸着胸口自我反省；“扪虱而谈”形容一边捉虱子一边交谈，比喻从容不迫、无所顾忌的样子。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 299,
@@ -5572,11 +5489,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "酩酊",
-      "酊剂",
-      "碘酊",
       "酩酊大醉"
     ],
-    "explanation": "酊（dǐng）：1. 指酊剂，用酒精和药物配制而成的液剂，如碘酊。2. 用于“酩酊”，形容大醉的样子。",
+    "explanation": "酊（dǐng）： 用于“酩酊”，形容大醉的样子。读dīng时，是酊剂的简称。生药或化学药品经浸渍或溶解而制成的一种药剂,如碘酊、橙皮酊等。",
     "errorReasonType": 5,
     "difficultyLevel": "中级"
   },
@@ -5608,11 +5523,11 @@ const characters = [
     ],
     "relatedPhrases": [
       "抹墙",
-      "抹布",
-      "抹桌子",
-      "抹眼泪"
+      "抹灰",
+      "转弯抹角",
+      "抹不开"
     ],
-    "explanation": "1. 涂上，涂敷：～粉。～药。～黑（比喻丑化）。2. 擦，揩拭：～桌子。～眼泪。3. 除去，勾掉：～杀。～零。4. 轻微的痕迹：林梢～青。",
+    "explanation": "1. 动词  把和好了的泥或灰涂上后再用抹子弄平。2.动词  紧挨着绕过。",
     "errorReasonType": 2,
     "difficultyLevel": "初级"
   },
@@ -5622,7 +5537,6 @@ const characters = [
     "correctPronunciation": "pèn",
     "wrongPronunciations": [
       "pēn",
-      "pèn (第四声)",
       "pén"
     ],
     "relatedPhrases": [
@@ -5652,7 +5566,7 @@ const characters = [
     ],
     "explanation": "睥（pì）：1. 斜着眼睛看，表示傲视或厌恶。如：睥睨。2. 窥视。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 304,
@@ -5666,8 +5580,7 @@ const characters = [
     "relatedPhrases": [
       "心广体胖",
       "胖肆",
-      "胖胀",
-      "胖壮"
+      "心宽体胖"
     ],
     "explanation": "胖（pán）：安泰舒适。如《礼记·大学》：“富润屋，德润身，心广体胖。” 郑玄注：“胖，犹大也。” 朱熹集注：“胖，安舒也。” 指心胸开阔，身体安适舒泰。此读音在现代汉语中主要用于“心广体胖”这一成语，表示心情舒畅，身体健康。",
     "errorReasonType": 2,
@@ -5704,10 +5617,9 @@ const characters = [
     "relatedPhrases": [
       "骠勇",
       "骠骑将军",
-      "骠悍",
-      "黄骠马"
+      "骠悍"
     ],
-    "explanation": "骠（piào）：1. 勇猛：骠勇。骠悍。2. 马快跑的样子。3. 古代将军名号：骠骑将军。",
+    "explanation": "骠（piào）：1. 勇猛：骠勇。骠悍。2. 马快跑的样子。3. 古代将军名号：骠骑将军。黄骠马中读biāo。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -5728,7 +5640,7 @@ const characters = [
     ],
     "explanation": "砒，读音为pī。本义指一种非金属元素，符号As，旧称“砒霜”，有剧毒。也指砒霜，即三氧化二砷的俗称，是一种白色粉末，有时略带黄色或红色，有剧毒，可做杀虫剂。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 308,
@@ -5739,12 +5651,12 @@ const characters = [
       "pán"
     ],
     "relatedPhrases": [
+      "繁台",
+      "繁驵",
       "繁钦",
-      "繁昌",
-      "繁盛",
-      "繁华"
+      "繁延寿"
     ],
-    "explanation": "1. 多，复杂：～多。～杂。～星。～忙。～芜。～博。2. 兴盛：～茂。～荣。～华。3. 生物增生新个体：～殖。～育。～衍。",
+    "explanation": "姓氏：作为姓氏使用，是中国稀有姓氏 〔繁台〕：中国河南省开封市东南的古迹 白色：出自《晏子春秋·外篇下十六》：\"公乘侈舆、服繁驵驱之\"，繁驵（pó zǎng）：古良马名。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -5795,11 +5707,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "节骨眼",
-      "节子",
-      "节节高",
-      "节节草"
+      "节子"
     ],
-    "explanation": "节（jiē）：1. 植物茎上生叶与分枝的部分。如：竹节、节外生枝。2. 物体各段之间相连的地方。如：关节、骨节。3. 量词，用于分段的事物或文章。如：两节车厢、第三章第二节。4. 节日；节气。如：春节、清明节。5. 事项。如：细节、礼节。6. 限制；俭省。如：节制、节衣缩食。7. 操守。如：气节、晚节。8. 古代出使外国所持的凭证。如：符节、持节。",
+    "explanation": "1、比喻紧要的、能起决定作用的环节或时机。见节骨眼儿。2、树木的分枝去掉后在干枝上留下疤痕。见“节子”。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -5814,11 +5724,10 @@ const characters = [
     ],
     "relatedPhrases": [
       "不吱声",
-      "吱声",
-      "吱吱叫",
-      "吱吱作响"
+      "吱喳",
+      "吱吱叫"
     ],
-    "explanation": "吱（zī）：象声词，形容小动物的叫声或细小的摩擦声，如老鼠吱吱叫、门吱呀作响。",
+    "explanation": "吱（zī）：象声词，形容小动物的叫声或细小的摩擦声，如老鼠吱吱叫、门吱呀作响。读zhī时形容牙齿、门轴等的摩擦声。如嘎吱。",
     "errorReasonType": 3,
     "difficultyLevel": "初级"
   },
@@ -5853,8 +5762,7 @@ const characters = [
     "relatedPhrases": [
       "莫邪",
       "邪许",
-      "邪揄",
-      "邪乎"
+      "邪揄"
     ],
     "explanation": "1. 同“耶”，用于句末表示疑问或反问语气，相当于“吗”或“呢”。如《史记·廉颇蔺相如列传》：“赵王岂以一璧之故欺秦邪？” 2. 通“爷”，父亲。如《木兰诗》：“军书十二卷，卷卷有爷名。阿爷无大儿，木兰无长兄。” 3. 用于人名，如古代名剑“莫邪”。",
     "errorReasonType": 2,
@@ -5927,11 +5835,11 @@ const characters = [
     ],
     "relatedPhrases": [
       "磨坊",
-      "坊间",
-      "街坊",
-      "坊本"
+      "染坊",
+      "作坊",
+      "油坊"
     ],
-    "explanation": "坊（fáng）：1. 小手工业者的工作场所：作坊、染坊、磨坊。2. 某些店铺的名称：茶坊、书坊。3. 古代城市中的居民区，里巷（多用于街巷的名称）：坊巷、街坊（邻居）。",
+    "explanation": "坊（fáng）：小手工业者的工作场所：作坊、染坊、磨坊。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -5945,9 +5853,9 @@ const characters = [
     ],
     "relatedPhrases": [
       "藤蔓",
-      "蔓延",
-      "蔓草",
-      "枝蔓"
+      "瓜蔓",
+      "抱蔓摘瓜",
+      "压蔓"
     ],
     "explanation": "蔓（wàn）：名词，指细长能缠绕的茎。多用于口语，指植物细长能缠绕或攀附的茎，如“瓜蔓儿”、“爬蔓儿”。与读作màn时（多用于书面语，如“蔓延”、“蔓草”）相区别。",
     "errorReasonType": 2,
@@ -5964,11 +5872,11 @@ const characters = [
     ],
     "relatedPhrases": [
       "芝麻糊",
-      "糊弄",
-      "糊口",
-      "糊墙"
+      "面糊",
+      "辣椒糊",
+      "糊弄"
     ],
-    "explanation": "1. 用黏性物把纸、布等粘起来或粘在别的器物上：～信封。～墙。2. 粥类：面～。3. 欺骗，蒙混：～弄。",
+    "explanation": "\"糊\"读作\"hù\"时1. 像粥一样的食物（名词）。2. 欺骗，蒙混，敷衍（动词）。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -5984,9 +5892,9 @@ const characters = [
       "情不自禁",
       "忍俊不禁",
       "弱不禁风",
-      "禁止"
+      "禁受"
     ],
-    "explanation": "1. 不许，制止：～止。～绝。～书。～令。～赌。～欲。～锢。情不自～。2. 法律或习惯上制止的事：犯～。违～品。3. 拘押：～闭。监～。～锢。4. 旧时称皇帝居住的地方：～中。宫～。5. 不能随便通行的地方：～地。～区。6. 避忌：～忌。",
+    "explanation": "1、动词  禁受，受得住，耐（用）。2、动词  忍住；控制住（多跟“不”结合）。",
     "errorReasonType": 2,
     "difficultyLevel": "初级"
   },
@@ -6026,7 +5934,7 @@ const characters = [
     ],
     "explanation": "雒（luò）是一个汉字，主要有以下含义：1. 古同“洛”，指洛水，也指洛阳。2. 姓。3. 古代指一种白鬣的黑马。4. 古地名，如雒邑（今河南洛阳）。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 324,
@@ -6069,10 +5977,10 @@ const characters = [
   {
     "id": 326,
     "char": "涕",
-    "correctPronunciation": "tī",
+    "correctPronunciation": "tì",
     "wrongPronunciations": [
       "dì",
-      "tì",
+      "tī",
       "tí"
     ],
     "relatedPhrases": [
@@ -6081,7 +5989,7 @@ const characters = [
       "涕泪",
       "涕泣"
     ],
-    "explanation": "涕，读音为tī，第四声。本义指眼泪，如“痛哭流涕”；后引申指鼻涕，如“鼻涕”。在古汉语中多指眼泪，现代汉语中主要指鼻涕。",
+    "explanation": "涕，读音为tì，第四声。本义指眼泪，如“痛哭流涕”；后引申指鼻涕，如“鼻涕”。在古汉语中多指眼泪，现代汉语中主要指鼻涕。",
     "errorReasonType": 5,
     "difficultyLevel": "初级"
   },
@@ -6195,7 +6103,7 @@ const characters = [
     ],
     "explanation": "骥，读音jì。本义指良马、骏马，引申比喻贤能、杰出的人才。在古汉语中常与“骐”连用，泛指良马。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 333,
@@ -6222,8 +6130,7 @@ const characters = [
     "correctPronunciation": "bá",
     "wrongPronunciations": [
       "pá",
-      "bō",
-      "bá (声调错误)"
+      "bō"
     ],
     "relatedPhrases": [
       "跋山涉水",
@@ -6233,7 +6140,7 @@ const characters = [
     ],
     "explanation": "1. 翻山越岭：～山涉水。2. 写在书籍、文章、金石拓片等后面的短文，内容大多属于评介、鉴定、考释之类：序～。～文。～语。题～。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 335,
@@ -6270,24 +6177,24 @@ const characters = [
     ],
     "explanation": "稗（bài）：①一年生草本植物，叶子像稻，果实像黍米。是稻田害草。但果实可以酿酒或做饲料，有时也用来救荒。②比喻微小的、非正式的（多指记载或言论）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 337,
     "char": "遂",
-    "correctPronunciation": "suí",
+    "correctPronunciation": "suì",
     "wrongPronunciations": [
       "zhú",
-      "suī",
+      "suí",
       "suǐ"
     ],
     "relatedPhrases": [
-      "半身不遂",
       "遂心如意",
       "毛遂自荐",
-      "天遂人愿"
+      "天遂人愿",
+      "遂归"
     ],
-    "explanation": "suí：用于“半身不遂”，指身体一侧瘫痪。其他常见读音为suì，表示顺心、成功等义，如“遂愿”、“未遂”。",
+    "explanation": "1、动词  称心；如意。2、动词  成功，实现。3、副词  〈书〉就；于是。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -6326,7 +6233,7 @@ const characters = [
     ],
     "explanation": "殄，读音tiǎn。本义为灭绝、断绝。常用义：①灭绝，消灭。如：殄灭、殄歼。②糟蹋，浪费。如：暴殄天物（指任意糟蹋东西）。③困病，疲敝。如：邦国殄瘁。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 340,
@@ -6345,7 +6252,7 @@ const characters = [
     ],
     "explanation": "髀，读音为bì。本义指大腿，也指大腿骨。在古汉语中常用来表示大腿部位，如“髀肉复生”形容长久安逸，无所作为，大腿上的肉又长起来了。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 341,
@@ -6400,24 +6307,7 @@ const characters = [
     ],
     "explanation": "杼（zhù）：1. 织布机上的梭子。如：机杼。2. 指织布机。如：杼轴。3. 引申为纺织、编织。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
-  },
-  {
-    "id": 344,
-    "char": "长",
-    "correctPronunciation": "cháng",
-    "wrongPronunciations": [
-      "zhǎng"
-    ],
-    "relatedPhrases": [
-      "别无长物",
-      "长短",
-      "长久",
-      "长途"
-    ],
-    "explanation": "1. 两端之间的距离大（与“短”相对）。指空间：这条路很长。指时间：长寿。2. 长度：南京长江大桥气势雄伟，铁路桥全长6772米。3. 长处：特长。取长补短。一技之长。4. 对某事做得特别好：他长于写作。5. （旧读zhàng）多余；剩余：长物。",
-    "errorReasonType": 2,
-    "difficultyLevel": "初级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 345,
@@ -6443,8 +6333,7 @@ const characters = [
     "char": "悖",
     "correctPronunciation": "bèi",
     "wrongPronunciations": [
-      "bó",
-      "bèi（与'备'混淆）"
+      "bó"
     ],
     "relatedPhrases": [
       "并行不悖",
@@ -6454,7 +6343,7 @@ const characters = [
     ],
     "explanation": "悖（bèi）：1. 相反；违反。如：并行不悖。2. 违背道理；错误。如：悖谬。3. 迷惑；糊涂。如：悖晦。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 347,
@@ -6473,7 +6362,7 @@ const characters = [
     ],
     "explanation": "肓（huāng）：中医指心脏与横膈膜之间的部位。古人认为这里是药力达不到的地方，故“病入膏肓”形容病情严重到无法医治，也比喻事情严重到不可挽救的地步。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 348,
@@ -6492,7 +6381,7 @@ const characters = [
     ],
     "explanation": "1. 大拇指：巨～（喻杰出的人物）。2. 分开，剖裂：～画（筹划，布置。亦作“擘划”）。～肌分理（喻分析事理很细致）。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 349,
@@ -6530,7 +6419,7 @@ const characters = [
     ],
     "explanation": "畛，读音为zhěn。本义指田间小路，也泛指界限、范围。在古文中常指田间的分界道路，引申为界限、范围。例如“畛域”指界限、范围；“畛畦”指田间小路，也比喻界限、隔阂。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 351,
@@ -6568,7 +6457,7 @@ const characters = [
     ],
     "explanation": "穑，读音为sè。本义为收割谷物，泛指农业劳动。在古汉语中常与“稼”连用，“稼穑”指耕种和收获，泛指农事活动。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 353,
@@ -6624,7 +6513,7 @@ const characters = [
     ],
     "explanation": "窠，读音为kē。本义指鸟兽昆虫的巢穴，如鸟窠、蜂窠。引申指固定的格式、老套子，如窠臼，比喻陈旧、一成不变的规格或模式。也指人安居或聚会的处所。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 356,
@@ -6677,7 +6566,7 @@ const characters = [
     ],
     "explanation": "菅（jiān）：多年生草本植物，叶子细长而尖，花绿色，结颖果，褐色。茎可做绳织履，茎叶之细者可以覆盖屋顶。常与“管”字混淆，但“菅”为草字头，指草本植物；“管”为竹字头，多指管状物或管理之意。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 359,
@@ -6733,7 +6622,7 @@ const characters = [
     ],
     "explanation": "瞠，读音为chēng。本义指瞪着眼睛直视，形容惊异、发愣或愤怒的样子。常见于成语“瞠目结舌”，表示瞪着眼睛说不出话来，形容窘困或惊呆的样子。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 362,
@@ -6741,8 +6630,7 @@ const characters = [
     "correctPronunciation": "mèi",
     "wrongPronunciations": [
       "méi",
-      "wèi",
-      "mèi（误读为第四声但实际为第四声，此处指因字形联想而误读为其他音）"
+      "wèi"
     ],
     "relatedPhrases": [
       "崇洋媚外",
@@ -6809,7 +6697,7 @@ const characters = [
     ],
     "explanation": "涎：口水，唾液。指人或动物口腔中分泌的液体。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 366,
@@ -6828,7 +6716,7 @@ const characters = [
     ],
     "explanation": "厥（jué）字在字典中的主要解释有：1. 代词，相当于“其”、“他的”、“那个”。如：厥后（其后）、厥父（他的父亲）。2. 副词，乃，才。如：左丘失明，厥有《国语》。3. 动词，昏倒，失去知觉。如：昏厥、痰厥。4. 名词，中医指气逆、手足冰冷的病症。如：厥症。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 367,
@@ -6866,7 +6754,7 @@ const characters = [
     ],
     "explanation": "殚，读音dān。本义为尽、竭尽。常用以表示用尽、竭尽（精力、财力等），多用于书面语。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 369,
@@ -6875,15 +6763,16 @@ const characters = [
     "wrongPronunciations": [
       "shí",
       "shì",
-      "sǐ"
+      "sǐ",
+      "yì"
     ],
     "relatedPhrases": [
       "箪食壶浆",
-      "食言而肥",
-      "食古不化",
-      "食不下咽"
+      "食祭",
+      "食马",
+      "食士"
     ],
-    "explanation": "动词，意为：1. 拿东西给人吃；喂养。如：食母（乳母）。2. 使……吃；喂食。如：食马（喂马）。3. 通“饲”，喂养。如：食牛（喂牛）。",
+    "explanation": "念（sì）时：动词  〈书〉供养；拿食物给人吃。念（yì）时：名词  用于人名，郦食其，汉朝人。",
     "errorReasonType": 2,
     "difficultyLevel": "高级"
   },
@@ -6940,7 +6829,7 @@ const characters = [
     ],
     "explanation": "垣，读音为yuán。本义指矮墙，也泛指墙、城墙。在古汉语中常指官署或某些特定场所的围墙，如“省垣”（指省政府）。现代汉语中多用于书面语或特定词组，如“城垣”指城墙，“断壁残垣”形容建筑物倒塌残破的景象。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 373,
@@ -6959,7 +6848,7 @@ const characters = [
     ],
     "explanation": "咄（duō）：1. 表示呵斥或惊异。如：咄咄逼人。2. 表示惊诧或感叹。如：咄！怪事。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 374,
@@ -7015,7 +6904,7 @@ const characters = [
     ],
     "explanation": "缛（rù）：①繁多，繁琐。如：繁文缛节。②华丽的，精美的。如：缛彩。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 377,
@@ -7052,7 +6941,7 @@ const characters = [
     ],
     "explanation": "晷（guǐ）：1. 日影，比喻时光。如：日无暇晷。2. 古代用来观测日影以定时刻的仪器。如：日晷。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 379,
@@ -7089,7 +6978,7 @@ const characters = [
     ],
     "explanation": "掣（chè）字主要有以下释义：1. 拉，拽：掣肘（拉住胳膊，比喻阻挠别人做事）。2. 抽：掣签。3. 一闪而过：掣电（闪电）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 381,
@@ -7121,8 +7010,8 @@ const characters = [
     "relatedPhrases": [
       "封妻荫子",
       "荫庇",
-      "荫凉",
-      "树荫"
+      "福荫",
+      "余荫"
     ],
     "explanation": "荫（yìn）：1. 树木遮住日光所成的阴影。如：树荫。2. 封建时代子孙因先世有功劳而得到封赏或免罪。如：封妻荫子。3. 庇护。如：荫庇。4. 又音 yīn，指树荫、荫凉等义，现多写作“阴”。",
     "errorReasonType": 2,
@@ -7145,7 +7034,7 @@ const characters = [
     ],
     "explanation": "隅（yú）：1. 角落：墙隅、屋隅、城隅。2. 靠边沿的地方：海隅。3. 引申为偏僻、边远的地方。4. 在古文中也指事物的部分或方面。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 384,
@@ -7164,7 +7053,7 @@ const characters = [
     ],
     "explanation": "愎（bì）：形容词。1. 固执；任性。如：刚愎自用（固执己见，不接受别人的意见）。2. 违逆；乖戾。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 385,
@@ -7172,7 +7061,6 @@ const characters = [
     "correctPronunciation": "líng",
     "wrongPronunciations": [
       "lǐng",
-      "líng（误以为轻声）",
       "lìng"
     ],
     "relatedPhrases": [
@@ -7183,7 +7071,7 @@ const characters = [
     ],
     "explanation": "瓴，读音为líng。本义指一种盛水的瓶子，古代也指房屋上仰盖的瓦，即瓦沟。在现代汉语中，主要用于成语“高屋建瓴”，比喻居高临下、不可阻挡的形势。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 386,
@@ -7221,7 +7109,7 @@ const characters = [
     ],
     "explanation": "篑（kuì）：名词，指盛土的竹筐。如《论语·子罕》：“譬如为山，未成一篑，止，吾止也。” 常用在“功亏一篑”这个成语中，比喻事情只差最后一点努力而未能完成。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 388,
@@ -7278,7 +7166,7 @@ const characters = [
     ],
     "explanation": "窥（kuī）：动词。1. 从小孔、缝隙或隐蔽处偷看。如：窥探、窥视。2. 观察、察看。如：窥测、窥见一斑。3. 泛指观看。如：窥镜。本义指暗中偷看，引申为观察、探看。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 391,
@@ -7297,7 +7185,7 @@ const characters = [
     ],
     "explanation": "霁（jì），形声字，从雨，齐声。本义：雨止。引申义：1. 雨雪停止，天放晴。如：雪霁、光风霁月。2. 怒气消散，脸色转和。如：色霁、霁颜。3. 明朗。如：霁色（晴朗的天色）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 392,
@@ -7335,7 +7223,7 @@ const characters = [
     ],
     "explanation": "蜃（shèn）：1. 蛤蜊，一种软体动物，生活在浅海泥沙中。2. 古代传说中一种能吐气形成楼台城郭的蛟龙，后多指海市蜃楼这种因光线折射而形成的自然景象。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 394,
@@ -7354,7 +7242,7 @@ const characters = [
     ],
     "explanation": "咀，读音jǔ。本义指含在嘴里细细玩味。在现代汉语中，主要表示用牙齿磨碎食物，引申为仔细品味、体会。常见于“咀嚼”一词，指用牙齿磨碎食物，也比喻对事物反复体会。在“含英咀华”中，比喻读书时细细品味文章精华。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 395,
@@ -7392,7 +7280,7 @@ const characters = [
     ],
     "explanation": "沆，读音为hàng。本义指广阔的水面或大水。常用词“沆瀣”指夜间的水汽、露水，成语“沆瀣一气”比喻气味相投的人勾结在一起。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 397,
@@ -7411,7 +7299,7 @@ const characters = [
     ],
     "explanation": "瀣，读音为xiè。本义指夜间的水汽、露水。后多用于成语“沆瀣一气”，比喻气味相投的人勾结在一起，含贬义。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 398,
@@ -7466,7 +7354,7 @@ const characters = [
     ],
     "explanation": "怙，读音为hù。本义为依靠、凭借。在古汉语中常指依仗、依赖，如“怙恃”指父母的代称（父曰怙，母曰恃），也指依仗权势。现代汉语中主要用于“怙恶不悛”一词，指坚持作恶，不肯悔改。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 401,
@@ -7485,7 +7373,7 @@ const characters = [
     ],
     "explanation": "悛（quān）：动词。意为悔改、改正。常用于表示改正过错、恶行。如“怙恶不悛”指坚持作恶，不肯悔改。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 402,
@@ -7530,12 +7418,13 @@ const characters = [
     "correctPronunciation": "jiǎo",
     "wrongPronunciations": [
       "jiāo",
-      "qiáo"
+      "qiáo",
+      "jiáo"
     ],
     "relatedPhrases": [
       "矫揉造作",
       "矫枉过正",
-      "矫情",
+      "矫捷",
       "矫健"
     ],
     "explanation": "1. 纠正，把弯曲的弄直：～正。～枉过正。2. 强壮，勇武：～健。～捷。3. 假托：～命。～诏。4. 姓。",
@@ -7615,7 +7504,7 @@ const characters = [
     ],
     "explanation": "揖，读音为yī。本义为拱手行礼，即双手抱拳高拱，身体略弯，表示敬意。古代的一种礼节，常用于见面、告别、致谢等场合。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 409,
@@ -7634,7 +7523,7 @@ const characters = [
     ],
     "explanation": "岿（kuī），形容词。本义：小山丛列。后多形容高大、独立的样子。常用词“岿然”意为高大挺立、稳固不动的样子，如“岿然不动”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 410,
@@ -7653,7 +7542,7 @@ const characters = [
     ],
     "explanation": "妪（yù）：名词，指年老的女人。如：老妪。也泛指妇女。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 411,
@@ -7697,8 +7586,7 @@ const characters = [
     "char": "朝",
     "correctPronunciation": "zhāo",
     "wrongPronunciations": [
-      "cháo",
-      "zhāo（误以为只有cháo音）"
+      "cháo"
     ],
     "relatedPhrases": [
       "灭此朝食",
@@ -7759,8 +7647,7 @@ const characters = [
     "relatedPhrases": [
       "呕心沥血",
       "呕吐",
-      "作呕",
-      "呕气"
+      "作呕"
     ],
     "explanation": "呕（ǒu）：动词。1. 吐，从口中吐出：呕吐、呕血。2. 比喻费尽心思：呕心沥血。3. 使人生厌或令人不快：令人作呕。",
     "errorReasonType": 5,
@@ -7802,7 +7689,7 @@ const characters = [
     ],
     "explanation": "倨，读音为jù。本义指傲慢、不恭敬。常用义：1.傲慢，如“倨傲”；2.直而折曲，如“倨句”（指物体弯曲的形状，角度大于90度叫“倨”，小于90度叫“句”）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 419,
@@ -7840,7 +7727,7 @@ const characters = [
     ],
     "explanation": "箧（qiè）：名词，指小箱子、小匣子，通常用于存放书籍、衣物等物品。如“书箧”指书箱，“行箧”指旅行用的箱子。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 421,
@@ -7859,7 +7746,7 @@ const characters = [
     ],
     "explanation": "黩（dú）：1. 轻率；不庄重。如：黩武（滥用武力，好战）。2. 玷污；污浊。如：黩货（贪污纳贿）。3. 轻慢；亵渎。如：黩神（亵渎神灵）。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 422,
@@ -7877,7 +7764,7 @@ const characters = [
     ],
     "explanation": "啮，读音为niè。本义指用牙齿咬、啃。引申为侵蚀、缺口、缺口等义。在机械工程中，“啮合”指齿轮等互相咬合。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 423,
@@ -7933,7 +7820,7 @@ const characters = [
     ],
     "explanation": "缄（jiān）：1. 封闭；封口。如：缄口、缄默。2. 书信。如：缄札、缄书。3. 古代用以捆扎器物的绳索。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 426,
@@ -7989,7 +7876,7 @@ const characters = [
     ],
     "explanation": "古代殉葬用的木制或陶制的偶人，多为人形，用以代替活人陪葬。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 429,
@@ -8008,7 +7895,7 @@ const characters = [
     ],
     "explanation": "动词，用舌头舔。本义为以舌舔物，引申为像用舌头舔一样的行为，常用于比喻疼爱、抚慰或奉承等行为。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 430,
@@ -8027,7 +7914,7 @@ const characters = [
     ],
     "explanation": "忾（kài）：①愤怒，愤恨。如：同仇敌忾。②叹息。如：忾然。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 431,
@@ -8065,7 +7952,7 @@ const characters = [
     ],
     "explanation": "绔（kù）：本义指套裤，古代指左右各一，分裹两胫的套裤，以别于有裆的“裈”。后多用于“纨绔”一词，指富贵人家子弟穿的细绢做成的裤子，借指富贵人家的子弟，含贬义。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 433,
@@ -8083,7 +7970,7 @@ const characters = [
     ],
     "explanation": "喑，读音yīn。本义指哑，不能说话。引申为沉默不语、缄默。在成语“万马齐喑”中比喻人们沉默不语，不敢发表意见。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 434,
@@ -8102,7 +7989,7 @@ const characters = [
     ],
     "explanation": "伥（chāng）：1. 古代传说中被老虎咬死的人变成的鬼，这个鬼不敢离开老虎，反而给老虎做帮凶，引诱人来给老虎吃。2. 形容迷茫不知所措的样子，如“伥伥”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 435,
@@ -8119,7 +8006,7 @@ const characters = [
       "缪斯",
       "缪巧"
     ],
-    "explanation": "缪（móu）：1. 绸缪，缠绕。如“未雨绸缪”。2. 姓。3. 古同“谬”，错误。注意：作为姓氏时读作miào，在“纰缪”（错误）中读作miù，在“缪巧”（智谋、机巧）中读作móu。",
+    "explanation": "缪（móu）：1. 绸缪，缠绕。如“未雨绸缪”。    作为姓氏时读作miào，在“纰缪”（错误）中读作miù。",
     "errorReasonType": 2,
     "difficultyLevel": "高级"
   },
@@ -8158,7 +8045,7 @@ const characters = [
     ],
     "explanation": "毋，读音为wú。本义为表示禁止或劝阻，相当于“不要”、“不可以”。常用作副词，表示否定。也用作姓氏。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 438,
@@ -8233,7 +8120,7 @@ const characters = [
     ],
     "explanation": "栩（xǔ）：1. 形容生动传神的样子。2. 古书上指栎（lì）树，也叫柞（zuò）树或麻栎。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 442,
@@ -8251,7 +8138,7 @@ const characters = [
     ],
     "explanation": "动词，意为拔起、提起。最常用于成语“揠苗助长”，比喻违反事物的发展规律，急于求成，反而坏事。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 443,
@@ -8270,7 +8157,7 @@ const characters = [
     ],
     "explanation": "赅（gāi）：①完备，齐全。如：言简意赅。②包括，概括。如：举一赅百。",
     "errorReasonType": 6,
-    "difficultyLevel": "高级"
+    "difficultyLevel": "挑战级"
   },
   {
     "id": 444,
@@ -8301,8 +8188,8 @@ const characters = [
     "relatedPhrases": [
       "要言不烦",
       "重要",
-      "要求",
-      "需要"
+      "要闻",
+      "摘要"
     ],
     "explanation": "1. 索取；希望得到。2. 应该；必须。3. 将要。4. 重大；关键。5. 重要的内容。6. 如果。7. 表示做某事的意志。8. 请求；叫；让。",
     "errorReasonType": 2,
@@ -8325,7 +8212,7 @@ const characters = [
     ],
     "explanation": "蹴（cù）的基本含义是：1. 踢：蹴鞠（古代的一种足球运动）。2. 踏：一蹴而就（踏一步就成功，比喻事情轻而易举，一下子就成功）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 447,
@@ -8347,7 +8234,7 @@ const characters = [
   },
   {
     "id": 448,
-    "char": "暴",
+    "char": "曝",
     "correctPronunciation": "pù",
     "wrongPronunciations": [
       "bào",
@@ -8355,12 +8242,12 @@ const characters = [
       "pū"
     ],
     "relatedPhrases": [
-      "一暴十寒",
-      "暴晒",
-      "暴光",
-      "暴干"
+      "一曝十寒",
+      "曝晒",
+      "曝光",
+      "曝衣"
     ],
-    "explanation": "“暴”字读pù时，是“曝”的古字，意为“晒”。在现代汉语中，此读音主要用于成语“一暴十寒”（比喻做事无恒心，努力少，懈怠多）以及表示“晒”义的书面语中，如“暴晒”、“暴光”（即曝光）。",
+    "explanation": "动词  〈书〉晒。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -8393,12 +8280,9 @@ const characters = [
       "háo"
     ],
     "relatedPhrases": [
-      "一丘之貉",
-      "貉子",
-      "貉绒",
-      "貉裘"
+      "一丘之貉"
     ],
-    "explanation": "貉（hé）：哺乳动物，外形似狐，但体较胖，尾较短。昼伏夜出，杂食性。毛皮珍贵，可制衣帽。常见于“一丘之貉”等成语中，比喻彼此相似，同是丑类。",
+    "explanation": "貉（hé）：哺乳动物，外形似狐，但体较胖，尾较短。昼伏夜出，杂食性。毛皮珍贵，可制衣帽。常见于“一丘之貉”等成语中，比喻彼此相似，同是丑类。口语中读háo。",
     "errorReasonType": 2,
     "difficultyLevel": "中级"
   },
@@ -8407,8 +8291,7 @@ const characters = [
     "char": "应",
     "correctPronunciation": "yīng",
     "wrongPronunciations": [
-      "yìng",
-      "yīng (在'应该'中误读为轻声)"
+      "yìng"
     ],
     "relatedPhrases": [
       "一应俱全",
@@ -8455,7 +8338,7 @@ const characters = [
     ],
     "explanation": "壑（hè）：本义指深谷、深沟。引申为深坑、山谷。在成语中常比喻难以满足的欲望或险要的地形。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 454,
@@ -8566,7 +8449,7 @@ const characters = [
     ],
     "explanation": "俎（zǔ）：1.古代祭祀时盛放祭品的礼器，形似几案。2.切肉或切菜时垫在下面的砧板。如：刀俎（刀和砧板，比喻宰割者或迫害者）。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 460,
@@ -8584,7 +8467,7 @@ const characters = [
     ],
     "explanation": "罔（wǎng）：1. 没有；无：置若罔闻。2. 不：罔知所措。3. 蒙蔽：欺罔。4. 同“网”。5. 古又同“惘”。",
     "errorReasonType": 6,
-    "difficultyLevel": "中级"
+    "difficultyLevel": "高级"
   },
   {
     "id": 461,
@@ -8592,7 +8475,6 @@ const characters = [
     "correctPronunciation": "zhuì",
     "wrongPronunciations": [
       "chuǎn",
-      "zhuì (误读为第四声，实际为第四声，但常被误读为其他声调或音节)",
       "zhuī"
     ],
     "relatedPhrases": [
@@ -8640,6 +8522,3075 @@ const characters = [
     ],
     "explanation": "捭，读音为bǎi。本义为两手横向对外旁击，引申为分开、撕裂。在“捭阖”一词中，指开、启，与“阖”（关闭）相对，是古代纵横家游说之术的重要概念，指用言辞、手段分化或拉拢对方，以达到政治或外交目的。",
     "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 464,
+    "char": "岙",
+    "correctPronunciation": "ào",
+    "wrongPronunciations": [
+      "qiáo",
+      "yù"
+    ],
+    "relatedPhrases": [
+      "崔家岙",
+      "山岙",
+      "岙口",
+      "岙里"
+    ],
+    "explanation": "岙（ào）：浙江、福建等沿海一带称山间平地（多用于地名）。如崔家岙（浙江省地名）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 465,
+    "char": "酂",
+    "correctPronunciation": "cuó",
+    "wrongPronunciations": [
+      "zàn",
+      "cuò",
+      "zuō"
+    ],
+    "relatedPhrases": [
+      "酂阳",
+      "酂城",
+      "酂侯"
+    ],
+    "explanation": "酂（cuó）：地名，在湖北省老河口市，如酂阳。也读zàn，古县名，在今河南省永城市西南。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 466,
+    "char": "埔",
+    "correctPronunciation": "bù",
+    "wrongPronunciations": [
+      "pǔ",
+      "fǔ",
+      "bū"
+    ],
+    "relatedPhrases": [
+      "大埔",
+      "埔头"
+    ],
+    "explanation": "埔（bù）：地名，在广东省梅州市，如大埔。也读pǔ，用于“黄埔”（在广东省广州市）。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 467,
+    "char": "柘",
+    "correctPronunciation": "zhè",
+    "wrongPronunciations": [
+      "tuò",
+      "zhé",
+      "zhà"
+    ],
+    "relatedPhrases": [
+      "柘城",
+      "柘树",
+      "柘木",
+      "柘黄"
+    ],
+    "explanation": "柘（zhè）：1. 落叶灌木或小乔木，树皮灰褐色，有长刺，叶子卵形，果实球形，红色，可以吃，木材坚硬密实，是贵重的木料。2. 地名，在河南省，如柘城。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 468,
+    "char": "訾",
+    "correctPronunciation": "zī",
+    "wrongPronunciations": [
+      "zǐ",
+      "cǐ"
+    ],
+    "relatedPhrases": [
+      "訾家",
+      "訾议",
+      "訾毁",
+      "訾算"
+    ],
+    "explanation": "訾（zī）：1. 姓。2. 古同“赀”，计算。也读zǐ，说人坏话，诋毁：訾议。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 469,
+    "char": "馗",
+    "correctPronunciation": "kuí",
+    "wrongPronunciations": [
+      "jiǔ",
+      "qiú",
+      "guǐ"
+    ],
+    "relatedPhrases": [
+      "钟馗",
+      "馗道",
+      "馗厨"
+    ],
+    "explanation": "馗（kuí）：1. 四通八达的大道。2. 用于人名，如钟馗（传说中能打鬼驱除邪祟的神）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 470,
+    "char": "珲",
+    "correctPronunciation": "hún",
+    "wrongPronunciations": [
+      "huī",
+      "hūn",
+      "huǐ"
+    ],
+    "relatedPhrases": [
+      "珲春",
+      "瑷珲",
+      "珲河"
+    ],
+    "explanation": "珲（hún）：用于地名，如珲春（在吉林省）。也读huī，瑷珲（地名，在黑龙江省，今作爱辉）。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 471,
+    "char": "疃",
+    "correctPronunciation": "tuǎn",
+    "wrongPronunciations": [
+      "tóng",
+      "zhuàng",
+      "tuán"
+    ],
+    "relatedPhrases": [
+      "百家疃",
+      "疃里",
+      "疃堡",
+      "庄疃"
+    ],
+    "explanation": "疃（tuǎn）：村庄；屯（多用于地名）。如百家疃（北京市地名）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 472,
+    "char": "蚌",
+    "correctPronunciation": "bèng",
+    "wrongPronunciations": [
+      "bàng",
+      "péng",
+      "bàn"
+    ],
+    "relatedPhrases": [
+      "蚌埠",
+      "蚌山",
+      "蚌港"
+    ],
+    "explanation": "蚌（bèng）：用于地名，如蚌埠（在安徽省）。也读bàng，软体动物，有两个椭圆形介壳，可以开闭。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 473,
+    "char": "埠",
+    "correctPronunciation": "bù",
+    "wrongPronunciations": [
+      "fù",
+      "pù",
+      "bū"
+    ],
+    "relatedPhrases": [
+      "蚌埠",
+      "商埠",
+      "埠头",
+      "本埠"
+    ],
+    "explanation": "埠（bù）：1. 码头，多指有码头的城镇：商埠。2. 旧指与外国通商的城市：开埠。如蚌埠（安徽省地名）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 474,
+    "char": "郯",
+    "correctPronunciation": "tán",
+    "wrongPronunciations": [
+      "yán",
+      "dàn",
+      "zhàn"
+    ],
+    "relatedPhrases": [
+      "郯城",
+      "郯国",
+      "郯子"
+    ],
+    "explanation": "郯（tán）：1. 古国名，在今山东省郯城县一带。2. 地名，在山东省，如郯城。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 475,
+    "char": "鄄",
+    "correctPronunciation": "juàn",
+    "wrongPronunciations": [
+      "yān",
+      "juān",
+      "quān"
+    ],
+    "relatedPhrases": [
+      "鄄城",
+      "鄄邑",
+      "鄄地"
+    ],
+    "explanation": "鄄（juàn）：地名，在山东省菏泽市，如鄄城。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 476,
+    "char": "宕",
+    "correctPronunciation": "dàng",
+    "wrongPronunciations": [
+      "tán",
+      "dāng",
+      "tuò"
+    ],
+    "relatedPhrases": [
+      "宕昌",
+      "宕渠",
+      "跌宕",
+      "延宕"
+    ],
+    "explanation": "宕（dàng）：1. 拖延：延宕。2. 放纵，不受拘束：跌宕。3. 地名，在甘肃省，如宕昌。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 477,
+    "char": "渑",
+    "correctPronunciation": "miǎn",
+    "wrongPronunciations": [
+      "shéng",
+      "mǐn",
+      "miàn"
+    ],
+    "relatedPhrases": [
+      "渑池",
+      "渑水",
+      "渑淄"
+    ],
+    "explanation": "渑（miǎn）：用于地名，如渑池（在河南省）。也读shéng，古水名，在今山东省临淄市一带。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 478,
+    "char": "荥",
+    "correctPronunciation": "xíng",
+    "wrongPronunciations": [
+      "yíng",
+      "xìng",
+      "róng"
+    ],
+    "relatedPhrases": [
+      "荥阳",
+      "荥泽",
+      "荥河"
+    ],
+    "explanation": "荥（xíng）：用于地名，如荥阳（在河南省郑州市）。也读yíng，荥经（在四川省雅安市）。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 479,
+    "char": "汜",
+    "correctPronunciation": "sì",
+    "wrongPronunciations": [
+      "fàn",
+      "fú"
+    ],
+    "relatedPhrases": [
+      "汜水",
+      "汜河",
+      "汜南"
+    ],
+    "explanation": "汜（sì）：1. 水名，在河南省郑州市，东流入贾鲁河。2. 不流通的小沟渠。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 480,
+    "char": "鄱",
+    "correctPronunciation": "pó",
+    "wrongPronunciations": [
+      "bó",
+      "pān",
+      "fán"
+    ],
+    "relatedPhrases": [
+      "鄱阳湖",
+      "鄱阳",
+      "鄱阳县"
+    ],
+    "explanation": "鄱（pó）：用于地名，如鄱阳湖（在江西省）、鄱阳县（在江西省上饶市）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 481,
+    "char": "褒",
+    "correctPronunciation": "bāo",
+    "wrongPronunciations": [
+      "bǎo",
+      "bào",
+      "bā"
+    ],
+    "relatedPhrases": [
+      "褒斜道",
+      "褒姒",
+      "褒奖",
+      "褒扬"
+    ],
+    "explanation": "褒（bāo）：1. 赞扬，夸奖：褒奖。2. 地名，如褒斜道（在陕西省）。3. 姓。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 482,
+    "char": "亳",
+    "correctPronunciation": "bó",
+    "wrongPronunciations": [
+      "háo",
+      "bǎo"
+    ],
+    "relatedPhrases": [
+      "亳州",
+      "亳都",
+      "亳县",
+      "亳州古城"
+    ],
+    "explanation": "亳（bó）：地名，在安徽省亳州市，是中国历史文化名城，商朝早期都城。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 483,
+    "char": "郴",
+    "correctPronunciation": "chēn",
+    "wrongPronunciations": [
+      "bīn",
+      "shān",
+      "chén"
+    ],
+    "relatedPhrases": [
+      "郴州",
+      "郴江",
+      "郴山",
+      "郴州市"
+    ],
+    "explanation": "郴（chēn）：地名，在湖南省郴州市，因郴江而得名。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 484,
+    "char": "舂",
+    "correctPronunciation": "chōng",
+    "wrongPronunciations": [
+      "chūn",
+      "cōng",
+      "chǒng"
+    ],
+    "relatedPhrases": [
+      "舂陵",
+      "舂米",
+      "舂杵",
+      "舂臼"
+    ],
+    "explanation": "舂（chōng）：把东西放在石臼或乳钵里捣掉皮壳或捣碎：舂米。地名，如舂陵（在湖南省宁远县）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 485,
+    "char": "澶",
+    "correctPronunciation": "chán",
+    "wrongPronunciations": [
+      "dàn",
+      "zhàn",
+      "tán"
+    ],
+    "relatedPhrases": [
+      "澶渊",
+      "澶州",
+      "澶渊之盟",
+      "澶水"
+    ],
+    "explanation": "澶（chán）：1. 古湖名，在今河南省濮阳市西。2. 地名，如澶州（古州名，在今河南省濮阳市）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 486,
+    "char": "爨",
+    "correctPronunciation": "cuàn",
+    "wrongPronunciations": [
+      "cuān",
+      "cuán",
+      "cù"
+    ],
+    "relatedPhrases": [
+      "爨底下",
+      "爨宝子碑",
+      "爨龙颜碑",
+      "爨乡"
+    ],
+    "explanation": "爨（cuàn）：1. 烧火做饭：分居各爨。2. 灶：执爨。3. 地名，如爨底下（在北京西郊门头沟区）。4. 姓。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 487,
+    "char": "仃",
+    "correctPronunciation": "dīng",
+    "wrongPronunciations": [
+      "tīng",
+      "dǐng",
+      "dìng"
+    ],
+    "relatedPhrases": [
+      "伶仃洋",
+      "孤苦伶仃",
+      "仃伶",
+      "仃立"
+    ],
+    "explanation": "仃（dīng）：孤独，没有依靠：伶仃。地名，如伶仃洋（在广东省珠江口外）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 488,
+    "char": "沌",
+    "correctPronunciation": "zhuàn",
+    "wrongPronunciations": [
+      "dùn",
+      "tún",
+      "zhuǎn"
+    ],
+    "relatedPhrases": [
+      "沌口",
+      "沌阳"
+    ],
+    "explanation": "沌（zhuàn）：用于地名，如沌口（在湖北省武汉市）、沌阳（在湖北省武汉市）。也读dùn，混沌（hùn dùn）。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 489,
+    "char": "汾",
+    "correctPronunciation": "fén",
+    "wrongPronunciations": [
+      "fēn",
+      "fěn",
+      "fèn"
+    ],
+    "relatedPhrases": [
+      "汾河",
+      "汾阳",
+      "汾酒",
+      "汾州"
+    ],
+    "explanation": "汾（fén）：水名，汾河（在山西省），是黄河的第二大支流。地名，如汾阳（在山西省）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 490,
+    "char": "涪",
+    "correctPronunciation": "fú",
+    "wrongPronunciations": [
+      "péi",
+      "fǔ",
+      "bèi"
+    ],
+    "relatedPhrases": [
+      "涪陵",
+      "涪江",
+      "涪城",
+      "涪州"
+    ],
+    "explanation": "涪（fú）：水名，涪江（在四川省），是嘉陵江的支流。地名，如涪陵（在重庆市）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 491,
+    "char": "阜",
+    "correctPronunciation": "fù",
+    "wrongPronunciations": [
+      "bù",
+      "fǔ",
+      "pù"
+    ],
+    "relatedPhrases": [
+      "阜阳",
+      "阜宁",
+      "阜南",
+      "阜盛"
+    ],
+    "explanation": "阜（fù）：1. 土山：高阜。2. （物资）多：物阜民丰。3. 地名，如阜阳（在安徽省）、阜宁（在江苏省）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 492,
+    "char": "邗",
+    "correctPronunciation": "hán",
+    "wrongPronunciations": [
+      "gān",
+      "hàn",
+      "hé"
+    ],
+    "relatedPhrases": [
+      "邗江",
+      "邗沟",
+      "邗城",
+      "邗国"
+    ],
+    "explanation": "邗（hán）：1. 古国名，在今江苏省扬州市一带。2. 地名，如邗江（在江苏省扬州市）。3. 邗沟（中国古代运河，是大运河的最早一段）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 493,
+    "char": "黟",
+    "correctPronunciation": "yī",
+    "wrongPronunciations": [
+      "xī",
+      "wū",
+      "yǐ"
+    ],
+    "relatedPhrases": [
+      "黟县",
+      "黟山",
+      "黟然",
+      "黟黑"
+    ],
+    "explanation": "黟（yī）：1. 黑木。2. 黑，黑色：黟然黑者为星星。3. 地名，如黟县（在安徽省黄山市）、黟山（黄山的古称）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 494,
+    "char": "蓟",
+    "correctPronunciation": "jì",
+    "wrongPronunciations": [
+      "jī",
+      "qí",
+      "jiè"
+    ],
+    "relatedPhrases": [
+      "蓟县",
+      "蓟州",
+      "蓟城",
+      "蓟门"
+    ],
+    "explanation": "蓟（jì）：1. 多年生草本植物，花紫色，可入药。2. 地名，如蓟县（在天津市）、蓟州（古州名，在今河北省北部）。3. 古地名，在北京西南，曾是燕国都城。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 495,
+    "char": "葭",
+    "correctPronunciation": "jiā",
+    "wrongPronunciations": [
+      "xiá",
+      "jiǎ",
+      "jià"
+    ],
+    "relatedPhrases": [
+      "葭萌关",
+      "蒹葭",
+      "葭莩",
+      "葭思"
+    ],
+    "explanation": "葭（jiā）：1. 初生的芦苇：蒹葭。2. 地名，如葭萌关（在四川省广元市）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 496,
+    "char": "犍",
+    "correctPronunciation": "qián",
+    "wrongPronunciations": [
+      "jiān",
+      "gān",
+      "jiàn"
+    ],
+    "relatedPhrases": [
+      "犍为",
+      "犍牛",
+      "犍子",
+      "犍陀罗"
+    ],
+    "explanation": "犍（qián）：用于地名，如犍为（在四川省乐山市）。也读jiān，指阉割过的公牛。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 497,
+    "char": "崀",
+    "correctPronunciation": "làng",
+    "wrongPronunciations": [
+      "liáng",
+      "lǎng",
+      "lāng"
+    ],
+    "relatedPhrases": [
+      "崀山",
+      "崀山丹霞",
+      "崀山风景区",
+      "崀山世界遗产"
+    ],
+    "explanation": "崀（làng）：地名，如崀山（在湖南省邵阳市新宁县，是世界自然遗产）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 498,
+    "char": "泸",
+    "correctPronunciation": "lú",
+    "wrongPronunciations": [
+      "lǔ",
+      "lù",
+      "lū"
+    ],
+    "relatedPhrases": [
+      "泸州",
+      "泸定桥",
+      "泸县",
+      "泸水"
+    ],
+    "explanation": "泸（lú）：1. 水名，泸水（金沙江在中国四川省宜宾市以上、四川省和云南省交界处的一段）。2. 地名，如泸州（在四川省）、泸定桥（在四川省甘孜藏族自治州）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 499,
+    "char": "臧",
+    "correctPronunciation": "zāng",
+    "wrongPronunciations": [
+      "cáng",
+      "zàng"
+    ],
+    "relatedPhrases": [
+      "臧姓",
+      "臧否",
+      "臧氏",
+      "臧克家"
+    ],
+    "explanation": "臧（zāng）：1. 善，好：臧否（pǐ）（褒贬，评论，说好说坏）。2. 姓，如臧克家（中国现代诗人）。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 500,
+    "char": "查",
+    "correctPronunciation": "zhā",
+    "wrongPronunciations": [
+      "chá",
+      "zā",
+      "zhǎ"
+    ],
+    "relatedPhrases": [
+      "查姓",
+      "查良镛",
+      "查济",
+      "查干湖"
+    ],
+    "explanation": "查（zhā）：1. 姓，如查良镛（金庸，中国著名武侠小说家）。2. 同“楂”。3. 古同“槎”，水中浮木。也读chá，检查，调查。",
+    "errorReasonType": 2,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 501,
+    "char": "尉",
+    "correctPronunciation": "yù",
+    "wrongPronunciations": [
+      "wèi"
+    ],
+    "relatedPhrases": [
+      "尉迟",
+      "尉迟恭",
+      "尉迟琳嘉"
+    ],
+    "explanation": "尉（yù）：用于复姓尉迟，如唐朝名将尉迟恭。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 502,
+    "char": "万",
+    "correctPronunciation": "mò",
+    "wrongPronunciations": [
+      "wàn"
+    ],
+    "relatedPhrases": [
+      "万俟",
+      "万俟卨",
+      "万俟姓"
+    ],
+    "explanation": "万（mò）：用于复姓万俟，如南宋奸臣万俟卨。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 503,
+    "char": "俟",
+    "correctPronunciation": "qí",
+    "wrongPronunciations": [
+      "sì",
+      "sī"
+    ],
+    "relatedPhrases": [
+      "万俟",
+      "万俟卨",
+      "万俟姓"
+    ],
+    "explanation": "俟（qí）：用于复姓万俟，如南宋奸臣万俟卨。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 504,
+    "char": "澹",
+    "correctPronunciation": "tán",
+    "wrongPronunciations": [
+      "dàn",
+      "zhān"
+    ],
+    "relatedPhrases": [
+      "澹台",
+      "澹台灭明",
+      "澹台姓"
+    ],
+    "explanation": "澹（tán）：用于复姓澹台，如孔子弟子澹台灭明。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 505,
+    "char": "甫",
+    "correctPronunciation": "fǔ",
+    "wrongPronunciations": [
+      "pǔ",
+      "bǎo"
+    ],
+    "relatedPhrases": [
+      "皇甫",
+      "皇甫谧",
+      "皇甫姓"
+    ],
+    "explanation": "甫（fǔ）：用于复姓皇甫，如西晋医学家皇甫谧。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 506,
+    "char": "令",
+    "correctPronunciation": "líng",
+    "wrongPronunciations": [
+      "lìng"
+    ],
+    "relatedPhrases": [
+      "令狐",
+      "令狐冲",
+      "令狐姓"
+    ],
+    "explanation": "令（líng）：用于复姓令狐，如唐朝文学家令狐楚、金庸小说《笑傲江湖》中的令狐冲。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 507,
+    "char": "长",
+    "correctPronunciation": "zhǎng",
+    "wrongPronunciations": [
+      "cháng"
+    ],
+    "relatedPhrases": [
+      "长孙",
+      "长孙无忌",
+      "长孙皇后"
+    ],
+    "explanation": "长（zhǎng）：用于复姓长孙，如唐朝名臣长孙无忌。",
+    "errorReasonType": 2,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 508,
+    "char": "葛",
+    "correctPronunciation": "gě",
+    "wrongPronunciations": [
+      "gé",
+      "gē"
+    ],
+    "relatedPhrases": [
+      "诸葛",
+      "诸葛亮",
+      "诸葛姓"
+    ],
+    "explanation": "葛（gě）：用于复姓诸葛，如三国时期诸葛亮。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 509,
+    "char": "龘",
+    "correctPronunciation": "dá",
+    "wrongPronunciations": [
+      "tà",
+      "dā",
+      "zhā"
+    ],
+    "relatedPhrases": [
+      "龘龙",
+      "龘龘",
+      "龘行"
+    ],
+    "explanation": "龘（dá）：形容龙腾飞的样子，是目前收录在《康熙字典》中笔画最多的汉字之一，共48画。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 510,
+    "char": "靐",
+    "correctPronunciation": "bìng",
+    "wrongPronunciations": [
+      "pīng",
+      "bèng",
+      "léi"
+    ],
+    "relatedPhrases": [
+      "靐雳",
+      "靐靐",
+      "靐响"
+    ],
+    "explanation": "靐（bìng）：雷声。引申为很大的声响，如“靐靐”（雷声）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 511,
+    "char": "齉",
+    "correctPronunciation": "nàng",
+    "wrongPronunciations": [
+      "nāng",
+      "nǎng",
+      "láng"
+    ],
+    "relatedPhrases": [
+      "齉鼻子",
+      "齉齉",
+      "鼻塞齉"
+    ],
+    "explanation": "齉（nàng）：鼻子不通气，发音不清：齉鼻子。是现代汉语中笔画较多的汉字之一，共36画。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 512,
+    "char": "龖",
+    "correctPronunciation": "dá",
+    "wrongPronunciations": [
+      "tà",
+      "dā",
+      "zhā"
+    ],
+    "relatedPhrases": [
+      "龖龙",
+      "龖龘",
+      "龖行"
+    ],
+    "explanation": "龖（dá）：1. 双龙：“龖之赫，霆之砉。”2. 龙腾飞的样子。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 513,
+    "char": "麤",
+    "correctPronunciation": "cū",
+    "wrongPronunciations": [
+      "chū",
+      "cù",
+      "zū"
+    ],
+    "relatedPhrases": [
+      "麤犷",
+      "麤鲁",
+      "麤糙",
+      "麤笨"
+    ],
+    "explanation": "麤（cū）：同“粗”，指不细致，草率。是“粗”的异体字，由三个“鹿”字组成。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 514,
+    "char": "鱻",
+    "correctPronunciation": "xiān",
+    "wrongPronunciations": [
+      "yú",
+      "xiǎn",
+      "quán"
+    ],
+    "relatedPhrases": [
+      "鱻鱼",
+      "鱻味",
+      "鱻腥"
+    ],
+    "explanation": "鱻（xiān）：同“鲜”，指新鲜，鲜美。是“鲜”的异体字，由三个“鱼”字组成。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 515,
+    "char": "羴",
+    "correctPronunciation": "shān",
+    "wrongPronunciations": [
+      "yáng",
+      "shàn",
+      "sān"
+    ],
+    "relatedPhrases": [
+      "羴味",
+      "羴羴",
+      "羴香"
+    ],
+    "explanation": "羴（shān）：同“膻”，指羊肉的气味。是“膻”的异体字，由三个“羊”字组成。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 516,
+    "char": "犇",
+    "correctPronunciation": "bēn",
+    "wrongPronunciations": [
+      "bèn",
+      "pēn",
+      "mēn"
+    ],
+    "relatedPhrases": [
+      "犇跑",
+      "犇腾",
+      "犇涌",
+      "犇犇"
+    ],
+    "explanation": "犇（bēn）：同“奔”，指奔跑，疾走。是“奔”的异体字，由三个“牛”字组成。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 517,
+    "char": "驫",
+    "correctPronunciation": "biāo",
+    "wrongPronunciations": [
+      "piāo",
+      "biào"
+    ],
+    "relatedPhrases": [
+      "驫马",
+      "驫驰",
+      "驫驫"
+    ],
+    "explanation": "驫（biāo）：同“飙”，指暴风，疾风。是“飙”的异体字，由三个“马”字组成。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 518,
+    "char": "垚",
+    "correctPronunciation": "yáo",
+    "wrongPronunciations": [
+      "yǎo",
+      "tāo",
+      "yào"
+    ],
+    "relatedPhrases": [
+      "垚土",
+      "垚垚",
+      "垚山"
+    ],
+    "explanation": "垚（yáo）：同“尧”，多用于人名。是“尧”的异体字，由三个“土”字组成。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 519,
+    "char": "淼",
+    "correctPronunciation": "miǎo",
+    "wrongPronunciations": [
+      "liǎo",
+      "mào",
+      "miào"
+    ],
+    "relatedPhrases": [
+      "淼淼",
+      "浩淼",
+      "淼渺",
+      "淼漫"
+    ],
+    "explanation": "淼（miǎo）：同“渺”，形容水大的样子。是“渺”的异体字，由三个“水”字组成。",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 520,
+    "char": "森",
+    "correctPronunciation": "sēn",
+    "wrongPronunciations": [
+      "shēn",
+      "sān"
+    ],
+    "relatedPhrases": [
+      "森林",
+      "阴森森",
+      "森然",
+      "森郁"
+    ],
+    "explanation": "森（sēn）：1. 树木多：森林。2. 繁密，众多：森罗万象。3. 阴暗，幽暗：阴森森。由三个“木”字组成。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 521,
+    "char": "焱",
+    "correctPronunciation": "yàn",
+    "wrongPronunciations": [
+      "yán",
+      "sān"
+    ],
+    "relatedPhrases": [
+      "焱焱",
+      "焱飞",
+      "焱焰",
+      "焱悠"
+    ],
+    "explanation": "焱（yàn）：火花，火焰。由三个“火”字组成。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 522,
+    "char": "磊",
+    "correctPronunciation": "lěi",
+    "wrongPronunciations": [
+      "lèi",
+      "lēi"
+    ],
+    "relatedPhrases": [
+      "光明磊落",
+      "光明正大",
+      "磊落",
+      "光明磊落"
+    ],
+    "explanation": "磊（lěi）：1. 光明正大，胸怀坦白：光明磊落。2. 石头多：怪石磊磊。由三个“石”字组成。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 523,
+    "char": "晶",
+    "correctPronunciation": "jīng",
+    "wrongPronunciations": [
+      "jìng",
+      "jǐng"
+    ],
+    "relatedPhrases": [
+      "晶莹",
+      "水晶",
+      "晶体",
+      "结晶"
+    ],
+    "explanation": "晶（jīng）：1. 光亮，明亮：晶莹。2. 晶体：水晶。3. 指水晶：茶晶。由三个“日”字组成。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 524,
+    "char": "众",
+    "correctPronunciation": "zhòng",
+    "wrongPronunciations": [
+      "zhōng",
+      "zhǒng"
+    ],
+    "relatedPhrases": [
+      "众多",
+      "群众",
+      "观众",
+      "众人"
+    ],
+    "explanation": "众（zhòng）：1. 许多（与“寡”相对）：众多。2. 许多人：群众。由三个“人”字组成。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 525,
+    "char": "品",
+    "correctPronunciation": "pǐn",
+    "wrongPronunciations": [
+      "pīn",
+      "píng"
+    ],
+    "relatedPhrases": [
+      "品质",
+      "品种",
+      "品尝",
+      "品味"
+    ],
+    "explanation": "品（pǐn）：1. 物件：物品。2. 等级，种类：品种。3. 性质：品质。由三个“口”字组成。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 526,
+    "char": "矗",
+    "correctPronunciation": "chù",
+    "wrongPronunciations": [
+      "zhù",
+      "chū"
+    ],
+    "relatedPhrases": [
+      "矗立",
+      "矗矗",
+      "矗然",
+      "矗入云霄"
+    ],
+    "explanation": "矗（chù）：直立，高耸：矗立。由三个“直”字组成。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 527,
+    "char": "鑫",
+    "correctPronunciation": "xīn",
+    "wrongPronunciations": [
+      "xīng",
+      "xìn"
+    ],
+    "relatedPhrases": [
+      "鑫鑫",
+      "金鑫",
+      "鑫源",
+      "鑫盛"
+    ],
+    "explanation": "鑫（xīn）：财富兴盛（多用于人名或字号）。由三个“金”字组成。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 528,
+    "char": "赑",
+    "correctPronunciation": "bì",
+    "wrongPronunciations": [
+      "bēi",
+      "bèi"
+    ],
+    "relatedPhrases": [
+      "赑屃",
+      "赑屃驮碑",
+      "赑屃负重"
+    ],
+    "explanation": "赑（bì）：用于‘赑屃’，传说中的一种动物，像龟，是龙生九子之一，力大无穷，能驮石碑。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 529,
+    "char": "屃",
+    "correctPronunciation": "xì",
+    "wrongPronunciations": [
+      "xǐ",
+      "xī"
+    ],
+    "relatedPhrases": [
+      "赑屃",
+      "赑屃驮碑",
+      "赑屃负重"
+    ],
+    "explanation": "屃（xì）：用于‘赑屃’，传说中的一种动物，像龟，是龙生九子之一，力大无穷，能驮石碑。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 530,
+    "char": "饕",
+    "correctPronunciation": "tāo",
+    "wrongPronunciations": [
+      "táo"
+    ],
+    "relatedPhrases": [
+      "饕餮",
+      "饕餮大餐",
+      "饕餮盛宴"
+    ],
+    "explanation": "饕（tāo）：用于‘饕餮’，传说中的一种凶恶贪食的野兽，古代青铜器上常用它的头部形状做装饰。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 531,
+    "char": "餮",
+    "correctPronunciation": "tiè",
+    "wrongPronunciations": [
+      "tiě",
+      "tì"
+    ],
+    "relatedPhrases": [
+      "饕餮",
+      "饕餮大餐",
+      "饕餮盛宴"
+    ],
+    "explanation": "餮（tiè）：用于‘饕餮’，传说中的一种凶恶贪食的野兽，古代青铜器上常用它的头部形状做装饰。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 532,
+    "char": "耄",
+    "correctPronunciation": "mào",
+    "wrongPronunciations": [
+      "máo"
+    ],
+    "relatedPhrases": [
+      "耄耋",
+      "耄耋之年",
+      "耄耋老人"
+    ],
+    "explanation": "耄（mào）：指八九十岁的年纪：耄耋之年。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 533,
+    "char": "耋",
+    "correctPronunciation": "dié",
+    "wrongPronunciations": [
+      "zhì",
+      "tián",
+      "dí"
+    ],
+    "relatedPhrases": [
+      "耄耋",
+      "耄耋之年",
+      "耄耋老人"
+    ],
+    "explanation": "耋（dié）：指七八十岁的年纪：耄耋之年。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 534,
+    "char": "颐",
+    "correctPronunciation": "yí",
+    "wrongPronunciations": [
+      "yì",
+      "yǐ"
+    ],
+    "relatedPhrases": [
+      "期颐",
+      "期颐之年",
+      "颐养天年"
+    ],
+    "explanation": "颐（yí）：1. 保养：颐养。2. 用于‘期颐’，指人一百岁。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 535,
+    "char": "荏",
+    "correctPronunciation": "rěn",
+    "wrongPronunciations": [
+      "rèn",
+      "rén"
+    ],
+    "relatedPhrases": [
+      "荏苒",
+      "光阴荏苒",
+      "时光荏苒"
+    ],
+    "explanation": "荏（rěn）：1. 一年生草本植物，叶子卵形，茎方形，花白色或淡紫色，种子通称‘苏子’，可榨油。2. 用于‘荏苒’，时间渐渐过去。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 536,
+    "char": "蹉",
+    "correctPronunciation": "cuō",
+    "wrongPronunciations": [
+      "cuò"
+    ],
+    "relatedPhrases": [
+      "蹉跎",
+      "蹉跎岁月",
+      "岁月蹉跎"
+    ],
+    "explanation": "蹉（cuō）：用于‘蹉跎’，虚度光阴，任由时光流逝而无所作为。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 537,
+    "char": "跎",
+    "correctPronunciation": "tuó",
+    "wrongPronunciations": [
+      "tā"
+    ],
+    "relatedPhrases": [
+      "蹉跎",
+      "蹉跎岁月",
+      "岁月蹉跎"
+    ],
+    "explanation": "跎（tuó）：用于‘蹉跎’，虚度光阴，任由时光流逝而无所作为。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 538,
+    "char": "旖",
+    "correctPronunciation": "yǐ",
+    "wrongPronunciations": [
+      "qí"
+    ],
+    "relatedPhrases": [
+      "旖旎",
+      "风光旖旎",
+      "旖旎风光"
+    ],
+    "explanation": "旖（yǐ）：用于‘旖旎’，柔和美丽（多形容风光）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 539,
+    "char": "旎",
+    "correctPronunciation": "nǐ",
+    "wrongPronunciations": [
+      "lǐ",
+      "ní"
+    ],
+    "relatedPhrases": [
+      "旖旎",
+      "风光旖旎",
+      "旖旎风光"
+    ],
+    "explanation": "旎（nǐ）：用于‘旖旎’，柔和美丽（多形容风光）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 540,
+    "char": "逶",
+    "correctPronunciation": "wēi",
+    "wrongPronunciations": [
+      "wěi"
+    ],
+    "relatedPhrases": [
+      "逶迤",
+      "逶迤起伏",
+      "山脉逶迤"
+    ],
+    "explanation": "逶（wēi）：用于‘逶迤’，形容道路、山脉、河流等弯弯曲曲，延续不绝的样子。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 541,
+    "char": "迤",
+    "correctPronunciation": "yí",
+    "wrongPronunciations": [
+      "tuō",
+      "yǐ"
+    ],
+    "relatedPhrases": [
+      "逶迤",
+      "逶迤起伏",
+      "山脉逶迤"
+    ],
+    "explanation": "迤（yí）：用于‘逶迤’，形容道路、山脉、河流等弯弯曲曲，延续不绝的样子。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 542,
+    "char": "缈",
+    "correctPronunciation": "miǎo",
+    "wrongPronunciations": [
+      "miáo"
+    ],
+    "relatedPhrases": [
+      "缥缈",
+      "虚无缥缈",
+      "缥缈仙境"
+    ],
+    "explanation": "缈（miǎo）：用于‘缥缈’，形容隐隐约约，若有若无。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 543,
+    "char": "胧",
+    "correctPronunciation": "lóng",
+    "wrongPronunciations": [
+      "lǒng",
+      "long"
+    ],
+    "relatedPhrases": [
+      "朦胧",
+      "朦胧月色",
+      "睡意朦胧"
+    ],
+    "explanation": "胧（lóng）：用于‘朦胧’，1. 月光不明。2. 不清楚，模糊。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 544,
+    "char": "邋",
+    "correctPronunciation": "lā",
+    "wrongPronunciations": [
+      "lè",
+      "lǎ"
+    ],
+    "relatedPhrases": [
+      "邋遢",
+      "邋遢鬼",
+      "衣冠邋遢"
+    ],
+    "explanation": "邋（lā）：用于‘邋遢’，不整洁，不利落：邋遢的人。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 545,
+    "char": "遢",
+    "correctPronunciation": "tā",
+    "wrongPronunciations": [
+      "tà"
+    ],
+    "relatedPhrases": [
+      "邋遢",
+      "邋遢鬼",
+      "衣冠邋遢"
+    ],
+    "explanation": "遢（tā）：用于‘邋遢’，不整洁，不利落：邋遢的人。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 546,
+    "char": "尴",
+    "correctPronunciation": "gān",
+    "wrongPronunciations": [
+      "jiān"
+    ],
+    "relatedPhrases": [
+      "尴尬",
+      "尴尬局面",
+      "尴尬境地"
+    ],
+    "explanation": "尴（gān）：用于‘尴尬’，1. 处于两难境地，无法摆脱。2. （神色、态度）不自然。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 547,
+    "char": "尬",
+    "correctPronunciation": "gà",
+    "wrongPronunciations": [
+      "gā",
+      "jiè"
+    ],
+    "relatedPhrases": [
+      "尴尬",
+      "尴尬局面",
+      "尴尬境地"
+    ],
+    "explanation": "尬（gà）：用于‘尴尬’，1. 处于两难境地，无法摆脱。2. （神色、态度）不自然。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 548,
+    "char": "妊",
+    "correctPronunciation": "rèn",
+    "wrongPronunciations": [
+      "rén",
+      "rěn"
+    ],
+    "relatedPhrases": [
+      "妊娠",
+      "妊娠期",
+      "妊娠反应"
+    ],
+    "explanation": "妊（rèn）：怀孕：妊娠。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 549,
+    "char": "憩",
+    "correctPronunciation": "qì",
+    "wrongPronunciations": [
+      "qī",
+      "qí",
+      "xì"
+    ],
+    "relatedPhrases": [
+      "休憩",
+      "休憩片刻",
+      "短暂休憩"
+    ],
+    "explanation": "憩（qì）：休息：休憩。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 550,
+    "char": "桎",
+    "correctPronunciation": "zhì",
+    "wrongPronunciations": [
+      "zhì"
+    ],
+    "relatedPhrases": [
+      "桎梏",
+      "打破桎梏",
+      "思想桎梏"
+    ],
+    "explanation": "桎（zhì）：脚镣：桎梏。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 551,
+    "char": "怂",
+    "correctPronunciation": "sǒng",
+    "wrongPronunciations": [
+      "cóng",
+      "zǒng"
+    ],
+    "relatedPhrases": [
+      "怂恿",
+      "怂恿别人",
+      "受怂恿"
+    ],
+    "explanation": "怂（sǒng）：用于‘怂恿’，鼓动别人去做（某事）。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 552,
+    "char": "箴",
+    "correctPronunciation": "zhēn",
+    "wrongPronunciations": [
+      "jiān",
+      "zhěn"
+    ],
+    "relatedPhrases": [
+      "箴言",
+      "箴言警句",
+      "人生箴言"
+    ],
+    "explanation": "箴（zhēn）：1. 劝告，劝诫：箴言（劝诫的话）。2. 古代一种文体，以告诫规劝为主。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 553,
+    "char": "跷",
+    "correctPronunciation": "qiāo",
+    "wrongPronunciations": [
+      "qiào",
+      "jiāo"
+    ],
+    "relatedPhrases": [
+      "蹊跷",
+      "蹊跷事",
+      "感到蹊跷"
+    ],
+    "explanation": "跷（qiāo）：1. 抬起（腿）：跷腿。2. 用于‘蹊跷’，奇怪，可疑。",
+    "errorReasonType": 3,
+    "difficultyLevel": "初级"
+  },
+  {
+    "id": 554,
+    "char": "倪",
+    "correctPronunciation": "ní",
+    "wrongPronunciations": [
+      "nǐ",
+      "yí",
+      "lǐ"
+    ],
+    "relatedPhrases": [
+      "端倪",
+      "初露端倪",
+      "看出端倪"
+    ],
+    "explanation": "倪（ní）：1. 边际：端倪（事情的眉目，头绪）。2. 小孩。3. 姓。",
+    "errorReasonType": 3,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 600,
+    "char": "牝",
+    "correctPronunciation": "pìn",
+    "wrongPronunciations": [
+      "mǔ",
+      "bǐ",
+      "pín"
+    ],
+    "relatedPhrases": [
+      "牝鸡司晨",
+      "牝牡骊黄",
+      "牝马",
+      "牝鹿"
+    ],
+    "explanation": "牝（pìn）：名词，指鸟兽的雌性，与“牡”（雄性）相对。如“牝鸡”指母鸡，“牝马”指母马。该字在现代汉语中使用较少，多保留于成语及古籍中，如“牝鸡司晨”比喻女性越权主事。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 601,
+    "char": "昶",
+    "correctPronunciation": "chǎng",
+    "wrongPronunciations": [
+      "chàng",
+      "yǒng",
+      "rì"
+    ],
+    "relatedPhrases": [
+      "昶日",
+      "昶明",
+      "昶达",
+      "王昶"
+    ],
+    "explanation": "昶（chǎng）：①〈书〉白天时间长，如‘昶日’指白昼漫长；②舒畅、畅通（通‘畅’），如嵇康《琴赋》‘和昶而足耽’。现代汉语中使用频率低，多用于人名（如三国魏将王昶）或古籍语境。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 602,
+    "char": "彘",
+    "correctPronunciation": "zhì",
+    "wrongPronunciations": [
+      "shǐ",
+      "bǐ",
+      "zhú"
+    ],
+    "relatedPhrases": [
+      "狗彘",
+      "彘肩",
+      "彘牢",
+      "狗彘不食"
+    ],
+    "explanation": "彘（zhì）：古称猪，本义指大猪（尤指野猪），后泛指猪。象形字，小篆字形含‘矢’部，象征箭射野猪。常见于古籍典故：《史记》‘赐之彘肩’、《韩非子》‘曾子杀彘’、《孟子》‘鸡豚狗彘之畜’。现代汉语中已罕用，仅存于成语（如‘狗彘不如’）及部分方言。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 604,
+    "char": "瞥",
+    "correctPronunciation": "piē",
+    "wrongPronunciations": [
+      "biē",
+      "piě",
+      "bì"
+    ],
+    "relatedPhrases": [
+      "惊鸿一瞥",
+      "瞥见",
+      "瞥视",
+      "瞥然"
+    ],
+    "explanation": "瞥（piē）：动词，指眼光快速掠过，短时间大略看一眼（如‘瞥见’‘一瞥’）；引申为‘暂现’（如‘故宫一瞥’）或副词‘突然、倏忽’（如‘瞥然’‘瞥忽’）。字形从目、敝声，16画，常见于书面语及成语（如《庄子》‘一覕’、《聊斋》‘一鸡瞥来’），现代多用于‘惊鸿一瞥’等表达。\"",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 606,
+    "char": "龃",
+    "correctPronunciation": "jǔ ",
+    "wrongPronunciations": [
+      "qiě",
+      "jū",
+      "zǔ"
+    ],
+    "relatedPhrases": [
+      "龃龉"
+    ],
+    "explanation": "龃（jǔ）：专用于‘龃龉’一词。本义指上下牙齿对不齐（《说文解字》：‘龃，齿不相值也’），引申为意见不合、互相抵触（如‘观点龃龉’），亦可形容事物参差不齐或仕途不顺。现代汉语中极少单独使用，仅存于固定词组‘龃龉’及异形词‘龉龃’（yǔ jǔ）。",
+    "errorReasonType": 1,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 607,
+    "char": "龉",
+    "correctPronunciation": "yǔ",
+    "wrongPronunciations": [
+      "wú",
+      "yú",
+      "yù"
+    ],
+    "relatedPhrases": [
+      "龃龉"
+    ],
+    "explanation": "龉（yǔ）：专用于‘龃龉’‘龉龃’等固定词组。本义指牙齿参差不齐（《说文解字》：‘龉，齿不相值也’），引申为意见不合、互相抵触（如‘观点龉龃’），亦可形容事物不协调或仕途坎坷。现代汉语中极少单独使用，属生僻字，多见于书面语及成语。",
+    "errorReasonType": 1,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 609,
+    "char": "荦",
+    "correctPronunciation": "luò",
+    "wrongPronunciations": [
+      "hūn",
+      "róng",
+      "niú"
+    ],
+    "relatedPhrases": [
+      "荦荦大端",
+      "卓荦",
+      "驳荦",
+      "荦荦"
+    ],
+    "explanation": "荦（luò）：①本义为杂色的牛（驳牛），《说文解字》：‘荦，驳牛也’；②引申指杂色（驳荦）、特出显著（卓荦）；③叠词‘荦荦’形容分明突出，如‘荦荦大端’（指事物主要脉络）。现代汉语中属生僻字，仅见于书面语、成语及古籍引用（如《史记》‘逴荦观群书’），无其他常用读音。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 610,
+    "char": "讦",
+    "correctPronunciation": "jié",
+    "wrongPronunciations": [
+      "gān",
+      "jiē",
+      "yán"
+    ],
+    "relatedPhrases": [
+      "攻讦",
+      "告讦",
+      "讦发",
+      "相互攻讦"
+    ],
+    "explanation": "讦（jié）：动词，指斥责他人过失或揭发隐私。如‘攻讦’（用言论攻击他人短处）、‘讦告’（向官府告发隐私）。《说文解字》：‘面相斥罪，相告讦也’；《论语·阳货》：‘恶讦以为直者’。现代汉语中属书面语，含贬义，多用于成语及正式文本。",
+    "errorReasonType": 1,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 611,
+    "char": "妫",
+    "correctPronunciation": "guī ",
+    "wrongPronunciations": [
+      "wěi",
+      "guì",
+      "huán"
+    ],
+    "relatedPhrases": [
+      "妫姓",
+      "妫水",
+      "妫汭"
+    ],
+    "explanation": "妫（guī）：①上古八大姓之一，舜帝的姓氏（《史记·五帝本纪》：‘舜居妫汭’）；②古水名，一指山西永济妫汭水，一指北京延庆妫河（今称妫水河）。现代汉语中仅用于姓氏、历史文献及特定地名，属生僻字。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 612,
+    "char": "膻",
+    "correctPronunciation": "dàn",
+    "wrongPronunciations": [
+      "shān",
+      "tǎn",
+      "dān"
+    ],
+    "relatedPhrases": [
+      "膻中穴",
+      "膻中"
+    ],
+    "explanation": "膻（dàn）：专用于中医术语‘膻中’。①指胸腔中央、心包所在处（《黄帝内经》：‘膻中者，臣使之官’）；②针灸穴位名，位于前胸正中线（两乳头连线中点）。古义通‘袒’表袒露（如《说文》引《诗》‘膻裼暴虎’，今本作‘袒裼’），现代此义已由‘袒’字替代，仅保留于中医专业语境。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 612,
+    "char": "榫",
+    "correctPronunciation": "sǔn ",
+    "wrongPronunciations": [
+      "zhǔn",
+      "jùn",
+      "suān"
+    ],
+    "relatedPhrases": [
+      "榫卯",
+      "榫头",
+      "榫眼"
+    ],
+    "explanation": "榫（sǔn）：指竹、木、石制器物或构件上利用凹凸方式相接处凸出的部分，与‘卯’（凹入部分）相对。榫卯结构是中国传统木工核心工艺（无需钉胶即可牢固结合），代表古代工匠智慧，已列入国家级非物质文化遗产。《红楼梦》：‘纵有榫头，也搭不上。",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 613,
+    "char": "虿",
+    "correctPronunciation": "chài",
+    "wrongPronunciations": [
+      "wàn",
+      "lài",
+      "dú"
+    ],
+    "relatedPhrases": [
+      "蜂虿",
+      "虿尾",
+      "虿芥"
+    ],
+    "explanation": "虿（chài）：蝎子一类的毒虫，古籍中泛指毒虫（《左传》：‘蜂虿有毒，而况国乎？’）。为‘蠆’的简化字，现代汉语中极少单独使用，仅存于成语及古籍语境：‘蜂虿’喻微小毒害，‘虿芥’指细微障碍（如‘胸中无虿芥’），‘虿尾’古指蝎尾。需注意与‘万’‘赖’等形近字区分。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 614,
+    "char": "聿",
+    "correctPronunciation": "yù",
+    "wrongPronunciations": [
+      "lǜ",
+      "jīn",
+      "bǐ"
+    ],
+    "relatedPhrases": [
+      "岁聿云暮",
+      "聿修",
+      "聿修"
+    ],
+    "explanation": "聿（yù）：①笔的古称（《说文解字》：‘聿，所以书也’，甲骨文象手持笔形）；②古代汉语助词，用于句首/句中无实义（如《诗经·唐风》‘岁聿其莫’）；③汉字部首（‘聿’部，如‘書’‘畫’‘律’等字均从聿）；④罕见姓氏。现代汉语中极少单独使用，多存于古籍、成语（‘岁聿云暮’指年终）及作为构字部件。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 618,
+    "char": "蒯",
+    "correctPronunciation": "kuǎi",
+    "wrongPronunciations": [
+      "kuài",
+      "huái",
+      "guāi"
+    ],
+    "relatedPhrases": [
+      "蒯草",
+      "蒯通",
+      "蒯缑"
+    ],
+    "explanation": "蒯（kuǎi）：①蒯草，莎草科多年生草本植物，茎坚韧可编席、制绳、编筐（《说文解字》：‘蒯，草也’）；②姓氏，如汉代著名辩士蒯通（见《史记·淮阴侯列传》）；③古籍专称‘蒯缑’指用蒯草缠绕剑柄（《史记·孟尝君列传》：‘冯先生甚贫，犹有一剑耳，又蒯缑’）。现代汉语中使用频率极低，多见于姓氏、古籍引文或方言地名（如蒯家村）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 619,
+    "char": "祇",
+    "correctPronunciation": "qí",
+    "wrongPronunciations": [
+      "zhǐ",
+      "zhī",
+      "qǐ"
+    ],
+    "relatedPhrases": [
+      "神祇",
+      "天地神祇",
+      "禋祀神祇"
+    ],
+    "explanation": "祇（qí）：专用于‘神祇’一词，指地神（与‘神’即天神相对），泛指神灵。《说文解字》：‘祇，地祇，提出万物者也。’现代汉语中仅保留于固定搭配，常见于宗教文献、古籍及祭祀语境（如‘敬天法祖，禋祀神祇’）。注意：不可与表‘仅’义的‘祇（zhǐ）’或表‘恭敬’义的‘祗（zhī）’混淆。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 620,
+    "char": "斫",
+    "correctPronunciation": "zhuó",
+    "wrongPronunciations": [
+      "zhuō",
+      "zhuò",
+      "zhuo"
+    ],
+    "relatedPhrases": [
+      "斫琴",
+      "大匠不斫",
+      "斫丧元气",
+      "斫伐"
+    ],
+    "explanation": "斫（zhuó）：动词，用刀斧砍削。《说文解字》：‘斫，击也’。本义为击砍（如‘斫伐树木’），引申为攻击（‘斫丧元气’）、雕刻工艺（古琴‘斫制’）、删改文字（‘斫雕为朴’）。成语‘斫轮老手’（典出《庄子·天道》）喻经验丰富、技艺精湛者。现代汉语中属生僻字，多用于成语、古籍及传统文化语境。",
+    "errorReasonType": 1,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 621,
+    "char": "舛",
+    "correctPronunciation": "chuǎn",
+    "wrongPronunciations": [
+      "shùn",
+      "chūn",
+      "chuǎi"
+    ],
+    "relatedPhrases": [
+      "命运多舛",
+      "舛误",
+      "乖舛",
+      "舛逆"
+    ],
+    "explanation": "舛（chuǎn）：①相违背、错乱（《说文解字》：‘舛，对卧也’，引申为背离）；②不顺、不幸（王勃《滕王阁序》：‘时运不齐，命途多舛’）；③错误、谬误（如‘校勘舛误’‘文献舛讹’）。现代汉语中属生僻字，仅用于书面语及成语，无其他标准读音。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 622,
+    "char": "聃",
+    "correctPronunciation": "dān",
+    "wrongPronunciations": [
+      "rǎn",
+      "mào",
+      "chén"
+    ],
+    "relatedPhrases": [
+      "老聃",
+      "聃耳",
+      "聃光"
+    ],
+    "explanation": "聃（dān）：①耳长而大（《说文解字》：‘聃，耳曼也’，‘曼’指修长，古时视为寿相）；②专指老子（李耳）的字，尊称‘老聃’（《史记·老子韩非列传》：‘姓李氏，名耳，字聃’）；③罕见姓氏（如唐代隐士聃光）。现代汉语中极少单独使用，仅见于历史文献、哲学语境及姓氏，属生僻字。",
+    "errorReasonType": 1,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 623,
+    "char": "颛",
+    "correctPronunciation": "zhuān",
+    "wrongPronunciations": [
+      "duān",
+      "chuǎn",
+      "zhuǎn"
+    ],
+    "relatedPhrases": [
+      "颛顼",
+      "颛蒙",
+      "颛愚",
+      "颛权"
+    ],
+    "explanation": "颛（zhuān）：①善良谨慎（《说文解字》：‘颛，头颛颛谨貌’）；②专指上古帝王颛顼（五帝之一，《史记·五帝本纪》：‘帝颛顼高阳者’）；③引申为愚昧无知（如‘颛蒙’‘颛愚’）、专擅（通‘专’，如‘颛权’‘颛擅’）。现代汉语中极少单独使用，仅见于历史专称、古籍及书面语，属生僻字。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 624,
+    "char": "顼",
+    "correctPronunciation": "xū",
+    "wrongPronunciations": [
+      "xūn",
+      "xǔ",
+      "yè"
+    ],
+    "relatedPhrases": [
+      "颛顼"
+    ],
+    "explanation": "顼（xū）：①专用于‘颛顼’，上古帝王名（五帝之一，《史记·五帝本纪》：‘帝颛顼高阳者’）；②姓氏（如汉代顼氏）。现代汉语中为单音字，无其他标准读音，极少单独使用，仅见于历史专称、古籍及姓氏语境。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 630,
+    "char": "虢",
+    "correctPronunciation": "guó",
+    "wrongPronunciations": [
+      "hǔ",
+      "guì",
+      "wèi"
+    ],
+    "relatedPhrases": [
+      "假途灭虢",
+      "虢国夫人",
+      "东虢",
+      "虢叔"
+    ],
+    "explanation": "虢（guó）：①周代诸侯国名，分东虢（今河南荥阳）、西虢（今陕西宝鸡）、北虢（今山西平陆）等；②姓氏（如春秋晋国大夫虢射）。成语‘假道伐虢’喻以借路为名行兼并之实。现代汉语中为单音字，无其他标准读音，仅用于历史专称、成语及姓氏，属生僻字。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 631,
+    "char": "虬",
+    "correctPronunciation": "qiú",
+    "wrongPronunciations": [
+      "qiū",
+      "jiū",
+      "dǒu"
+    ],
+    "relatedPhrases": [
+      "虬龙",
+      "螭虬",
+      "虬枝",
+      "虬髯"
+    ],
+    "explanation": "虬（qiú）：①古代传说中无角的龙；②蜷曲、盘绕的样子（如‘虬枝’指盘曲的树枝，‘虬须/虬髯’指卷曲的胡须）。现代汉语中属生僻字，多用于文学描写、成语及传统文化语境（如‘虬髯客’），无其他标准读音。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 632,
+    "char": "堃",
+    "correctPronunciation": "kūn",
+    "wrongPronunciations": [
+      "shēn",
+      "kǔn",
+      "kùn"
+    ],
+    "relatedPhrases": [
+      "堃铻",
+      "李堃"
+    ],
+    "explanation": "堃（kūn）：‘坤’的异体字。①八卦之一，卦形☷，象征地；②引申为女性、阴性；③姓氏或人名用字（现代多用于姓名，取‘大地’‘厚德’寓意）；④古籍中‘堃铻’同‘锟铻’，指古剑名。现代汉语规范以‘坤’为正体，‘堃’仅存于人名、古籍异写或特定文化语境。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 633,
+    "char": "谥",
+    "correctPronunciation": "shì ",
+    "wrongPronunciations": [
+      "yì",
+      "shí",
+      "sì"
+    ],
+    "relatedPhrases": [
+      "谥号",
+      "谥法",
+      "追谥",
+      "谥议"
+    ],
+    "explanation": "谥（shì）：君主时代帝王、贵族、大臣等死后，依其生平事迹与品德所追赠的称号（如孔子谥‘文宣王’，岳飞谥‘武穆’）。《说文解字》：‘谥，行之迹也。’引申为评定谥号的法则（谥法）或议定过程（谥议）。现代汉语中为单音字，仅用于历史文献、文言文及传统文化语境，无其他标准读音。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 635,
+    "char": "癸",
+    "correctPronunciation": "guǐ ",
+    "wrongPronunciations": [
+      "kuí",
+      "guī",
+      "guì"
+    ],
+    "relatedPhrases": [
+      "癸水",
+      "癸卯",
+      "癸丑",
+      "天癸"
+    ],
+    "explanation": "癸（guǐ）：天干第十位，用于干支纪年、月、日、时（如‘癸卯年’）。五行属水，方位属北。亦作姓氏。现代汉语中为单音字，无其他标准读音，专用于历法、命理、历史文献及传统文化语境（如中医‘癸水’指肾精，‘庚癸’古指军粮）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 636,
+    "char": "谪",
+    "correctPronunciation": "zhé",
+    "wrongPronunciations": [
+      "dí",
+      "zhāi",
+      "zhè"
+    ],
+    "relatedPhrases": [
+      "谪戍",
+      "指谪",
+      "谪仙人",
+      "谪居"
+    ],
+    "explanation": "谪（zhé）：①封建时代指官吏被降职并流放至边远地区；②指神仙受罚降生人间（李白被誉为‘谪仙人’）。现代汉语中为单音字，仅用于书面语、历史文献及成语（如‘天涯谪宦’），无其他标准读音。",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 636,
+    "char": "卺",
+    "correctPronunciation": "jǐn",
+    "wrongPronunciations": [
+      "chéng",
+      "rèn",
+      "jīn"
+    ],
+    "relatedPhrases": [
+      "合卺",
+      "卺饮",
+      "卺杯"
+    ],
+    "explanation": "卺（jǐn）：古代婚礼专用酒器，由匏瓜剖成两半制成。‘合卺’指新婚夫妇各执一卺饮酒的仪式，象征夫妻合为一体，后成为结婚的代称。现代汉语中仅存于传统婚俗词汇及古籍，属生僻字，无其他标准读音。",
+    "errorReasonType": 6,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 637,
+    "char": "眦",
+    "correctPronunciation": "zì ",
+    "wrongPronunciations": [
+      "cǐ",
+      "zī",
+      "cī"
+    ],
+    "relatedPhrases": [
+      "睚眦必报",
+      "睚眦必报",
+      "眦决",
+      "内眦"
+    ],
+    "explanation": "眦（zì）：眼角，特指上下眼睑的接合处（内眼角称‘内眦’，外眼角称‘外眦’）。‘睚眦’为固定词组（龙生九子之一，喻极小的怨恨；亦作‘发眦’形容怒目）。现代汉语中属生僻字，仅用于医学术语、古籍及成语，无其他标准读音。",
+    "errorReasonType": 1,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 637,
+    "char": "嬷",
+    "correctPronunciation": "mó",
+    "wrongPronunciations": [
+      "mà",
+      "mā"
+    ],
+    "relatedPhrases": [
+      "嬷嬷",
+      "容嬷嬷",
+      "乳嬷",
+      "修女嬷嬷"
+    ],
+    "explanation": "嬷（mó）：旧时称奶妈；也用于称呼老年妇女，如“嬷嬷”。在现代汉语中还用于指天主教、东正教的修女。该字为形声字，由“女”与“麽”组成，属书面语和规范普通话读音。在“阿嬷”一词中，受闽南语、潮汕话及台湾方言影响，常读作 mà，专指祖母或奶奶。",
+    "errorReasonType": 2.0,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 638,
+    "char": "鳌",
+    "correctPronunciation": "áo",
+    "wrongPronunciations": [
+      "ào",
+      "ǎo",
+      "biē"
+    ],
+    "relatedPhrases": [
+      "鳌头",
+      "独占鳌头",
+      "鳌峰",
+      "金鳌"
+    ],
+    "explanation": "鳌（áo）：传说中海里的大龟或大鳖。古代神话中，鳌是巨大的神龟或神鳖，如《淮南子·览里》记载'女娲炼五色石以补苍天，断鳌足以立四极'。在科举时代，'鳌头'指宫殿门前台阶上的鳌鱼浮雕，状元及第后可站此位置，故称'独占鳌头'，比喻占首位或第一名。该字为形声字，从鱼、敖声。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 639,
+    "char": "杲",
+    "correctPronunciation": "gǎo",
+    "wrongPronunciations": [
+      "guǒ",
+      "yǎo",
+      "gāo"
+    ],
+    "relatedPhrases": [
+      "冬日杲杲",
+      "杲日当空",
+      "杲杲出日"
+    ],
+    "explanation": "杲（gǎo）：形容日出时光明耀眼的样子；明亮。《说文解字》：‘杲，明也。从日在木上。’。现代汉语中属生僻字，仅用于书面语、古籍及文学描写（如‘冬日杲杲’‘杲日当空’），无其他标准读音。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 639,
+    "char": "虺",
+    "correctPronunciation": "huǐ",
+    "wrongPronunciations": [
+      "huī",
+      "huí",
+      "qiú",
+      "chóng"
+    ],
+    "relatedPhrases": [
+      "虺虺",
+      "虺蛇",
+      "虺虫",
+      "虺豺"
+    ],
+    "explanation": "虺（huǐ）：古书上说的一种毒蛇。《诗·小雅·正月》：'维虺维蛇，女子之祥。'《尔雅·释虫》：'蝮虺。'此外，'虺虺'为古代形容打雷声音的拟声词，如《诗·邶风·终风》：'虺虺其雷。'该字为形声字，从虫，兀声。",
+    "errorReasonType": 2.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 640,
+    "char": "盻",
+    "correctPronunciation": "xì",
+    "wrongPronunciations": [
+      "pàn",
+      "xī",
+      "xǐ"
+    ],
+    "relatedPhrases": [
+      "盻盻",
+      "盻恨",
+      "盻瞪"
+    ],
+    "explanation": "盻（xì）：①恨视的样子（《说文解字》：‘盻，恨视也’）；②勤苦貌（《孟子·滕文公上》：‘盻盻然终岁勤动’）。此为多音字，另读pàn（同‘盼’，表‘看、盼望’义）。现代汉语中属生僻字，仅用于古籍语境（如‘盻恨’指怨恨凝视），需与‘盼’严格区分。",
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 640,
+    "char": "伽",
+    "correctPronunciation": "qié",
+    "wrongPronunciations": [
+      "jiā",
+      "gā",
+      "qiē",
+      "qiè"
+    ],
+    "relatedPhrases": [
+      "伽蓝",
+      "伽南香",
+      "僧伽",
+      "楞伽"
+    ],
+    "explanation": "伽（qié）：形声字，从人，加声。主要用于佛教用语：①〔伽蓝〕梵语'僧伽蓝摩'的简称，指僧众所住的园林，后指佛寺；②〔伽南香〕沉香；③翻译佛经多用为人名。该字为典型的多音字，在佛教语境中读作'qié'。",
+    "errorReasonType": 2.0,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 641,
+    "char": "螽",
+    "correctPronunciation": "zhōng",
+    "wrongPronunciations": [
+      "zhòng",
+      "dōng",
+      "zhōu",
+      "zhǒng"
+    ],
+    "relatedPhrases": [
+      "螽斯",
+      "螽虫",
+      "螽水",
+      "阜螽"
+    ],
+    "explanation": "螽（zhōng）：蝗类昆虫的总称。《说文解字》：'螽，蝗也。'《诗·周南·螽斯》：'螽斯羽，诜诜兮。'指身体绿色或褐色的昆虫，善跳跃，对农作物有害，雄虫前翅有发声器。该字为形声字，从䖵（虫的异体），夂声（古文终字）。现代汉语中属生僻字，多见于古籍文献。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 642,
+    "char": "旃",
+    "correctPronunciation": "zhān",
+    "wrongPronunciations": [
+      "dān",
+      "shān",
+      "zhàn"
+    ],
+    "relatedPhrases": [
+      "勉旃",
+      "旌旃",
+      "旃檀"
+    ],
+    "explanation": "旃（zhān）：①赤色曲柄的旗（《说文解字》：‘旃，旗曲柄也。所以旃表士众’）；②泛指旌旗（古籍用例：‘建旃设旄’）；③通‘毡’（如‘旃裘’指毛毡衣物）；④文言助词，‘之焉’合音（‘勉旃’即‘勉之焉’，表勉励）。佛教术语‘旃檀’专指檀香木（如‘旃檀佛像’）。现代汉语中为单音字，仅存于古籍、佛教文献及文言表达，无其他标准读音。",
+    "errorReasonType": 1,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 642,
+    "char": "珩",
+    "correctPronunciation": "héng",
+    "wrongPronunciations": [
+      "háng",
+      "xíng",
+      "hēng",
+      "hèng"
+    ],
+    "relatedPhrases": [
+      "珩玉",
+      "葱珩",
+      "白珩",
+      "玉珩"
+    ],
+    "explanation": "珩（héng）：佩玉上面的横玉，形状像磬。《说文解字》：'珩，佩上玉也。所以节行止也。'古代佩玉体系中位于最上端的横置玉饰，起承托与节制作用，通过玉器相击之声提醒佩戴者举止庄重、步履有度，体现礼制精神。该字为形声字，从玉（王），行声。现代汉语中属生僻字，多见于古籍文献及人名用字。",
+    "errorReasonType": 2.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 643,
+    "char": "蕤",
+    "correctPronunciation": "ruí",
+    "wrongPronunciations": [
+      "ruì",
+      "shuāi",
+      "ruǐ"
+    ],
+    "relatedPhrases": [
+      "葳蕤",
+      "蕤蕤",
+      "葳蕤锁",
+      "葳蕤自守"
+    ],
+    "explanation": "蕤（ruí）：①草木枝叶繁盛下垂的样子（《楚辞·九歌》王逸注：‘葳蕤，盛饰貌’）；②引申为华美繁盛（如‘葳蕤生光’）；③古代锁具名（‘葳蕤锁’，钥匙作草状）；④姓氏（罕见）。现代汉语中极少单独使用，仅存于‘葳蕤’等固定搭配、古籍及文学语境，无其他标准读音。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 643,
+    "char": "徵",
+    "correctPronunciation": "zhǐ",
+    "wrongPronunciations": [
+      "zhēng",
+      "zhèng",
+      "zhēi",
+      "zhèi"
+    ],
+    "relatedPhrases": [
+      "宫商角徵羽",
+      "清徵",
+      "徵音",
+      "徵声"
+    ],
+    "explanation": "徵（zhǐ）：古代五音之一，相当于简谱'5'。五音指中国五音阶中的宫、商、角、徵、羽，五个音级，五行配属：角（木）、徵（火）、宫（土）、商（金）、羽（水）。《周礼·春官·大师》：'皆文之以五声：宫、商、角、徵、羽。'元·关汉卿《单刀会·第四折》：'五音者，宫、商、角、徵、羽。'该字为多音字，读音'zhǐ'专用于音乐术语，与读音'zhēng'（同'征'）形成鲜明对比。",
+    "errorReasonType": 2.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 644,
+    "char": "黉",
+    "correctPronunciation": "hóng",
+    "wrongPronunciations": [
+      "huáng",
+      "hǒng",
+      "hòng",
+      "hōng"
+    ],
+    "relatedPhrases": [
+      "黉门",
+      "黉舍",
+      "黉序",
+      "黉宫"
+    ],
+    "explanation": "黉（hóng）：古代称学校。《后汉书·仇览传》：'农事既毕，乃令弟子群居，还就黉学。'该字为形声字，从黄部，但读音与'黄'不同。现代汉语中属生僻字，多见于古籍文献及人名用字，体现古代对教育场所的称谓。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 645,
+    "char": "甯",
+    "correctPronunciation": "nìng",
+    "wrongPronunciations": [
+      "níng",
+      "zhù",
+      "mì"
+    ],
+    "relatedPhrases": [
+      "甯武子",
+      "甯戚",
+      "甯氏"
+    ],
+    "explanation": "甯（nìng）：①专用于姓氏，春秋时期卫国大夫甯武子、齐国大夫甯戚等历史人物均用此字形；②‘宁’的异体字，现代汉语规范中‘宁’表‘安宁’义读níng、表‘宁可’义读nìng，而姓氏‘甯’固定保留古字形与nìng音。《通用规范汉字表》未收录此字，姓氏用法沿袭传统。",
+    "errorReasonType": 2,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 645,
+    "char": "螭",
+    "correctPronunciation": "chī",
+    "wrongPronunciations": [
+      "lí",
+      "chí",
+      "qī",
+      "xī"
+    ],
+    "relatedPhrases": [
+      "螭龙",
+      "螭首",
+      "螭纹",
+      "螭吻"
+    ],
+    "explanation": "螭（chī）：古代传说中一种没有角的龙。《说文解字》：'螭，若龙而黄，北方谓之地蝼。或云无角曰螭。'常用于古代建筑、器物装饰，如“螭首”指碑座上雕刻的无角龙形，“螭吻”为屋脊两端的龙形饰物。该字为形声字，从虫，离声，但现代读音与声旁‘离’（lí）差异较大，易造成误读。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 646,
+    "char": "靼",
+    "correctPronunciation": "dá",
+    "wrongPronunciations": [
+      "dàn",
+      "tǎ",
+      "dǎ"
+    ],
+    "relatedPhrases": [
+      "鞑靼",
+      "达靼"
+    ],
+    "explanation": "靼（dá）：专用于‘鞑靼’一词，音：dá dá，指古代对北方游牧民族（如塔塔尔族）的泛称，亦用于历史地理称谓（如‘鞑靼海峡’）。《说文解字》未单收此字，现代汉语中无独立词义，仅作为固定词组的构字成分。注意：‘靼’为单音字，不可拆分释义；‘鞑靼’为音译词，整体表意。",
+    "errorReasonType": 1,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 646,
+    "char": "洗",
+    "correctPronunciation": "xiǎn",
+    "wrongPronunciations": [
+      "xǐ",
+      "xī",
+      "xì"
+    ],
+    "relatedPhrases": [
+      "洗马",
+      "冼姓",
+      "姑洗"
+    ],
+    "explanation": "洗（xiǎn）：①同'冼'，姓氏用字。②古代指洗脚，《说文解字》：'洒足也。'如《史记·高祖本纪》：'使两女子洗足。'③古代官名'洗马'（太子属官）。此读音在现代汉语中极少使用，多见于古籍文献或特定姓氏。",
+    "errorReasonType": 2.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 647,
+    "char": "燮",
+    "correctPronunciation": "xiè",
+    "wrongPronunciations": [
+      "yán",
+      "huǒ",
+      "yòu",
+      "xī"
+    ],
+    "relatedPhrases": [
+      "燮理",
+      "燮和",
+      "燮理阴阳",
+      "调燮"
+    ],
+    "explanation": "燮（xiè）：会意兼形声字，本义为调和、协调。《尔雅·释诂》：'燮，和也。' 古代常用于'燮理阴阳'，指调和天地阴阳，引申为治理国家。该字因结构复杂，且包含'火'、'言'等部件，易导致误读。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 648,
+    "char": "茕",
+    "correctPronunciation": "qióng",
+    "wrongPronunciations": [
+      "jiǒng",
+      "yíng",
+      "róng"
+    ],
+    "relatedPhrases": [
+      "茕茕孑立",
+      "茕然",
+      "茕茕",
+      "孤茕"
+    ],
+    "explanation": "茕（qióng）：孤独无依的样子。成语‘茕茕孑立’（形容孤身一人、无依无靠。现代汉语中为单音字，仅存于固定成语及书面语，无其他标准读音。字形上部为‘艹’，下部含‘冖’与‘卂’，易与‘窘（jiǒng）’‘营（yíng）’等形近字混淆。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 648,
+    "char": "餍",
+    "correctPronunciation": "yàn",
+    "wrongPronunciations": [
+      "yán",
+      "yǎ",
+      "yā"
+    ],
+    "relatedPhrases": [
+      "餍足",
+      "饫甘餍肥",
+      "不餍人望",
+      "饱餍"
+    ],
+    "explanation": "餍（yàn）：会意兼形声字，本义为吃饱、满足。《说文解字》：'餍，饱也。' 由'厌'和'食'组合而成，表示因饱食而满足。后引申为使满足、饱足等义，如'餍足'指吃饱或满足，'饫甘餍肥'形容生活优裕、饱食美味。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 649,
+    "char": "孑",
+    "correctPronunciation": "jié",
+    "wrongPronunciations": [
+      "zǐ",
+      "jué",
+      "jiē\""
+    ],
+    "relatedPhrases": [
+      "孑然一身",
+      "茕茕孑立",
+      "孑孓",
+      "孤孑"
+    ],
+    "explanation": "孑（jié）：①孤单；单独（《说文解字》：‘孑，无右臂也’，引申为孤立无依，如‘孑然一身’‘茕茕孑立’）；②专用于‘孑孓’，（jié jué）指蚊子的幼虫（《本草纲目·虫部》：‘水虫，蛃䗓也，俗呼孑孓’）。现代汉语中为单音字，无其他标准读音，仅存于固定词组、成语及生物学专称。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 649,
+    "char": "镐",
+    "correctPronunciation": "gǎo",
+    "wrongPronunciations": [
+      "hào",
+      "gāo",
+      "gào",
+      "hǎo"
+    ],
+    "relatedPhrases": [
+      "铁镐",
+      "十字镐",
+      "镐头",
+      "洋镐"
+    ],
+    "explanation": "镐（gǎo）：刨土的工具，即镐头。如“铁镐”“十字镐”均为常见农具或施工工具。该字为多音字，读“hào”时指西周初年的国都（镐京），读“gǎo”时专指工具。因“镐京”在历史文献中较为常见，易导致将工具义误读为“hào”。",
+    "errorReasonType": 2.0,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 649,
+    "char": "恸",
+    "correctPronunciation": "tòng",
+    "wrongPronunciations": [
+      "dòng",
+      "tōng",
+      "tóng"
+    ],
+    "relatedPhrases": [
+      "恸哭",
+      "悲恸",
+      "哀恸",
+      "悲恸欲绝"
+    ],
+    "explanation": "恸（tòng）：形声字，从心，动声。本义为极度悲哀、放声痛哭。如《论语·先进》：'颜回死，子哭之恸。' 由'悲痛'引申为形容词，表示极其悲伤，如'悲恸欲绝'。该字易因声旁'动'或形旁'忄'而被误读为'dòng'或'tōng'。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 650,
+    "char": "褫",
+    "correctPronunciation": "chǐ",
+    "wrongPronunciations": [
+      "sī",
+      "hǔ",
+      "chī"
+    ],
+    "relatedPhrases": [
+      "褫夺",
+      "褫职",
+      "褫革",
+      "褫衣"
+    ],
+    "explanation": "褫（chǐ）：①脱去，解下（《说文解字》：‘褫，夺也’，古籍用例：‘褫衣受罚’）；②剥夺（如‘褫夺公权’‘褫职查办’。现代汉语中为单音字，仅用于法律文书、历史文献及书面语，无其他标准读音。",
+    "errorReasonType": 1,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 650,
+    "char": "黉",
+    "correctPronunciation": "hóng",
+    "wrongPronunciations": [
+      "huáng",
+      "gōng",
+      "hòng"
+    ],
+    "relatedPhrases": [
+      "黉门",
+      "黉学",
+      "黉宇",
+      "黉宫"
+    ],
+    "explanation": "黉（hóng）：会意字，本义为古代的学校。该字结构复杂，上部与'黄'字相似，因此极易被误读为'huáng'。在现代汉语中，'黉'字已不常用，主要保留在'黉门'、'黉宫'等书面语中，泛指学校或学术界。",
+    "errorReasonType": 6.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 651,
+    "char": "胺",
+    "correctPronunciation": "àn",
+    "wrongPronunciations": [
+      "ān",
+      "yàn",
+      "ǎn"
+    ],
+    "relatedPhrases": [
+      "多巴胺",
+      "甲胺",
+      "苯胺"
+    ],
+    "explanation": "胺（àn）：有机化学专有名词，指氨分子（NH₃）中的氢原子被烃基取代后生成的化合物（如甲胺、苯胺）。是构成氨基酸、生物碱、药物等的重要基团。《现代汉语词典》明确注音为‘àn’，与‘氨（ān）’（指氨气）严格区分：二者字形仅下半部‘月’与‘气’之差，但音义迥异。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 651,
+    "char": "喦",
+    "correctPronunciation": "yán",
+    "wrongPronunciations": [
+      "niè",
+      "pǐn",
+      "gǒu"
+    ],
+    "relatedPhrases": [
+      "嵒嵒",
+      "层喦",
+      "巉喦",
+      "喦邑"
+    ],
+    "explanation": "喦（yán）为会意字，本义指山岩重叠险峻之貌，是'岩'的异体字。该字极易因字形结构（上品下山）被误读为pǐn，或因其另一读音niè（表多言义）而产生混淆，属于典型的形音双重干扰型生僻字。",
+    "errorReasonType": 8.0,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 652,
+    "char": "掮",
+    "correctPronunciation": "qián",
+    "wrongPronunciations": [
+      "jiān",
+      "qiān",
+      "qiǎn"
+    ],
+    "relatedPhrases": [
+      "掮客",
+      "掮东西",
+      "政治掮客"
+    ],
+    "explanation": "掮（qián）：①方言，用肩扛东西（如‘掮着行李过河’）；②指掮客，即在交易中居间介绍、收取佣金的人（如‘房产掮客’‘政治掮客’）。《现代汉语词典》注：‘掮’为单音字，仅读qián。字形右部‘肩’易引发误读，但‘肩’读jiān，二者音义迥异。",
+    "errorReasonType": 6,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 652,
+    "char": "鼍",
+    "correctPronunciation": "tuó",
+    "wrongPronunciations": [
+      "tuí",
+      "tuō",
+      "tù"
+    ],
+    "relatedPhrases": [
+      "鼍龙",
+      "鼋鼍",
+      "鼍鼓",
+      "鼍吼"
+    ],
+    "explanation": "鼍（tuó）为形声字，从黾，单声。本义指扬子鳄，一种大型水生爬行动物。因其外形凶猛，古人常用其皮制作鼓面，故有'鼍鼓'之称。该字上部为'单'，下部为'黾'，结构复杂，不常见于日常用语。",
+    "errorReasonType": 4.0,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 653,
+    "char": "蕈",
+    "correctPronunciation": "xùn",
+    "wrongPronunciations": [
+      "qín",
+      "tán",
+      "xún"
+    ],
+    "relatedPhrases": [
+      "香蕈",
+      "松蕈",
+      "毒蕈",
+      "蕈菌"
+    ],
+    "explanation": "蕈（xùn）为形声字，从艹、覃声，本义指生长在树林或草地上的高等菌类，即蘑菇。该字极易因形旁'艹'被误读为'qín'，或因其声旁'覃'而被误读为'tán'，亦有因声调混淆读作'xún'。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 654,
+    "char": "乩",
+    "correctPronunciation": "jī",
+    "wrongPronunciations": [
+      "zhān",
+      "zhàn",
+      "jì"
+    ],
+    "relatedPhrases": [
+      "扶乩",
+      "乩坛",
+      "乩笔",
+      "乩童"
+    ],
+    "explanation": "乩（jī）：指迷信的人通过扶乩的方式，假托鬼神来写字、占卜吉凶。如“扶乩”是一种迷信活动，两人扶着一个丁字形的木架，在沙盘上画出字迹，以决吉凶。",
+    "errorReasonType": 6.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 655,
+    "char": "夔",
+    "correctPronunciation": "kuí",
+    "wrongPronunciations": [
+      "kuì",
+      "kuǐ",
+      "kuī",
+      "jì"
+    ],
+    "relatedPhrases": [
+      "夔龙",
+      "夔牛",
+      "夔州",
+      "夔纹"
+    ],
+    "explanation": "夔（kuí）：1. 古代传说中的一种龙形异兽，如“夔龙”。2. 古代神话中的独足神兽，如“夔牛”。3. 地名，如“夔州”。4. 姓氏。该字因字形复杂且不常用，常被误读。",
+    "errorReasonType": 8.0,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 656,
+    "char": "榷",
+    "correctPronunciation": "què",
+    "wrongPronunciations": [
+      "hè",
+      "jué"
+    ],
+    "relatedPhrases": [
+      "商榷",
+      "榷场",
+      "榷税",
+      "榷茶"
+    ],
+    "explanation": "榷（què）：①本义为专门从事某种买卖，后特指官府对某些物资实行专卖、征税，如“榷茶”“榷盐”“榷税”。②引申为权衡、商讨，如“商榷”，指商讨、讨论。③也指贸易集市，如宋辽金时期边境互市的“榷场”。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 657,
+    "char": "尕",
+    "correctPronunciation": "gǎ",
+    "wrongPronunciations": [
+      "nǎi",
+      "xiǎo"
+    ],
+    "relatedPhrases": [
+      "尕娃",
+      "尕妹",
+      "尕李",
+      "尕达"
+    ],
+    "explanation": "尕（gǎ）：方言用字，主要流行于甘肃、青海、宁夏等西北地区，意为“小”，常作亲昵或指小的前缀。如“尕娃”指小孩，“尕妹”指年轻姑娘（多见于西北民歌），“尕李”指小李，“尕达”指小伙子。亦可泛指小的事物。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 658,
+    "char": "睒",
+    "correctPronunciation": "shǎn",
+    "wrongPronunciations": [
+      "yán",
+      "yàn"
+    ],
+    "relatedPhrases": [
+      "睒闪",
+      "睒睗",
+      "睒忽",
+      "睒眼"
+    ],
+    "explanation": "睒（shǎn）：①本义为暂视，即很快地看一眼，引申为窥视、闪烁。②形容光亮闪动，如“睒闪”指闪烁、忽明忽暗；“睒睗（shǎn shì）”指惊视或左右顾看；“睒忽”指目光迅速闪动。多用于文言或书面语。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 659,
+    "char": "霰",
+    "correctPronunciation": "xiàn",
+    "wrongPronunciations": [
+      "sàn",
+      "sǎn"
+    ],
+    "relatedPhrases": [
+      "霰雪",
+      "霰弹",
+      "雪霰",
+      "霰子"
+    ],
+    "explanation": "霰（xiàn）：空中降落的白色不透明小冰粒，常呈球形或圆锥形，落地反弹、易碎，多在降雪前或与雪同时降落，俗称“雪子”“雪珠”。如“霰雪”指雪珠与雪；“霰弹”指装有球形或锥形弹丸的炮弹（如榴霰弹）。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 660,
+    "char": "狷",
+    "correctPronunciation": "juàn",
+    "wrongPronunciations": [
+      "juān",
+      "quǎn"
+    ],
+    "relatedPhrases": [
+      "狷介",
+      "狷急",
+      "狷狭",
+      "狷傲"
+    ],
+    "explanation": "狷（juàn）：①性情耿直，洁身自好，不肯同流合污（如‘狷介’）；②气量狭小，性情急躁（如‘狷急’）。源自《论语·子路》：‘狂者进取，狷者有所不为也’，后成为儒家品评人格的重要概念，多用于书面语。",
+    "errorReasonType": 1,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 660,
+    "char": "绯",
+    "correctPronunciation": "fēi",
+    "wrongPronunciations": [
+      "fěi",
+      "fèi"
+    ],
+    "relatedPhrases": [
+      "绯红",
+      "绯闻",
+      "绯色",
+      "绯桃"
+    ],
+    "explanation": "绯（fēi）：红色，多指深红色。如“绯红”指鲜红、深红；“绯闻”指有关男女情爱的传闻（本指“红色新闻”，喻桃色事件）；“绯色”即红色；“绯桃”指开红花的桃树。",
+    "errorReasonType": 5.0,
+    "difficultyLevel": "中级"
+  },
+  {
+    "id": 661,
+    "char": "笫",
+    "correctPronunciation": "zǐ",
+    "wrongPronunciations": [
+      "dì"
+    ],
+    "relatedPhrases": [
+      "床笫",
+      "笫席",
+      "床笫之私",
+      "同床共笫"
+    ],
+    "explanation": "笫（zǐ）：竹篾编成的席子，特指床席；引申为床。如‘床笫’指卧具，亦借指夫妻闺房之事，后世以‘床笫’代指私密空间）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 661,
+    "char": "芈",
+    "correctPronunciation": "mǐ",
+    "wrongPronunciations": [
+      "bàn",
+      "mí"
+    ],
+    "relatedPhrases": [
+      "芈姓",
+      "芈月",
+      "芈氏",
+      "芈八子"
+    ],
+    "explanation": "芈（mǐ）：①古姓氏，为春秋战国时期楚国君主族的姓，楚国公族多出于芈姓。②古书亦用作羊叫声的拟声。今因电视剧《芈月传》而广为人知，如“芈姓”即此姓，“芈月”（又称芈八子）为战国秦宣太后之名。",
+    "errorReasonType": 6.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 662,
+    "char": "笄",
+    "correctPronunciation": "jī",
+    "wrongPronunciations": [
+      "kāi"
+    ],
+    "relatedPhrases": [
+      "及笄之年",
+      "笄年",
+      "笄礼",
+      "弱笄"
+    ],
+    "explanation": "笄（jī）：古代束发用的簪子，多为竹制。特指女子十五岁成年礼，《礼记·内则》载‘女子十有五年而笄’，后以‘及笄’代指女子年满十五岁，行笄礼示成年，标志可婚配。亦引申为女子成年（如‘笄年’）。",
+    "errorReasonType": 6,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 662,
+    "char": "襌",
+    "correctPronunciation": "dān",
+    "wrongPronunciations": [
+      "chán",
+      "shàn"
+    ],
+    "relatedPhrases": [
+      "襌衣",
+      "襌袍",
+      "襌衫",
+      "襌服"
+    ],
+    "explanation": "襌（dān）：单层的、没有衬里的衣服，与“複”（有衬里、夹层）相对。《说文》：“襌，衣不重也。”即单层之衣。如“襌衣”指单衣、无衬里的衣服，“襌袍”指无里子的袍子。注意与“禪（chán/shàn，禅）”仅左旁“衤（衣）”与“礻（示）”之别，形极近而易混，但音义皆不同。",
+    "errorReasonType": 6.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 663,
+    "char": "蘋",
+    "correctPronunciation": "pín",
+    "wrongPronunciations": [
+      "píng",
+      "pīng"
+    ],
+    "relatedPhrases": [
+      "采蘋",
+      "蘋藻",
+      "白蘋",
+      "蘋末"
+    ],
+    "explanation": "蘋（pín）：水生植物名，即田字草、四叶萍（Marsilea quadrifolia），叶呈田字形，生于浅水。古诗文常见，如《诗经·采蘋》“于以采蘋？南涧之滨”；亦以“蘋藻”指代可采以祭祀的水菜，喻妇德。注意：蘋为（pín/píng）多音字，作“苹果”义时传统写法亦作“蘋”，读 píng，二者音义须分。",
+    "errorReasonType": 2.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 664,
+    "char": "荑",
+    "correctPronunciation": "tí",
+    "wrongPronunciations": [
+      "yí",
+      "tī"
+    ],
+    "relatedPhrases": [
+      "柔荑",
+      "荑芽",
+      "春荑",
+      "手如柔荑"
+    ],
+    "explanation": null,
+    "errorReasonType": 2,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 664,
+    "char": "辋",
+    "correctPronunciation": "wǎng",
+    "wrongPronunciations": [
+      "wàng",
+      "wáng"
+    ],
+    "relatedPhrases": [
+      "车辋",
+      "辋川",
+      "辋水",
+      "辋口"
+    ],
+    "explanation": "辋（wǎng）：车轮的外框、轮缘，即车轮周边与车辐相连的圆框。《释名》：“辋，罔也，罔罗周轮之外也。”如“车辋”即车轮外圈。又，唐代王维隐居之地“辋川”（今陕西蓝田）因辋水（辋谷水）得名，后世以“辋川”代称其山水画卷与隐逸之境。",
+    "errorReasonType": 5.0,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 665,
+    "char": "縠",
+    "correctPronunciation": "hú",
+    "wrongPronunciations": [
+      "ké",
+      "qiào"
+    ],
+    "relatedPhrases": [
+      "縠纹",
+      "绫縠",
+      "轻縠",
+      "罗縠"
+    ],
+    "explanation": "縠（hú）：一种有细密皱纹的轻薄丝织品，即绉纱一类的薄绢。《说文》：“縠，细缚也。”常借以形容轻细之物。如“縠纹”指水面如绉纱般的细密波纹；“绫縠”“罗縠”并称，泛指精美轻软的丝帛。",
+    "errorReasonType": 1.0,
+    "difficultyLevel": "挑战级"
+  },
+  {
+    "id": 670,
+    "char": "夬",
+    "correctPronunciation": "guài",
+    "wrongPronunciations": [
+      "guāi",
+      "kuài"
+    ],
+    "relatedPhrases": [
+      "夬卦",
+      "夬决",
+      "夬夬"
+    ],
+    "explanation": "夬（guài）：本义为决断、分开。《说文解字》释为'分决也'。在《易经》中，夬卦象征刚决果断，指事物发展到关键需决断的时刻，如'夬者，决也'。",
+    "errorReasonType": 5,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 671,
+    "char": "臬",
+    "correctPronunciation": "niè",
+    "wrongPronunciations": [
+      "niě",
+      "niē",
+      "jié"
+    ],
+    "relatedPhrases": [
+      "奉为圭臬",
+      "臬台",
+      "法臬",
+      "臬藩"
+    ],
+    "explanation": "本义为箭靶，后引申为法度、标准。《说文解字》载：'臬，箭靶也。' 亦指法度准则，如'法臬'（法度的准绳），古籍中常见于'执臬'（遵循标准）等表述。",
+    "errorReasonType": 5,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 681,
+    "char": "獬",
+    "correctPronunciation": "xiè",
+    "wrongPronunciations": [
+      "xié",
+      "jiě"
+    ],
+    "relatedPhrases": [
+      "獬豸",
+      "獬豸冠",
+      "獬冠"
+    ],
+    "explanation": "獬（xiè）：指獬豸，古代传说中的神兽，形似麒麟，能辨是非曲直。《后汉书》载‘法冠，獬豸冠，御史所服’，后世以‘獬豸’象征司法公正，如‘獬豸冠’为古代法官所戴之冠。",
+    "errorReasonType": 5,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 681,
+    "char": "豸",
+    "correctPronunciation": "zhì",
+    "wrongPronunciations": [
+      "zhǐ"
+    ],
+    "relatedPhrases": [
+      "獬豸",
+      "虫豸",
+      "灵豸"
+    ],
+    "explanation": "豸（zhì）：兽名，传说中能辨曲直的神兽。《说文解字》载‘豸，兽也’，后世常与‘獬’组成‘獬豸’，象征司法公正（如‘獬豸冠’为古代法官所戴之冠）。",
+    "errorReasonType": 5,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 682,
+    "char": "嶽",
+    "correctPronunciation": "yuè",
+    "wrongPronunciations": [
+      "yuē",
+      "yuě"
+    ],
+    "relatedPhrases": [
+      "三山五嶽",
+      "嶽父",
+      "山嶽",
+      "嶽崇"
+    ],
+    "explanation": "嶽（yuè）是‘岳’的繁体字，指高山。如‘五嶽’指中国五大名山（泰山、华山等），《说文解字》释为‘嶽，山高也’。后引申为尊称，如‘嶽父’（岳父）。也有姓，如明代嶽崇。",
+    "errorReasonType": 5,
+    "difficultyLevel": "高级"
+  },
+  {
+    "id": 686,
+    "char": "忒",
+    "correctPronunciation": "tè",
+    "wrongPronunciations": [
+      "tuī",
+      "tēi"
+    ],
+    "relatedPhrases": [
+      "差忒",
+      "忒杀",
+      "忒煞",
+      "不忒",
+      "忒楞楞",
+      "忒修斯"
+    ],
+    "explanation": "忒（tè）：差错、变更、改变。《说文》解释为'更也'，《广雅》解释为'差也'。如'差忒'指差错、失误。此读音为本义，与方言读音tuī（太、特别）相区分。",
+    "errorReasonType": 2.0,
     "difficultyLevel": "高级"
   }
 ];
